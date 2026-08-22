@@ -100,6 +100,7 @@
   [data-m="more-grid"] > div, [data-m="more-grid"] > a,
   [data-m="detail-grid"] > div { min-width: 0; min-height: 0; }
   header { transform: translateZ(0); }
+  [data-m="utilnav"] > a, [data-m="utilnav"] > button { white-space: nowrap; }
   [data-m="journal-sec"] > div > div > div { will-change: transform; }
   @media (max-width: 860px) {
     [data-m="topbar"] { padding: 16px 20px 0 !important; gap: 14px !important; align-items: center !important; }
@@ -185,7 +186,7 @@
   <header style="position: sticky; top: 0; z-index: 40; background: #ffffff; border-bottom: 1px solid #ededed">
     <div data-m="topbar" style="max-width: 1600px; margin: 0 auto; padding: 22px 40px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px">
       <a href="#top" onClick="{{ goHome }}" style="display: flex; align-items: baseline; gap: 8px">
-        <span data-m="logo" style="font-family: Italiana, 'Playfair Display', serif; font-size: 44px; line-height: 1; letter-spacing: -0.01em">M-LonG.</span>
+        <span data-m="logo" style="white-space: nowrap; flex: none; font-family: Italiana, 'Playfair Display', serif; font-size: 44px; line-height: 1; letter-spacing: -0.01em">M-LonG.</span>
         <span style="font-size: 10px; letter-spacing: 0.28em; color: #111111; padding-bottom: 6px">OPTICAL</span>
       </a>
       <div style="display: flex; align-items: center; gap: 22px; padding-top: 12px">
@@ -694,6 +695,11 @@ const IMG_RES = {
   "learn-eye-exam-schedule.webp": "learnExam",
   "learn-contacts-vs-glasses.jpeg": "learnContacts",
   "learn-astigmatism-night.png": "learnAstig",
+  "learn-zeiss.jpg": "learnZeiss",
+  "learn-essilor.webp": "learnEssilor",
+  "checkin-model-1.png": "checkin1",
+  "checkin-model-2.png": "checkin2",
+  "checkin-model-3.png": "checkin3",
   "1787294089220_5530799533190614497_5530799533190614497_df35bda4ba9cea7590d59a78ea568379.jpg": "prod0",
   "1787294089240_5530799533190614497_5530799533190614497_78f5178c9f49da040a0789ef320ed4d6.jpg": "prod1",
   "1787294089257_5530799533190614497_5530799533190614497_3638e3e567f735a2af90ac7435ee274d.jpg": "prod2",
@@ -908,8 +914,8 @@ const TXT = {
 const LEARN_ARTICLES = [
   { id: "essilor-lenses", imgId: "learn-7", img: "learn-essilor.webp", credit: "", creditHref: "", placeholder: "Ảnh bìa bài Essilor",
     tag: { en: "LENSES", vi: "TRÒNG KÍNH" },
-    title: { en: "Essilor Lenses: What You're Actually Paying For", vi: "Tròng Essilor: Bạn thực sự trả tiền cho điều gì" },
-    excerpt: { en: "Varilux, Crizal, Eyezen, Transitions — the Essilor range is built around specific problems rather than tiers. Here's what each line solves.", vi: "Varilux, Crizal, Eyezen, Transitions — dải sản phẩm Essilor được xây dựng quanh từng vấn đề cụ thể chứ không phải theo cấp bậc. Mỗi dòng giải quyết điều gì." },
+    title: { en: "Essilor Lenses: What You're Actually Paying For", vi: "Tròng Essilor: Tiền bạn bỏ ra nằm ở đâu" },
+    excerpt: { en: "Varilux, Crizal, Eyezen, Transitions — the Essilor range is built around specific problems rather than tiers. Here's what each line solves.", vi: "Varilux, Crizal, Eyezen, Transitions — Essilor chia dòng theo vấn đề cần giải quyết, không phải theo hạng sang rẻ. Mỗi dòng lo việc gì?" },
     body: {
       en: [
         "Essilor is a French lens maker with roughly a century of optical history, and its reputation rests less on a single flagship product than on four distinct lines, each aimed at a different problem. Knowing which line you need matters more than the price tier you pick within it.",
@@ -919,17 +925,17 @@ const LEARN_ARTICLES = [
         "For a first pair, the honest hierarchy is: get the prescription right, add Crizal, then decide whether progressive or screen-focused design is what your day actually demands."
       ],
       vi: [
-        "Essilor là hãng tròng kính của Pháp với gần một thế kỷ lịch sử quang học, và uy tín của họ không nằm ở một sản phẩm chủ lực duy nhất mà ở bốn dòng riêng biệt, mỗi dòng nhắm vào một vấn đề khác nhau. Biết mình cần dòng nào quan trọng hơn việc chọn mức giá nào trong dòng đó.",
-        "Varilux là dòng đa tròng — một tròng kính chứa cả vùng nhìn xa, trung gian và đọc gần mà không có đường phân cách nhìn thấy được. Mục tiêu kỹ thuật là tạo một hành lang nhìn rõ rộng và ổn định để mắt không phải dò tìm vùng phù hợp; các thế hệ mới mở rộng hành lang đó và giảm cảm giác bồng bềnh mà người mới đeo đa tròng thường gặp.",
-        "Crizal là lớp phủ, không phải tròng: chống phản quang, chống xước, chống bụi và nước. Đây là lớp quyết định tròng kính của bạn còn trông sạch sau một năm hay không, và là thứ đáng chi tiền nhất bất kể độ kính của bạn là bao nhiêu.",
-        "Eyezen nhắm vào mỏi mắt do màn hình, thêm một chút hỗ trợ điều tiết cho tầm nhìn gần cùng khả năng lọc ánh sáng xanh — dành cho người độ kính nhẹ hoặc không có độ nhưng mắt mỏi vào buổi tối. Transitions xử lý ánh sáng: trong suốt trong nhà, sẫm màu ngoài trời, thế hệ hiện tại đổi màu trong chưa đầy một phút.",
-        "Với cặp kính đầu tiên, thứ tự ưu tiên thật lòng là: đo đúng độ, thêm Crizal, rồi mới quyết định xem bạn cần thiết kế đa tròng hay thiết kế cho màn hình."
+        "Essilor là hãng tròng kính Pháp, làm quang học gần trăm năm. Cái tên này mạnh không phải vì một sản phẩm đỉnh cao nào, mà vì bốn dòng riêng biệt, mỗi dòng lo một chuyện khác nhau. Chọn đúng dòng quan trọng hơn chọn mức giá cao trong dòng đó.",
+        "Varilux là dòng đa tròng: một tròng gộp cả vùng nhìn xa, nhìn trung và đọc gần, không có đường phân cách. Điều Essilor theo đuổi là dải nhìn rõ phải rộng và ổn định, để mắt không phải dò tìm vùng phù hợp. Các đời mới mở rộng dải này và giảm cảm giác bồng bềnh mà người mới đeo đa tròng hay gặp.",
+        "Crizal không phải tròng, mà là lớp phủ: chống phản quang, chống xước, ít bám bụi và nước. Đây là thứ quyết định sau một năm kính của bạn còn trông sạch hay không. Nếu chỉ chi thêm được một khoản, hãy chi vào đây.",
+        "Eyezen dành cho người mỏi mắt vì màn hình: hỗ trợ nhẹ cho tầm nhìn gần, kèm lọc ánh sáng xanh. Phù hợp với người độ nhẹ hoặc không độ nhưng tối đến là mắt nặng trịch. Transitions thì lo phần ánh sáng: trong nhà thì trong, ra nắng thì sẫm, đời hiện tại đổi màu trong chưa đầy một phút.",
+        "Với cặp kính đầu tiên, thứ tự nên là: đo đúng độ trước, thêm Crizal, rồi mới tính xem mình cần đa tròng hay cần tròng cho màn hình."
       ]
     } },
   { id: "zeiss-lenses", imgId: "learn-8", img: "learn-zeiss.jpg", credit: "", creditHref: "", placeholder: "Ảnh bìa bài ZEISS",
     tag: { en: "LENSES", vi: "TRÒNG KÍNH" },
-    title: { en: "ZEISS Lenses: Precision Optics, Measured to Your Eye", vi: "Tròng ZEISS: Quang học chính xác, đo theo mắt bạn" },
-    excerpt: { en: "ZEISS came to eyewear from microscopes and camera lenses — and it shows in how the lenses are measured and surfaced. What that buys you in practice.", vi: "ZEISS bước vào ngành kính mắt từ kính hiển vi và ống kính máy ảnh — và điều đó thể hiện ở cách tròng kính được đo và gia công. Bạn thực sự nhận được gì." },
+    title: { en: "ZEISS Lenses: Precision Optics, Measured to Your Eye", vi: "Tròng ZEISS: Quang học chính xác, cắt theo mắt bạn" },
+    excerpt: { en: "ZEISS came to eyewear from microscopes and camera lenses — and it shows in how the lenses are measured and surfaced. What that buys you in practice.", vi: "ZEISS làm kính hiển vi và ống kính máy ảnh trước khi làm kính mắt — và điều đó lộ ra ở cách họ đo và cắt tròng. Bạn được gì?" },
     body: {
       en: [
         "ZEISS is a German optics house whose core business was never eyewear: microscopes, camera lenses, semiconductor lithography. Eyeglass lenses inherit that measurement culture, and the practical difference shows up in how a pair is specified rather than in any single marketing feature.",
@@ -939,17 +945,17 @@ const LEARN_ARTICLES = [
         "The honest summary: ZEISS is worth it when your prescription is complex, strongly astigmatic, or progressive — situations where precise surfacing changes how comfortable the lens actually is. At a mild single-vision prescription the difference narrows considerably."
       ],
       vi: [
-        "ZEISS là hãng quang học Đức mà ngành kinh doanh cốt lõi chưa bao giờ là kính mắt: kính hiển vi, ống kính máy ảnh, quang khắc bán dẫn. Tròng kính mắt thừa hưởng văn hoá đo lường đó, và khác biệt thực tế nằm ở cách một cặp tròng được chỉ định, hơn là ở một tính năng quảng cáo đơn lẻ nào.",
-        "Các thiết kế tròng cá nhân hoá được gia công dựa trên số đo của chính bạn — gọng nằm thế nào trên mặt, khoảng cách từ tròng đến giác mạc, độ cong và độ nghiêng của mặt trước gọng. Hai người cùng độ kính nhưng đeo gọng khác nhau thực sự cần hai bề mặt tròng khác nhau, và đây chính là phần mà phần lớn tròng giá rẻ bỏ qua.",
-        "SmartLife là dòng dùng hằng ngày, thiết kế quanh thói quen chuyển động đầu và mắt hình thành bởi điện thoại: liên tục đổi tiêu điểm nhanh giữa gần và xa. DuraVision là họ lớp phủ, và lớp chống phản quang của ZEISS để lại màu phản chiếu khá trung tính — xanh lục nhạt thay vì tím đậm.",
-        "PhotoFusion là lựa chọn tự đổi màu, và DriveSafe đáng được nhắc riêng: thiết kế giảm tán xạ chói từ đèn xe ngược chiều và mở rộng nhẹ vùng nhìn trung gian cho các lần nhìn gương và bảng đồng hồ. Nếu lái xe ban đêm là lúc kính hiện tại của bạn không đủ tốt, đây chính là loại tròng nên hỏi tới.",
-        "Tóm lại thật lòng: ZEISS xứng đáng khi độ kính của bạn phức tạp, loạn thị nặng, hoặc cần đa tròng — những trường hợp mà gia công chính xác thay đổi hẳn độ dễ chịu khi đeo. Với độ đơn tròng nhẹ, khác biệt thu hẹp đáng kể."
+        "ZEISS là hãng quang học Đức, và kính mắt chưa bao giờ là nghề chính của họ: kính hiển vi, ống kính máy ảnh, quang khắc chip bán dẫn. Tròng kính mắt thừa hưởng cái nếp đo đạc đó. Khác biệt nằm ở cách một cặp tròng được đo và chỉ định, không nằm ở một tính năng nào để quảng cáo.",
+        "Tròng cá nhân hoá của ZEISS được cắt theo số đo riêng của bạn: gọng nằm thế nào trên mặt, tròng cách giác mạc bao xa, mặt trước gọng cong và nghiêng bao nhiêu. Hai người cùng độ nhưng đeo hai gọng khác nhau thì cần hai bề mặt tròng khác nhau — đây đúng là phần mà tròng giá rẻ bỏ qua.",
+        "SmartLife là dòng dùng hằng ngày, thiết kế theo thói quen mắt thời điện thoại: đổi tiêu điểm gần xa liên tục và rất nhanh. DuraVision là họ lớp phủ, và lớp chống phản quang của ZEISS để lại màu phản chiếu khá nhạt — xanh lục mờ chứ không tím đậm như nhiều loại khác.",
+        "PhotoFusion là loại tự đổi màu. Còn DriveSafe thì đáng nhắc riêng: giảm tán xạ chói từ đèn xe ngược chiều, mở rộng thêm vùng nhìn trung để nhìn gương và bảng đồng hồ. Nếu kính hiện tại của bạn kém nhất lúc lái xe đêm, đây là loại nên hỏi tới.",
+        "Nói thẳng: ZEISS xứng tiền khi độ của bạn phức tạp, loạn nặng, hoặc cần đa tròng — những ca mà cắt chính xác ảnh hưởng hẳn đến độ dễ chịu khi đeo. Còn nếu chỉ đơn tròng độ nhẹ, khoảng cách với các hãng khác hẹp lại nhiều."
       ]
     } },
   { id: "astigmatism-night-vision", imgId: "learn-1", img: "learn-astigmatism-night.png", credit: "", creditHref: "", placeholder: "Astigmatism & lights cover — bokeh city lights at night",
     tag: { en: "EYE HEALTH", vi: "SỨC KHỎE MẮT" },
-    title: { en: "Astigmatism and Lights: How Astigmatism Affects Your Night Vision", vi: "Loạn thị và ánh sáng: Loạn thị ảnh hưởng đến tầm nhìn ban đêm ra sao" },
-    excerpt: { en: "Halos and starbursts around headlights and streetlamps are a classic sign of uncorrected astigmatism — here's why it happens and how the right lens fixes it.", vi: "Quầng sáng và tia sáng quanh đèn xe, đèn đường là dấu hiệu điển hình của loạn thị chưa được điều chỉnh — vì sao lại vậy và tròng kính phù hợp giải quyết thế nào." },
+    title: { en: "Astigmatism and Lights: How Astigmatism Affects Your Night Vision", vi: "Loạn thị và ánh sáng đèn: Vì sao ban đêm nhìn kém hơn" },
+    excerpt: { en: "Halos and starbursts around headlights and streetlamps are a classic sign of uncorrected astigmatism — here's why it happens and how the right lens fixes it.", vi: "Quầng sáng và tia sáng toả quanh đèn xe, đèn đường là dấu hiệu quen thuộc của loạn thị chưa chỉnh đúng. Vì sao vậy, và tròng kính xử lý thế nào?" },
     body: {
       en: [
         "Astigmatism happens when the cornea or lens has a slightly irregular curve, so light entering the eye doesn't focus to a single point. At night, with pupils dilated and point sources like headlights and streetlamps, that irregular focus shows up as streaking, halos or starbursts instead of a clean dot.",
@@ -957,15 +963,15 @@ const LEARN_ARTICLES = [
         "A lens ground to your exact astigmatism prescription (marked as a cylinder and axis value) corrects the irregular curve and restores a single focal point. If night halos are new or worsening, it's also worth ruling out other causes with an eye exam rather than assuming it's just the astigmatism."
       ],
       vi: [
-        "Loạn thị xảy ra khi giác mạc hoặc thể thủy tinh có độ cong không đều, khiến ánh sáng đi vào mắt không hội tụ về một điểm duy nhất. Vào ban đêm, khi đồng tử giãn rộng và gặp các nguồn sáng điểm như đèn xe, đèn đường, sự hội tụ không đều đó biểu hiện thành các vệt sáng, quầng sáng hoặc tia sáng toả ra thay vì một điểm sáng gọn.",
-        "Không phải loạn thị nặng hơn khi trời tối — mà là ánh sáng yếu làm đồng tử mở rộng hơn, cho ánh sáng đi qua nhiều phần bề mặt không đều của mắt hơn, khiến hiện tượng méo hình rõ rệt hơn nhiều.",
-        "Tròng kính được cắt chính xác theo độ loạn thị của bạn (ghi bằng giá trị trụ và trục) sẽ điều chỉnh độ cong không đều và đưa ánh sáng về lại một điểm hội tụ. Nếu quầng sáng ban đêm là mới xuất hiện hoặc đang nặng thêm, nên đi khám mắt để loại trừ các nguyên nhân khác thay vì chỉ cho rằng đó là do loạn thị."
+        "Loạn thị là khi giác mạc hoặc thể thuỷ tinh cong không đều, làm ánh sáng vào mắt không hội tụ về một điểm. Ban đêm, đồng tử giãn to mà các nguồn sáng lại là điểm nhỏ như đèn xe, đèn đường — kết quả là bạn thấy vệt sáng, quầng sáng hoặc tia toả ra thay vì một điểm gọn.",
+        "Không phải loạn thị nặng lên khi trời tối. Chỉ là trời tối thì đồng tử mở rộng, ánh sáng đi qua nhiều phần bề mặt cong không đều hơn, nên méo hình hiện rõ hơn.",
+        "Tròng cắt đúng độ loạn của bạn (ghi bằng trụ và trục trong đơn kính) sẽ bù lại phần cong không đều và đưa ánh sáng về một điểm. Nhưng nếu quầng sáng mới xuất hiện hoặc đang nặng dần, nên đi khám để loại trừ nguyên nhân khác, đừng mặc định là do loạn thị."
       ]
     } },
   { id: "contacts-vs-glasses", imgId: "learn-2", img: "learn-contacts-vs-glasses.jpeg", credit: "", creditHref: "", placeholder: "Contacts vs glasses cover — lenses and frames still life",
     tag: { en: "GUIDES", vi: "HƯỚNG DẪN" },
-    title: { en: "Contacts vs. Glasses: Which Should You Wear?", vi: "Kính áp tròng hay kính gọng: Nên chọn loại nào?" },
-    excerpt: { en: "Both correct the same prescription, but comfort, lifestyle and eye health tip the scale differently for everyone. A quick guide to deciding.", vi: "Cả hai đều điều chỉnh cùng một độ kính, nhưng sự thoải mái, lối sống và sức khỏe mắt sẽ quyết định khác nhau với mỗi người. Hướng dẫn nhanh để lựa chọn." },
+    title: { en: "Contacts vs. Glasses: Which Should You Wear?", vi: "Kính áp tròng hay kính gọng: Chọn loại nào?" },
+    excerpt: { en: "Both correct the same prescription, but comfort, lifestyle and eye health tip the scale differently for everyone. A quick guide to deciding.", vi: "Cùng chỉnh một độ, nhưng độ thoải mái, nếp sống và sức khoẻ mắt lại nghiêng cán cân khác nhau với mỗi người." },
     body: {
       en: [
         "Glasses sit on the surface of the eye's problem rather than on the eye itself — no daily insertion, lower infection risk, and a frame that doubles as an accessory. The trade-off is a fixed field of view and reflections in bright light or on camera.",
@@ -973,15 +979,15 @@ const LEARN_ARTICLES = [
         "Most people don't have to pick one forever — glasses for the desk and evenings, contacts for the gym or a night out, is a common split. What matters is fitting both correctly: an outdated prescription in either one strains the eyes the same way."
       ],
       vi: [
-        "Kính gọng nằm bên ngoài mắt chứ không tiếp xúc trực tiếp — không cần đeo vào mỗi ngày, ít rủi ro nhiễm khuẩn hơn, và gọng kính còn là một món phụ kiện. Đánh đổi là tầm nhìn bị giới hạn bởi khung kính và dễ bị chói/phản chiếu khi ra nắng hoặc lên hình.",
-        "Kính áp tròng di chuyển theo mắt nên tầm nhìn ngoại vi vẫn rõ, không có khung cản khi chơi thể thao hay vận động nhanh. Đổi lại cần tuân thủ vệ sinh chặt chẽ hơn: rửa tay sạch, dùng đúng dung dịch ngâm, và không ngủ khi đang đeo kính áp tròng loại không được chỉ định cho việc đó.",
-        "Phần lớn không cần chọn hẳn một loại — đeo kính gọng khi làm việc, buổi tối, và kính áp tròng khi tập gym hay đi chơi là cách kết hợp phổ biến. Điều quan trọng là cả hai đều cần đúng độ: dùng độ cũ ở loại nào cũng gây mỏi mắt như nhau."
+        "Kính gọng không tiếp xúc trực tiếp với mắt: không phải đeo vào tháo ra mỗi ngày, ít rủi ro nhiễm khuẩn, và bản thân cái gọng cũng là phụ kiện. Đổi lại, tầm nhìn bị khung kính giới hạn, ra nắng hay lên hình thì dễ bị phản chiếu.",
+        "Kính áp tròng di chuyển theo mắt nên nhìn ngoại vi vẫn rõ, không có khung cản khi chơi thể thao hay vận động mạnh. Bù lại phải kỷ luật về vệ sinh: tay sạch, đúng dung dịch ngâm, và không ngủ khi đang đeo loại không được phép ngủ.",
+        "Phần lớn không cần chọn hẳn một loại. Kính gọng cho lúc làm việc và buổi tối, áp tròng cho lúc tập hay đi chơi — nhiều người vẫn dùng song song như vậy. Quan trọng là loại nào cũng phải đúng độ: đeo độ cũ thì mắt mỏi như nhau."
       ]
     } },
   { id: "eye-exam-frequency", imgId: "learn-3", img: "learn-eye-exam-schedule.webp", credit: "", creditHref: "", placeholder: "Eye exam frequency cover — calendar and glasses still life",
     tag: { en: "EYE HEALTH", vi: "SỨC KHỎE MẮT" },
-    title: { en: "How Often Should You Get an Eye Exam?", vi: "Bao lâu nên khám mắt một lần?" },
-    excerpt: { en: "Your prescription — and your eye health — can shift faster than you'd think. Here's the exam schedule opticians actually recommend by age.", vi: "Độ kính — và sức khỏe mắt của bạn — có thể thay đổi nhanh hơn bạn nghĩ. Đây là lịch khám mắt các chuyên viên khúc xạ thực sự khuyến nghị theo từng độ tuổi." },
+    title: { en: "How Often Should You Get an Eye Exam?", vi: "Bao lâu nên đi khám mắt một lần?" },
+    excerpt: { en: "Your prescription — and your eye health — can shift faster than you'd think. Here's the exam schedule opticians actually recommend by age.", vi: "Độ kính và sức khoẻ mắt đổi nhanh hơn bạn tưởng. Đây là lịch khám mà chuyên viên khúc xạ thật sự khuyên, theo từng độ tuổi." },
     body: {
       en: [
         "Under 40 with no known issues, every 1–2 years is generally enough — prescriptions tend to be stable and eye disease risk is low. Screen-heavy jobs or existing astigmatism can justify checking yearly regardless of age.",
@@ -989,15 +995,15 @@ const LEARN_ARTICLES = [
         "Regardless of age: sudden blurring, new floaters, halos, or headaches tied to screen time are reasons to book an exam immediately rather than waiting for the next scheduled one."
       ],
       vi: [
-        "Dưới 40 tuổi và không có vấn đề đã biết, khám mỗi 1–2 năm là đủ — độ kính thường ổn định và nguy cơ bệnh về mắt còn thấp. Công việc dùng màn hình nhiều hoặc đã có loạn thị thì nên khám mỗi năm bất kể tuổi.",
-        "Sau 40 tuổi, lão thị (mất dần khả năng nhìn gần) thường bắt đầu xuất hiện và thay đổi nhanh hơn tầm nhìn xa — khám hằng năm giúp phát hiện sớm khi chỉ cần điều chỉnh tròng kính nhẹ là đủ. Đây cũng là lúc nên bắt đầu kiểm tra định kỳ các bệnh như tăng nhãn áp và các vấn đề liên quan đến tuổi tác.",
-        "Bất kể tuổi nào: nhìn mờ đột ngột, xuất hiện đốm đen mới, quầng sáng, hoặc đau đầu liên quan đến thời gian dùng màn hình là dấu hiệu nên đi khám ngay, không nên chờ đến lịch khám định kỳ tiếp theo."
+        "Dưới 40 tuổi, không có vấn đề gì đã biết thì 1–2 năm khám một lần là đủ: độ thường ổn định và nguy cơ bệnh mắt còn thấp. Nhưng nếu làm việc với màn hình cả ngày hoặc đã có loạn thị, nên khám mỗi năm, không cần đợi đến tuổi nào.",
+        "Sau 40 tuổi, lão thị bắt đầu xuất hiện — mất dần khả năng nhìn gần — và nó đổi nhanh hơn độ nhìn xa hồi trước. Khám hằng năm sẽ bắt được lúc chỉ cần chỉnh tròng nhẹ là xong. Đây cũng là giai đoạn nên kiểm tra định kỳ tăng nhãn áp và các bệnh mắt theo tuổi.",
+        "Tuổi nào cũng vậy: mờ mắt đột ngột, đốm đen mới xuất hiện, quầng sáng, hay đau đầu sau khi dùng màn hình là lý do đi khám ngay, đừng chờ tới lịch định kỳ."
       ]
     } },
   { id: "choosing-frames-face-shape", imgId: "learn-4", img: "learn-face-shape-frames.png", credit: "", creditHref: "", placeholder: "Drop a photo of assorted frames on a table",
     tag: { en: "GUIDES", vi: "HƯỚNG DẪN" },
-    title: { en: "How to Choose Frames for Your Face Shape", vi: "Cách chọn gọng kính hợp với khuôn mặt" },
-    excerpt: { en: "The classic rule is contrast — frame shape should offset your face shape, not repeat it. Here's how to read your own face before you shop.", vi: "Quy tắc kinh điển là sự đối lập — hình dáng gọng nên bù lại khuôn mặt, không lặp lại nó. Cách đọc khuôn mặt của bạn trước khi mua kính." },
+    title: { en: "How to Choose Frames for Your Face Shape", vi: "Cách chọn gọng hợp khuôn mặt" },
+    excerpt: { en: "The classic rule is contrast — frame shape should offset your face shape, not repeat it. Here's how to read your own face before you shop.", vi: "Quy tắc cũ mà vẫn đúng: gọng nên bù cho khuôn mặt, đừng lặp lại nó. Cách tự đọc khuôn mặt mình trước khi đi thử kính." },
     body: {
       en: [
         "The starting rule is contrast: angular faces (square, rectangle) tend to soften with round or oval frames, while round or soft faces often look more defined in angular, rectangular shapes.",
@@ -1005,15 +1011,15 @@ const LEARN_ARTICLES = [
         "Beyond the mirror test, consider how a frame sits day to day: acetate is warmer for everyday wear, titanium is lighter for all-day glasses, and a cat-eye or rimless shape reads dressier than a round or square one."
       ],
       vi: [
-        "Quy tắc cơ bản là tạo sự đối lập: khuôn mặt góc cạnh (vuông, chữ nhật) thường mềm mại hơn với gọng tròn hoặc oval, còn khuôn mặt tròn hoặc mềm thường rõ nét hơn với gọng góc cạnh, chữ nhật.",
-        "Độ rộng của gọng cũng quan trọng như hình dáng — điểm rộng nhất của gọng nên tương đương điểm rộng nhất của mặt; rộng hoặc hẹp hơn rõ rệt thường là nguyên nhân khiến ảnh chụp trông 'lệch', hơn cả hình dáng gọng.",
-        "Ngoài việc soi gương, hãy nghĩ đến việc đeo hằng ngày: acetate ấm áp hơn cho trang phục thường ngày, titanium nhẹ hơn để đeo cả ngày, còn gọng cat-eye hoặc rimless tạo cảm giác trang trọng hơn gọng tròn hoặc vuông."
+        "Bắt đầu từ nguyên tắc bù trừ: mặt góc cạnh (vuông, chữ nhật) thường dịu lại với gọng tròn hoặc oval; mặt tròn hoặc nét mềm thì rõ đường hơn khi đeo gọng vuông, gọng chữ nhật.",
+        "Chiều rộng gọng quan trọng không kém hình dáng. Điểm rộng nhất của gọng nên xấp xỉ điểm rộng nhất của mặt. Rộng hơn hoặc hẹp hơn rõ rệt mới là thứ khiến ảnh chụp trông lệch, chứ không phải hình dáng gọng.",
+        "Soi gương xong thì nghĩ thêm đến chuyện đeo hằng ngày: acetate trông ấm và dễ phối đồ thường ngày, titanium nhẹ hơn nên đeo cả ngày đỡ mỏi, còn cat-eye hay gọng khoan thì trang trọng hơn gọng tròn và gọng vuông."
       ]
     } },
   { id: "lens-coatings-explained", imgId: "learn-5", img: "learn-lens-coatings.png", credit: "", creditHref: "", placeholder: "Drop a close-up photo of a lens catching light",
     tag: { en: "GUIDES", vi: "HƯỚNG DẪN" },
-    title: { en: "Anti-Reflective, Blue-Light, UV: What Lens Coatings Actually Do", vi: "Chống phản chiếu, chống ánh sáng xanh, UV: Các lớp phủ tròng kính có tác dụng gì" },
-    excerpt: { en: "Lens coatings get bundled into every quote, but they solve different problems. Here's what each one is actually for.", vi: "Các lớp phủ tròng kính thường được gộp chung khi tư vấn, nhưng mỗi loại giải quyết một vấn đề khác nhau." },
+    title: { en: "Anti-Reflective, Blue-Light, UV: What Lens Coatings Actually Do", vi: "Chống phản quang, lọc ánh sáng xanh, chống UV: Lớp phủ nào làm gì" },
+    excerpt: { en: "Lens coatings get bundled into every quote, but they solve different problems. Here's what each one is actually for.", vi: "Khi tư vấn, các lớp phủ hay được gộp vào một gói. Nhưng mỗi lớp lo một việc khác nhau." },
     body: {
       en: [
         "Anti-reflective (AR) coating cuts the glare that bounces off the front and back of the lens — the difference shows up most at night, under fluorescent light, or on video calls, where uncoated lenses show a visible ghost reflection of your own eyes.",
@@ -1021,15 +1027,15 @@ const LEARN_ARTICLES = [
         "UV protection blocks ultraviolet light from reaching the eye, which matters even on clear plastic lenses that offer no UV filtering on their own. Any lens sold as sunglasses should carry it by default; on clear everyday lenses it's worth requesting."
       ],
       vi: [
-        "Lớp phủ chống phản chiếu (AR) giảm chói do ánh sáng dội lại từ mặt trước và mặt sau tròng kính — sự khác biệt rõ nhất vào ban đêm, dưới đèn huỳnh quang, hoặc khi gọi video, nơi tròng kính không phủ sẽ hiện rõ ảnh phản chiếu mắt của bạn.",
-        "Lớp lọc ánh sáng xanh giảm bước sóng xanh năng lượng cao phát ra từ màn hình và đèn LED. Bằng chứng khoa học về việc ngăn tổn thương mắt còn khá mỏng, nhưng nhiều người cho biết nó giảm mỏi mắt khi dùng màn hình lâu — đây là tính năng tăng sự thoải mái hơn là y tế.",
-        "Chống UV ngăn tia cực tím tiếp cận mắt, điều này quan trọng ngay cả với tròng nhựa trong suốt vì bản thân nó không tự lọc UV. Mọi tròng kính bán dưới dạng kính mát nên có sẵn tính năng này; với tròng trong dùng hằng ngày, bạn nên yêu cầu thêm."
+        "Lớp chống phản quang (AR) cắt phần chói dội lại từ mặt trước và mặt sau tròng. Rõ nhất là lúc đi đêm, dưới đèn huỳnh quang, hoặc khi gọi video — tròng không phủ sẽ hiện rõ bóng mắt bạn phản chiếu lên.",
+        "Lớp lọc ánh sáng xanh giảm bước sóng xanh năng lượng cao từ màn hình và đèn LED. Bằng chứng khoa học về việc nó ngăn tổn thương mắt còn mỏng, nhưng nhiều người nói mắt đỡ mỏi hơn khi ngồi màn hình lâu. Coi nó là tính năng dễ chịu, không phải thuốc.",
+        "Chống UV ngăn tia cực tím vào mắt. Cần cả với tròng nhựa trong, vì bản thân nhựa trong không lọc UV. Kính mát bán ra thì mặc định phải có; còn tròng trong dùng hằng ngày thì bạn nên hỏi thêm."
       ]
     } },
   { id: "caring-for-your-glasses", imgId: "learn-6", img: "learn-glasses-care.jpeg", credit: "", creditHref: "", placeholder: "Drop a photo of a cleaning cloth and glasses",
     tag: { en: "CARE", vi: "BẢO QUẢN" },
-    title: { en: "How to Clean and Care for Your Glasses", vi: "Cách vệ sinh và bảo quản kính đúng cách" },
-    excerpt: { en: "Most scratches and loose hinges come from a handful of everyday habits — here's what to change.", vi: "Hầu hết vết xước và khớp lỏng đến từ vài thói quen hằng ngày — đây là những gì cần thay đổi." },
+    title: { en: "How to Clean and Care for Your Glasses", vi: "Vệ sinh và bảo quản kính đúng cách" },
+    excerpt: { en: "Most scratches and loose hinges come from a handful of everyday habits — here's what to change.", vi: "Phần lớn vết xước và khớp lỏng đến từ vài thói quen rất nhỏ hằng ngày. Đây là những thứ nên đổi." },
     body: {
       en: [
         "Rinse lenses with lukewarm water before wiping — dry-wiping grinds dust and grit into the coating and is the single biggest cause of fine scratches. A drop of mild dish soap, rinsed off, then a clean microfibre cloth is enough for daily cleaning.",
@@ -1037,9 +1043,9 @@ const LEARN_ARTICLES = [
         "Store frames closed in a hard case when not worn; pushing them onto your head or setting them lens-down on a table is the most common cause of loosened hinges and scratched lenses. A quick screw-tightening check every few months keeps the fit consistent."
       ],
       vi: [
-        "Rửa tròng kính bằng nước ấm trước khi lau — lau khô trực tiếp sẽ khiến bụi và cát chà xát vào lớp phủ, đây là nguyên nhân hàng đầu gây trầy xước nhỏ. Một ít nước rửa chén dịu nhẹ, rửa sạch lại, rồi dùng khăn vi sợi sạch là đủ để vệ sinh hằng ngày.",
-        "Tránh dùng áo hoặc giấy ăn: sợi cotton và giấy có độ nhám ở cấp độ vi mô đủ để làm hại lớp phủ. Giữ lại khăn vi sợi đi kèm kính và giặt định kỳ — khăn bẩn chỉ khiến bụi bám ngược lại tròng kính.",
-        "Khi không đeo, nên gấp gọng và để trong hộp cứng; đẩy kính lên đầu hoặc đặt úp tròng kính xuống mặt bàn là nguyên nhân phổ biến nhất gây lỏng khớp và trầy tròng. Kiểm tra siết vít định kỳ vài tháng một lần giúp gọng luôn vừa khít."
+        "Rửa tròng bằng nước ấm trước khi lau. Lau khô ngay là cách chà bụi và cát vào lớp phủ — nguyên nhân số một của những vết xước li ti. Một chút nước rửa chén dịu, rửa lại cho sạch, rồi lau bằng khăn vi sợi sạch là đủ cho hằng ngày.",
+        "Đừng lau bằng vạt áo hay giấy ăn. Sợi cotton và sợi giấy nhám hơn bạn tưởng ở đúng cái cấp độ mà lớp phủ tồn tại. Giữ lại khăn vi sợi đi kèm kính, và giặt nó thỉnh thoảng — khăn bẩn chỉ trả bụi về lại tròng.",
+        "Không đeo thì gấp gọng cho vào hộp cứng. Đẩy kính lên đầu hay úp tròng xuống mặt bàn là hai lý do phổ biến nhất làm lỏng khớp và xước tròng. Vài tháng ghé siết lại vít một lần thì gọng giữ được độ vừa."
       ]
     } }
 ];

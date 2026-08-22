@@ -70,6 +70,11 @@
 <meta name="ext-resource-dependency" content="uploads-opt/learn-face-shape-frames.png" data-resource-id="learnFaceShape" />
 <meta name="ext-resource-dependency" content="uploads-opt/learn-lens-coatings.png" data-resource-id="learnCoatings" />
 <meta name="ext-resource-dependency" content="uploads-opt/learn-glasses-care.jpeg" data-resource-id="learnCare" />
+<meta name="ext-resource-dependency" content="uploads-opt/checkin-model-1.png" data-resource-id="checkin1" />
+<meta name="ext-resource-dependency" content="uploads-opt/checkin-model-2.png" data-resource-id="checkin2" />
+<meta name="ext-resource-dependency" content="uploads-opt/checkin-model-3.png" data-resource-id="checkin3" />
+<meta name="ext-resource-dependency" content="uploads-opt/learn-zeiss.jpg" data-resource-id="learnZeiss" />
+<meta name="ext-resource-dependency" content="uploads-opt/learn-essilor.webp" data-resource-id="learnEssilor" />
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 56"><rect width="120" height="56" fill="#23234F"/><text x="60" y="32" font-size="11" fill="#fff" text-anchor="middle" font-family="serif" font-style="italic">M-LonG.</text></svg></template>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Store","name":"M-LonG.Optical","image":"https://mlongoptical.com/og.jpg","url":"https://mlongoptical.com/","telephone":"+84-24-3942-0110","priceRange":"$$","description":"Korean-minimal optical brand in Hanoi — sunglasses, optical frames and seasonal eyewear collections.","address":{"@type":"PostalAddress","streetAddress":"147A Le Duan","addressLocality":"Hoan Kiem","addressRegion":"Ha Noi","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.0227,"longitude":105.8412},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:30","closes":"21:30"}],"sameAs":["https://instagram.com/mlong_optical"]}
@@ -82,6 +87,20 @@
   image-slot { display: block; }
   img, iframe, svg { max-width: 100%; }
   html { -webkit-text-size-adjust: 100%; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { overflow-x: hidden; -webkit-overflow-scrolling: touch; }
+  img, image-slot { display: block; max-width: 100%; }
+  [data-m="product-grid"] image-slot, [data-m="cart-thumb"] image-slot,
+  [data-m="detail-grid"] image-slot, [data-m="learn-grid"] image-slot,
+  [data-m="more-grid"] image-slot, [data-m="igtile"] image-slot,
+  [data-m="brand-banner"] image-slot, [data-m="store-map"] image-slot,
+  [data-m="hero-split"] image-slot { aspect-ratio: auto !important; height: 100% !important; }
+  [data-m="product-grid"] > article, [data-m="cart-thumb"],
+  [data-m="learn-grid"] > div, [data-m="learn-grid"] > a,
+  [data-m="more-grid"] > div, [data-m="more-grid"] > a,
+  [data-m="detail-grid"] > div { min-width: 0; min-height: 0; }
+  header { transform: translateZ(0); }
+  [data-m="journal-sec"] > div > div > div { will-change: transform; }
   @media (max-width: 860px) {
     [data-m="topbar"] { padding: 16px 20px 0 !important; gap: 14px !important; align-items: center !important; }
     [data-m="logo"] { font-size: 30px !important; }
@@ -91,7 +110,7 @@
     [data-m="nav"] > a { white-space: nowrap; }
     [data-m="hero-split"] { grid-template-columns: 1fr !important; height: auto !important; min-height: 0 !important; }
     [data-m="hero-split"] > div:first-child { padding: 56px 20px !important; }
-    [data-m="hero-split"] > div:last-child { height: 60vh !important; }
+    [data-m="hero-split"] > div:last-child { height: 50vh !important; min-height: 280px !important; }
     [data-m="hero-split-h1"] { font-size: 34px !important; }
     [data-m="hero-type-h1"] { font-size: 42px !important; }
     [data-m="hero-photo-pad"] { padding: 0 20px 40px !important; }
@@ -124,7 +143,6 @@
     [data-m="cart-wrap"], [data-m="search-wrap"] { padding: 32px 20px 80px !important; }
     [data-m="cart-grid"] { grid-template-columns: 1fr !important; gap: 40px !important; }
     [data-m="cart-line"] { grid-template-columns: 84px 1fr !important; gap: 16px !important; }
-    [data-m="cart-line"] > div:last-child { grid-column: 1 / -1; text-align: left !important; }
     [data-m="cart-thumb"] { width: 84px !important; height: 84px !important; }
     [data-m="cart-aside"] { position: static !important; top: auto !important; padding: 24px !important; }
     [data-m="info-tabs"] { overflow-x: auto !important; gap: 18px !important; scrollbar-width: none; }
@@ -153,9 +171,11 @@
     [data-m="store-sec"] dl > div { grid-template-columns: 1fr !important; gap: 2px 0 !important; }
     [data-m="store-sec"] dd { margin-bottom: 14px !important; }
     [data-m="article-body"] { font-size: 16px !important; line-height: 1.8 !important; }
-    [data-m="product-grid"] h3 { font-size: 13px !important; }
-    [data-m="product-grid"] span { font-size: 12px !important; }
+    [data-m="product-grid"] h3 { font-size: 14px !important; }
+    [data-m="product-grid"] span { font-size: 13px !important; }
     [data-m="footer"] p { font-size: 12px !important; }
+    [data-m="nav"], [data-m="filter-list"], [data-m="info-tabs"] { -webkit-overflow-scrolling: touch !important; }
+    [data-m="product-grid"] article > div:first-child, [data-m="cart-thumb"] { overflow: hidden !important; }
   }
 </style>
 </helmet>
@@ -302,10 +322,6 @@
                   <span style="font-size: 10px; color: #999999; letter-spacing: 0.08em">{{ p.colors }}</span>
                 </div>
                 <p style="margin: 6px 0 0; font-size: 11px; color: #999999; letter-spacing: 0.04em">{{ p.shape }}</p>
-                <div style="display: flex; gap: 10px; align-items: baseline; padding-top: 8px">
-                  <span style="font-size: 11px; color: #999999; text-decoration: line-through">{{ p.was }}</span>
-                  <span style="font-size: 12px; color: #111111">{{ p.now }}</span>
-                </div>
               </article>
             </sc-for>
             <button onClick="{{ addProduct }}" style="border: 1px dashed #cccccc; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: 1 / 1; gap: 10px; color: #999999; font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.12em" style-hover="border-color: #111111; color: #111111">
@@ -363,14 +379,14 @@
         <div style="overflow: hidden; width: 100%">
           <div style="display: flex; width: max-content; animation: ml-marquee 38s linear infinite">
             <div style="display: flex; gap: 20px; margin-right: 20px">
-              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-2" shape="rect" fit="contain" src="uploads/1787294106842_5530799533190614497_5530799533190614497_32925d49f11bd519d805e43f23266896.jpg" placeholder="Product still 01"></image-slot></div>
-              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-3" shape="rect" fit="cover" src="uploads/6f3519f2-0ed6-5b86-9992-7dd6be05437a.avif" placeholder="Checkin crop 02"></image-slot></div>
-              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-4" shape="rect" fit="contain" src="uploads/1787294152496_5530799533190614497_5530799533190614497_77de7393bc2826d7fb0e209b042a8245.jpg" placeholder="Product still 02"></image-slot></div>
+              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-model-1" shape="rect" fit="cover" src="uploads-opt/checkin-model-1.png" placeholder="Ảnh checkin 01"></image-slot></div>
+              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-model-2" shape="rect" fit="cover" src="uploads-opt/checkin-model-2.png" placeholder="Ảnh checkin 02"></image-slot></div>
+              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-model-3" shape="rect" fit="cover" src="uploads-opt/checkin-model-3.png" placeholder="Ảnh checkin 03"></image-slot></div>
             </div>
             <div style="display: flex; gap: 20px; margin-right: 20px" aria-hidden="true">
-              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-2b" shape="rect" fit="contain" src="uploads/1787294106842_5530799533190614497_5530799533190614497_32925d49f11bd519d805e43f23266896.jpg" placeholder="Product still 01"></image-slot></div>
-              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-3b" shape="rect" fit="cover" src="uploads/6f3519f2-0ed6-5b86-9992-7dd6be05437a.avif" placeholder="Checkin crop 02"></image-slot></div>
-              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-4b" shape="rect" fit="contain" src="uploads/1787294152496_5530799533190614497_5530799533190614497_77de7393bc2826d7fb0e209b042a8245.jpg" placeholder="Product still 02"></image-slot></div>
+              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-model-1b" shape="rect" fit="cover" src="uploads-opt/checkin-model-1.png" placeholder="Ảnh checkin 01"></image-slot></div>
+              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-model-2b" shape="rect" fit="cover" src="uploads-opt/checkin-model-2.png" placeholder="Ảnh checkin 02"></image-slot></div>
+              <div data-m="igtile" style="width: 380px; aspect-ratio: 1 / 1; background: #f4f4f4; overflow: hidden; flex: none"><image-slot id="ig-model-3b" shape="rect" fit="cover" src="uploads-opt/checkin-model-3.png" placeholder="Ảnh checkin 03"></image-slot></div>
             </div>
           </div>
         </div>
@@ -431,11 +447,7 @@
           <p style="margin: 0 0 14px; font-size: 10px; letter-spacing: 0.22em; color: #999999">{{ seasonLabel }} · {{ detail.tierLabel }}</p>
           <h1 data-m="detail-h1" style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 40px; margin: 0 0 12px">{{ detail.name }}</h1>
           <p style="margin: 0 0 26px; font-size: 13px; color: #999999">{{ detail.shape }}</p>
-          <div style="display: flex; gap: 14px; align-items: baseline; padding-bottom: 30px; border-bottom: 1px solid #ededed">
-            <span style="font-size: 13px; color: #999999; text-decoration: line-through">{{ detail.was }}</span>
-            <span style="font-size: 20px">{{ detail.now }}</span>
-            <span style="font-size: 10px; letter-spacing: 0.16em; color: #D42B1E">{{ detail.off }}</span>
-          </div>
+          <div style="padding-bottom: 4px; border-bottom: 1px solid #ededed"></div>
 
           <div style="padding: 30px 0 0">
             <p style="margin: 0 0 14px; font-size: 10px; letter-spacing: 0.22em; color: #999999">{{ t.colour }}</p>
@@ -498,10 +510,6 @@
                 <h3 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">{{ p.name }}</h3>
                 <span style="font-size: 10px; color: #999999">{{ p.colors }}</span>
               </div>
-              <div style="display: flex; gap: 10px; align-items: baseline; padding-top: 8px">
-                <span style="font-size: 11px; color: #999999; text-decoration: line-through">{{ p.was }}</span>
-                <span style="font-size: 12px">{{ p.now }}</span>
-              </div>
             </article>
           </sc-for>
         </div>
@@ -527,7 +535,7 @@
       <div data-m="cart-grid" style="display: grid; grid-template-columns: 1fr 360px; gap: 72px; align-items: start">
         <div style="border-top: 1px solid #ededed">
           <sc-for list="{{ cart }}" as="i" hint-placeholder-count="2">
-            <div data-m="cart-line" style="display: grid; grid-template-columns: 120px 1fr auto; gap: 28px; padding: 28px 0; border-bottom: 1px solid #ededed; align-items: center">
+            <div data-m="cart-line" style="display: grid; grid-template-columns: 120px 1fr; gap: 28px; padding: 28px 0; border-bottom: 1px solid #ededed; align-items: center">
               <div data-m="cart-thumb" style="width: 120px; height: 120px; background: #f4f4f4; overflow: hidden">
                 <image-slot id="{{ i.slotId }}" shape="rect" fit="contain" src="{{ i.src }}" placeholder="{{ i.name }}"></image-slot>
               </div>
@@ -544,24 +552,16 @@
                   <button onClick="{{ i.remove }}" style="border: 0; background: transparent; cursor: pointer; font-family: Inter, sans-serif; font-size: 11px; color: #999999; padding: 0">{{ t.remove }}</button>
                 </div>
               </div>
-              <div style="text-align: right">
-                <p style="margin: 0; font-size: 13px">{{ i.lineTotal }}</p>
-              </div>
             </div>
           </sc-for>
         </div>
 
         <aside data-m="cart-aside" style="position: sticky; top: 150px; border: 1px solid #ededed; padding: 32px">
           <h2 style="margin: 0 0 26px; font-size: 11px; letter-spacing: 0.22em">{{ t.orderSummary }}</h2>
-          <div style="display: flex; justify-content: space-between; font-size: 12px; padding-bottom: 12px">
-            <span style="color: #999999">{{ t.subtotal }}</span><span>{{ subtotal }}</span>
-          </div>
           <div style="display: flex; justify-content: space-between; font-size: 12px; padding-bottom: 20px; border-bottom: 1px solid #ededed">
-            <span style="color: #999999">{{ t.shipping }}</span><span>{{ shipping }}</span>
+            <span style="color: #999999">{{ t.itemCountLabel }}</span><span>{{ itemCount }}</span>
           </div>
-          <div style="display: flex; justify-content: space-between; font-size: 15px; padding: 20px 0 28px">
-            <span>{{ t.total }}</span><span>{{ total }}</span>
-          </div>
+          <div style="padding: 20px 0 28px"></div>
           <button onClick="{{ checkout }}" style="width: 100%; height: 52px; background: #111111; color: #ffffff; border: 0; cursor: pointer; font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.2em" style-hover="background: #23234F">{{ t.checkout }}</button>
           <p style="margin: 20px 0 0; font-size: 11px; line-height: 1.9; color: #999999">{{ t.checkoutNote }}</p>
         </aside>
@@ -584,10 +584,6 @@
           <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 16px">
             <h3 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">{{ p.name }}</h3>
             <span style="font-size: 10px; color: #999999">{{ p.colors }}</span>
-          </div>
-          <div style="display: flex; gap: 10px; align-items: baseline; padding-top: 8px">
-            <span style="font-size: 11px; color: #999999; text-decoration: line-through">{{ p.was }}</span>
-            <span style="font-size: 12px">{{ p.now }}</span>
           </div>
         </article>
       </sc-for>
@@ -847,7 +843,8 @@ const TXT = {
     address: "ADDRESS", hours: "HOURS", phone: "PHONE", email: "EMAIL", hoursValue: "Monday–Sunday · 8:30 – 21:30",
     getDirections: "GET DIRECTIONS", contact: "CONTACT",
     breadcrumb: "COLLECTION", colour: "COLOUR", lens: "LENS", addToBag: "ADD TO BAG",
-    shipNote: "Free shipping over %s · 14-day returns · Lenses fitted free in the Hoàn Kiếm studio.",
+    shipNote: "14-day returns · Lenses fitted free in the Hoàn Kiếm studio · Ask in store for current pricing.",
+    itemCountLabel: "Items",
     material: "MATERIAL", size: "SIZE", weight: "WEIGHT", fit: "FIT", origin: "ORIGIN", originValue: "Designed in Seoul · Hand-finished in Sabae, Japan",
     alsoLike: "YOU MAY ALSO LIKE",
     bag: "Shopping bag", bagEmpty: "Your bag is empty.", browse: "BROWSE THE COLLECTION", remove: "REMOVE",
@@ -887,7 +884,8 @@ const TXT = {
     address: "ĐỊA CHỈ", hours: "GIỜ MỞ CỬA", phone: "ĐIỆN THOẠI", email: "EMAIL", hoursValue: "Thứ 2 – Chủ nhật · 8:30 – 21:30",
     getDirections: "CHỈ ĐƯỜNG", contact: "LIÊN HỆ",
     breadcrumb: "BỘ SƯU TẬP", colour: "MÀU", lens: "TRÒNG KÍNH", addToBag: "THÊM VÀO GIỎ",
-    shipNote: "Miễn phí vận chuyển cho đơn từ %s · Đổi trả trong 14 ngày · Lắp tròng miễn phí tại cửa hàng Hoàn Kiếm.",
+    shipNote: "Đổi trả trong 14 ngày · Lắp tròng miễn phí tại cửa hàng Hoàn Kiếm · Vui lòng liên hệ cửa hàng để biết giá.",
+    itemCountLabel: "Số sản phẩm",
     material: "CHẤT LIỆU", size: "KÍCH THƯỚC", weight: "TRỌNG LƯỢNG", fit: "DÁNG KÍNH", origin: "XUẤT XỨ", originValue: "Thiết kế tại Seoul · Hoàn thiện thủ công tại Sabae, Nhật Bản",
     alsoLike: "CÓ THỂ BẠN CŨNG THÍCH",
     bag: "Giỏ hàng", bagEmpty: "Giỏ hàng của bạn đang trống.", browse: "XEM BỘ SƯU TẬP", remove: "XÓA",
@@ -908,6 +906,46 @@ const TXT = {
 };
 
 const LEARN_ARTICLES = [
+  { id: "essilor-lenses", imgId: "learn-7", img: "learn-essilor.webp", credit: "", creditHref: "", placeholder: "Ảnh bìa bài Essilor",
+    tag: { en: "LENSES", vi: "TRÒNG KÍNH" },
+    title: { en: "Essilor Lenses: What You're Actually Paying For", vi: "Tròng Essilor: Bạn thực sự trả tiền cho điều gì" },
+    excerpt: { en: "Varilux, Crizal, Eyezen, Transitions — the Essilor range is built around specific problems rather than tiers. Here's what each line solves.", vi: "Varilux, Crizal, Eyezen, Transitions — dải sản phẩm Essilor được xây dựng quanh từng vấn đề cụ thể chứ không phải theo cấp bậc. Mỗi dòng giải quyết điều gì." },
+    body: {
+      en: [
+        "Essilor is a French lens maker with roughly a century of optical history, and its reputation rests less on a single flagship product than on four distinct lines, each aimed at a different problem. Knowing which line you need matters more than the price tier you pick within it.",
+        "Varilux is the progressive line — one lens carrying distance, intermediate and reading zones with no visible line between them. The engineering goal is a wide, stable corridor of clear vision so your eyes don't have to hunt for the right zone; newer generations widen that corridor and reduce the swim sensation first-time progressive wearers notice.",
+        "Crizal is the coating, not the lens: anti-reflective, scratch-resistant, dust- and water-repellent. It is the layer that decides whether your lenses still look clean after a year, and the one most worth paying for regardless of prescription.",
+        "Eyezen targets screen fatigue, adding a small amount of accommodative relief for near work plus blue-light filtering — aimed at people whose prescription is mild or nil but whose eyes ache by evening. Transitions handles light: clear indoors, dark outdoors, with the current generation reacting in well under a minute.",
+        "For a first pair, the honest hierarchy is: get the prescription right, add Crizal, then decide whether progressive or screen-focused design is what your day actually demands."
+      ],
+      vi: [
+        "Essilor là hãng tròng kính của Pháp với gần một thế kỷ lịch sử quang học, và uy tín của họ không nằm ở một sản phẩm chủ lực duy nhất mà ở bốn dòng riêng biệt, mỗi dòng nhắm vào một vấn đề khác nhau. Biết mình cần dòng nào quan trọng hơn việc chọn mức giá nào trong dòng đó.",
+        "Varilux là dòng đa tròng — một tròng kính chứa cả vùng nhìn xa, trung gian và đọc gần mà không có đường phân cách nhìn thấy được. Mục tiêu kỹ thuật là tạo một hành lang nhìn rõ rộng và ổn định để mắt không phải dò tìm vùng phù hợp; các thế hệ mới mở rộng hành lang đó và giảm cảm giác bồng bềnh mà người mới đeo đa tròng thường gặp.",
+        "Crizal là lớp phủ, không phải tròng: chống phản quang, chống xước, chống bụi và nước. Đây là lớp quyết định tròng kính của bạn còn trông sạch sau một năm hay không, và là thứ đáng chi tiền nhất bất kể độ kính của bạn là bao nhiêu.",
+        "Eyezen nhắm vào mỏi mắt do màn hình, thêm một chút hỗ trợ điều tiết cho tầm nhìn gần cùng khả năng lọc ánh sáng xanh — dành cho người độ kính nhẹ hoặc không có độ nhưng mắt mỏi vào buổi tối. Transitions xử lý ánh sáng: trong suốt trong nhà, sẫm màu ngoài trời, thế hệ hiện tại đổi màu trong chưa đầy một phút.",
+        "Với cặp kính đầu tiên, thứ tự ưu tiên thật lòng là: đo đúng độ, thêm Crizal, rồi mới quyết định xem bạn cần thiết kế đa tròng hay thiết kế cho màn hình."
+      ]
+    } },
+  { id: "zeiss-lenses", imgId: "learn-8", img: "learn-zeiss.jpg", credit: "", creditHref: "", placeholder: "Ảnh bìa bài ZEISS",
+    tag: { en: "LENSES", vi: "TRÒNG KÍNH" },
+    title: { en: "ZEISS Lenses: Precision Optics, Measured to Your Eye", vi: "Tròng ZEISS: Quang học chính xác, đo theo mắt bạn" },
+    excerpt: { en: "ZEISS came to eyewear from microscopes and camera lenses — and it shows in how the lenses are measured and surfaced. What that buys you in practice.", vi: "ZEISS bước vào ngành kính mắt từ kính hiển vi và ống kính máy ảnh — và điều đó thể hiện ở cách tròng kính được đo và gia công. Bạn thực sự nhận được gì." },
+    body: {
+      en: [
+        "ZEISS is a German optics house whose core business was never eyewear: microscopes, camera lenses, semiconductor lithography. Eyeglass lenses inherit that measurement culture, and the practical difference shows up in how a pair is specified rather than in any single marketing feature.",
+        "Individual lens designs are surfaced against your own measurements — how the frame sits on your face, the distance from lens to cornea, the wrap and tilt of the front. Two people with an identical prescription in different frames genuinely need different lens surfaces, and this is the part most cheap lenses skip.",
+        "SmartLife is the everyday line, designed around a head-and-eye movement pattern shaped by phones: frequent, fast switching between near and far. DuraVision is the coating family, and ZEISS's anti-reflective layers are unusually neutral in the reflection they leave — a faint blue-green rather than a strong purple.",
+        "PhotoFusion is the self-tinting option, and DriveSafe deserves a mention on its own: a design that reduces glare scatter from headlights and slightly widens the intermediate zone for mirror and dashboard glances. If night driving is where your current glasses fail, that is the specific lens to ask about.",
+        "The honest summary: ZEISS is worth it when your prescription is complex, strongly astigmatic, or progressive — situations where precise surfacing changes how comfortable the lens actually is. At a mild single-vision prescription the difference narrows considerably."
+      ],
+      vi: [
+        "ZEISS là hãng quang học Đức mà ngành kinh doanh cốt lõi chưa bao giờ là kính mắt: kính hiển vi, ống kính máy ảnh, quang khắc bán dẫn. Tròng kính mắt thừa hưởng văn hoá đo lường đó, và khác biệt thực tế nằm ở cách một cặp tròng được chỉ định, hơn là ở một tính năng quảng cáo đơn lẻ nào.",
+        "Các thiết kế tròng cá nhân hoá được gia công dựa trên số đo của chính bạn — gọng nằm thế nào trên mặt, khoảng cách từ tròng đến giác mạc, độ cong và độ nghiêng của mặt trước gọng. Hai người cùng độ kính nhưng đeo gọng khác nhau thực sự cần hai bề mặt tròng khác nhau, và đây chính là phần mà phần lớn tròng giá rẻ bỏ qua.",
+        "SmartLife là dòng dùng hằng ngày, thiết kế quanh thói quen chuyển động đầu và mắt hình thành bởi điện thoại: liên tục đổi tiêu điểm nhanh giữa gần và xa. DuraVision là họ lớp phủ, và lớp chống phản quang của ZEISS để lại màu phản chiếu khá trung tính — xanh lục nhạt thay vì tím đậm.",
+        "PhotoFusion là lựa chọn tự đổi màu, và DriveSafe đáng được nhắc riêng: thiết kế giảm tán xạ chói từ đèn xe ngược chiều và mở rộng nhẹ vùng nhìn trung gian cho các lần nhìn gương và bảng đồng hồ. Nếu lái xe ban đêm là lúc kính hiện tại của bạn không đủ tốt, đây chính là loại tròng nên hỏi tới.",
+        "Tóm lại thật lòng: ZEISS xứng đáng khi độ kính của bạn phức tạp, loạn thị nặng, hoặc cần đa tròng — những trường hợp mà gia công chính xác thay đổi hẳn độ dễ chịu khi đeo. Với độ đơn tròng nhẹ, khác biệt thu hẹp đáng kể."
+      ]
+    } },
   { id: "astigmatism-night-vision", imgId: "learn-1", img: "learn-astigmatism-night.png", credit: "", creditHref: "", placeholder: "Astigmatism & lights cover — bokeh city lights at night",
     tag: { en: "EYE HEALTH", vi: "SỨC KHỎE MẮT" },
     title: { en: "Astigmatism and Lights: How Astigmatism Affects Your Night Vision", vi: "Loạn thị và ánh sáng: Loạn thị ảnh hưởng đến tầm nhìn ban đêm ra sao" },
@@ -1246,14 +1284,13 @@ class Component extends DCLogic {
       cart: cart.map(l => ({
         name: l.name, shape: l.shape, lens: l.lens, qty: l.qty,
         slotId: "frame-" + l.id,
-        lineTotal: this.price(l.unit * l.qty),
         inc: () => this.setQty(l.key, 1),
         dec: () => this.setQty(l.key, -1),
         remove: () => this.setState(s => ({ cart: s.cart.filter(x => x.key !== l.key) }))
       })),
       freeOver: this.price(100000),
-      shipNote: t.shipNote.replace("%s", this.price(100000)),
-      subtotal: this.price(subtotal),
+      shipNote: t.shipNote,
+      itemCount: String(cart.reduce((n, l) => n + l.qty, 0)),
       shipping: shipFree ? (lang === "en" ? "Free" : "Miễn phí") : this.price(4000),
       total: this.price(subtotal + (shipFree ? 0 : 4000)),
       seasonLabel: season.label,
@@ -1296,7 +1333,7 @@ class Component extends DCLogic {
           select: () => this.setState({ colorIdx: i })
         })),
         lenses: LENSES.map(l => ({
-          label: l.label, extra: l.add ? "+ " + this.price(l.add) : "Included",
+          label: l.label, extra: "",
           ring: l.id === lensSel ? "#111111" : "#ededed",
           select: () => this.setState({ lens: l.id })
         })),

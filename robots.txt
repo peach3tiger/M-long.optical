@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mlongoptical.com/sitemap.xml

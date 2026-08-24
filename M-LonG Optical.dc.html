@@ -114,7 +114,7 @@
 <meta name="ext-resource-dependency" content="uploads-opt/learn-zeiss-s3.png" data-resource-id="learnZeiS3" />
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 56"><rect width="120" height="56" fill="#23234F"/><text x="60" y="32" font-size="11" fill="#fff" text-anchor="middle" font-family="serif" font-style="italic">M-LonG.</text></svg></template>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Store","name":"M-LonG.Optical","image":"https://mlongoptical.com/og.jpg","url":"https://mlongoptical.com/","telephone":"+84-933-101-200","sameAs":["https://www.facebook.com/profile.php?id=61593749995672","https://www.instagram.com/mlong.optical/","https://zalo.me/0933101200"],"priceRange":"$$","description":"Korean-minimal optical brand in Hanoi — sunglasses, optical frames and seasonal eyewear collections.","address":{"@type":"PostalAddress","streetAddress":"147A Le Duan","addressLocality":"Hoan Kiem","addressRegion":"Ha Noi","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.0227,"longitude":105.8412},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:30","closes":"21:30"}],"sameAs":["https://www.instagram.com/mlong.optical/"]}
+{"@context":"https://schema.org","@type":"Store","name":"M-LonG.Optical","image":"https://mlongoptical.com/og.jpg","url":"https://mlongoptical.com/","telephone":"+84-933-101-200","sameAs":["https://www.facebook.com/profile.php?id=61593749995672","https://www.instagram.com/mlong.optical/","https://zalo.me/0933101200"],"priceRange":"$$","description":"Korean-minimal optical brand in Hanoi — sunglasses, optical frames and seasonal eyewear collections.","address":{"@type":"PostalAddress","streetAddress":"147A Le Duan","addressLocality":"Hoan Kiem","addressRegion":"Ha Noi","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.0227,"longitude":105.8412},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:30","closes":"21:30"}]}
 </script>
 <style>
   body { margin: 0; background: #ffffff; -webkit-font-smoothing: antialiased; }
@@ -188,6 +188,8 @@
     [data-m="article-h1"] { font-size: 27px !important; }
     [data-m="more-grid"] { grid-template-columns: 1fr !important; gap: 32px !important; }
     [data-m="footer"] { padding: 48px 20px 64px !important; }
+    [data-m="sticky-cta"] { display: block !important; }
+    body { padding-bottom: 50px; }
     [data-m="footer-row"] { flex-direction: column !important; gap: 26px !important; }
     [data-m="footer-links"] { flex-wrap: wrap !important; gap: 16px 20px !important; }
     [data-m="root"] { overflow-x: hidden !important; }
@@ -801,7 +803,12 @@
       </div>
     </div>
   </footer>
-</div>
+  <div data-m="sticky-cta" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: #ffffff; border-top: 1px solid #E3E3E9">
+    <div style="display: flex">
+      <a href="tel:+842439420110" style="flex: 1; padding: 14px; text-align: center; color: #fff; background: #14142B; font-size: 12px; letter-spacing: 0.12em; font-weight: 600">GỌI NGAY</a>
+      <a href="https://zalo.me/0933101200" target="_blank" rel="noopener" style="flex: 1; padding: 14px; text-align: center; color: #fff; background: #0068FF; font-size: 12px; letter-spacing: 0.12em; font-weight: 600">ZALO</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+Ho%C3%A0n+Ki%E1%BA%BFm,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener" style="flex: 1; padding: 14px; text-align: center; color: #fff; background: #23234F; font-size: 12px; letter-spacing: 0.12em; font-weight: 600">CHỈ ĐƯỜNG</a>
+    </div>
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;hero&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;photo&quot;,&quot;editorial-split&quot;,&quot;type-first&quot;],&quot;default&quot;:&quot;photo&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Banner&quot;},&quot;season&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;SS26&quot;,&quot;FW25&quot;,&quot;ARCHIVE&quot;],&quot;default&quot;:&quot;SS26&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Collection&quot;},&quot;currency&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;KRW&quot;,&quot;USD&quot;,&quot;VND&quot;],&quot;default&quot;:&quot;VND&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Collection&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#23234F&quot;,&quot;#1C1C1C&quot;,&quot;#3A2A24&quot;,&quot;#D42B1E&quot;],&quot;default&quot;:&quot;#23234F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Brand&quot;}}">
@@ -1827,9 +1834,54 @@ class Component extends DCLogic {
     window.addEventListener("popstate", () => this.syncFromHash());
     this.syncFromHash();
     this.initMap();
+    this.updateSEO();
   }
 
-  componentDidUpdate() { this.initMap(); }
+  componentDidUpdate() { this.initMap(); this.updateSEO(); }
+
+  updateSEO() {
+    const s = this.state, lang = s.lang, origin = "https://mlongoptical.com/";
+    let path = "", title = null, desc = null;
+    const ld = [];
+    const bc = items => ({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it[0], item: it[1] })) });
+    if (s.view === "product" && s.pid) {
+      const all = [].concat(...Object.keys(s.catalog).map(k => s.catalog[k].items));
+      const p = all.find(x => x.id === s.pid);
+      if (p) {
+        path = "#/product/" + p.id;
+        title = p.name + " — " + p.shape + " | M-LonG Optical";
+        desc = "Gọng kính " + p.name + ", " + p.shape + ", chất liệu " + (p.material || "") + ". Đo mắt miễn phí, gia công tại 147A Lê Duẩn, Hoàn Kiếm, Hà Nội.";
+        ld.push({ "@context": "https://schema.org", "@type": "Product", name: p.name, image: origin + "uploads-opt/" + (p.img || ""), description: p.shape + (p.material ? ", " + p.material : ""), sku: p.id.toUpperCase(), brand: { "@type": "Brand", name: "M-LonG Optical" }, category: p.shape, offers: { "@type": "Offer", url: origin + path, priceCurrency: "VND", availability: "https://schema.org/InStock", itemCondition: "https://schema.org/NewCondition", seller: { "@type": "Store", name: "M-LonG Optical" } } });
+        ld.push(bc([["Trang chủ", origin], ["Sản phẩm", null], [p.name, origin + path]]));
+      }
+    } else if (s.view === "article" && s.articleId) {
+      const a = LEARN_ARTICLES.find(x => x.id === s.articleId);
+      if (a) {
+        path = "#/learn/" + a.id;
+        title = a.title[lang] + " | M-LonG Optical";
+        desc = a.excerpt[lang];
+        ld.push({ "@context": "https://schema.org", "@type": "Article", headline: a.title[lang], description: a.excerpt[lang], image: origin + "uploads-opt/" + (a.img || ""), author: { "@type": "Organization", name: "M-LonG Optical", url: origin }, publisher: { "@type": "Organization", name: "M-LonG Optical" }, mainEntityOfPage: { "@type": "WebPage", "@id": origin + path } });
+        if (a.faq && a.faq.length) ld.push({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: a.faq.map(f => ({ "@type": "Question", name: f.q[lang], acceptedAnswer: { "@type": "Answer", text: f.a[lang] } })) });
+        ld.push(bc([["Trang chủ", origin], ["Tìm hiểu", origin + "#/learn"], [a.title[lang], origin + path]]));
+      }
+    } else if (s.view === "home") {
+      title = "M-LonG.Optical — Korean Minimal Eyewear | Sunglasses & Optical Frames";
+      desc = "M-LonG.Optical — Korean-minimal eyewear in Hanoi. Shop sunglasses and optical frames from the 2026 SS collection, or visit our optical studio at 147A Le Duan, Hoan Kiem, Hanoi.";
+    }
+    if (title) document.title = title;
+    const md = document.querySelector('meta[name="description"]');
+    if (md && desc) md.setAttribute("content", desc);
+    const canon = document.querySelector('link[rel="canonical"]');
+    if (canon) canon.setAttribute("href", origin + path);
+    document.querySelectorAll('script[data-dyn-ld]').forEach(el => el.remove());
+    ld.filter(Boolean).forEach(obj => {
+      const el = document.createElement("script");
+      el.type = "application/ld+json";
+      el.setAttribute("data-dyn-ld", "1");
+      el.textContent = JSON.stringify(obj);
+      document.head.appendChild(el);
+    });
+  }
 
   initMap() {
     const el = document.getElementById("store-leaflet");

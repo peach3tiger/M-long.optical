@@ -325,7 +325,7 @@
 
     <section id="brand" data-m="brand-sec" style="padding: 112px 0">
       <div data-m="brand-banner" style="width: 100%; height: 76vh; min-height: 480px; background: #F5F5F8; position: relative; overflow: hidden; display: block">
-        <image-slot id="brand-portrait" shape="rect" fit="cover" src="{{ brandImg }}" placeholder="Drop the brand portrait — full-bleed, 2400×1400" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot>
+        <image-slot id="brand-portrait" shape="rect" fit="contain" src="{{ brandImg }}" placeholder="Drop the brand portrait — full-bleed, 2400×1400" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot>
       </div>
       <div data-m="brand-copy" style="max-width: 980px; margin: 0 auto; padding: 0 40px">
         <div style="text-align: center; padding-top: 56px">
@@ -3142,9 +3142,9 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
 
     return {
       t,
-      heroImg: imgSrc("banner-hero.jpg"),
+      heroImg: imgSrc("banner-brand.jpg"),
       heroSplitImg: imgSrc(F[31]),
-      brandImg: imgSrc("banner-brand.jpg"),
+      brandImg: imgSrc("banner-hero.jpg"),
       ig1: imgSrc(F[18]),
       ig3: imgSrc(F[34]),
       learnTrending: LEARN_ARTICLES.filter(a => a.trending).slice(0, 4).map(a => ({ imgId: a.imgId, img: imgSrc(a.img), credit: a.credit, creditHref: a.creditHref, placeholder: a.placeholder, title: a.title[lang], tag: a.tag[lang], open: () => this.openArticle(a.id) })),

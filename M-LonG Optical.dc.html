@@ -23,7 +23,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Italiana&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;family=Archivo:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet">
 <script src="./image-slot.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 <meta name="ext-resource-dependency" content="uploads-opt/1787294089220_5530799533190614497_5530799533190614497_df35bda4ba9cea7590d59a78ea568379.jpg" data-resource-id="prod0">
 <meta name="ext-resource-dependency" content="uploads-opt/1787294089240_5530799533190614497_5530799533190614497_78f5178c9f49da040a0789ef320ed4d6.jpg" data-resource-id="prod1">
 <meta name="ext-resource-dependency" content="uploads-opt/1787294089257_5530799533190614497_5530799533190614497_3638e3e567f735a2af90ac7435ee274d.jpg" data-resource-id="prod2">
@@ -132,6 +131,7 @@
   [data-m="more-grid"] image-slot, [data-m="igtile"] image-slot,
   [data-m="brand-banner"] image-slot, [data-m="store-map"] image-slot,
   [data-m="hero-split"] image-slot { aspect-ratio: auto !important; height: 100% !important; }
+  [data-m="product-grid"] > article { content-visibility: auto; contain-intrinsic-size: 0 420px; }
   [data-m="product-grid"] > article, [data-m="cart-thumb"],
   [data-m="learn-grid"] > div, [data-m="learn-grid"] > a,
   [data-m="more-grid"] > div, [data-m="more-grid"] > a,
@@ -367,7 +367,6 @@
               <article onClick="{{ p.open }}" style="cursor: pointer">
                 <div style="width: 100%; aspect-ratio: 1 / 1; background: #F5F5F8; overflow: hidden; position: relative">
                   <image-slot id="{{ p.slotId }}" shape="rect" fit="contain" src="{{ p.src }}" placeholder="{{ p.placeholder }}"></image-slot>
-                  <button onClick="{{ p.remove }}" title="Xoá sản phẩm" style="position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; border: 1px solid #E3E3E9; background: #ffffff; cursor: pointer; font-size: 13px; line-height: 1; color: #6B6B7B; z-index: 2">×</button>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 16px">
                   <h3 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">{{ p.name }}</h3>
@@ -2828,7 +2827,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   componentDidMount() {
     window.addEventListener("popstate", () => this.syncFromHash());
     this.syncFromHash();
-    this.initMap();
+    this.observeMap();
     this.updateSEO();
     try {
       const session = JSON.parse(localStorage.getItem("mlong_session") || "null");
@@ -2888,7 +2887,31 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     this.setState({ authUser: null, authEmail: "", authName: "", authPassword: "" });
   }
 
-  componentDidUpdate() { this.initMap(); this.updateSEO(); }
+  componentDidUpdate() { this.observeMap(); this.updateSEO(); }
+
+  // Leaflet (~150KB) + map tiles only load once the store section is close to
+  // the viewport, instead of on every page load — the map sits far below the fold.
+  observeMap() {
+    const el = document.getElementById("store-leaflet");
+    if (!el || el._mlObserved) return;
+    el._mlObserved = true;
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) { io.disconnect(); this.loadLeaflet(); }
+    }, { rootMargin: "600px" });
+    io.observe(el);
+  }
+
+  loadLeaflet() {
+    if (window.L) { this.initMap(); return; }
+    if (this._leafletLoading) return;
+    this._leafletLoading = true;
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+    script.integrity = "sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH";
+    script.crossOrigin = "anonymous";
+    script.onload = () => this.initMap();
+    document.head.appendChild(script);
+  }
 
   updateSEO() {
     const s = this.state, lang = s.lang, origin = "https://mlongoptical.com/";

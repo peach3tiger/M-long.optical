@@ -13,15 +13,15 @@ The site appears at `https://peach3tiger.github.io/M-long.optical/` within a min
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | The published site — fully self-contained (all images, fonts and scripts inlined). This is the only file GitHub Pages needs. |
-| `M-LonG Optical.dc.html` | Editable source of the same site. Open it directly in a browser. |
-| `support.js`, `image-slot.js` | Runtime helpers the source file loads. |
+| `index.html` | The published site — same file as `M-LonG Optical.dc.html`, loaded directly by GitHub Pages. It references `support.js`, `image-slot.js` and `uploads-opt/` as plain relative files (not inlined), which keeps it small and avoids upload-size limits. |
+| `M-LonG Optical.dc.html` | Editable source, identical to `index.html`. Open it directly in a browser. |
+| `support.js`, `image-slot.js` | Runtime helpers the site loads. |
 | `uploads/`, `uploads-opt/` | Product photography and article imagery (`-opt` = web-optimised versions used by the site). |
 
 ## Editing
 
-Edit `M-LonG Optical.dc.html`, then regenerate `index.html` from it so the published
-site picks up the change — `index.html` is a build output, not a file to edit by hand.
+Edit `M-LonG Optical.dc.html`, then copy it over `index.html` (same content) so the
+published site picks up the change.
 
 ## Sections
 

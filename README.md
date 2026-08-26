@@ -4,10 +4,14 @@ Korean-minimal eyewear storefront for M-LonG.Optical — Hanoi.
 
 ## Live site
 
-Served by GitHub Pages from `index.html` at the repo root.
+Served by GitHub Pages from `index.html` at the repo root, at
+`https://peach3tiger.github.io/M-long.optical/` (no custom domain — uses
+GitHub's default subpath, so all asset paths are relative and hash-based
+routing (`#/learn/...`) is used to avoid breaking under that subpath).
 
 To enable: **Settings → Pages → Source: Deploy from a branch → `main` / `/ (root)` → Save.**
-The site appears at `https://peach3tiger.github.io/M-long.optical/` within a minute or two.
+The site appears within a minute or two. If you later buy a custom domain,
+ask to switch to real URL paths for stronger SEO — that requires DNS setup first.
 
 ## Files
 

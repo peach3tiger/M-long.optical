@@ -12,10 +12,6 @@
 <meta name="description" content="M-LonG.Optical — Korean-minimal eyewear in Hanoi. Shop sunglasses and optical frames from the 2026 SS collection, or visit our optical studio at 147A Le Duan, Hoan Kiem, Hanoi.">
 <meta name="keywords" content="kinh mat ha noi, eyewear hanoi, korean eyewear, minimal sunglasses, optical frames, acetate glasses, optical store Hoan Kiem, M-LonG Optical">
 <link rel="canonical" href="https://mlongoptical.com/">
-<script>
-  var r = sessionStorage.getItem("spa-redirect");
-  if (r) { sessionStorage.removeItem("spa-redirect"); if (r !== location.pathname) history.replaceState(null, "", r); }
-</script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="M-LonG.Optical — Own your light.">
 <meta property="og:description" content="Contemporary Korean optical brand. Sunglasses, optical frames, and seasonal collections.">
@@ -2899,21 +2895,21 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       const all = [].concat(...Object.keys(s.catalog).map(k => s.catalog[k].items));
       const p = all.find(x => x.id === s.pid);
       if (p) {
-        path = "/product/" + p.id;
+        path = "#/product/" + p.id;
         title = p.name + " — " + p.shape + " | M-LonG Optical";
         desc = "Gọng kính " + p.name + ", " + p.shape + ", chất liệu " + (p.material || "") + ". Đo mắt miễn phí, gia công tại 147A Lê Duẩn, Hoàn Kiếm, Hà Nội.";
         ld.push({ "@context": "https://schema.org", "@type": "Product", name: p.name, image: origin + "uploads-opt/" + (p.img || ""), description: p.shape + (p.material ? ", " + p.material : ""), sku: p.id.toUpperCase(), brand: { "@type": "Brand", name: "Mạnh Long Optical" }, category: p.shape, offers: { "@type": "Offer", url: origin + path, priceCurrency: "VND", availability: "https://schema.org/InStock", itemCondition: "https://schema.org/NewCondition", seller: { "@type": "Store", name: "Mạnh Long Optical" } } });
-        ld.push(bc([["Trang chủ", origin], ["Sản phẩm", null], [p.name, origin + path.slice(1)]]));
+        ld.push(bc([["Trang chủ", origin], ["Sản phẩm", null], [p.name, origin + path]]));
       }
     } else if (s.view === "article" && s.articleId) {
       const a = LEARN_ARTICLES.find(x => x.id === s.articleId);
       if (a) {
-        path = "/learn/" + a.id;
+        path = "#/learn/" + a.id;
         title = a.title[lang] + " | M-LonG Optical";
         desc = a.excerpt[lang];
         ld.push({ "@context": "https://schema.org", "@type": "Article", headline: a.title[lang], description: a.excerpt[lang], image: origin + "uploads-opt/" + (a.img || ""), author: { "@type": "Person", name: "Alvin", url: origin + "/#/author/alvin", worksFor: { "@type": "Organization", name: "Mạnh Long Optical" } }, publisher: { "@type": "Organization", name: "Mạnh Long Optical" }, datePublished: "2026-08-26", dateModified: "2026-08-26", mainEntityOfPage: { "@type": "WebPage", "@id": origin + path } });
         if (a.faq && a.faq.length) ld.push({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: a.faq.map(f => ({ "@type": "Question", name: f.q[lang], acceptedAnswer: { "@type": "Answer", text: f.a[lang] } })) });
-        ld.push(bc([["Trang chủ", origin], ["Tìm hiểu", origin + "learn"], [a.title[lang], origin + path.slice(1)]]));
+        ld.push(bc([["Trang chủ", origin], ["Tìm hiểu", origin + "#/learn"], [a.title[lang], origin + path]]));
       }
     } else if (s.view === "home") {
       title = "M-LonG.Optical — Korean Minimal Eyewear | Sunglasses & Optical Frames";
@@ -2923,7 +2919,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     const md = document.querySelector('meta[name="description"]');
     if (md && desc) md.setAttribute("content", desc);
     const canon = document.querySelector('link[rel="canonical"]');
-    if (canon) canon.setAttribute("href", origin + path.replace(/^\//, ""));
+    if (canon) canon.setAttribute("href", origin + path);
     document.querySelectorAll('script[data-dyn-ld]').forEach(el => el.remove());
     ld.filter(Boolean).forEach(obj => {
       const el = document.createElement("script");
@@ -2965,20 +2961,20 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   }
 
   syncFromHash() {
-    const p = location.pathname.replace(/\/index\.html$/, "") || "/";
-    let m = p.match(/^\/product\/(.+)$/);
+    const h = location.hash;
+    let m = h.match(/^#\/product\/(.+)$/);
     if (m) { this.setState({ view: "product", pid: decodeURIComponent(m[1]) }); return; }
-    if (p === "/cart") { this.setState({ view: "cart" }); return; }
-    if (p === "/account") { this.setState({ view: "account" }); return; }
-    m = p.match(/^\/info\/([a-z]+)$/);
+    if (h === "#/cart") { this.setState({ view: "cart" }); return; }
+    if (h === "#/account") { this.setState({ view: "account" }); return; }
+    m = h.match(/^#\/info\/([a-z]+)$/);
     if (m) { this.setState({ view: "info", infoTab: m[1] }); return; }
-    m = p.match(/^\/learn\/(.+)$/);
+    m = h.match(/^#\/learn\/(.+)$/);
     if (m) { this.setState({ view: "article", articleId: decodeURIComponent(m[1]) }); return; }
-    if (p === "/search") return;
-    if (p === "" || p === "/") this.setState({ view: "home" });
+    if (h === "#/search") return;
+    if (h === "" || h === "#" || h === "#/") this.setState({ view: "home" });
   }
 
-  pushHash(h) { const p = h.replace(/^#/, "") || "/"; if (location.pathname !== p) history.pushState(null, "", p); }
+  pushHash(h) { if (location.hash !== h) history.pushState(null, "", h); }
 
   learnPageData() {
     const PER = 6;

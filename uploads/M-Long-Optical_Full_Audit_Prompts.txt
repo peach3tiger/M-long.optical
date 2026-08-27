@@ -1,0 +1,553 @@
+# M-LonG OPTICAL — FULL AUDIT + FIX GUIDE + PROMPTS
+# ================================================
+# Dùng để paste vào Claude Design / Claude Code để thực hiện toàn bộ fix
+# Website: https://peach3tiger.github.io/M-long.optical/
+# Repo: https://github.com/peach3tiger/M-long.optical
+# Ngành: Optical / Eyewear / Tiệm kính mắt
+# Địa chỉ: 147A Lê Duẩn, Hoàn Kiếm, Hà Nội
+# SĐT: 024 3942 0110 | Zalo: 0933 101 200
+
+================================================================================
+PHẦN 1: CRITICAL FIXES (Sửa trong tuần 1)
+================================================================================
+
+## 1.1 HASH URL — VẤN ĐỀ CHÍ MẠNG
+
+❌ HIỆN TẠI:
+- URL dạng: https://mlongoptical.com/#/product/aiyc-617
+- Google KHÔNG index được nội dung sau dấu #
+- Toàn bộ 40+ sản phẩm và 8 bài Learn không bao giờ lên Google
+
+✅ CẦN SỬA THÀNH:
+- /product/aiyc-617/
+- /learn/crizal-natural-look/
+- /learn/varilux-physio-extensee-review/
+
+CÁCH FIX:
+- Chuyển từ hash-based routing sang History API (pushState)
+- HOẶC tạo static HTML riêng cho từng trang
+- HOẶC dùng prerender service (Prerender.io)
+- HOẶC nếu dùng GitHub Pages: tạo folder riêng cho mỗi trang với index.html
+
+VÍ DỤ CẤU TRÚC STATIC:
+/
+├── index.html (trang chủ)
+├── product/
+│   ├── aiyc-617/
+│   │   └── index.html
+│   ├── aiyc-618/
+│   │   └── index.html
+│   └── ... (40+ sản phẩm)
+├── learn/
+│   ├── crizal-natural-look/
+│   │   └── index.html
+│   ├── varilux-physio-extensee-review/
+│   │   └── index.html
+│   └── ... (8 bài)
+├── sitemap.xml
+└── robots.txt
+
+## 1.2 FILE INDEX.HTML 23.5MB — QUÁ NẶNG
+
+❌ HIỆN TẠI: index.html = 23.5MB (toàn bộ JS inline, ảnh base64?)
+
+✅ CẦN SỬA:
+- Tách toàn bộ JS ra file .js riêng
+- Nén ảnh xuống WebP, <100KB mỗi ảnh
+- Dùng lazy loading cho ảnh: loading="lazy"
+- Dùng CDN cho ảnh (Cloudinary, Cloudflare Images)
+- Mục tiêu: index.html < 2MB, load < 2 giây
+
+## 1.3 THIẾU SITEMAP.XML
+
+Tạo file sitemap.xml ở root:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mlongoptical.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://mlongoptical.com/learn/crizal-natural-look</loc><priority>0.9</priority></url>
+  <url><loc>https://mlongoptical.com/learn/varilux-physio-extensee-review</loc><priority>0.9</priority></url>
+  <url><loc>https://mlongoptical.com/learn/transitions-gen-s-advantages</loc><priority>0.9</priority></url>
+  <url><loc>https://mlongoptical.com/learn/essilor-lenses</loc><priority>0.9</priority></url>
+  <url><loc>https://mlongoptical.com/learn/zeiss-lenses</loc><priority>0.9</priority></url>
+  <url><loc>https://mlongoptical.com/learn/astigmatism-night-vision</loc><priority>0.8</priority></url>
+  <url><loc>https://mlongoptical.com/learn/contacts-vs-glasses</loc><priority>0.8</priority></url>
+  <url><loc>https://mlongoptical.com/learn/blue-light-vs-uv</loc><priority>0.8</priority></url>
+  <url><loc>https://mlongoptical.com/learn/choosing-frames-face-shape</loc><priority>0.8</priority></url>
+  <url><loc>https://mlongoptical.com/learn/lens-coatings-explained</loc><priority>0.8</priority></url>
+  <url><loc>https://mlongoptical.com/learn/caring-for-your-glasses</loc><priority>0.8</priority></url>
+  <!-- Thêm 40+ URL sản phẩm -->
+</urlset>
+
+## 1.4 THIẾU ROBOTS.TXT
+
+Tạo file robots.txt ở root:
+
+User-agent: *
+Allow: /
+Sitemap: https://mlongoptical.com/sitemap.xml
+
+## 1.5 THIẾU FACEBOOK PIXEL + CAPI
+
+Thêm vào <head> (trước </head>):
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+Thêm events:
+- fbq('track', 'ViewContent') khi xem sản phẩm
+- fbq('track', 'Contact') khi click Zalo/Phone
+- fbq('track', 'FindLocation') khi click chỉ đường
+
+CAPI (Conversions API): Gửi events server-side qua Meta Business Manager.
+
+## 1.6 THIẾU GOOGLE ANALYTICS 4 + GTM
+
+Thêm vào <head>:
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+
+Thêm vào <body> (ngay sau <body>):
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+## 1.7 CANONICAL CỐ ĐỊNH — PHẢI SỬA
+
+❌ HIỆN TẠI: Mọi trang đều canonical về /
+
+✅ SỬA THÀNH CANONICAL ĐỘNG:
+
+Thay thế trong <helmet>:
+<link rel="canonical" href="https://mlongoptical.com{{ currentPath }}" />
+
+Thêm hreflang:
+<link rel="alternate" hreflang="vi" href="https://mlongoptical.com{{ currentPath }}?lang=vi" />
+<link rel="alternate" hreflang="en" href="https://mlongoptical.com{{ currentPath }}?lang=en" />
+<link rel="alternate" hreflang="x-default" href="https://mlongoptical.com{{ currentPath }}" />
+
+================================================================================
+PHẦN 2: SCHEMA MARKUP (Thêm vào từng trang)
+================================================================================
+
+## 2.1 LOCALBUSINESS SCHEMA (Có sẵn, cần bổ sung)
+
+Bổ sung vào schema hiện có:
+- "priceRange": "$$"
+- "openingHoursSpecification" chi tiết
+- "hasMap": "https://www.google.com/maps?cid=..."
+- "sameAs": [Facebook, Instagram, Zalo, TikTok links]
+
+## 2.2 PRODUCT SCHEMA (Cho mỗi trang sản phẩm)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "AIYC 617 — Cat-eye Acetate",
+  "image": "https://mlongoptical.com/uploads-opt/1787294144953_5530799533190614497_5530799533190614497_c618f2a264db37bd3563089d60e407e8.jpg",
+  "description": "Gọng kính mắt mèo acetate cao cấp từ bộ sưu tập SS26. Thiết kế Hàn Quốc tối giản, phù hợp mặt oval và tròn.",
+  "sku": "AIYC-617-BLK",
+  "brand": {
+    "@type": "Brand",
+    "name": "M-LonG Optical"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://mlongoptical.com/product/aiyc-617",
+    "priceCurrency": "VND",
+    "price": "79000",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Store",
+      "name": "M-LonG Optical",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "147A Lê Duẩn",
+        "addressLocality": "Hoàn Kiếm",
+        "addressRegion": "Hà Nội",
+        "addressCountry": "VN"
+      }
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127"
+  }
+}
+</script>
+
+## 2.3 ARTICLE SCHEMA (Cho mỗi bài Learn)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Crizal Natural Look là gì? Lớp phủ chống chói 360 độ",
+  "description": "Crizal Natural Look: đỉnh cao tròng kính chống phản quang cho vẻ đẹp tự nhiên. Đánh giá chi tiết tại M-LonG Optical Hà Nội.",
+  "image": "https://mlongoptical.com/uploads-opt/learn-crizal-cover.webp",
+  "author": {
+    "@type": "Organization",
+    "name": "M-LonG Optical",
+    "url": "https://mlongoptical.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "M-LonG Optical",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mlongoptical.com/og.jpg"
+    }
+  },
+  "datePublished": "2026-08-01",
+  "dateModified": "2026-08-20",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mlongoptical.com/learn/crizal-natural-look"
+  }
+}
+</script>
+
+## 2.4 FAQ SCHEMA (Cho bài có FAQ)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tròng đổi màu Essilor Transitions giá bao nhiêu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Giá tròng đổi màu Essilor Transitions Gen S phụ thuộc vào thiết kế tròng (đơn tròng/đa tròng), chiết suất và lớp phủ kèm theo. Mang đơn kính đến M-LonG Optical 147A Lê Duẩn để báo giá chính xác trong ngày."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có nên nâng cấp từ Gen 8 lên Gen S?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nếu bạn khó chịu vì tròng cũ vào nhà vẫn còn sẫm thì nên nâng. Gen S trả về trong suốt nhanh gấp đôi Gen 8."
+      }
+    }
+  ]
+}
+</script>
+
+## 2.5 BREADCRUMB SCHEMA
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://mlongoptical.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tìm hiểu",
+      "item": "https://mlongoptical.com/learn"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Crizal Natural Look là gì?",
+      "item": "https://mlongoptical.com/learn/crizal-natural-look"
+    }
+  ]
+}
+</script>
+
+================================================================================
+PHẦN 3: UI/UX FIXES
+================================================================================
+
+## 3.1 STICKY MOBILE CTA (Thêm vào cuối <body>)
+
+<style>
+@media (max-width: 768px) {
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    gap: 0;
+    background: #fff;
+    border-top: 1px solid #E3E3E9;
+  }
+  .sticky-cta a {
+    flex: 1;
+    padding: 14px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .sticky-cta .call { background: #14142B; }
+  .sticky-cta .zalo { background: #0068FF; }
+  .sticky-cta .map { background: #23234F; }
+}
+@media (min-width: 769px) { .sticky-cta { display: none; } }
+</style>
+
+<div class="sticky-cta">
+  <a href="tel:+842439420110" class="call">📞 GỌI NGAY</a>
+  <a href="https://zalo.me/0933101200" class="zalo">💬 ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=147A+Lê+Duẩn,+Hoàn+Kiếm,+Hà+Nội" class="map">🗺️ CHỈ ĐƯỜNG</a>
+</div>
+
+## 3.2 ALT TEXT SEO CHO ẢNH
+
+Thay thế alt text placeholder:
+
+❌ CŨ: alt="Mắt kính M-LonG Optical 147A Lê Duẩn"
+✅ MỚI: alt="gong-kinh-can-mat-meo-M-LonG-Optical-Hoan-Kiem-Ha-Noi"
+
+Pattern alt text:
+- Sản phẩm: "[loại]-[mô tả]-M-LonG-Optical-[quận]-[thành phố]"
+- Bài learn: "[chủ đề]-M-LonG-Optical-[thành phố]"
+- Hero: "tiem-kinh-M-LonG-Optical-147A-Le-Duan-Hoan-Kiem"
+
+## 3.3 GOOGLE BUSINESS PROFILE LINK
+
+Thêm vào footer và trang Store:
+
+<a href="https://www.google.com/maps?cid=YOUR_CID" target="_blank" rel="noopener">
+  Xem trên Google Maps ⭐ 4.8 (127 đánh giá)
+</a>
+
+================================================================================
+PHẦN 4: PROMPT TEMPLATES CHO AI (SEO + LOCAL + GEO + ADS)
+================================================================================
+
+---
+PROMPT 1: VIẾT LANDING PAGE DỊCH VỤ (SEO + LOCAL + GEO)
+---
+
+Bạn là Local SEO Expert chuyên ngành Optical tại Việt Nam. 
+Hãy viết landing page cho M-LonG Optical tại 147A Lê Duẩn, Hoàn Kiếm, Hà Nội.
+
+Dịch vụ: [Cắt kính cận / Tròng Essilor / Tròng ZEISS / Kính mát thời trang]
+Từ khóa chính: "[dịch vụ] Hoàn Kiếm", "tiệm kính gần đây", "đo mắt miễn phí Hà Nội"
+Từ khóa phụ: "tròng kính cận giá bao nhiêu", "gọng kính Hàn Quốc", "kính mát chính hãng"
+
+Yêu cầu kỹ thuật:
+1. H1: "[Dịch vụ] tại M-LonG Optical — 147A Lê Duẩn, Hoàn Kiếm"
+2. Mở đầu 50 từ: Trả lời trực tiếp "[dịch vụ] ở đâu uy tín tại Hoàn Kiếm"
+3. E-E-A-T: Nhắc đến kỹ thuật viên giàu kinh nghiệm, máy đo khúc xạ kỹ thuật số, đối tác Essilor/ZEISS
+4. Local Signals: Nhúng "147A Lê Duẩn", "gần Nhà hát Lớn", "gần Hồ Gươm", "quận Hoàn Kiếm", "Hà Nội"
+5. Schema-ready: H2/H3 rõ ràng, bảng so sánh, list "4 bước đo mắt tại M-LonG"
+6. GEO: Mỗi H2 có câu trả lời trực tiếp 1-2 câu trước khi giải thích chi tiết
+7. FAQ 5 câu schema-ready: Giá, thời gian, bảo hành, có cần hẹn trước không, giờ mở cửa
+8. CTA: "Gọi 024 3942 0110 đặt lịch đo mắt", "Nhắn Zalo 0933 101 200", "Chỉ đường đến 147A Lê Duẩn"
+9. Độ dài: 1800-2200 từ, tone thân thiện - chuyên nghiệp, tiếng Việt
+
+---
+PROMPT 2: VIẾT BÀI ĐĂNG GOOGLE BUSINESS PROFILE (GBP)
+---
+
+Bạn là Content Writer cho M-LonG Optical. 
+Viết 1 bài đăng GBP về chủ đề: "[Mẫu gọng kính mới / Khuyến mãi / Tips chăm sóc kính]"
+
+Yêu cầu:
+1. Tiêu đề hấp dẫn, có emoji, tối đa 58 ký tự
+2. Nội dung 150-300 từ, có CTA rõ ràng
+3. Nhúng từ khóa địa phương: "Hoàn Kiếm", "Hà Nội", "gần đây"
+4. Đề cập dịch vụ cụ thể: đo mắt, cắt kính, gọng kính Hàn Quốc
+5. CTA: "Gọi 024 3942 0110", "Nhắn Zalo", "Ghé 147A Lê Duẩn"
+6. Tone: Gần gũi, địa phương, không "salesy"
+
+---
+PROMPT 3: VIẾT KỊCH BẢN FACEBOOK ADS
+---
+
+Bạn là Facebook Ads Copywriter chuyên ngành Optical. 
+Viết bộ ads gồm 3 kịch bản cho M-LonG Optical:
+
+Mục tiêu: Lấy số điện thoại / Nhắn tin Zalo / Đến cửa hàng
+Đối tượng: Nam/Nữ 18-45, sống tại Hà Nội (Hoàn Kiếm, Ba Đình, Hai Bà Trưng), quan tâm kính mắt/thời trang
+USP: Gọng kính Hàn Quốc tối giản, đo mắt miễn phí, cắt tròng 30 phút lấy liền, đối tác Essilor/ZEISS
+
+Yêu cầu mỗi kịch bản:
+1. Hook đầu (dòng đầu): Dùng pain point hoặc câu hỏi (vd: "Kính cận cũ của bạn đã trầy xước?")
+2. Body: Giải quyết vấn đề + USP + social proof (số khách hàng/đánh giá)
+3. CTA: "Inbox để nhận ưu đãi 20%", "Gọi 024 3942 0110 đặt lịch", "Ghé 147A Lê Duẩn thử gọng"
+4. Hashtag: #MlongOptical #KinhMatHaNoi #HoanKiem #GongKinhHanQuoc
+5. Độ dài: 80-120 từ (phù hợp mobile)
+
+---
+PROMPT 4: VIẾT NỘI DUNG CHUẨN GEO (CHO AI SEARCH)
+---
+
+Bạn là AI Search Optimization Specialist. 
+Viết nội dung giúp M-LonG Optical được ChatGPT/Gemini đề xuất khi người dùng hỏi:
+- "Tiệm kính nào tốt gần đây?"
+- "Cắt kính cận ở đâu uy tín Hoàn Kiếm?"
+- "Tròng Essilor chính hãng mua ở đâu Hà Nội?"
+
+Yêu cầu GEO:
+1. Viết dạng "Knowledge Panel" ngắn gọn: M-LonG Optical là gì, ở đâu, dịch vụ nổi bật
+2. Cấu trúc Q&A rõ ràng: What/Where/Why/How
+3. Mỗi câu trả lời 40-60 từ, đủ để AI trích xuất làm direct answer
+4. Nhắc đến brand name + entity tự nhiên ≥3 lần
+5. Liệt kê citations: đối tác Essilor, đối tác ZEISS, địa chỉ cụ thể, giờ mở cửa
+6. Có bảng so sánh: "M-LonG Optical vs tiệm kính thông thường"
+
+---
+PROMPT 5: VIẾT BÀI BLOG LEARN (CHUẨN SEO + GEO)
+---
+
+Bạn là SEO Content Strategist chuyên ngành Optical. 
+Viết bài blog chuẩn SEO 2026 cho M-LonG Optical về chủ đề: "[Chủ đề kỹ thuật: Crizal/Varilux/Transitions/ZEISS]"
+
+Từ khóa chính: "[chủ đề] là gì", "[chủ đề] có tốt không"
+Từ khóa phụ: "[chủ đề] giá bao nhiêu", "so sánh [A] vs [B]"
+
+Yêu cầu:
+1. H1: Chứa từ khóa chính
+2. Mở đầu 50 từ: Trả lời trực tiếp câu hỏi chính
+3. E-E-A-T: Trích dẫn nguồn Essilor/ZEISS, số liệu thực tế, so sánh trung thực
+4. Schema-ready: H2/H3, bảng so sánh, list ưu nhược điểm
+5. FAQ 5 câu schema-ready
+6. Internal link: Link sang sản phẩm liên quan và trang đặt lịch
+7. CTA: "Đặt lịch đo mắt miễn phí tại 147A Lê Duẩn"
+8. Độ dài: 1500-2000 từ, tone chuyên gia nhưng dễ hiểu
+
+---
+PROMPT 6: VIẾT EMAIL/SMS/ZALO FOLLOW-UP SAU MUA
+---
+
+Bạn là CRM Copywriter cho tiệm kính. 
+Viết chuỗi 3 tin nhắn follow-up sau khi khách mua kính tại M-LonG Optical:
+
+Tin 1 (Ngay sau mua): Cảm ơn + hướng dẫn bảo quản + link đánh giá Google Maps
+Tin 2 (3 ngày sau): Hỏi thăm cảm giác đeo kính + giải đáp thắc mắc
+Tin 3 (30 ngày sau): Nhắc bảo hành + giới thiệu khuyến mãi mới + xin review
+
+Yêu cầu:
+- Mỗi tin 50-100 từ
+- Có tên khách [TÊN]
+- CTA rõ ràng: "Đánh giá 5 sao", "Nhắn Zalo", "Giới thiệu bạn bè"
+- Tone: Ấm áp, chuyên nghiệp, không spam
+
+================================================================================
+PHẦN 5: KẾ HOẠCH TRIỂN KHAI 30 NGÀY
+================================================================================
+
+Tuần 1: Foundation
+- Fix hash URL → path-based routing
+- Nén index.html < 2MB
+- Tạo sitemap.xml + robots.txt
+- Gắn Meta Pixel + GA4 + GTM
+- Fix canonical động + hreflang
+
+Tuần 2: Schema & Rich Snippets
+- Thêm Product Schema 40+ sản phẩm
+- Thêm Article Schema 8 bài learn
+- Thêm FAQ Schema cho bài có FAQ
+- Thêm Breadcrumb Schema
+- Thêm sticky CTA mobile
+
+Tuần 3: Local SEO
+- Tạo 3 landing page dịch vụ: /cat-kinh-can/, /trong-kinh-essilor/, /kinh-mat-thoi-trang/
+- Tối ưu alt text ảnh
+- Thêm internal linking
+- Tạo GBP post 2-3 bài/tuần
+- Xin 20 review từ khách cũ
+
+Tuần 4: Ads & AI Visibility
+- Chạy test Facebook Ads (3 creative)
+- Chạy Google Local Campaign
+- Xây dựng backlink địa phương
+- Theo dõi AI visibility (ChatGPT, Gemini)
+- Đo conversion và tối ưu
+
+================================================================================
+PHẦN 6: CHECKLIST FACEBOOK ADS READINESS
+================================================================================
+
+[ ] Message Match: Headline ads khớp 90% với landing page
+[ ] Load time < 2 giây
+[ ] Meta Pixel đã gắn (PageView, ViewContent, Contact, FindLocation)
+[ ] CAPI (Conversions API) đã setup
+[ ] Sticky CTA mobile: Gọi / Zalo / Chỉ đường
+[ ] Social Proof: Video testimonial + ảnh khách hàng
+[ ] Form/Zalo đơn giản (chỉ Tên + SĐT)
+[ ] UTM tracking cho từng campaign
+[ ] Landing page riêng cho từng nhóm sản phẩm
+[ ] A/B test creative (3-5 version)
+
+================================================================================
+PHẦN 7: THÔNG TIN DOANH NGHIỆP (Để điền vào Schema & Content)
+================================================================================
+
+Tên: M-LonG Optical
+Địa chỉ: 147A Lê Duẩn, Hoàn Kiếm, Hà Nội
+SĐT: 024 3942 0110
+Zalo: 0933 101 200
+Email: mlongoptical@gmail.com
+Website: https://mlongoptical.com
+Giờ mở cửa: T2-CN 09:00-21:00
+Mạng xã hội:
+- Facebook: https://www.facebook.com/mlongoptical
+- Instagram: https://www.instagram.com/mlongoptical
+- TikTok: https://www.tiktok.com/@mlongoptical
+- Zalo OA: [link]
+
+Đối tác: Essilor, ZEISS
+Dịch vụ chính:
+1. Cắt kính cận, viễn, loạn
+2. Tròng kính Essilor (Crizal, Varilux, Transitions)
+3. Tròng kính ZEISS
+4. Gọng kính thời trang (Hàn Quốc, Nhật Bản, Ý)
+5. Kính mát chính hãng
+6. Kính áp tròng
+7. Đo mắt miễn phí
+
+USP:
+- Gọng kính Hàn Quốc tối giản
+- Đo mắt miễn phí bằng máy hiện đại
+- Cắt tròng 30 phút lấy liền
+- Bảo hành 1 năm
+- Đối tác chính hãng Essilor & ZEISS
+
+================================================================================
+# END OF FILE — M-LonG Optical Full Audit & Prompt Pack
+================================================================================

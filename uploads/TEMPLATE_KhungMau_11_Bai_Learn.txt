@@ -1,0 +1,299 @@
+# KHUNG MẪU HYBRID — ÁP DỤNG CHO TẤT CẢ BÀI LEARN CÒN LẠI
+# ================================================
+# Website: M-LonG Optical
+# Địa chỉ: 147A Lê Duẩn, Hoàn Kiếm, Hà Nội
+# SĐT: 024 3942 0110 | Zalo: 0933 101 200
+# ================================================
+
+## QUY TẮC VÀNG
+1. GIỮ NGUYÊN 100% thân bài gốc của bạn — nội dung đã rất chất lượng
+2. CHỈ THÊM/Wrap các phần SEO kỹ thuật xung quanh
+3. Không viết lại, không thêm marketing fluff vào thân bài
+
+================================================================================
+CẤU TRÚC HTML CHUẨN CHO MỖI BÀI LEARN
+================================================================================
+
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 1. TITLE TAG: [Từ khóa chính] | M-LonG Optical -->
+  <title>[Từ khóa chính] | M-LonG Optical</title>
+
+  <!-- 2. META DESCRIPTION: 155 ký tự, có CTA + benefit + location -->
+  <meta name="description" content="[Mô tả 155 ký tự. Có từ khóa chính, địa chỉ 147A Lê Duẩn, Hoàn Kiếm, SĐT 024 3942 0110]">
+
+  <!-- 3. CANONICAL + HREFLANG -->
+  <link rel="canonical" href="https://mlongoptical.com/learn/[slug]">
+  <link rel="alternate" hreflang="vi" href="https://mlongoptical.com/learn/[slug]?lang=vi">
+  <link rel="alternate" hreflang="en" href="https://mlongoptical.com/learn/[slug]?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://mlongoptical.com/learn/[slug]">
+
+  <!-- 4. OPEN GRAPH -->
+  <meta property="og:title" content="[Từ khóa chính] | M-LonG Optical">
+  <meta property="og:description" content="[Mô tả OG]">
+  <meta property="og:image" content="https://mlongoptical.com/uploads-opt/learn-[slug]-cover.webp">
+  <meta property="og:url" content="https://mlongoptical.com/learn/[slug]">
+  <meta property="og:type" content="article">
+
+  <!-- 5. SCHEMA: Article + FAQPage + BreadcrumbList + LocalBusiness -->
+  <!-- Copy từ bài Crizal, chỉ đổi nội dung tương ứng -->
+
+</head>
+<body>
+
+  <!-- 6. BREADCRUMB UI -->
+  <nav aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Trang chủ</a></li>
+      <li>›</li>
+      <li><a href="/learn">Tìm hiểu</a></li>
+      <li>›</li>
+      <li aria-current="page">[Tên bài]</li>
+    </ol>
+  </nav>
+
+  <article>
+
+    <!-- 7. H1 -->
+    <h1>[Từ khóa chính — viết hoa chữ cái đầu mỗi từ]</h1>
+
+    <!-- 8. KEY TAKEAWAYS BOX (40-60 từ) — NGAY SAU H1 -->
+    <div class="article-summary">
+      <strong>📌 Tóm lại:</strong> [Trả lời trực tiếp câu hỏi chính trong 40-60 từ. 
+      Nhắc đến M-LonG Optical, địa chỉ 147A Lê Duẩn, Hoàn Kiếm, và lợi ích chính.]
+    </div>
+
+    <!-- 9. TABLE OF CONTENTS — CLICKABLE -->
+    <div class="toc">
+      <h2>Mục lục</h2>
+      <ul>
+        <li><a href="#section-1">[H2 đầu tiên của thân bài]</a></li>
+        <li><a href="#section-2">[H2 thứ hai]</a></li>
+        ... (liệt kê tất cả H2 trong thân bài)
+        <li><a href="#paa">Câu hỏi thường gặp (People Also Ask)</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- 10. MỞ ĐẦU MỚI — 50-80 từ, trả lời trực tiếp, có brand + location -->
+    <p>
+      [Viết lại mở đầu ngắn gọn: trả lời trực tiếp câu hỏi chính trong 1-2 câu. 
+      Nhắc đến M-LonG Optical, 147A Lê Duẩn, Hoàn Kiếm, Hà Nội. 
+      Không dài dòng, không "Trong nhịp sống hiện đại..."]
+    </p>
+
+    <!-- 11. THÂN BÀI — GIỮ NGUYÊN 100% NỘI DUNG GỐC CỦA BẠN -->
+    <h2 id="section-1">[H2 gốc]</h2>
+    <p>[Nội dung gốc — giữ nguyên từng chữ]</p>
+
+    ... (tất cả H2, H3, đoạn văn, list từ bài gốc — KHÔNG SỬA GÌ CẢ)
+
+    <!-- 12. BẢNG SO SÁNH HTML — NẾU BÀI CÓ SO SÁNH -->
+    <!-- Ví dụ: Contacts vs Glasses, Gen S vs Gen 8, Essilor vs ZEISS -->
+    <h2 id="so-sanh">So sánh [A] vs [B]</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tiêu chí</th>
+          <th>[A]</th>
+          <th>[B]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>...</td><td>...</td><td>...</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 13. PEOPLE ALSO ASK — 5 CÂU (thêm mới, không có trong bài gốc) -->
+    <h2 id="paa">Câu hỏi thường gặp (People Also Ask)</h2>
+
+    <div class="paa-item">
+      <h3>❓ [Câu hỏi 1]</h3>
+      <p><strong>[Trả lời ngắn gọn 1-2 câu]</strong> [Giải thích thêm 1-2 câu].</p>
+    </div>
+
+    <div class="paa-item">
+      <h3>❓ [Câu hỏi 2]</h3>
+      <p><strong>[Trả lời ngắn gọn]</strong> [Giải thích].</p>
+    </div>
+    ... (5 câu)
+
+    <!-- 14. FAQ — DÙNG FAQ GỐC CỦA BẠN (nếu có) hoặc viết 3-5 câu mới -->
+    <h2 id="faq">FAQ</h2>
+
+    <div class="faq-item">
+      <h3>[Câu hỏi 1 từ bài gốc]</h3>
+      <p>[Trả lời từ bài gốc — giữ nguyên]</p>
+    </div>
+    ... (3-5 câu)
+
+    <!-- 15. CTA LOCAL — DÙNG BẢN CỦA BẠN (gọn, 3 nút) -->
+    <div class="learn-cta">
+      <p><strong>Tới thử tại M-LonG Optical</strong></p>
+      <p>Đo mắt miễn phí bằng máy khúc xạ, cắt tròng lấy nhanh, tư vấn thật — hợp gì nói nấy. 
+      147A Lê Duẩn, Hoàn Kiếm, Hà Nội.</p>
+      <a href="tel:+842439420110">📞 Gọi 024 3942 0110</a>
+      <a href="https://zalo.me/0933101200">💬 Nhắn Zalo</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=147A+Lê+Duẩn,+Hoàn+Kiếm,+Hà+Nội">🗺️ Chỉ đường</a>
+    </div>
+
+    <!-- 16. MEDICAL DISCLAIMER — CHO BÀI Y TẾ (Astigmatism, Contacts vs Glasses) -->
+    <div class="medical-disclaimer">
+      <strong>⚠️ Lưu ý y tế:</strong> Thông tin trong bài viết chỉ mang tính chất tham khảo và không thay thế cho 
+      tư vấn của bác sĩ nhãn khoa. Nếu bạn có triệu chứng đau mắt, nhìn mờ hoặc đau đầu kéo dài, 
+      vui lòng đến M-LonG Optical hoặc cơ sở y tế để được khám và tư vấn chính xác.
+    </div>
+
+    <!-- 17. INTERNAL LINKS — CHÈN TRONG ĐOẠN VĂN (không danh sách rời) -->
+    <p>
+      Đọc thêm: <a href="/learn/[bai-lien-quan-1]">[Bài liên quan 1]</a>, 
+      <a href="/learn/[bai-lien-quan-2]">[Bài liên quan 2]</a>, 
+      <a href="/dich-vu/[dich-vu]">[Đặt lịch đo mắt miễn phí]</a>.
+    </p>
+
+  </article>
+
+  <!-- 18. STICKY MOBILE CTA -->
+  <div class="sticky-cta">
+    <a href="tel:+842439420110">📞 GỌI</a>
+    <a href="https://zalo.me/0933101200">💬 ZALO</a>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=147A+Lê+Duẩn,+Hoàn+Kiếm,+Hà+Nội">🗺️ CHỈ ĐƯỜNG</a>
+  </div>
+
+</body>
+</html>
+```
+
+================================================================================
+CHECKLIST ÁP DỤNG CHO TỪNG BÀI
+================================================================================
+
+Mỗi bài Learn PHẢI check đủ 18 mục:
+
+□ 1. Title tag: [Từ khóa] | M-LonG Optical
+□ 2. Meta description: 155 ký tự, có CTA + location
+□ 3. Canonical + hreflang (vi, en, x-default)
+□ 4. Open Graph tags (title, desc, image, url, type)
+□ 5. Schema JSON-LD inline: Article + FAQPage + BreadcrumbList + LocalBusiness
+□ 6. Breadcrumb UI (Trang chủ > Tìm hiểu > [Tên bài])
+□ 7. H1: [Từ khóa chính]
+□ 8. Key Takeaways box (40-60 từ) — NGAY SAU H1
+□ 9. Table of Contents — clickable, liệt kê đúng H2
+□ 10. Mở đầu mới (50-80 từ) — trả lời trực tiếp, có brand + location
+□ 11. Thân bài: GIỮ NGUYÊN 100% nội dung gốc
+□ 12. Bảng so sánh HTML (nếu bài có so sánh)
+□ 13. People Also Ask (5 câu) — mỗi câu trả lời 40-60 từ
+□ 14. FAQ (3-5 câu) — dùng FAQ gốc hoặc viết mới
+□ 15. CTA Local (gọn, 3 nút: Gọi / Zalo / Chỉ đường)
+□ 16. Medical Disclaimer (CHỈ cho bài y tế: Astigmatism, Contacts vs Glasses)
+□ 17. Internal links — chèn trong đoạn văn, tự nhiên
+□ 18. Alt text SEO cho tất cả ảnh (dùng bảng cụ thể của bạn)
+
+================================================================================
+ÁP DỤNG CHO 11 BÀI CÒN LẠI
+================================================================================
+
+--- BÀI 1: Varilux Physio Extensee Review ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: Review Schema (aggregateRating)
+- Thêm: Bảng so sánh Varilux vs các dòng đa tròng khác
+- PAA: 5 câu về đa tròng, độ tuổi, giá, bảo hành
+
+--- BÀI 2: Transitions Gen S — 6 ưu điểm ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: Bảng so sánh Gen S vs Gen 8 (HTML table)
+- PAA: 5 câu về đổi màu, thời gian, giá, bảo hành
+
+--- BÀI 3: Essilor Lenses — Tổng quan ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: Bảng so sánh các dòng Essilor (Crizal, Varilux, Transitions)
+- PAA: 5 câu về chọn dòng, giá, bảo hành
+- Internal link: Link đến TẤT CẢ bài con
+
+--- BÀI 4: ZEISS Lenses — Tròng kính ZEISS ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: Bảng so sánh Essilor vs ZEISS
+- PAA: 5 câu về so sánh 2 hãng
+
+--- BÀI 5: Astigmatism & Night Vision ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: Medical Disclaimer (bắt buộc)
+- Thêm: Symptom list
+- PAA: 5 câu về loạn thị, lái xe, kính phù hợp
+
+--- BÀI 6: Contacts vs Glasses ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: Bảng so sánh HTML (Kính áp tròng vs Gọng kính)
+- Thêm: Medical Disclaimer
+- PAA: 5 câu về ưu nhược điểm, giá, bảo trì
+
+--- BÀI 7: Blue Light vs UV ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: Bảng so sánh Blue Light vs UV
+- Thêm: Myth Busting section
+- PAA: 5 câu về sự khác biệt, bảo vệ mắt
+
+--- BÀI 8: Choosing Frames by Face Shape ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: Bảng "Dáng mặt → Gọng phù hợp → Mẫu tại M-LonG"
+- PAA: 5 câu về chọn gọng, dáng mặt
+
+--- BÀI 9: Lens Coatings Explained ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: MASTER TABLE tất cả lớp phủ
+- PAA: 5 câu về chọn lớp phủ, giá, bảo hành
+
+--- BÀI 10: Caring for Your Glasses ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: HowTo Schema (cho step-by-step)
+- Thêm: Checklist bảo quản (có thể download)
+- PAA: 5 câu về vệ sinh, bảo quản
+
+--- BÀI 11: Bao lâu nên khám mắt ---
+- Thân bài: GIỮ NGUYÊN bài gốc
+- Thêm: Bảng "Độ tuổi → Tần suất khám"
+- Thêm: Medical Disclaimer
+- PAA: 5 câu về khám mắt, độ tuổi, triệu chứng
+
+================================================================================
+ALT TEXT MẪU CHO TẤT CẢ BÀI
+================================================================================
+
+Pattern chung:
+- Cover: "[Chủ đề] — M-LonG Optical, Hoàn Kiếm, Hà Nội"
+- Sản phẩm: "[Loại] [Mô tả] — M-LonG Optical, Hoàn Kiếm, Hà Nội"
+- Hero: "Tiệm kính M-LonG Optical — 147A Lê Duẩn, Hoàn Kiếm, Hà Nội"
+
+Ví dụ cụ thể cho bài Crizal:
+| File ảnh | Alt text |
+|---|---|
+| learn-crizal-cover.webp | Crizal Natural Look Là Gì? Lớp Phủ Chống Chói 360 Độ — M-LonG Optical, Hoàn Kiếm, Hà Nội |
+| learn-crizal-s1.webp | Lớp phủ chống phản quang Crizal — thẩm mỹ, chống trầy, chống bám bẩn, chống UV mặt sau — M-LonG Optical, Hoàn Kiếm, Hà Nội |
+
+================================================================================
+PROMPT CHO CLAUDE DESIGN
+================================================================================
+
+Bạn là Senior Full-Stack Developer & SEO Expert. 
+Hãy áp dụng khung mẫu HYBRID này cho toàn bộ 11 bài Learn còn lại của M-LonG Optical.
+
+QUY TẮC VÀNG:
+1. GIỮ NGUYÊN 100% thân bài gốc — không viết lại, không thêm marketing fluff
+2. CHỈ thêm/wrap các phần SEO kỹ thuật: Head tags, Schema, Key Takeaways, TOC, PAA, CTA, Disclaimer
+3. Giữ nguyên tone chuyên gia, educational của bài gốc
+4. Tất cả schema phải inline trong <head>, không để file riêng
+5. CTA phải gọn, 3 nút, không chiếm nhiều không gian
+
+Yêu cầu đầu ra:
+1. 11 file HTML hoàn chỉnh (hoặc 11 folder với index.html)
+2. Mỗi file có đầy đủ 18 mục trong checklist
+3. Schema JSON-LD đã validate
+4. Mobile responsive
+5. Giữ nguyên màu sắc, font, layout hiện tại của website
+
+Repo: https://github.com/peach3tiger/M-long.optical

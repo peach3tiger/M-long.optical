@@ -99,6 +99,14 @@
 <meta name="ext-resource-dependency" content="uploads-opt/learn-crizal-s2b.webp" data-resource-id="learnCrizalS2b">
 <meta name="ext-resource-dependency" content="uploads-opt/learn-crizal-s2a.webp" data-resource-id="learnCrizalS2a">
 <meta name="ext-resource-dependency" content="uploads-opt/learn-crizal-s1.webp" data-resource-id="learnCrizalS1">
+<meta name="ext-resource-dependency" content="uploads-opt/learn-uvp-cover.jpg" data-resource-id="learnUvpCover">
+<meta name="ext-resource-dependency" content="uploads-opt/learn-uvp-s1.jpg" data-resource-id="learnUvpS1">
+<meta name="ext-resource-dependency" content="uploads-opt/learn-uvp-s2.jpg" data-resource-id="learnUvpS2">
+<meta name="ext-resource-dependency" content="uploads-opt/learn-uvp-s3.jpg" data-resource-id="learnUvpS3">
+<meta name="ext-resource-dependency" content="uploads-opt/learn-uvp-s4.jpg" data-resource-id="learnUvpS4">
+<meta name="ext-resource-dependency" content="uploads-opt/learn-uvp-s6.jpg" data-resource-id="learnUvpS6">
+<meta name="ext-resource-dependency" content="uploads-opt/learn-uvp-s7.jpg" data-resource-id="learnUvpS7">
+<meta name="ext-resource-dependency" content="uploads-opt/learn-vcm-cover.jpg" data-resource-id="learnVcmCover">
 <meta name="ext-resource-dependency" content="uploads-opt/learn-varilux-cover.webp" data-resource-id="learnVariluxCover">
 <meta name="ext-resource-dependency" content="uploads-opt/learn-gens-s8.webp" data-resource-id="learnGenS8">
 <meta name="ext-resource-dependency" content="uploads-opt/learn-gens-s7.webp" data-resource-id="learnGenS7">
@@ -167,7 +175,10 @@
     [data-m="special-sec"] { padding: 72px 20px !important; }
     [data-m="special-h2"] { font-size: 28px !important; }
     [data-m="learn-sec"] { padding: 72px 20px 0 !important; }
-    [data-m="learn-trending"] { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; margin-bottom: 40px !important; }
+    [data-m="learn-trending"] { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; margin-bottom: 24px !important; }
+    [data-m="hot-rest"] { grid-template-columns: 1fr !important; margin-bottom: 40px !important; }
+    [data-m="hot-tabs"] { overflow-x: auto !important; flex-wrap: nowrap !important; scrollbar-width: none; }
+    [data-m="hot-tabs"] > button { white-space: nowrap; flex: none; }
     [data-m="learn-categories"] { overflow-x: auto !important; flex-wrap: nowrap !important; padding-bottom: 4px; scrollbar-width: none; }
     [data-m="learn-categories"] > button { white-space: nowrap; flex: none; }
     [data-m="learn-grid"] { grid-template-columns: 1fr !important; gap: 40px !important; }
@@ -398,21 +409,48 @@
 
     <section id="learn" data-m="learn-sec" style="padding: 112px 40px 0">
       <div style="max-width: 1600px; margin: 0 auto">
-        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 36px">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px">
           <h2 style="margin: 0; font-size: 11px; letter-spacing: 0.22em">{{ t.navLearn }}</h2>
           <span style="font-size: 11px; letter-spacing: 0.16em; color: #6B6B7B">{{ t.trendingTopics }}</span>
         </div>
-        <div data-m="learn-trending" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 56px">
+        <div data-m="hot-tabs" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px">
+          <sc-for list="{{ hotPeriodTabs }}" as="hp" hint-placeholder-count="4">
+            <button onClick="{{ hp.select }}" style="cursor: pointer; padding: 8px 16px; font-family: Archivo, 'Helvetica Neue', sans-serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 999px; background: {{ hp.bg }}; color: {{ hp.fg }}; border: 1px solid {{ hp.bd }}" style-hover="opacity: 0.8">{{ hp.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ hotEmpty }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: -12px 0 28px; font-size: 12px; line-height: 1.6; color: #9A9AA8; max-width: 620px">{{ hotEmptyNote }}</p>
+        </sc-if>
+        <div data-m="learn-trending" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 32px">
           <sc-for list="{{ learnTrending }}" as="tr" hint-placeholder-count="4">
             <div onClick="{{ tr.open }}" style="cursor: pointer; display: grid; gap: 12px">
-              <div style="aspect-ratio: 16 / 9; background: #F5F5F8; overflow: hidden">
+              <div style="position: relative; aspect-ratio: 16 / 9; background: #F5F5F8; overflow: hidden">
                 <image-slot id="{{ tr.imgId }}" shape="rect" fit="cover" src="{{ tr.img }}" credit="{{ tr.credit }}" credit-href="{{ tr.creditHref }}" placeholder="{{ tr.placeholder }}"></image-slot>
+                <span style="position: absolute; top: 10px; left: 10px; z-index: 2; min-width: 30px; height: 30px; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,0.94); font-size: 14px; font-weight: 600; letter-spacing: 0; box-shadow: 0 1px 6px rgba(0,0,0,0.12)">{{ tr.badge }}</span>
               </div>
-              <p style="margin: 0; font-size: 10px; letter-spacing: 0.18em; color: #87642F">{{ tr.tag }}</p>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+                <p style="margin: 0; font-size: 10px; letter-spacing: 0.18em; color: #87642F">{{ tr.tag }}</p>
+                <sc-if value="{{ tr.hasViews }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin: 0; font-size: 11px; letter-spacing: 0.04em; color: #9A9AA8; font-variant-numeric: tabular-nums">👁 {{ tr.views }}</p>
+                </sc-if>
+              </div>
               <h4 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 17px; line-height: 1.35; font-weight: 400">{{ tr.title }}</h4>
             </div>
           </sc-for>
         </div>
+        <sc-if value="{{ hotHasRest }}" hint-placeholder-val="{{ true }}">
+          <div data-m="hot-rest" style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 40px; border-top: 1px solid #E3E3E9; margin-bottom: 56px">
+            <sc-for list="{{ hotRest }}" as="hr" hint-placeholder-count="6">
+              <div onClick="{{ hr.open }}" style="cursor: pointer; display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid #F0F0F4" style-hover="opacity: 0.62">
+                <span style="flex: none; width: 30px; font-size: 11px; letter-spacing: 0.06em; color: #9A9AA8; font-variant-numeric: tabular-nums">{{ hr.badge }}</span>
+                <p style="margin: 0; flex: 1; font-size: 14px; line-height: 1.45; color: #1C1C2E; text-wrap: pretty">{{ hr.title }}</p>
+                <sc-if value="{{ hr.hasViews }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin: 0; flex: none; font-size: 11px; letter-spacing: 0.04em; color: #9A9AA8; font-variant-numeric: tabular-nums">👁 {{ hr.views }}</p>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
         <div data-m="learn-categories" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px">
           <sc-for list="{{ learnCategories }}" as="lc" hint-placeholder-count="7">
             <button onClick="{{ lc.select }}" style="cursor: pointer; padding: 10px 20px; font-family: Archivo, 'Helvetica Neue', sans-serif; font-size: 11px; letter-spacing: 0.08em; border-radius: 999px; background: {{ lc.bg }}; color: {{ lc.fg }}; border: 1px solid {{ lc.bd }}" style-hover="opacity: 0.8">{{ lc.label }}</button>
@@ -427,7 +465,7 @@
                 <image-slot id="{{ art.imgId }}" shape="rect" fit="cover" src="{{ art.img }}" credit="{{ art.credit }}" credit-href="{{ art.creditHref }}" placeholder="{{ art.placeholder }}"></image-slot>
               </div>
               <p style="margin: 0; font-size: 13px; line-height: 1.7; color: #4C4C5C">{{ art.excerpt }}</p>
-              <p style="margin: 0; font-size: 11px; letter-spacing: 0.04em; color: #9A9AA8">{{ art.date }}</p>
+              <p style="margin: 0; font-size: 11px; letter-spacing: 0.04em; color: #9A9AA8; display: flex; gap: 12px"><span>{{ art.date }}</span><sc-if value="{{ art.hasViews }}" hint-placeholder-val="{{ false }}"><span style="font-variant-numeric: tabular-nums">👁 {{ art.views }}</span></sc-if></p>
             </div>
           </sc-for>
         </div>
@@ -952,6 +990,14 @@ const IMG_RES = {
   "learn-crizal-s2b.webp": "learnCrizalS2b",
   "learn-crizal-s2a.webp": "learnCrizalS2a",
   "learn-crizal-s1.webp": "learnCrizalS1",
+  "learn-uvp-cover.jpg": "learnUvpCover",
+  "learn-uvp-s1.jpg": "learnUvpS1",
+  "learn-uvp-s2.jpg": "learnUvpS2",
+  "learn-uvp-s3.jpg": "learnUvpS3",
+  "learn-uvp-s4.jpg": "learnUvpS4",
+  "learn-uvp-s6.jpg": "learnUvpS6",
+  "learn-uvp-s7.jpg": "learnUvpS7",
+  "learn-vcm-cover.jpg": "learnVcmCover",
   "learn-varilux-cover.webp": "learnVariluxCover",
   "learn-gens-s8.webp": "learnGenS8",
   "learn-gens-s7.webp": "learnGenS7",
@@ -1259,87 +1305,86 @@ const LEARN_CATEGORIES = [
 
 const LEARN_CTA = {
   en: "Everything above is easier to judge with your own eyes on the lens. Come by the Hoàn Kiếm store for a refraction and a frame fitting — we measure, cut and adjust in one visit, and we will tell you honestly what you do and do not need.",
-  vi: "Mọi thứ ở trên đều dễ quyết hơn khi bạn tự đeo thử. Ghé cửa hàng Hoàn Kiếm để đo khúc xạ và thử gọng — đo, cắt và tinh chỉnh trong một lần ghé, và chúng tôi sẽ nói thật bạn cần gì, không cần gì."
+  vi: "Đọc thì vẫn khó quyết. Đeo thử mới biết. Ghé 147A Lê Duẩn đo khúc xạ và thử gọng, đo cắt tinh chỉnh xong trong một lần ghé. Bạn cần gì chúng tôi nói, không cần gì cũng nói."
 };
 
 const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cover", img: "learn-crizal-cover.webp", credit: "", creditHref: "", placeholder: "Drop the Crizal Natural Look banner",
     tag: { en: "COATINGS", vi: "VÁNG PHỦ" },
     category: "all-about-eyewear", trending: true,
     title: { en: "What Is Crizal Natural Look? Anti-Glare on Both Surfaces", vi: "Crizal Natural Look là gì? Lớp phủ chống chói 360 độ" },
-    takeaway: { en: "Crizal Natural Look is Essilor's premium anti-reflective coating, applied to both lens surfaces to cut glare while keeping a natural, invisible look. Less flare in photos, night driving and screen use, plus scratch, smudge and water resistance. At Mạnh Long Optical (147A Lê Duẩn, Hoàn Kiếm, Hà Nội), it's the most requested coating for everyday glasses.", vi: "Crizal Natural Look là lớp phủ chống phản quang cao cấp của Essilor, phủ cả hai mặt tròng để cắt ánh sáng chói mà vẫn giữ vẻ trong tự nhiên. Ít lóa hơn khi chụp ảnh, lái xe ban đêm và nhìn màn hình, đồng thời chống trầy, chống bám vân tay và dễ lau. Tại Mạnh Long Optical (147A Lê Duẩn, Hoàn Kiếm, Hà Nội), đây là lớp phủ được hỏi nhiều nhất cho kính đeo hằng ngày." },
+    takeaway: { en: "Crizal Natural Look is Essilor's premium anti-reflective coating, applied to both lens surfaces to cut glare while keeping a natural, invisible look. Less flare in photos, night driving and screen use, plus scratch, smudge and water resistance. At Mạnh Long Optical (147A Lê Duẩn, Hoàn Kiếm, Hà Nội), it's the most requested coating for everyday glasses.", vi: "Crizal Natural Look phủ chống phản quang cả hai mặt tròng. Cái bạn thấy ngay là trong ảnh: không còn hai vệt trắng loang che mất mắt. Lái xe đêm cũng đỡ, đèn pha ngược chiều bớt loe thành quầng. Chống trầy và chống bám vân tay thì có, nhưng không phải mạnh nhất trong dòng Crizal — chỗ đó thuộc về Sapphire HR. Ở 147A Lê Duẩn, Hoàn Kiếm, đây là lớp phủ khách hỏi nhiều nhất cho kính đeo hằng ngày." },
     disclaimer: { en: "This article is for general information only and does not replace an eye doctor's diagnosis. If you experience persistent eye pain, blurred vision or headaches, please visit Mạnh Long Optical or a medical facility for proper examination.", vi: "Thông tin trong bài viết chỉ mang tính chất tham khảo và không thay thế cho tư vấn của bác sĩ nhãn khoa. Nếu bạn có triệu chứng đau mắt, nhìn mờ hoặc đau đầu kéo dài, vui lòng đến Mạnh Long Optical hoặc cơ sở y tế để được khám và tư vấn chính xác." },
     paa: [
-      { q: { en: "Does Crizal Natural Look yellow over time?", vi: "Crizal Natural Look có bị ố vàng theo thời gian không?" }, a: { en: "No. Crizal Natural Look uses a nano coating that contains no yellowing agents. However, harsh chemicals (90° alcohol, non-dedicated lens cleaner) can affect the coating — use a proper lens solution and microfibre cloth for long-term care.", vi: "Không. Crizal Natural Look sử dụng công nghệ phủ nano không chứa chất gây ố vàng. Tuy nhiên, nếu để kính tiếp xúc với hóa chất mạnh (cồn 90°, nước rửa kính không chuyên dụng), lớp phủ có thể bị ảnh hưởng. Hãy dùng nước rửa kính chuyên dụng và khăn microfiber để bảo quản lâu dài." } },
-      { q: { en: "Can Crizal Natural Look be applied to my existing lenses?", vi: "Có thể phủ Crizal Natural Look lên tròng kính cũ không?" }, a: { en: "No. The Crizal coating is applied during manufacturing at Essilor's factory, not added afterwards. You'll need new lenses to get it — Mạnh Long Optical runs a trade-in program to help with the cost.", vi: "Không thể. Lớp phủ Crizal được phủ trong quá trình sản xuất tại nhà máy Essilor, không phải phủ thêm sau khi cắt. Nếu bạn muốn dùng Crizal Natural Look, cần đặt tròng kính mới. Tại Mạnh Long Optical, chúng tôi có chương trình thu cũ đổi mới để hỗ trợ bạn." } },
-      { q: { en: "Does Natural Look work well with high-index 1.74 lenses?", vi: "Crizal Natural Look có phù hợp với tròng chiết suất cao 1.74 không?" }, a: { en: "Yes, and it's an ideal pairing. High-index lenses (1.67, 1.74) reflect more than standard ones; Natural Look cancels that reflection, making thin lenses look better and feel more comfortable — the most popular choice for high-myopia customers at Mạnh Long Optical.", vi: "Có, và đây là cặp đôi hoàn hảo. Tròng chiết suất cao (1.67, 1.74) thường phản chiếu mạnh hơn tròng thường. Crizal Natural Look giúp triệt tiêu phản chiếu này, giúp tròng mỏng nhìn đẹp hơn và mắt thoải mái hơn. Đây là lựa chọn phổ biến nhất của khách hàng cận nặng tại Mạnh Long Optical." } },
-      { q: { en: "What's the warranty on Crizal Natural Look?", vi: "Bảo hành Crizal Natural Look như thế nào?" }, a: { en: "A global 1-year warranty from Essilor. If the coating peels, cracks or fails within 12 months, you get a free replacement lens. Mạnh Long Optical handles the claim in-store — no need to ship back to Essilor.", vi: "Bảo hành toàn cầu 1 năm từ Essilor. Nếu lớp phủ bong tróc, nứt hoặc bị lỗi kỹ thuật trong vòng 12 tháng, bạn được đổi tròng mới miễn phí. Tại Mạnh Long Optical, chúng tôi hỗ trợ làm thủ tục bảo hành trực tiếp, không cần gửi về Essilor." } },
-      { q: { en: "Does Crizal Natural Look tint the lens colour?", vi: "Crizal Natural Look có làm màu tròng bị ngả không?" }, a: { en: "No. One of Natural Look's strengths is its absolute transparency — unlike cheaper coatings that can cast a faint green/blue tint, it keeps the lens naturally clear.", vi: "Không. Một trong những điểm mạnh của Crizal Natural Look là độ trong suốt tuyệt đối. Khác với một số lớp phủ rẻ tiền có thể tạo màu xanh/lá nhạt, Crizal Natural Look giữ màu tròng kính trong suốt tự nhiên." } }
+      { q: { en: "Does Crizal Natural Look yellow over time?", vi: "Crizal Natural Look có bị ố vàng theo thời gian không?" }, a: { en: "No. Crizal Natural Look uses a nano coating that contains no yellowing agents. However, harsh chemicals (90° alcohol, non-dedicated lens cleaner) can affect the coating — use a proper lens solution and microfibre cloth for long-term care.", vi: "Không. Lớp nano này không có chất gây vàng. Nhưng cồn 90 độ hay nước rửa kính trôi nổi thì làm hỏng phủ được — không phải vàng, mà mờ rồi bong thành vệt. Dùng dung dịch chuyên dụng với khăn vi sợi." } },
+      { q: { en: "Can Crizal Natural Look be applied to my existing lenses?", vi: "Có thể phủ Crizal Natural Look lên tròng kính cũ không?" }, a: { en: "No. The Crizal coating is applied during manufacturing at Essilor's factory, not added afterwards. You'll need new lenses to get it — Mạnh Long Optical runs a trade-in program to help with the cost.", vi: "Không được. Phủ làm trong nhà máy Essilor, lúc sản xuất tròng, không phải công đoạn thêm sau khi cắt. Muốn Natural Look thì phải đặt tròng mới. Ở đây có thu cũ đổi mới, đỡ được một phần tiền." } },
+      { q: { en: "Does Natural Look work well with high-index 1.74 lenses?", vi: "Crizal Natural Look có phù hợp với tròng chiết suất cao 1.74 không?" }, a: { en: "Yes, and it's an ideal pairing. High-index lenses (1.67, 1.74) reflect more than standard ones; Natural Look cancels that reflection, making thin lenses look better and feel more comfortable — the most popular choice for high-myopia customers at Mạnh Long Optical.", vi: "Có, và đáng nhất ở đúng nhóm này. Tròng 1.67 với 1.74 phản chiếu nhiều hơn tròng thường, nên phủ tốt bù lại thấy rõ hơn. Khách cận nặng ở đây chọn cặp này nhiều nhất." } },
+      { q: { en: "What's the warranty on Crizal Natural Look?", vi: "Bảo hành Crizal Natural Look như thế nào?" }, a: { en: "A global 1-year warranty from Essilor. If the coating peels, cracks or fails within 12 months, you get a free replacement lens. Mạnh Long Optical handles the claim in-store — no need to ship back to Essilor.", vi: "Essilor bảo hành toàn cầu 1 năm. Bong, nứt, lỗi phủ trong 12 tháng thì đổi tròng mới miễn phí. Mang ra 147A Lê Duẩn, chúng tôi làm giấy tờ hộ, bạn không phải gửi đi đâu." } },
+      { q: { en: "Does Crizal Natural Look tint the lens colour?", vi: "Crizal Natural Look có làm màu tròng bị ngả không?" }, a: { en: "No. One of Natural Look's strengths is its absolute transparency — unlike cheaper coatings that can cast a faint green/blue tint, it keeps the lens naturally clear.", vi: "Không. Đây là chỗ nó hơn mấy lớp phủ rẻ — mấy lớp kia soi lên đèn hay có ánh xanh lá nhạt. Natural Look để nguyên màu tròng." } }
     ],
-    excerpt: { en: "Crizal Natural Look: the peak of anti-reflective lenses, for a natural look.", vi: "Crizal Natural Look: đỉnh cao tròng kính chống phản quang cho vẻ đẹp tự nhiên." },
+    excerpt: { en: "Crizal Natural Look: the peak of anti-reflective lenses, for a natural look.", vi: "Chống phản quang cả hai mặt tròng. Đáng tiền với ai hay chụp ảnh và lái xe đêm." },
     related: ["crizal-easy-pro", "lens-coatings-explained", "essilor-authentic-check", "essilor-lenses"],
     body: { en: [], vi: [] },
-    lead: { en: "In modern life, glasses are not simply a vision aid but a fashion accessory that expresses your presence and personal style. Reflections from lamps, sunlight or screens on the lens surface, however, create glare that hides the real eyes behind the lens.\n\nTo resolve that aesthetic barrier for good, the Essilor group in France researched and produced the Crizal Natural Look coating technology. The article below gives a full view of Crizal Natural Look lenses and why they are a leading choice for your eyes.", vi: "Trong nhịp sống hiện đại, chiếc kính đeo mắt không chỉ đơn thuần là công cụ hỗ trợ thị lực mà còn là một phụ kiện thời trang thể hiện thần thái và phong cách cá nhân. Tuy nhiên, hiện tượng ánh đèn, ánh nắng hay ánh sáng màn hình phản chiếu lên bề mặt thấu kính thường tạo ra những vệt lóa mắt, che khuất đôi mắt thật đằng sau lớp kính.\n\nĐể giải quyết triệt để rào cản thẩm mỹ này, tập đoàn Essilor từ Pháp đã nghiên cứu và cho ra đời công nghệ váng phủ Crizal Natural Look. Bài viết dưới đây sẽ cung cấp góc nhìn toàn diện về dòng tròng kính Crizal Natural Look và lý do vì sao đây là lựa chọn hàng đầu cho đôi mắt của bạn." },
+    lead: { en: "In modern life, glasses are not simply a vision aid but a fashion accessory that expresses your presence and personal style. Reflections from lamps, sunlight or screens on the lens surface, however, create glare that hides the real eyes behind the lens.\n\nTo resolve that aesthetic barrier for good, the Essilor group in France researched and produced the Crizal Natural Look coating technology. The article below gives a full view of Crizal Natural Look lenses and why they are a leading choice for your eyes.", vi: "Có khách mang ảnh cưới đến, chỉ vào mặt mình. Hai mắt thành hai vệt trắng. Đèn flash dội lên mặt kính, ảnh chụp lại thì mất tiền mất công, mà không sửa được.\n\nChuyện đó xảy ra với kính không phủ chống phản quang, hoặc phủ mà chỉ phủ một mặt. Essilor làm Crizal Natural Look để giải quyết đúng cái đó. Dưới đây là những gì chúng tôi thấy sau nhiều năm cắt dòng tròng này ở xưởng — cả chỗ nó tốt và chỗ nó chưa đáng tiền." },
     sections: [
       { h: { en: "What are Crizal Natural Look lenses?", vi: "Tròng kính Crizal Natural Look là gì?" },
         ph: { en: "Crizal's best anti-reflective coating: advanced aesthetics, scratch resistance, easiness to clean, smudge resistance, dust repellency, water repellency, backside UV protection", vi: "Ảnh: lớp phủ chống phản quang tốt nhất của Crizal — thẩm mỹ, chống trầy, dễ lau, chống bám bẩn, chống bụi, chống nước, chống UV mặt sau" }, imgId: "s1", img: "learn-crizal-s1.webp", ar: "16 / 9",
         p: [
-          { en: "Crizal Natural Look is a premium lens line integrating the new-generation anti-reflective coating technology from the renowned French brand Essilor. The most distinctive point of this lens line is its ability to minimise light reflection on both the front and the back surface of the lens.", vi: "Crizal Natural Look là dòng tròng kính cao cấp tích hợp công nghệ váng phủ chống phản quang thế hệ mới đến từ thương hiệu Essilor nổi tiếng của Pháp. Điểm đặc trưng lớn nhất của dòng thấu kính này là khả năng giảm thiểu tối đa hiện tượng phản chiếu ánh sáng trên cả bề mặt trước và mặt sau của tròng kính." },
-          { en: "By eliminating unwanted glare, Crizal Natural Look delivers a transparency that is almost invisible. The person in front of you can see your eyes and your presence clearly and completely, unobstructed by any reflected light, which brings out the most natural beauty of your face.", vi: "Nhờ việc triệt tiêu các vệt sáng lóa không mong muốn, Crizal Natural Look mang lại độ trong suốt gần như vô hình. Người đối diện có thể nhìn thấy rõ ràng, trọn vẹn đôi mắt và thần thái của bạn mà không bị cản trở bởi bất kỳ vệt ánh sáng phản quang nào, giúp tôn lên vẻ đẹp tự nhiên nhất cho khuôn mặt." }
+          { en: "Crizal Natural Look is a premium lens line integrating the new-generation anti-reflective coating technology from the renowned French brand Essilor. The most distinctive point of this lens line is its ability to minimise light reflection on both the front and the back surface of the lens.", vi: "Natural Look là bản phủ chống phản quang cao cấp của Essilor, Pháp. Điểm chính chỉ có một: phủ cả mặt trước và mặt sau tròng. Phần lớn lớp phủ giá thấp làm mặt trước thôi, mà ánh sáng dội thẳng vào mắt người đeo lại đến từ phía sau — đèn sau lưng, đèn trần, màn hình." },
+          { en: "By eliminating unwanted glare, Crizal Natural Look delivers a transparency that is almost invisible. The person in front of you can see your eyes and your presence clearly and completely, unobstructed by any reflected light, which brings out the most natural beauty of your face.", vi: "Kết quả là tròng gần như không thấy. Người đối diện thấy mắt bạn, không thấy hai tấm kính. Nghe hơi giống lời quảng cáo, nhưng cứ đem hai cái tròng ra soi cạnh nhau dưới đèn là rõ." }
         ] },
-      { h: { en: "The outstanding advantages of Crizal Natural Look coating technology", vi: "Những ưu điểm vượt trội của công nghệ váng phủ Crizal Natural Look" },
+      { h: { en: "The outstanding advantages of Crizal Natural Look coating technology", vi: "Crizal Natural Look làm được những gì" },
         p: [
-          { en: "Beyond the aesthetic factor, Essilor Crizal Natural Look lenses also deliver a series of optical and clinical-standard vision protection features:", vi: "Không chỉ dừng lại ở yếu tố thẩm mỹ, tròng kính Essilor Crizal Natural Look còn mang lại hàng loạt tính năng quang học và bảo vệ thị lực chuẩn y khoa:" }
+          { en: "Beyond the aesthetic factor, Essilor Crizal Natural Look lenses also deliver a series of optical and clinical-standard vision protection features:", vi: "Ngoài chuyện đẹp, còn mấy thứ này:" }
         ],
         subs: [
           { h: { en: "Optimised aesthetics and confidence in communication", vi: "Tối ưu hóa tính thẩm mỹ và sự tự tin trong giao tiếp" },
             ph: { en: "Comparison of Essilor lenses with Crizal coating and ordinary lenses — the Essilor lens has less glare", vi: "Ảnh so sánh tròng Essilor có lớp phủ Crizal và tròng thường, tròng Essilor ít bị chói hơn" }, imgId: "s2a", img: "learn-crizal-s2a.webp", ar: "16 / 9",
             p: [
-              { en: "With ordinary lenses, when you take photographs under a flash, record video, livestream or talk to someone directly under electric light, the lens surface usually shows a very clear blue or white sheen. Crizal Natural Look removes up to 99% of these reflections, keeping the lens transparent. Your eyes become livelier, more attractive and deeper in every frame as well as in everyday encounters.", vi: "Với các dòng kính thông thường, khi bạn chụp ảnh dưới ánh đèn flash, quay video, livestream hay giao tiếp trực tiếp dưới ánh đèn điện, bề mặt kính thường bị bóng lóa sắc xanh hoặc sắc trắng rất rõ. Crizal Natural Look giúp loại bỏ đến 99% các phản xạ này, giữ cho tròng kính luôn trong suốt. Đôi mắt bạn sẽ trở nên linh hoạt, thu hút và có chiều sâu hơn trong mọi khung hình cũng như các cuộc gặp gỡ thường ngày." }
+              { en: "With ordinary lenses, when you take photographs under a flash, record video, livestream or talk to someone directly under electric light, the lens surface usually shows a very clear blue or white sheen. Crizal Natural Look removes up to 99% of these reflections, keeping the lens transparent. Your eyes become livelier, more attractive and deeper in every frame as well as in everyday encounters.", vi: "Chụp ảnh có flash, quay video, livestream, hay chỉ là ngồi họp dưới đèn trần — mặt kính thường ánh lên sắc xanh hoặc trắng. Essilor công bố cắt tới 99% phản xạ đó. Con số của hãng, tôi không có máy để đo lại. Nhưng khách quay lại kể ảnh chụp đỡ hẳn thì nhiều, và đó là thứ duy nhất tôi dám nói chắc." }
             ] },
           { h: { en: "Sharp vision, less eye fatigue during digital work", vi: "Tầm nhìn sắc nét, giảm mỏi mắt khi làm việc kỹ thuật số" },
             ph: { en: "A girl wearing Essilor lenses looking at a phone screen", vi: "Ảnh cô gái đeo tròng Essilor đang nhìn vào màn hình điện thoại" }, imgId: "s2b", img: "learn-crizal-s2b.webp", ar: "16 / 9",
             p: [
-              { en: "Internal light reflection on the lens is the main cause of image noise and eye fatigue. Crizal Natural Look increases light transmission through the lens, delivering a sharp, faithful image with high contrast. Whether you work continuously with a computer screen or read a book under a lamp at night, your eyes stay relaxed and comfortable.", vi: "Hiện tượng phản xạ ánh sáng nội bộ trên thấu kính là nguyên nhân chính gây ra tình trạng nhiễu ảnh và mỏi mắt. Crizal Natural Look giúp tăng cường độ truyền quang đi qua thấu kính, mang lại hình ảnh sắc nét, trung thực và có độ tương phản cao. Dù bạn làm việc liên tục với màn hình máy tính hay đọc sách dưới ánh đèn ban đêm, mắt vẫn duy trì được sự thư thái, dễ chịu." }
+              { en: "Internal light reflection on the lens is the main cause of image noise and eye fatigue. Crizal Natural Look increases light transmission through the lens, delivering a sharp, faithful image with high contrast. Whether you work continuously with a computer screen or read a book under a lamp at night, your eyes stay relaxed and comfortable.", vi: "Ánh sáng dội qua dội lại trong lòng tròng làm ảnh bị nhiễu, mắt phải làm việc thêm để bù vào. Lớp phủ tăng lượng sáng đi thẳng qua tròng, hình sắc hơn, tương phản cao hơn. Ngồi máy tính tám tiếng thì lúc đầu chả thấy khác gì, đến chiều mới thấy mắt đỡ nặng." }
             ] },
           { h: { en: "Effective glare control when travelling at night", vi: "Chống chói lóa hiệu quả khi di chuyển ban đêm" },
             ph: { en: "Comparison of the Crizal coating's night-time glare resistance", vi: "Ảnh so sánh khả năng chống chói trong ban đêm của lớp phủ Crizal" }, imgId: "s2c", img: "learn-crizal-s2c.webp", ar: "16 / 9",
             p: [
-              { en: "When you are in traffic at night, street lighting and headlights from oncoming vehicles easily create dangerous streaks of glare. The Crizal Natural Look coating eliminates these halos, helping the wearer observe the road clearly, react quickly and stay as safe as possible while driving.", vi: "Khi tham gia giao thông vào ban đêm, ánh đèn đường và đèn pha từ các phương tiện ngược chiều dễ tạo ra các vệt chói nguy hiểm. Lớp phủ Crizal Natural Look giúp triệt tiêu các quầng sáng này, hỗ trợ người đeo quan sát mặt đường rõ ràng, phản xạ nhanh nhạy và đảm bảo an toàn tối đa khi lái xe." }
+              { en: "When you are in traffic at night, street lighting and headlights from oncoming vehicles easily create dangerous streaks of glare. The Crizal Natural Look coating eliminates these halos, helping the wearer observe the road clearly, react quickly and stay as safe as possible while driving.", vi: "Đi đường Hà Nội buổi tối, đèn pha ngược chiều là thứ khó chịu nhất. Tròng phủ kém biến một cái đèn pha thành ba bốn quầng loang ra. Lớp phủ dẹp mấy quầng đó xuống, mặt đường hiện rõ hơn. Khách trên 45 tuổi nói về đúng chuyện này nhiều nhất." }
             ] },
           { h: { en: "Comprehensive eye protection against UV and dirt", vi: "Bảo vệ mắt toàn diện trước tia UV và bám bẩn" },
             ph: { en: "Essilor Crizal", vi: "Ảnh Essilor Crizal" }, imgId: "s2d", img: "learn-crizal-s2d.webp", ar: "16 / 9",
             p: [
-              { en: "Like the other renowned Essilor coating lines, Crizal Natural Look achieves a high UV protection index (E-SPF), blocking all harmful ultraviolet rays reaching the eye from both the front and the back surface of the lens. In addition, the smooth nano coating gives the lens water-repellency, limits dust and fingerprint build-up, and makes it extremely easy to wipe clean.", vi: "Tương tự như các dòng váng phủ danh tiếng khác của Essilor, Crizal Natural Look đạt chỉ số chống tia UV cao (E-SPF), giúp ngăn chặn toàn bộ tia cực tím có hại chiếu vào mắt từ cả mặt trước và mặt sau thấu kính. Bên cạnh đó, lớp phủ nano mượt mà giúp tròng kính có khả năng chống bám nước, hạn chế bám bụi bẩn, dấu vân tay và cực kỳ dễ dàng lau chùi." }
+              { en: "Like the other renowned Essilor coating lines, Crizal Natural Look achieves a high UV protection index (E-SPF), blocking all harmful ultraviolet rays reaching the eye from both the front and the back surface of the lens. In addition, the smooth nano coating gives the lens water-repellency, limits dust and fingerprint build-up, and makes it extremely easy to wipe clean.", vi: "Chỉ số chống UV (E-SPF) cao, chặn tia cực tím từ cả hai mặt tròng — kể cả tia dội từ phía sau vào mắt, thứ mà kính phủ một mặt bỏ sót hoàn toàn. Lớp nano ngoài cùng trơn nên nước không đọng, bụi và vân tay bám ít, lau một cái là sạch." }
             ] }
         ] },
-      { h: { en: "Who should choose Crizal Natural Look lenses?", vi: "Những ai nên lựa chọn tròng kính Crizal Natural Look?" },
+      { h: { en: "Who should choose Crizal Natural Look lenses?", vi: "Ai nên chọn tròng Crizal Natural Look" },
         p: [
-          { en: "With a design focused on transparency and high aesthetics, Crizal Natural Look is the perfect upgrade for many groups of users:", vi: "Với thiết kế tập trung vào sự trong suốt và tính thẩm mỹ cao, Crizal Natural Look là sự nâng cấp hoàn hảo cho nhiều đối tượng người dùng:" }
+          { en: "With a design focused on transparency and high aesthetics, Crizal Natural Look is the perfect upgrade for many groups of users:", vi: "Ai nên lấy:" }
         ],
         list: [
-          { en: "Businesspeople, speakers, MCs, content creators, or those who frequently have to appear in front of a video camera, take photographs and handle external communication.", vi: "Doanh nhân, diễn giả, MC, người sáng tạo nội dung hoặc những người thường xuyên phải xuất hiện trước ống kính máy quay, chụp ảnh và giao tiếp đối ngoại." },
-          { en: "Office staff and students who regularly work in electric lighting or interact a great deal with electronic devices.", vi: "Nhân viên văn phòng, sinh viên làm việc thường xuyên trong môi trường ánh sáng đèn điện hoặc tương tác nhiều với thiết bị điện tử." },
-          { en: "People with high myopia or astigmatism who want a thin, light, transparent pair of lenses so the eyes look natural and do not feel \u201Cthick and heavy\u201D.", vi: "Những người có độ cận, loạn thị cao muốn sở hữu một cặp tròng kính mỏng nhẹ, trong suốt để đôi mắt trông tự nhiên và không bị cảm giác \u201Cdày cộp\u201D." },
-          { en: "People who frequently drive at night and need an optimal solution for limiting glare from oncoming headlights.", vi: "Người thường xuyên lái xe vào ban đêm cần một giải pháp hạn chế chói lóa tối ưu từ đèn xe đối diện." }
+          { en: "Businesspeople, speakers, MCs, content creators, or those who frequently have to appear in front of a video camera, take photographs and handle external communication.", vi: "Người hay xuất hiện trước ống kính. MC, giáo viên dạy online, làm content, bán hàng livestream." },
+          { en: "Office staff and students who regularly work in electric lighting or interact a great deal with electronic devices.", vi: "Nhân viên văn phòng và sinh viên, ngồi dưới đèn điện với màn hình cả ngày." },
+          { en: "People with high myopia or astigmatism who want a thin, light, transparent pair of lenses so the eyes look natural and do not feel \u201Cthick and heavy\u201D.", vi: "Cận nặng, loạn cao. Tròng 1.67 với 1.74 vốn phản chiếu mạnh hơn tròng thường, nên phủ tốt lại càng đáng tiền." },
+          { en: "People who frequently drive at night and need an optimal solution for limiting glare from oncoming headlights.", vi: "Người lái xe đêm, nhất là chạy đường dài." }
         ] },
       { h: { en: "Who shouldn't rush into Crizal Natural Look", vi: "Ai chưa cần vội chọn Crizal Natural Look" },
         p: [
-          { en: "Natural Look is a premium tier, not a default. It's not the right first purchase for everyone:", vi: "Natural Look là dòng cao cấp, không phải lựa chọn mặc định cho tất cả. Đây chưa hẳn là lựa chọn đầu tiên phù hợp với mọi người:" }
+          { en: "Natural Look is a premium tier, not a default. It's not the right first purchase for everyone:", vi: "Không phải ai cũng cần bản này. Mấy trường hợp nên tính lại:" }
         ],
         list: [
-          { en: "You rarely photograph, video-call or drive after dark — a standard anti-reflective coating already covers your daily needs.", vi: "Bạn ít chụp ảnh, gọi video hay lái xe ban đêm — một lớp chống phản quang thường đã đủ dùng hằng ngày." },
-          { en: "You tend to drop or scratch glasses often — Crizal Sapphire HR's scratch resistance matters more for you than invisible anti-glare.", vi: "Bạn hay làm rơi hoặc làm trầy kính — khả năng chống trầy của Crizal Sapphire HR quan trọng với bạn hơn là độ trong không phản chiếu." },
-          { en: "Your main concern is blue light from screens rather than reflection — ask about the blue-light version instead.", vi: "Điều bạn quan tâm nhất là ánh sáng xanh từ màn hình, không phải phản chiếu — nên hỏi về bản có lọc ánh sáng xanh." }
+          { en: "You rarely photograph, video-call or drive after dark — a standard anti-reflective coating already covers your daily needs.", vi: "Ít chụp ảnh, ít ra đường buổi tối. Lớp chống phản quang thường đủ dùng. Tiền chênh để dành nâng chiết suất tròng còn ích hơn." },
+          { en: "You tend to drop or scratch glasses often — Crizal Sapphire HR's scratch resistance matters more for you than invisible anti-glare.", vi: "Hay làm rơi kính, hay quẳng kính vào túi không hộp. Chống trầy của Sapphire HR quan trọng với bạn hơn." },
+          { en: "Your main concern is blue light from screens rather than reflection — ask about the blue-light version instead.", vi: "Vấn đề của bạn là màn hình chứ không phải phản chiếu. Hỏi bản có kèm lọc ánh sáng xanh." }
         ] },
-      { h: { en: "Why have your eyes measured and buy Crizal Natural Look at Mạnh Long Optical", vi: "Lý do nên đo khám và chọn mua Crizal Natural Look tại Mạnh Long Optical" },
+      { h: { en: "Why have your eyes measured and buy Crizal Natural Look at Mạnh Long Optical", vi: "Đo mắt và đặt tròng Crizal Natural Look ở Mạnh Long Optical" },
         ph: { en: "Nationwide genuine distribution system for Essilor Crizal Natural Look lenses — Mạnh Long Optical", vi: "Ảnh hệ thống phân phối sản phẩm tròng kính Essilor Crizal Natural Look chính hãng toàn quốc Mạnh Long Optical" }, imgId: "s4", img: "learn-crizal-s4.webp", ar: "16 / 9",
         p: [
-          { en: "At Mạnh Long Optical we apply an in-depth, clinical-standard vision examination process with an automated digital eye testing system. Our experienced technicians will help you determine your refraction and pupillary distance precisely, and advise you in detail on the lens index best suited to the frame you have chosen.", vi: "Tại Mạnh Long Optical, chúng tôi áp dụng quy trình đo khám thị lực chuyên sâu chuẩn y khoa với hệ thống máy móc kiểm tra mắt kỹ thuật số tự động. Đội ngũ kỹ thuật viên giàu kinh nghiệm tại Mạnh Long Optical sẽ giúp bạn xác định chính xác độ khúc xạ, khoảng cách đồng tử và tư vấn chi tiết chiết suất tròng kính phù hợp nhất với gọng kính đã chọn." },
-          { en: "Mạnh Long Optical is committed to supplying 100% genuine Essilor Crizal Natural Look lenses imported from France. Customers are always able to inspect the sealed packaging directly, test the coating features, and receive the full genuine warranty card from the manufacturer.", vi: "Mạnh Long Optical cam kết cung cấp tròng kính Essilor Crizal Natural Look chính hãng 100% nhập khẩu từ Pháp. Khách hàng luôn được trực tiếp kiểm tra bao bì niêm phong, thử các tính năng váng phủ và nhận đầy đủ thẻ bảo hành chính hãng từ nhà sản xuất." }
+          { en: "At Mạnh Long Optical we apply an in-depth, clinical-standard vision examination process with an automated digital eye testing system. Our experienced technicians will help you determine your refraction and pupillary distance precisely, and advise you in detail on the lens index best suited to the frame you have chosen.", vi: "Đo ở đây bắt đầu bằng máy khúc xạ tự động, rồi kiểm lại bằng thử kính thật — không đọc số máy rồi cắt luôn. Khoảng cách đồng tử đo riêng cho từng gọng, vì lệch một hai milimet là đeo mỏi, độ càng cao càng rõ." }
         ] },
       { h: { en: "Crizal Natural Look vs Easy Pro vs Sapphire HR", vi: "So sánh Crizal Natural Look vs Easy Pro vs Sapphire HR" },
         p: [
-          { en: "If you're deciding between Crizal coatings, here's a comparison based on real customer experience at Mạnh Long Optical, Hoàn Kiếm.", vi: "Nếu bạn đang phân vân giữa các lớp phủ Crizal, đây là bảng so sánh dựa trên trải nghiệm thực tế của khách hàng tại Mạnh Long Optical Hoàn Kiếm." }
+          { en: "If you're deciding between Crizal coatings, here's a comparison based on real customer experience at Mạnh Long Optical, Hoàn Kiếm.", vi: "Đang phân vân giữa mấy lớp Crizal thì xem bảng này. Dựa trên khách ở Hoàn Kiếm mang kính quay lại sau một hai năm dùng." }
         ],
         table: { headers: [{ en: "Criteria", vi: "Tiêu chí" }, { en: "Natural Look", vi: "Natural Look" }, { en: "Easy Pro", vi: "Easy Pro" }, { en: "Sapphire HR", vi: "Sapphire HR" }],
           rows: [
@@ -1350,7 +1395,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
           ] } },
       { h: { en: "Crizal Natural Look vs an unbranded anti-reflective coating", vi: "Crizal Natural Look so với lớp phủ chống phản quang không rõ nguồn gốc" },
         p: [
-          { en: "Every so often a customer brings in glasses bought online with an \"anti-reflective coating\" that peeled within months. Here's what tends to separate the two under a lab microscope.", vi: "Không ít khách mang đến kính mua online có \"lớp chống phản quang\" bị bong chỉ sau vài tháng. Đây là những điểm thường khác nhau khi soi dưới kính hiển vi trong xưởng." }
+          { en: "Every so often a customer brings in glasses bought online with an \"anti-reflective coating\" that peeled within months. Here's what tends to separate the two under a lab microscope.", vi: "Thỉnh thoảng có người mang kính mua online đến, lớp \"chống phản quang\" bong thành vệt sau bốn năm tháng. Soi trong xưởng thì thường lệch nhau ở mấy chỗ này." }
         ],
         table: { headers: [{ en: "Factor", vi: "Yếu tố" }, { en: "Unbranded coating", vi: "Lớp phủ không rõ nguồn" }, { en: "Crizal Natural Look", vi: "Crizal Natural Look" }],
           rows: [
@@ -1359,17 +1404,17 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
             [{ en: "Warranty", vi: "Bảo hành" }, { en: "None or seller-only", vi: "Không có hoặc chỉ do người bán tự cam kết" }, { en: "1-year global Essilor warranty", vi: "Bảo hành toàn cầu 1 năm từ Essilor" }],
             [{ en: "Typical lifespan", vi: "Độ bền thường gặp" }, { en: "Peeling within months is common", vi: "Dễ bong tróc chỉ sau vài tháng" }, { en: "Years with correct cleaning", vi: "Nhiều năm nếu vệ sinh đúng cách" }]
           ] } },
-      { h: { en: "How to care for Crizal Natural Look lenses properly", vi: "Hướng dẫn chăm sóc tròng kính Crizal Natural Look đúng cách" },
+      { h: { en: "How to care for Crizal Natural Look lenses properly", vi: "Lau và giữ tròng Crizal Natural Look" },
         ph: { en: "A hand cleaning glasses", vi: "Ảnh tay đang lau kính" }, imgId: "s5", img: "learn-crizal-s5.webp", ar: "16 / 9",
         p: [
-          { en: "To preserve the invisible transparency and the durability of the Crizal Natural Look coating, you should keep up a proper lens cleaning habit. Every day, spray a small amount of dedicated lens cleaning solution and use the soft microfibre cloth supplied with the glasses to clean them gently. Avoid using a shirt hem, dry tissue or cleaning agents with a strong pH to wipe the lenses.", vi: "Để gìn giữ độ trong suốt vô hình và độ bền cho lớp váng phủ Crizal Natural Look, bạn nên duy trì thói quen vệ sinh kính đúng chuẩn. Hằng ngày, hãy xịt một lượng nhỏ dung dịch lau kính chuyên dụng và dùng khăn lau microfiber mềm mịn đi kèm để làm sạch nhẹ nhàng. Tránh dùng vạt áo, khăn giấy khô hay chất tẩy rửa có độ pH mạnh để lau kính." }
+          { en: "To preserve the invisible transparency and the durability of the Crizal Natural Look coating, you should keep up a proper lens cleaning habit. Every day, spray a small amount of dedicated lens cleaning solution and use the soft microfibre cloth supplied with the glasses to clean them gently. Avoid using a shirt hem, dry tissue or cleaning agents with a strong pH to wipe the lenses.", vi: "Rửa nước trước. Rồi xịt dung dịch lau kính, lau bằng khăn vi sợi đi kèm. Đừng lau khô — bụi trên mặt tròng lúc đó thành giấy nhám, kéo một vòng là để lại vết. Vạt áo với khăn giấy là hai thứ làm xước kính nhiều nhất mà hầu như ai cũng dùng. Cồn 90 độ thì thôi, đừng." }
         ] }
     ],
     faq: [
-      { q: { en: "How is Crizal Natural Look different from standard Crizal?", vi: "Crizal Natural Look khác Crizal thường ở đâu?" }, a: { en: "Natural Look is the top anti-reflective tier of the Crizal range: it cuts more reflection so the lens looks more transparent, with the coating almost invisible. Scratch, smudge, water and backside UV resistance are all still included.", vi: "Natural Look là bản chống phản quang cao cấp nhất của dòng Crizal: giảm ánh phản chiếu nhiều hơn nên tròng trông trong hơn, gần như không thấy lớp phủ. Các lớp chống trầy, chống bám bẩn, chống nước và chống UV mặt sau vẫn đầy đủ." } },
-      { q: { en: "Is it worth upgrading to Crizal Natural Look?", vi: "Có đáng nâng cấp lên lớp phủ Crizal Natural Look không?" }, a: { en: "Worth it if you photograph often, drive at night or look at screens a lot — the reduction in reflection glare is noticeable. If you're rarely out in the evening, a basic anti-reflective coating may be enough. Bring your real needs to Mạnh Long Optical for the right advice.", vi: "Đáng nếu bạn hay chụp ảnh, lái xe ban đêm hoặc nhìn màn hình nhiều — phần chói do phản chiếu giảm rõ. Nếu ít ra ngoài buổi tối, một lớp chống phản quang cơ bản có thể đã đủ. Mang nhu cầu thật đến Mạnh Long Optical để được tư vấn đúng." } },
-      { q: { en: "How long does the Crizal coating last?", vi: "Lớp phủ Crizal dùng được bao lâu?" }, a: { en: "A good coating lasts years if cleaned correctly: rinse with water first, wipe with a microfibre cloth, never dry-wipe with a shirt hem or tissue. Wiping incorrectly scratches and dulls any coating early.", vi: "Lớp phủ tốt bền nhiều năm nếu lau đúng: rửa nước trước, lau bằng khăn vi sợi, không lau khô bằng vạt áo hay giấy ăn. Lau sai cách thì lớp phủ nào cũng xước và mờ sớm." } },
-      { q: { en: "Does Crizal Natural Look filter blue light?", vi: "Crizal Natural Look có lọc ánh sáng xanh không?" }, a: { en: "Natural Look focuses on anti-reflection and natural clarity. If you need blue-light filtering, ask about the version that includes it when ordering your lenses at 147A Lê Duẩn, Hoàn Kiếm.", vi: "Natural Look tập trung vào chống phản quang và độ trong tự nhiên. Nếu cần lọc ánh sáng xanh, hỏi thêm bản có kèm lọc ánh sáng xanh khi đặt tròng tại cửa hàng 147A Lê Duẩn, Hoàn Kiếm." } }
+      { q: { en: "How is Crizal Natural Look different from standard Crizal?", vi: "Crizal Natural Look khác Crizal thường ở đâu?" }, a: { en: "Natural Look is the top anti-reflective tier of the Crizal range: it cuts more reflection so the lens looks more transparent, with the coating almost invisible. Scratch, smudge, water and backside UV resistance are all still included.", vi: "Natural Look chống phản quang mạnh nhất trong dòng Crizal, nên tròng trông trong hơn, gần như không thấy lớp phủ. Chống trầy, chống bẩn, chống nước, chống UV mặt sau vẫn có đủ." } },
+      { q: { en: "Is it worth upgrading to Crizal Natural Look?", vi: "Có đáng nâng cấp lên lớp phủ Crizal Natural Look không?" }, a: { en: "Worth it if you photograph often, drive at night or look at screens a lot — the reduction in reflection glare is noticeable. If you're rarely out in the evening, a basic anti-reflective coating may be enough. Bring your real needs to Mạnh Long Optical for the right advice.", vi: "Đáng, nếu bạn hay chụp ảnh, lái xe đêm hoặc nhìn màn hình nhiều. Còn ít ra ngoài buổi tối thì lớp chống phản quang cơ bản đủ rồi — chúng tôi nói câu này với khách khá thường xuyên, kể cả khi khách đã sẵn tiền." } },
+      { q: { en: "How long does the Crizal coating last?", vi: "Lớp phủ Crizal dùng được bao lâu?" }, a: { en: "A good coating lasts years if cleaned correctly: rinse with water first, wipe with a microfibre cloth, never dry-wipe with a shirt hem or tissue. Wiping incorrectly scratches and dulls any coating early.", vi: "Lau đúng thì nhiều năm. Lau sai thì lớp phủ nào cũng xước và mờ trong vài tháng. Rửa nước, khăn vi sợi, không lau khô." } },
+      { q: { en: "Does Crizal Natural Look filter blue light?", vi: "Crizal Natural Look có lọc ánh sáng xanh không?" }, a: { en: "Natural Look focuses on anti-reflection and natural clarity. If you need blue-light filtering, ask about the version that includes it when ordering your lenses at 147A Lê Duẩn, Hoàn Kiếm.", vi: "Không. Natural Look làm chống phản quang và độ trong, không phải lọc ánh sáng xanh. Cần lọc thì hỏi bản có kèm khi đặt tròng ở 147A Lê Duẩn." } }
     ],
     cta: LEARN_CTA
   },  { id: "crizal-easy-pro", imgId: "learn-easy-pro-cover", img: "learn-easy-pro-cover.png", credit: "", creditHref: "", placeholder: "Drop the Crizal Easy Pro lens/banner photo",
@@ -1530,6 +1575,164 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       { q: { en: "Is it worth upgrading from a standard progressive?", vi: "Có đáng nâng cấp từ đa tròng thường lên Varilux Physio Extensee không?" }, a: { en: "Worth it if the narrow viewing field of your old lenses makes you keep turning your head to read, or the edges blur — that's exactly what this design fixes. If your current lenses are already comfortable, invest in a coating instead of a new lens design.", vi: "Đáng nếu hành lang nhìn hẹp của kính cũ khiến bạn phải xoay đầu liên tục để đọc, hoặc mép kính bị mờ. Đó là điểm mà thiết kế này khắc phục cụ thể. Nếu kính cũ đã thoải mái, nên đầu tư vào lớp phủ thay vì đổi thiết kế tròng." } },
       { q: { en: "How long does adaptation take?", vi: "Thời gian thích ứng với Varilux Physio Extensee mất bao lâu?" }, a: { en: "A few days to two weeks for most wearers, faster than an older progressive design. If you're still uncomfortable after two weeks, come back in — it's usually a frame-fitting issue, not the lens.", vi: "Vài ngày đến hai tuần với hầu hết người đeo, nhanh hơn thiết kế đa tròng cũ. Nếu sau hai tuần vẫn khó chịu, quay lại cửa hàng — thường là do đo khung sai chứ không phải tròng kính." } },
       { q: { en: "Can I have it in a rimless frame?", vi: "Có thể lắp Varilux Physio Extensee vào gọng kính không viền không?" }, a: { en: "Yes, with the right index and thickness. Bring the frame you want to Mạnh Long Optical, 147A Lê Duẩn, Hoàn Kiếm — we'll check it can be edged cleanly before ordering.", vi: "Có, với chiết suất và độ dày phù hợp. Mang gọng bạn muốn đến Mạnh Long Optical 147A Lê Duẩn, Hoàn Kiếm — chúng tôi sẽ kiểm tra trước khi đặt hàng xem có cắt viền sạch được không." } }
+    ],
+    cta: LEARN_CTA
+  },  { id: "varilux-comfort-max", imgId: "learn-vcm-cover", img: "learn-vcm-cover.jpg", credit: "", creditHref: "", placeholder: "Drop the Varilux Comfort Max cover photo",
+    tag: { en: "LENSES", vi: "TRÒNG KÍNH" },
+    category: "all-about-eyewear",
+    title: { en: "Varilux Comfort Max: Progressives Built Around How You Sit", vi: "Varilux Comfort Max: Kính Đa Tròng Thoải Mái Tối Đa" },
+    takeaway: { en: "Varilux Comfort Max is Essilor's comfort-focused progressive. Its selling point is not sharpness but posture: the intermediate and near zones are wide enough that you stop tilting your head to find focus. Best for people over forty who work at a desk all day and have neck or shoulder strain. If your priority is the widest possible distance vision, Physio Extensee is the better spend.", vi: "Varilux Comfort Max là tròng đa tròng của Essilor, thiên về thoải mái hơn là sắc nét. Điểm chính không phải độ nét, mà là tư thế: vùng nhìn trung gian với vùng gần đủ rộng để bạn không phải ngửa cổ tìm chỗ rõ. Đáng nhất với người trên bốn mươi ngồi bàn cả ngày và hay mỏi cổ, mỏi vai. Còn nếu bạn cần vùng nhìn xa rộng nhất có thể thì Physio Extensee đáng tiền hơn." },
+    disclaimer: { en: "This article is for general information only and does not replace an eye doctor's diagnosis. If you experience persistent eye pain, blurred vision or headaches, please visit Mạnh Long Optical or a medical facility for proper examination.", vi: "Thông tin trong bài viết chỉ mang tính chất tham khảo và không thay thế cho tư vấn của bác sĩ nhãn khoa. Nếu bạn có triệu chứng đau mắt, nhìn mờ hoặc đau đầu kéo dài, vui lòng đến Mạnh Long Optical hoặc cơ sở y tế để được khám và tư vấn chính xác." },
+    paa: [
+      { q: { en: "How much does Varilux Comfort Max cost?", vi: "Varilux Comfort Max giá bao nhiêu?" }, a: { en: "It depends on the lens index and the coating you add, so we quote after the eye test rather than before. [CONFIRM PRICE] Call 024 3942 0110 or message Zalo 0933 101 200 for the current price on your prescription.", vi: "Tùy chiết suất và lớp phủ bạn thêm, nên chúng tôi báo giá sau khi đo, không báo trước. [CONFIRM PRICE] Gọi 024 3942 0110 hoặc nhắn Zalo 0933 101 200 để biết giá cho đúng độ của bạn." } },
+      { q: { en: "Comfort Max or Physio Extensee — which one?", vi: "Nên chọn Comfort Max hay Physio Extensee?" }, a: { en: "Comfort Max if your complaint is neck and shoulder strain from desk work. Physio Extensee if your complaint is that the sharp zone feels too narrow, especially at distance. Both are premium; they solve different problems.", vi: "Comfort Max nếu bạn đau cổ với đau vai vì ngồi bàn. Physio Extensee nếu bạn thấy vùng nhìn rõ hẹp, nhất là khi nhìn xa. Hai bản đều cao cấp, giải quyết hai chuyện khác nhau." } },
+      { q: { en: "I have never worn progressives. Will I adapt?", vi: "Tôi chưa từng đeo đa tròng, có thích nghi được không?" }, a: { en: "Most first-time wearers settle in within a few days to two weeks. What decides it is the fitting, not the lens tier — pupillary distance and fitting height measured on the frame you actually chose.", vi: "Phần lớn người đeo lần đầu quen trong vài ngày đến hai tuần. Thứ quyết định là khâu đo lắp, không phải hạng tròng — khoảng cách đồng tử và chiều cao tâm mắt đo trên đúng cái gọng bạn chọn." } },
+      { q: { en: "Can I put Comfort Max in a rimless or half-rim frame?", vi: "Comfort Max có lắp được gọng không viền hay nữa viền không?" }, a: { en: "Yes, with the right index and enough lens height. Very shallow frames cut the reading zone short — bring the frame in and we will tell you before you order.", vi: "Được, nếu chọn đúng chiết suất và gọng đủ cao. Gọng quá dẹt thì cắt mất vùng đọc gần. Mang gọng đến, chúng tôi nói trước khi bạn đặt." } },
+      { q: { en: "Does it come with a warranty?", vi: "Có bảo hành không?" }, a: { en: "Yes, the official Essilor warranty. The lenses arrive sealed from the factory with a warranty card, and Mạnh Long Optical handles any claim in store at 147A Lê Duẩn.", vi: "Có, bảo hành chính hãng Essilor. Tròng về còn niêm phong kèm thẻ bảo hành, và Mạnh Long Optical làm thủ tục ngay tại 147A Lê Duẩn." } }
+    ],
+    excerpt: { en: "Essilor's comfort-first progressive. The gain is in your neck, not your eye chart.", vi: "Bản đa tròng thiên thoải mái của Essilor. Cái đỡ nằm ở cổ, không nằm trên bảng đo thị lực." },
+    related: ["varilux-physio-extensee-review", "photochromic-progressive-lenses", "essilor-lenses", "crizal-natural-look"],
+    body: { en: [], vi: [] },
+    lead: { en: "The complaint we hear most from progressive wearers is not about blur. It is the neck. People tip their chin up to catch the reading zone, hold it there for an hour, and go home with a sore shoulder blaming the chair.\n\nVarilux Comfort Max is Essilor's answer to that specific problem. Not a sharper lens — a more forgiving one.", vi: "Khách đeo đa tròng đến đây phàn nàn nhiều nhất không phải chuyện nhìn mờ. Là cái cổ. Người ta ngửa nhẹ đầu lên để bắt đúng vùng đọc, giữ nguyên thế đó cả tiếng, chiều về đau bả vai rồi đi đổi ghế.\n\nVarilux Comfort Max làm ra để giải quyết đúng cái đó. Không phải tròng nét hơn — tròng dễ tính hơn." },
+    sections: [
+      { h: { en: "What Comfort Max actually is", vi: "Comfort Max là gì" },
+        p: [
+          { en: "It is a premium progressive in the Varilux family, descended from the old Varilux Comfort. One lens carries distance, intermediate and near power with no visible line, and the surface is calculated digitally for each order rather than pressed from a mould.", vi: "Là bản đa tròng cao cấp trong họ Varilux, đi lên từ Varilux Comfort cũ. Một tròng chứa cả độ nhìn xa, trung gian và gần, không có đường ranh nhìn thấy được. Bề mặt tính bằng phần mềm theo từng đơn, không đúc khuôn sẵn." },
+          { en: "The design brief was people in their forties and fifties who work in front of a screen and switch tasks constantly. Not athletes. Not people who mainly need distance. Desk people.", vi: "Đối tượng hãng nhắm đến là người bốn mươi, năm mươi, ngồi màn hình và đổi việc liên tục. Không phải người chơi thể thao. Không phải người chỉ cần nhìn xa. Người ngồi bàn." }
+        ] },
+      { h: { en: "Flex Optim: the part that matters", vi: "Flex Optim, phần đáng nói" },
+        p: [
+          { en: "Flex Optim is Essilor's calculation for widening the clear zones, the intermediate and near ones in particular. Older progressives give you a corridor: one narrow lane of sharp vision that you have to line your eyes up with. Comfort Max widens that lane.", vi: "Flex Optim là cách Essilor tính để mở rộng các vùng nhìn rõ, nhất là vùng trung gian và vùng gần. Đa tròng đời cũ cho bạn một cái hành lang: một làn hẹp nhìn rõ, mắt phải tự gióng vào đúng làn đó. Comfort Max nới làn đó rộng ra." },
+          { en: "In the shop, the way you feel it is small: you stop moving your head so much. Reading a contract on the desk, then looking up at whoever walked in, then back down — the handover happens without hunting. It is a quiet difference. Nobody walks out saying wow.", vi: "Thực tế trong tiệm, cái bạn cảm thấy khá nhỏ: bớt phải đảo đầu. Đọc tờ hợp đồng trên bàn, rồi nhìn lên xem ai vừa vào, rồi cúi xuống tiếp — chuyển vùng xảy ra mà không phải tìm. Khác biệt êm, không ầm ĩ. Chả ai đeo thử rồi thốt lên." }
+        ] },
+      { h: { en: "The posture claim, and what to make of it", vi: "Chuyện 22 tư thế, tin đến đâu" },
+        p: [
+          { en: "Essilor says the design supports up to 22 comfortable viewing postures. That is the company's number, from the company's testing — I have no way to measure it in a shop on Lê Duẩn and I am not going to pretend otherwise.", vi: "Essilor công bố thiết kế này hỗ trợ tới 22 tư thế nhìn thoải mái. Đó là số của hãng, từ phòng thí nghiệm của hãng. Tôi không có cách nào đo lại trong một cái tiệm ở Lê Duẩn, và sẽ không giả vờ là đo được." },
+          { en: "What I can report is what customers come back and say. The ones who notice a difference talk about the neck and the shoulders, not about seeing better. Whether that is 22 postures or seven, I could not tell you.", vi: "Cái tôi kể được là khách quay lại nói gì. Những người thấy khác thì nói về cổ với vai, không nói về nhìn rõ hơn. Là 22 tư thế hay bảy tư thế thì tôi không biết." }
+        ] },
+      { h: { en: "Swim effect and adaptation", vi: "Hiệu ứng gợn sóng và chuyện thích nghi" },
+        p: [
+          { en: "Swim effect is the wobble at the edge of the lens when you walk or turn your head — the thing that makes people abandon progressives in the first week. Digital freeform surfacing cuts it a long way down. Not to zero. Down.", vi: "Gợn sóng là cảm giác chòng chành ở rìa tròng khi bạn bước đi hay quay đầu. Đây là thứ khiến người ta bỏ đa tròng ngay tuần đầu. Bề mặt freeform kỹ thuạt số giảm cái đó xuống khá nhiều. Không về không. Giảm." },
+          { en: "Here is the honest part, and it is the part shops skip. A well-fitted mid-tier progressive beats a badly fitted premium one every time. If your last pair made you dizzy, the lens was probably not the culprit — the fitting height was. Two millimetres out and the reading zone sits below where your eye naturally drops.", vi: "Đoạn thật lòng, và cũng là đoạn các tiệm hay bỏ qua. Một tròng tầm trung lắp đúng luôn hơn tròng cao cấp lắp sai. Cặp trước làm bạn chóng mặt thì phần nhiều không phải lỗi tròng, mà lỗi chiều cao tâm mắt. Lệch hai milimet là vùng đọc nằm thấp hơn chỗ mắt bạn tự hạ xuống." }
+        ] },
+      { h: { en: "Coatings and UV", vi: "Lớp phủ và tia UV" },
+        p: [
+          { en: "Order it with Crizal Rock or Crizal Sapphire HR. Rock for scratch resistance, Sapphire HR if you want the anti-reflective side stronger. Both repel water and dust and cut headlight glare, which is the thing progressive wearers over fifty mention about night driving.", vi: "Đặt kèm Crizal Rock hoặc Crizal Sapphire HR. Rock cho chống trầy, Sapphire HR nếu bạn muốn phần chống phản quang mạnh hơn. Cả hai đều chống nước, chống bụi và dẹp quầng đèn pha — thứ khách đa tròng trên năm mươi nhắc đến khi nói về lái xe đêm." },
+          { en: "UV400 protection comes from the lens material itself, along with some blue-violet filtering. That is built in, not an upsell.", vi: "Chống UV400 nằm ngay trong phôi kính, kèm một phần lọc ánh sáng xanh tím. Cái này có sẵn, không phải món bán thêm." }
+        ] },
+      { h: { en: "Get Comfort Max if you", vi: "Nên lấy Comfort Max nếu bạn" },
+        list: [
+          { en: "Sit at a desk most of the day and finish it with a stiff neck or sore shoulders.", vi: "Ngồi bàn gần cả ngày và hết ngày thì cứng cổ, mỏi vai." },
+          { en: "Move between a monitor, paper on the desk and a phone dozens of times an hour.", vi: "Chạy qua lại giữa màn hình, giấy tờ trên bàn và cái điện thoại, một tiếng mấy chục lần." },
+          { en: "Are switching to progressives for the first time and want the gentlest version of the transition.", vi: "Lần đầu chuyển sang đa tròng và muốn bản dễ làm quen nhất." },
+          { en: "Gave up on an older progressive because the sharp lane felt too narrow to live in.", vi: "Từng bỏ một cặp đa tròng cũ vì làn nhìn rõ hẹp quá, đeo khó chịu." }
+        ] },
+      { h: { en: "Skip it if you", vi: "Chưa cần nếu bạn" },
+        list: [
+          { en: "Mainly need distance vision and read very little — the money is better spent on a thinner index and a good coating.", vi: "Chủ yếu cần nhìn xa, đọc gần rất ít. Tiền đó để nâng chiết suất mỏng và lấy lớp phủ tứ tế thì đúng hơn." },
+          { en: "Want the widest possible distance field — that is Physio Extensee's territory, not this one.", vi: "Muốn vùng nhìn xa rộng nhất có thể. Đó là sân của Physio Extensee." },
+          { en: "Have an old frame you insist on reusing and it is very shallow — there may not be room for a working near zone. Bring it in first.", vi: "Nhất định dùng lại gọng cũ mà gọng đó dẹp. Có thể không đủ chỗ cho vùng gần làm việc. Mang đến xem trước." }
+        ] },
+      { h: { en: "Comfort Max vs Physio Extensee vs a standard progressive", vi: "So sánh Comfort Max, Physio Extensee và đa tròng thường" },
+        p: [
+          { en: "The table we usually draw on paper for customers deciding between the three.", vi: "Bảng chúng tôi hay vẽ ra giấy cho khách đang cân giữa ba loại." }
+        ],
+        table: { headers: [{ en: "Criteria", vi: "Tiêu chí" }, { en: "Comfort Max", vi: "Comfort Max" }, { en: "Physio Extensee", vi: "Physio Extensee" }, { en: "Standard progressive", vi: "Đa tròng thường" }],
+          rows: [
+            [{ en: "Main strength", vi: "Điểm mạnh chính" }, { en: "Posture freedom, wide near zone", vi: "Tự do tư thế, vùng gần rộng" }, { en: "Widest sharp field overall", vi: "Vùng nhìn sắc rộng nhất" }, { en: "Price", vi: "Giá" }],
+            [{ en: "Head movement needed", vi: "Phải đảo đầu" }, { en: "Little", vi: "Ít" }, { en: "Little", vi: "Ít" }, { en: "A lot — you hunt for the spot", vi: "Nhiều, phải tìm chỗ rõ" }],
+            [{ en: "Adaptation", vi: "Thích nghi" }, { en: "Days to two weeks", vi: "Vài ngày đến hai tuần" }, { en: "Days to two weeks", vi: "Vài ngày đến hai tuần" }, { en: "Often weeks, some never settle", vi: "Thường nhiều tuần, có người không quen được" }],
+            [{ en: "Best for", vi: "Phù hợp" }, { en: "Desk work, neck strain", vi: "Ngồi bàn, hay mỏi cổ" }, { en: "Constant distance switching, driving", vi: "Đổi tầm xa liên tục, lái xe" }, { en: "Tight budget, light reading needs", vi: "Ngân sách hạn chế, đọc gần ít" }]
+          ] } },
+      { h: { en: "Fitting it at Mạnh Long Optical", vi: "Đo và lắp ở Mạnh Long Optical" },
+        p: [
+          { en: "A progressive lens is only as good as the three numbers under it: refraction, pupillary distance, fitting height. We start with an autorefractor, then check it against trial lenses — we do not read the machine and cut. PD and fitting height are measured on the frame you actually chose, with the frame sitting on your face the way you wear it.", vi: "Tròng đa tròng chỉ tốt được đến mức ba con số dưới nó: độ khúc xạ, khoảng cách đồng tử, chiều cao tâm mắt. Ở đây bắt đầu bằng máy khúc xạ tự động, rồi kiểm lại bằng thử kính thật — không đọc số máy rồi cắt. Khoảng cách đồng tử và chiều cao tâm mắt đo trên đúng gọng bạn chọn, gọng đặt trên mặt đúng kiểu bạn đeo thường ngày." },
+          { en: "Measuring, cutting and adjusting happen in one visit at 147A Lê Duẩn, Hoàn Kiếm. If we think Comfort Max is not the right lens for your day, we will say so before you pay.", vi: "Đo, cắt và tinh chỉnh xong trong một lần ghé tại 147A Lê Duẩn, Hoàn Kiếm. Nếu chúng tôi thấy Comfort Max không đúng tròng cho công việc của bạn thì sẽ nói trước khi bạn trả tiền." }
+        ] },
+      { h: { en: "The first week", vi: "Tuần đầu" },
+        p: [
+          { en: "Wear them all day, every day, from the first day. People who alternate with their old glasses take twice as long to adapt, sometimes never. Move your eyes rather than your head to find each zone; after a few days it stops being a decision.", vi: "Đeo cả ngày, ngày nào cũng đeo, ngay từ ngày đầu. Ai đeo xen kẽ với kính cũ thì lâu quen gấp đôi, có người không quen được. Đảo mắt để tìm vùng, đừng đảo đầu. Vài ngày sau là không phải nghĩ nữa." },
+          { en: "Take the stairs slowly for the first two or three days. That is the one place where a new progressive genuinely catches people out.", vi: "Đi cầu thang chậm trong hai ba ngày đầu. Đó là chỗ duy nhất đa tròng mới hại người thật." }
+        ] }
+    ],
+    faq: [
+      { q: { en: "Is Comfort Max worth it over a standard progressive?", vi: "Có đáng nâng từ đa tròng thường lên Comfort Max?" }, a: { en: "Worth it if your daily complaint is a narrow near zone and a stiff neck. If your standard progressive has never bothered you, there is nothing here you need.", vi: "Đáng nếu phàn nàn hằng ngày của bạn là vùng gần hẹp và cổ cứng. Còn đa tròng thường chưa bao giờ làm bạn khó chịu thì ở đây không có gì bạn cần." } },
+      { q: { en: "Can I combine Comfort Max with photochromic lenses?", vi: "Comfort Max có kết hợp được với tròng đổi màu không?" }, a: { en: "Yes. Progressive design and photochromic tint are separate choices, so Transitions can be ordered on this lens. Ask when you order at 147A Lê Duẩn.", vi: "Được. Thiết kế đa tròng và lớp đổi màu là hai lựa chọn riêng, nên đặt Transitions trên tròng này được. Hỏi lúc đặt ở 147A Lê Duẩn." } },
+      { q: { en: "Why do progressives make some people dizzy?", vi: "Tại sao có người đeo đa tròng bị chóng mặt?" }, a: { en: "Usually the fitting, not the lens. A couple of millimetres of error in fitting height puts the reading zone in the wrong place, and your eyes fight it all day. Higher lens tiers do not fix a bad measurement.", vi: "Phần nhiều là do lắp, không phải do tròng. Lệch vài milimet chiều cao tâm mắt là vùng đọc nằm sai chỗ, mắt phải chỏi cả ngày. Nâng hạng tròng không chữa được một phép đo sai." } },
+      { q: { en: "How long do the lenses last?", vi: "Tròng dùng được bao lâu?" }, a: { en: "The lens itself lasts years; your prescription is what expires. Presbyopia keeps moving through your forties and fifties, so plan on a check every one to two years rather than waiting until reading gets hard again.", vi: "Tròng thì nhiều năm. Cái hết hạn là độ của bạn. Lão thị còn chạy tiếp trong suốt tuổi bốn mươi, năm mươi, nên tính đi kiểm một đến hai năm một lần, đừng đợi đến lúc đọc lại thấy mỏi." } }
+    ],
+    cta: LEARN_CTA
+  },  { id: "zeiss-uvprotect", imgId: "learn-uvp-cover", img: "learn-uvp-cover.jpg", credit: "", creditHref: "", placeholder: "Drop the ZEISS UVProtect cover photo",
+    tag: { en: "LENSES", vi: "TRÒNG KÍNH" },
+    category: "all-about-eyewear",
+    title: { en: "ZEISS UVProtect: Clear Lenses With Sunglass-Level UV Blocking", vi: "Zeiss UVProtect: Bảo Vệ Mắt Khỏi Tia UV Tuyệt Đối Như Kính Mát" },
+    takeaway: { en: "Most clear lenses stop UV at 380 nm. ZEISS UVProtect takes it to 400 nm, which is where the UV band actually ends — same protection level as a premium sunglass, in a lens that looks completely clear. The absorber sits inside the lens material, not in a surface coating, and ZEISS includes it in all its clear lenses at no extra charge.", vi: "Phần lớn tròng trong chặn tia UV đến 380 nm rồi dừng. Zeiss UVProtect đẩy lên 400 nm, là điểm dải UV thật sự kết thúc — mức bảo vệ ngang một cái kính mát tứ tế, trên một tròng trong suốt hoàn toàn. Chất hấp thụ nằm trong phôi kính, không phải lớp phủ bề mặt. Zeiss đưa công nghệ này vào tất cả tròng trong của hãng mà không thu thêm tiền." },
+    disclaimer: { en: "This article is for general information only and does not replace an eye doctor's diagnosis. If you experience persistent eye pain, blurred vision or headaches, please visit Mạnh Long Optical or a medical facility for proper examination.", vi: "Thông tin trong bài viết chỉ mang tính chất tham khảo và không thay thế cho tư vấn của bác sĩ nhãn khoa. Nếu bạn có triệu chứng đau mắt, nhìn mờ hoặc đau đầu kéo dài, vui lòng đến Mạnh Long Optical hoặc cơ sở y tế để được khám và tư vấn chính xác." },
+    paa: [
+      { q: { en: "Do I pay extra for UVProtect?", vi: "Có phải trả thêm tiền cho UVProtect không?" }, a: { en: "No. ZEISS builds it into every clear lens in its range as standard, so it comes with whichever ZEISS clear lens you order. The lens price still depends on the design and index you choose.", vi: "Không. Zeiss đưa sẵn vào mọi tròng trong của hãng, nên bạn đặt tròng trong Zeiss nào cũng có. Giá tròng vẫn tùy thiết kế và chiết suất bạn chọn." } },
+      { q: { en: "Does a clear lens really protect like a sunglass?", vi: "Tròng trong bảo vệ được như kính mát thật không?" }, a: { en: "For UV, yes — both block up to 400 nm. For brightness, no. A clear lens does nothing about glare, so on a bright day you still squint. UV protection and tint are two separate jobs.", vi: "Về tia UV thì có, hai loại đều chặn đến 400 nm. Về độ chói thì không. Tròng trong không làm gì được với ánh sáng mạnh, trời nắng bạn vẫn nhíu mắt. Chống UV và nhuộm màu là hai việc khác nhau." } },
+      { q: { en: "Does UVProtect make the lens look yellow?", vi: "UVProtect có làm tròng ngả vàng không?" }, a: { en: "No. The absorber works on invisible wavelengths and lets the visible spectrum through, so colours stay honest. This is where cheap UV coatings tend to fail — they cast a faint yellow.", vi: "Không. Chất hấp thụ làm việc ở dải bước sóng vô hình và cho ánh sáng nhìn thấy đi qua, nên màu sắc không sai. Đây là chỗ mấy lớp phủ chống UV rẻ hay thất bại, chúng ủng vàng nhẹ." } },
+      { q: { en: "Is UV still a problem on cloudy days?", vi: "Trời âm u thì có cần lo tia UV không?" }, a: { en: "Yes. Cloud cuts brightness far more than it cuts UV, which is why an overcast afternoon feels safe and is not. Nothing about the eye warns you — there is no sunburn feeling until damage is already done.", vi: "Có. Mây cắt độ sáng nhiều hơn cắt tia UV, nên buổi chiều trời xám cảm giác an toàn mà không an toàn. Mắt cũng không báo gì, không có cảm giác rát như da bị cháy nắng." } },
+      { q: { en: "Which ZEISS lenses have UVProtect?", vi: "Những tròng Zeiss nào có UVProtect?" }, a: { en: "All the clear ones — single vision, progressive, the SmartLife range. Ask at 147A Lê Duẩn and we will show you the pack it comes in so you can read the spec yourself.", vi: "Tất cả tròng trong — đơn tròng, đa tròng, dòng SmartLife. Hỏi ở 147A Lê Duẩn, chúng tôi đưa hộp tròng để bạn tự đọc thông số." } }
+    ],
+    excerpt: { en: "The 20 nm gap most clear lenses leave open, and what ZEISS did about it.", vi: "Khoảng trống 20 nm mà hầu hết tròng trong bỏ ngỏ, và cách Zeiss bít nó lại." },
+    related: ["zeiss-lenses", "zeiss-smartlife-individual", "blue-light-vs-uv", "why-phones-use-zeiss-lenses"],
+    body: { en: [], vi: [] },
+    lead: { en: "You put sunscreen on your arms and forget your eyes. Almost everyone does.\n\nUV does not hurt on the way in. There is no warning sensation, no redness that evening, nothing that tells you a cornea took a dose — the bill arrives twenty years later as a cataract. ZEISS UVProtect is about closing one specific gap in that story, and it is a narrower gap than the marketing makes it sound: twenty nanometres.", vi: "Bạn bôi kem chống nắng lên tay và bỏ quên đôi mắt. Gần như ai cũng vậy.\n\nTia UV đi vào mà không đau. Không có cảm giác báo trước, tối về không đỏ, không gì cho bạn biết giác mạc vừa ăn một liều — hai mươi năm sau hóa đơn mới về, dưới dạng đục thủy tinh thể. Zeiss UVProtect giải quyết đúng một khoảng trống trong câu chuyện đó, và khoảng trống này hẹp hơn cách quảng cáo nói: hai mươi nanomet." },
+    sections: [
+      { h: { en: "What UV does to an eye", vi: "Tia UV làm gì với mắt" },
+        ph: { en: "Illustration of sunlight striking the eye from the front and the side", vi: "Ảnh minh họa tia nắng chiếu vào mắt từ phía trước và từ bên cạnh" }, imgId: "s1", img: "learn-uvp-s1.jpg", ar: "3 / 2",
+        p: [
+          { en: "On the surface, UV causes photokeratitis — the eye equivalent of sunburn — along with dryness and, over years, pterygium: that wedge of tissue creeping across the white of the eye that you see on fishermen and construction workers.", vi: "Ở bề mặt, tia UV gây viêm giác mạc do nắng, kèm khô mắt, và sau nhiều năm là mộng thịt — cái mảng thịt bò dần vào lòng đen mà bạn hay thấy ở người đi biển, người làm công trình." },
+          { en: "Deeper in, it accelerates oxidative damage to the lens and the retina, which is why UV exposure sits in the risk list for cataract and macular degeneration. And here is the part people find counter-intuitive: a large share of the UV reaching your eye arrives early morning and late afternoon, not at noon. Low sun sits level with your face and comes in under the eyebrow, where nothing shades it.", vi: "Vào sâu hơn, nó đẩy nhanh quá trình oxy hóa ở thủy tinh thể và võng mạc, nên tia UV nằm trong danh sách yếu tố nguy cơ của đục thủy tinh thể và thoái hóa điểm vàng. Có một chi tiết ngược với trực giác: phần lớn tia UV vào mắt là lúc sáng sớm và chiều muộn, không phải giữa trưa. Mặt trời thấp nằm ngang mặt và luồn vào dưới gờ mày, chỗ không có gì che." },
+          { en: "Six in the evening on Lê Duẩn, riding west with the sun in your face. That is the dose nobody counts.", vi: "Sáu giờ chiều trên Lê Duẩn, chạy về hướng tây với mặt trời đập vào mặt. Đó là liều chả ai tính." }
+        ] },
+      { h: { en: "The 20 nm gap", vi: "Khoảng trống 20 nm" },
+        ph: { en: "ZEISS campaign image: full UV protection in all clear ZEISS lenses, all day, every day", vi: "Ảnh chiến dịch Zeiss: bảo vệ UV toàn diện trên mọi tròng trong của Zeiss, cả ngày, mọi ngày" }, imgId: "s2", img: "learn-uvp-s2.jpg", ar: "3 / 1",
+        p: [
+          { en: "This is the whole argument, so it is worth being precise. International standards define the UV band as ending at 400 nm. A typical clear prescription lens blocks up to 380 nm. That leaves 380–400 nm getting through, and by ZEISS's account that slice carries roughly 30% of the total UV radiation — the high-energy end of it.", vi: "Đây là toàn bộ lý lẽ, nên nói cho chính xác. Tiêu chuẩn quốc tế định nghĩa dải UV kết thúc ở 400 nm. Tròng thuốc trong thông thường chặn đến 380 nm. Vậy 380 đến 400 nm vẫn đi qua, và theo Zeiss thì lát đó chứa khoảng 30% tổng lượng bức xạ UV — phần năng lượng cao nhất." },
+          { en: "UVProtect closes it: 100% blocking up to 400 nm, in a lens that stays clear. ZEISS made it standard across its clear range rather than an option, which is unusual and worth saying plainly — it is the rare case where the better spec is not an upsell.", vi: "UVProtect bít khoảng đó lại: chặn 100% tới 400 nm, trên tròng vẫn trong. Zeiss đặt nó làm tiêu chuẩn cho cả dòng tròng trong chứ không bán rời, chuyện này ít gặp nên nói thẳng luôn: đây là trường hợp hiếm mà thông số tốt hơn không phải món bán thêm." }
+        ] },
+      { h: { en: "Inside the material, not on top of it", vi: "Nằm trong vật liệu, không nằm trên bề mặt" },
+        ph: { en: "The ZEISS promise: UV rays completely blocked by the lens, same protection as premium sunglasses", vi: "Ảnh cam kết của Zeiss: tia UV bị tròng chặn hoàn toàn, mức bảo vệ ngang kính mát cao cấp" }, imgId: "s3", img: "learn-uvp-s3.jpg", ar: "1120 / 620",
+        p: [
+          { en: "A surface UV coating can wear, scratch through or delaminate. ZEISS instead puts UV-absorbing molecules into the lens material itself, so the protection is part of the substrate and cannot be wiped off or worn away.", vi: "Lớp phủ chống UV trên bề mặt thì mòn được, xước qua được, bong được. Zeiss thay vào đó đưa phân tử hấp thụ tia cực tím vào ngay trong vật liệu phôi kính, nên khả năng chống UV là một phần của thân tròng, không lau mất được và không mòn đi." },
+          { en: "The engineering problem was doing that without tinting the lens. The absorber has to be selective: swallow everything below 400 nm, pass everything above it. Get that wrong and you get the faint yellow cast that gives away a cheap UV treatment.", vi: "Bài toán kỹ thuật là làm được điều đó mà không nhuộm màu tròng. Chất hấp thụ phải chọn lọc: ăn hết phần dưới 400 nm, cho qua hết phần trên. Làm sai chỗ này là ra cái ủng vàng nhẹ tố cáo một lớp chống UV làm rẻ." }
+        ] },
+      { h: { en: "The back surface matters as much as the front", vi: "Mặt sau quan trọng ngang mặt trước" },
+        ph: { en: "ZEISS lens with DuraVision anti-reflective coating", vi: "Ảnh tròng Zeiss với lớp phủ chống phản quang DuraVision" }, imgId: "s4", img: "learn-uvp-s4.jpg", ar: "2 / 1",
+        p: [
+          { en: "Sunlight does not only come from where you are looking. Light arriving from behind and from the sides hits the back of the lens and bounces forward into the eye, and ZEISS puts that share of harmful UV at around 50%. A lens that only guards the front leaves half the problem open.", vi: "Ánh nắng không chỉ đến từ hướng bạn đang nhìn. Ánh sáng từ phía sau và hai bên hông đập vào mặt sau tròng rồi dội ngược vào mắt, và Zeiss đưa ra con số khoảng 50% lượng tia UV gây hại đến theo đường đó. Tròng chỉ chặn mặt trước là bỏ ngỏ một nửa vấn đề." },
+          { en: "The pairing is UVProtect material plus a DuraVision anti-reflective coating on the back surface, tuned so it does not reflect UV back into the eye. Two layers doing two different jobs. If you order a ZEISS clear lens without the coating, you get the material half only — ask about it rather than assuming.", vi: "Cặp đi cùng là vật liệu UVProtect cộng lớp phủ chống phản quang DuraVision ở mặt sau, tính sao cho không dội tia UV trở lại mắt. Hai lớp làm hai việc khác nhau. Đặt tròng trong Zeiss mà không lấy lớp phủ thì bạn chỉ có nửa phần vật liệu. Hỏi cho rõ, đừng đoán." }
+        ] },
+      { h: { en: "Who should treat this as non-negotiable", vi: "Ai nên coi đây là bắt buộc" },
+        p: [
+          { en: "Everyone benefits. These four groups more than everyone:", vi: "Ai cũng được lợi. Bốn nhóm này được lợi hơn:" }
+        ],
+        list: [
+          { en: "People outdoors for a living — drivers, delivery riders, site engineers, anyone on a motorbike two hours a day.", vi: "Người làm việc ngoài trời. Tài xế, shipper, kỹ sư công trình, ai chạy xe máy hai tiếng một ngày." },
+          { en: "Children and teenagers. A young lens is clearer than an adult's, so more UV reaches the retina — and they are outside far more than we are.", vi: "Trẻ con và tuổi teen. Thủy tinh thể của trẻ trong hơn người lớn, nên tia UV vào tới võng mạc nhiều hơn. Mà chúng ra ngoài nhiều hơn người lớn nhiều." },
+          { en: "Anyone in their sixties or beyond, where cataract and macular degeneration are already on the horizon and every avoided dose counts.", vi: "Người ngoài sáu mươi, lúc đục thủy tinh thể với thoái hóa điểm vàng đã ở trước mắt và tránh được liều nào là tốt liều đó." },
+          { en: "People recovering from eye surgery — LASIK, cataract replacement. Ask your surgeon what they want you shielded from and for how long; that instruction outranks anything in this article.", vi: "Người vừa mổ mắt, mổ cận hay thay thủy tinh thể. Hỏi bác sĩ mổ xem cần che chắn những gì và trong bao lâu. Lời đó trọng hơn mọi thứ trong bài này." }
+        ] },
+      { h: { en: "Fitting ZEISS lenses at Mạnh Long Optical", vi: "Đo và lắp tròng Zeiss ở Mạnh Long Optical" },
+        ph: { en: "A technician running a refraction with trial lenses", vi: "Ảnh kỹ thuật viên đo khúc xạ bằng bộ kính thử" }, imgId: "s6", img: "learn-uvp-s6.jpg", ar: "1727 / 911",
+        p: [
+          { en: "UV protection is a property of the lens; comfort is a property of the fitting. We start with an autorefractor and then check the result against trial lenses — we do not read a number off the machine and cut. Pupillary distance is measured on the frame you actually chose, because a couple of millimetres off centre is enough to make a lens feel wrong all day.", vi: "Chống UV là chuyện của tròng. Đeo thoải mái là chuyện của khâu lắp. Ở đây bắt đầu bằng máy khúc xạ tự động rồi kiểm lại bằng bộ kính thử — không đọc số máy rồi cắt. Khoảng cách đồng tử đo trên đúng cái gọng bạn chọn, vì lệch tâm vài milimet là đủ để đeo cả ngày thấy sai sai." },
+          { en: "Measuring, cutting and adjusting happen in one visit at 147A Lê Duẩn, Hoàn Kiếm. Bring the frame you like, or your old glasses if you want us to check what you have been wearing.", vi: "Đo, cắt và tinh chỉnh xong trong một lần ghé tại 147A Lê Duẩn, Hoàn Kiếm. Mang gọng bạn thích đến, hoặc mang kính cũ nếu muốn chúng tôi xem lại cái bạn đang đeo." }
+        ] },
+      { h: { en: "Keeping them right", vi: "Giữ tròng cho đúng" },
+        ph: { en: "Choosing frames with ZEISS lenses in store", vi: "Ảnh chọn gọng kèm tròng Zeiss tại cửa hàng" }, imgId: "s7", img: "learn-uvp-s7.jpg", ar: "3 / 2",
+        p: [
+          { en: "Rinse with water first, then a dedicated lens solution and the microfibre cloth. Dry-wiping is what kills coatings: the dust on the lens turns into sandpaper and one pass leaves a mark. A shirt hem and a tissue are the two things that scratch the most lenses, and almost everyone uses them.", vi: "Rửa nước trước, rồi dung dịch lau chuyên dụng với khăn vi sợi. Lau khô là thứ giết lớp phủ: bụi trên mặt tròng lúc đó thành giấy nhám, kéo một vòng là để lại vết. Vạt áo với khăn giấy là hai thứ làm xước nhiều tròng nhất, mà hầu như ai cũng dùng." },
+          { en: "Hard case when they come off. And never the dashboard or the seat box of a motorbike on a hot day — heat does the rest, and no warranty covers it. One thing worth knowing: the UV blocking is inside the material, so it survives even when the coating has been scratched to bits. The optics will annoy you long before the protection fails.", vi: "Tháo ra thì cất vào hộp cứng. Và đừng bao giờ để trên táp-lô xe hơi hay cốp xe máy giữa trời nắng — nhiệt làm phần còn lại, và không bảo hành nào đển. Một điều đáng biết: khả năng chặn UV nằm trong vật liệu, nên nó còn nguyên kể cả khi lớp phủ đã xước tèm lòm. Phần quang học sẽ làm bạn khó chịu từ lâu trước khi phần bảo vệ hỏng." }
+        ] }
+    ],
+    faq: [
+      { q: { en: "Is UVProtect the same as a blue-light filter?", vi: "UVProtect có giống lọc ánh sáng xanh không?" }, a: { en: "No. UV is invisible radiation below 400 nm; blue light is visible, roughly 400–500 nm, and mostly comes from screens. Different wavelengths, different products. You can have both on one lens.", vi: "Không. Tia UV là bức xạ vô hình dưới 400 nm. Ánh sáng xanh là ánh sáng nhìn thấy, khoảng 400 đến 500 nm, phần lớn từ màn hình. Hai dải bước sóng khác nhau, hai món khác nhau. Trên một tròng có thể có cả hai." } },
+      { q: { en: "Do I still need sunglasses?", vi: "Vậy còn cần kính mát nữa không?" }, a: { en: "For comfort in bright sun, yes. Clear lenses do nothing about glare — you will still squint on the road at noon, and squinting all day is its own kind of tiring.", vi: "Về chuyện dễ chịu dưới nắng thì có. Tròng trong không làm gì được với độ chói. Giữa trưa ra đường bạn vẫn nhíu mắt, mà nhíu mắt cả ngày cũng mệt theo cách riêng." } },
+      { q: { en: "How do I check a lens really blocks to 400 nm?", vi: "Làm sao kiểm tra tròng chặn thật tới 400 nm?" }, a: { en: "You cannot tell by looking, and no shop test proves it either. What you can do is buy from an authorised dealer, see the sealed pack opened in front of you and keep the paperwork. Ask us at 147A Lê Duẩn and we will show you the pack.", vi: "Nhìn thì không biết được, và không có phép thử nào tại tiệm chứng minh được. Cái bạn làm được là mua ở đại lý ủy quyền, xem hộp niêm phong mở trước mặt và giữ giấy tờ. Hỏi chúng tôi ở 147A Lê Duẩn, chúng tôi đưa hộp cho bạn xem." } },
+      { q: { en: "Does UV protection wear out?", vi: "Khả năng chống UV có hết theo thời gian không?" }, a: { en: "Not with UVProtect, because the absorber is in the lens material rather than a coating. A surface UV coating can wear through; this cannot.", vi: "Với UVProtect thì không, vì chất hấp thụ nằm trong vật liệu chứ không phải một lớp phủ. Lớp phủ chống UV bề mặt thì mòn được, cái này không." } }
     ],
     cta: LEARN_CTA
   },  { id: "transitions-gen-s-advantages", imgId: "learn-gens-cover", img: "learn-gens-hero.webp", credit: "", creditHref: "", placeholder: "Drop a Transitions Gen S campaign photo",
@@ -2835,6 +3038,93 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     } catch (e) {}
   }
 
+  // ---- View counter & hot topics -------------------------------------------
+  // Client-side implementation of the spec's aggregation. localStorage holds
+  // per-article per-day buckets (ViewDailyStat) plus a denormalised total
+  // (Article.viewCount):
+  //   TODAY = today's bucket · WEEK = last 7 days · MONTH = last 30 · ALL_TIME = total
+  // Anti-cheat kept from the spec: 5s minimum read time, one counted view per
+  // article per browser per 24h. Counts are real reads only — no seeded
+  // baseline — so a period with no reads shows no number at all.
+  VIEW_STORE_KEY = "mlong_views_v1";
+  VIEW_MIN_READ_MS = 5000;
+  VIEW_UNIQUE_MS = 86400000;
+
+  loadViews() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(this.VIEW_STORE_KEY) || "null");
+      if (raw && raw.daily && raw.total && raw.seen) return raw;
+    } catch (e) {}
+    return { daily: {}, total: {}, seen: {} };
+  }
+
+  saveViews(v) {
+    try { localStorage.setItem(this.VIEW_STORE_KEY, JSON.stringify(v)); } catch (e) {}
+  }
+
+  dayKey(d) {
+    const t = d || new Date();
+    return t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+  }
+
+  recordView(articleId) {
+    if (!articleId) return;
+    const v = this.loadViews();
+    const now = Date.now();
+    if (v.seen[articleId] && now - v.seen[articleId] < this.VIEW_UNIQUE_MS) return;
+    const key = this.dayKey();
+    v.daily[articleId] = v.daily[articleId] || {};
+    v.daily[articleId][key] = (v.daily[articleId][key] || 0) + 1;
+    v.total[articleId] = (v.total[articleId] || 0) + 1;
+    v.seen[articleId] = now;
+    this.saveViews(v);
+    this.setState({ viewsTick: (this.state.viewsTick || 0) + 1 });
+  }
+
+  scheduleView(articleId) {
+    if (this._viewTimer) clearTimeout(this._viewTimer);
+    if (!articleId) return;
+    this._viewTimer = setTimeout(() => {
+      if (this.state.view === "article" && this.state.articleId === articleId) this.recordView(articleId);
+    }, this.VIEW_MIN_READ_MS);
+  }
+
+  viewsFor(articleId, period) {
+    const v = this._viewCache || (this._viewCache = this.loadViews());
+    if (period === "ALL_TIME") return v.total[articleId] || 0;
+    const days = period === "TODAY" ? 1 : period === "WEEK" ? 7 : 30;
+    const buckets = v.daily[articleId] || {};
+    let sum = 0;
+    for (let i = 0; i < days; i++) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      sum += buckets[this.dayKey(d)] || 0;
+    }
+    return sum;
+  }
+
+  formatViews(n) {
+    if (n >= 1000000) return (n / 1000000).toFixed(1) + "M";
+    if (n >= 1000) return (n / 1000).toFixed(1) + "K";
+    return String(n);
+  }
+
+  hotTopics(period, limit) {
+    this._viewCache = this.loadViews();
+    // Ties (including an all-zero board) keep the editorial order of LEARN_ARTICLES.
+    return LEARN_ARTICLES
+      .map((a, i) => ({ art: a, order: i, views: this.viewsFor(a.id, period) }))
+      .sort((x, y) => y.views - x.views || x.order - y.order)
+      .slice(0, limit || 10)
+      .map((row, i) => Object.assign(row, { rank: i + 1 }));
+  }
+
+  rankBadge(rank) {
+    return rank === 1 ? "\uD83E\uDD47" : rank === 2 ? "\uD83E\uDD48" : rank === 3 ? "\uD83E\uDD49" : "#" + rank;
+  }
+
+  setHotPeriod(p) { this.setState({ hotPeriod: p }); }
+
   getUsers() {
     try { return JSON.parse(localStorage.getItem("mlong_users") || "[]"); } catch (e) { return []; }
   }
@@ -2887,7 +3177,12 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     this.setState({ authUser: null, authEmail: "", authName: "", authPassword: "" });
   }
 
-  componentDidUpdate() { this.observeMap(); this.updateSEO(); }
+  componentDidUpdate() {
+    this.observeMap();
+    this.updateSEO();
+    const open = this.state.view === "article" ? this.state.articleId : null;
+    if (open !== this._trackedArticle) { this._trackedArticle = open; this.scheduleView(open); }
+  }
 
   // Leaflet (~150KB) + map tiles only load once the store section is close to
   // the viewport, instead of on every page load — the map sits far below the fold.
@@ -3120,6 +3415,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     const accent = this.props.accent || "#23234F";
     const hero = this.props.hero || "photo";
     const view = this.state.view;
+    const hotRows = this.hotTopics(this.state.hotPeriod || "TODAY", 10);
 
     const items = season.items.filter(p => filter === "all" || p.tier === filter);
     const tiers = ["all", "essential", "signature", "premium", "junior"];
@@ -3147,12 +3443,36 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       brandImg: imgSrc("banner-hero.jpg"),
       ig1: imgSrc(F[18]),
       ig3: imgSrc(F[34]),
-      learnTrending: LEARN_ARTICLES.filter(a => a.trending).slice(0, 4).map(a => ({ imgId: a.imgId, img: imgSrc(a.img), credit: a.credit, creditHref: a.creditHref, placeholder: a.placeholder, title: a.title[lang], tag: a.tag[lang], open: () => this.openArticle(a.id) })),
+      hotPeriodTabs: [
+        { id: "TODAY", label: lang === "vi" ? "Hôm nay" : "Today" },
+        { id: "WEEK", label: lang === "vi" ? "Tuần này" : "This week" },
+        { id: "MONTH", label: lang === "vi" ? "Tháng này" : "This month" },
+        { id: "ALL_TIME", label: lang === "vi" ? "Tất cả" : "All time" }
+      ].map(p => {
+        const active = (this.state.hotPeriod || "TODAY") === p.id;
+        return { id: p.id, label: p.label, bg: active ? "#14142B" : "transparent", fg: active ? "#FFFFFF" : "#6B6B7B", bd: active ? "#14142B" : "#E3E3E9", select: () => this.setHotPeriod(p.id) };
+      }),
+      hotEmpty: hotRows.every(r => r.views === 0),
+      hotEmptyNote: lang === "vi"
+        ? "Chưa có lượt xem nào được ghi trên thiết bị này. Thứ tự dưới đây là thứ tự bài viết, không phải xếp hạng."
+        : "No views recorded on this device yet. The order below is editorial, not a ranking.",
+      learnTrending: hotRows.slice(0, 4).map(r => ({
+        imgId: r.art.imgId, img: imgSrc(r.art.img), credit: r.art.credit, creditHref: r.art.creditHref, placeholder: r.art.placeholder,
+        title: r.art.title[lang], tag: r.art.tag[lang], badge: this.rankBadge(r.rank),
+        hasViews: r.views > 0, views: this.formatViews(r.views),
+        open: () => this.openArticle(r.art.id)
+      })),
+      hotRest: hotRows.slice(4).map(r => ({
+        title: r.art.title[lang], badge: this.rankBadge(r.rank),
+        hasViews: r.views > 0, views: this.formatViews(r.views),
+        open: () => this.openArticle(r.art.id)
+      })),
+      hotHasRest: hotRows.length > 4,
       learnCategories: [{ id: "all", label: lang === "vi" ? "Tất cả" : "All" }].concat(LEARN_CATEGORIES.map(c => ({ id: c.id, label: c[lang] }))).map(c => {
         const active = (this.state.learnCategory || "all") === c.id;
         return { id: c.id, label: c.label, bg: active ? "#14142B" : "transparent", fg: active ? "#FFFFFF" : "#6B6B7B", bd: active ? "#14142B" : "#E3E3E9", select: () => this.setLearnCategory(c.id) };
       }),
-      learnArticles: LEARN_PAGE.items.map(a => ({ imgId: a.imgId, img: imgSrc(a.img), credit: a.credit, creditHref: a.creditHref, placeholder: a.placeholder, title: a.title[lang], tag: a.tag[lang], date: a.date || "26/08/2026", excerpt: a.excerpt[lang], open: () => this.openArticle(a.id) })),
+      learnArticles: LEARN_PAGE.items.map(a => ({ imgId: a.imgId, img: imgSrc(a.img), credit: a.credit, creditHref: a.creditHref, placeholder: a.placeholder, title: a.title[lang], tag: a.tag[lang], date: a.date || "26/08/2026", excerpt: a.excerpt[lang], hasViews: this.viewsFor(a.id, "ALL_TIME") > 0, views: this.formatViews(this.viewsFor(a.id, "ALL_TIME")), open: () => this.openArticle(a.id) })),
       learnHasPager: LEARN_PAGE.pages > 1,
       learnPager: LEARN_PAGE.nav,
       isArticle: view === "article",

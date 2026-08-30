@@ -246,6 +246,11 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
        so the photo reads clean and the text sits on a solid ground. */
     [data-m="hero-photo-pad"], [data-m="hero-photo-scrim"] { display: none !important; }
     [data-m="hero-caption"] { display: block !important; }
+    /* Frame the photo by insetting it on the section's own navy ground rather
+       than insetting the section: the hero box keeps its exact
+       100svh - header - CTA height, so the first screen still gains no scroll,
+       and the navy gutter runs straight into the caption panel below. */
+    [data-m="hero-photo"] > image-slot { inset: 12px !important; width: auto !important; height: auto !important; border: 1px solid rgba(244,242,237,0.28) !important; }
     [data-m="hero-photo-row"] { flex-direction: column !important; align-items: flex-start !important; gap: 22px !important; }
     [data-m="hero-photo-h1"] { font-size: 27px !important; }
     [data-m="brand-sec"] { padding: 64px 0 !important; }

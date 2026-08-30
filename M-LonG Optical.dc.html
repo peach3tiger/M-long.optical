@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -209,15 +209,18 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
   .leaflet-control-attribution a, .leaflet-control-attribution a svg { color: var(--color-brass-dark) !important; fill: currentColor !important; }
   .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--color-paper) !important; color: var(--color-ink) !important; box-shadow: var(--shadow-max) !important; }
   img, iframe, svg { max-width: 100%; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  body { overflow-x: hidden; -webkit-overflow-scrolling: touch; }
+  body { overflow-x: clip; -webkit-overflow-scrolling: touch; }
   img, image-slot { display: block; max-width: 100%; }
   [data-m="product-grid"] image-slot, [data-m="cart-thumb"] image-slot,
   [data-m="detail-grid"] image-slot, [data-m="learn-grid"] image-slot,
   [data-m="more-grid"] image-slot, [data-m="igtile"] image-slot,
   [data-m="brand-banner"] image-slot, [data-m="store-map"] image-slot,
-  [data-m="hero-split"] image-slot { aspect-ratio: auto !important; height: 100% !important; }
+  [data-m="hero-split"] image-slot, [data-m="hero-photo"] image-slot { aspect-ratio: auto !important; height: 100% !important; }
+  [data-m="hero-photo"] { position: relative; overflow: hidden; }
+  [data-m="hero-photo"] > image-slot, [data-m="hero-photo"] > img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  [data-m="hero-photo"] > img { object-fit: cover; }
   [data-m="product-grid"] > article { content-visibility: auto; contain-intrinsic-size: 0 360px; }
   [data-m="product-grid"] > article, [data-m="cart-thumb"],
   [data-m="learn-grid"] > div, [data-m="learn-grid"] > a,
@@ -238,7 +241,9 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="hero-split"] > div:last-child { height: 50vh !important; min-height: 280px !important; }
     [data-m="hero-split-h1"] { font-size: 34px !important; }
     [data-m="hero-type-h1"] { font-size: 42px !important; }
-    [data-m="hero-photo-pad"] { padding: 0 20px 40px !important; }
+    [data-m="hero-photo"] { height: calc(var(--vvh, 100svh) - var(--hdr, 116px) - var(--cta, 50px)) !important; min-height: 360px !important; }
+    [data-m="hero-photo-pad"] { justify-content: flex-end !important; padding: 0 20px calc(26px + env(safe-area-inset-bottom)) !important; }
+    [data-m="hero-photo-pad"] h1, [data-m="hero-photo-pad"] p { text-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 2px 20px rgba(0,0,0,0.55) !important; }
     [data-m="hero-photo-row"] { flex-direction: column !important; align-items: flex-start !important; gap: 22px !important; }
     [data-m="hero-photo-h1"] { font-size: 27px !important; }
     [data-m="brand-sec"] { padding: 64px 0 !important; }
@@ -282,8 +287,8 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="article-h1"] { font-size: 27px !important; }
     [data-m="more-grid"] { grid-template-columns: 1fr !important; gap: 32px !important; }
     [data-m="footer"] { padding: 48px 20px 64px !important; }
-    [data-m="sticky-cta"] { display: block !important; }
-    body { padding-bottom: 50px; }
+    [data-m="sticky-cta"] { display: block !important; padding-bottom: env(safe-area-inset-bottom) !important; }
+    body { padding-bottom: calc(50px + env(safe-area-inset-bottom)); }
     [data-m="footer-row"] { flex-direction: column !important; gap: 26px !important; }
     [data-m="footer-links"] { flex-wrap: wrap !important; gap: 16px 20px !important; }
     [data-m="root"] { overflow-x: hidden !important; }
@@ -313,13 +318,20 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="footer"] p { font-size: 12px !important; }
     [data-m="nav"], [data-m="filter-list"], [data-m="info-tabs"] { -webkit-overflow-scrolling: touch !important; }
     [data-m="product-grid"] article > div:first-child, [data-m="cart-thumb"] { overflow: hidden !important; }
+    /* --- mobile home: header floats over the hero photo --- */
+    header[data-hdr-mode] { position: fixed !important; top: 0; left: 0; right: 0; z-index: 50; }
+    header[data-hdr-mode="over"] { background: linear-gradient(to bottom, rgba(27,29,31,0.55), rgba(27,29,31,0)) !important; border-bottom: 0 !important; padding-top: env(safe-area-inset-top); }
+    header[data-hdr-mode="over"] [data-m="searchbox"], header[data-hdr-mode="over"] [data-m="nav"] { display: none !important; }
+    header[data-hdr-mode="over"] [data-m="topbar"] { padding-bottom: 14px !important; }
+    header[data-hdr-mode="over"], header[data-hdr-mode="over"] a, header[data-hdr-mode="over"] button, header[data-hdr-mode="over"] span { color: #F4F2ED !important; text-shadow: 0 1px 10px rgba(0,0,0,0.45); }
+    header[data-hdr-mode="solid"] { background: #F4F2ED !important; }
   }
 </style>
 </helmet>
 
 <div data-m="root" data-lang="{{ lang }}" style="font-family: Archivo, 'Helvetica Neue', sans-serif; font-feature-settings: 'ss01', 'cv05'; color: #1B1D1F; background: #F4F2ED; min-height: 100vh">
 
-  <header style="position: sticky; top: 0; z-index: 40; background: #F4F2ED; border-bottom: 1px solid #DFDACE">
+  <header data-m="hdr" style="position: sticky; top: 0; z-index: 40; background: #F4F2ED; border-bottom: 1px solid #DFDACE">
     <div data-m="topbar" style="max-width: 1600px; margin: 0 auto; padding: 22px 40px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px">
       <a href="#top" onClick="{{ goHome }}" style="display: flex; align-items: baseline; gap: 8px">
         <span data-m="logo" style="white-space: nowrap; flex: none; font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: 44px; line-height: 1; letter-spacing: 0em">M-LonG.</span>
@@ -393,7 +405,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     </sc-if>
 
     <sc-if value="{{ heroPhoto }}" hint-placeholder-val="{{ false }}">
-    <section id="top" style="position: relative; width: 100%; height: 82vh; min-height: 620px; background: #22254F; color: #F4F2ED; overflow: hidden">
+    <section id="top" data-m="hero-photo" style="position: relative; width: 100%; height: 82vh; min-height: 620px; background: #22254F; color: #F4F2ED; overflow: hidden">
       <image-slot id="hero-campaign" shape="rect" fit="cover" src="{{ heroImg }}" placeholder="Drop the season campaign photo — model in cat-eye sunglasses, 2400×1400" style="position: absolute; inset: 0; z-index: 0"></image-slot>
       <div style="position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, rgba(27,29,31,0.85) 0%, rgba(27,29,31,0.7) 40%, rgba(27,29,31,0.15) 72%, rgba(27,29,31,0) 88%)"></div>
       <div style="position: absolute; inset: 0; z-index: 2; pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 40px 24px" data-m="hero-photo-pad">
@@ -3787,6 +3799,88 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   }
 }
 
+</script>
+<script>
+/* Mobile viewport metrics for the home hero (iOS Safari/Chrome).
+   Publishes --hdr / --cta / --vvh on <html> and flips the header between the
+   over-hero overlay and the solid bar. Desktop (>860px) is untouched: nothing
+   outside the 860px media query reads these variables.
+
+   Measuring (offsetHeight / getBoundingClientRect / getComputedStyle) forces a
+   layout flush, which is far too expensive to do per scroll frame on a page
+   carrying a few hundred image slots. So the box metrics are cached on resize
+   and route change only; the scroll path just compares scrollY against the
+   cached threshold and writes nothing unless the mode actually flips. */
+(function () {
+  var root = document.documentElement;
+  var mq = window.matchMedia("(max-width: 860px)");
+  var hasSvh = !!(window.CSS && CSS.supports && CSS.supports("height", "100svh"));
+  var last = {};
+  var threshold = -1; // -1 = not the mobile home hero, leave the header alone
+  var mode = null;
+
+  function setVar(name, value) {
+    if (last[name] === value) return;
+    last[name] = value;
+    root.style.setProperty(name, value);
+  }
+
+  function applyMode() {
+    if (threshold < 0) return;
+    var hdr = document.querySelector("header");
+    if (!hdr) return;
+    var next = window.scrollY < threshold ? "over" : "solid";
+    if (next === mode && hdr.getAttribute("data-hdr-mode") === next) return;
+    mode = next;
+    hdr.setAttribute("data-hdr-mode", next);
+  }
+
+  function measure() {
+    var hdr = document.querySelector("header");
+    var hero = document.querySelector('[data-m="hero-photo"]');
+    var cta = document.querySelector('[data-m="sticky-cta"]');
+
+    // offsetParent is null on fixed elements, so read display instead.
+    var ctaVisible = !!cta && getComputedStyle(cta).display !== "none";
+    setVar("--cta", ctaVisible ? Math.round(cta.getBoundingClientRect().height) + "px" : "0px");
+    if (!hasSvh) setVar("--vvh", window.innerHeight + "px");
+
+    if (hdr && mq.matches && hero) {
+      // The header is lifted out of flow, so the hero starts at y = 0.
+      setVar("--hdr", "0px");
+      threshold = hero.offsetHeight - 64;
+      applyMode();
+    } else if (hdr) {
+      threshold = -1;
+      mode = null;
+      if (hdr.hasAttribute("data-hdr-mode")) hdr.removeAttribute("data-hdr-mode");
+      setVar("--hdr", hdr.offsetHeight + "px");
+    }
+  }
+
+  function throttle(fn) {
+    var frame = 0;
+    return function () {
+      if (frame) return;
+      frame = requestAnimationFrame(function () { frame = 0; fn(); });
+    };
+  }
+  var onScroll = throttle(applyMode);
+  var onResize = throttle(measure);
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  ["resize", "orientationchange", "load", "pageshow"].forEach(function (ev) {
+    window.addEventListener(ev, onResize, { passive: true });
+  });
+  if (mq.addEventListener) mq.addEventListener("change", onResize);
+
+  // The page is client-rendered and in-page navigation swaps the header/hero
+  // out, so re-measure after clicks and over the first seconds of the render.
+  document.addEventListener("click", function () { setTimeout(measure, 60); }, true);
+  [0, 150, 400, 900, 1800, 3000].forEach(function (d) { setTimeout(measure, d); });
+  document.addEventListener("DOMContentLoaded", onResize);
+  measure();
+})();
 </script>
 </body>
 </html>

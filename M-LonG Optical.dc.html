@@ -242,8 +242,10 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="hero-split-h1"] { font-size: 34px !important; }
     [data-m="hero-type-h1"] { font-size: 42px !important; }
     [data-m="hero-photo"] { height: calc(var(--vvh, 100svh) - var(--hdr, 116px) - var(--cta, 50px)) !important; min-height: 360px !important; }
-    [data-m="hero-photo-pad"] { justify-content: flex-end !important; padding: 0 20px calc(26px + env(safe-area-inset-bottom)) !important; }
-    [data-m="hero-photo-pad"] h1, [data-m="hero-photo-pad"] p { text-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 2px 20px rgba(0,0,0,0.55) !important; }
+    /* The hero copy moves out of the photo and into the navy panel below it,
+       so the photo reads clean and the text sits on a solid ground. */
+    [data-m="hero-photo-pad"], [data-m="hero-photo-scrim"] { display: none !important; }
+    [data-m="hero-caption"] { display: block !important; }
     [data-m="hero-photo-row"] { flex-direction: column !important; align-items: flex-start !important; gap: 22px !important; }
     [data-m="hero-photo-h1"] { font-size: 27px !important; }
     [data-m="brand-sec"] { padding: 64px 0 !important; }
@@ -415,7 +417,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     <sc-if value="{{ heroPhoto }}" hint-placeholder-val="{{ false }}">
     <section id="top" data-m="hero-photo" style="position: relative; width: 100%; height: 82vh; min-height: 620px; background: #22254F; color: #F4F2ED; overflow: hidden">
       <image-slot id="hero-campaign" shape="rect" fit="cover" src="{{ heroImg }}" placeholder="Drop the season campaign photo — model in cat-eye sunglasses, 2400×1400" style="position: absolute; inset: 0; z-index: 0"></image-slot>
-      <div style="position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, rgba(27,29,31,0.85) 0%, rgba(27,29,31,0.7) 40%, rgba(27,29,31,0.15) 72%, rgba(27,29,31,0) 88%)"></div>
+      <div data-m="hero-photo-scrim" style="position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, rgba(27,29,31,0.85) 0%, rgba(27,29,31,0.7) 40%, rgba(27,29,31,0.15) 72%, rgba(27,29,31,0) 88%)"></div>
       <div style="position: absolute; inset: 0; z-index: 2; pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 40px 24px" data-m="hero-photo-pad">
         <div data-m="hero-photo-row" style="max-width: 1600px; margin: 0 auto; width: 100%; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px">
           <div style="color: #F4F2ED; max-width: 760px; text-shadow: 0 1px 3px rgba(27,29,31,0.6)">
@@ -430,6 +432,12 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
         </div>
       </div>
     </section>
+    <div data-m="hero-caption" style="display: none; background: #22254F; color: #F4F2ED; padding: 32px 20px 36px">
+      <h2 style="margin: 0 0 14px; font-family: 'Noto Serif Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 27px; line-height: 1.2; letter-spacing: 0.01em; text-wrap: pretty">{{ t.heroTitleInline }}</h2>
+      <p style="margin: 0 0 16px; font-size: 13px; letter-spacing: 0.1em; line-height: 1.75; opacity: 0.88">{{ t.heroDescInline }}</p>
+      <p style="margin: 0 0 26px; font-family: 'Noto Serif Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 14px; opacity: 0.92">{{ t.reality }}</p>
+      <a href="#collection" style="display: inline-block; border: 1px solid rgba(244,242,237,0.75); color: #F4F2ED; padding: 14px 34px; font-size: 11px; letter-spacing: 0.2em" style-hover="background: #F4F2ED; color: #1B1D1F">{{ t.viewSeason }}</a>
+    </div>
     </sc-if>
 
     <section id="brand" data-m="brand-sec" style="padding: 112px 0">

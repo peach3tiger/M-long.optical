@@ -325,6 +325,14 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     header[data-hdr-mode="over"] [data-m="topbar"] { padding-bottom: 14px !important; }
     header[data-hdr-mode="over"], header[data-hdr-mode="over"] a, header[data-hdr-mode="over"] button, header[data-hdr-mode="over"] span { color: #F4F2ED !important; text-shadow: 0 1px 10px rgba(0,0,0,0.45); }
     header[data-hdr-mode="solid"] { background: #F4F2ED !important; }
+    /* Solid mode is a fixed overlay, so every pixel of it is taken off the
+       readable viewport for the rest of the page. Drop the full-width search
+       row and tighten the spacing; the nav row stays, since the footer links
+       do not cover Brand / New Collection / Sunglasses / Frame / Lenses. */
+    header[data-hdr-mode="solid"] [data-m="searchbox"] { display: none !important; }
+    header[data-hdr-mode="solid"] [data-m="topbar"] { padding: 8px 20px 0 !important; }
+    header[data-hdr-mode="solid"] [data-m="logo"] { font-size: 22px !important; }
+    header[data-hdr-mode="solid"] [data-m="nav"] { padding: 4px 20px 6px !important; }
   }
 </style>
 </helmet>

@@ -243,20 +243,18 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="hero-split"] > div:last-child { height: 50vh !important; min-height: 280px !important; }
     [data-m="hero-split-h1"] { font-size: 34px !important; }
     [data-m="hero-type-h1"] { font-size: 42px !important; }
-    [data-m="hero-photo"] { height: calc(var(--vvh, 100svh) - var(--hdr, 116px) - var(--cta, 50px)) !important; min-height: 360px !important; }
-    /* The hero copy moves out of the photo and into the navy panel below it,
-       so the photo reads clean and the text sits on a solid ground. */
+    /* Mobile hero, Rieti-style: the campaign photo keeps its natural
+       aspect ratio inside a paper frame under the normal solid header —
+       no viewport-height crop, no fixed-header math, so the first paint
+       is stable and scrolling never re-lays-out the hero. */
+    [data-m="hero-photo"] { height: auto !important; min-height: 0 !important; background: #F4F2ED !important; padding: 12px !important; }
     [data-m="hero-photo-pad"], [data-m="hero-photo-scrim"] { display: none !important; }
     [data-m="hero-caption"] { display: block !important; }
-    /* Frame the photo by insetting it on the section's own navy ground rather
-       than insetting the section: the hero box keeps its exact
-       100svh - header - CTA height, so the first screen still gains no scroll,
-       and the navy gutter runs straight into the caption panel below. */
-    [data-m="hero-photo"] > image-slot { inset: 12px !important; width: auto !important; height: auto !important; border: 1px solid rgba(244,242,237,0.28) !important; }
+    [data-m="hero-photo"] > image-slot, [data-m="hero-photo"] > img { position: static !important; inset: auto !important; width: 100% !important; height: auto !important; aspect-ratio: 1545 / 1018 !important; }
     [data-m="hero-photo-row"] { flex-direction: column !important; align-items: flex-start !important; gap: 22px !important; }
     [data-m="hero-photo-h1"] { font-size: 27px !important; }
     [data-m="brand-sec"] { padding: 64px 0 !important; }
-    [data-m="brand-banner"] { height: 66vh !important; min-height: 360px !important; }
+    [data-m="brand-banner"] { height: auto !important; min-height: 0 !important; aspect-ratio: 1 / 1 !important; }
     [data-m="brand-copy"] { padding: 0 20px !important; }
     [data-m="collection-sec"] { padding: 0 20px 72px !important; }
     [data-m="collection-h2"] { font-size: 26px !important; }
@@ -327,21 +325,13 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="footer"] p { font-size: 12px !important; }
     [data-m="nav"], [data-m="filter-list"], [data-m="info-tabs"] { -webkit-overflow-scrolling: touch !important; }
     [data-m="product-grid"] article > div:first-child, [data-m="cart-thumb"] { overflow: hidden !important; }
-    /* --- mobile home: header floats over the hero photo --- */
-    header[data-hdr-mode] { position: fixed !important; top: 0; left: 0; right: 0; z-index: 50; }
-    header[data-hdr-mode="over"] { background: linear-gradient(to bottom, rgba(27,29,31,0.55), rgba(27,29,31,0)) !important; border-bottom: 0 !important; padding-top: env(safe-area-inset-top); }
-    header[data-hdr-mode="over"] [data-m="searchbox"], header[data-hdr-mode="over"] [data-m="nav"] { display: none !important; }
-    header[data-hdr-mode="over"] [data-m="topbar"] { padding-bottom: 14px !important; }
-    header[data-hdr-mode="over"], header[data-hdr-mode="over"] a, header[data-hdr-mode="over"] button, header[data-hdr-mode="over"] span { color: #F4F2ED !important; text-shadow: 0 1px 10px rgba(0,0,0,0.45); }
-    header[data-hdr-mode="solid"] { background: #F4F2ED !important; }
-    /* Solid mode is a fixed overlay, so every pixel of it is taken off the
-       readable viewport for the rest of the page. Drop the full-width search
-       row and tighten the spacing; the nav row stays, since the footer links
-       do not cover Brand / New Collection / Sunglasses / Frame / Lenses. */
-    header[data-hdr-mode="solid"] [data-m="searchbox"] { display: none !important; }
-    header[data-hdr-mode="solid"] [data-m="topbar"] { padding: 8px 20px 0 !important; }
-    header[data-hdr-mode="solid"] [data-m="logo"] { font-size: 22px !important; }
-    header[data-hdr-mode="solid"] [data-m="nav"] { padding: 4px 20px 6px !important; }
+    /* Mobile header is the normal paper bar in the page flow (Rieti-style):
+       no fixed overlay over the hero, no scroll-driven mode flipping, and it
+       scrolls away with the page so nothing repaints while scrolling. */
+    header { position: static !important; }
+    header [data-m="topbar"] { padding: 10px 20px 0 !important; }
+    header [data-m="logo"] { font-size: 24px !important; }
+    header [data-m="nav"] { padding: 8px 20px 8px !important; }
   }
 </style>
 </helmet>
@@ -3874,12 +3864,9 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     setVar("--cta", ctaVisible ? Math.round(cta.getBoundingClientRect().height) + "px" : "0px");
     if (!hasSvh) setVar("--vvh", window.innerHeight + "px");
 
-    if (hdr && mq.matches && hero) {
-      // The header is lifted out of flow, so the hero starts at y = 0.
-      setVar("--hdr", "0px");
-      threshold = hero.offsetHeight - 64;
-      applyMode();
-    } else if (hdr) {
+    // The mobile hero no longer floats the header over the photo: the header
+    // is a normal in-flow bar everywhere, so no mode flipping is needed.
+    if (hdr) {
       threshold = -1;
       mode = null;
       if (hdr.hasAttribute("data-hdr-mode")) hdr.removeAttribute("data-hdr-mode");

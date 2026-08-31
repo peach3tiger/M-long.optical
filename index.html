@@ -3146,6 +3146,9 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   state = { season: null, filter: "all", view: "home", learnPage: 1, learnCategory: "all", pid: null, qty: 1, colorIdx: 0, lens: "sun", cart: [], lang: "en", page: 1, searchQuery: "", searchResults: [], infoTab: "faq", authMode: "login", authName: "", authEmail: "", authPassword: "", authError: "", authUser: null, catalog: JSON.parse(JSON.stringify(CATALOG)) };
 
   componentDidMount() {
+    // ?lang=vi|en tren URL -> dat ngon ngu (dung cho link Google Ads tieng Viet)
+    const __q = new URLSearchParams(location.search).get("lang");
+    if (__q === "vi" || __q === "en") this.setState({ lang: __q });
     window.addEventListener("popstate", () => this.syncFromHash());
     this.syncFromHash();
     this.observeMap();
@@ -3900,5 +3903,84 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   measure();
 })();
 </script>
+<section id="uu-dai" class="ml-promo" aria-label="Ưu đãi tri ân khách hàng">
+  <style>
+    .ml-promo{font-family:"Be Vietnam Pro","Montserrat",system-ui,sans-serif;background:#22254F;color:#F4F2ED;padding:32px 20px;margin:0}
+    .ml-promo__in{max-width:1080px;margin:0 auto}
+    .ml-promo__kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#B7AB92;margin:0 0 8px}
+    .ml-promo h2{font-size:clamp(22px,3.4vw,34px);line-height:1.15;margin:0 0 6px;font-weight:700;color:#F4F2ED}
+    .ml-promo__until{color:#8A6A3B;font-weight:600;margin:0 0 20px}
+    .ml-promo__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin:0 0 20px}
+    .ml-promo__card{background:#F4F2ED;color:#1B1D1F;border-radius:10px;padding:14px 16px}
+    .ml-promo__num{font-size:22px;font-weight:700;color:#22254F;margin:0 0 4px}
+    .ml-promo__card p{margin:0;font-size:14px;line-height:1.45}
+    .ml-promo__card small{display:block;margin-top:6px;color:#5c5a55;font-size:12px}
+    .ml-promo__trust{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:#B7AB92;margin:0 0 14px}
+    .ml-promo__cta{display:inline-block;background:#8A6A3B;color:#F4F2ED;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:8px;margin-right:10px}
+    .ml-promo__addr{font-size:13px;color:#B7AB92;margin:14px 0 0}
+    .ml-promo__lang{float:right;font-size:12px}
+    .ml-promo__lang a{color:#B7AB92;margin-left:8px}
+    .ml-promo[hidden]{display:none}
+  </style>
+  <div class="ml-promo__in">
+    <div class="ml-promo__lang"><a href="?lang=vi#uu-dai">VI</a><a href="?lang=en#uu-dai">EN</a></div>
+
+    <!-- ===== TIẾNG VIỆT ===== -->
+    <div data-ml-lang="vi">
+      <p class="ml-promo__kicker">Mạnh Long Optical · 147A Lê Duẩn, Hà Nội</p>
+      <h2>Quà tặng tri ân khách hàng</h2>
+      <p class="ml-promo__until">Áp dụng đến hết 02/10/2026</p>
+      <div class="ml-promo__grid">
+        <div class="ml-promo__card"><p class="ml-promo__num">Tặng gọng 1.850.000đ</p><p>Khi mua tròng Essilor Gen S (đổi màu).</p><small>Không cộng dồn ưu đãi khác.</small></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Tặng gọng 1.250.000đ</p><p>Khi mua tròng Essilor Classic.</p><small>Không cộng dồn ưu đãi khác.</small></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Tặng gọng 850.000đ</p><p>Khi mua tròng Essilor Ánh sáng xanh hoặc Element đổi màu.</p><small>Không cộng dồn ưu đãi khác.</small></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Combo từ 580.000đ</p><p>Gọng + tròng lọc ánh sáng xanh hoặc đổi màu: 580.000đ (Element) · 798.000đ (Nikki).</p></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Kính mát: mua 1 tặng 1</p><p>Áp dụng kính mát giá 850.000đ.</p><small>Chọn 1 trong 2 ưu đãi kính mát.</small></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Tặng tròng cận râm</p><p>Khi mua kính mát 850.000đ, độ cận dưới 5.00.</p><small>Chọn 1 trong 2 ưu đãi kính mát.</small></div>
+      </div>
+      <div class="ml-promo__trust"><span>Đo mắt miễn phí trọn đời</span><span>Tròng có tem kiểm định</span><span>Bảo hành 1 đổi 1</span><span>Cắt lấy ngay</span></div>
+      <a class="ml-promo__cta" href="tel:0777986999">Gọi 0777 986 999</a>
+      <a class="ml-promo__cta" style="background:transparent;border:1px solid #8A6A3B" href="https://maps.google.com/?q=Manh+Long+Optical+147A+Le+Duan+Ha+Noi" target="_blank" rel="noopener">Chỉ đường</a>
+      <p class="ml-promo__addr">147A Đ. Lê Duẩn, Cửa Nam, Hà Nội · Mở cửa 8:30–21:30 hằng ngày · Gần ga Hà Nội</p>
+    </div>
+
+    <!-- ===== ENGLISH ===== -->
+    <div data-ml-lang="en" hidden>
+      <p class="ml-promo__kicker">Manh Long Optical · 147A Le Duan, Hanoi</p>
+      <h2>Customer appreciation offers</h2>
+      <p class="ml-promo__until">Valid until 2 October 2026</p>
+      <div class="ml-promo__grid">
+        <div class="ml-promo__card"><p class="ml-promo__num">Free frame worth 1,850,000đ</p><p>With Essilor Gen S photochromic lenses.</p><small>Cannot be combined with other offers.</small></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Free frame worth 1,250,000đ</p><p>With Essilor Classic lenses.</p><small>Cannot be combined with other offers.</small></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Free frame worth 850,000đ</p><p>With Essilor blue-light lenses or Element photochromic lenses.</p><small>Cannot be combined with other offers.</small></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Combo from 580,000đ</p><p>Frame + blue-light or photochromic lenses: 580,000đ (Element) · 798,000đ (Nikki).</p></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Sunglasses: buy 1 get 1</p><p>On sunglasses priced 850,000đ.</p><small>Choose one of the two sunglasses offers.</small></div>
+        <div class="ml-promo__card"><p class="ml-promo__num">Free prescription tint</p><p>With 850,000đ sunglasses, prescriptions under -5.00.</p><small>Choose one of the two sunglasses offers.</small></div>
+      </div>
+      <div class="ml-promo__trust"><span>Free eye test, for life</span><span>Lenses with authenticity seal</span><span>1-for-1 warranty</span><span>Same-day service</span></div>
+      <a class="ml-promo__cta" href="tel:+84777986999">Call 0777 986 999</a>
+      <a class="ml-promo__cta" style="background:transparent;border:1px solid #8A6A3B" href="https://maps.google.com/?q=Manh+Long+Optical+147A+Le+Duan+Ha+Noi" target="_blank" rel="noopener">Directions</a>
+      <p class="ml-promo__addr">147A Le Duan St, Cua Nam, Hanoi · Open daily 8:30–21:30 · Next to Hanoi Railway Station</p>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var box=document.getElementById('uu-dai'); if(!box) return;
+    // Tự ẩn sau khi hết hạn (giờ Việt Nam)
+    if (Date.now() > Date.parse('2026-10-02T16:59:59Z')) { box.hidden = true; return; }
+    var q=new URLSearchParams(location.search).get('lang');
+    var lang = (q==='vi'||q==='en') ? q : ((navigator.language||'').toLowerCase().indexOf('vi')===0 ? 'vi' : 'en');
+    box.querySelectorAll('[data-ml-lang]').forEach(function(el){ el.hidden = el.getAttribute('data-ml-lang')!==lang; });
+    // Đưa khối ưu đãi lên ngay dưới hero nếu tìm thấy hero, nếu không thì giữ cuối trang
+    var hero=document.querySelector('.hero, [class*="hero"]');
+    if(hero && hero.parentNode){ hero.parentNode.insertBefore(box, hero.nextSibling); }
+  })();
+  </script>
+</section>
+<!-- Dữ liệu có cấu trúc cho Google (Offer) — chỉ hợp lệ trong thời gian khuyến mãi -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Offer","name":"Quà tặng tri ân khách hàng — Manh Long Optical","description":"Tặng gọng 1.850.000đ khi mua tròng Essilor Gen S; tặng gọng 1.250.000đ khi mua tròng Essilor Classic; tặng gọng 850.000đ khi mua tròng Essilor ánh sáng xanh hoặc Element đổi màu; combo gọng + tròng từ 580.000đ; kính mát 850.000đ mua 1 tặng 1 hoặc tặng tròng cận râm dưới 5 độ.","validFrom":"2026-08-31","validThrough":"2026-10-02","priceCurrency":"VND","availability":"https://schema.org/InStoreOnly","offeredBy":{"@type":"Optician","name":"Manh Long Optical","telephone":"+84777986999","address":{"@type":"PostalAddress","streetAddress":"147A Đường Lê Duẩn","addressLocality":"Cửa Nam, Hà Nội","addressCountry":"VN"}}}
+</script>
+
 </body>
 </html>

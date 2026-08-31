@@ -184,6 +184,14 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
   [data-m="product-grid"] article:hover { transform: translateY(-2px); box-shadow: 0 4px 24px rgba(34,37,79,0.08); }
   a:hover { color: #7A5A2B; }
   @keyframes ml-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  [data-m="promo-track"]:hover [data-m="promo-row"], [data-m="promo-track"]:focus-within [data-m="promo-row"] { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) { [data-m="promo-row"] { animation: none !important; } [data-m="promo-track"] { overflow-x: auto; } }
+  @media (max-width: 900px) {
+    [data-m="promo-sec"] { padding: 44px 0 48px !important; }
+    [data-m="promo-h2"] { font-size: 26px !important; }
+    [data-m="promo-card"] { width: 232px !important; }
+    [data-m="promo-pad"] { padding-left: 20px !important; padding-right: 20px !important; }
+  }
   image-slot { display: block; }
   /* Perceived-performance: brand shimmer under every sourced slot until its
      image paints, then a fade-in. Wrappers already pin aspect-ratio, so no CLS. */
@@ -436,6 +444,39 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
       <a href="#collection" style="display: inline-block; border: 1px solid rgba(244,242,237,0.75); color: #F4F2ED; padding: 14px 34px; font-size: 11px; letter-spacing: 0.2em" style-hover="background: #F4F2ED; color: #1B1D1F">{{ t.viewSeason }}</a>
     </div>
     </sc-if>
+
+    <section id="uu-dai" data-m="promo-sec" style="background: #22254F; color: #F4F2ED; padding: 72px 0 76px" aria-label="Quà tặng tri ân khách hàng">
+      <div data-m="promo-pad" style="max-width: 1600px; margin: 0 auto; padding: 0 40px 30px; display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; flex-wrap: wrap">
+        <div>
+          <p style="margin: 0 0 14px; font-size: 10px; letter-spacing: 0.26em; color: #B7AB92">{{ t.udKicker }}</p>
+          <h2 data-m="promo-h2" style="font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: 36px; line-height: 1.22; margin: 0">{{ t.udTitle }}</h2>
+        </div>
+        <a href="tel:+84777986999" style="display: inline-block; background: #7A5A2B; border: 1px solid #8A6A3B; color: #F4F2ED; padding: 14px 34px; font-size: 11px; letter-spacing: 0.14em" style-hover="background: #8A6A3B">{{ t.udCta }}</a>
+      </div>
+      <div data-m="promo-track" style="overflow: hidden; width: 100%">
+        <div data-m="promo-row" style="display: flex; width: max-content; animation: ml-marquee 46s linear infinite">
+          <div style="display: flex; gap: 20px; margin-right: 20px">
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-1.jpg" alt="{{ t.ud1t }}" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud1t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud1s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-2.jpg" alt="{{ t.ud2t }}" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud2t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud2s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-3.jpg" alt="{{ t.ud3t }}" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud3t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud3s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-4.jpg" alt="{{ t.ud4t }}" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud4t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud4s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-5.jpg" alt="{{ t.ud5t }}" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud5t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud5s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-6.jpg" alt="{{ t.ud6t }}" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud6t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud6s }}</p></div></article>
+          </div>
+          <div style="display: flex; gap: 20px; margin-right: 20px" aria-hidden="true">
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-1.jpg" alt="" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud1t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud1s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-2.jpg" alt="" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud2t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud2s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-3.jpg" alt="" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud3t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud3s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-4.jpg" alt="" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud4t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud4s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-5.jpg" alt="" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud5t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud5s }}</p></div></article>
+            <article data-m="promo-card" style="width: 300px; flex: none; background: #F4F2ED; color: #1B1D1F; display: flex; flex-direction: column"><img src="uploads-opt/uu-dai-6.jpg" alt="" loading="lazy" decoding="async" width="900" height="900" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover"><div style="padding: 16px 18px 20px"><p style="margin: 0 0 7px; font-size: 18px; font-weight: 700; line-height: 1.25; color: #22254F">{{ t.ud6t }}</p><p style="margin: 0; font-size: 12px; line-height: 1.7; color: #55534E">{{ t.ud6s }}</p></div></article>
+          </div>
+        </div>
+      </div>
+      <div data-m="promo-pad" style="max-width: 1600px; margin: 0 auto; padding: 28px 40px 0">
+        <p style="margin: 0; max-width: 760px; font-size: 12px; line-height: 1.85; color: #B7AB92">{{ t.udNote }}</p>
+      </div>
+    </section>
 
     <section id="brand" data-m="brand-sec" style="padding: 112px 0">
       <div data-m="brand-banner" style="width: 100%; height: 76vh; min-height: 480px; background: #EAE7DE; position: relative; overflow: hidden; display: block">
@@ -1333,6 +1374,22 @@ const TXT = {
     heroDesc: "Clarity looks good on you. Frames cut for the light you live in.",
     heroDescInline: "It is your personal universe of vision, style, and story.",
     reality: "Reality, M-LonG.", viewSeason: "VIEW THE SEASON",
+    udKicker: "CUSTOMER APPRECIATION · UNTIL 2 OCTOBER 2026",
+    udTitle: "Six gifts to thank you.",
+    udCta: "Call 0777 986 999",
+    udNote: "In store only, at 147A Le Duan, Cua Nam, Hanoi. Each offer applies to the lens or sunglasses line named on the card and cannot be combined with another offer. English-speaking staff at the counter; card payment accepted.",
+    ud1t: "Free frame worth 1,850,000đ",
+    ud1s: "With Essilor Gen S photochromic lenses. Authenticity seal, free eye test, same-day cutting.",
+    ud2t: "Free frame worth 1,250,000đ",
+    ud2s: "With Essilor Classic lenses. Authenticity seal, free refraction test before cutting.",
+    ud3t: "Free frame worth 850,000đ",
+    ud3s: "With Essilor blue-light lenses or Element photochromic lenses.",
+    ud4t: "Combo from 580,000đ",
+    ud4s: "Frame + blue-light or photochromic lenses: 580,000đ (Element) · 798,000đ (Nikki).",
+    ud5t: "Sunglasses: buy 1 get 1",
+    ud5s: "On sunglasses priced 850,000đ. Choose one of the two sunglasses offers.",
+    ud6t: "Free prescription tinted lenses",
+    ud6s: "With 850,000đ sunglasses, for prescriptions under -5.00.",
     ownYourLight: "A thousand to choose from. One to wear.", typeDesc: "Korean designs, featherweight titanium, flexible fronts, polished acetate. Twenty-five years in the trade, now at 147A Lê Duẩn.",
     locTag: "HÀ NỘI · HOÀN KIẾM", catTag: "SUNGLASSES · OPTICAL",
     brandTitle: "A thousand to choose from. One to wear.",
@@ -1376,6 +1433,22 @@ const TXT = {
     heroDesc: "Sự rõ ràng rất hợp với bạn. Gọng kính được cắt cho ánh sáng bạn sống cùng.",
     heroDescInline: "It is your personal universe of vision, style, and story.",
     reality: "Reality, M-LonG.", viewSeason: "Xem bộ sưu tập",
+    udKicker: "QUÀ TẶNG TRI ÂN · ĐẾN HẾT 02/10/2026",
+    udTitle: "Sáu quà tặng tri ân khách hàng.",
+    udCta: "Gọi 0777 986 999",
+    udNote: "Chỉ áp dụng tại cửa hàng 147A Lê Duẩn, Cửa Nam, Hà Nội. Mỗi ưu đãi áp dụng đúng dòng tròng hoặc kính mát ghi trên thẻ, không cộng dồn với ưu đãi khác.",
+    ud1t: "Tặng gọng 1.850.000đ",
+    ud1s: "Khi mua tròng Essilor Gen S (đổi màu). Tròng có tem kiểm định, đo mắt miễn phí, cắt lấy ngay.",
+    ud2t: "Tặng gọng 1.250.000đ",
+    ud2s: "Khi mua tròng Essilor Classic. Tròng có tem kiểm định, đo khúc xạ miễn phí trước khi cắt.",
+    ud3t: "Tặng gọng 850.000đ",
+    ud3s: "Khi mua tròng Essilor lọc ánh sáng xanh hoặc tròng Element đổi màu.",
+    ud4t: "Combo từ 580.000đ",
+    ud4s: "Gọng + tròng lọc ánh sáng xanh hoặc đổi màu: 580.000đ (Element) · 798.000đ (Nikki).",
+    ud5t: "Kính mát: mua 1 tặng 1",
+    ud5s: "Áp dụng kính mát giá 850.000đ. Chọn 1 trong 2 ưu đãi kính mát.",
+    ud6t: "Tặng tròng cận râm",
+    ud6s: "Khi mua kính mát 850.000đ, áp dụng độ cận dưới 5.00.",
     ownYourLight: "Nghìn chiếc để chọn. Một chiếc để đeo.", typeDesc: "Gọng Hàn Quốc, titan siêu nhẹ, gọng dẻo, acetate đánh bóng. 25 năm trong nghề, nay bán lẻ tại 147A Lê Duẩn.",
     locTag: "Hà Nội · Cửa Nam", catTag: "Kính mát · Gọng kính",
     brandTitle: "Nghìn chiếc để chọn. Một chiếc để đeo.",
@@ -3903,80 +3976,6 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   measure();
 })();
 </script>
-<section id="uu-dai" class="ml-promo" aria-label="Ưu đãi tri ân khách hàng">
-  <style>
-    .ml-promo{font-family:"Be Vietnam Pro","Montserrat",system-ui,sans-serif;background:#22254F;color:#F4F2ED;padding:32px 20px;margin:0}
-    .ml-promo__in{max-width:1080px;margin:0 auto}
-    .ml-promo__kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#B7AB92;margin:0 0 8px}
-    .ml-promo h2{font-size:clamp(22px,3.4vw,34px);line-height:1.15;margin:0 0 6px;font-weight:700;color:#F4F2ED}
-    .ml-promo__until{color:#8A6A3B;font-weight:600;margin:0 0 20px}
-    .ml-promo__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin:0 0 20px}
-    .ml-promo__card{background:#F4F2ED;color:#1B1D1F;border-radius:10px;padding:14px 16px}
-    .ml-promo__num{font-size:22px;font-weight:700;color:#22254F;margin:0 0 4px}
-    .ml-promo__card p{margin:0;font-size:14px;line-height:1.45}
-    .ml-promo__card small{display:block;margin-top:6px;color:#5c5a55;font-size:12px}
-    .ml-promo__trust{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:#B7AB92;margin:0 0 14px}
-    .ml-promo__cta{display:inline-block;background:#8A6A3B;color:#F4F2ED;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:8px;margin-right:10px}
-    .ml-promo__addr{font-size:13px;color:#B7AB92;margin:14px 0 0}
-    .ml-promo__lang{float:right;font-size:12px}
-    .ml-promo__lang a{color:#B7AB92;margin-left:8px}
-    .ml-promo[hidden]{display:none}
-  </style>
-  <div class="ml-promo__in">
-    <div class="ml-promo__lang"><a href="?lang=vi#uu-dai">VI</a><a href="?lang=en#uu-dai">EN</a></div>
-
-    <!-- ===== TIẾNG VIỆT ===== -->
-    <div data-ml-lang="vi">
-      <p class="ml-promo__kicker">Mạnh Long Optical · 147A Lê Duẩn, Hà Nội</p>
-      <h2>Quà tặng tri ân khách hàng</h2>
-      <p class="ml-promo__until">Áp dụng đến hết 02/10/2026</p>
-      <div class="ml-promo__grid">
-        <div class="ml-promo__card"><p class="ml-promo__num">Tặng gọng 1.850.000đ</p><p>Khi mua tròng Essilor Gen S (đổi màu).</p><small>Không cộng dồn ưu đãi khác.</small></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Tặng gọng 1.250.000đ</p><p>Khi mua tròng Essilor Classic.</p><small>Không cộng dồn ưu đãi khác.</small></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Tặng gọng 850.000đ</p><p>Khi mua tròng Essilor Ánh sáng xanh hoặc Element đổi màu.</p><small>Không cộng dồn ưu đãi khác.</small></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Combo từ 580.000đ</p><p>Gọng + tròng lọc ánh sáng xanh hoặc đổi màu: 580.000đ (Element) · 798.000đ (Nikki).</p></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Kính mát: mua 1 tặng 1</p><p>Áp dụng kính mát giá 850.000đ.</p><small>Chọn 1 trong 2 ưu đãi kính mát.</small></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Tặng tròng cận râm</p><p>Khi mua kính mát 850.000đ, độ cận dưới 5.00.</p><small>Chọn 1 trong 2 ưu đãi kính mát.</small></div>
-      </div>
-      <div class="ml-promo__trust"><span>Đo mắt miễn phí trọn đời</span><span>Tròng có tem kiểm định</span><span>Bảo hành 1 đổi 1</span><span>Cắt lấy ngay</span></div>
-      <a class="ml-promo__cta" href="tel:0777986999">Gọi 0777 986 999</a>
-      <a class="ml-promo__cta" style="background:transparent;border:1px solid #8A6A3B" href="https://maps.google.com/?q=Manh+Long+Optical+147A+Le+Duan+Ha+Noi" target="_blank" rel="noopener">Chỉ đường</a>
-      <p class="ml-promo__addr">147A Đ. Lê Duẩn, Cửa Nam, Hà Nội · Mở cửa 8:30–21:30 hằng ngày · Gần ga Hà Nội</p>
-    </div>
-
-    <!-- ===== ENGLISH ===== -->
-    <div data-ml-lang="en" hidden>
-      <p class="ml-promo__kicker">Manh Long Optical · 147A Le Duan, Hanoi</p>
-      <h2>Customer appreciation offers</h2>
-      <p class="ml-promo__until">Valid until 2 October 2026</p>
-      <div class="ml-promo__grid">
-        <div class="ml-promo__card"><p class="ml-promo__num">Free frame worth 1,850,000đ</p><p>With Essilor Gen S photochromic lenses.</p><small>Cannot be combined with other offers.</small></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Free frame worth 1,250,000đ</p><p>With Essilor Classic lenses.</p><small>Cannot be combined with other offers.</small></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Free frame worth 850,000đ</p><p>With Essilor blue-light lenses or Element photochromic lenses.</p><small>Cannot be combined with other offers.</small></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Combo from 580,000đ</p><p>Frame + blue-light or photochromic lenses: 580,000đ (Element) · 798,000đ (Nikki).</p></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Sunglasses: buy 1 get 1</p><p>On sunglasses priced 850,000đ.</p><small>Choose one of the two sunglasses offers.</small></div>
-        <div class="ml-promo__card"><p class="ml-promo__num">Free prescription tint</p><p>With 850,000đ sunglasses, prescriptions under -5.00.</p><small>Choose one of the two sunglasses offers.</small></div>
-      </div>
-      <div class="ml-promo__trust"><span>Free eye test, for life</span><span>Lenses with authenticity seal</span><span>1-for-1 warranty</span><span>Same-day service</span></div>
-      <a class="ml-promo__cta" href="tel:+84777986999">Call 0777 986 999</a>
-      <a class="ml-promo__cta" style="background:transparent;border:1px solid #8A6A3B" href="https://maps.google.com/?q=Manh+Long+Optical+147A+Le+Duan+Ha+Noi" target="_blank" rel="noopener">Directions</a>
-      <p class="ml-promo__addr">147A Le Duan St, Cua Nam, Hanoi · Open daily 8:30–21:30 · Next to Hanoi Railway Station</p>
-    </div>
-  </div>
-  <script>
-  (function(){
-    var box=document.getElementById('uu-dai'); if(!box) return;
-    // Tự ẩn sau khi hết hạn (giờ Việt Nam)
-    if (Date.now() > Date.parse('2026-10-02T16:59:59Z')) { box.hidden = true; return; }
-    var q=new URLSearchParams(location.search).get('lang');
-    var lang = (q==='vi'||q==='en') ? q : ((navigator.language||'').toLowerCase().indexOf('vi')===0 ? 'vi' : 'en');
-    box.querySelectorAll('[data-ml-lang]').forEach(function(el){ el.hidden = el.getAttribute('data-ml-lang')!==lang; });
-    // Đưa khối ưu đãi lên ngay dưới hero nếu tìm thấy hero, nếu không thì giữ cuối trang
-    var hero=document.querySelector('.hero, [class*="hero"]');
-    if(hero && hero.parentNode){ hero.parentNode.insertBefore(box, hero.nextSibling); }
-  })();
-  </script>
-</section>
 <!-- Dữ liệu có cấu trúc cho Google (Offer) — chỉ hợp lệ trong thời gian khuyến mãi -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Offer","name":"Quà tặng tri ân khách hàng — Manh Long Optical","description":"Tặng gọng 1.850.000đ khi mua tròng Essilor Gen S; tặng gọng 1.250.000đ khi mua tròng Essilor Classic; tặng gọng 850.000đ khi mua tròng Essilor ánh sáng xanh hoặc Element đổi màu; combo gọng + tròng từ 580.000đ; kính mát 850.000đ mua 1 tặng 1 hoặc tặng tròng cận râm dưới 5 độ.","validFrom":"2026-08-31","validThrough":"2026-10-02","priceCurrency":"VND","availability":"https://schema.org/InStoreOnly","offeredBy":{"@type":"Optician","name":"Manh Long Optical","telephone":"+84777986999","address":{"@type":"PostalAddress","streetAddress":"147A Đường Lê Duẩn","addressLocality":"Cửa Nam, Hà Nội","addressCountry":"VN"}}}

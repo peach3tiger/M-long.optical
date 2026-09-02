@@ -1,3 +1,28 @@
 User-agent: *
 Allow: /
+
+# Bot cua cac tro ly AI - cho phep ro rang.
+# 65% khach la nguoi nuoc ngoai va ho hay hoi ChatGPT/Perplexity/Gemini
+# truoc khi den. Chan nhung bot nay = khong bao gio duoc trich dan.
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://manhlongoptical.com/sitemap.xml

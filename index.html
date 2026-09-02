@@ -66,11 +66,9 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Archivo:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
 <script src="./image-slot.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<link rel="stylesheet" href="./vendor/leaflet/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H">
 <meta name="ext-resource-dependency" content="uploads-opt/1787294089220_5530799533190614497_5530799533190614497_df35bda4ba9cea7590d59a78ea568379.jpg" data-resource-id="prod0">
 <meta name="ext-resource-dependency" content="uploads-opt/1787294089240_5530799533190614497_5530799533190614497_78f5178c9f49da040a0789ef320ed4d6.jpg" data-resource-id="prod1">
 <meta name="ext-resource-dependency" content="uploads-opt/1787294089257_5530799533190614497_5530799533190614497_3638e3e567f735a2af90ac7435ee274d.jpg" data-resource-id="prod2">
@@ -3487,9 +3485,8 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     if (this._leafletLoading) return;
     this._leafletLoading = true;
     const script = document.createElement("script");
-    script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+    script.src = "./vendor/leaflet/leaflet.js";
     script.integrity = "sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH";
-    script.crossOrigin = "anonymous";
     script.onload = () => this.initMap();
     document.head.appendChild(script);
   }

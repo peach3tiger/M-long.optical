@@ -427,6 +427,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
       <a href="#journal" onClick="{{ goHome }}" style-hover="color: #7A5A2B">{{ t.navBlog }}</a>
       <a href="#learn" onClick="{{ goHome }}" style-hover="color: #7A5A2B">{{ t.navLearn }}</a>
       <a href="#store" onClick="{{ goHome }}" style-hover="color: #7A5A2B">{{ t.navStore }}</a>
+      <a href="/tim-hieu.html" style-hover="color: #7A5A2B">{{ t.navGuide }}</a>
     </nav>
   </header>
 
@@ -1118,6 +1119,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
           <a href="#journal" onClick="{{ goHome }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navBlog }}</a>
           <a href="#learn" onClick="{{ goHome }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navLearn }}</a>
           <a href="#store" onClick="{{ goHome }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navStore }}</a>
+          <a href="/tim-hieu.html" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navGuide }}</a>
           <a href="#" onClick="{{ goFaq }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.faq }}</a>
           <a href="#" onClick="{{ goAs }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.as }}</a>
           <a href="#" onClick="{{ goPolicy }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.policyTab }}</a>
@@ -1412,7 +1414,7 @@ const TXT = {
   en: {
     myPage: "MY PAGE", login: "LOGIN", join: "JOIN", cartLabel: "CART", search: "SEARCH",
     logout: "LOGOUT", welcomeBack: "Welcome back", nameLabel: "Full name", emailLabel: "Email address", passwordLabel: "Password (min. 6 characters)",
-    navBrand: "BRAND", navNewCollection: "NEW COLLECTION", navSunglasses: "SUNGLASSES", navFrame: "FRAME", navLenses: "LENSES", navBlog: "CHECKIN W US", navStore: "STORE", navLearn: "LEARN", trendingTopics: "TRENDING TOPICS",
+    navBrand: "BRAND", navNewCollection: "NEW COLLECTION", navSunglasses: "SUNGLASSES", navFrame: "FRAME", navLenses: "LENSES", navBlog: "CHECKIN W US", navStore: "STORE", navGuide: "GUIDES", navLearn: "LEARN", trendingTopics: "TRENDING TOPICS",
     newSeason: "NEW SEASON",
     heroTitle1: "not to be seen,", heroTitle1b: "but to see clearly.", heroTitleInline: "Free eye tests, same-day prescription glasses in Hanoi.",
     heroDesc: "Clarity looks good on you. Frames cut for the light you live in.",
@@ -1471,7 +1473,7 @@ const TXT = {
   vi: {
     myPage: "Trang cá nhân", login: "Đăng nhập", join: "Đăng ký", cartLabel: "Giỏ hàng", search: "Tìm kiếm",
     logout: "Đăng xuất", welcomeBack: "Chào mừng trở lại", nameLabel: "Họ và tên", emailLabel: "Địa chỉ email", passwordLabel: "Mật khẩu (tối thiểu 6 ký tự)",
-    navBrand: "Thương hiệu", navNewCollection: "Bộ sưu tập mới", navSunglasses: "Kính mát", navFrame: "Gọng kính", navLenses: "Tròng kính", navBlog: "CHECKIN W US", navStore: "Cửa hàng", navLearn: "Tìm hiểu", trendingTopics: "Chủ đề nổi bật",
+    navBrand: "Thương hiệu", navNewCollection: "Bộ sưu tập mới", navSunglasses: "Kính mát", navFrame: "Gọng kính", navLenses: "Tròng kính", navBlog: "CHECKIN W US", navStore: "Cửa hàng", navGuide: "Hướng dẫn", navLearn: "Tìm hiểu", trendingTopics: "Chủ đề nổi bật",
     newSeason: "Mùa mới",
     heroTitle1: "không để được nhìn thấy,", heroTitle1b: "mà để nhìn rõ.", heroTitleInline: "Đo mắt miễn phí, cắt kính cận lấy ngay tại Hà Nội.",
     heroDesc: "Sự rõ ràng rất hợp với bạn. Gọng kính được cắt cho ánh sáng bạn sống cùng.",

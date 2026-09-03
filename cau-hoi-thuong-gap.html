@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Câu Hỏi Thường Gặp Về Kính Mắt | Mạnh Long Optical</title>
+<meta name="description" content="Giá cắt kính cận, chọn Essilor hay Zeiss, đo mắt trẻ em, kính lỏng phải làm sao. 15 câu khách hay hỏi, tại 147A Lê Duẩn, Cửa Nam · 0777 986 999.">
+<link rel="canonical" href="https://manhlongoptical.com/cau-hoi-thuong-gap.html">
+<link rel="alternate" hreflang="vi" href="https://manhlongoptical.com/cau-hoi-thuong-gap.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/cau-hoi-thuong-gap.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mạnh Long Optical">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Câu Hỏi Thường Gặp Về Kính Mắt | Mạnh Long Optical">
+<meta name="twitter:description" content="Giá cắt kính cận, chọn Essilor hay Zeiss, đo mắt trẻ em, kính lỏng phải làm sao. 15 câu khách hay hỏi, tại 147A Lê Duẩn, Cửa Nam · 0777 986 999.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<meta property="og:title" content="Câu Hỏi Thường Gặp Về Kính Mắt | Mạnh Long Optical">
+<meta property="og:description" content="Giá cắt kính cận, chọn Essilor hay Zeiss, đo mắt trẻ em, kính lỏng phải làm sao. 15 câu khách hay hỏi, tại 147A Lê Duẩn, Cửa Nam · 0777 986 999.">
+<meta property="og:url" content="https://manhlongoptical.com/cau-hoi-thuong-gap.html">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:20px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+nav.top{white-space:nowrap}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);margin-left:14px}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:22px;line-height:1.3;margin:40px 0 6px}
+p{margin:0 0 16px}
+.faq dt{font-weight:600;margin:22px 0 6px;font-size:16px}.faq dd{margin:0 0 4px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--ink);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"FAQPage","@id":"https://manhlongoptical.com/cau-hoi-thuong-gap.html#faq","mainEntity":[
+{"@type":"Question","name":"Cửa hàng mắt kính nào đo mắt miễn phí ở khu vực Cửa Nam, Hà Nội?","acceptedAnswer":{"@type":"Answer","text":"Mạnh Long Optical tại 147A Lê Duẩn, Cửa Nam đo mắt miễn phí kể cả khi bạn chưa mua kính, và đo lại miễn phí không giới hạn số lần sau đó. Quy trình gồm khúc xạ tự động, thử kính bằng khung thử, kiểm tra thị lực hai mắt và độ loạn, mất khoảng 20-30 phút. Nên đặt hẹn qua Zalo 0777 986 999 trước, nhất là cuối tuần, để không phải chờ."}},
+{"@type":"Question","name":"Cắt kính cận lấy ngay gần Ga Hà Nội, tiệm nào uy tín?","acceptedAnswer":{"@type":"Answer","text":"147A Lê Duẩn cách Ga Hà Nội khoảng 500m, thuộc phường Cửa Nam. Tròng đơn có sẵn thì cắt lấy ngay trong ngày tại Mạnh Long Optical, tròng đa tròng hoặc cần đặt hãng thường mất thêm 1-4 ngày tuỳ loại. Cửa hàng mở cửa 8:00-21:30 tất cả các ngày trong tuần nên buổi tối vẫn ghé được."}},
+{"@type":"Question","name":"Tiệm kính nào ở phố cổ Hà Nội có nhiều mẫu gọng để chọn?","acceptedAnswer":{"@type":"Answer","text":"Gần khu phố cổ và Hoàn Kiếm, Mạnh Long Optical ở 147A Lê Duẩn có khoảng 1.000 mẫu gọng, gồm titanium, acetate và kim loại, giá từ 550.000đ đến 3.500.000đ. Nhân viên tư vấn dáng gọng theo khuôn mặt trước khi bạn quyết định. Muốn chắc còn mẫu mình thích, có thể nhắn Zalo hỏi trước khi tới."}},
+{"@type":"Question","name":"Cắt kính cận giá bao nhiêu ở Hà Nội?","acceptedAnswer":{"@type":"Answer","text":"Một cặp kính cận đơn tròng, gồm cả gọng và tròng, tại Mạnh Long Optical dao động 850.000-3.500.000đ, tuỳ chiết suất và gọng bạn chọn. Độ cận thấp dưới 3 độ thường dùng chiết suất 1.60 nên rơi vào mức giá thấp hơn trong khoảng đó, độ cao hơn cần chiết suất mỏng hơn nên giá nhích lên. Giá tính theo combo gọng+tròng bạn chọn chứ không tính riêng theo số độ, nên tư vấn viên báo giá cụ thể sau khi đo."}},
+{"@type":"Question","name":"Giá tròng kính đổi màu (photochromic) bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Tròng đổi màu tại Mạnh Long Optical dao động rộng, từ khoảng 350.000đ cho dòng phổ thông đến hơn 7.000.000đ cho dòng cao cấp Essilor và Zeiss chiết suất cao. Phần lớn khách chọn tầm 1-2 triệu, dùng chiết suất 1.56-1.61 của Elements hoặc Nikki, đủ cho độ cận dưới 6-10 độ tuỳ dòng. Giá còn phụ thuộc độ cận và chiết suất bạn cần, nên đo mắt xong mới chốt được số chính xác."}},
+{"@type":"Question","name":"Gọng kính titanium giá khoảng bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Gọng nói chung ở Mạnh Long Optical từ 550.000đ đến 3.500.000đ, titanium thường nằm ở nửa trên khoảng giá này vì nhẹ và bền hơn acetate. Gọng được bảo hành 6 tháng nếu lỗi sản xuất, và được chỉnh gọng, thay ve mũi, vệ sinh siêu âm miễn phí trọn đời sau khi mua. Ghé thử trực tiếp là cách chắc nhất để biết giá đúng mẫu, vì cùng chất liệu titanium mà kiểu dáng khác nhau vẫn chênh giá."}},
+{"@type":"Question","name":"Nên chọn tròng Essilor hay Zeiss?","acceptedAnswer":{"@type":"Answer","text":"Cả hai đều là tròng Mạnh Long Optical đang phân phối, khác nhau chủ yếu ở số lượng lựa chọn. Essilor có nhiều dòng hơn, từ Classic phổ thông đến Gen 8 và Airwear, trải dài nhiều mức giá và chiết suất. Zeiss ở cửa hàng hiện chỉ có hai chiết suất 1.56 và 1.60, giá nhỉnh hơn Essilor ở cùng phân khúc. Muốn nhiều lựa chọn về ngân sách thì Essilor linh hoạt hơn, còn đã quen dùng Zeiss từ trước thì cứ tiếp tục, cả hai đủ tiêu chuẩn cho việc đeo hàng ngày."}},
+{"@type":"Question","name":"Chiết suất 1.6 và 1.67 khác nhau thế nào, nên chọn loại nào?","acceptedAnswer":{"@type":"Answer","text":"Chiết suất càng cao thì tròng càng mỏng với cùng độ cận. Mạnh Long Optical thường tư vấn 1.60 cho độ cận dưới 3, và 1.67 cho độ 3-5 hoặc khi dùng gọng không viền vì tròng mỏng đỡ cấn mép. Trên 5 độ thì nên lên tiếp 1.74 để tròng không quá dày ở mép. Chênh giá giữa các mức khá rõ nên độ cận thấp thì không cần chọn chiết suất cao nhất."}},
+{"@type":"Question","name":"Gọng titanium hay gọng acetate tốt hơn?","acceptedAnswer":{"@type":"Answer","text":"Titanium nhẹ, bền, chịu được đeo cả ngày mà không mỏi tai hay sống mũi. Acetate dày dặn hơn, có nhiều màu và tạo khối rõ cho khuôn mặt, hợp người thích gọng có cá tính. Mạnh Long Optical có cả hai loại, tư vấn viên thường hỏi bạn đeo kính bao nhiêu tiếng một ngày và thích gọng dày hay mảnh trước khi gợi ý."}},
+{"@type":"Question","name":"Cửa hàng nào có gọng kính titanium chính hãng ở khu vực Cửa Nam?","acceptedAnswer":{"@type":"Answer","text":"Gọng titanium chính hãng có ở Mạnh Long Optical, 147A Lê Duẩn, Cửa Nam, trong khoảng 1.000 mẫu gọng đang bày. Gọng được bảo hành 6 tháng nếu lỗi sản xuất, đổi 1-1 nếu đúng lỗi từ nhà sản xuất. Cửa hàng mở cửa 8:00-21:30 mỗi ngày, ghé thử trực tiếp để xem gọng vừa khuôn mặt và độ nhẹ có đúng ý không."}},
+{"@type":"Question","name":"Ở đâu đo mắt cho trẻ em tại Hà Nội?","acceptedAnswer":{"@type":"Answer","text":"Trẻ đã đi học là đo được tại Mạnh Long Optical, đo mắt miễn phí như người lớn. Với ca phức tạp hoặc bé còn quá nhỏ chưa hợp tác được khi đo, cửa hàng sẽ giới thiệu qua bệnh viện mắt chuyên khoa thay vì cố đo cho ra kết quả. Phụ huynh nên đặt hẹn qua Zalo trước, tránh giờ cao điểm cuối tuần để bé dễ tập trung hơn khi đo."}},
+{"@type":"Question","name":"Tiệm kính nào có tròng chống ánh sáng xanh cho dân văn phòng?","acceptedAnswer":{"@type":"Answer","text":"Mạnh Long Optical có tròng lọc ánh sáng xanh ở nhiều mức giá, phổ biến nhất là dòng BlueUV Capture của Essilor. Loại này giúp giảm mỏi mắt khi nhìn màn hình liên tục nhiều giờ, không phải kính chữa bệnh về mắt. Ngồi máy tính trên 6 tiếng một ngày thì tư vấn viên thường khuyên chọn dòng này thay vì tròng trong suốt thông thường."}},
+{"@type":"Question","name":"Đeo kính mới bị chóng mặt, đau đầu có bình thường không?","acceptedAnswer":{"@type":"Answer","text":"Một vài ngày đầu hơi chóng mặt hoặc mỏi mắt là bình thường, nhất là khi đổi độ hoặc đổi sang tròng đa tiêu. Nếu sau khoảng một tuần vẫn chóng mặt liên tục, nên quay lại Mạnh Long Optical để chỉnh hoặc đo lại, việc đo lại này miễn phí trọn đời. Chóng mặt kéo dài không đỡ sau một tuần thì nên đi khám mắt chuyên khoa, vì có thể không liên quan tới kính."}},
+{"@type":"Question","name":"Kính bị lỏng, hay tuột phải làm sao?","acceptedAnswer":{"@type":"Answer","text":"Gọng lỏng thường do ốc vít giãn ra sau một thời gian đeo, không phải lỗi sản phẩm. Mạnh Long Optical chỉnh gọng, siết ốc và thay ve mũi miễn phí trọn đời cho khách đã mua tại cửa hàng, không cần hẹn trước cũng ghé được trong giờ mở cửa. Kính mua chỗ khác vẫn được chỉnh giúp, nhưng nên gọi trước hỏi có phụ kiện phù hợp không."}},
+{"@type":"Question","name":"Bao lâu thì nên đo mắt lại một lần?","acceptedAnswer":{"@type":"Answer","text":"Người lớn nên đo lại mỗi 12 tháng, trẻ em hoặc người có độ tăng nhanh thì 6 tháng một lần. Dấu hiệu cần đo sớm hơn là nhìn mờ khi đeo kính cũ, mỏi mắt thường xuyên hoặc nheo mắt nhiều khi nhìn xa. Đo lại tại Mạnh Long Optical không mất phí dù bạn có mua kính mới hay không."}}
+]},
+{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/cau-hoi-thuong-gap.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Câu hỏi thường gặp","item":"https://manhlongoptical.com/cau-hoi-thuong-gap.html"}]},
+{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/banner-hero.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"]}
+]}</script>
+</head>
+<body>
+<header>
+  <a class="logo" href="/">Mạnh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/">TRANG CHỦ</a><a href="/tim-hieu.html">TÌM HIỂU</a></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › <a href="/tim-hieu.html">Tìm hiểu</a> › Câu hỏi thường gặp</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">HỎI ĐÁP</p>
+<h1>Câu hỏi thường gặp về kính mắt</h1>
+<p class="byline">Mạnh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · Cập nhật 03/09/2026</p>
+<div class="takeaway"><strong>Tóm tắt:</strong> 15 câu khách hay hỏi trước khi tới cửa hàng — địa điểm, giá cắt kính và tròng, nên chọn loại nào, dịch vụ cửa hàng có, và cách xử lý vài tình huống thường gặp sau khi đeo kính. Câu trả lời dùng đúng giá và chính sách hiện hành của Mạnh Long Optical, không phải giá tham khảo chung.</div>
+
+<h2>Địa điểm</h2>
+<dl class="faq">
+<dt>Cửa hàng mắt kính nào đo mắt miễn phí ở khu vực Cửa Nam, Hà Nội?</dt>
+<dd>Mạnh Long Optical tại 147A Lê Duẩn, Cửa Nam đo mắt miễn phí kể cả khi bạn chưa mua kính, và đo lại miễn phí không giới hạn số lần sau đó. Quy trình gồm khúc xạ tự động, thử kính bằng khung thử, kiểm tra thị lực hai mắt và độ loạn, mất khoảng 20-30 phút. Nên đặt hẹn qua Zalo 0777 986 999 trước, nhất là cuối tuần, để không phải chờ.</dd>
+<dt>Cắt kính cận lấy ngay gần Ga Hà Nội, tiệm nào uy tín?</dt>
+<dd>147A Lê Duẩn cách Ga Hà Nội khoảng 500m, thuộc phường Cửa Nam. Tròng đơn có sẵn thì cắt lấy ngay trong ngày tại Mạnh Long Optical, tròng đa tròng hoặc cần đặt hãng thường mất thêm 1-4 ngày tuỳ loại. Cửa hàng mở cửa 8:00-21:30 tất cả các ngày trong tuần nên buổi tối vẫn ghé được.</dd>
+<dt>Tiệm kính nào ở phố cổ Hà Nội có nhiều mẫu gọng để chọn?</dt>
+<dd>Gần khu phố cổ và Hoàn Kiếm, Mạnh Long Optical ở 147A Lê Duẩn có khoảng 1.000 mẫu gọng, gồm titanium, acetate và kim loại, giá từ 550.000đ đến 3.500.000đ. Nhân viên tư vấn dáng gọng theo khuôn mặt trước khi bạn quyết định. Muốn chắc còn mẫu mình thích, có thể nhắn Zalo hỏi trước khi tới.</dd>
+</dl>
+
+<h2>Giá cả</h2>
+<dl class="faq">
+<dt>Cắt kính cận giá bao nhiêu ở Hà Nội?</dt>
+<dd>Một cặp kính cận đơn tròng, gồm cả gọng và tròng, tại Mạnh Long Optical dao động 850.000-3.500.000đ, tuỳ chiết suất và gọng bạn chọn. Độ cận thấp dưới 3 độ thường dùng chiết suất 1.60 nên rơi vào mức giá thấp hơn trong khoảng đó, độ cao hơn cần chiết suất mỏng hơn nên giá nhích lên. Giá tính theo combo gọng+tròng bạn chọn chứ không tính riêng theo số độ, nên tư vấn viên báo giá cụ thể sau khi đo.</dd>
+<dt>Giá tròng kính đổi màu (photochromic) bao nhiêu?</dt>
+<dd>Tròng đổi màu tại Mạnh Long Optical dao động rộng, từ khoảng 350.000đ cho dòng phổ thông đến hơn 7.000.000đ cho dòng cao cấp Essilor và Zeiss chiết suất cao. Phần lớn khách chọn tầm 1-2 triệu, dùng chiết suất 1.56-1.61 của Elements hoặc Nikki, đủ cho độ cận dưới 6-10 độ tuỳ dòng. Giá còn phụ thuộc độ cận và chiết suất bạn cần, nên đo mắt xong mới chốt được số chính xác.</dd>
+<dt>Gọng kính titanium giá khoảng bao nhiêu?</dt>
+<dd>Gọng nói chung ở Mạnh Long Optical từ 550.000đ đến 3.500.000đ, titanium thường nằm ở nửa trên khoảng giá này vì nhẹ và bền hơn acetate. Gọng được bảo hành 6 tháng nếu lỗi sản xuất, và được chỉnh gọng, thay ve mũi, vệ sinh siêu âm miễn phí trọn đời sau khi mua. Ghé thử trực tiếp là cách chắc nhất để biết giá đúng mẫu, vì cùng chất liệu titanium mà kiểu dáng khác nhau vẫn chênh giá.</dd>
+</dl>
+
+<h2>So sánh</h2>
+<dl class="faq">
+<dt>Nên chọn tròng Essilor hay Zeiss?</dt>
+<dd>Cả hai đều là tròng Mạnh Long Optical đang phân phối, khác nhau chủ yếu ở số lượng lựa chọn. Essilor có nhiều dòng hơn, từ Classic phổ thông đến Gen 8 và Airwear, trải dài nhiều mức giá và chiết suất. Zeiss ở cửa hàng hiện chỉ có hai chiết suất 1.56 và 1.60, giá nhỉnh hơn Essilor ở cùng phân khúc. Muốn nhiều lựa chọn về ngân sách thì Essilor linh hoạt hơn, còn đã quen dùng Zeiss từ trước thì cứ tiếp tục, cả hai đủ tiêu chuẩn cho việc đeo hàng ngày.</dd>
+<dt>Chiết suất 1.6 và 1.67 khác nhau thế nào, nên chọn loại nào?</dt>
+<dd>Chiết suất càng cao thì tròng càng mỏng với cùng độ cận. Mạnh Long Optical thường tư vấn 1.60 cho độ cận dưới 3, và 1.67 cho độ 3-5 hoặc khi dùng gọng không viền vì tròng mỏng đỡ cấn mép. Trên 5 độ thì nên lên tiếp 1.74 để tròng không quá dày ở mép. Chênh giá giữa các mức khá rõ nên độ cận thấp thì không cần chọn chiết suất cao nhất.</dd>
+<dt>Gọng titanium hay gọng acetate tốt hơn?</dt>
+<dd>Titanium nhẹ, bền, chịu được đeo cả ngày mà không mỏi tai hay sống mũi. Acetate dày dặn hơn, có nhiều màu và tạo khối rõ cho khuôn mặt, hợp người thích gọng có cá tính. Mạnh Long Optical có cả hai loại, tư vấn viên thường hỏi bạn đeo kính bao nhiêu tiếng một ngày và thích gọng dày hay mảnh trước khi gợi ý.</dd>
+</dl>
+
+<h2>Dịch vụ</h2>
+<dl class="faq">
+<dt>Cửa hàng nào có gọng kính titanium chính hãng ở khu vực Cửa Nam?</dt>
+<dd>Gọng titanium chính hãng có ở Mạnh Long Optical, 147A Lê Duẩn, Cửa Nam, trong khoảng 1.000 mẫu gọng đang bày. Gọng được bảo hành 6 tháng nếu lỗi sản xuất, đổi 1-1 nếu đúng lỗi từ nhà sản xuất. Cửa hàng mở cửa 8:00-21:30 mỗi ngày, ghé thử trực tiếp để xem gọng vừa khuôn mặt và độ nhẹ có đúng ý không.</dd>
+<dt>Ở đâu đo mắt cho trẻ em tại Hà Nội?</dt>
+<dd>Trẻ đã đi học là đo được tại Mạnh Long Optical, đo mắt miễn phí như người lớn. Với ca phức tạp hoặc bé còn quá nhỏ chưa hợp tác được khi đo, cửa hàng sẽ giới thiệu qua bệnh viện mắt chuyên khoa thay vì cố đo cho ra kết quả. Phụ huynh nên đặt hẹn qua Zalo trước, tránh giờ cao điểm cuối tuần để bé dễ tập trung hơn khi đo.</dd>
+<dt>Tiệm kính nào có tròng chống ánh sáng xanh cho dân văn phòng?</dt>
+<dd>Mạnh Long Optical có tròng lọc ánh sáng xanh ở nhiều mức giá, phổ biến nhất là dòng BlueUV Capture của Essilor. Loại này giúp giảm mỏi mắt khi nhìn màn hình liên tục nhiều giờ, không phải kính chữa bệnh về mắt. Ngồi máy tính trên 6 tiếng một ngày thì tư vấn viên thường khuyên chọn dòng này thay vì tròng trong suốt thông thường.</dd>
+</dl>
+
+<h2>Tình huống thường gặp</h2>
+<dl class="faq">
+<dt>Đeo kính mới bị chóng mặt, đau đầu có bình thường không?</dt>
+<dd>Một vài ngày đầu hơi chóng mặt hoặc mỏi mắt là bình thường, nhất là khi đổi độ hoặc đổi sang tròng đa tiêu. Nếu sau khoảng một tuần vẫn chóng mặt liên tục, nên quay lại Mạnh Long Optical để chỉnh hoặc đo lại, việc đo lại này miễn phí trọn đời. Chóng mặt kéo dài không đỡ sau một tuần thì nên đi khám mắt chuyên khoa, vì có thể không liên quan tới kính.</dd>
+<dt>Kính bị lỏng, hay tuột phải làm sao?</dt>
+<dd>Gọng lỏng thường do ốc vít giãn ra sau một thời gian đeo, không phải lỗi sản phẩm. Mạnh Long Optical chỉnh gọng, siết ốc và thay ve mũi miễn phí trọn đời cho khách đã mua tại cửa hàng, không cần hẹn trước cũng ghé được trong giờ mở cửa. Kính mua chỗ khác vẫn được chỉnh giúp, nhưng nên gọi trước hỏi có phụ kiện phù hợp không.</dd>
+<dt>Bao lâu thì nên đo mắt lại một lần?</dt>
+<dd>Người lớn nên đo lại mỗi 12 tháng, trẻ em hoặc người có độ tăng nhanh thì 6 tháng một lần. Dấu hiệu cần đo sớm hơn là nhìn mờ khi đeo kính cũ, mỏi mắt thường xuyên hoặc nheo mắt nhiều khi nhìn xa. Đo lại tại Mạnh Long Optical không mất phí dù bạn có mua kính mới hay không.</dd>
+</dl>
+
+<div class="note">Thông tin trên trang mang tính tham khảo, không thay thế khám và tư vấn trực tiếp tại cửa hàng. Kính cận là thiết bị hỗ trợ thị lực, không làm giảm độ hay chữa khỏi cận thị. Nếu có dấu hiệu bất thường ở mắt, nên khám tại cơ sở y tế chuyên khoa mắt.</div>
+
+<div class="cta"><h2>Còn thắc mắc khác?</h2><p>Nhắn Zalo hoặc gọi trực tiếp, Mạnh Long Optical trả lời trong giờ mở cửa.</p>
+<p><strong>📍 Mạnh Long Optical — 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</strong><br>🕐 Mở cửa hằng ngày 8:00 – 21:30<br>📞 <a href="tel:+84777986999">0777 986 999</a> · 💬 <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo</a> · 🗺️ <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a></p></div>
+
+<nav class="related"><h2>Đọc tiếp</h2><ul>
+<li><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại 147A Lê Duẩn</a></li>
+<li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời tại Mạnh Long Optical</a></li>
+<li><a href="/essilor-lenses.html">Tròng Essilor: Tiền bạn bỏ ra nằm ở đâu</a></li>
+<li><a href="/choosing-frames-face-shape.html">Cách chọn gọng hợp khuôn mặt</a></li>
+</ul></nav>
+</main>
+<footer>
+  <p><strong>Mạnh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Kính Chống Ánh Sáng Xanh Có Cần Thiết? | Mạnh Long Optical</title>
+<meta name="description" content="Bằng chứng khoa học hiện tại nói gì về ánh sáng xanh và mỏi mắt. Ai nên cân nhắc dùng, giá tròng chống ánh sáng xanh tại Mạnh Long Optical.">
+<link rel="canonical" href="https://manhlongoptical.com/kinh-chong-anh-sang-xanh-co-can-thiet.html">
+<link rel="alternate" hreflang="vi" href="https://manhlongoptical.com/kinh-chong-anh-sang-xanh-co-can-thiet.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/kinh-chong-anh-sang-xanh-co-can-thiet.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mạnh Long Optical">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kính Chống Ánh Sáng Xanh Có Cần Thiết? | Mạnh Long Optical">
+<meta name="twitter:description" content="Bằng chứng khoa học hiện tại nói gì về ánh sáng xanh và mỏi mắt. Giá tròng chống ánh sáng xanh tại Mạnh Long Optical.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<meta property="og:title" content="Kính Chống Ánh Sáng Xanh Có Cần Thiết? | Mạnh Long Optical">
+<meta property="og:description" content="Bằng chứng khoa học hiện tại nói gì về ánh sáng xanh và mỏi mắt. Giá tròng chống ánh sáng xanh tại Mạnh Long Optical.">
+<meta property="og:url" content="https://manhlongoptical.com/kinh-chong-anh-sang-xanh-co-can-thiet.html">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:20px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+nav.top{white-space:nowrap}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);margin-left:14px}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+.quickfacts{margin:0 0 28px;padding:0 0 0 20px;font-size:15px}.quickfacts li{margin:0 0 6px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:22px;line-height:1.3;margin:40px 0 6px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#F4F2ED;font-weight:600;font-size:12px;letter-spacing:.04em}
+.faq h3{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-weight:600;margin:22px 0 6px;font-size:16px;line-height:1.4}.faq p{margin:0 0 4px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--ink);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"Article","@id":"https://manhlongoptical.com/kinh-chong-anh-sang-xanh-co-can-thiet.html#article","headline":"Kính chống ánh sáng xanh có thực sự cần thiết không?","description":"Bằng chứng khoa học hiện tại nói gì về ánh sáng xanh và mỏi mắt. Ai nên cân nhắc dùng, giá tròng chống ánh sáng xanh tại Mạnh Long Optical.","author":{"@type":"Organization","name":"Mạnh Long Optical","url":"https://manhlongoptical.com/"},"publisher":{"@type":"Organization","name":"Mạnh Long Optical","url":"https://manhlongoptical.com/"},"datePublished":"2026-09-03","dateModified":"2026-09-03","mainEntityOfPage":"https://manhlongoptical.com/kinh-chong-anh-sang-xanh-co-can-thiet.html","inLanguage":"vi","citation":"https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it"},
+{"@type":"FAQPage","@id":"https://manhlongoptical.com/kinh-chong-anh-sang-xanh-co-can-thiet.html#faq","mainEntity":[
+{"@type":"Question","name":"Giá tròng chống ánh sáng xanh tại Mạnh Long Optical bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Từ khoảng 1.480.000đ với dòng Essilor lọc ánh sáng xanh, giá cụ thể còn tuỳ chiết suất và loại tròng đi kèm."}},
+{"@type":"Question","name":"Không đeo kính chống ánh sáng xanh có sao không?","acceptedAnswer":{"@type":"Answer","text":"Không sao, đây là lựa chọn thêm cho ai muốn nhìn màn hình thoải mái hơn, không phải yêu cầu bắt buộc."}},
+{"@type":"Question","name":"Khác gì so với tròng đổi màu?","acceptedAnswer":{"@type":"Answer","text":"Tròng chống ánh sáng xanh tập trung vào việc giảm chói khi nhìn màn hình trong nhà, còn tròng đổi màu tự sẫm khi ra nắng và lắp được kính có độ dùng cả ngày. Hai lựa chọn phục vụ mục đích khác nhau, nên hỏi trực tiếp tại cửa hàng để biết dòng nào phù hợp thói quen dùng kính của mình."}},
+{"@type":"Question","name":"Trẻ em có nên dùng tròng chống ánh sáng xanh không?","acceptedAnswer":{"@type":"Answer","text":"Nếu trẻ dùng máy tính, máy tính bảng nhiều giờ mỗi ngày và phụ huynh thấy trẻ hay dụi mắt, có thể cân nhắc, nhưng quan trọng hơn vẫn là giới hạn thời gian dùng màn hình và cho mắt nghỉ đều đặn."}},
+{"@type":"Question","name":"Đeo kính chống ánh sáng xanh có làm giảm độ cận không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đây là lớp phủ hỗ trợ nhìn màn hình thoải mái hơn, không liên quan tới việc thay đổi độ cận."}}
+]},
+{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/kinh-chong-anh-sang-xanh-co-can-thiet.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Kính chống ánh sáng xanh có cần thiết","item":"https://manhlongoptical.com/kinh-chong-anh-sang-xanh-co-can-thiet.html"}]},
+{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/banner-hero.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"]}
+]}</script>
+</head>
+<body>
+<header>
+  <a class="logo" href="/">Mạnh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/">TRANG CHỦ</a><a href="/tim-hieu.html">TÌM HIỂU</a></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › <a href="/tim-hieu.html">Tìm hiểu</a> › Kính chống ánh sáng xanh có cần thiết</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">TRÒNG KÍNH</p>
+<h1>Kính chống ánh sáng xanh có thực sự cần thiết không?</h1>
+<p class="byline">Mạnh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · Cập nhật 03/09/2026 · <a href="/chon-kinh-mat-phu-hop.html">Đọc thêm hướng dẫn tổng quan chọn kính</a></p>
+<div class="takeaway"><strong>Tóm tắt:</strong> Với người dùng máy tính, điện thoại nhiều giờ mỗi ngày, tròng chống ánh sáng xanh giúp giảm chói và giảm cảm giác mỏi mắt khi nhìn màn hình liên tục, dễ chịu hơn rõ rệt vào cuối ngày làm việc. Đây là lớp phủ được nhiều khách văn phòng tại Mạnh Long Optical chọn thêm khi cắt kính mới, đặc biệt người ngồi máy tính trên 6 tiếng một ngày.</div>
+
+<ul class="quickfacts">
+<li>Giảm chói và mỏi mắt khi nhìn màn hình nhiều giờ, không phải thiết bị y tế.</li>
+<li>Giá từ khoảng 1.480.000đ với dòng Essilor lọc ánh sáng xanh.</li>
+<li>Phù hợp nhất với người dùng máy tính trên 6 tiếng mỗi ngày.</li>
+</ul>
+
+<h2>Ánh sáng xanh đến từ đâu</h2>
+<p>Ánh sáng xanh là một dải bước sóng trong ánh sáng nhìn thấy được, phát ra tự nhiên từ mặt trời với cường độ mạnh hơn nhiều lần so với thiết bị điện tử. Màn hình máy tính, điện thoại, đèn LED cũng phát ra ánh sáng xanh, và với người ngồi trước các thiết bị này liên tục nhiều giờ mỗi ngày, tổng thời gian tiếp xúc gần cộng dồn lại không nhỏ, nhất là vào buổi tối khi mắt đã hoạt động cả ngày.</p>
+
+<h2>Tròng chống ánh sáng xanh giúp được gì</h2>
+<p>Lớp phủ chống ánh sáng xanh lọc bớt phần ánh sáng cường độ cao phát ra từ màn hình, giúp mắt đỡ chói và đỡ căng hơn khi nhìn màn hình liên tục nhiều giờ. Với người làm việc buổi tối muộn, dùng điện thoại hoặc laptop sát giờ ngủ, giảm tiếp xúc ánh sáng xanh cường độ cao vào lúc đó còn có thể giúp dễ vào giấc hơn, vì ánh sáng xanh mạnh vào ban đêm ảnh hưởng tới nhịp sinh học tự nhiên của cơ thể. Tại Mạnh Long Optical, đây là lớp phủ Essilor được khách văn phòng hỏi thêm nhiều nhất khi cắt kính mới, thường đi kèm với tròng đơn hoặc tròng đa tròng tuỳ độ cận từng người.</p>
+
+<h2>Ai nên dùng</h2>
+<p>Người ngồi máy tính liên tục trên 6 tiếng mỗi ngày là nhóm cảm nhận rõ nhất sự khác biệt khi đeo tròng chống ánh sáng xanh, cùng với người thường dùng điện thoại, laptop vào buổi tối muộn trước khi ngủ. Học sinh, sinh viên học online nhiều giờ hoặc dân văn phòng làm việc với hai, ba màn hình cùng lúc cũng là nhóm khách hay hỏi thêm về lớp phủ này tại cửa hàng. Người ít dùng màn hình, chủ yếu làm việc ngoài trời hoặc ít tiếp xúc thiết bị điện tử, thường không cần thiết phải chọn thêm lớp phủ này.</p>
+<div class="tablewrap"><table>
+<tr><th>Nhu cầu</th><th>Tròng chống ánh sáng xanh hỗ trợ được</th></tr>
+<tr><td>Ngồi máy tính liên tục, nhiều giờ mỗi ngày</td><td>Có, giảm chói và giảm mỏi mắt chủ quan khi nhìn màn hình lâu</td></tr>
+<tr><td>Dùng điện thoại/laptop sát giờ ngủ</td><td>Có, giảm ánh sáng xanh cường độ cao có thể ảnh hưởng giấc ngủ</td></tr>
+<tr><td>Đã bị cận, viễn, loạn cần điều chỉnh thị lực</td><td>Không thay thế được, vẫn cần đúng độ tròng đang đeo</td></tr>
+</table></div>
+
+<h2>Vài điều nên hiểu đúng, để chọn cho đúng nhu cầu</h2>
+<p><a href="https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it" target="_blank" rel="noopener">Học viện Nhãn khoa Hoa Kỳ (American Academy of Ophthalmology)</a> hiện chưa ghi nhận bằng chứng khoa học cho thấy bản thân ánh sáng xanh từ màn hình gây tổn thương mắt, và giải thích rằng cảm giác mỏi mắt khi làm việc với màn hình lâu phần lớn đến từ việc chớp mắt ít hơn khi tập trung nhìn màn hình. Tròng chống ánh sáng xanh vì vậy nên được chọn vì lợi ích thật của nó, giảm chói và giúp nhìn màn hình thoải mái hơn, không phải như một biện pháp y tế phòng bệnh về mắt.</p>
+
+<h2>Câu hỏi thường gặp</h2>
+<div class="faq">
+<h3>Giá tròng chống ánh sáng xanh tại Mạnh Long Optical bao nhiêu?</h3>
+<p>Từ khoảng 1.480.000đ với dòng Essilor lọc ánh sáng xanh, giá cụ thể còn tuỳ chiết suất và loại tròng đi kèm.</p>
+<h3>Không đeo kính chống ánh sáng xanh có sao không?</h3>
+<p>Không sao, đây là lựa chọn thêm cho ai muốn nhìn màn hình thoải mái hơn, không phải yêu cầu bắt buộc.</p>
+<h3>Khác gì so với tròng đổi màu?</h3>
+<p>Tròng chống ánh sáng xanh tập trung vào việc giảm chói khi nhìn màn hình trong nhà, còn tròng đổi màu tự sẫm khi ra nắng và lắp được kính có độ dùng cả ngày. Hai lựa chọn phục vụ mục đích khác nhau, nên hỏi trực tiếp tại cửa hàng để biết dòng nào phù hợp thói quen dùng kính của mình.</p>
+<h3>Trẻ em có nên dùng tròng chống ánh sáng xanh không?</h3>
+<p>Nếu trẻ dùng máy tính, máy tính bảng nhiều giờ mỗi ngày và phụ huynh thấy trẻ hay dụi mắt, có thể cân nhắc, nhưng quan trọng hơn vẫn là giới hạn thời gian dùng màn hình và cho mắt nghỉ đều đặn.</p>
+<h3>Đeo kính chống ánh sáng xanh có làm giảm độ cận không?</h3>
+<p>Không. Đây là lớp phủ hỗ trợ nhìn màn hình thoải mái hơn, không liên quan tới việc thay đổi độ cận.</p>
+</div>
+
+<div class="note">Thông tin trên trang mang tính tham khảo, không thay thế khám và tư vấn trực tiếp tại cửa hàng. Kính cận là thiết bị hỗ trợ thị lực, không làm giảm độ hay chữa khỏi cận thị.</div>
+
+<div class="cta"><h2>Hay mỏi mắt, chói mắt cuối buổi làm việc?</h2><p>Khách dùng máy tính nhiều giờ mỗi ngày có thể hỏi thêm lớp phủ chống ánh sáng xanh khi cắt kính mới tại Mạnh Long Optical, nhân viên sẽ tư vấn theo đúng thói quen dùng màn hình của bạn.</p>
+<p><strong>📍 Mạnh Long Optical — 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</strong><br>🕐 Mở cửa hằng ngày 8:00 – 21:30<br>📞 <a href="tel:+84777986999">0777 986 999</a> · 💬 <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo</a> · 🗺️ <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a></p></div>
+
+<nav class="related"><h2>Đọc tiếp</h2><ul>
+<li><a href="/chon-kinh-mat-phu-hop.html">Hướng dẫn chọn kính mắt phù hợp với khuôn mặt và độ cận</a></li>
+<li><a href="/so-sanh-doi-mau-polarized.html">So sánh tròng kính đổi màu và tròng polarized</a></li>
+<li><a href="/essilor-eyezen.html">Essilor Eyezen: tròng cho người dùng màn hình nhiều</a></li>
+<li><a href="/cau-hoi-thuong-gap.html">Câu hỏi thường gặp về kính mắt</a></li>
+</ul></nav>
+</main>
+<footer>
+  <p><strong>Mạnh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

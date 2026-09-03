@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Đo Mắt Miễn Phí Trọn Đời Tại Cửa Nam | Mạnh Long Optical</title>
+<meta name="description" content="Đo mắt chuyên sâu miễn phí, kể cả khi chưa mua kính. Khám và đo lại miễn phí trọn đời, 20–30 phút. 147A Lê Duẩn, Cửa Nam · 0777 986 999.">
+<link rel="canonical" href="https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html">
+<link rel="alternate" hreflang="vi" href="https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mạnh Long Optical">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Đo Mắt Miễn Phí Trọn Đời Tại Cửa Nam | Mạnh Long Optical">
+<meta name="twitter:description" content="Đo mắt chuyên sâu miễn phí, kể cả khi chưa mua kính. Khám và đo lại miễn phí trọn đời, 20–30 phút. 147A Lê Duẩn, Cửa Nam · 0777 986 999.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/phong-do-mat-manh-long-optical.jpg">
+<meta property="og:title" content="Đo Mắt Miễn Phí Trọn Đời Tại Cửa Nam | Mạnh Long Optical">
+<meta property="og:description" content="Đo mắt chuyên sâu miễn phí, kể cả khi chưa mua kính. Khám và đo lại miễn phí trọn đời, 20–30 phút. 147A Lê Duẩn, Cửa Nam · 0777 986 999.">
+<meta property="og:url" content="https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/phong-do-mat-manh-long-optical.jpg">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:20px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+nav.top{white-space:nowrap}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);margin-left:14px}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
+.faq dt{font-weight:600;margin:18px 0 6px}.faq dd{margin:0 0 14px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--ink);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"Article","@id":"https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html#article","headline":"Đo Mắt Miễn Phí Trọn Đời Tại Mạnh Long Optical","description":"Đo mắt chuyên sâu miễn phí, kể cả khi chưa mua kính. Khám và đo lại miễn phí trọn đời, 20–30 phút.","author":{"@type":"Person","name":"Alvin","worksFor":{"@type":"Organization","name":"Manh Long Optical","alternateName":"Mạnh Long Optical"}},"publisher":{"@type":"Organization","name":"Manh Long Optical","logo":{"@type":"ImageObject","url":"https://manhlongoptical.com/uploads-opt/banner-hero.jpg"}},"image":"https://manhlongoptical.com/uploads-opt/phong-do-mat-manh-long-optical.jpg","datePublished":"2026-09-03","dateModified":"2026-09-03","articleSection":"Dịch vụ","inLanguage":"vi","mainEntityOfPage":{"@type":"WebPage","@id":"https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html"}},
+{"@type":"FAQPage","@id":"https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html#faq","mainEntity":[
+{"@type":"Question","name":"Đo mắt có thực sự miễn phí không?","acceptedAnswer":{"@type":"Answer","text":"Có, hoàn toàn miễn phí — kể cả khi bạn chưa quyết định mua kính. Khám và đo lại cũng miễn phí trọn đời, không giới hạn số lần."}},
+{"@type":"Question","name":"Đo mắt gồm những bước nào?","acceptedAnswer":{"@type":"Answer","text":"Bốn bước: đo khúc xạ bằng máy tự động, thử kính bằng khung thử để xác định độ chính xác, kiểm tra thị lực hai mắt và độ loạn, đo khoảng cách đồng tử (PD). Sau đó nhân viên tư vấn dáng gọng phù hợp nếu bạn có nhu cầu."}},
+{"@type":"Question","name":"Đo mắt mất bao lâu?","acceptedAnswer":{"@type":"Answer","text":"Khoảng 20–30 phút cho một lượt đo đầy đủ."}},
+{"@type":"Question","name":"Có cần đặt hẹn trước không?","acceptedAnswer":{"@type":"Answer","text":"Ghé trực tiếp được. Đặt hẹn trước qua Zalo 0777 986 999 giúp bạn không phải chờ, đặc biệt vào cuối tuần."}},
+{"@type":"Question","name":"Bao lâu nên đo mắt lại một lần?","acceptedAnswer":{"@type":"Answer","text":"Khoảng 6–12 tháng một lần, hoặc sớm hơn nếu thấy mờ, mỏi mắt hay nhức đầu khi đọc/nhìn xa. Vì đo lại miễn phí trọn đời, không có lý do để trì hoãn khi thấy dấu hiệu này."}},
+{"@type":"Question","name":"Trẻ em có đo mắt được không?","acceptedAnswer":{"@type":"Answer","text":"Bé đã đi học thì đo được. Với ca phức tạp hoặc trẻ nhỏ hơn, cửa hàng sẽ tư vấn hướng gặp bác sĩ chuyên khoa mắt để đảm bảo an toàn."}}
+]},
+{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Đo Mắt Miễn Phí Trọn Đời","item":"https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html"}]},
+{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/banner-hero.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"]}
+]}</script>
+</head>
+<body>
+<header>
+  <a class="logo" href="/">Mạnh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/">TRANG CHỦ</a><a href="/tim-hieu.html">TÌM HIỂU</a></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › <a href="/tim-hieu.html">Tìm hiểu</a> › Đo Mắt Miễn Phí Trọn Đời</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">DỊCH VỤ</p>
+<h1>Đo mắt miễn phí trọn đời tại Mạnh Long Optical</h1>
+<p class="byline">Tư vấn bởi <strong>Alvin</strong> · Mạnh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · Cập nhật 03/09/2026</p>
+<div class="takeaway"><strong>Tóm tắt:</strong> Đo mắt chuyên sâu miễn phí tại cửa hàng, kể cả khi bạn chưa mua kính. Khám và đo lại miễn phí trọn đời, không giới hạn số lần. Một lượt đo đầy đủ mất 20–30 phút, ghé trực tiếp được hoặc đặt hẹn qua Zalo.</div>
+<figure><img src="/uploads-opt/phong-do-mat-manh-long-optical.jpg" alt="Nhân viên Mạnh Long Optical đo mắt cho khách bằng máy khúc xạ tự động tại 147A Lê Duẩn, Hà Nội" loading="lazy" width="1100" height="1268"><figcaption>Đo khúc xạ tự động — bước đầu trong quy trình đo mắt tại cửa hàng.</figcaption></figure>
+
+<h2>Vì sao miễn phí trọn đời, không phải một lần</h2>
+<p>Độ cận, độ loạn và cả khoảng cách đồng tử đều có thể thay đổi theo thời gian, đặc biệt nếu bạn làm việc nhiều với màn hình. Một cặp kính đo đúng ở thời điểm mua có thể không còn vừa sau một năm. Vì đo lại không mất phí và không giới hạn số lần, bạn không cần cân nhắc thiệt hơn mỗi khi thấy mờ hay mỏi mắt — cứ ghé đo lại trước, quyết định sau.</p>
+
+<h2>Quy trình đo mắt gồm những gì</h2>
+<ol>
+<li><strong>Đo khúc xạ tự động:</strong> máy đo nhanh cho ra chỉ số khởi điểm về độ cận, viễn, loạn.</li>
+<li><strong>Thử kính bằng khung thử:</strong> nhân viên tinh chỉnh từng chỉ số bằng khung thử thực tế, không chỉ dựa vào máy — đây là bước quyết định độ chính xác.</li>
+<li><strong>Kiểm tra thị lực hai mắt và độ loạn:</strong> đảm bảo hai mắt phối hợp tốt, không chỉ đúng độ riêng từng bên.</li>
+<li><strong>Đo khoảng cách đồng tử (PD):</strong> thông số bắt buộc để lắp tròng đúng tâm nhìn, tránh mỏi mắt do lệch tâm.</li>
+</ol>
+<p>Sau khi có kết quả, nhân viên tư vấn dáng gọng phù hợp với khuôn mặt và độ cận nếu bạn muốn cắt kính luôn. Không muốn mua ngay cũng không sao — kết quả đo bạn có thể giữ lại dùng sau.</p>
+
+<h2>Bao lâu nên đo lại</h2>
+<p>Khoảng 6–12 tháng một lần là mốc hợp lý cho người đang đeo kính, ngắn hơn nếu bạn thấy mờ, nheo mắt hoặc nhức đầu khi nhìn gần hay nhìn xa. Trẻ em đang trong giai đoạn tăng độ nên đo thường xuyên hơn người lớn. Vì không mất phí, điều cần theo dõi là cảm giác của chính bạn khi nhìn, không phải một lịch cố định.</p>
+
+<h2>Ai nên đến đo mắt</h2>
+<ul>
+<li>Chưa từng đo, muốn biết mắt mình có cần kính hay không.</li>
+<li>Đang đeo kính nhưng thấy mờ, mỏi mắt, hoặc kính đã cũ quá một năm chưa đo lại.</li>
+<li>Làm việc nhiều với máy tính, muốn kiểm tra có cần tròng lọc ánh sáng xanh hay không.</li>
+<li>Trẻ em đi học có dấu hiệu nheo mắt, ngồi gần tivi hơn bình thường.</li>
+</ul>
+
+<h2 id="faq">Câu hỏi thường gặp</h2>
+<dl class="faq">
+<dt>Đo mắt có thực sự miễn phí không?</dt>
+<dd>Có, kể cả khi chưa mua kính. Khám và đo lại miễn phí trọn đời, không giới hạn số lần.</dd>
+<dt>Đo mắt gồm những bước nào?</dt>
+<dd>Đo khúc xạ tự động, thử kính bằng khung thử, kiểm tra thị lực hai mắt và độ loạn, đo khoảng cách đồng tử.</dd>
+<dt>Đo mắt mất bao lâu?</dt>
+<dd>Khoảng 20–30 phút cho một lượt đo đầy đủ.</dd>
+<dt>Có cần đặt hẹn trước không?</dt>
+<dd>Ghé trực tiếp được. Đặt hẹn qua Zalo 0777 986 999 giúp không phải chờ, nhất là cuối tuần.</dd>
+<dt>Bao lâu nên đo mắt lại một lần?</dt>
+<dd>Khoảng 6–12 tháng, sớm hơn nếu thấy mờ hoặc mỏi mắt. Đo lại miễn phí nên không cần trì hoãn.</dd>
+<dt>Trẻ em có đo mắt được không?</dt>
+<dd>Bé đi học đo được. Ca phức tạp hoặc trẻ nhỏ hơn sẽ được tư vấn gặp bác sĩ chuyên khoa mắt.</dd>
+</dl>
+
+<div class="note">Đo mắt tại cửa hàng giúp xác định độ kính và khoảng đồng tử để cắt kính vừa mắt, không thay thế cho khám và điều trị bệnh lý về mắt. Nếu có dấu hiệu bất thường (đau mắt, nhìn đôi, giảm thị lực đột ngột), nên khám tại cơ sở y tế chuyên khoa mắt.</div>
+
+<div class="cta"><h2>Đặt lịch đo mắt miễn phí</h2><p>Ghé trực tiếp hoặc nhắn Zalo trước để không phải chờ.</p>
+<p><strong>📍 Mạnh Long Optical — 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</strong><br>🕐 Mở cửa hằng ngày 8:00 – 21:30<br>📞 <a href="tel:+84777986999">0777 986 999</a> · 💬 <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo</a> · 🗺️ <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a></p></div>
+
+<nav class="related"><h2>Đọc tiếp</h2><ul>
+<li><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại 147A Lê Duẩn, Cửa Nam</a></li>
+<li><a href="/astigmatism-night-vision.html">Loạn thị và ánh sáng đèn: Vì sao ban đêm nhìn kém hơn</a></li>
+<li><a href="/contacts-vs-glasses.html">Kính áp tròng hay kính gọng: Chọn loại nào?</a></li>
+</ul></nav>
+</main>
+<footer>
+  <p><strong>Mạnh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

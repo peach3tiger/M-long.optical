@@ -52,16 +52,16 @@
 <meta property="og:url" content="https://manhlongoptical.com/">
 <meta property="og:title" content="Mạnh Long Optical — Nghìn chiếc để chọn. Một chiếc để đeo.">
 <meta property="og:description" content="25 năm bán sỉ kính, nay bán lẻ tại 147A Lê Duẩn, Cửa Nam, Hà Nội. Đo mắt miễn phí, đơn tròng cắt lấy trong ngày.">
-<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/banner-hero.jpg">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/og-manhlong.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mạnh Long Optical — Nghìn chiếc để chọn. Một chiếc để đeo.">
 <meta name="twitter:description" content="25 năm bán sỉ kính, nay bán lẻ tại 147A Lê Duẩn, Cửa Nam, Hà Nội. Đo mắt miễn phí, đơn tròng cắt lấy trong ngày.">
-<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/banner-hero.jpg">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/og-manhlong.jpg">
 <meta name="geo.placename" content="147A Lê Duẩn, Cửa Nam, Hà Nội">
 <meta name="geo.position" content="21.022849;105.841554">
 <meta name="geo.region" content="VN-HN">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long","M-LonG.Optical"],"image":"https://manhlongoptical.com/uploads-opt/banner-hero.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"],"priceRange":"$$","currenciesAccepted":"VND","paymentAccepted":"Cash, Credit Card, Debit Card","availableLanguage":[{"@type":"Language","name":"Vietnamese","alternateName":"vi"},{"@type":"Language","name":"English","alternateName":"en"}],"description":"Optical store in central Hanoi. Free eye test, prescription glasses, progressive and photochromic lenses from Essilor and ZEISS, sunglasses and optical frames. Single-vision lenses are cut in store and are usually ready the same day. English spoken on every shift.","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]}
+{"@context":"https://schema.org","@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long","M-LonG.Optical"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"],"priceRange":"$$","currenciesAccepted":"VND","paymentAccepted":"Cash, Credit Card, Debit Card","availableLanguage":[{"@type":"Language","name":"Vietnamese","alternateName":"vi"},{"@type":"Language","name":"English","alternateName":"en"}],"description":"Optical store in central Hanoi. Free eye test, prescription glasses, progressive and photochromic lenses from Essilor and ZEISS, sunglasses and optical frames. Single-vision lenses are cut in store and are usually ready the same day. English spoken on every shift.","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]}
 </script>
 </head>
 <body>
@@ -3263,14 +3263,25 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     related: ["essilor-lenses", "zeiss-lenses", "contacts-vs-glasses", "choosing-frames-face-shape"]
   }
 ];class Component extends DCLogic {
-  state = { season: null, filter: "all", view: "home", learnPage: 1, learnCategory: "all", pid: null, qty: 1, colorIdx: 0, lens: "sun", cart: [], lang: "en", page: 1, searchQuery: "", searchResults: [], infoTab: "faq", authMode: "login", authName: "", authEmail: "", authPassword: "", authError: "", authUser: null, catalog: JSON.parse(JSON.stringify(CATALOG)) };
+  state = { season: null, filter: "all", view: "home", learnPage: 1, learnCategory: "all", pid: null, qty: 1, colorIdx: 0, lens: "sun", cart: [], lang: "vi", page: 1, searchQuery: "", searchResults: [], infoTab: "faq", authMode: "login", authName: "", authEmail: "", authPassword: "", authError: "", authUser: null, catalog: JSON.parse(JSON.stringify(CATALOG)) };
 
   componentDidMount() {
-    // ?lang=vi|en tren URL -> dat ngon ngu (dung cho link Google Ads tieng Viet)
+    // Ngon ngu mac dinh cua "/" la tieng Viet, khop <html lang="vi">, canonical,
+    // hreflang va sitemap. Ban tieng Anh co trang rieng tai /en/.
+    // Thu tu uu tien: ?lang= tren URL  ->  lua chon khach da bam truoc do  ->  tieng Viet.
     const __q = new URLSearchParams(location.search).get("lang");
-    if (__q === "vi" || __q === "en") this.setState({ lang: __q });
+    if (__q === "vi" || __q === "en") {
+      this.setState({ lang: __q });
+      try { localStorage.setItem("ml_lang", __q); } catch (e) {}
+    } else {
+      try {
+        const saved = localStorage.getItem("ml_lang");
+        if (saved === "vi" || saved === "en") this.setState({ lang: saved });
+      } catch (e) {}
+    }
     window.addEventListener("popstate", () => this.syncFromHash());
     this.syncFromHash();
+    this.scrollToAnchor();
     this.observeMap();
     this.updateSEO();
     this.primeImages();
@@ -3569,6 +3580,21 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     setTimeout(check, 400);
   }
 
+  // Neo dang #uu-dai tro toi mot <section> co that trong trang chu. Ung dung ve
+  // lai DOM sau khi tai xong nen trinh duyet mat vi tri cuon. Cuon lai sau khi ve.
+  scrollToAnchor() {
+    const h = location.hash;
+    if (!/^#[a-z0-9][a-z0-9-]*$/i.test(h)) return;
+    const id = h.slice(1);
+    let tries = 0;
+    const go = () => {
+      const el = document.getElementById(id);
+      if (el) { el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+      if (++tries < 20) setTimeout(go, 150);
+    };
+    setTimeout(go, 250);
+  }
+
   syncFromHash() {
     const h = location.hash;
     let m = h.match(/^#\/product\/(.+)$/);
@@ -3727,7 +3753,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       t,
       heroImg: imgSrc("banner-brand.jpg"),
       heroSplitImg: imgSrc(F[31]),
-      brandImg: imgSrc("banner-hero.jpg"),
+      brandImg: imgSrc("banner-thuong-hieu.jpg"),
       ig1: imgSrc(F[18]),
       ig3: imgSrc(F[34]),
       hotPeriodTabs: [
@@ -3814,7 +3840,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       })(),
       lang,
       langLabel: lang === "en" ? "EN / VI" : "VI / EN",
-      toggleLang: () => this.setState(s => ({ lang: s.lang === "en" ? "vi" : "en" })),
+      toggleLang: () => this.setState(s => { const n = s.lang === "en" ? "vi" : "en"; try { localStorage.setItem("ml_lang", n); } catch (e) {} return { lang: n }; }),
       accent,
       heroSplit: hero === "editorial-split",
       heroType: hero === "type-first",

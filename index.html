@@ -3586,13 +3586,17 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     const h = location.hash;
     if (!/^#[a-z0-9][a-z0-9-]*$/i.test(h)) return;
     const id = h.slice(1);
-    let tries = 0;
+    // Anh/font tai xong lam trang xo lai vi tri, va ung dung con ve lai DOM vai
+    // lan sau khi mount. Cuon lai nhieu moc thoi gian, cuon tuc thi (khong
+    // "smooth") vi cuon muot bi huy giua chung khi layout thay doi.
     const go = () => {
       const el = document.getElementById(id);
-      if (el) { el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
-      if (++tries < 20) setTimeout(go, 150);
+      if (!el) return false;
+      const y = el.getBoundingClientRect().top + window.pageYOffset;
+      if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
+      return true;
     };
-    setTimeout(go, 250);
+    [300, 900, 1800, 3000, 4500, 6000].forEach(ms => setTimeout(go, ms));
   }
 
   syncFromHash() {

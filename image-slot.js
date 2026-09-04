@@ -1065,6 +1065,60 @@
       else { this._local = v; }
     }
 
+    // Gan src, nhung neu o anh chua co kich thuoc (lan ve dau tien chay
+    // truoc khi trinh duyet tinh layout) thi cho toi da 3 khung hinh de biet
+    // o rong bao nhieu roi moi chon ban anh. Cho mot vai khung hinh la khong
+    // nhin thay duoc, con gan nham anh goc thi mat 1-2 MB moi o.
+    _assignSrc(url) {
+      const token = (this._srcToken = (this._srcToken || 0) + 1);
+      const put = (u, pick) => {
+        if (token !== this._srcToken) return;   // da co lenh moi hon
+        if (pick) { this._img.srcset = pick.srcset; this._img.sizes = pick.sizes; }
+        else { this._img.removeAttribute('srcset'); this._img.removeAttribute('sizes'); }
+        this._img.src = u;
+        this._ghost.src = u;
+      };
+      const map = window.__ML_SRCSET;
+      const co_the_thay = map && typeof url === 'string' &&
+        !/^(data:|blob:|https?:)/i.test(url) && /uploads-opt\//.test(url) &&
+        !!map[url.replace(/\.[^.\/]+$/, '').replace(/^.*\//, '')];
+      if (!co_the_thay) { put(url, null); return; }
+      let tries = 0;
+      const thu = () => {
+        if (token !== this._srcToken) return;
+        const pick = this._pickDerivative(url);
+        if (pick) { put(pick.src, pick); return; }
+        const w = Math.round(this.getBoundingClientRect().width || this.offsetWidth || 0);
+        if (w > 620) { put(url, null); return; }   // o lon that: dung anh goc
+        if (++tries < 3) { requestAnimationFrame(thu); return; }
+        put(url, null);                            // chiu, dung anh goc
+      };
+      thu();
+    }
+
+    // Tra ve ban anh nho thay cho anh goc, hoac null neu khong nen thay.
+    // Ban do ten file nam o window.__ML_SRCSET (nhung o index.html, gia tri
+    // 1 = chi co 300w, tu 2 tro len = co ca 300w va 600w).
+    // Chi thay khi: URL la duong dan noi bo trong uploads-opt, va o anh be
+    // hon 620 CSS px (banner lon van dung anh goc cho khoi vo net).
+    _pickDerivative(url) {
+      try {
+        const map = window.__ML_SRCSET;
+        if (!map || typeof url !== 'string') return null;
+        if (/^(data:|blob:|https?:)/i.test(url)) return null;
+        if (!/uploads-opt\//.test(url)) return null;
+        const w = Math.round(this.getBoundingClientRect().width || this.offsetWidth || 0);
+        if (!w || w > 620) return null;
+        const base = url.replace(/\.[^.\/]+$/, '');
+        const key = base.replace(/^.*\//, '');
+        const n = map[key];
+        if (!n) return null;
+        const set = [base + '-300w.webp 300w'];
+        if (n > 1) set.push(base + '-600w.webp 600w');
+        return { src: base + (n > 1 ? '-600w.webp' : '-300w.webp'), srcset: set.join(', '), sizes: w + 'px' };
+      } catch (e) { return null; }
+    }
+
     _render() {
       // Shape / mask. Presets use border-radius so the dashed ring can
       // follow the rounded outline; clip-path is only applied for an
@@ -1093,6 +1147,7 @@
       // tool, so its value isn't guaranteed canvas-originated — only accept
       // data:image/ URLs from it. The `src` attribute is author-controlled
       // (Claude wrote it into the HTML) so it passes through unchanged.
+      // (xem _pickDerivative ben duoi)
       let stored = this.id ? getSlot(this.id) : this._local;
       if (stored && stored.u && !/^data:image\//i.test(stored.u)) stored = null;
       const srcAttr = this.getAttribute('src') || '';
@@ -1138,8 +1193,12 @@
           // (the pick path's credit/credit-href setAttributes) need this
           // flag, not complete, to know a load is in flight.
           this._loadPending = true;
-          this._img.src = url;
-          this._ghost.src = url;
+          // Chon ban anh nho TRUOC khi gan src. Truoc day _render gan thang
+          // anh goc, roi primeImages() moi them srcset sau, nen trinh duyet
+          // tai CA HAI: anh goc 1-2 MB va ban webp 20-30 KB. Do tren trang
+          // that 04/09: 54 request, 20,3 MB, trong do khoang 18,2 MB la anh
+          // goc tai xong roi bo di.
+          this._assignSrc(url);
         } else {
           // Same-src re-render — release if settled, so an ingest-set
           // spinner can't stick after a byte-identical re-upload (same

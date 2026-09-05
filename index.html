@@ -60,6 +60,7 @@
 <meta name="geo.placename" content="147A Lê Duẩn, Cửa Nam, Hà Nội">
 <meta name="geo.position" content="21.022849;105.841554">
 <meta name="geo.region" content="VN-HN">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://manhlongoptical.com/#faq","inLanguage":"vi","mainEntity":[{"@type":"Question","name":"Đo mắt ở Mạnh Long Optical có mất phí không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đo mắt miễn phí, kể cả khi bạn chưa mua kính, và đo lại miễn phí trọn đời. Buổi đo mất khoảng 20 tới 30 phút: đo khúc xạ tự động, thử bằng khung thử, kiểm tra thị lực hai mắt, độ loạn và khoảng đồng tử."}},{"@type":"Question","name":"Cắt kính bao lâu thì lấy được?","acceptedAnswer":{"@type":"Answer","text":"Đơn tròng có sẵn cắt và lấy trong ngày. Đa tròng loại thường mất khoảng 24 giờ. Đa tròng Essilor hoặc ZEISS mất 3 tới 4 ngày vì tròng phải đánh bề mặt tại lab của hãng, không gia công tại cửa hàng được."}},{"@type":"Question","name":"Cửa hàng mở cửa mấy giờ?","acceptedAnswer":{"@type":"Answer","text":"8:00 đến 21:30, tất cả các ngày trong tuần, tại 147A Lê Duẩn, Phường Cửa Nam, Hà Nội. Ghé trực tiếp được, đặt trước qua Zalo 0777 986 999 thì đỡ phải chờ, nhất là cuối tuần."}},{"@type":"Question","name":"Một cặp kính ở đây khoảng bao nhiêu tiền?","acceptedAnswer":{"@type":"Answer","text":"Gọng từ 550.000đ đến 3.500.000đ. Một cặp đơn tròng đủ cả gọng lẫn tròng nằm trong khoảng 850.000đ đến 3.500.000đ, tuỳ chiết suất và lớp phủ. Chương trình hiện hành có combo gọng cộng tròng từ 580.000đ, chạy đến hết 02/10/2026."}},{"@type":"Question","name":"Tròng lọc ánh sáng xanh có cần thiết không?","acceptedAnswer":{"@type":"Answer","text":"Tuỳ thói quen. Ngồi màn hình trên sáu tiếng mỗi ngày thì lớp lọc giúp giảm mỏi mắt. Hay ra ngoài trời thì tròng đổi màu hợp hơn. Đây là mô tả tính năng, không phải lời hứa chữa bệnh về mắt."}},{"@type":"Question","name":"Kính mua chỗ khác mang tới chỉnh được không?","acceptedAnswer":{"@type":"Answer","text":"Được, cửa hàng vẫn siết ốc và chỉnh càng giúp. Riêng phần miễn phí trọn đời gồm chỉnh gọng, thay ve mũi và vệ sinh siêu âm thì áp dụng cho kính mua tại 147A Lê Duẩn."}}]}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long","M-LonG.Optical"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"],"priceRange":"$$","currenciesAccepted":"VND","paymentAccepted":"Cash, Credit Card, Debit Card","availableLanguage":[{"@type":"Language","name":"Vietnamese","alternateName":"vi"},{"@type":"Language","name":"English","alternateName":"en"}],"description":"Optical store in central Hanoi. Free eye test, prescription glasses, progressive and photochromic lenses from Essilor and ZEISS, sunglasses and optical frames. Single-vision lenses are cut in store and are usually ready the same day. English spoken on every shift.","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]}
 </script>
@@ -309,6 +310,8 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="hero-photo-row"] { flex-direction: column !important; align-items: flex-start !important; gap: 22px !important; }
     [data-m="hero-photo-h1"] { font-size: 27px !important; }
     [data-m="brand-sec"] { padding: 64px 0 !important; }
+    [data-m="faq-sec"] { padding: 0 20px 72px !important; }
+    [data-m="faq-h2"] { font-size: 24px !important; }
     [data-m="brand-banner"] { height: auto !important; min-height: 0 !important; aspect-ratio: 2033 / 773 !important; }
     [data-m="brand-copy"] { padding: 0 20px !important; }
     [data-m="collection-sec"] { padding: 0 20px 72px !important; }
@@ -389,6 +392,8 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     header [data-m="logo"] { font-size: 24px !important; }
     header [data-m="nav"] { padding: 8px 20px 8px !important; }
   }
+summary::-webkit-details-marker{display:none}
+details[open] summary span{transform:rotate(45deg);display:inline-block}
 </style>
 </helmet>
 
@@ -697,6 +702,56 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="hoi-dap" data-m="faq-sec" style="padding: 0 40px 112px" aria-label="Câu hỏi hay gặp">
+      <div style="max-width: 980px; margin: 0 auto">
+        <p style="margin: 0 0 18px; font-size: 10px; letter-spacing: 0.24em; color: #7A5A2B">{{ t.faqKicker }}</p>
+        <h2 data-m="faq-h2" style="font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: 30px; margin: 0 0 34px; line-height: 1.3">{{ t.faqTitle }}</h2>
+          <details data-m="faq-item" style="border-top: 1px solid #E3DFD5; padding: 0">
+            <summary style="list-style: none; cursor: pointer; padding: 22px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px">
+              <h3 style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.5; color: #1B1D1F">{{ t.faqQ1 }}</h3>
+              <span aria-hidden="true" style="flex: none; font-size: 18px; line-height: 1.3; color: #8A6A3B">+</span>
+            </summary>
+            <p style="margin: 0 0 22px; font-size: 13px; line-height: 1.9; color: #55534E; max-width: 720px">{{ t.faqA1 }}</p>
+          </details>
+          <details data-m="faq-item" style="border-top: 1px solid #E3DFD5; padding: 0">
+            <summary style="list-style: none; cursor: pointer; padding: 22px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px">
+              <h3 style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.5; color: #1B1D1F">{{ t.faqQ2 }}</h3>
+              <span aria-hidden="true" style="flex: none; font-size: 18px; line-height: 1.3; color: #8A6A3B">+</span>
+            </summary>
+            <p style="margin: 0 0 22px; font-size: 13px; line-height: 1.9; color: #55534E; max-width: 720px">{{ t.faqA2 }}</p>
+          </details>
+          <details data-m="faq-item" style="border-top: 1px solid #E3DFD5; padding: 0">
+            <summary style="list-style: none; cursor: pointer; padding: 22px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px">
+              <h3 style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.5; color: #1B1D1F">{{ t.faqQ3 }}</h3>
+              <span aria-hidden="true" style="flex: none; font-size: 18px; line-height: 1.3; color: #8A6A3B">+</span>
+            </summary>
+            <p style="margin: 0 0 22px; font-size: 13px; line-height: 1.9; color: #55534E; max-width: 720px">{{ t.faqA3 }}</p>
+          </details>
+          <details data-m="faq-item" style="border-top: 1px solid #E3DFD5; padding: 0">
+            <summary style="list-style: none; cursor: pointer; padding: 22px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px">
+              <h3 style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.5; color: #1B1D1F">{{ t.faqQ4 }}</h3>
+              <span aria-hidden="true" style="flex: none; font-size: 18px; line-height: 1.3; color: #8A6A3B">+</span>
+            </summary>
+            <p style="margin: 0 0 22px; font-size: 13px; line-height: 1.9; color: #55534E; max-width: 720px">{{ t.faqA4 }}</p>
+          </details>
+          <details data-m="faq-item" style="border-top: 1px solid #E3DFD5; padding: 0">
+            <summary style="list-style: none; cursor: pointer; padding: 22px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px">
+              <h3 style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.5; color: #1B1D1F">{{ t.faqQ5 }}</h3>
+              <span aria-hidden="true" style="flex: none; font-size: 18px; line-height: 1.3; color: #8A6A3B">+</span>
+            </summary>
+            <p style="margin: 0 0 22px; font-size: 13px; line-height: 1.9; color: #55534E; max-width: 720px">{{ t.faqA5 }}</p>
+          </details>
+          <details data-m="faq-item" style="border-top: 1px solid #E3DFD5; padding: 0">
+            <summary style="list-style: none; cursor: pointer; padding: 22px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px">
+              <h3 style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.5; color: #1B1D1F">{{ t.faqQ6 }}</h3>
+              <span aria-hidden="true" style="flex: none; font-size: 18px; line-height: 1.3; color: #8A6A3B">+</span>
+            </summary>
+            <p style="margin: 0 0 22px; font-size: 13px; line-height: 1.9; color: #55534E; max-width: 720px">{{ t.faqA6 }}</p>
+          </details>
+        <p style="margin: 30px 0 0"><a href="/cau-hoi-thuong-gap.html" style="font-size: 11px; letter-spacing: 0.18em; color: #6E6759">{{ t.faqMore }}</a></p>
       </div>
     </section>
 
@@ -1428,7 +1483,7 @@ const TXT = {
     udKicker: "CUSTOMER APPRECIATION · UNTIL 2 OCTOBER 2026",
     udTitle: "Six gifts to thank you.",
     udCta: "Call 0777 986 999",
-    udSeeAll: "SEE ALL OFFERS", udNote: "In store only, at 147A Le Duan, Cua Nam, Hanoi. Each offer applies to the lens or sunglasses line named on the card and cannot be combined with another offer. English-speaking staff at the counter; card payment accepted.",
+    faqKicker: "FREQUENT QUESTIONS", faqTitle: "What people ask before coming in.", faqMore: "See all fifteen questions", faqQ1: "Is the eye test free at Manh Long Optical?", faqA1: "Yes. The eye test is free even if you do not buy glasses, and re-tests stay free for life. Allow twenty to thirty minutes: autorefractor reading, trial-frame check, binocular vision, astigmatism and pupillary distance.", faqQ2: "How long does it take to get my glasses?", faqA2: "Single-vision lenses are cut in store and usually ready the same day. Standard progressives take about 24 hours. Essilor or ZEISS progressives take three to four days because the lenses are surfaced at the maker's lab.", faqQ3: "What are your opening hours?", faqA3: "8:00 to 21:30, seven days a week, at 147A Le Duan, Cua Nam, Hanoi. Walk-ins are fine; booking ahead on Zalo 0777 986 999 saves waiting, especially at weekends.", faqQ4: "How much does a pair cost here?", faqA4: "Frames run from 550,000₫ to 3,500,000₫. A complete single-vision pair, frame and lenses, sits between 850,000₫ and 3,500,000₫ depending on index and coatings. The current promotion includes frame-plus-lens sets from 580,000₫, running until 2 October 2026.", faqQ5: "Do I need blue-light filtering lenses?", faqA5: "It depends on your day. Over six hours at a screen, the filter helps with eye strain. If you are outdoors a lot, photochromic lenses suit you better. This describes what the lens does; it is not a medical claim.", faqQ6: "Can you adjust glasses I bought elsewhere?", faqA6: "Yes, we will tighten screws and adjust the temples. The lifetime free service, adjustments, nose pads and ultrasonic cleaning, applies to glasses bought at 147A Le Duan.", udSeeAll: "SEE ALL OFFERS", udNote: "In store only, at 147A Le Duan, Cua Nam, Hanoi. Each offer applies to the lens or sunglasses line named on the card and cannot be combined with another offer. English-speaking staff at the counter; card payment accepted.",
     ud1t: "Free frame worth 1,850,000đ",
     ud1s: "With Essilor Gen S photochromic lenses. Authenticity seal, free eye test, same-day cutting.",
     ud2t: "Free frame worth 1,250,000đ",
@@ -1487,7 +1542,7 @@ const TXT = {
     udKicker: "QUÀ TẶNG TRI ÂN · ĐẾN HẾT 02/10/2026",
     udTitle: "Sáu quà tặng tri ân khách hàng.",
     udCta: "Gọi 0777 986 999",
-    udSeeAll: "XEM TOÀN BỘ ƯU ĐÃI", udNote: "Chỉ áp dụng tại cửa hàng 147A Lê Duẩn, Cửa Nam, Hà Nội. Mỗi ưu đãi áp dụng đúng dòng tròng hoặc kính mát ghi trên thẻ, không cộng dồn với ưu đãi khác.",
+    faqKicker: "CÂU HỎI HAY GẶP", faqTitle: "Khách hay hỏi gì trước khi ghé.", faqMore: "Xem đầy đủ 15 câu hỏi", faqQ1: "Đo mắt ở Mạnh Long Optical có mất phí không?", faqA1: "Không. Đo mắt miễn phí, kể cả khi bạn chưa mua kính, và đo lại miễn phí trọn đời. Buổi đo mất khoảng 20 tới 30 phút: đo khúc xạ tự động, thử bằng khung thử, kiểm tra thị lực hai mắt, độ loạn và khoảng đồng tử.", faqQ2: "Cắt kính bao lâu thì lấy được?", faqA2: "Đơn tròng có sẵn cắt và lấy trong ngày. Đa tròng loại thường mất khoảng 24 giờ. Đa tròng Essilor hoặc ZEISS mất 3 tới 4 ngày vì tròng phải đánh bề mặt tại lab của hãng, không gia công tại cửa hàng được.", faqQ3: "Cửa hàng mở cửa mấy giờ?", faqA3: "8:00 đến 21:30, tất cả các ngày trong tuần, tại 147A Lê Duẩn, Phường Cửa Nam, Hà Nội. Ghé trực tiếp được, đặt trước qua Zalo 0777 986 999 thì đỡ phải chờ, nhất là cuối tuần.", faqQ4: "Một cặp kính ở đây khoảng bao nhiêu tiền?", faqA4: "Gọng từ 550.000đ đến 3.500.000đ. Một cặp đơn tròng đủ cả gọng lẫn tròng nằm trong khoảng 850.000đ đến 3.500.000đ, tuỳ chiết suất và lớp phủ. Chương trình hiện hành có combo gọng cộng tròng từ 580.000đ, chạy đến hết 02/10/2026.", faqQ5: "Tròng lọc ánh sáng xanh có cần thiết không?", faqA5: "Tuỳ thói quen. Ngồi màn hình trên sáu tiếng mỗi ngày thì lớp lọc giúp giảm mỏi mắt. Hay ra ngoài trời thì tròng đổi màu hợp hơn. Đây là mô tả tính năng, không phải lời hứa chữa bệnh về mắt.", faqQ6: "Kính mua chỗ khác mang tới chỉnh được không?", faqA6: "Được, cửa hàng vẫn siết ốc và chỉnh càng giúp. Riêng phần miễn phí trọn đời gồm chỉnh gọng, thay ve mũi và vệ sinh siêu âm thì áp dụng cho kính mua tại 147A Lê Duẩn.", udSeeAll: "XEM TOÀN BỘ ƯU ĐÃI", udNote: "Chỉ áp dụng tại cửa hàng 147A Lê Duẩn, Cửa Nam, Hà Nội. Mỗi ưu đãi áp dụng đúng dòng tròng hoặc kính mát ghi trên thẻ, không cộng dồn với ưu đãi khác.",
     ud1t: "Tặng gọng 1.850.000đ",
     ud1s: "Khi mua tròng Essilor Gen S (đổi màu). Tròng có tem kiểm định, đo mắt miễn phí, cắt lấy ngay.",
     ud2t: "Tặng gọng 1.250.000đ",
@@ -3512,6 +3567,9 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
 
   updateSEO() {
     const s = this.state, lang = s.lang, origin = "https://manhlongoptical.com/";
+    // Doi <html lang> theo ngon ngu dang xem. Truoc day luon la "vi" ke ca khi trang
+    // dang hien tieng Anh, Google va trinh doc man hinh deu doc sai vi the.
+    try { document.documentElement.lang = lang; } catch (e) {}
     let path = "", title = null, desc = null;
     const ld = [];
     const bc = items => ({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it[0], item: it[1] })) });

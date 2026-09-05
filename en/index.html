@@ -70,6 +70,20 @@ nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.to
   nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
 }
 main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px;margin:0 0 8px}
+.step .ico{display:inline-flex;width:52px;height:52px;border-radius:999px;background:var(--ink);color:var(--paper);align-items:center;justify-content:center;margin:0 0 12px}
+.step .ico svg{width:24px;height:24px;display:block}
+.step .no{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin:0 0 6px}
+.step h3{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:19px;margin:0 0 8px}
+.step p{font-size:14px;color:var(--muted);margin:0}
+.rev{background:#fff;border:1px solid var(--hair);padding:24px 22px}
+.rev .stars{color:#8A6A3B;letter-spacing:.18em;font-size:15px;margin:0 0 10px}
+.rev blockquote{margin:0 0 14px;font-family:'Noto Serif Display',Georgia,serif;font-size:19px;line-height:1.5}
+.rev .orig{font-size:13px;color:var(--muted);margin:0 0 14px;font-style:italic}
+.rev .who{font-size:13px;color:var(--muted);margin:0}
+.score{font-size:15px;margin:0 0 18px}
+.score b{font-family:'Noto Serif Display',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink)}
+
 .crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
 h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
 .byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
@@ -100,7 +114,7 @@ footer a{color:#B7AB92}
 <div class="topbar">Free eye test, whether you buy or not · Open 8:00 – 21:30 every day</div>
 <header>
   <a class="logo" href="/en/">Mạnh Long<small>OPTICAL</small></a>
-  <nav class="top"><a href="/cua-hang.html#collection">FRAMES</a><a href="/en/faq.html">QUESTIONS</a><a href="/cua-hang.html#store">STORE</a><a href="/">TIẾNG VIỆT</a></nav>
+  <nav class="top"><a href="/cua-hang.html#collection">FRAMES</a><a href="/en/lenses.html">LENSES</a><a href="/en/offers.html">OFFERS</a><a href="/en/faq.html">QUESTIONS</a><a href="/cua-hang.html#store">STORE</a><a href="/" hreflang="vi">TIẾNG VIỆT</a></nav>
 </header>
 <main>
 <h1>Manh Long Optical, Hanoi</h1>
@@ -158,6 +172,37 @@ footer a{color:#B7AB92}
 <li><strong>Frames</strong>: roughly a thousand in store, in acetate, flexible plastic, metal and titanium, including a large selection of Korean designs. You are welcome to bring your own frame.</li>
 <li><strong>Aftercare</strong>: adjustments, cleaning and new nose pads are free for as long as you own the pair. A genuine manufacturing fault is replaced.</li>
 </ul>
+
+<h2 id="how-it-works">How a visit works</h2>
+<div class="steps">
+  <div class="step">
+    <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-2.6-.4L3 21.5l1.9-5.6A8.5 8.5 0 0 1 3.6 11.5C3.6 6.8 7.7 3 12.3 3S21 6.8 21 11.5Z"/></svg></span>
+    <p class="no">Step 1</p>
+    <h3>Message first, or just walk in</h3>
+    <p>WhatsApp is the quickest way to reach us from a foreign number. Tell us your departure date if you are leaving Vietnam soon, and we will say straight away what can be finished in time.</p>
+  </div>
+  <div class="step">
+    <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="13" r="4"/><circle cx="17" cy="13" r="4"/><path d="M11 13h2M3 10.5c1-1.6 2.4-2.4 4-2.4M21 10.5c-1-1.6-2.4-2.4-4-2.4"/></svg></span>
+    <p class="no">Step 2</p>
+    <h3>Eye test, then frames</h3>
+    <p>A full refraction test, 20 to 30 minutes, free whether you buy or not. Then you try frames against that result and your face shape, not against a sales target.</p>
+  </div>
+  <div class="step">
+    <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9.5 17.5 4 12"/></svg></span>
+    <p class="no">Step 3</p>
+    <h3>Collect, and have them fitted</h3>
+    <p>Stocked single-vision lenses are usually ready the same day. We adjust them to your face before you leave, and adjustments stay free for as long as you own the pair.</p>
+  </div>
+</div>
+
+<h2 id="reviews">What customers say</h2>
+<p class="score"><b>4.7 out of 5</b> from 23 Google reviews, as of 5 September 2026. We do not trade gifts for reviews, and we do not delete the bad ones.</p>
+<div class="rev">
+  <p class="stars" aria-label="Five out of five stars">★★★★★</p>
+  <blockquote>“Sturdy frames, rarely need a screw replaced. Plenty of choice. The lenses were made well and sit comfortably. I came back later when the frame had lost its shape and they adjusted it for me.”</blockquote>
+  <p class="orig">Translated from Vietnamese. Original: “Gọng bền, ít phải thay ốc. Mắt kính đa dạng lựa chọn. Tròng kính làm xong đeo tốt. Mua rồi quay lại được hỗ trợ nắn chỉnh sau một thời gian mất form.”</p>
+  <p class="who">Hậu Thành · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener nofollow">Read all reviews on Google</a></p>
+</div>
 
 <h2>If you are visiting Hanoi</h2>
 <p>Most of the people who walk in here are visitors, so the answers below are the questions we are actually asked at the counter. If you are on a short trip, <strong>tell us the date you leave Hanoi</strong> when you arrive. We will only recommend lenses that can be finished and fitted before you go. There are <a href="/en/faq.html">22 more answers on the questions page</a> if yours is not below.</p>

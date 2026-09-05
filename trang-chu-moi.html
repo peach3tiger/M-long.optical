@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BẢN XEM THỬ — Trang chủ rút gọn | Mạnh Long Optical</title>
+<meta name="description" content="Bản xem thử cấu trúc trang chủ mới. Không lập chỉ mục.">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#8A6A3B;--sand:#B7AB92}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.7;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.serif{font-family:'Noto Serif Display',Georgia,serif;font-weight:500}
+.kicker{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);margin:0 0 12px}
+
+.preview-bar{background:#7A2B2B;color:#fff;font-size:12px;letter-spacing:.06em;padding:8px 24px;text-align:center}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 24px;text-align:center}
+header{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--hair)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink)}
+.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:7px}
+nav.main{display:flex;gap:24px;flex-wrap:wrap;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+nav.main a{color:var(--ink)}
+
+.hero{background:var(--navy);color:var(--paper);padding:76px 0 68px}
+.hero h1{font-size:clamp(32px,5.4vw,58px);line-height:1.12;margin:0 0 20px;max-width:16ch;text-wrap:balance}
+.hero p.lead{font-size:clamp(16px,1.9vw,19px);max-width:52ch;margin:0 0 28px;color:#E7E3DA}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-size:13px;letter-spacing:.1em;font-weight:600;text-transform:uppercase}
+.btn.solid{background:var(--brass);color:#fff}
+.btn.ghost{border:1px solid rgba(244,242,237,.45);color:var(--paper)}
+.hero .after{font-size:13px;color:var(--sand);margin:0}
+
+.strip{background:#fff;border-bottom:1px solid var(--hair)}
+.strip ul{list-style:none;margin:0;padding:22px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.strip li{font-size:14px;font-weight:600;display:flex;gap:10px;align-items:flex-start}
+.strip li span{color:var(--brass);font-weight:700}
+
+section.blk{padding:76px 0}
+section.blk.alt{background:#fff;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+h2.big{font-size:clamp(26px,3.6vw,40px);line-height:1.18;margin:0 0 14px;max-width:18ch}
+.head2{display:flex;gap:40px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin:0 0 30px}
+.head2 p{max-width:44ch;color:var(--muted);margin:0;font-size:15px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--hair);padding:24px 22px;display:flex;flex-direction:column}
+section.blk.alt .card{background:var(--paper)}
+.card h3{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:21px;line-height:1.28;margin:0 0 10px}
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px;flex:1}
+.card a.go{font-size:12px;letter-spacing:.1em;font-weight:600;text-transform:uppercase}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.split img{width:100%}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:28px}}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:8px}
+.step .n{display:inline-flex;width:40px;height:40px;border-radius:999px;background:var(--ink);color:var(--paper);align-items:center;justify-content:center;font-family:'Noto Serif Display',Georgia,serif;font-size:17px;margin:0 0 14px}
+.step h3{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:20px;margin:0 0 8px}
+.step p{font-size:14px;color:var(--muted);margin:0}
+
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.price{background:var(--paper);border:1px solid var(--hair);padding:22px}
+.price .lbl{font-size:13px;font-weight:600;margin:0 0 8px}
+.price .val{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:26px;color:var(--brass);margin:0;line-height:1.15}
+.price .sub{font-size:12px;color:var(--muted);margin:8px 0 0}
+
+.rev{background:var(--paper);border:1px solid var(--hair);padding:28px 26px;max-width:620px}
+.rev .stars{color:#D9A21B;letter-spacing:.1em;margin:0 0 12px;font-size:15px}
+.rev blockquote{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:19px;line-height:1.45;margin:0 0 16px}
+.rev .who{font-size:13px;font-weight:600;margin:0}
+.rev .src{font-size:12px;color:var(--muted);margin:2px 0 0}
+.gap{border:1px dashed #B08A4A;background:#FBF6EC;padding:18px 20px;font-size:13.5px;color:#6b5426;margin-top:16px}
+
+ul.why{list-style:none;margin:0;padding:0}
+ul.why li{display:flex;gap:12px;margin:0 0 18px}
+ul.why b{display:block;font-size:15px;margin:0 0 3px}
+ul.why span.tick{color:#2F6B4F;font-weight:700}
+ul.why p{margin:0;font-size:14px;color:var(--muted)}
+
+.storeblk{background:var(--navy);color:var(--paper);padding:64px 0}
+.storeblk h2{color:var(--paper)}
+.storeblk a{color:var(--sand)}
+.storegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;font-size:14.5px}
+.storegrid dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin:0 0 6px}
+.storegrid dd{margin:0 0 18px}
+
+footer{background:var(--ink);color:var(--paper);padding:44px 0 56px;font-size:13px}
+footer a{color:var(--sand)}
+</style>
+</head>
+<body>
+
+<div class="preview-bar">BẢN XEM THỬ — chưa thay trang chủ thật, chưa cho Google lập chỉ mục. Anh xem xong báo em rồi em mới đổi.</div>
+
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày</div>
+
+<header>
+  <div class="wrap hdr">
+    <a class="logo" href="/">Mạnh Long<small>OPTICAL</small></a>
+    <nav class="main">
+      <a href="/#collection">Bộ sưu tập</a>
+      <a href="/trong-kinh.html">Tròng kính</a>
+      <a href="/uu-dai.html">Ưu đãi</a>
+      <a href="/tim-hieu.html">Tìm hiểu</a>
+      <a href="/#store">Cửa hàng</a>
+      <a href="/en/">EN</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--sand)">147A Lê Duẩn, Cửa Nam · gần ga Hà Nội</p>
+    <h1 class="serif">Đo mắt kỹ trước, rồi mới nói chuyện kính.</h1>
+    <p class="lead">Đo khúc xạ miễn phí, 20 đến 30 phút, mua hay không cũng vậy. Tròng đơn có sẵn thường cắt xong trong ngày. Khoảng một nghìn gọng để thử tại chỗ.</p>
+    <div class="btnrow">
+      <a class="btn solid" href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo</a>
+      <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a>
+    </div>
+    <p class="after">Thời gian tuỳ độ và loại tròng bạn chọn. Nhắn trước để bên mình kiểm tròng có sẵn.</p>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <ul>
+      <li><span>·</span> Đo mắt và đo lại miễn phí trọn đời</li>
+      <li><span>·</span> Đơn tròng thường lấy ngay trong ngày</li>
+      <li><span>·</span> Mở tới 21:30, kể cả cuối tuần và ngày lễ</li>
+      <li><span>·</span> Giao nội thành Hà Nội miễn phí</li>
+    </ul>
+  </div>
+</div>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head2">
+      <div>
+        <p class="kicker">Bắt đầu từ việc bạn đang cần</p>
+        <h2 class="big serif">Bạn không cần biết thuật ngữ nào trước</h2>
+      </div>
+      <p>Chọn dòng nào nghe giống tình cảnh của bạn nhất. Bấm vào để đọc kỹ, hoặc cứ ghé và nói đúng câu đó ở quầy.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>Tôi cần cắt kính gấp</h3><p>Tròng đơn có sẵn thường cắt và lắp xong trong ngày. Nếu bạn sắp đi xa, nói ngày đi để bên mình chỉ tư vấn loại kịp làm.</p><a class="go" href="/cat-kinh-can-lay-ngay.html">Xem cắt kính lấy ngay →</a></div>
+      <div class="card"><h3>Tôi muốn đo lại mắt cho chắc</h3><p>Đo khúc xạ đầy đủ trong phòng đo, 20 đến 30 phút, không mất phí và không cần mua gì. Bạn giữ lại số đo của mình.</p><a class="go" href="/do-mat-mien-phi-tron-doi.html">Xem buổi đo mắt →</a></div>
+      <div class="card"><h3>Tôi chưa biết chọn tròng nào</h3><p>Đơn tròng, đa tròng, đổi màu, râm có độ, chiết suất cao. Bảng giá thật và cách chọn, viết bằng tiếng Việt thường.</p><a class="go" href="/trong-kinh.html">Xem hướng dẫn tròng kính →</a></div>
+      <div class="card"><h3>Tôi muốn chọn dáng gọng hợp mặt</h3><p>Gọng nên bù cho khuôn mặt chứ đừng lặp lại nó. Cách tự đọc khuôn mặt mình trước khi đi thử.</p><a class="go" href="/chon-kinh-mat-phu-hop.html">Xem hướng dẫn chọn gọng →</a></div>
+      <div class="card"><h3>Con tôi bị cận</h3><p>Đo cho trẻ, chọn gọng bền cho trẻ hiếu động, và những cách hiện được ghi nhận là làm chậm tiến triển cận thị.</p><a class="go" href="/chon-kinh-cho-tre-em-can-thi.html">Xem bài cho trẻ em →</a></div>
+      <div class="card"><h3>Tôi muốn xem ưu đãi đang chạy</h3><p>Chương trình tháng này, kèm đầy đủ điều kiện và hạn áp dụng, không có chữ nhỏ giấu ở đâu cả.</p><a class="go" href="/uu-dai.html">Xem ưu đãi →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk alt">
+  <div class="wrap split">
+    <img src="/uploads-opt/anh-cua-hang-gong-600w.webp" width="1080" height="1080" loading="lazy" alt="Gọng kính bày trên bàn trưng bày trong cửa hàng Mạnh Long Optical, 147A Lê Duẩn">
+    <div>
+      <p class="kicker">Bộ sưu tập</p>
+      <h2 class="big serif">Khoảng một nghìn gọng, thử tại chỗ</h2>
+      <p style="color:var(--muted)">Acetate, nhựa dẻo, kim loại và titanium, trong đó có nhiều dáng tối giản kiểu Hàn. Có đủ cỡ, gồm cả bản to và cầu mũi cao cho khuôn mặt lớn. Bạn cũng có thể mang gọng của mình tới lắp tròng mới.</p>
+      <p style="color:var(--muted);font-size:14px">Mẫu thay đổi theo lô hàng. Nhắn trước để bên mình giữ mẫu bạn thích.</p>
+      <a class="btn solid" href="/#collection" style="margin-top:8px">Xem bộ sưu tập</a>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <p class="kicker">Đơn giản từ đầu</p>
+    <h2 class="big serif">Từ buổi đo tới lúc nhận kính</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Ghé hoặc nhắn trước</h3><p>Ghé thẳng cũng được. Nhắn trước qua Zalo thì đỡ phải chờ, nhất là cuối tuần.</p></div>
+      <div class="step"><div class="n">2</div><h3>Đo và chọn</h3><p>Đo khúc xạ đầy đủ, xem kết quả cùng bạn, rồi thử dáng gọng hợp khuôn mặt. Chốt đủ giá trước khi cắt.</p></div>
+      <div class="step"><div class="n">3</div><h3>Nhận kính</h3><p>Lấy tại cửa hàng, hoặc giao tới địa chỉ trong nội thành Hà Nội, miễn phí.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk alt">
+  <div class="wrap">
+    <div class="head2">
+      <div>
+        <p class="kicker">Không có khoản phát sinh</p>
+        <h2 class="big serif">Giá khởi điểm, nói trước cho dễ tính</h2>
+      </div>
+      <p>Bên mình chốt đủ giá với bạn trước khi cắt. Mức cuối cùng tuỳ độ, chiết suất và lớp phủ bạn chọn.</p>
+    </div>
+    <div class="prices">
+      <div class="price"><p class="lbl">Cặp kính đơn tròng hoàn chỉnh</p><p class="val">từ 850.000đ</p><p class="sub">Gồm cả gọng lẫn tròng, một con số trọn gói</p></div>
+      <div class="price"><p class="lbl">Tròng đổi màu</p><p class="val">từ 350.000đ</p><p class="sub">Một cặp, chưa gồm gọng</p></div>
+      <div class="price"><p class="lbl">Tròng Essilor lọc ánh sáng xanh</p><p class="val">1.480.000đ</p><p class="sub">Một cặp, chưa gồm gọng</p></div>
+      <div class="price"><p class="lbl">Đa tròng Essilor</p><p class="val">từ 2.080.000đ</p><p class="sub">Dòng Essentials Everyday Plus</p></div>
+    </div>
+    <p style="margin-top:18px;font-size:14px"><a href="/trong-kinh.html">Xem bảng giá tròng đầy đủ →</a></p>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head2">
+      <div>
+        <p class="kicker">Khách nói gì</p>
+        <h2 class="big serif">Đánh giá thật trên Google</h2>
+      </div>
+      <p><strong>4,7 trên 5</strong>, 23 đánh giá tính tới 05/09/2026. Bên mình không đổi quà lấy đánh giá và không xoá đánh giá xấu.</p>
+    </div>
+    <div class="rev">
+      <p class="stars">★★★★★</p>
+      <blockquote>“Gọng bền, ít phải thay ốc. Mắt kính đa dạng lựa chọn. Tròng kính làm xong đeo tốt. Mua rồi quay lại được hỗ trợ nắn chỉnh sau một thời gian mất form.”</blockquote>
+      <p class="who">Hậu Thành</p>
+      <p class="src">Đánh giá trên Google · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener">Đọc toàn bộ đánh giá</a></p>
+    </div>
+    <div class="gap"><strong>Chỗ này còn trống, em cố ý để trống.</strong> Trong 23 đánh giá trên hồ sơ Google hiện chỉ có một bài có phần chữ đủ dài để trích. Phần lớn còn lại chỉ chấm sao, không viết gì. Em không bịa thêm đánh giá. Muốn lấp kín ba ô ở đây thì phải chạy thẻ QR ở quầy trước, xin khách viết vài dòng thay vì chỉ bấm sao.</div>
+  </div>
+</section>
+
+<section class="blk alt">
+  <div class="wrap split">
+    <img src="/uploads-opt/phong-do-mat-manh-long-optical-600w.webp" width="1100" height="1268" loading="lazy" alt="Phòng đo mắt tại Mạnh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội">
+    <div>
+      <p class="kicker">Vì sao khách quay lại</p>
+      <h2 class="big serif">Bốn điều bên mình làm khác</h2>
+      <ul class="why">
+        <li><span class="tick">✓</span><div><b>Có phòng đo, không đọc lại kính cũ</b><p>Đo khúc xạ đầy đủ rồi mới tư vấn. Đơn cũ trên 12 tháng thì đo lại chứ không chép lại, vì độ thay đổi.</p></div></li>
+        <li><span class="tick">✓</span><div><b>Mở tới 21:30 tất cả các ngày</b><p>Đi làm cả ngày, tối mới rảnh thì vẫn kịp. Buổi đo lúc 20h giống hệt buổi đo lúc 10h.</p></div></li>
+        <li><span class="tick">✓</span><div><b>Nói rõ giá trước khi cắt</b><p>Chốt đủ số với bạn trước, mọi nâng cấp báo riêng để bạn từ chối được.</p></div></li>
+        <li><span class="tick">✓</span><div><b>Hậu mãi miễn phí trọn đời</b><p>Siết ốc, chỉnh càng, thay ve mũi, vệ sinh, đo lại. Lỗi nhà sản xuất thì đổi.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="storeblk">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--sand)">Ghé cửa hàng</p>
+    <h2 class="big serif" style="margin-bottom:26px">Mạnh Long Optical, 147A Lê Duẩn</h2>
+    <dl class="storegrid">
+      <div><dt>Địa chỉ</dt><dd>147A Lê Duẩn, Phường Cửa Nam, Hà Nội<br>Cách ga Hà Nội một đoạn đi bộ</dd></div>
+      <div><dt>Giờ mở cửa</dt><dd>8:00 – 21:30<br>Tất cả các ngày, kể cả lễ</dd></div>
+      <div><dt>Liên hệ</dt><dd><a href="tel:+84777986999">0777 986 999</a><br><a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Zalo</a> · <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WhatsApp</a><br><a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a></dd></div>
+      <div><dt>Đường đi</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Mở Google Maps</a></dd></div>
+    </dl>
+    <img src="/uploads-opt/cua-hang-cat-kinh-147-le-duan-600w.webp" width="1100" height="1144" loading="lazy" alt="Mặt tiền cửa hàng Mạnh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội" style="margin-top:30px;max-width:520px">
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Mạnh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · 8:00 – 21:30 hằng ngày</p>
+    <p><a href="/trong-kinh.html">Tròng kính</a> · <a href="/uu-dai.html">Ưu đãi</a> · <a href="/tim-hieu.html">Tìm hiểu</a> · <a href="/cau-hoi-thuong-gap.html">Hỏi đáp</a> · <a href="/en/">English</a></p>
+    <p style="color:var(--sand);font-size:12px;margin-top:18px">Đây là bản xem thử cấu trúc. Trang chủ thật vẫn ở <a href="/">manhlongoptical.com</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -392,6 +392,35 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
   }
 summary::-webkit-details-marker{display:none}
 details[open] summary span{transform:rotate(45deg);display:inline-block}
+
+/* ===== ĐỒNG BỘ BỐ CỤC VỚI TRANG CHỦ (05/09/2026) ===== */
+/* Trang chủ dùng: khung 1240px, lề 24px, nhịp dọc 76px, tiêu đề 40px,
+   nút viên thuốc brass #8A6A3B 13px. Khối này kéo trang Bộ sưu tập về
+   đúng bộ thông số đó mà không đụng vào phần mã của giỏ hàng. */
+@media (min-width: 701px) {
+  [style*="max-width: 1600px"] { max-width: 1240px !important; padding-left: 24px !important; padding-right: 24px !important; }
+  [data-m="promo-sec"], [data-m="brand-sec"], [data-m="special-sec"], [data-m="journal-sec"] { padding-top: 76px !important; padding-bottom: 76px !important; }
+  [data-m="learn-sec"] { padding-top: 76px !important; }
+  [data-m="collection-sec"], [data-m="faq-sec"], [data-m="store-sec"] { padding-bottom: 76px !important; }
+  [data-m="hero-photo"], [data-m="hero-split"] { height: 56vh !important; min-height: 480px !important; max-height: 600px !important; }
+}
+@media (max-width: 700px) {
+  [data-m="promo-sec"], [data-m="brand-sec"], [data-m="special-sec"], [data-m="journal-sec"] { padding-top: 56px !important; padding-bottom: 56px !important; }
+  [data-m="learn-sec"] { padding-top: 56px !important; }
+  [data-m="collection-sec"], [data-m="faq-sec"], [data-m="store-sec"] { padding-bottom: 56px !important; }
+}
+[data-m="promo-h2"], [data-m="collection-h2"], [data-m="special-sec"] h2, [data-m="faq-sec"] h2, [data-m="store-sec"] h2, [data-m="learn-sec"] > div > h2, [data-m="journal-sec"] h2 { font-size: clamp(26px, 3.6vw, 40px) !important; line-height: 1.18 !important; }
+[data-m="hero-photo-h1"], [data-m="hero-split-h1"], [data-m="hero-type-h1"] { font-size: clamp(32px, 5.4vw, 58px) !important; line-height: 1.12 !important; }
+
+a[style*="#7A5A2B"], button[style*="#7A5A2B"],
+a[style*="rgb(122, 90, 43)"], button[style*="rgb(122, 90, 43)"] {
+  background: #8A6A3B !important; border-color: #8A6A3B !important; border-radius: 999px !important;
+  padding: 14px 26px !important; font-size: 13px !important; letter-spacing: 0.1em !important; font-weight: 600 !important;
+}
+a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
+  border-color: rgba(244, 242, 237, 0.45) !important; border-radius: 999px !important;
+  padding: 14px 26px !important; font-size: 13px !important; letter-spacing: 0.1em !important; font-weight: 600 !important;
+}
 </style>
 </helmet>
 

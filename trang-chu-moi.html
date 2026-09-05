@@ -27,7 +27,23 @@ nav.main{display:flex;gap:24px;flex-wrap:wrap;font-size:11px;letter-spacing:.14e
 nav.main a{color:var(--ink)}
 
 .hero{background:var(--navy);color:var(--paper);padding:76px 0 68px}
+.herogrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center}
+@media(max-width:900px){.herogrid{grid-template-columns:1fr;gap:44px}}
 .hero h1{font-size:clamp(32px,5.4vw,58px);line-height:1.12;margin:0 0 20px;max-width:16ch;text-wrap:balance}
+
+/* Lockup dọc: monogram ML trong vòng tròn kép, wordmark, rồi dòng chứng thực ở cấp riêng */
+.lockup{display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
+.mono{width:168px;height:168px;border-radius:50%;border:2px solid var(--paper);display:grid;place-items:center;flex:none}
+.mono i{width:146px;height:146px;border-radius:50%;border:1px solid #B98E4E;display:grid;place-items:center;font-style:normal}
+.mono b{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:52px;letter-spacing:.02em;color:var(--paper);line-height:1}
+.wordmark{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(30px,3.4vw,42px);letter-spacing:.01em;line-height:1;margin:0}
+.optline{display:flex;align-items:center;gap:14px;justify-content:center;margin-top:14px}
+.optline i{display:block;width:44px;height:1px;background:#B98E4E;flex:none}
+.optline span{font-size:11px;letter-spacing:.28em;color:var(--sand)}
+.endorse{border-top:1px solid rgba(183,171,146,.35);padding-top:18px;width:100%;max-width:300px}
+.endorse .nm{font-size:12px;letter-spacing:.26em;color:var(--paper);margin:0 0 4px}
+.endorse .ad{font-size:12px;color:var(--sand);margin:0}
+@media(max-width:900px){.mono{width:132px;height:132px}.mono i{width:112px;height:112px}.mono b{font-size:40px}}
 .hero p.lead{font-size:clamp(16px,1.9vw,19px);max-width:52ch;margin:0 0 28px;color:#E7E3DA}
 .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px}
 .btn{display:inline-block;padding:14px 26px;border-radius:999px;font-size:13px;letter-spacing:.1em;font-weight:600;text-transform:uppercase}
@@ -58,13 +74,15 @@ section.blk.alt .card{background:var(--paper)}
 @media(max-width:820px){.split{grid-template-columns:1fr;gap:28px}}
 
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:8px}
-.step .n{display:inline-flex;width:40px;height:40px;border-radius:999px;background:var(--ink);color:var(--paper);align-items:center;justify-content:center;font-family:'Noto Serif Display',Georgia,serif;font-size:17px;margin:0 0 14px}
+.step .ico{display:inline-flex;width:56px;height:56px;border-radius:999px;background:var(--ink);color:var(--paper);align-items:center;justify-content:center;margin:0 0 14px}
+.step .ico svg{width:26px;height:26px;display:block}
+.step .stepno{font-size:11px;letter-spacing:.24em;color:var(--brass);margin:0 0 6px}
 .step h3{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:20px;margin:0 0 8px}
 .step p{font-size:14px;color:var(--muted);margin:0}
 
 .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .price{background:var(--paper);border:1px solid var(--hair);padding:22px}
-.price .lbl{font-size:13px;font-weight:600;margin:0 0 8px}
+.price .lbl{font-size:13px;font-weight:600;margin:0 0 8px;min-height:2.9em}
 .price .val{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:26px;color:var(--brass);margin:0;line-height:1.15}
 .price .sub{font-size:12px;color:var(--muted);margin:8px 0 0}
 
@@ -113,15 +131,29 @@ footer a{color:var(--sand)}
 </header>
 
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap herogrid">
+    <div>
     <p class="kicker" style="color:var(--sand)">147A Lê Duẩn, Cửa Nam · gần ga Hà Nội</p>
-    <h1 class="serif">Đo mắt kỹ trước, rồi mới nói chuyện kính.</h1>
+    <h1 class="serif">Your vision, our passion.</h1>
     <p class="lead">Đo khúc xạ miễn phí, 20 đến 30 phút, mua hay không cũng vậy. Tròng đơn có sẵn thường cắt xong trong ngày. Khoảng một nghìn gọng để thử tại chỗ.</p>
     <div class="btnrow">
       <a class="btn solid" href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo</a>
       <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a>
     </div>
     <p class="after">Thời gian tuỳ độ và loại tròng bạn chọn. Nhắn trước để bên mình kiểm tròng có sẵn.</p>
+    </div>
+
+    <div class="lockup" role="img" aria-label="Logo Mạnh Long Optical">
+      <span class="mono"><i><b>ML</b></i></span>
+      <div>
+        <p class="wordmark">M-LonG.</p>
+        <span class="optline"><i></i><span>OPTICAL</span><i></i></span>
+      </div>
+      <div class="endorse">
+        <p class="nm">MẠNH LONG</p>
+        <p class="ad">Kính mắt · 147A Lê Duẩn, Cửa Nam</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -158,7 +190,7 @@ footer a{color:var(--sand)}
 
 <section class="blk alt">
   <div class="wrap split">
-    <img src="/uploads-opt/anh-cua-hang-gong-600w.webp" width="1080" height="1080" loading="lazy" alt="Gọng kính bày trên bàn trưng bày trong cửa hàng Mạnh Long Optical, 147A Lê Duẩn">
+    <img src="/uploads-opt/mat-tien-manh-long-147a-le-duan-900w.webp" srcset="/uploads-opt/mat-tien-manh-long-147a-le-duan-600w.webp 600w, /uploads-opt/mat-tien-manh-long-147a-le-duan-900w.webp 900w" sizes="(max-width:820px) 100vw, 560px" width="1156" height="1020" loading="lazy" alt="Mặt tiền cửa hàng Mạnh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội">
     <div>
       <p class="kicker">Bộ sưu tập</p>
       <h2 class="big serif">Khoảng một nghìn gọng, thử tại chỗ</h2>
@@ -174,9 +206,9 @@ footer a{color:var(--sand)}
     <p class="kicker">Đơn giản từ đầu</p>
     <h2 class="big serif">Từ buổi đo tới lúc nhận kính</h2>
     <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Ghé hoặc nhắn trước</h3><p>Ghé thẳng cũng được. Nhắn trước qua Zalo thì đỡ phải chờ, nhất là cuối tuần.</p></div>
-      <div class="step"><div class="n">2</div><h3>Đo và chọn</h3><p>Đo khúc xạ đầy đủ, xem kết quả cùng bạn, rồi thử dáng gọng hợp khuôn mặt. Chốt đủ giá trước khi cắt.</p></div>
-      <div class="step"><div class="n">3</div><h3>Nhận kính</h3><p>Lấy tại cửa hàng, hoặc giao tới địa chỉ trong nội thành Hà Nội, miễn phí.</p></div>
+      <div class="step"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H8l-4 3v-3.6A7.5 7.5 0 0 1 3 11.5 7.5 7.5 0 0 1 10.5 4h3A7.5 7.5 0 0 1 21 11.5Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8.5 11.5h7M8.5 8.5h4"/></svg></span><p class="stepno">BƯỚC 1</p><h3>Ghé hoặc nhắn trước</h3><p>Ghé thẳng cũng được. Nhắn trước qua Zalo thì đỡ phải chờ, nhất là cuối tuần.</p></div>
+      <div class="step"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="12" cy="12" r="3.2"/></svg></span><p class="stepno">BƯỚC 2</p><h3>Đo và chọn</h3><p>Đo khúc xạ đầy đủ, xem kết quả cùng bạn, rồi thử dáng gọng hợp khuôn mặt. Chốt đủ giá trước khi cắt.</p></div>
+      <div class="step"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="6" cy="14" r="3.6"/><circle fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="18" cy="14" r="3.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9.6 14a2.6 2.6 0 0 1 4.8 0M2.4 14 4 8.4a2 2 0 0 1 1.9-1.4M21.6 14 20 8.4a2 2 0 0 0-1.9-1.4"/></svg></span><p class="stepno">BƯỚC 3</p><h3>Nhận kính</h3><p>Lấy tại cửa hàng, hoặc giao tới địa chỉ trong nội thành Hà Nội, miễn phí.</p></div>
     </div>
   </div>
 </section>
@@ -186,15 +218,15 @@ footer a{color:var(--sand)}
     <div class="head2">
       <div>
         <p class="kicker">Không có khoản phát sinh</p>
-        <h2 class="big serif">Giá khởi điểm, nói trước cho dễ tính</h2>
+        <h2 class="big serif">Giá bắt đầu từ</h2>
       </div>
       <p>Bên mình chốt đủ giá với bạn trước khi cắt. Mức cuối cùng tuỳ độ, chiết suất và lớp phủ bạn chọn.</p>
     </div>
     <div class="prices">
-      <div class="price"><p class="lbl">Cặp kính đơn tròng hoàn chỉnh</p><p class="val">từ 850.000đ</p><p class="sub">Gồm cả gọng lẫn tròng, một con số trọn gói</p></div>
-      <div class="price"><p class="lbl">Tròng đổi màu</p><p class="val">từ 350.000đ</p><p class="sub">Một cặp, chưa gồm gọng</p></div>
-      <div class="price"><p class="lbl">Tròng Essilor lọc ánh sáng xanh</p><p class="val">1.480.000đ</p><p class="sub">Một cặp, chưa gồm gọng</p></div>
-      <div class="price"><p class="lbl">Đa tròng Essilor</p><p class="val">từ 2.080.000đ</p><p class="sub">Dòng Essentials Everyday Plus</p></div>
+      <div class="price"><p class="lbl">Kính đơn tròng chống ánh sáng xanh, ZEISS hoặc Essilor</p><p class="val">từ 850.000đ</p><p class="sub">Gồm cả gọng lẫn tròng</p></div>
+      <div class="price"><p class="lbl">Tròng đổi màu</p><p class="val">từ 1.550.000đ</p><p class="sub">Gồm cả gọng lẫn tròng</p></div>
+      <div class="price"><p class="lbl">Đa tròng Essilor Essentials</p><p class="val">từ 3.950.000đ</p><p class="sub">Gồm cả gọng lẫn tròng</p></div>
+      <div class="price"><p class="lbl">Kính râm có độ</p><p class="val">1.850.000đ</p><p class="sub">Gồm cả gọng lẫn tròng</p></div>
     </div>
     <p style="margin-top:18px;font-size:14px"><a href="/trong-kinh.html">Xem bảng giá tròng đầy đủ →</a></p>
   </div>
@@ -245,7 +277,6 @@ footer a{color:var(--sand)}
       <div><dt>Liên hệ</dt><dd><a href="tel:+84777986999">0777 986 999</a><br><a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Zalo</a> · <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WhatsApp</a><br><a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a></dd></div>
       <div><dt>Đường đi</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Mở Google Maps</a></dd></div>
     </dl>
-    <img src="/uploads-opt/cua-hang-cat-kinh-147-le-duan-600w.webp" width="1100" height="1144" loading="lazy" alt="Mặt tiền cửa hàng Mạnh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội" style="margin-top:30px;width:100%;max-width:520px">
   </div>
 </section>
 

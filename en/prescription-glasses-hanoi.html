@@ -59,8 +59,9 @@
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
 a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
 header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:20px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
-nav.top{white-space:nowrap}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);margin-left:14px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center}
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
 main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
 .crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
 h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
@@ -77,7 +78,7 @@ th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-al
 .cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
 .cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
 .related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
-footer{background:var(--ink);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
 footer a{color:#B7AB92}
 .stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
 .stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
@@ -91,9 +92,10 @@ footer a{color:#B7AB92}
 </script>
 </head>
 <body>
+<div class="topbar">Free eye test, whether you buy or not · Open 8:00 – 21:30 every day</div>
 <header>
   <a class="logo" href="/en/">Mạnh Long<small>OPTICAL</small></a>
-  <nav class="top"><a href="/en/">ENGLISH</a><a href="/">TIẾNG VIỆT</a></nav>
+  <nav class="top"><a href="/cua-hang.html#collection">FRAMES</a><a href="/en/faq.html">QUESTIONS</a><a href="/cua-hang.html#store">STORE</a><a href="/">TIẾNG VIỆT</a></nav>
 </header>
 <main>
 <p class="crumb"><a href="/en/">Home</a> › Getting Prescription Glasses in Hanoi</p>

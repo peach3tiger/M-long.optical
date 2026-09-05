@@ -286,7 +286,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
   [data-m="journal-sec"] > div > div > div { will-change: transform; }
   @media (max-width: 860px) {
     [data-m="topbar"] { padding: 16px 20px 0 !important; gap: 14px !important; align-items: center !important; }
-    [data-m="logo"] { font-size: 30px !important; }
+    [data-m="logo"] { font-size: 21px !important; }
     [data-m="utilnav"], [data-m="searchbox"], [data-m="hero-photo-meta"] { display: none !important; }
     [data-m="nav"] { padding: 14px 20px 12px !important; gap: 22px !important; overflow-x: auto !important; scrollbar-width: none; }
     [data-m="nav"]::-webkit-scrollbar, [data-m="filter-list"]::-webkit-scrollbar, [data-m="info-tabs"]::-webkit-scrollbar { display: none; }
@@ -386,7 +386,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
        scrolls away with the page so nothing repaints while scrolling. */
     header { position: static !important; }
     header [data-m="topbar"] { padding: 10px 20px 0 !important; }
-    header [data-m="logo"] { font-size: 24px !important; }
+    header [data-m="logo"] { font-size: 21px !important; }
     header [data-m="nav"] { padding: 8px 20px 8px !important; }
   }
 summary::-webkit-details-marker{display:none}
@@ -396,10 +396,11 @@ details[open] summary span{transform:rotate(45deg);display:inline-block}
 
 <div data-m="root" data-lang="{{ lang }}" style="font-family: Archivo, 'Helvetica Neue', sans-serif; font-feature-settings: 'ss01', 'cv05'; color: #1B1D1F; background: #F4F2ED; min-height: 100vh">
 
+  <div data-m="promobar" style="background: #22254F; color: #F4F2ED; font-size: 12px; letter-spacing: 0.04em; padding: 9px 24px; text-align: center">{{ t.topbar }}</div>
   <header data-m="hdr" style="position: sticky; top: 0; z-index: 40; background: #F4F2ED; border-bottom: 1px solid #DFDACE">
-    <div data-m="topbar" style="max-width: 1600px; margin: 0 auto; padding: 22px 40px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px">
+    <div data-m="topbar" style="max-width: 1600px; margin: 0 auto; padding: 14px 40px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px">
       <a href="#top" onClick="{{ goHome }}" style="display: flex; align-items: baseline; gap: 8px">
-        <span data-m="logo" style="white-space: nowrap; flex: none; font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: clamp(26px, 7vw, 44px); line-height: 1; letter-spacing: 0em">Mạnh Long</span>
+        <span data-m="logo" style="white-space: nowrap; flex: none; font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: 21px; line-height: 1; letter-spacing: 0em">Mạnh Long</span>
         <span data-latin style="font-size: 10px; letter-spacing: 0.28em; color: #1B1D1F; padding-bottom: 6px">OPTICAL</span>
       </a>
       <div style="display: flex; align-items: center; gap: 22px; padding-top: 12px">
@@ -424,16 +425,13 @@ details[open] summary span{transform:rotate(45deg);display:inline-block}
         </div>
       </div>
     </div>
-    <nav data-m="nav" style="max-width: 1600px; margin: 0 auto; padding: 26px 40px 18px; display: flex; gap: 44px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em">
-      <a href="#brand" onClick="{{ goHome }}">{{ t.navBrand }}</a>
-      <a href="#collection" onClick="{{ goOptical }}">{{ t.navNewCollection }}</a>
+    <nav data-m="nav" style="max-width: 1600px; margin: 0 auto; padding: 16px 40px 14px; display: flex; gap: 24px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase">
+      <a href="#collection" onClick="{{ goOptical }}">{{ t.navCollection }}</a>
       <a href="#collection" onClick="{{ goSunglasses }}">{{ t.navSunglasses }}</a>
-      <a href="#collection" onClick="{{ goOptical }}">{{ t.navFrame }}</a>
-      <a href="#special" onClick="{{ goHome }}">{{ t.navLenses }}</a>
-      <a href="#journal" onClick="{{ goHome }}" style-hover="color: #7A5A2B">{{ t.navBlog }}</a>
-      <a href="#learn" onClick="{{ goHome }}" style-hover="color: #7A5A2B">{{ t.navLearn }}</a>
-      <a href="#store" onClick="{{ goHome }}" style-hover="color: #7A5A2B">{{ t.navStore }}</a>
-      <a href="/tim-hieu.html" style-hover="color: #7A5A2B">{{ t.navGuide }}</a>
+      <a href="/trong-kinh.html">{{ t.navLenses }}</a>
+      <a href="/uu-dai.html">{{ t.navOffers }}</a>
+      <a href="/tim-hieu.html">{{ t.navLearn }}</a>
+      <a href="#store" onClick="{{ goHome }}">{{ t.navStore }}</a>
     </nav>
   </header>
 
@@ -447,7 +445,7 @@ details[open] summary span{transform:rotate(45deg);display:inline-block}
         <h1 data-m="hero-split-h1" style="font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: 62px; line-height: 1.14; margin: 0 0 30px; text-wrap: pretty">{{ t.heroTitle1 }}<br>{{ t.heroTitle1b }}</h1>
         <div style="width: 72px; height: 1px; background: rgba(244,242,237,0.45); margin-bottom: 30px"></div>
         <p style="margin: 0 0 12px; font-size: 13px; line-height: 1.9; max-width: 380px; opacity: 0.78">{{ t.heroDesc }}</p>
-        <p style="margin: 26px 0 0; font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: 15px; opacity: 0.85">{{ t.reality }}</p>
+        
         <a href="#collection" style="margin-top: 46px; align-self: flex-start; border: 1px solid rgba(244,242,237,0.75); color: #F4F2ED; padding: 15px 42px; font-size: 11px; letter-spacing: 0.2em" style-hover="background: #F4F2ED; color: #22254F">{{ t.viewSeason }}</a>
       </div>
       <div style="position: relative; background: #EAE7DE; overflow: hidden">
@@ -480,7 +478,7 @@ details[open] summary span{transform:rotate(45deg);display:inline-block}
           <div style="color: #F4F2ED; max-width: 760px; text-shadow: 0 1px 3px rgba(27,29,31,0.6)">
             <h1 data-m="hero-photo-h1" style="font-family: 'Noto Serif Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 52px; line-height: 1.16; letter-spacing: 0.01em; margin: 0 0 16px; text-wrap: pretty">{{ t.heroTitleInline }}</h1>
             <p style="margin: 0 0 22px; font-size: 13px; letter-spacing: 0.14em; opacity: 0.88; max-width: 620px; line-height: 1.8">{{ t.heroDescInline }}</p>
-            <p style="margin: 0; font-family: 'Noto Serif Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 15px; opacity: 0.92">{{ t.reality }}</p>
+            
           </div>
           <div data-m="hero-photo-meta" style="color: #F4F2ED; display: flex; align-items: center; gap: 20px; padding-bottom: 6px; text-shadow: 0 1px 3px rgba(27,29,31,0.6)">
             <div style="width: 84px; height: 1px; background: rgba(244,242,237,0.7)"></div>
@@ -492,7 +490,7 @@ details[open] summary span{transform:rotate(45deg);display:inline-block}
     <div data-m="hero-caption" style="display: none; background: #22254F; color: #F4F2ED; padding: 32px 20px 36px">
       <h2 style="margin: 0 0 14px; font-family: 'Noto Serif Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 27px; line-height: 1.2; letter-spacing: 0.01em; text-wrap: pretty">{{ t.heroTitleInline }}</h2>
       <p style="margin: 0 0 16px; font-size: 13px; letter-spacing: 0.1em; line-height: 1.75; opacity: 0.88">{{ t.heroDescInline }}</p>
-      <p style="margin: 0 0 26px; font-family: 'Noto Serif Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 14px; opacity: 0.92">{{ t.reality }}</p>
+      
       <a href="#collection" style="display: inline-block; border: 1px solid rgba(244,242,237,0.75); color: #F4F2ED; padding: 14px 34px; font-size: 11px; letter-spacing: 0.2em" style-hover="background: #F4F2ED; color: #1B1D1F">{{ t.viewSeason }}</a>
     </div>
     </sc-if>
@@ -1175,6 +1173,9 @@ details[open] summary span{transform:rotate(45deg);display:inline-block}
         <a href="#top" onClick="{{ goHome }}" style="font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: clamp(22px, 6vw, 34px); line-height: 1; color: #F4F2ED">Mạnh Long</a>
         <div style="display: flex; flex-direction: column; align-items: flex-start">
         <div data-m="footer-links" style="display: flex; align-items: center; flex-wrap: wrap; gap: 12px 34px; font-size: 11px; letter-spacing: 0.16em">
+          <a href="#collection" onClick="{{ goOptical }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navCollection }}</a>
+          <a href="/trong-kinh.html" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navLenses }}</a>
+          <a href="/uu-dai.html" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navOffers }}</a>
           <a href="#journal" onClick="{{ goHome }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navBlog }}</a>
           <a href="#learn" onClick="{{ goHome }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navLearn }}</a>
           <a href="#store" onClick="{{ goHome }}" style="color: #F4F2ED" style-hover="color: #B7AB92">{{ t.navStore }}</a>
@@ -1473,7 +1474,7 @@ const TXT = {
   en: {
     myPage: "MY PAGE", login: "LOGIN", join: "JOIN", cartLabel: "CART", search: "SEARCH",
     logout: "LOGOUT", welcomeBack: "Welcome back", nameLabel: "Full name", emailLabel: "Email address", passwordLabel: "Password (min. 6 characters)",
-    navBrand: "BRAND", navNewCollection: "NEW COLLECTION", navSunglasses: "SUNGLASSES", navFrame: "FRAME", navLenses: "LENSES", navBlog: "CHECKIN W US", navStore: "STORE", navGuide: "GUIDES", navLearn: "LEARN", trendingTopics: "TRENDING TOPICS",
+    navBrand: "BRAND", navNewCollection: "NEW COLLECTION", navSunglasses: "SUNGLASSES", navFrame: "FRAME", navLenses: "LENSES", navBlog: "CHECKIN W US", navStore: "STORE", navGuide: "GUIDES", navLearn: "LEARN", navCollection: "COLLECTION", navOffers: "OFFERS", topbar: "Free eye test, whether you buy or not · Open 8:00 – 21:30 every day", trendingTopics: "TRENDING TOPICS",
     newSeason: "NEW SEASON",
     heroTitle1: "not to be seen,", heroTitle1b: "but to see clearly.", heroTitleInline: "Free eye tests, same-day prescription glasses in Hanoi.",
     heroDesc: "Clarity looks good on you. Frames cut for the light you live in.",
@@ -1532,7 +1533,7 @@ const TXT = {
   vi: {
     myPage: "Trang cá nhân", login: "Đăng nhập", join: "Đăng ký", cartLabel: "Giỏ hàng", search: "Tìm kiếm",
     logout: "Đăng xuất", welcomeBack: "Chào mừng trở lại", nameLabel: "Họ và tên", emailLabel: "Địa chỉ email", passwordLabel: "Mật khẩu (tối thiểu 6 ký tự)",
-    navBrand: "Thương hiệu", navNewCollection: "Bộ sưu tập mới", navSunglasses: "Kính mát", navFrame: "Gọng kính", navLenses: "Tròng kính", navBlog: "CHECKIN W US", navStore: "Cửa hàng", navGuide: "Hướng dẫn", navLearn: "Tìm hiểu", trendingTopics: "Chủ đề nổi bật",
+    navBrand: "Thương hiệu", navNewCollection: "Bộ sưu tập mới", navSunglasses: "Kính mát", navFrame: "Gọng kính", navLenses: "Tròng kính", navBlog: "CHECKIN W US", navStore: "Cửa hàng", navGuide: "Hướng dẫn", navLearn: "Tìm hiểu", navCollection: "Bộ sưu tập", navOffers: "Ưu đãi", topbar: "Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày", trendingTopics: "Chủ đề nổi bật",
     newSeason: "Mùa mới",
     heroTitle1: "không để được nhìn thấy,", heroTitle1b: "mà để nhìn rõ.", heroTitleInline: "Đo mắt miễn phí, cắt kính cận lấy ngay tại Hà Nội.",
     heroDesc: "Sự rõ ràng rất hợp với bạn. Gọng kính được cắt cho ánh sáng bạn sống cùng.",

@@ -288,7 +288,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="topbar"] { padding: 16px 20px 0 !important; gap: 14px !important; align-items: center !important; }
     [data-m="logo"] { font-size: 21px !important; }
     [data-m="utilnav"], [data-m="searchbox"], [data-m="hero-photo-meta"] { display: none !important; }
-    [data-m="nav"] { padding: 14px 20px 12px !important; gap: 22px !important; overflow-x: auto !important; scrollbar-width: none; }
+    [data-m="nav"] { padding: 12px 20px 14px !important; gap: 9px 18px !important; overflow-x: visible !important; flex-wrap: wrap !important; }
     [data-m="nav"]::-webkit-scrollbar, [data-m="filter-list"]::-webkit-scrollbar, [data-m="info-tabs"]::-webkit-scrollbar { display: none; }
     [data-m="nav"] > a { white-space: nowrap; }
     [data-m="hero-split"] { grid-template-columns: 1fr !important; height: auto !important; min-height: 0 !important; }
@@ -357,7 +357,8 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="root"] { overflow-x: hidden !important; }
     input, textarea, select { font-size: 16px !important; }
     [data-m="topbar"] { flex-wrap: wrap !important; }
-    [data-m="searchbox"] { display: flex !important; height: 44px !important; flex: 1 1 100% !important; order: 3; padding: 0 14px !important; margin-top: 4px; }
+    [data-m="searchbox"] { display: flex !important; height: 40px !important; flex: 1 1 auto !important; order: 3; padding: 0 12px !important; margin-top: 2px; }
+    header [data-m="topbar"] > div > button { white-space: nowrap !important; }
     [data-m="searchbox"] input { width: 100% !important; }
     [data-m="searchbox"] span { font-size: 16px !important; padding: 0 4px; }
     [data-m="nav"] > a, [data-m="footer-links"] > a, [data-m="info-tabs"] > button, [data-m="season-tabs"] > button, [data-m="filter-list"] > button { min-height: 44px !important; display: inline-flex !important; align-items: center !important; }

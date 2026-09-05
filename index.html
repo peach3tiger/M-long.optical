@@ -315,10 +315,15 @@ footer a{color:var(--sand)}
 /* Link cu chia se truoc day co dang manhlongoptical.com/#/product/xxx, /#/cart, /#/account.
    Trang chu nay khong con chua cua hang nua, nen chuyen thang sang /cua-hang.html va giu nguyen hash. */
 (function () {
-  var h = location.hash || "";
-  if (/^#\/(product|cart|account|search|info)\b/.test(h)) {
-    location.replace("/cua-hang.html" + h);
+  var re = /^#\/(product|cart|account|search|info)\b/;
+  function go() {
+    var h = location.hash || "";
+    if (re.test(h)) location.replace("/cua-hang.html" + h);
   }
+  go();
+  // Hash co the toi sau khi trang da tai (nguoi dung dan link vao thanh dia chi,
+  // hoac trinh duyet khoi phuc phien cu), nen lang nghe them hashchange.
+  window.addEventListener("hashchange", go);
 })();
 </script>
 </body>

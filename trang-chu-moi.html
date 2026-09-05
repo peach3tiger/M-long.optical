@@ -31,11 +31,12 @@ nav.main a{color:var(--ink)}
 @media(max-width:900px){.herogrid{grid-template-columns:1fr;gap:44px}}
 .hero h1{font-size:clamp(32px,5.4vw,58px);line-height:1.12;margin:0 0 20px;max-width:16ch;text-wrap:balance}
 
-/* Lockup dọc: monogram ML trong vòng tròn kép, wordmark, rồi dòng chứng thực ở cấp riêng */
+/* Lockup dọc: video Sơn, wordmark, rồi dòng chứng thực ở cấp riêng */
 .lockup{display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
-.mono{width:168px;height:168px;border-radius:50%;border:2px solid var(--paper);display:grid;place-items:center;flex:none}
-.mono i{width:146px;height:146px;border-radius:50%;border:1px solid #B98E4E;display:grid;place-items:center;font-style:normal}
-.mono b{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:52px;letter-spacing:.02em;color:var(--paper);line-height:1}
+.vidwrap{width:100%;max-width:440px;border:1px solid rgba(183,171,146,.35);background:#151735;overflow:hidden}
+.vidwrap video,.vidwrap img{display:block;width:100%;height:auto}
+.vidwrap img.still{display:none}
+@media(prefers-reduced-motion:reduce){.vidwrap video{display:none}.vidwrap img.still{display:block}}
 .wordmark{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(30px,3.4vw,42px);letter-spacing:.01em;line-height:1;margin:0}
 .optline{display:flex;align-items:center;gap:14px;justify-content:center;margin-top:14px}
 .optline i{display:block;width:44px;height:1px;background:#B98E4E;flex:none}
@@ -43,7 +44,7 @@ nav.main a{color:var(--ink)}
 .endorse{border-top:1px solid rgba(183,171,146,.35);padding-top:18px;width:100%;max-width:300px}
 .endorse .nm{font-size:12px;letter-spacing:.26em;color:var(--paper);margin:0 0 4px}
 .endorse .ad{font-size:12px;color:var(--sand);margin:0}
-@media(max-width:900px){.mono{width:132px;height:132px}.mono i{width:112px;height:112px}.mono b{font-size:40px}}
+@media(max-width:900px){.vidwrap{max-width:100%}}
 .hero p.lead{font-size:clamp(16px,1.9vw,19px);max-width:52ch;margin:0 0 28px;color:#E7E3DA}
 .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px}
 .btn{display:inline-block;padding:14px 26px;border-radius:999px;font-size:13px;letter-spacing:.1em;font-weight:600;text-transform:uppercase}
@@ -85,6 +86,11 @@ section.blk.alt .card{background:var(--paper)}
 .price .lbl{font-size:13px;font-weight:600;margin:0 0 8px;min-height:2.9em}
 .price .val{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:26px;color:var(--brass);margin:0;line-height:1.15}
 .price .sub{font-size:12px;color:var(--muted);margin:8px 0 0}
+.prices{align-items:start}
+.upsell{margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--hair)}
+.upsell .bn{font-size:11px;letter-spacing:.26em;color:var(--ink);margin:0 0 6px;font-weight:600}
+.upsell .uv{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:20px;color:var(--brass);margin:0;line-height:1.15}
+.upsell .us{font-size:12px;color:var(--muted);margin:6px 0 0}
 
 .rev{background:var(--paper);border:1px solid var(--hair);padding:28px 26px;max-width:620px}
 .rev .stars{color:#D9A21B;letter-spacing:.1em;margin:0 0 12px;font-size:15px}
@@ -144,7 +150,13 @@ footer a{color:var(--sand)}
     </div>
 
     <div class="lockup" role="img" aria-label="Logo Mạnh Long Optical">
-      <span class="mono"><i><b>ML</b></i></span>
+      <div class="vidwrap">
+        <video autoplay muted loop playsinline preload="metadata" poster="/uploads-opt/son-gioi-thieu-poster.jpg" aria-label="Sơn, mèo máy của Mạnh Long Optical, giúp khách thử gọng trong cửa hàng">
+          <source src="/uploads-opt/son-gioi-thieu.webm" type="video/webm">
+          <source src="/uploads-opt/son-gioi-thieu.mp4" type="video/mp4">
+        </video>
+        <img class="still" src="/uploads-opt/son-gioi-thieu-poster.webp" width="854" height="480" alt="Sơn, mèo máy của Mạnh Long Optical, nhìn lên biểu tượng ML">
+      </div>
       <div>
         <p class="wordmark">M-LonG.</p>
         <span class="optline"><i></i><span>OPTICAL</span><i></i></span>
@@ -223,7 +235,7 @@ footer a{color:var(--sand)}
       <p>Bên mình chốt đủ giá với bạn trước khi cắt. Mức cuối cùng tuỳ độ, chiết suất và lớp phủ bạn chọn.</p>
     </div>
     <div class="prices">
-      <div class="price"><p class="lbl">Kính đơn tròng chống ánh sáng xanh, ZEISS hoặc Essilor</p><p class="val">từ 850.000đ</p><p class="sub">Gồm cả gọng lẫn tròng</p></div>
+      <div class="price"><p class="lbl">Kính đơn tròng chống ánh sáng xanh</p><p class="val">từ 850.000đ</p><p class="sub">Cả cặp, gồm gọng và tròng loại phổ thông</p><div class="upsell"><p class="bn">ESSILOR</p><p class="uv">1.480.000đ</p><p class="us">Một cặp tròng Essilor lọc ánh sáng xanh, chưa gồm gọng. Để bạn tiện so với mức phổ thông ở trên.</p></div></div>
       <div class="price"><p class="lbl">Tròng đổi màu</p><p class="val">từ 1.550.000đ</p><p class="sub">Gồm cả gọng lẫn tròng</p></div>
       <div class="price"><p class="lbl">Đa tròng Essilor Essentials</p><p class="val">từ 3.950.000đ</p><p class="sub">Gồm cả gọng lẫn tròng</p></div>
       <div class="price"><p class="lbl">Kính râm có độ</p><p class="val">1.850.000đ</p><p class="sub">Gồm cả gọng lẫn tròng</p></div>

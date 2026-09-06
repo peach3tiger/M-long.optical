@@ -3,6 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Chuyen huong tuong thich link cu ?lang= (them 06/09/2026).
+   Ly do: sitelink Google Ads cap tai khoan va cac link cu ngoai kia con tro toi
+   /?lang=en, trong khi website da chuyen sang trang tinh /en/. Truoc do ?lang=en
+   IM LANG tra ve trang tieng Viet - khach nuoc ngoai bam vao ra trang sai ngon ngu.
+   LUU Y: GitHub Pages KHONG cau hinh duoc 301 phia may chu, nen day la chuyen huong
+   bang JavaScript. Dung location.replace de khong ket lai trong lich su trinh duyet.
+   Dat TRUOC gtag de GA4 ghi luot xem vao dung trang dich. */
+(function(){try{
+  var q = new URLSearchParams(location.search).get('lang');
+  if (q === 'en') { location.replace('/en/' + location.hash); }
+}catch(e){}})();
+</script>
 <!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
 <script>

@@ -436,20 +436,8 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
       <div style="display: flex; align-items: center; gap: 22px; padding-top: 12px">
         <div data-m="utilnav" style="display: flex; align-items: center; gap: 18px; font-size: 10px; letter-spacing: 0.16em; color: #6E6759">
           <button onClick="{{ toggleLang }}" style="border: 0; background: transparent; cursor: pointer; font-family: Archivo, 'Helvetica Neue', sans-serif; font-size: 10px; letter-spacing: 0.16em; color: #6E6759; padding: 0">{{ langLabel }}</button>
-          <sc-if value="{{ isLoggedIn }}" hint-placeholder-val="{{ false }}">
-            <button onClick="{{ goAccount }}" style="border: 0; background: transparent; cursor: pointer; font-family: inherit; font-size: 10px; letter-spacing: 0.16em; color: #1B1D1F; padding: 0">{{ accountName }}</button>
-            <button onClick="{{ logout }}" style="border: 0; background: transparent; cursor: pointer; font-family: inherit; font-size: 10px; letter-spacing: 0.16em; color: #6E6759; padding: 0">{{ t.logout }}</button>
-          </sc-if>
-          <sc-if value="{{ isLoggedOut }}" hint-placeholder-val="{{ true }}">
-            <button onClick="{{ goAccountLogin }}" style="border: 0; background: transparent; cursor: pointer; font-family: inherit; font-size: 10px; letter-spacing: 0.16em; color: #6E6759; padding: 0">{{ t.login }}</button>
-            <button onClick="{{ goAccountSignup }}" style="border: 0; background: transparent; cursor: pointer; font-family: inherit; font-size: 10px; letter-spacing: 0.16em; color: #6E6759; padding: 0">{{ t.join }}</button>
-          </sc-if>
-        </div>
-        <button onClick="{{ openCart }}" style="border: 0; background: transparent; cursor: pointer; font-family: Archivo, 'Helvetica Neue', sans-serif; display: flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 0.16em; color: #1B1D1F; padding: 0">
-          {{ t.cartLabel }}
-          <span style="width: 18px; height: 18px; border-radius: 50%; background: #1B1D1F; color: #F4F2ED; display: flex; align-items: center; justify-content: center; font-size: 9px">{{ cartCount }}</span>
-        </button>
-        <div data-m="searchbox" style="display: flex; align-items: center; border: 1px solid #1B1D1F; height: 30px; padding: 0 10px; gap: 10px">
+          </div>
+        <!-- Go 06/09/2026: shop KHONG ban online. Bo dang nhap/dang ky/gio hang. --><div data-m="searchbox" style="display: flex; align-items: center; border: 1px solid #1B1D1F; height: 30px; padding: 0 10px; gap: 10px">
           <input type="text" placeholder="{{ t.search }}" value="{{ searchQuery }}" onChange="{{ updateSearch }}" onKeyDown="{{ searchKeyDown }}" style="border: 0; outline: 0; width: 130px; font-family: Archivo, 'Helvetica Neue', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #1B1D1F; background: transparent">
           <span onClick="{{ runSearch }}" style="font-size: 11px; color: #1B1D1F; cursor: pointer">⌕</span>
         </div>
@@ -864,12 +852,7 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
           </div>
 
           <div style="display: flex; gap: 14px; padding: 34px 0 0; align-items: stretch">
-            <div data-m="qty" style="display: flex; align-items: center; border: 1px solid #1B1D1F">
-              <button onClick="{{ detail.dec }}" style="width: 44px; height: 52px; border: 0; background: transparent; cursor: pointer; font-size: 15px; color: #1B1D1F">−</button>
-              <span style="width: 32px; text-align: center; font-size: 13px">{{ detail.qty }}</span>
-              <button onClick="{{ detail.inc }}" style="width: 44px; height: 52px; border: 0; background: transparent; cursor: pointer; font-size: 15px; color: #1B1D1F">+</button>
-            </div>
-            <button onClick="{{ detail.add }}" style="flex: 1; height: 52px; background: #7A5A2B; color: #F4F2ED; border: 0; cursor: pointer; font-family: Archivo, 'Helvetica Neue', sans-serif; font-size: 11px; letter-spacing: 0.2em" style-hover="background: #22254F">{{ t.addToBag }}</button>
+            <div style="flex: 1; min-height: 52px; display: flex; align-items: center; justify-content: center; background: #F4F2ED; border: 1px solid #B7AB92; color: #1B1D1F; font-family: Archivo, 'Helvetica Neue', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-align: center; padding: 10px 14px">THỬ VÀ MUA TẠI CỬA HÀNG · 147A LÊ DUẨN · 8:00–21:30</div>
           </div>
           <p style="margin: 14px 0 0; font-size: 11px; line-height: 1.9; color: #6E6759">{{ shipNote }}</p>
 
@@ -3517,9 +3500,9 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     try { return JSON.parse(localStorage.getItem("mlong_users") || "[]"); } catch (e) { return []; }
   }
 
-  goAccount(mode) {
-    this.setState({ view: "account", authMode: mode || "login", authError: "" });
-    this.pushHash("#/account");
+  goAccount() {
+    /* Gỡ 06/09/2026: không còn màn hình tài khoản. */
+    this.setState({ view: "home" });
     window.scrollTo(0, 0);
   }
 
@@ -3696,8 +3679,9 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     const h = location.hash;
     let m = h.match(/^#\/product\/(.+)$/);
     if (m) { this.setState({ view: "product", pid: decodeURIComponent(m[1]) }); return; }
-    if (h === "#/cart") { this.setState({ view: "cart" }); return; }
-    if (h === "#/account") { this.setState({ view: "account" }); return; }
+    /* Gỡ 06/09/2026: shop không bán online; chặn cả khi vào thẳng bằng URL. */
+    if (h === "#/cart" || h === "#/account") { this.setState({ view: "home" }); history.replaceState(null, "", location.pathname); return; }
+    
     m = h.match(/^#\/info\/([a-z]+)$/);
     if (m) { this.setState({ view: "info", infoTab: m[1] }); return; }
     m = h.match(/^#\/learn\/(.+)$/);
@@ -3798,19 +3782,9 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     };
   }
 
-  addToCart(p) {
-    const lens = LENSES.find(l => l.id === this.state.lens) || LENSES[0];
-    const way = (p.ways[this.state.colorIdx] || p.ways[0])[0];
-    const key = p.id + "|" + way + "|" + lens.id;
-    const extra = lens.add;
-    this.setState(s => {
-      const cart = s.cart.slice();
-      const at = cart.findIndex(l => l.key === key);
-      if (at >= 0) cart[at] = Object.assign({}, cart[at], { qty: cart[at].qty + s.qty });
-      else cart.push({ key, id: p.id, name: p.name + " · " + way, shape: p.shape, lens: lens.label, unit: p.now + extra, qty: s.qty });
-      return { cart, view: "cart" };
-    });
-    window.scrollTo(0, 0);
+  addToCart() {
+    /* Gỡ 06/09/2026: shop không bán online, không có giỏ hàng. */
+    return;
   }
 
   setQty(key, d) {
@@ -3969,7 +3943,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       goHome: () => { this.setState({ view: "home" }); this.pushHash("#/"); },
       goSunglasses: () => { this.setState({ view: "home", season: "SS26", filter: "all", page: 1 }); this.pushHash("#/"); },
       goOptical: () => { this.setState({ view: "home", season: "FW25", filter: "all", page: 1 }); this.pushHash("#/"); },
-      openCart: () => { this.setState({ view: "cart" }); this.pushHash("#/cart"); window.scrollTo(0, 0); },
+      openCart: () => { /* Gỡ 06/09/2026 */ },
       searchQuery: this.state.searchQuery,
       updateSearch: e => this.setState({ searchQuery: e.target.value }),
       searchKeyDown: e => { if (e.key === "Enter") this.doSearch(e.target.value); },

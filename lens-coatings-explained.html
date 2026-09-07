@@ -59,6 +59,17 @@ header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 
 .logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
 .topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center}
 nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
 @media(max-width:700px){
   .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
   header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
@@ -93,10 +104,30 @@ footer a{color:#B7AB92}
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/lens-coatings-explained.html#article","headline":"Chống phản quang, lọc ánh sáng xanh, chống UV: Lớp phủ nào làm gì","description":"Khi tư vấn, các lớp phủ hay được gộp vào một gói. Nhưng mỗi lớp lo một việc khác nhau.","image":"https://manhlongoptical.com/uploads-opt/learn-lens-coatings.png","author":{"@type":"Person","name":"Alvin","worksFor":{"@type":"Organization","name":"Manh Long Optical","alternateName":"Mạnh Long Optical"}},"publisher":{"@type":"Organization","name":"Manh Long Optical","alternateName":"Mạnh Long Optical","logo":{"@type":"ImageObject","url":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg"}},"datePublished":"2026-08-26T08:00:00+07:00","dateModified":"2026-08-30T14:00:00+07:00","articleSection":"Kiến thức tròng kính","inLanguage":"vi","mainEntityOfPage":{"@type":"WebPage","@id":"https://manhlongoptical.com/lens-coatings-explained.html"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/lens-coatings-explained.html#faq","mainEntity":[{"@type":"Question","name":"Một cặp kính có cần cả ba lớp phủ không?","acceptedAnswer":{"@type":"Answer","text":"Không nhất thiết — chống phản quang và chống UV nên có trên hầu hết mọi cặp kính, còn lọc ánh sáng xanh là tùy chọn theo thói quen dùng màn hình."}},{"@type":"Question","name":"Nếu chỉ chọn được một lớp phủ thì nên ưu tiên gì?","acceptedAnswer":{"@type":"Answer","text":"Chống phản quang, vì nó ảnh hưởng tới sự thoải mái hàng ngày, lái xe ban đêm và độ trong của tròng trong mọi bức ảnh."}},{"@type":"Question","name":"Lớp chống trầy và chống phản quang có đi kèm nhau không?","acceptedAnswer":{"@type":"Answer","text":"Thường có — hầu hết các gói lớp phủ cao cấp như Crizal đã gộp chống trầy, chống bám bẩn và chống phản quang trong một lần phủ."}},{"@type":"Question","name":"Lau tròng có lớp phủ sao cho không hỏng?","acceptedAnswer":{"@type":"Answer","text":"Rửa qua nước trước để loại bụi cát, sau đó lau bằng khăn microfiber — tránh dùng khăn khô hoặc giấy ăn vì có thể làm xước lớp phủ."}},{"@type":"Question","name":"Tròng cũ có phủ lại được không?","acceptedAnswer":{"@type":"Answer","text":"Không, lớp phủ được áp dụng trong quá trình sản xuất, nên muốn có lớp phủ mới cần làm tròng mới chứ không thể phủ thêm lên tròng cũ."}},{"@type":"Question","name":"Kính lọc ánh sáng xanh có phải chiêu bán hàng?","acceptedAnswer":{"@type":"Answer","text":"Không phải chiêu, nhưng bị quảng cáo quá. Lớp lọc là thật; còn những lời hứa về sức khoẻ thì bằng chứng hiện tại không ủng hộ. Hãy coi là tính năng dễ chịu tuỳ chọn, và ưu tiên chống phản quang trước."}},{"@type":"Question","name":"Vì sao tròng chống phản quang của tôi lúc nào cũng trông mờ vết?","acceptedAnswer":{"@type":"Answer","text":"Vì lớp phủ làm dấu tay và dầu hiện rõ hơn, chứ không phải bám nhiều hơn. Rửa nước ấm với một chút nước rửa dịu, rồi lau bằng khăn vi sợi sạch."}},{"@type":"Question","name":"Có thêm lớp phủ vào tròng đang dùng được không?","acceptedAnswer":{"@type":"Answer","text":"Không. Lớp phủ được làm trong quá trình sản xuất, nên muốn thêm là phải cắt tròng mới. Nếu tròng hiện tại đã xước thì thường đó là lúc để quyết."}}]},{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/lens-coatings-explained.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Chống phản quang, lọc ánh sáng xanh, chống UV: Lớp phủ nào làm gì","item":"https://manhlongoptical.com/lens-coatings-explained.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"]}]}</script>
 </head>
 <body>
+<!-- Dai goi y ngon ngu, them 07/09/2026. CHI GOI Y, KHONG tu chuyen trang.
+     Hien khi trinh duyet dat tieng Anh; dong duoc va nho lua chon trong localStorage.
+     KHONG dung ?lang= — kien truc la hai cay trang rieng: / va /en/.
+     Trang nay CHUA co ban dich tieng Anh -> tro ve /en/. -->
+<div id="langbar" hidden>
+  <a href="/en/" hreflang="en" lang="en">Read this in English &#8594;</a>
+  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById("langbar"); if(!bar) return;
+  var KEY="ml-langbar-off";
+  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
+  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
+  if(l.indexOf("en")!==0) return;
+  bar.hidden=false;
+  var x=document.getElementById("langbarx");
+  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
+})();
+</script>
 <div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày</div>
 <header>
   <a class="logo" href="/">Mạnh Long<small>OPTICAL</small></a>
-  <nav class="top"><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><a href="/en/" hreflang="en">EN</a></nav>
+  <nav class="top"><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
 </header>
 <main>
 <p class="crumb"><a href="/">Trang chủ</a> › <a href="/tim-hieu.html">Tìm hiểu</a> › Chống phản quang, lọc ánh sáng xanh, chống UV: Lớp phủ nào làm gì</p>

@@ -59,6 +59,17 @@ header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 
 .logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
 .topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center}
 nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
 @media(max-width:700px){
   .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
   header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
@@ -93,10 +104,30 @@ footer a{color:#B7AB92}
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/why-phones-use-zeiss-lenses.html#article","headline":"Vì sao các hãng điện thoại sử dụng tròng kính Zeiss?","description":"Vivo, Sony, Nokia đều gắn tên Zeiss lên cụm camera. Cùng năng lực quang học đó — phủ T*, độ chính xác thấu kính phi cầu, màu sắc tự nhiên — cũng có mặt…","image":"https://manhlongoptical.com/uploads-opt/learn-zeiss-phone-cover.jpg","author":{"@type":"Person","name":"Alvin","worksFor":{"@type":"Organization","name":"Manh Long Optical","alternateName":"Mạnh Long Optical"}},"publisher":{"@type":"Organization","name":"Manh Long Optical","alternateName":"Mạnh Long Optical","logo":{"@type":"ImageObject","url":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg"}},"datePublished":"2026-08-26T08:00:00+07:00","dateModified":"2026-08-30T14:00:00+07:00","articleSection":"Kiến thức tròng kính","inLanguage":"vi","mainEntityOfPage":{"@type":"WebPage","@id":"https://manhlongoptical.com/why-phones-use-zeiss-lenses.html"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/why-phones-use-zeiss-lenses.html#faq","mainEntity":[{"@type":"Question","name":"Hãng điện thoại nào dùng tròng kính Zeiss cho camera?","acceptedAnswer":{"@type":"Answer","text":"Vivo, Sony và Nokia là những hợp tác nổi tiếng nhất, mỗi hãng cùng Zeiss thiết kế thấu kính camera cho dòng flagship của mình."}},{"@type":"Question","name":"Lớp phủ T* thực chất làm gì?","acceptedAnswer":{"@type":"Answer","text":"Đây là lớp phủ nano nhiều lớp giúp triệt tiêu phản xạ nội bộ, giảm bóng mờ và lóe sáng để nhiều ánh sáng sạch đến được cảm biến hơn — được dùng cả trên thấu kính camera và tròng kính Zeiss."}},{"@type":"Question","name":"Tròng kính Zeiss có liên quan đến thấu kính camera Zeiss không?","acceptedAnswer":{"@type":"Answer","text":"Có — cả hai đến từ cùng tập đoàn kỹ thuật quang học và dùng chung công nghệ lớp phủ, bề mặt freeform, chỉ khác mục đích ứng dụng."}},{"@type":"Question","name":"Mua tròng kính Zeiss chính hãng ở đâu tại Hà Nội?","acceptedAnswer":{"@type":"Answer","text":"Tại đối tác phân phối tròng kính Zeiss chính hãng như Mạnh Long Optical, 147A Lê Duẩn, Cửa Nam — đo và lắp tròng ngay trên gọng của bạn tại cửa hàng."}},{"@type":"Question","name":"Logo Zeiss trên điện thoại có nghĩa là Zeiss làm toàn bộ camera?","acceptedAnswer":{"@type":"Answer","text":"Không — Zeiss cùng thiết kế phần thấu kính và lớp phủ, còn cảm biến và phần mềm vẫn do hãng điện thoại tự phát triển; đây là hợp tác, không phải Zeiss làm toàn bộ hệ thống camera."}},{"@type":"Question","name":"Tròng kính Zeiss chỉ dành cho người quan tâm nhiếp ảnh?","acceptedAnswer":{"@type":"Answer","text":"Không hề — điểm chung là công nghệ, không phải sở thích. Lớp phủ và công nghệ bề mặt này có lợi cho bất kỳ ai đeo tròng kính thuốc hàng ngày."}},{"@type":"Question","name":"Làm sao để lắp tròng kính Zeiss đúng chuẩn?","acceptedAnswer":{"@type":"Answer","text":"Mang gọng của bạn đến đối tác lắp kính được ủy quyền như Mạnh Long Optical để đo khúc xạ và xác định tâm mắt chuẩn xác trước khi cắt tròng."}}]},{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/why-phones-use-zeiss-lenses.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Vì sao các hãng điện thoại sử dụng tròng kính Zeiss?","item":"https://manhlongoptical.com/why-phones-use-zeiss-lenses.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"]}]}</script>
 </head>
 <body>
+<!-- Dai goi y ngon ngu, them 07/09/2026. CHI GOI Y, KHONG tu chuyen trang.
+     Hien khi trinh duyet dat tieng Anh; dong duoc va nho lua chon trong localStorage.
+     KHONG dung ?lang= — kien truc la hai cay trang rieng: / va /en/.
+     Trang nay CHUA co ban dich tieng Anh -> tro ve /en/. -->
+<div id="langbar" hidden>
+  <a href="/en/" hreflang="en" lang="en">Read this in English &#8594;</a>
+  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById("langbar"); if(!bar) return;
+  var KEY="ml-langbar-off";
+  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
+  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
+  if(l.indexOf("en")!==0) return;
+  bar.hidden=false;
+  var x=document.getElementById("langbarx");
+  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
+})();
+</script>
 <div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày</div>
 <header>
   <a class="logo" href="/">Mạnh Long<small>OPTICAL</small></a>
-  <nav class="top"><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><a href="/en/" hreflang="en">EN</a></nav>
+  <nav class="top"><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
 </header>
 <main>
 <p class="crumb"><a href="/">Trang chủ</a> › <a href="/tim-hieu.html">Tìm hiểu</a> › Vì sao các hãng điện thoại sử dụng tròng kính Zeiss?</p>

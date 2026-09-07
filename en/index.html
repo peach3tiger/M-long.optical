@@ -75,7 +75,7 @@
 <meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
 <link rel="stylesheet" href="../vendor/fonts/fonts.css">
 <style>
-:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B;--sand:#B7AB92}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
 a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
 header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -99,7 +99,7 @@ nav .langtog .sep{color:#B7AB92;font-weight:400}
   .logo{flex:none;font-size:20px}
   nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
 }
-main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+main{padding:0 0 0}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px;margin:0 0 8px}
 .step .ico{display:inline-flex;width:52px;height:52px;border-radius:999px;background:var(--ink);color:var(--paper);align-items:center;justify-content:center;margin:0 0 12px}
 .step .ico svg{width:24px;height:24px;display:block}
@@ -156,6 +156,70 @@ footer a{color:#B7AB92}
 .prow .ask a{color:var(--brass);text-decoration:underline;text-underline-offset:2px}
 @media(max-width:520px){.prow{grid-template-columns:1fr;gap:4px}}
 @media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+/* ---- He thong khoi lay tu index.html de hai trang chu trung bo cuc ---- */
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.wrap.narrow{max-width:808px}
+.serif{font-family:'Noto Serif Display',Georgia,serif;font-weight:500}
+.kicker{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);margin:0 0 12px}
+section.blk{padding:76px 0}
+section.blk.alt{background:#fff;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+@media(max-width:700px){section.blk{padding:56px 0}.hero{padding:56px 0 48px}}
+h2.big{font-size:clamp(26px,3.6vw,40px);line-height:1.18;margin:0 0 14px;max-width:18ch}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.split img{width:100%;height:auto}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:28px}}
+/* Hero hai cot: chu ben trai, khoi logo va Son ben phai */
+.hero{background:var(--navy);color:var(--paper);padding:76px 0 68px}
+.herogrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center}
+@media(max-width:900px){.herogrid{grid-template-columns:1fr;gap:44px}}
+.hero h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(32px,5.4vw,58px);line-height:1.12;margin:0 0 20px;max-width:16ch;text-wrap:balance}
+.hero p.lead{font-size:clamp(16px,1.9vw,19px);max-width:52ch;margin:0 0 28px;color:#E7E3DA}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-size:13px;letter-spacing:.1em;font-weight:600;text-transform:uppercase;text-decoration:none}
+.btn.solid{background:var(--brass);color:#fff}
+.btn.ghost{border:1px solid rgba(244,242,237,.45);color:var(--paper)}
+.hero .after{font-size:13px;color:var(--sand);margin:0}
+.lockup{display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
+.vidwrap{width:100%;max-width:440px;border:1px solid rgba(183,171,146,.35);background:#151735;overflow:hidden}
+.vidwrap video,.vidwrap img{display:block;width:100%;height:auto}
+.vidwrap img.still{display:none}
+@media(prefers-reduced-motion:reduce){.vidwrap video{display:none}.vidwrap img.still{display:block}}
+@media(max-width:900px){.vidwrap{max-width:100%}}
+.wordmark{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(30px,3.4vw,42px);letter-spacing:.01em;line-height:1;margin:0}
+.optline{display:flex;align-items:center;gap:14px;justify-content:center;margin-top:14px}
+.optline i{display:block;width:44px;height:1px;background:#B98E4E;flex:none}
+.optline span{font-size:11px;letter-spacing:.28em;color:var(--sand)}
+.endorse{border-top:1px solid rgba(183,171,146,.35);padding-top:18px;width:100%;max-width:300px}
+.endorse .ad{font-size:12px;color:var(--sand);margin:0}
+/* The gia — cung khuon voi trang chu tieng Viet, anh ty le 4/3 */
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;align-items:start}
+.price{background:var(--paper);border:1px solid var(--hair);padding:22px}
+.price .pimg{display:block;width:calc(100% + 44px);height:auto;aspect-ratio:4/3;object-fit:cover;margin:-22px -22px 16px;background:var(--sand)}
+.price .lbl{font-size:13px;font-weight:600;margin:0 0 8px;min-height:2.9em}
+.price .val{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:26px;color:var(--brass);margin:0;line-height:1.15}
+.price .sub{font-size:12px;color:var(--muted);margin:8px 0 0}
+.price .ask{font-size:12.5px;line-height:1.5;margin:12px 0 0}
+.price .ask a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.upsell{margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--hair)}
+.upsell .bn{font-size:11px;letter-spacing:.26em;color:var(--ink);margin:0 0 6px;font-weight:600}
+.upsell .uv{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:20px;color:var(--brass);margin:0;line-height:1.15}
+.upsell .us{font-size:12px;color:var(--muted);margin:6px 0 0}
+.upsell .ask{margin:10px 0 0}
+/* Danh sach co dau tick — khoi "Five things we will say out loud" */
+ul.why{list-style:none;margin:0;padding:0}
+ul.why li{display:flex;gap:12px;margin:0 0 18px}
+ul.why b{display:block;font-size:15px;margin:0 0 3px}
+ul.why span.tick{color:#2F6B4F;font-weight:700}
+ul.why p{margin:0;font-size:14px;color:var(--muted)}
+/* Khoi cua hang nen navy */
+.storeblk{background:var(--navy);color:var(--paper);padding:64px 0}
+.storeblk h2{color:var(--paper);margin-top:0}
+.storeblk a{color:var(--sand)}
+.storegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:24px;font-size:14.5px}
+.storegrid dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin:0 0 6px}
+.storegrid dd{margin:0 0 4px}
+/* h2 dau khoi khong can khoang tren vi section.blk da co padding */
+section.blk > .wrap > h2:first-child,section.blk > .wrap > .takeaway:first-child{margin-top:0}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","currenciesAccepted":"VND","paymentAccepted":"Cash, Credit Card, Debit Card","availableLanguage":[{"@type":"Language","name":"Vietnamese","alternateName":"vi"},{"@type":"Language","name":"English","alternateName":"en"}],"address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]},{"@type":"CollectionPage","@id":"https://manhlongoptical.com/en/","name":"Manh Long Optical — English","url":"https://manhlongoptical.com/en/","inLanguage":"en","description":"Optician at 147A Le Duan, Cua Nam, Hanoi. Free eye test, Essilor and ZEISS lenses, English spoken on every shift.","datePublished":"2026-08-31","dateModified":"2026-09-07","about":{"@id":"https://manhlongoptical.com/#localbusiness"},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/en/#faq","inLanguage":"en","isPartOf":{"@id":"https://manhlongoptical.com/en/"},"mainEntity":[{"@type":"Question","name":"I am only in Hanoi for a few days. Can I get glasses in time?","acceptedAnswer":{"@type":"Answer","text":"Usually yes. Single-vision lenses are held in stock and are normally cut, fitted and ready the same day. Standard progressives take about 24 hours. Essilor and ZEISS progressives are cut at the lab and take three to four days. Tell us your departure date and we will say plainly whether a lens fits or not."}},{"@type":"Question","name":"Do I need to bring a prescription from home to buy glasses in Hanoi?","acceptedAnswer":{"@type":"Answer","text":"No. The eye test at Manh Long Optical is free, takes about 20 to 30 minutes, and you are not expected to buy afterwards. If you have a current prescription or your present glasses, bring them. We will still test rather than copy a prescription that is more than a year old."}},{"@type":"Question","name":"How much does a pair of prescription glasses cost in Hanoi?","acceptedAnswer":{"@type":"Answer","text":"At Manh Long Optical a finished single-vision pair with a blue-light filtering lens, frame and lenses together, starts at 850,000₫ and a single-vision pair runs up to 3,500,000₫. Photochromic lenses that darken outdoors start at 1,550,000₫ for the pair, Essilor Essentials progressive lenses at 3,950,000₫ for the pair, and prescription sunglasses are 1,850,000₫ for the pair — all three figures include the frame. An Essilor blue-light filtering lens on its own, without a frame, is 1,480,000₫ a pair. The price of each option is shown before anything is cut."}},{"@type":"Question","name":"What actually changes when a lens costs more?","acceptedAnswer":{"@type":"Answer","text":"Three things. Thickness: a higher index lens is thinner and lighter at the same prescription, which matters most above about 3 dioptres. Coatings: anti-reflective, scratch-resistant and blue-light filtering layers are what you pay for on top of the plain lens. Design: a progressive lens has a wider, smoother reading zone the more it costs. On blue-light filtering we will say what the evidence says: a 2023 Cochrane review found no clear benefit for eye strain, and the American Academy of Ophthalmology puts screen fatigue down mainly to blinking less. The anti-reflective layer does cut glare, which many people do notice. It treats no eye condition."}},{"@type":"Question","name":"Do the staff speak English?","acceptedAnswer":{"@type":"Answer","text":"Yes, on every shift, including evenings. The eye test, the lens explanation and the fitting all happen in English if you prefer."}},{"@type":"Question","name":"Can I pay by card, and can I bring my own frame?","acceptedAnswer":{"@type":"Answer","text":"Card and cash are both accepted. You are welcome to bring a frame you already own and have new lenses fitted into it, as long as the frame is sound enough to take them."}},{"@type":"Question","name":"What if the glasses need adjusting after I have left Hanoi?","acceptedAnswer":{"@type":"Answer","text":"Adjustments, cleaning and new nose pads are free at Manh Long Optical for as long as you own the pair. A genuine manufacturing fault is replaced. For small tweaks once you are home, any optician can adjust the fit; the frames are standard."}},{"@type":"Question","name":"Can you deliver glasses to my hotel in Hanoi, or ship them to me at home?","acceptedAnswer":{"@type":"Answer","text":"Delivery within inner Hanoi is free, hotels included. If you fly out before the pair is ready, international shipping can be arranged; Manh Long Optical confirms the destination, the cost and a realistic delivery time before you order."}},{"@type":"Question","name":"Do you have glasses frames that fit a larger face?","acceptedAnswer":{"@type":"Answer","text":"Yes. Among the roughly one thousand frames in store there are several sizes, including wider fronts and higher bridges."}},{"@type":"Question","name":"How can I contact Manh Long Optical before I arrive in Hanoi?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp, Zalo and phone calls all reach the same number, +84 777 986 999. Send a photo of your prescription and the date you leave Hanoi, and you will get a straight answer about timing before you travel across the city."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"English","item":"https://manhlongoptical.com/en/"}]}]}</script>
 </head>
@@ -166,12 +230,41 @@ footer a{color:#B7AB92}
   <nav class="top"><a href="/en/frames.html">FRAMES</a><a href="/en/lenses.html">LENSES</a><a href="/en/offers.html">OFFERS</a><a href="/en/faq.html">QUESTIONS</a><a href="/en/frames.html#store">STORE</a><span class="langtog"><b aria-current="true" lang="en">EN</b><span class="sep" aria-hidden="true">|</span><a href="/" hreflang="vi" lang="vi" aria-label="Xem trang này bằng tiếng Việt">VI</a></span></nav>
 </header>
 <main>
-<h1>Manh Long Optical, Hanoi</h1>
-<p class="byline">147A Le Duan, Cua Nam, Hanoi · Open daily 8:00 – 21:30 · English spoken on every shift</p>
+<section class="hero">
+  <div class="wrap herogrid">
+    <div>
+    <p class="kicker" style="color:var(--sand)">147A Le Duan, Cua Nam &middot; a short walk from Hanoi railway station</p>
+    <h1 class="serif">Your vision, our passion.</h1>
+    <p class="lead">A free eye test, 20 to 30 minutes, whether you buy or not. Single-vision lenses are held in stock and are usually cut, fitted and ready the same day. Around a thousand frames to try on.</p>
+    <div class="btnrow">
+      <a class="btn solid" href="https://wa.me/84777986999" target="_blank" rel="noopener">Message on WhatsApp</a>
+      <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Directions</a>
+    </div>
+    <p class="after">Tell us the date you leave Hanoi and we will only suggest lenses that can be finished before you go.</p>
+    </div>
+
+    <div class="lockup" role="img" aria-label="Manh Long Optical logo">
+      <div class="vidwrap">
+        <video autoplay muted loop playsinline preload="metadata" poster="/uploads-opt/son-gioi-thieu-poster.jpg" aria-label="Son, the cat mascot of Manh Long Optical, in the shop">
+          <source src="/uploads-opt/son-gioi-thieu.webm" type="video/webm">
+          <source src="/uploads-opt/son-gioi-thieu.mp4" type="video/mp4">
+        </video>
+        <img class="still" src="/uploads-opt/son-gioi-thieu-poster.webp" width="854" height="480" alt="Son, the cat mascot of Manh Long Optical, looking up at the ML monogram">
+      </div>
+      <div>
+        <p class="wordmark">M&#7841;nh Long</p>
+        <span class="optline"><i></i><span>OPTICAL</span><i></i></span>
+      </div>
+      <div class="endorse">
+        <p class="ad">Optician &middot; 147A Le Duan, Cua Nam &middot; 8:00 &ndash; 21:30, every day</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap narrow">
 <div class="takeaway"><strong>In short:</strong> an optician a short walk from Hanoi railway station, used mostly by visitors to the city. The eye test is free whether or not you buy. Single-vision lenses are held in stock and usually ready the same day; standard progressives take about 24 hours, and Essilor or ZEISS progressives three to four days. Essilor and ZEISS lenses, roughly a thousand frames, card payment accepted. A finished single-vision pair runs from 850,000₫ to 3,500,000₫, and that is one figure covering the frame and the lenses together, not a lens price with the frame added afterwards. Open until 21:30 every day, so an evening visit works.</div>
-
-<figure><img src="/uploads-opt/mat-tien-manh-long-2-900w.webp" srcset="/uploads-opt/mat-tien-manh-long-2-300w.webp 300w, /uploads-opt/mat-tien-manh-long-2-600w.webp 600w, /uploads-opt/mat-tien-manh-long-2-900w.webp 900w, /uploads-opt/mat-tien-manh-long-2-1200w.webp 1200w" sizes="(max-width:820px) 100vw, 720px" alt="The shopfront of Manh Long Optical at 147A Le Duan, Cua Nam, Hanoi" loading="lazy" width="1334" height="1179"><figcaption>The shopfront on Le Duan, a short walk from Hanoi railway station.</figcaption></figure>
-
 <h2>Guides</h2>
 <div class="listing">
 <article>
@@ -244,7 +337,25 @@ footer a{color:#B7AB92}
   <p class="go"><a href="/en/frames.html#store">Address, hours and how to find us &rarr;</a></p>
 </article>
 </div>
+  </div>
+</section>
 
+<section class="blk alt">
+  <div class="wrap split">
+    <img src="/uploads-opt/cua-hang-cat-kinh-147-le-duan-600w.webp" width="600" height="613" loading="lazy" decoding="async" alt="Hundreds of eyeglass frames laid out on the display tables inside Manh Long Optical, 147A Le Duan, Hanoi">
+    <div>
+      <p class="kicker">The collection</p>
+      <h2 class="big serif">Around a thousand frames, out on the tables</h2>
+      <p style="color:var(--muted)">Acetate, titanium and metal, including a lot of the slim Korean shapes. Nothing is behind glass &mdash; pick things up and try them.</p>
+      <p style="color:var(--muted)">There are <strong>wider fronts and higher bridges</strong> among them. This is the thing visitors from Europe and North America ask about most in an Asian optical shop, so say your usual size at the counter and those trays come out first. You are also welcome to bring a frame you already own and have new lenses fitted into it.</p>
+      <p style="color:var(--muted);font-size:14px">Stock turns over with each delivery. Message ahead and we will put a model aside for you.</p>
+      <a class="btn solid" href="/en/frames.html" style="margin-top:8px">See the frames, with sizes</a>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap narrow">
 <h2>What we do</h2>
 <ul>
 <li><strong>Free eye test</strong>, a full refraction test whether or not you buy. Re-checks stay free for as long as you wear the pair.</li>
@@ -274,39 +385,25 @@ footer a{color:#B7AB92}
     <p>Stocked single-vision lenses are usually ready the same day. We adjust them to your face before you leave, and adjustments stay free for as long as you own the pair.</p>
   </div>
 </div>
+  </div>
+</section>
 
-<h2 id="prices">What a pair costs</h2>
-<p>We agree the full figure with you before anything is cut, and every upgrade is quoted separately so you can turn it down. Where a price says <em>frame and lenses together</em>, that is the whole pair — you are not being shown a lens price with the frame still to come. The final number moves with your prescription, the lens index and the coatings you choose.</p>
-
+<section class="blk alt">
+  <div class="wrap">
+<h2 id="prices" class="big serif" style="max-width:none">What a pair costs</h2>
+<p style="color:var(--muted);max-width:60ch">We agree the full figure with you before anything is cut, and every upgrade is quoted separately so you can turn it down. Where a price says <em>frame and lenses together</em>, that is the whole pair &mdash; not a lens price with the frame still to come. The final number moves with your prescription, the lens index and the coatings you choose.</p>
 <div class="prices">
-  <div class="prow">
-    <p class="amt">from 850,000&#8239;₫</p>
-    <p class="what"><strong>Single-vision glasses, blue-light filtering</strong><span>Essilor or ZEISS lens. Frame and lenses together — one figure, not a lens price with the frame added afterwards.</span></p>
-    <p class="ask"><a href="/en/lenses.html">What do you actually get for 850,000&#8239;₫? &rarr;</a></p>
-  </div>
-  <div class="prow">
-    <p class="amt">1,480,000&#8239;₫</p>
-    <p class="what"><strong>An Essilor blue-light filtering lens, a pair</strong><span>Lenses only, no frame. Listed so you can see what the branded lens costs on its own, against the figure above.</span></p>
-    <p class="ask"><a href="/en/faq.html#price">What changes when a lens costs more? &rarr;</a></p>
-  </div>
-  <div class="prow">
-    <p class="amt">from 1,550,000&#8239;₫</p>
-    <p class="what"><strong>Photochromic lenses that darken outdoors</strong><span>Frame and lenses together. One pair that works indoors and in the sun.</span></p>
-    <p class="ask"><a href="/en/sunglasses-hanoi.html#photochromic-car">Why do they stay clear in the car? &rarr;</a></p>
-  </div>
-  <div class="prow">
-    <p class="amt">from 3,950,000&#8239;₫</p>
-    <p class="what"><strong>Essilor Essentials progressive lenses</strong><span>Frame and lenses together. Distance and reading in one lens, with no line across it.</span></p>
-    <p class="ask"><a href="/en/lenses.html">How long does it take to get used to progressives? &rarr;</a></p>
-  </div>
-  <div class="prow">
-    <p class="amt">1,850,000&#8239;₫</p>
-    <p class="what"><strong>Prescription sunglasses</strong><span>Frame and lenses together. Your prescription, tinted.</span></p>
-    <p class="ask"><a href="/en/sunglasses-hanoi.html#tints">Which tint suits what you actually do outside? &rarr;</a></p>
-  </div>
+  <div class="price"><img class="pimg" src="/uploads-opt/uu-dai-2-600w.webp" width="600" height="450" loading="lazy" decoding="async" alt="Two slim metal frames on a white surface at Manh Long Optical, Hanoi"><p class="lbl">Single-vision glasses, blue-light filtering</p><p class="val">from 850,000&#8239;₫</p><p class="sub">Frame and lenses together. Essilor or ZEISS lens.</p><p class="ask"><a href="/en/lenses.html">What do you actually get for 850,000&#8239;₫? &rarr;</a></p><div class="upsell"><p class="bn">ESSILOR</p><p class="uv">1,480,000&#8239;₫</p><p class="us">A pair of Essilor blue-light filtering lenses, frame not included. Listed so you can see what the branded lens costs on its own.</p><p class="ask"><a href="/en/faq.html#price">What changes when a lens costs more? &rarr;</a></p></div></div>
+  <div class="price"><img class="pimg" src="/uploads-opt/uu-dai-6-600w.webp" width="600" height="450" loading="lazy" decoding="async" style="object-position:50% 45%" alt="Five tinted lens samples in blue, green and grey laid out for choosing a tint"><p class="lbl">Photochromic lenses that darken outdoors</p><p class="val">from 1,550,000&#8239;₫</p><p class="sub">Frame and lenses together. One pair for indoors and sun.</p><p class="ask"><a href="/en/sunglasses-hanoi.html#photochromic-car">Why do they stay clear in the car? &rarr;</a></p></div>
+  <div class="price"><img class="pimg" src="/uploads-opt/beethoven-1070-600w.webp" width="600" height="450" loading="lazy" decoding="async" style="object-position:50% 55%" alt="Four BEETHOVEN round frames with titanium temples, in black, clear pink, tortoise and olive"><p class="lbl">Essilor Essentials progressive lenses</p><p class="val">from 3,950,000&#8239;₫</p><p class="sub">Frame and lenses together. Distance and reading in one lens, no line across it.</p><p class="ask"><a href="/en/lenses.html">How long does it take to get used to progressives? &rarr;</a></p></div>
+  <div class="price"><img class="pimg" src="/uploads-opt/uu-dai-5-600w.webp" width="600" height="450" loading="lazy" decoding="async" style="object-position:50% 50%" alt="Three pairs of sunglasses with rose, amber and grey tints that can take a prescription"><p class="lbl">Prescription sunglasses</p><p class="val">1,850,000&#8239;₫</p><p class="sub">Frame and lenses together. Your prescription, tinted.</p><p class="ask"><a href="/en/sunglasses-hanoi.html#tints">Which tint suits what you actually do outside? &rarr;</a></p></div>
 </div>
-<p><a href="/en/lenses.html">The full lens price list, brand by brand, with how long each takes to make &rarr;</a></p>
+<p style="margin-top:18px;font-size:14px"><a href="/en/lenses.html">The full lens price list, brand by brand, with how long each takes to make &rarr;</a></p>
+  </div>
+</section>
 
+<section class="blk">
+  <div class="wrap narrow">
 <h2 id="reviews">What customers say</h2>
 <p class="score"><b>4.7 out of 5</b> from 27 Google reviews, as of 6 September 2026. We do not trade gifts for reviews, and we do not delete the bad ones.</p>
 <div class="rev">
@@ -330,7 +427,28 @@ footer a{color:#B7AB92}
   <blockquote>“The best eyewear store in town.”</blockquote>
   <p class="who">Andrew Anh · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener nofollow">Read all reviews on Google</a></p>
 </div>
+  </div>
+</section>
 
+<section class="blk alt">
+  <div class="wrap split">
+    <img src="/uploads-opt/phong-do-mat-manh-long-optical-600w.webp" width="600" height="692" loading="lazy" decoding="async" alt="An eye test in progress in the testing room at Manh Long Optical, with a trial frame and an autorefractor">
+    <div>
+      <p class="kicker">Put in writing</p>
+      <h2 class="big serif">Five things we will say out loud</h2>
+      <ul class="why">
+        <li><span class="tick">&#10003;</span><div><b>The eye test is a test, not a reading of your old lenses</b><p>A full refraction in the testing room, 20 to 30 minutes, free whether you buy or not. A prescription older than a year gets re-tested rather than copied. You keep your numbers.</p></div></li>
+        <li><span class="tick">&#10003;</span><div><b>Aftercare is free for as long as you own the pair</b><p>Adjustments, cleaning, new nose pads, tightening, re-checks. Not a favour on the day &mdash; the standing policy. A genuine manufacturing fault is replaced.</p></div></li>
+        <li><span class="tick">&#10003;</span><div><b>Open 8:00 to 21:30, every day, holidays included</b><p>Getting glasses takes two visits: one to test, one to collect. Both fit into an evening. The test at 20:00 is the same test as the one at 10:00.</p></div></li>
+        <li><span class="tick">&#10003;</span><div><b>We ask your departure date before we suggest a lens</b><p>If a lens cannot be finished before you fly, you hear that first, not after you have paid. Some lenses take three to four days and we will say so.</p></div></li>
+        <li><span class="tick">&#10003;</span><div><b>The price is agreed in full before anything is cut</b><p>One figure, every option priced separately so you can refuse it. Nothing is added at collection. Card and cash both accepted.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap narrow">
 <h2>If you are visiting Hanoi</h2>
 <p>Most of the people who walk in here are visitors, so the answers below are the questions we are actually asked at the counter. If you are on a short trip, <strong>tell us the date you leave Hanoi</strong> when you arrive. We will only recommend lenses that can be finished and fitted before you go. There are <a href="/en/faq.html">22 more answers on the questions page</a> if yours is not below.</p>
 
@@ -362,23 +480,38 @@ footer a{color:#B7AB92}
 <dt>What if the glasses need adjusting after I have left?</dt>
 <dd>Adjustments, cleaning and new nose pads are free here for as long as you own the pair, so come back any time you are in Hanoi. A genuine manufacturing fault is replaced. For small tweaks once you are home, any optician can adjust the fit; the frames are standard.</dd>
 </dl>
+  </div>
+</section>
 
-<h2>Practical details</h2>
-<table>
-<tr><th>Address</th><td>147A Le Duan, Cua Nam, Hanoi — a short walk from Hanoi railway station</td></tr>
-<tr><th>Hours</th><td>8:00 – 21:30, every day of the week, holidays included</td></tr>
-<tr><th>Language</th><td>English spoken on every shift</td></tr>
-<tr><th>Payment</th><td>Card and cash</td></tr>
-<tr><th>Message us</th><td>WhatsApp, Zalo and calls all on the same number, 0777 986 999. Send your prescription photo and your departure date.</td></tr>
-<tr><th>Delivery</th><td>Free within inner Hanoi, hotels included. International shipping can be arranged, quoted before you order.</td></tr>
-<tr><th>Timing</th><td>Single vision usually same day · standard progressives about 24 hours · Essilor and ZEISS progressives 3–4 days (cut at the lab)</td></tr>
-<tr><th>Price</th><td>A finished single-vision pair, frame and lenses together: 850,000₫ – 3,500,000₫. One figure, quoted in full before anything is cut. Progressive, photochromic and branded lenses cost more.</td></tr>
-</table>
+<section class="storeblk">
+  <div class="wrap split" style="align-items:start">
+    <img src="/uploads-opt/mat-tien-manh-long-2-600w.webp" srcset="/uploads-opt/mat-tien-manh-long-2-300w.webp 300w, /uploads-opt/mat-tien-manh-long-2-600w.webp 600w, /uploads-opt/mat-tien-manh-long-2-900w.webp 900w" sizes="(max-width:820px) 100vw, 560px" width="1334" height="1179" loading="lazy" decoding="async" alt="The shopfront of Manh Long Optical at 147A Le Duan, Cua Nam, Hanoi">
+    <div>
+      <p class="kicker" style="color:var(--sand)">Come in</p>
+      <h2 class="big serif" style="margin-bottom:26px">Manh Long Optical, 147A Le Duan</h2>
+      <dl class="storegrid">
+        <div><dt>Address</dt><dd>147A Le Duan, Cua Nam ward, Hanoi<br>A short walk from Hanoi railway station<br><a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Open in Google Maps</a></dd></div>
+        <div><dt>Hours</dt><dd>8:00 &ndash; 21:30<br>Every day, holidays included</dd></div>
+        <div><dt>Contact</dt><dd><a href="https://wa.me/84777986999" target="_blank" rel="noopener">WhatsApp</a> &middot; <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Zalo</a><br><a href="tel:+84777986999">+84 777 986 999</a><br><a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a></dd></div>
+        <div><dt>Language</dt><dd>English spoken on every shift, including evenings</dd></div>
+        <div><dt>Payment</dt><dd>Card and cash</dd></div>
+        <div><dt>Delivery</dt><dd>Free within inner Hanoi, hotels included<br>International shipping can be arranged, quoted before you order</dd></div>
+        <div><dt>Timing</dt><dd>Single vision usually same day<br>Standard progressives about 24 hours<br>Essilor and ZEISS progressives 3&ndash;4 days, cut at the lab</dd></div>
+        <div><dt>Price</dt><dd>A finished single-vision pair, frame and lenses together: 850,000&#8239;₫ &ndash; 3,500,000&#8239;₫. One figure, quoted in full before anything is cut.</dd></div>
+      </dl>
+      <p style="font-size:14px;margin-top:22px">Send a photo of your prescription and the date you leave Hanoi, and you will get a straight answer about timing before you cross the city.</p>
+    </div>
+  </div>
+</section>
 
+<section class="blk">
+  <div class="wrap narrow">
 <div class="cta"><h2>Come and see for yourself</h2>
 <p>Eye test, lenses and fitting all happen in one visit at 147A Le Duan. Bring your old glasses, or nothing at all, and we will start from the test.</p>
 <p><strong>Manh Long Optical — 147A Le Duan, Cua Nam, Hanoi</strong><br>Open daily 8:00 – 21:30<br><a href="https://wa.me/84777986999" target="_blank" rel="noopener">WhatsApp</a> · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Directions</a></p></div>
 <p class="note">This page is the English section of manhlongoptical.com. <a href="/">Trang tiếng Việt ở đây</a>.</p>
+  </div>
+</section>
 </main>
 <footer>
   <p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam, Hanoi</p>

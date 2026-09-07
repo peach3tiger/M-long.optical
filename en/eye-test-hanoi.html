@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Free Eye Test in Hanoi: What It Covers, 20 to 30 Minutes</title>
+<meta name="description" content="A free eye test at 147A Le Duan, Hanoi, with no obligation to buy: auto-refraction, trial frame, both eyes together, astigmatism and pupil distance. Open 8:00 to 21:30 daily.">
+<link rel="canonical" href="https://manhlongoptical.com/en/eye-test-hanoi.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/eye-test-hanoi.html">
+<link rel="alternate" hreflang="vi" href="https://manhlongoptical.com/do-mat-mien-phi-tron-doi.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/en/eye-test-hanoi.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Free Eye Test in Hanoi: What It Covers, 20 to 30 Minutes">
+<meta property="og:description" content="A free eye test at 147A Le Duan, Hanoi, with no obligation to buy: auto-refraction, trial frame, both eyes together, astigmatism and pupil distance. Open 8:00 to 21:30 daily.">
+<meta property="og:url" content="https://manhlongoptical.com/en/eye-test-hanoi.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Manh Long Optical shopfront at 147A Le Duan, Cua Nam, Hanoi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Eye Test in Hanoi: What It Covers, 20 to 30 Minutes">
+<meta name="twitter:description" content="A free eye test at 147A Le Duan, Hanoi, with no obligation to buy: auto-refraction, trial frame, both eyes together, astigmatism and pupil distance. Open 8:00 to 21:30 daily.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Noto+Serif+Display:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","currenciesAccepted":"VND","paymentAccepted":"Cash, Credit Card, Debit Card","availableLanguage":[{"@type":"Language","name":"Vietnamese","alternateName":"vi"},{"@type":"Language","name":"English","alternateName":"en"}],"address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]},{"@type":"Article","@id":"https://manhlongoptical.com/en/eye-test-hanoi.html#article","headline":"Free Eye Test in Hanoi","description":"A free eye test at 147A Le Duan, Hanoi, with no obligation to buy: auto-refraction, trial frame, both eyes together, astigmatism and pupil distance. Open 8:00 to 21:30 daily.","inLanguage":"en","image":"https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg","datePublished":"2026-09-07","dateModified":"2026-09-07","mainEntityOfPage":{"@type":"WebPage","@id":"https://manhlongoptical.com/en/eye-test-hanoi.html"},"author":{"@id":"https://manhlongoptical.com/#localbusiness"},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhlongoptical.com/en/"},{"@type":"ListItem","position":2,"name":"Free Eye Test","item":"https://manhlongoptical.com/en/eye-test-hanoi.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the eye test really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. No fee, no minimum spend, no obligation to buy. It is free again every time you come back, including re-tests for as long as you own the glasses."}},{"@type":"Question","name":"How long does an eye test take?","acceptedAnswer":{"@type":"Answer","text":"Twenty to thirty minutes: auto-refraction, trial frame, both eyes together, astigmatism, and pupil distance."}},{"@type":"Question","name":"Can I take the prescription away with me?","acceptedAnswer":{"@type":"Answer","text":"Yes. You get the numbers at the end and can do what you like with them, including ordering glasses somewhere else."}},{"@type":"Question","name":"How often should I have my eyes tested?","acceptedAnswer":{"@type":"Answer","text":"Adults with a stable prescription, every one to two years. Sooner if you get headaches after screen work or find yourself squinting. School-age children usually every six to twelve months, because prescriptions move while they are growing."}},{"@type":"Question","name":"Do you test children?","acceptedAnswer":{"@type":"Answer","text":"We test school-age children, with a parent in the room and more breaks. If a case looks complicated we will send you to an eye hospital rather than sell you glasses."}},{"@type":"Question","name":"Do I need to book?","acceptedAnswer":{"@type":"Answer","text":"No. Walk in any day between 8:00 and 21:30. Weekends and early evenings are busiest, so a message on Zalo or WhatsApp first saves waiting."}}]}]}</script>
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center}
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
+.faq dt{font-weight:600;margin:18px 0 6px}.faq dd{margin:0 0 14px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+.listing article{border-bottom:1px solid var(--hair);padding:22px 0}.listing h2{margin:0 0 8px;font-size:22px}.listing p{margin:0;color:var(--muted);font-size:14px}
+.listing .cat{font-size:11px;letter-spacing:.2em;color:var(--brass)}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+</style>
+</head>
+<body>
+<div class="topbar">Free eye test, whether you buy or not · Open 8:00 – 21:30 every day</div>
+<header>
+  <a class="logo" href="/en/">Mạnh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/en/frames.html">FRAMES</a><a href="/en/lenses.html">LENSES</a><a href="/en/offers.html">OFFERS</a><a href="/en/faq.html">QUESTIONS</a><a href="/en/frames.html#store">STORE</a><span class="langtog"><b aria-current="true" lang="en">EN</b><span class="sep" aria-hidden="true">|</span><a href="/do-mat-mien-phi-tron-doi.html" hreflang="vi" lang="vi" aria-label="Xem trang này bằng tiếng Việt">VI</a></span></nav>
+</header>
+<main>
+<p class="crumb"><a href="/en/">Home</a> › Free Eye Test</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">EYE TEST</p>
+<h1>Free Eye Test in Hanoi</h1>
+<p class="byline">Manh Long Optical · 147A Le Duan, Cua Nam, Hanoi · Updated 7 September 2026</p>
+
+<div class="takeaway"><strong>In short:</strong> twenty to thirty minutes, in a separate room, free whether you buy or not, and free again every time you come back. You leave with the numbers and can use them anywhere. No appointment; we are open 8:00 to 21:30 every day.</div>
+
+
+<p>The eye test at Manh Long is free, and it stays free whether you buy anything or not. That is not a promotion with an end date — it is how we work, and it applies again every time you come back.</p>
+
+<h2 id="whats-included">What the test involves</h2>
+
+<p>Twenty to thirty minutes, in a room set aside for it rather than at the counter:</p>
+
+<ol>
+<li><strong>Auto-refraction.</strong> A machine takes a first reading of each eye. This is a starting point, not the answer.</li>
+<li><strong>Trial frame.</strong> We put lenses in front of your eyes and change them while you read a chart. Your answers matter more than the machine's number.</li>
+<li><strong>Both eyes together.</strong> Eyes that test well separately can still disagree with each other. This step is the one most often skipped elsewhere.</li>
+<li><strong>Astigmatism.</strong> Strength and axis, checked rather than assumed.</li>
+<li><strong>Pupil distance.</strong> Measured, because a lens ground for the wrong distance makes a correct prescription feel wrong.</li>
+</ol>
+
+<p>At the end you get the numbers, and you can walk out with them. We will not hold your prescription hostage to a sale.</p>
+
+<h2 id="free">Why free, and what free means here</h2>
+
+<p>Free means no fee, no minimum spend, and no obligation. People come in to check a prescription before ordering glasses online, and that is fine — we would rather be the shop you thought of.</p>
+
+<p>It also applies afterwards. Re-testing is free for as long as you own the glasses, so if something starts to feel off six months later, come back.</p>
+
+<h2 id="when">How often to have your eyes checked</h2>
+
+<p>Adults with a stable prescription: roughly every one to two years. Sooner if anything changes — headaches at the end of a screen day, holding your phone further away than you used to, catching yourself squinting at road signs.</p>
+
+<p>Children are different. Prescriptions move quickly while they are growing, so a school-age child usually wants checking every six to twelve months.</p>
+
+<p>If you are having your first test in years, expect a change. It is normal, and it is easier to adjust to when it is caught early.</p>
+
+<h2 id="children">Testing children</h2>
+
+<p>We test school-age children. The method is the same but slower, with more breaks, and a parent stays in the room.</p>
+
+<p>Where a case looks complicated — a large difference between the two eyes, a squint, anything that does not add up — we say so and point you to an eye hospital instead of selling you glasses. An optical shop is not a medical clinic, and the honest answer is sometimes that this is not our job.</p>
+
+<h2 id="bring">What to bring</h2>
+
+<ul>
+<li>Your current glasses, even if they are broken or old. They tell us where you are starting from.</li>
+<li>Any written prescription you have. We will read it, then test anyway if it is over twelve months old.</li>
+<li>Contact lens wearers: take them out beforehand if you can, or tell us how long you have had them in.</li>
+</ul>
+
+<h2 id="limits">What we do not do</h2>
+
+<p>We measure vision and fit glasses. We do not diagnose eye disease, and glasses do not slow, reverse or cure short-sightedness — they correct how light lands on your retina, and that is the whole of it.</p>
+
+<p>Sudden vision loss, pain, double vision, flashes or a curtain across your sight are hospital matters, not shop matters. If you describe any of those to us we will tell you to go, not book you a fitting.</p>
+
+<h2 id="visit">Coming in</h2>
+
+<p>No appointment needed. We are open <strong>8:00 to 21:30 every day</strong>, holidays included, at <strong>147A Le Duan, Cua Nam</strong>, a short walk from Hanoi railway station. Someone on the floor speaks English, and WhatsApp or Zalo both reach the same phone if you would rather write.</p>
+
+<p>Weekends and early evenings are busiest. A message beforehand saves you the wait.</p>
+
+<h2 id="faq">Common questions</h2>
+<dl class="faq">
+<dt>Is the eye test really free?</dt>
+<dd>Yes. No fee, no minimum spend, no obligation to buy. It is free again every time you come back, including re-tests for as long as you own the glasses.</dd>
+<dt>How long does an eye test take?</dt>
+<dd>Twenty to thirty minutes: auto-refraction, trial frame, both eyes together, astigmatism, and pupil distance.</dd>
+<dt>Can I take the prescription away with me?</dt>
+<dd>Yes. You get the numbers at the end and can do what you like with them, including ordering glasses somewhere else.</dd>
+<dt>How often should I have my eyes tested?</dt>
+<dd>Adults with a stable prescription, every one to two years. Sooner if you get headaches after screen work or find yourself squinting. School-age children usually every six to twelve months, because prescriptions move while they are growing.</dd>
+<dt>Do you test children?</dt>
+<dd>We test school-age children, with a parent in the room and more breaks. If a case looks complicated we will send you to an eye hospital rather than sell you glasses.</dd>
+<dt>Do I need to book?</dt>
+<dd>No. Walk in any day between 8:00 and 21:30. Weekends and early evenings are busiest, so a message on Zalo or WhatsApp first saves waiting.</dd>
+</dl>
+
+<div class="cta"><h2>Have your eyes checked today</h2>
+<p>No appointment, no fee, no obligation. Bring your current glasses if you still have them, and take the prescription away with you either way.</p>
+<p><strong>Manh Long Optical — 147A Le Duan, Cua Nam, Hanoi</strong><br>Open daily 8:00 – 21:30<br><a href="tel:+84777986999">0777 986 999</a> · <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i" target="_blank" rel="noopener">Directions</a></p></div>
+
+<nav class="related"><h2>Also here</h2><ul>
+<li><a href="/en/prescription-glasses-hanoi.html">Getting Prescription Glasses in Hanoi</a></li>
+<li><a href="/en/same-day-glasses-hanoi.html">Same Day Glasses in Hanoi</a></li>
+<li><a href="/en/faq.html">Glasses in Hanoi: 22 Questions Answered</a></li>
+<li><a href="/en/">Manh Long Optical — English home</a></li>
+</ul></nav>
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam, Hanoi</p>
+  <p>Open daily 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+  <p><a href="/do-mat-mien-phi-tron-doi.html">Xem trang tiếng Việt</a></p>
+</footer>
+<div class="stickycta">
+  <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WHATSAPP</a>
+  <a href="tel:+84777986999">CALL</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i" target="_blank" rel="noopener">DIRECTIONS</a>
+</div>
+</body>
+</html>

@@ -442,7 +442,7 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
   <div data-m="promobar" style="background: #22254F; color: #F4F2ED; font-size: 12px; letter-spacing: 0.04em; padding: 9px 24px; text-align: center">{{ t.topbar }}</div>
   <header data-m="hdr" style="position: sticky; top: 0; z-index: 40; background: #F4F2ED; border-bottom: 1px solid #DFDACE">
     <div data-m="topbar" style="max-width: 1600px; margin: 0 auto; padding: 14px 40px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 40px">
-      <a href="#top" onClick="{{ goHome }}" style="display: flex; align-items: baseline; gap: 8px">
+      <a href="{{ homeHref }}" style="display: flex; align-items: baseline; gap: 8px">
         <span data-m="logo" style="white-space: nowrap; flex: none; font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: 21px; line-height: 1; letter-spacing: 0em">Mạnh Long</span>
         <span data-latin style="font-size: 10px; letter-spacing: 0.28em; color: #1B1D1F; padding-bottom: 6px">OPTICAL</span>
       </a>
@@ -1532,7 +1532,7 @@ const TXT = {
     ud6t: "Free prescription tinted lenses",
     ud6s: "With 850,000đ sunglasses, for prescriptions under -5.00.",
     ownYourLight: "A thousand to choose from. One to wear.", typeDesc: "Korean designs, featherweight titanium, flexible fronts, polished acetate. Twenty-five years in the trade, now at 147A Lê Duẩn.",
-    locTag: "HÀ NỘI · HOÀN KIẾM", catTag: "SUNGLASSES · OPTICAL",
+    locTag: "HANOI · CUA NAM", catTag: "SUNGLASSES · OPTICAL",
     brandTitle: "A thousand to choose from. One to wear.",
     brandBody1: "For twenty-five years we supplied eyewear to the trade. Korean designs, featherweight titanium, flexible fronts, polished acetate — all of it. Handle that many frames and you learn which hinge gives out after a year, and which one still sits right after ten. Essilor and ZEISS lenses, measured and cut in store.",
     brandBody2: "Glasses are not a correction. They are the thing you wear longest each day — so they should disappear on the face.",
@@ -3933,6 +3933,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       })(),
       lang,
       langLabel: lang === "en" ? "EN / VI" : "VI / EN",
+      homeHref: lang === "en" ? "/en/" : "/",
       toggleLang: () => this.setState(s => { const n = s.lang === "en" ? "vi" : "en"; try { localStorage.setItem("ml_lang", n); } catch (e) {} return { lang: n }; }),
       accent,
       heroSplit: hero === "editorial-split",

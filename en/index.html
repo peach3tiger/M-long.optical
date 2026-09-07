@@ -111,6 +111,9 @@ main{padding:0 0 0}
 .rev blockquote{margin:0 0 14px;font-family:'Noto Serif Display',Georgia,serif;font-size:19px;line-height:1.5}
 .rev .orig{font-size:13px;color:var(--muted);margin:0 0 14px;font-style:italic}
 .rev .who{font-size:13px;color:var(--muted);margin:0}
+.rev.hasimg{display:grid;grid-template-columns:168px 1fr;gap:24px;align-items:start}
+.rev .cust{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;background:var(--sand)}
+@media(max-width:720px){.rev.hasimg{grid-template-columns:1fr;gap:18px}.rev .cust{max-width:200px}}
 .score{font-size:15px;margin:0 0 18px}
 .score b{font-family:'Noto Serif Display',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink)}
 
@@ -405,7 +408,7 @@ section.blk > .wrap > h2:first-child,section.blk > .wrap > .takeaway:first-child
 <section class="blk">
   <div class="wrap narrow">
 <h2 id="reviews">What customers say</h2>
-<p class="score"><b>4.7 out of 5</b> from 27 Google reviews, as of 6 September 2026. We do not trade gifts for reviews, and we do not delete the bad ones.</p>
+<p class="score"><b>4.7 out of 5</b> from 27 Google reviews, as of 6 September 2026. We do not trade gifts for reviews, and we do not delete the bad ones. Customer photos are published only with their permission.</p>
 <div class="rev">
   <p class="stars" aria-label="Five out of five stars">★★★★★</p>
   <blockquote>“Sturdy frames, rarely need a screw replaced. Plenty of choice. The lenses were made well and sit comfortably. I came back later when the frame had lost its shape and they adjusted it for me.”</blockquote>
@@ -413,14 +416,20 @@ section.blk > .wrap > h2:first-child,section.blk > .wrap > .takeaway:first-child
   <p class="who">Hậu Thành · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener nofollow">Read all reviews on Google</a></p>
 </div>
 
-<div class="rev">
-  <blockquote>“Was very professional and prompt. I also was able to communicate well with them no problem. I would use them again and have no problem recommending them.”</blockquote>
-  <p class="who">Clique Photography Mauritius · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener nofollow">Read all reviews on Google</a></p>
+<div class="rev hasimg">
+  <img class="cust" src="/uploads-opt/khach-clique-photography-480w.webp" width="480" height="640" loading="lazy" decoding="async" alt="A visitor standing with a Manh Long Optical staff member in front of the frame cabinets at 147A Le Duan, Cua Nam, Hanoi">
+  <div>
+    <blockquote>“Was very professional and prompt. I also was able to communicate well with them no problem. I would use them again and have no problem recommending them.”</blockquote>
+    <p class="who">Clique Photography Mauritius · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener nofollow">Read all reviews on Google</a></p>
+  </div>
 </div>
 
-<div class="rev">
-  <blockquote>“I bought a nice pair of blue sunglasses there. They gave me excellent advice and really helped me in my search for sunglasses.”</blockquote>
-  <p class="who">Leo Vu · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener nofollow">Read all reviews on Google</a></p>
+<div class="rev hasimg">
+  <img class="cust" src="/uploads-opt/khach-leo-vu-480w.webp" width="480" height="640" loading="lazy" decoding="async" alt="A customer wearing sunglasses, holding a paper bag, standing with a staff member under the Manh Long Optical sign at 147A Le Duan, Cua Nam, Hanoi">
+  <div>
+    <blockquote>“I bought a nice pair of blue sunglasses there. They gave me excellent advice and really helped me in my search for sunglasses.”</blockquote>
+    <p class="who">Leo Vu · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener nofollow">Read all reviews on Google</a></p>
+  </div>
 </div>
 
 <div class="rev">

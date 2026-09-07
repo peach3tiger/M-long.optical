@@ -179,11 +179,14 @@ section.blk.alt .card{background:var(--paper)}
 .price .ask a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
 .upsell .ask{margin:10px 0 0}
 
-.rev{background:var(--paper);border:1px solid var(--hair);padding:28px 26px;max-width:620px}
+.rev{background:var(--paper);border:1px solid var(--hair);padding:28px 26px;max-width:720px}
 .rev .stars{color:#D9A21B;letter-spacing:.1em;margin:0 0 12px;font-size:15px}
 .rev blockquote{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:19px;line-height:1.45;margin:0 0 16px}
 .rev .who{font-size:13px;font-weight:600;margin:0}
 .rev .src{font-size:12px;color:var(--muted);margin:2px 0 0}
+.rev.hasimg{display:grid;grid-template-columns:168px 1fr;gap:24px;align-items:start}
+.rev .cust{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;background:var(--sand)}
+@media(max-width:720px){.rev.hasimg{grid-template-columns:1fr;gap:18px}.rev .cust{max-width:200px}}
 
 ul.why{list-style:none;margin:0;padding:0}
 ul.why li{display:flex;gap:12px;margin:0 0 18px}
@@ -363,7 +366,7 @@ footer a{color:var(--paper)}footer a:hover{color:var(--sand)}
         <p class="kicker">Khách nói gì</p>
         <h2 class="big serif">Đánh giá thật trên Google</h2>
       </div>
-      <p><strong>4,7 trên 5</strong>, 27 đánh giá tính tới 06/09/2026. Bên mình không đổi quà lấy đánh giá và không xoá đánh giá xấu.</p>
+      <p><strong>4,7 trên 5</strong>, 27 đánh giá tính tới 06/09/2026. Bên mình không đổi quà lấy đánh giá và không xoá đánh giá xấu. Ảnh khách chỉ đăng khi khách đồng ý.</p>
     </div>
     <div class="rev">
       <p class="stars">★★★★★</p>
@@ -371,17 +374,23 @@ footer a{color:var(--paper)}footer a:hover{color:var(--sand)}
       <p class="who">Hậu Thành</p>
       <p class="src">Đánh giá trên Google · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener">Đọc toàn bộ đánh giá</a></p>
     </div>
-    <div class="rev">
-      <blockquote>“Rất chuyên nghiệp và nhanh. Trao đổi với bên này cũng dễ, không gặp trở ngại gì. Tôi sẽ quay lại, và giới thiệu cho người khác cũng không ngại.”</blockquote>
-      <p class="orig">Dịch từ tiếng Anh. Nguyên văn: “Was very professional and prompt. I also was able to communicate well with them no problem. I would use them again and have no problem recommending them.”</p>
-      <p class="who">Clique Photography Mauritius</p>
-      <p class="src">Đánh giá trên Google · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener">Đọc toàn bộ đánh giá</a></p>
+    <div class="rev hasimg">
+      <img class="cust" src="/uploads-opt/khach-clique-photography-480w.webp" width="480" height="640" loading="lazy" decoding="async" alt="Khách nước ngoài đứng cùng nhân viên Mạnh Long Optical trước tủ gọng kính tại 147A Lê Duẩn, Cửa Nam, Hà Nội">
+      <div>
+        <blockquote>“Rất chuyên nghiệp và nhanh. Trao đổi với bên này cũng dễ, không gặp trở ngại gì. Tôi sẽ quay lại, và giới thiệu cho người khác cũng không ngại.”</blockquote>
+        <p class="orig">Dịch từ tiếng Anh. Nguyên văn: “Was very professional and prompt. I also was able to communicate well with them no problem. I would use them again and have no problem recommending them.”</p>
+        <p class="who">Clique Photography Mauritius</p>
+        <p class="src">Đánh giá trên Google · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener">Đọc toàn bộ đánh giá</a></p>
+      </div>
     </div>
-    <div class="rev">
-      <blockquote>“Tôi mua một chiếc kính râm màu xanh ở đây. Họ tư vấn rất tốt và giúp tôi tìm được đúng thứ mình cần.”</blockquote>
-      <p class="orig">Dịch từ tiếng Anh. Nguyên văn: “I bought a nice pair of blue sunglasses there. They gave me excellent advice and really helped me in my search for sunglasses.”</p>
-      <p class="who">Leo Vu</p>
-      <p class="src">Đánh giá trên Google · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener">Đọc toàn bộ đánh giá</a></p>
+    <div class="rev hasimg">
+      <img class="cust" src="/uploads-opt/khach-leo-vu-480w.webp" width="480" height="640" loading="lazy" decoding="async" alt="Khách đeo kính râm cầm túi giấy đứng cùng nhân viên trước biển hiệu Mạnh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội">
+      <div>
+        <blockquote>“Tôi mua một chiếc kính râm màu xanh ở đây. Họ tư vấn rất tốt và giúp tôi tìm được đúng thứ mình cần.”</blockquote>
+        <p class="orig">Dịch từ tiếng Anh. Nguyên văn: “I bought a nice pair of blue sunglasses there. They gave me excellent advice and really helped me in my search for sunglasses.”</p>
+        <p class="who">Leo Vu</p>
+        <p class="src">Đánh giá trên Google · <a href="https://www.google.com/maps/place/Manh+Long+Optical" target="_blank" rel="noopener">Đọc toàn bộ đánh giá</a></p>
+      </div>
     </div>
   </div>
 </section>

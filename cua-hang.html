@@ -64,6 +64,16 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long","M-LonG.Optical"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"],"priceRange":"$$","currenciesAccepted":"VND","paymentAccepted":"Cash, Credit Card, Debit Card","availableLanguage":[{"@type":"Language","name":"Vietnamese","alternateName":"vi"},{"@type":"Language","name":"English","alternateName":"en"}],"description":"Optical store in central Hanoi. Free eye test, prescription glasses, progressive and photochromic lenses from Essilor and ZEISS, sunglasses and optical frames. Single-vision lenses are cut in store and are usually ready the same day. English spoken on every shift.","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]}
 </script>
+<style>
+/* Sua loi bo cuc 07/09/2026.
+   support.js bom vao head: html,body{height:100%} va #dc-root{height:100%}.
+   #dc-root vi the chi cao dung mot man hinh trong khi noi dung dai ~8700px,
+   nen moi phan tu dat SAU no trong DOM (thanh lien ket cuoi trang, khung
+   chon gong) bi don len giua trang, de chong len khu vuc uu dai.
+   Tra chieu cao ve auto de dong chay tai lieu dung tro lai. */
+html, body { height: auto !important; }
+#dc-root, #dc-root > .sc-host { height: auto !important; min-height: 100vh; }
+</style>
 </head>
 <body>
 <x-dc>

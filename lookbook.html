@@ -173,7 +173,7 @@ footer a{color:#B7AB92}
 <div class="lbhead">
 <h1>Lookbook</h1>
 <p class="byline">Kính Mạnh Long trên gương mặt thật · để bạn hình dung dáng gọng trước khi ghé thử</p>
-<p class="lbnote">Ô nào có nhãn <strong>AI</strong> là ảnh dựng bằng máy, để minh hoạ dáng kính và cách phối. Những ô còn lại là ảnh chụp gọng thật. Màu thật, thông số thật và giá nằm ở <a href="/cua-hang.html#collection">bộ sưu tập</a>, hoặc mời bạn ghé 147A Lê Duẩn thử trực tiếp.</p>
+<p class="lbnote">Ô nào có nhãn <strong>AI</strong> là ảnh dựng bằng máy, để minh hoạ dáng kính và cách phối. Gọng thật, màu thật, thông số thật và giá nằm ở <a href="/cua-hang.html#collection">bộ sưu tập</a>, hoặc mời bạn ghé 147A Lê Duẩn thử trực tiếp.</p>
 </div>
 
 <div id="lbgrid" class="lbgrid"></div>
@@ -195,6 +195,10 @@ footer a{color:#B7AB92}
 /* =========================================================================
    LOOKBOOK — cách thêm ảnh hoặc video
 
+   🔴 LUẬT LOOKBOOK (chủ shop chốt 08/09/2026)
+   Chỉ đăng ảnh và video CÓ NGƯỜI MẪU ĐEO KÍNH.
+   Không đăng ảnh sản phẩm chụp riêng lẻ — chỗ của ảnh sản phẩm là bộ sưu tập.
+
    1. Bỏ file vào thư mục  /lookbook/  trong kho website.
       Ảnh nên là .jpg vuông, cạnh 1080px. Video nên là .mp4 ngắn, dưới 8 MB.
    2. Thêm một dòng vào mảng dưới đây. Dòng trên cùng hiện ra trước.
@@ -202,6 +206,7 @@ footer a{color:#B7AB92}
       anh    : bắt buộc. Tên file ảnh, hoặc ảnh bìa nếu là video.
       video  : không bắt buộc. Có video thì ô sẽ hiện dấu play, bấm vào mới chạy.
       chu    : không bắt buộc. Dòng chữ hiện khi rê chuột và khi mở lớn.
+      anhLon : không bắt buộc. Ảnh khổ lớn dùng khi mở ra xem. Không có thì dùng "anh".
       ai     : không bắt buộc. Đặt  ai:true  nếu ảnh do AI dựng — ô sẽ hiện nhãn AI.
       sanpham: không bắt buộc. Mã sản phẩm trong bộ sưu tập, ví dụ "tomofin-2a61".
                Có mã này thì khi mở lớn sẽ có nút dẫn thẳng sang trang gọng đó.
@@ -211,15 +216,14 @@ footer a{color:#B7AB92}
         chu:"TOMOFIN 2A61 · dáng oval nhỏ", sanpham:"tomofin-2a61" },
    ========================================================================= */
 const LOOKBOOK = [
-  { anh:"tomofin-tenney.jpg", chu:"TOMOFIN Tenney · cat-eye acetate", sanpham:"tomofin-tenney" },
-  { anh:"tomofin-crd-c4.jpg", chu:"TOMOFIN CRD Col.C4 · đỏ rượu", sanpham:"tomofin-crd-c4" },
-  { anh:"tomofin-rbr.jpg", chu:"TOMOFIN RBR · nâu trà", sanpham:"tomofin-rbr" },
-  { anh:"aiyc-v3005t.jpg", chu:"AIYC V3005T · titanium", sanpham:"aiyc-v3005t" },
-  { anh:"aiyc-hta013.jpg", chu:"AIYC HTA-013 · titanium", sanpham:"aiyc-hta013" },
-  { anh:"tomofin-2a61-col3.jpg", chu:"TOMOFIN 2A61 Col.3 · đồi mồi", sanpham:"tomofin-2a61-col3" },
-  { anh:"aiyc-4sac.jpg", chu:"AIYC titanium · bốn sắc tròng", sanpham:"aiyc-4sac" },
-  { anh:"tomofin-2a61.jpg", chu:"TOMOFIN 2A61 · đen", sanpham:"tomofin-2a61" },
-  { anh:"aiyc-ram-sam.jpg", chu:"AIYC kính râm · titanium", sanpham:"aiyc-ram-sam" },
+  { anh:"nguoi-mau-oval-do.jpg", video:"nguoi-mau-oval-do.mp4", ai:true,
+    chu:"Dáng oval nhỏ · acetate đỏ nâu" },
+  { anh:"poster-manh-long.jpg", anhLon:"poster-manh-long-lon.jpg", ai:true,
+    chu:"Gọng tròn kim loại · vành vàng mảnh" },
+  { anh:"nguoi-mau-ben-thuyen.jpg", anhLon:"nguoi-mau-ben-thuyen-lon.jpg", ai:true,
+    chu:"Oval kim loại vàng · càng mảnh" },
+  { anh:"tranh-son-dau-meo.jpg", anhLon:"tranh-son-dau-meo-lon.jpg", ai:true,
+    chu:"Cat-eye acetate đỏ · tranh sơn dầu" },
 ];
 
 (function(){
@@ -251,8 +255,8 @@ const LOOKBOOK = [
     cur = (i + LOOKBOOK.length) % LOOKBOOK.length;
     var m = LOOKBOOK[cur];
     slot.innerHTML = m.video
-      ? '<video class="lbmedia" src="/lookbook/' + m.video + '" poster="/lookbook/' + m.anh + '" controls autoplay loop playsinline></video>'
-      : '<img class="lbmedia" src="/lookbook/' + m.anh + '" alt="' + (m.chu ? m.chu.replace(/"/g,"&quot;") : "Kính mắt Mạnh Long") + '">';
+      ? '<video class="lbmedia" src="/lookbook/' + m.video + '" poster="/lookbook/' + m.anh + '" controls autoplay muted loop playsinline></video>'
+      : '<img class="lbmedia" src="/lookbook/' + (m.anhLon || m.anh) + '" alt="' + (m.chu ? m.chu.replace(/"/g,"&quot;") : "Kính mắt Mạnh Long") + '">';
     meta.innerHTML = (m.chu ? '<span>' + m.chu + '</span>' : "")
       + (m.ai ? '<span style="opacity:.7">ảnh dựng bằng AI</span>' : "")
       + (m.sanpham ? '<a href="/cua-hang.html#/product/' + m.sanpham + '">Xem gọng này trong bộ sưu tập &#8594;</a>' : "")

@@ -482,6 +482,7 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
       </div>
     </div>
     <nav data-m="nav" style="max-width: 1600px; margin: 0 auto; padding: 16px 40px 14px; display: flex; gap: 24px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase">
+      <a href="{{ lookbookHref }}">LOOKBOOK</a>
       <a href="#collection" onClick="{{ goOptical }}">{{ t.navCollection }}</a>
       <a href="#collection" onClick="{{ goSunglasses }}">{{ t.navSunglasses }}</a>
       <a href="/trong-kinh.html">{{ t.navLenses }}</a>
@@ -3950,6 +3951,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       lang,
       langLabel: lang === "en" ? "EN / VI" : "VI / EN",
       homeHref: lang === "en" ? "/en/" : "/",
+      lookbookHref: lang === "en" ? "/en/lookbook.html" : "/lookbook.html",
       toggleLang: () => this.setState(s => { const n = s.lang === "en" ? "vi" : "en"; try { localStorage.setItem("ml_lang", n); } catch (e) {} return { lang: n }; }),
       accent,
       heroSplit: hero === "editorial-split",

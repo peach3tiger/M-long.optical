@@ -1364,6 +1364,14 @@ function imgSrc(filename) {
   if (resId && typeof window !== "undefined" && window.__resources && window.__resources[resId]) {
     return window.__resources[resId];
   }
+  // Sua 08/09/2026: tra ve ban -600w.webp thay vi anh goc.
+  // Trang nay tham chieu 157 anh .jpg, tong 148 MB ban goc; ban 600w chi ~3 MB.
+  // Moi anh .jpg trong uploads-opt deu da co ban -600w.webp (da kiem 157/157).
+  // Neu sau nay them anh moi ma quen dung khung anh, doi sang .webp se 404 —
+  // nho chay lai script tao ban 300w/600w truoc khi them ten file vao CATALOG.
+  if (/\.jpg$/i.test(filename)) {
+    return "uploads-opt/" + filename.replace(/\.jpg$/i, "-600w.webp");
+  }
   return "uploads-opt/" + filename;
 }
 function mk(i, id, name, shape, tier, was, now, size, material, img) {

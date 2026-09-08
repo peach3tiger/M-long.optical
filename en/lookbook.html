@@ -106,11 +106,15 @@ footer a{color:#B7AB92}
 .stickycta a:first-child{background:#8A6A3B}
 @media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
 /* ===== Lookbook — luoi anh vuong kieu Instagram. Them 08/09/2026. ===== */
-.lbhead{max-width:935px;margin:0 auto;padding:0 4px}
+.lbhead{max-width:760px;margin:0 auto;padding:0 4px}
 .lbnote{font-size:12px;line-height:1.7;color:var(--muted);border-left:2px solid var(--sand);padding-left:14px;margin:22px 0 30px;max-width:640px}
-.lbgrid{max-width:935px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
-.lbcell{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:var(--hair);border:0;padding:0;cursor:pointer}
-.lbcell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
+/* Luoi kieu bao tuong: moi anh giu nguyen ti le goc, khong cat mat nguoi mau. Sua 08/09/2026. */
+/* pha khoi cot chu 760px cua <main> de anh to het co */
+.lbgrid{width:min(1180px, calc(100vw - 40px));margin-left:50%;transform:translateX(-50%);columns:3;column-gap:12px}
+.lbcell{position:relative;display:block;width:100%;overflow:hidden;background:var(--hair);border:0;padding:0;cursor:pointer;
+  break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 12px}
+.lbcell img{width:100%;height:auto;display:block;transition:transform .45s ease}
+.lbcell img:not([width]){aspect-ratio:4/5}
 .lbcell:hover img{transform:scale(1.04)}
 .lbcell:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 .lbbadge{position:absolute;top:9px;right:9px;color:#fff;pointer-events:none;line-height:0;
@@ -120,7 +124,7 @@ footer a{color:#B7AB92}
 .lbcell:hover .lbcap,.lbcell:focus-visible .lbcap{opacity:1}
 .lbai{position:absolute;left:9px;bottom:9px;font-size:9px;letter-spacing:.18em;color:#fff;background:rgba(27,29,31,.55);
   padding:3px 6px;pointer-events:none;line-height:1}
-.lbempty{max-width:935px;margin:0 auto;border:1px dashed var(--hair);padding:44px 26px;text-align:center;color:var(--muted);font-size:13px;line-height:1.9}
+.lbempty{max-width:760px;margin:0 auto;border:1px dashed var(--hair);padding:44px 26px;text-align:center;color:var(--muted);font-size:13px;line-height:1.9}
 
 /* Khung xem lon */
 .lbbox{position:fixed;inset:0;z-index:200;background:rgba(27,29,31,.94);display:none;align-items:center;justify-content:center;padding:24px}
@@ -134,8 +138,10 @@ footer a{color:#B7AB92}
 .lbprev{left:6px}.lbnext{right:6px}
 .lbclose{position:absolute;top:14px;right:16px;background:transparent;border:0;color:var(--paper);font-size:30px;line-height:1;padding:8px;cursor:pointer;opacity:.75}
 .lbclose:hover{opacity:1}
+@media(max-width:1000px){ .lbgrid{columns:2} }
 @media(max-width:700px){
-  .lbgrid{gap:2px}
+  .lbgrid{columns:2;column-gap:6px}
+  .lbcell{margin-bottom:6px}
   .lbcap{display:none}
   .lbbtn{font-size:26px;padding:10px}
 }
@@ -191,6 +197,9 @@ footer a{color:#B7AB92}
       video  : không bắt buộc. Có video thì ô sẽ hiện dấu play, bấm vào mới chạy.
       chu    : không bắt buộc. Dòng chữ hiện khi rê chuột và khi mở lớn.
       anhLon : không bắt buộc. Ảnh khổ lớn dùng khi mở ra xem. Không có thì dùng "anh".
+      w, h   : nên có. Chiều rộng và cao thật của file "anh", tính bằng pixel.
+               Có hai số này thì trang không bị giật khi ảnh tải xong.
+               Không biết thì để trống, trang tạm chừa khung dọc 4:5.
       ai     : không bắt buộc. Đặt  ai:true  nếu ảnh do AI dựng — ô sẽ hiện nhãn AI.
       sanpham: không bắt buộc. Mã sản phẩm trong bộ sưu tập, ví dụ "tomofin-2a61".
                Có mã này thì khi mở lớn sẽ có nút dẫn thẳng sang trang gọng đó.
@@ -200,13 +209,13 @@ footer a{color:#B7AB92}
         chu:"TOMOFIN 2A61 · dáng oval nhỏ", sanpham:"tomofin-2a61" },
    ========================================================================= */
 const LOOKBOOK = [
-  { anh:"nguoi-mau-oval-do.jpg", video:"nguoi-mau-oval-do.mp4", ai:true,
+  { anh:"nguoi-mau-oval-do.jpg", w:562, h:1000, video:"nguoi-mau-oval-do.mp4", ai:true,
     chu:"Small oval · dark red acetate" },
-  { anh:"poster-manh-long.jpg", anhLon:"poster-manh-long-lon.jpg", ai:true,
+  { anh:"poster-manh-long.jpg", w:1000, h:671, anhLon:"poster-manh-long-lon.jpg", ai:true,
     chu:"Round metal · slim gold rim" },
-  { anh:"nguoi-mau-ben-thuyen.jpg", anhLon:"nguoi-mau-ben-thuyen-lon.jpg", ai:true,
+  { anh:"nguoi-mau-ben-thuyen.jpg", w:806, h:1000, anhLon:"nguoi-mau-ben-thuyen-lon.jpg", ai:true,
     chu:"Gold oval metal · slim temples" },
-  { anh:"tranh-son-dau-meo.jpg", anhLon:"tranh-son-dau-meo-lon.jpg", ai:true,
+  { anh:"tranh-son-dau-meo.jpg", w:806, h:1000, anhLon:"tranh-son-dau-meo-lon.jpg", ai:true,
     chu:"Red cat-eye acetate · oil painting" },
 ];
 
@@ -223,7 +232,9 @@ const LOOKBOOK = [
     b.type = "button"; b.className = "lbcell"; b.setAttribute("data-i", i);
     b.setAttribute("aria-label", m.chu || ("Lookbook image " + (i+1)));
     b.innerHTML =
-      '<img src="/lookbook/' + m.anh + '" alt="' + (m.chu ? m.chu.replace(/"/g,"&quot;") : "Manh Long Optical eyewear") + '" loading="lazy" decoding="async" width="1080" height="1080">'
+      '<img src="/lookbook/' + m.anh + '" alt="' + (m.chu ? m.chu.replace(/"/g,"&quot;") : "Manh Long Optical eyewear") + '"'
+      + (i < 6 ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"')
+      + ' decoding="async"' + (m.w && m.h ? ' width="' + m.w + '" height="' + m.h + '"' : '') + '>'
       + (m.video ? PLAY : "")
       + (m.ai ? '<span class="lbai">AI</span>' : "")
       + (m.chu ? '<span class="lbcap">' + m.chu + '</span>' : "");

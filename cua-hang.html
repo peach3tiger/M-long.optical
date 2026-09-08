@@ -1379,6 +1379,12 @@ function mk(i, id, name, shape, tier, was, now, size, material, img) {
   const c1 = tier === "essential" ? ["Tortoise", "#6b4423"] : tier === "premium" ? ["Silver", "#c3c6ca"] : ["Black", "#1B1D1F"];
   return { id, name: name || "", shape, tier, was, now, colors: "+1 Color", ways: [["Black", "#1B1D1F"], c1], size, weight: "22 g", fit: "Standard", material, img: img || null };
 }
+/* Kinh mat — nhan dien tu dong tu chinh du lieu san pham (08/09/2026).
+   Khong gan tay tung ma: them san pham moi ma mo ta co trong nhuom mau /
+   gradient / sam mau la no tu vao muc Kinh mat. Sua luat o dung mot cho nay. */
+const SUN_RE = /tinted lens|gradient lens|tròng nhuộm màu|tròng sẫm màu|ba màu tròng|kính râm|kính mát|hồng, khói, trà, champagne/i;
+function isSun(p) { return SUN_RE.test([p.material, p.shape, p.name].join(" ")); }
+const SUN_KEY = "SUN";
 const CATALOG = {
   SS26: {
     label: "2026 SS",
@@ -3718,6 +3724,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     const h = location.hash;
     let m = h.match(/^#\/product\/(.+)$/);
     if (m) { this.setState({ view: "product", pid: decodeURIComponent(m[1]) }); return; }
+    if (h === "#/kinh-mat" || h === "#/sunglasses") { this.setState({ view: "home", season: SUN_KEY, filter: "all", page: 1 }); return; }
     /* Gỡ 06/09/2026: shop không bán online; chặn cả khi vào thẳng bằng URL. */
     if (h === "#/cart" || h === "#/account") { this.setState({ view: "home" }); history.replaceState(null, "", location.pathname); return; }
     
@@ -3770,6 +3777,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   }
 
   addProduct(seasonKey) {
+    if (!this.state.catalog[seasonKey]) return; // muc Kinh mat la danh sach dan xuat
     this.setState(s => {
       const catalog = JSON.parse(JSON.stringify(s.catalog));
       const list = catalog[seasonKey].items;
@@ -3791,7 +3799,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   removeProduct(seasonKey, id) {
     this.setState(s => {
       const catalog = JSON.parse(JSON.stringify(s.catalog));
-      catalog[seasonKey].items = catalog[seasonKey].items.filter(x => x.id !== id);
+      Object.keys(catalog).forEach(k => { if (seasonKey === SUN_KEY || k === seasonKey) catalog[k].items = catalog[k].items.filter(x => x.id !== id); });
       return { catalog };
     });
   }
@@ -3830,10 +3838,25 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     this.setState(s => ({ cart: s.cart.map(l => l.key === key ? Object.assign({}, l, { qty: Math.max(1, l.qty + d) }) : l) }));
   }
 
+  // Gom kinh mat tu moi bo suu tap. Dung lai luc render nen them san pham moi
+  // la muc Kinh mat tu co, khong phai chep sang cho thu hai.
+  sunSeason() {
+    const cat = this.state.catalog, seen = {}, items = [];
+    Object.keys(cat).forEach(k => (cat[k].items || []).forEach(p => {
+      if (isSun(p) && !seen[p.id]) { seen[p.id] = 1; items.push(p); }
+    }));
+    const en = this.state.lang === "en";
+    return {
+      label: en ? "SUNGLASSES" : "KÍNH MÁT",
+      title: en ? "Sunglasses — tinted and gradient lenses" : "Kính mát — tròng nhuộm màu và gradient",
+      items: items
+    };
+  }
+
   renderVals() {
     const key = this.seasonKey();
     const catalog = this.state.catalog;
-    const season = catalog[key] || catalog.SS26;
+    const season = key === SUN_KEY ? this.sunSeason() : (catalog[key] || catalog.SS26);
     const filter = this.state.filter;
     const accent = this.props.accent || "#22254F";
     const hero = this.props.hero || "photo";
@@ -3982,7 +4005,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       hasAuthError: !!this.state.authError, authError: this.state.authError,
       submitAuth: () => this.submitAuth(),
       goHome: () => { this.setState({ view: "home" }); this.pushHash("#/"); },
-      goSunglasses: () => { this.setState({ view: "home", season: "SS26", filter: "all", page: 1 }); this.pushHash("#/"); },
+      goSunglasses: e => { if (e && e.preventDefault) e.preventDefault(); this.setState({ view: "home", season: SUN_KEY, filter: "all", page: 1 }); this.pushHash("#/kinh-mat"); setTimeout(() => { const el = document.getElementById("collection"); if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.pageYOffset); }, 60); },
       goOptical: () => { this.setState({ view: "home", season: "FW25", filter: "all", page: 1 }); this.pushHash("#/"); },
       openCart: () => { /* Gỡ 06/09/2026 */ },
       searchQuery: this.state.searchQuery,
@@ -4036,7 +4059,12 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
         color: k === key ? "#1B1D1F" : "#6E6759",
         underline: k === key ? "#1B1D1F" : "transparent",
         select: () => { this.setState({ season: k, filter: "all", view: "home", page: 1 }); this.pushHash("#/"); }
-      })),
+      })).concat([{
+        label: lang === "en" ? "SUNGLASSES" : "KÍNH MÁT",
+        color: key === SUN_KEY ? "#1B1D1F" : "#6E6759",
+        underline: key === SUN_KEY ? "#1B1D1F" : "transparent",
+        select: () => { this.setState({ season: SUN_KEY, filter: "all", view: "home", page: 1 }); this.pushHash("#/kinh-mat"); }
+      }]),
       filters: tiers.map(tr => ({
         label: t.tiers[tr] || tr,
         color: tr === filter ? "#1B1D1F" : "#6E6759",

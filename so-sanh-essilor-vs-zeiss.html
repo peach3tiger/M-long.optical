@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>So sánh tròng Essilor và ZEISS | Mạnh Long Optical</title>
+<meta name="description" content="So sánh tròng Essilor và ZEISS theo bảng giá tại Mạnh Long Optical: Essilor rẻ hơn ở 1.56 đến 1.67, ZEISS nhận độ cao hơn ở 1.74 và có đổi màu 1.74.">
+<link rel="canonical" href="https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/essilor-vs-zeiss.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mạnh Long Optical">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="So sánh tròng Essilor và ZEISS | Mạnh Long Optical">
+<meta name="twitter:description" content="Essilor rẻ hơn ở 1.56 đến 1.67, ZEISS nhận độ cao hơn ở 1.74 và có đổi màu 1.74. Giá thật theo bảng giá tại Mạnh Long Optical.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<meta property="og:title" content="So sánh tròng Essilor và ZEISS | Mạnh Long Optical">
+<meta property="og:description" content="Essilor rẻ hơn ở 1.56 đến 1.67, ZEISS nhận độ cao hơn ở 1.74 và có đổi màu 1.74. Giá thật theo bảng giá tại Mạnh Long Optical.">
+<meta property="og:url" content="https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+.quickfacts{margin:0 0 28px;padding:0 0 0 20px;font-size:15px}.quickfacts li{margin:0 0 6px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:22px;line-height:1.3;margin:40px 0 6px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#F4F2ED;font-weight:600;font-size:12px;letter-spacing:.04em}
+.faq h3{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-weight:600;margin:22px 0 6px;font-size:16px;line-height:1.4}.faq p{margin:0 0 4px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html#article","headline":"So sánh tròng Essilor và ZEISS: bên nào hợp với độ cận và ngân sách của bạn","description":"So sánh tròng Essilor và ZEISS theo bảng giá tại Mạnh Long Optical: Essilor rẻ hơn ở 1.56 đến 1.67, ZEISS nhận độ cao hơn ở 1.74 và có đổi màu 1.74.","author":{"@type":"Organization","name":"Mạnh Long Optical","url":"https://manhlongoptical.com/"},"publisher":{"@type":"Organization","name":"Mạnh Long Optical","url":"https://manhlongoptical.com/"},"datePublished":"2026-09-10","dateModified":"2026-09-10","mainEntityOfPage":"https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html","inLanguage":"vi","citation":[{"@type":"CreativeWork","name":"Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults","url":"https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013244.pub2/full","publisher":{"@type":"Organization","name":"Cochrane Library"}},{"@type":"CreativeWork","name":"Are Blue Light-Blocking Glasses Worth It?","url":"https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it","publisher":{"@type":"Organization","name":"Học viện Nhãn khoa Hoa Kỳ (AAO)"}}]},{"@type":"FAQPage","@id":"https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html#faq","mainEntity":[{"@type":"Question","name":"ZEISS có tốt hơn Essilor không?","acceptedAnswer":{"@type":"Answer","text":"Trên bảng giá tại cửa hàng, không bên nào hơn ở mọi mục. Essilor rẻ hơn ở tròng lọc ánh sáng xanh 1.56 đến 1.67 và có tròng đổi màu vào cửa thấp hơn; ZEISS rẻ hơn ở 1.74, nhận độ cận cao hơn, và ở dòng đổi màu DuraVision Gold nhận độ loạn tới 6.00."}},{"@type":"Question","name":"Tròng ZEISS 1.74 giá bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"ZEISS ClearView DuraVision Gold 1.74 lọc ánh sáng xanh giá 12.280.000đ một cặp, nhận độ cận tới 20.00 và độ loạn tới 6.00. Bản đổi màu PhotoFusion DuraVision Gold 1.74 giá 16.380.000đ, nhận độ cận tới 14.00."}},{"@type":"Question","name":"Cửa hàng có tròng Essilor đổi màu 1.74 không?","acceptedAnswer":{"@type":"Answer","text":"Bảng giá tại cửa hàng hiện không có dòng Essilor đổi màu 1.74. Mức cao nhất là Transitions Gen S 1.67, giá 8.280.000đ, nhận độ cận tới 10.00; cần đổi màu cho độ cận cao hơn thì ZEISS PhotoFusion DuraVision Gold có 1.67 (tới 12.00) và 1.74 (tới 14.00)."}},{"@type":"Question","name":"Làm kính Essilor hay ZEISS mất bao lâu?","acceptedAnswer":{"@type":"Answer","text":"Đơn tròng có sẵn của cả hai hãng thường cắt xong trong ngày. Đa tròng Essilor và ZEISS mất 3–4 ngày vì tròng được đánh bề mặt tại lab của hãng; nếu sắp rời Hà Nội, hãy nói ngày đi ngay khi tới."}}]},{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"So sánh tròng Essilor và ZEISS","item":"https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Mạnh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://www.linkedin.com/in/manhlong-optical-b89405283/","https://zalo.me/0777986999"]}]}</script>
+</head>
+<body>
+<!-- Dai goi y ngon ngu, them 07/09/2026. CHI GOI Y, KHONG tu chuyen trang.
+     Hien khi trinh duyet dat tieng Anh; dong duoc va nho lua chon trong localStorage.
+     KHONG dung ?lang= — kien truc la hai cay trang rieng: / va /en/.
+     Trang nay co ban dich tieng Anh rieng: /en/essilor-vs-zeiss.html -->
+<div id="langbar" hidden>
+  <a href="/en/essilor-vs-zeiss.html" hreflang="en" lang="en">Read this in English &#8594;</a>
+  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById("langbar"); if(!bar) return;
+  var KEY="ml-langbar-off";
+  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
+  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
+  if(l.indexOf("en")!==0) return;
+  bar.hidden=false;
+  var x=document.getElementById("langbarx");
+  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
+})();
+</script>
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/in/manhlong-optical-b89405283/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95C21.6 8.75 22 11.2 22 14.05V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21h-4V9Z"/></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://tiktok.com/@mlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Mạnh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/essilor-vs-zeiss.html" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › <a href="/tim-hieu.html">Tìm hiểu</a> › So sánh tròng Essilor và ZEISS</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">TRÒNG KÍNH</p>
+<h1>So sánh tròng Essilor và ZEISS: bên nào hợp với độ cận và ngân sách của bạn</h1>
+<p class="byline">Mạnh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · Cập nhật 10/09/2026 · <a href="/chiet-suat-trong-kinh.html">Chưa rõ chiết suất là gì? Đọc bài này trước</a></p>
+
+<div class="takeaway"><strong>Tóm tắt:</strong> So sánh tròng Essilor và ZEISS trên bảng giá tại Mạnh Long Optical cho kết quả khá rõ: với tròng lọc ánh sáng xanh và độ cận tới 10 độ, Essilor rẻ hơn ZEISS ở cả ba chiết suất 1.56, 1.60 và 1.67. Nếu độ cận trên 18 độ, hoặc bạn cần tròng đổi màu cho độ cận trên 10 độ, thì giữa hai hãng chỉ ZEISS có tròng làm được. Muốn vào tròng đổi màu hãng với số tiền thấp hơn thì Essilor Transitions Classic 1.56 giá 2.080.000đ một cặp, còn mức đầu của ZEISS PhotoFusion là 3.688.000đ (chiết suất 1.50).</div>
+
+<p>Mọi con số trên trang lấy từ bảng giá tại quầy, cập nhật 02/09/2026. Giá là giá tròng, tính theo cặp, chưa gồm gọng. Trang này chỉ so giá và dải độ của hai hãng đang bán tại cửa hàng. Nó không chấm hãng nào tốt hơn.</p>
+
+<h2>1. Bảng so sánh nhanh</h2>
+<p>Chín dòng dưới đây gom những điểm hai hãng khác nhau trên bảng giá. Cột cuối ghi bên nào có lợi hơn, xét riêng dòng đó. Số độ ghi theo đơn kính: "cận tới 6.00" nghĩa là tròng làm được tới -6.00.</p>
+<!-- Nguon moi con so trong bang: context output/tools/data/trong.json, chi dong "nguon": "bang-gia-shop" (bang gia tai quay, chup 02/09/2026). Thoi gian cat: context/business-profile.md muc 4. -->
+<div class="tablewrap"><table>
+<tr><th>Tiêu chí</th><th>Essilor</th><th>ZEISS</th><th>Bên có lợi</th></tr>
+<tr><td>Lọc ánh sáng xanh 1.56</td><td>1.298.000đ, cận tới 6.00</td><td>1.490.000đ, cận tới 6.00</td><td>Essilor, rẻ hơn</td></tr>
+<tr><td>Lọc ánh sáng xanh 1.60</td><td>2.280.000đ, cận tới 8.00</td><td>2.750.000đ, cận tới 8.00</td><td>Essilor, rẻ hơn</td></tr>
+<tr><td>Lọc ánh sáng xanh 1.67</td><td>3.980.000đ, cận tới 10.00</td><td>4.200.000đ, cận từ 2.00 tới 10.00</td><td>Essilor, rẻ hơn</td></tr>
+<tr><td>Lọc ánh sáng xanh 1.74</td><td>12.380.000đ, cận tới 18.00, viễn tới +13.00</td><td>12.280.000đ, cận tới 20.00, viễn tới +16.00</td><td>ZEISS, rẻ hơn và nhận độ cao hơn</td></tr>
+<tr><td>Đổi màu, mức vào cửa</td><td>Transitions Classic 1.56: 2.080.000đ, cận tới 6.00</td><td>PhotoFusion xám khói 1.50: 3.688.000đ, cận tới 4.00</td><td>Essilor, rẻ hơn</td></tr>
+<tr><td>Đổi màu, chiết suất cao nhất trên bảng giá</td><td>Transitions Gen S 1.67: 8.280.000đ, cận tới 10.00</td><td>PhotoFusion DuraVision Gold 1.74: 16.380.000đ, cận tới 14.00</td><td>ZEISS, nhận độ cận cao hơn</td></tr>
+<tr><td>Đổi màu, độ loạn tối đa</td><td>2.00 ở mọi dòng</td><td>6.00 ở dòng DuraVision Gold từ 1.59 trở lên</td><td>ZEISS</td></tr>
+<tr><td>Đa tròng</td><td>3–4 ngày, tròng đánh tại lab của hãng</td><td>3–4 ngày, tròng đánh tại lab của hãng</td><td>Như nhau</td></tr>
+<tr><td>Đơn tròng có sẵn</td><td>Thường cắt xong trong ngày</td><td>Thường cắt xong trong ngày</td><td>Như nhau</td></tr>
+</table></div>
+
+<h2>2. Tròng lọc ánh sáng xanh: Essilor rẻ hơn tới 1.67, ZEISS có lợi ở 1.74</h2>
+<p>Ở 1.56, 1.60 và 1.67, hai hãng nhận gần như cùng một dải độ cận, và Essilor Blue UV Capture rẻ hơn ZEISS ClearView ở cả ba mức. Tới 1.74 thì ngược lại. ZEISS ClearView DuraVision Gold rẻ hơn 100.000đ và làm được tới 20 độ cận, Essilor dừng ở 18.</p>
+<div class="tablewrap"><table>
+<tr><th>Chiết suất</th><th>Essilor Blue UV Capture</th><th>ZEISS ClearView</th><th>Cận tới (Essilor / ZEISS)</th><th>Loạn tới</th></tr>
+<tr><td>1.56</td><td>1.298.000đ</td><td>1.490.000đ</td><td>6.00 / 6.00</td><td>2.00</td></tr>
+<tr><td>1.60</td><td>2.280.000đ</td><td>2.750.000đ</td><td>8.00 / 8.00</td><td>2.00</td></tr>
+<tr><td>1.67</td><td>3.980.000đ</td><td>4.200.000đ</td><td>10.00 / từ 2.00 tới 10.00</td><td>2.00</td></tr>
+<tr><td>1.74</td><td>12.380.000đ</td><td>12.280.000đ (dòng ClearView DuraVision Gold)</td><td>18.00 / 20.00</td><td>6.00</td></tr>
+</table></div>
+<p>Khoản chênh ở ba mức đầu là 192.000đ (1.56), 470.000đ (1.60) và 220.000đ (1.67). Dải độ hai hãng nhận ở ba mức này gần như trùng nhau, nên chọn bên nào thường là chuyện ngân sách, hoặc bạn đã quen đeo một hãng từ trước.</p>
+<p>Về công dụng, cả hai là tròng lọc ánh sáng xanh. Chúng giúp giảm chói và phản xạ khi nhìn màn hình. Còn chuyện mỏi mắt thì nói thẳng: tổng quan hệ thống <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013244.pub2/full" target="_blank" rel="noopener nofollow">Cochrane năm 2023</a> chưa tìm thấy bằng chứng lớp lọc làm giảm mỏi mắt, và <a href="https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it" target="_blank" rel="noopener nofollow">Học viện Nhãn khoa Hoa Kỳ</a> cho rằng mỏi mắt khi nhìn màn hình lâu chủ yếu do chớp mắt ít đi. Bài <a href="/kinh-chong-anh-sang-xanh-co-can-thiet.html">kính chống ánh sáng xanh có cần thiết không</a> nói kỹ hơn chuyện này.</p>
+
+<h2>3. Tròng đổi màu: Essilor vào cửa thấp hơn, ZEISS đi tới 1.74</h2>
+<p>Essilor có mức vào cửa thấp hơn, từ Transitions Classic 1.56 giá 2.080.000đ. ZEISS có thêm chiết suất 1.74, và dòng DuraVision Gold nhận độ loạn tới 6.00, nên hợp người độ cao hoặc loạn nhiều mà vẫn muốn một cặp đổi màu.</p>
+<div class="tablewrap"><table>
+<tr><th>Hãng và dòng</th><th>Chiết suất</th><th>Giá một cặp</th><th>Cận tới</th><th>Loạn tới</th></tr>
+<tr><td>Essilor Transitions Classic (khói, trà)</td><td>1.56</td><td>2.080.000đ</td><td>6.00</td><td>2.00</td></tr>
+<tr><td>Essilor Transitions Classic (khói)</td><td>1.60</td><td>3.180.000đ</td><td>6.00</td><td>2.00</td></tr>
+<tr><td>Essilor Transitions Gen S (khói)</td><td>1.56</td><td>3.840.000đ</td><td>6.00</td><td>2.00</td></tr>
+<tr><td>Essilor Transitions Gen S (khói)</td><td>1.60</td><td>6.120.000đ</td><td>6.00</td><td>2.00</td></tr>
+<tr><td>Essilor Transitions Gen S Airwear</td><td>1.59</td><td>6.420.000đ</td><td>6.00</td><td>2.00</td></tr>
+<tr><td>Essilor Transitions Gen S (khói)</td><td>1.67</td><td>8.280.000đ</td><td>10.00</td><td>2.00</td></tr>
+<tr><td>ZEISS PhotoFusion xám khói</td><td>1.50</td><td>3.688.000đ</td><td>4.00</td><td>2.00</td></tr>
+<tr><td>ZEISS PhotoFusion xám khói</td><td>1.60</td><td>5.888.000đ</td><td>6.00</td><td>2.00</td></tr>
+<tr><td>ZEISS PhotoFusion DuraVision Gold</td><td>1.50</td><td>7.980.000đ</td><td>7.00</td><td>4.00</td></tr>
+<tr><td>ZEISS PhotoFusion DuraVision Gold</td><td>1.59</td><td>9.080.000đ</td><td>10.00</td><td>6.00</td></tr>
+<tr><td>ZEISS PhotoFusion DuraVision Gold</td><td>1.60</td><td>9.080.000đ</td><td>10.00</td><td>6.00</td></tr>
+<tr><td>ZEISS PhotoFusion DuraVision Gold</td><td>1.67</td><td>10.980.000đ</td><td>12.00</td><td>6.00</td></tr>
+<tr><td>ZEISS PhotoFusion DuraVision Gold</td><td>1.74</td><td>16.380.000đ</td><td>14.00</td><td>6.00</td></tr>
+</table></div>
+<p>Bảng giá không có dòng Essilor đổi màu 1.74. Nếu độ cận trên 10 và bạn muốn đổi màu, trong hai hãng chỉ ZEISS có tròng làm được, ở 1.67 (tới 12.00) hoặc 1.74 (tới 14.00).</p>
+<p>Một giới hạn chung cho mọi tròng đổi màu: tròng sẫm lại nhờ tia UV, mà kính chắn gió ô tô lọc bớt UV, nên ngồi trong xe tròng thường không sẫm nhiều như bạn mong. Hãng nào cũng vậy. Ai lái xe ban ngày nhiều thì một cặp <a href="/kinh-ram-can.html">kính râm có độ</a> riêng vẫn hợp hơn.</p>
+
+<h2>4. Đa tròng: hai hãng cùng mất 3–4 ngày</h2>
+<p>Đa tròng Essilor và ZEISS đều mất 3–4 ngày, vì tròng được đánh bề mặt tại lab của hãng theo số đo của bạn, không cắt tại cửa hàng. Mục này hai hãng hoà. Trang này cũng không đăng giá đa tròng: cửa hàng báo giá sau khi đo, khi đã biết độ và dòng tròng hợp với bạn.</p>
+<p>Nếu bạn sắp rời Hà Nội, nói ngày đi ngay khi tới. Nhân viên chỉ tư vấn loại tròng kịp làm xong trước ngày đó. Muốn biết các dòng đa tròng của từng hãng khác nhau ở đâu, xem <a href="/essilor-lenses.html">tròng Essilor: tiền bạn bỏ ra nằm ở đâu</a> và <a href="/zeiss-lenses.html">đa tròng ZEISS</a>.</p>
+
+<h2>5. Khi nào không cần Essilor hay ZEISS</h2>
+<p>Độ cận tới 8 độ, loạn không quá 2 và ngân sách hẹp: bảng giá có dòng Elements Blue UV Cut 1.56 giá 580.000đ một cặp, cũng là tròng lọc ánh sáng xanh. Bài <a href="/chiet-suat-trong-kinh.html">chiết suất tròng kính</a> đặt ba dòng Elements, Essilor và ZEISS cạnh nhau ở cả bốn mức chiết suất để bạn thấy dải giá.</p>
+<p>Tròng hãng không sửa được một đơn kính đo sai. Đo đúng độ mới là phần quyết định, và việc đo tại cửa hàng không mất phí. Làm việc đó trước.</p>
+
+<h2>6. Trước khi cắt, xin xem bao bì</h2>
+<p>Tròng Essilor và ZEISS chính hãng có bao bì niêm phong và thẻ bảo hành của hãng. Hãy xin xem trước khi tròng được mài, vì sau khi cắt, bao bì là bằng chứng còn lại. Nhân viên cũng chốt đủ giá với bạn trước khi cắt. Không phát sinh thêm sau.</p>
+
+<h2>Câu hỏi thường gặp</h2>
+<div class="faq">
+<h3>ZEISS có tốt hơn Essilor không?</h3>
+<p>Trên bảng giá tại cửa hàng, không bên nào hơn ở mọi mục. Essilor rẻ hơn ở tròng lọc ánh sáng xanh 1.56 đến 1.67 và có tròng đổi màu vào cửa thấp hơn; ZEISS rẻ hơn ở 1.74, nhận độ cận cao hơn, và ở dòng đổi màu DuraVision Gold nhận độ loạn tới 6.00.</p>
+<h3>Tròng ZEISS 1.74 giá bao nhiêu?</h3>
+<p>ZEISS ClearView DuraVision Gold 1.74 lọc ánh sáng xanh giá 12.280.000đ một cặp, nhận độ cận tới 20.00 và độ loạn tới 6.00. Bản đổi màu PhotoFusion DuraVision Gold 1.74 giá 16.380.000đ, nhận độ cận tới 14.00.</p>
+<h3>Cửa hàng có tròng Essilor đổi màu 1.74 không?</h3>
+<p>Bảng giá tại cửa hàng hiện không có dòng Essilor đổi màu 1.74. Mức cao nhất là Transitions Gen S 1.67, giá 8.280.000đ, nhận độ cận tới 10.00; cần đổi màu cho độ cận cao hơn thì ZEISS PhotoFusion DuraVision Gold có 1.67 (tới 12.00) và 1.74 (tới 14.00).</p>
+<h3>Làm kính Essilor hay ZEISS mất bao lâu?</h3>
+<p>Đơn tròng có sẵn của cả hai hãng thường cắt xong trong ngày. Đa tròng Essilor và ZEISS mất 3–4 ngày vì tròng được đánh bề mặt tại lab của hãng; nếu sắp rời Hà Nội, hãy nói ngày đi ngay khi tới.</p>
+</div>
+
+<h2 id="nguon">Nguồn tham khảo</h2>
+<ul>
+<li>Bảng giá tròng tại quầy Mạnh Long Optical, cập nhật 02/09/2026. Nguồn của mọi con số giá và dải độ trên trang.</li>
+<li><a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013244.pub2/full" target="_blank" rel="noopener nofollow">Cochrane Library (2023), Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults</a>. Tổng quan hệ thống về tròng lọc ánh sáng xanh.</li>
+<li><a href="https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it" target="_blank" rel="noopener nofollow">Học viện Nhãn khoa Hoa Kỳ (AAO), Are Blue Light-Blocking Glasses Worth It?</a> Vì sao mỏi mắt khi nhìn màn hình chủ yếu đến từ việc chớp mắt ít đi.</li>
+</ul>
+
+<div class="note">Giá trên trang là giá một cặp tròng, chưa gồm gọng, theo bảng giá tại quầy cập nhật 02/09/2026. Giá cuối chốt sau khi đo mắt và có thể thay đổi theo hãng. Kính là thiết bị hỗ trợ thị lực, không làm giảm độ hay chữa khỏi cận thị. Nếu bạn nhìn mờ đột ngột, nhìn đôi, đau nhức dữ dội hoặc mắt bị chấn thương, hãy tới bệnh viện mắt thay vì tới cửa hàng kính.</div>
+
+<div class="cta"><h2>Đo mắt trước, chọn hãng sau</h2><p>Bảng trên chỉ trả lời được khi bạn biết độ cận và độ loạn của mình. Đặt lịch đo mắt qua Zalo hoặc gọi trước, hay ghé thẳng trong giờ mở cửa: đo miễn phí kể cả khi bạn chưa mua kính, và nhân viên chốt đủ giá trước khi cắt.</p>
+<p><strong>Mạnh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</strong><br>Mở cửa hằng ngày 8:00 – 21:30<br><a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo đặt lịch</a> · <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a></p></div>
+
+<nav class="related"><h2>Đọc tiếp</h2><ul>
+<li><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: 1.56, 1.60, 1.67 hay 1.74 cho độ cận của bạn</a></li>
+<li><a href="/trong-kinh.html">Tròng kính: bắt đầu từ cách bạn muốn nhìn</a></li>
+<li><a href="/essilor-lenses.html">Tròng Essilor: tiền bạn bỏ ra nằm ở đâu</a></li>
+<li><a href="/zeiss-lenses.html">Đa tròng ZEISS: nên chọn dòng nào</a></li>
+<li><a href="/kinh-chong-anh-sang-xanh-co-can-thiet.html">Kính chống ánh sáng xanh có thực sự cần thiết không?</a></li>
+<li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời</a></li>
+</ul></nav>
+</main>
+<footer>
+  <p><strong>Mạnh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

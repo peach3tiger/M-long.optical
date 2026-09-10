@@ -1072,7 +1072,7 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
       <button onClick="{{ goHome }}" style="border: 0; background: transparent; padding: 0; cursor: pointer; font-family: Archivo, 'Helvetica Neue', sans-serif; font-size: 10px; letter-spacing: 0.16em; color: #6E6759; margin-bottom: 40px">{{ t.navLearn }}</button>
       <p style="margin: 0 0 16px; font-size: 10px; letter-spacing: 0.24em; color: #7A5A2B">{{ article.tag }}</p>
       <h1 data-m="article-h1" style="font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: 44px; line-height: 1.16; letter-spacing: 0em; margin: 0 0 36px">{{ article.title }}</h1>
-      <p style="margin: 0 0 32px; font-size: 12px; letter-spacing: 0.02em; color: #6E6759">{{ t.bylinePrefix }} <strong style="color: #1B1D1F; font-weight: 600">Alvin</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · {{ t.bylineUpdated }} {{ article.date }}</p>
+      <p style="margin: 0 0 32px; font-size: 12px; letter-spacing: 0.02em; color: #6E6759">{{ t.bylinePrefix }} <strong style="color: #1B1D1F; font-weight: 600"><a href="{{ authorHref }}" style="color: #1B1D1F; text-decoration: underline; text-underline-offset: 2px">Alvin</a></strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · {{ t.bylineUpdated }} {{ article.date }}</p>
       <div style="aspect-ratio: 16 / 9; background: #EAE7DE; overflow: hidden; margin-bottom: 40px">
         <image-slot id="{{ article.imgId }}" shape="rect" fit="cover" src="{{ article.img }}" credit="{{ article.credit }}" credit-href="{{ article.creditHref }}" placeholder="{{ article.placeholder }}"></image-slot>
       </div>
@@ -3649,7 +3649,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
         path = a.id + ".html";
         title = a.title[lang] + " | Mạnh Long Optical";
         desc = a.excerpt[lang];
-        ld.push({ "@context": "https://schema.org", "@type": "Article", headline: a.title[lang], description: a.excerpt[lang], image: origin + "uploads-opt/" + (a.img || ""), author: { "@type": "Person", name: "Alvin", url: origin + "/#/author/alvin", worksFor: { "@type": "Organization", name: "Mạnh Long Optical" } }, publisher: { "@type": "Organization", name: "Mạnh Long Optical" }, datePublished: "2026-08-26", dateModified: "2026-08-26", mainEntityOfPage: { "@type": "WebPage", "@id": origin + path } });
+        ld.push({ "@context": "https://schema.org", "@type": "Article", headline: a.title[lang], description: a.excerpt[lang], image: origin + "uploads-opt/" + (a.img || ""), author: { "@type": "Person", "@id": origin + "ve-alvin.html#alvin", name: "Alvin Dao", alternateName: "Alvin", jobTitle: "Store Manager", url: origin + (lang === "en" ? "en/about-alvin.html" : "ve-alvin.html"), worksFor: { "@id": origin + "#localbusiness" } }, publisher: { "@id": origin + "#localbusiness" }, datePublished: "2026-08-26", dateModified: "2026-08-26", mainEntityOfPage: { "@type": "WebPage", "@id": origin + path } });
         if (a.faq && a.faq.length) ld.push({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: a.faq.map(f => ({ "@type": "Question", name: f.q[lang], acceptedAnswer: { "@type": "Answer", text: f.a[lang] } })) });
         ld.push(bc([["Trang chủ", origin], ["Tìm hiểu", origin + "tim-hieu.html"], [a.title[lang], origin + path]]));
       }
@@ -3976,6 +3976,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       langLabel: lang === "en" ? "EN / VI" : "VI / EN",
       homeHref: lang === "en" ? "/en/" : "/",
       lookbookHref: lang === "en" ? "/en/lookbook.html" : "/lookbook.html",
+      authorHref: lang === "en" ? "/en/about-alvin.html" : "/ve-alvin.html",
       toggleLang: () => this.setState(s => { const n = s.lang === "en" ? "vi" : "en"; try { localStorage.setItem("ml_lang", n); } catch (e) {} return { lang: n }; }),
       accent,
       heroSplit: hero === "editorial-split",

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Lens Brands Compared in Hanoi: Essilor, ZEISS and More</title>
+<meta name="description" content="Essilor, ZEISS, Tokai, Chemi and Elements side by side: prices per pair, index range and timing before you leave Hanoi. 147A Le Duan, Hanoi.">
+<link rel="canonical" href="https://manhlongoptical.com/en/lens-brands-compared.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/lens-brands-compared.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/so-sanh-trong-kinh-theo-hang.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/so-sanh-trong-kinh-theo-hang.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Lens Brands Compared in Hanoi: Essilor, ZEISS and More">
+<meta property="og:description" content="Five lens brands on one table, from a Hanoi optician's own price list: what each costs, which indices it comes in, and what can be ready before you fly.">
+<meta property="og:url" content="https://manhlongoptical.com/en/lens-brands-compared.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lens Brands Compared in Hanoi: Essilor, ZEISS and More">
+<meta name="twitter:description" content="Five lens brands on one table, from a Hanoi optician's own price list: what each costs, which indices it comes in, and what can be ready before you fly.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<link rel="stylesheet" href="../vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:820px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 12px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
+.tnote{font-size:13px;color:var(--muted);margin:0 0 20px}
+.faq dt{font-weight:600;margin:18px 0 6px}.faq dd{margin:0 0 14px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+/* Khoi tac gia cuoi bai, them 10/09/2026. Mot mau dung chung moi trang. */
+.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
+.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
+.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
+.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
+.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
+.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","@id":"https://manhlongoptical.com/en/lens-brands-compared.html#article","headline":"Lens brands compared: Essilor, ZEISS, Tokai, Chemi and Elements in Hanoi","description":"Essilor, ZEISS, Tokai, Chemi and Elements side by side: prices per pair, index range and timing before you leave Hanoi.","inLanguage":"en","image":"https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg","datePublished":"2026-09-10","dateModified":"2026-09-10","mainEntityOfPage":"https://manhlongoptical.com/en/lens-brands-compared.html","author":{"@type":"Person","@id":"https://manhlongoptical.com/ve-alvin.html#alvin","name":"Alvin Dao","alternateName":"Alvin","jobTitle":"Store Manager","url":"https://manhlongoptical.com/en/about-alvin.html","worksFor":{"@id":"https://manhlongoptical.com/#localbusiness"}},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"},"citation":[{"@type":"CreativeWork","name":"Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults","url":"https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013244.pub2/full","publisher":{"@type":"Organization","name":"Cochrane Library"}},{"@type":"CreativeWork","name":"Are Blue Light-Blocking Glasses Worth It?","url":"https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it","publisher":{"@type":"Organization","name":"American Academy of Ophthalmology"}}]},
+{"@type":"FAQPage","@id":"https://manhlongoptical.com/en/lens-brands-compared.html#faq","inLanguage":"en","mainEntity":[
+{"@type":"Question","name":"Which lens brand should I choose in Hanoi?","acceptedAnswer":{"@type":"Answer","text":"It depends on your prescription, budget and how long you are staying, because on our price list no brand comes out ahead on every line. Chemi starts lower than the other four at 1.56, 1.60, 1.67 and 1.74; Tokai offers 1.70 and 1.76; Elements offers 1.61; Essilor costs less than ZEISS from 1.56 to 1.67, and ZEISS 1.74 goes to -20.00."}},
+{"@type":"Question","name":"Is Tokai the most expensive lens brand you sell?","acceptedAnswer":{"@type":"Answer","text":"No. The highest Tokai price at our shop is the SERENO IS progressive at 11,600,000₫, and Tokai 1.76 single vision tops out at 9,300,000₫. On the same list, ZEISS ClearView 1.74 is 12,280,000₫, Essilor Blue UV Capture 1.74 is 12,380,000₫ and ZEISS PhotoFusion 1.74 is 16,380,000₫."}},
+{"@type":"Question","name":"Can I get branded lenses before I leave Hanoi?","acceptedAnswer":{"@type":"Answer","text":"Single-vision lenses in stock are usually cut the same day, whichever brand. Essilor and ZEISS progressives take three to four days and Chemi lenses made to order take 10 to 15 days, so tell us your departure date when you walk in."}},
+{"@type":"Question","name":"Do these lens prices include a frame?","acceptedAnswer":{"@type":"Answer","text":"No. They are September 2026 prices for a pair of lenses without a frame, and the final price is confirmed after your eye test. A finished single-vision pair, frame and lenses together, runs from 850,000₫ to 3,500,000₫."}}]},
+{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/en/lens-brands-compared.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhlongoptical.com/en/"},{"@type":"ListItem","position":2,"name":"Lenses","item":"https://manhlongoptical.com/en/lenses.html"},{"@type":"ListItem","position":3,"name":"Lens brands compared","item":"https://manhlongoptical.com/en/lens-brands-compared.html"}]},
+{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Mạnh Long Optical","Kính mắt Mạnh Long"],"url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]}
+]}
+</script>
+</head>
+<body>
+<div class="topbar">Free eye test, whether you buy or not · Open 8:00 – 21:30 every day<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/in/manhlong-optical-b89405283/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95C21.6 8.75 22 11.2 22 14.05V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21h-4V9Z"/></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://tiktok.com/@mlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/en/">Mạnh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/en/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html?lang=en#collection">FRAMES</a><a href="/en/lenses.html">LENSES</a><a href="/en/offers.html">OFFERS</a><a href="/en/faq.html">QUESTIONS</a><a href="/en/frames.html#store">STORE</a><span class="langtog"><b aria-current="true" lang="en">EN</b><span class="sep" aria-hidden="true">|</span><a href="/so-sanh-trong-kinh-theo-hang.html" hreflang="vi" lang="vi" aria-label="Xem trang này bằng tiếng Việt">VI</a></span></nav>
+</header>
+<main>
+<p class="crumb"><a href="/en/">Home</a> › <a href="/en/lenses.html">Lenses</a> › Lens brands compared</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">LENSES</p>
+<h1>Lens brands compared: Essilor, ZEISS, Tokai, Chemi and Elements in Hanoi</h1>
+<p class="byline">Reviewed by <a href="/en/about-alvin.html">Alvin</a>, Store Manager · Manh Long Optical, 147A Le Duan, Cua Nam, Hanoi · Updated 10 September 2026</p>
+
+<div class="takeaway"><strong>In short:</strong> Comparing the five lens brands on our Hanoi price list, none comes out ahead on every line: at the same index, Chemi starts lower than the other four brands at 1.56, 1.60, 1.67 and 1.74. Tokai offers 1.70 and 1.76, two indices Essilor and ZEISS do not have on our list; of these five brands, Elements is the one with 1.61, and its photochromic 1.67 starts at 2,480,000₫, below the 1.67 photochromic lenses from Essilor and ZEISS. Essilor costs less than ZEISS from 1.56 to 1.67, while ZEISS 1.74 goes to -20.00 and ZEISS has photochromic lenses up to 1.74.</div>
+
+<p>“What is the difference between a cheap lens and an expensive one?” It is one of the questions visitors actually ask at our counter. On a single price list, a pair of 1.67 lenses runs from 700,000₫ to 4,500,000₫ depending on brand and how the lens is made. This page compares the five brands we sell using the numbers on that list, not reputation.</p>
+<p>The brand names and index numbers are the same worldwide, so you can hold these figures against a quote from home. Prices are in Vietnamese đồng; your phone's currency converter gives today's figure.</p>
+<!-- Nguon so tren trang:
+     Essilor, ZEISS: mlong-marketing/output/tools/data/trong.json, chi dong "nguon":"bang-gia-shop" (bang gia tai quay 02/09/2026). Khop en/essilor-vs-zeiss.html.
+     Chemi, Elements, Tokai: mlong-marketing/context/business-profile.md muc 3b (chu shop xac nhan 08/09/2026, gia ban le da gom VAT).
+     Xuat xu: truong origin trong trong.json = brand origin theo bang gia cua hang.
+     Thoi gian: business-profile muc 4 + chu shop chot tron danh RX Chemi 10–15 ngay.
+     Ca cap 850.000–3.500.000 va muc 850.000 dung trong pho thong: business-profile muc 2 (trang live) + muc 4 (chu shop xac nhan 05/09).
+     Tam gia khach nuoc ngoai 1.500.000–4.000.000: business-profile muc 4 (chu shop xac nhan 02/09).
+     Giao khach san noi thanh mien phi, gui quoc te: business-profile "Dich vu cho khach nuoc ngoai". -->
+
+<h2 id="table">1. How do the five brands compare?</h2>
+<p>Each brand comes out ahead somewhere different on our list: Chemi on starting price, Tokai on the 1.70 and 1.76 indices, Elements on 1.61 and low-priced photochromic lenses, Essilor on 1.56 to 1.67 prices against ZEISS, and ZEISS on how far its 1.74 goes. The last column uses the price list. Reputation plays no part.</p>
+<div class="tablewrap"><table>
+<tr><th>Brand</th><th>Brand origin</th><th>Single-vision indices</th><th>Single-vision price per pair</th><th>Ahead on (from our price list)</th></tr>
+<tr><td>Chemi</td><td>Korea</td><td>1.56 · 1.60 · 1.67 · 1.74</td><td>180,000₫ to 6,600,000₫</td><td>Starts lower than the other four brands at all four of its indices; made-to-order lenses for prescriptions outside the stock range</td></tr>
+<tr><td>Elements</td><td>Singapore</td><td>1.56 · 1.61 · 1.67</td><td>480,000₫ to 1,880,000₫</td><td>Of these five brands, the one with 1.61; photochromic 1.67 from 2,480,000₫, against 8,280,000₫ (Essilor) and 10,980,000₫ (ZEISS)</td></tr>
+<tr><td>Tokai</td><td>Japan</td><td>1.60 · 1.67 (Lutina) · 1.70 · 1.76</td><td>1,200,000₫ to 9,300,000₫</td><td>The one brand on our list with 1.70 and 1.76; 1.60 from 1,200,000₫, against 2,280,000₫ (Essilor) and 2,750,000₫ (ZEISS)</td></tr>
+<tr><td>Essilor</td><td>France</td><td>1.56 · 1.59 (impact-resistant) · 1.60 · 1.67 · 1.74</td><td>1,298,000₫ to 12,380,000₫</td><td>Costs less than ZEISS at 1.56, 1.60 and 1.67; branded photochromic from 2,080,000₫; 1.59 polycarbonate option</td></tr>
+<tr><td>ZEISS</td><td>Germany</td><td>1.56 · 1.60 · 1.67 · 1.74</td><td>1,490,000₫ to 12,280,000₫</td><td>1.74 goes to -20.00 with astigmatism to 6.00, and costs 100,000₫ less than Essilor 1.74; photochromic up to 1.74</td></tr>
+</table></div>
+<p class="tnote">September 2026 prices for a pair of single-vision lenses, clear or blue-light filtering (not photochromic), frame not included; the final price is confirmed after your eye test. Sources: our counter price list (Essilor, ZEISS) and the Chemi, Elements and Tokai retail list confirmed by the owner on 8 September 2026. “Brand origin” is the brand's home country as listed on our price list, not where each lens was made, and it is not a quality ranking.</p>
+
+<h2 id="same-index">2. At the same index, which brand costs less?</h2>
+<p>At every index Chemi makes (1.56, 1.60, 1.67 and 1.74), its starting price is lower than the other four brands. Three indices, 1.61, 1.70 and 1.76, each come from a single brand.</p>
+<div class="tablewrap"><table>
+<tr><th>Index</th><th>Chemi</th><th>Elements</th><th>Tokai</th><th>Essilor</th><th>ZEISS</th></tr>
+<tr><td>1.56</td><td>from 180,000₫</td><td>from 480,000₫</td><td>Not listed</td><td>1,298,000₫</td><td>1,490,000₫</td></tr>
+<tr><td>1.60</td><td>from 385,000₫</td><td>Not listed</td><td>from 1,200,000₫</td><td>2,280,000₫</td><td>2,750,000₫</td></tr>
+<tr><td>1.61</td><td>Not listed</td><td>from 980,000₫</td><td>Not listed</td><td>Not listed</td><td>Not listed</td></tr>
+<tr><td>1.67</td><td>from 700,000₫</td><td>from 1,480,000₫</td><td>from 3,200,000₫ (Lutina)</td><td>3,980,000₫</td><td>4,200,000₫</td></tr>
+<tr><td>1.70</td><td>Not listed</td><td>Not listed</td><td>from 3,700,000₫</td><td>Not listed</td><td>Not listed</td></tr>
+<tr><td>1.74</td><td>from 2,520,000₫</td><td>Not listed</td><td>Not listed</td><td>12,380,000₫</td><td>12,280,000₫</td></tr>
+<tr><td>1.76</td><td>Not listed</td><td>Not listed</td><td>from 7,000,000₫</td><td>Not listed</td><td>Not listed</td></tr>
+</table></div>
+<p class="tnote">“From” is the brand's lowest price at that index, usually a stock lens or a mild prescription; prices rise with prescription, astigmatism, coating and how the lens is made. Essilor and ZEISS list one price per index. “Not listed” means not on our price list, not that the maker does not produce it.</p>
+<p>A lower price is not the same product for less. Section 3 explains why. Which index your prescription needs is covered in the <a href="/en/lens-index-guide.html">lens index guide, 1.56 to 1.76</a>.</p>
+
+<h2 id="extra">3. What does the extra money buy?</h2>
+<p>On our list the gap comes from three things you can read off it: the prescription range the maker covers, how the lens is made (stock or made to order), and the coating version. The list does not grade optical quality, so neither does this page.</p>
+<p><strong>Range.</strong> ZEISS ClearView DuraVision Gold 1.74 covers short-sight to -20.00 with astigmatism to 6.00. Essilor Blue UV Capture 1.74 goes to -18.00. Chemi U2 1.74 in stock covers -1.00 to -10.00 with astigmatism to 4.00, and Chemi U6 1.74 in stock goes to -15.00. The stronger the prescription, the shorter the list of brands that can make it.</p>
+<p><strong>How it is made.</strong> A Chemi 1.67 U2 stock lens is 1,186,000₫ to 1,304,000₫ a pair. The same line made to your prescription at the lab is 3,468,000₫, about 2.7 to 2.9 times more, and takes 10 to 15 days.</p>
+<p><strong>Coating version.</strong> Elements 1.67 is 1,480,000₫ to 1,580,000₫ in the standard version and 1,680,000₫ to 1,880,000₫ in Night AR. Chemi splits its lines into U1, U2 and U6. Different coating, different price.</p>
+<p>On blue-light filtering, the same applies to every brand: what it does is cut glare and reflections from screens. A 2023 <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013244.pub2/full" target="_blank" rel="noopener nofollow">Cochrane systematic review</a> found no evidence that it reduces eye strain, and the <a href="https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it" target="_blank" rel="noopener nofollow">American Academy of Ophthalmology</a> puts screen strain down mainly to blinking less.</p>
+
+<h2 id="photo-prog">4. Photochromic and progressive: who makes what?</h2>
+<p>Four of the five brands have photochromic lenses on our list; Tokai does not. ZEISS goes up to index 1.74, while Chemi (from 828,000₫) and Elements (from 1,180,000₫) start lower than Essilor and ZEISS.</p>
+<div class="tablewrap"><table>
+<tr><th>Brand</th><th>Photochromic</th><th>Progressive</th></tr>
+<tr><td>Chemi</td><td>Photo Gray 1.56: 828,000₫ in stock, 3,000,000₫ made to order</td><td>A-ONE in stock 750,000₫ to 1,052,000₫ · A-ONE made to order 1,512,000₫ to 3,750,000₫ · A-PLUS free-form 2,250,000₫ to 4,500,000₫ (Photo Gray 5,500,000₫)</td></tr>
+<tr><td>Elements</td><td>Photo Grey 1.56 to 1.67: 1,180,000₫ to 2,680,000₫</td><td>Stock Blue UV Cut 1.56: 1,280,000₫</td></tr>
+<tr><td>Tokai</td><td>Not on our list</td><td>SERENO IS 1.70: 11,600,000₫</td></tr>
+<tr><td>Essilor</td><td>Transitions 1.56 to 1.67: 2,080,000₫ to 8,280,000₫</td><td>Quoted after the eye test; three to four days</td></tr>
+<tr><td>ZEISS</td><td>PhotoFusion 1.50 to 1.74: 3,688,000₫ to 16,380,000₫</td><td>Quoted after the eye test; three to four days</td></tr>
+</table></div>
+<p class="tnote">September 2026 prices for a pair of lenses, frame not included. Line-by-line Essilor and ZEISS photochromic prices: <a href="/en/essilor-vs-zeiss.html">Essilor vs ZEISS lenses</a>.</p>
+<p>SERENO IS at 11,600,000₫ is the highest price among Tokai lines in our shop. Other brands go higher: ZEISS ClearView 1.74 is 12,280,000₫, Essilor Blue UV Capture 1.74 is 12,380,000₫ and ZEISS PhotoFusion DuraVision Gold 1.74 is 16,380,000₫.</p>
+
+<h2 id="timing">5. Which lenses can be ready before you leave Hanoi?</h2>
+<p>Single-vision lenses in stock are usually cut the same day, whichever brand. Labs add days. The lens type matters more than the brand.</p>
+<div class="tablewrap"><table>
+<tr><th>Lens type</th><th>Time</th></tr>
+<tr><td>Single vision, lens in stock</td><td>Usually the same day</td></tr>
+<tr><td>Standard progressives</td><td>About 24 hours</td></tr>
+<tr><td>Essilor and ZEISS progressives</td><td>Three to four days, surfaced at the maker's lab</td></tr>
+<tr><td>Chemi lenses made to order</td><td>10 to 15 days</td></tr>
+<tr><td>Essilor, ZEISS or Tokai lenses made to order; Tokai 1.70 and 1.76</td><td>No fixed time yet; we confirm a date once your prescription is checked</td></tr>
+</table></div>
+<p>Tell us the day you leave Hanoi when you walk in. We suggest lenses that can be finished before then. If you fly out first, international shipping can be arranged, and we confirm the destination, the cost and a realistic delivery time before you order. Delivery within inner Hanoi is free, hotels included.</p>
+
+<h2 id="whole-pair">6. What does a whole pair cost, frame included?</h2>
+<p>A finished single-vision pair, frame and lenses together, runs from 850,000₫ to 3,500,000₫. The 850,000₫ pair uses a standard lens, not one of the five brands above.</p>
+<p>The other prices on this page cover the lenses alone. Visitors from abroad usually spend between 1,500,000₫ and 4,000,000₫ on a pair, often because they choose photochromic, progressive or branded lenses. You get the full figure before anything is cut, and nothing is added later. Cards are accepted.</p>
+
+<h2 id="skip">7. Who should not choose by brand name?</h2>
+<p>Mild prescriptions. Under 3 dioptres we suggest 1.60, where Chemi starts at 385,000₫ and ZEISS is 2,750,000₫. Same index, same thickness by the formula.</p>
+<p>Anyone short on time whose prescription is outside the stock range. Chemi made-to-order lenses take 10 to 15 days and Essilor or ZEISS progressives three to four. And anyone hoping an expensive lens will make them see sharper: a premium lens does not fix a wrong prescription. Get the eye test right first.</p>
+
+<h2 id="faq">Common questions</h2>
+<dl class="faq">
+<dt>Which lens brand should I choose in Hanoi?</dt>
+<dd>It depends on your prescription, budget and how long you are staying, because on our price list no brand comes out ahead on every line. Chemi starts lower than the other four at 1.56, 1.60, 1.67 and 1.74; Tokai offers 1.70 and 1.76; Elements offers 1.61; Essilor costs less than ZEISS from 1.56 to 1.67, and ZEISS 1.74 goes to -20.00.</dd>
+<dt>Is Tokai the most expensive lens brand you sell?</dt>
+<dd>No. The highest Tokai price at our shop is the SERENO IS progressive at 11,600,000₫, and Tokai 1.76 single vision tops out at 9,300,000₫. On the same list, ZEISS ClearView 1.74 is 12,280,000₫, Essilor Blue UV Capture 1.74 is 12,380,000₫ and ZEISS PhotoFusion 1.74 is 16,380,000₫.</dd>
+<dt>Can I get branded lenses before I leave Hanoi?</dt>
+<dd>Single-vision lenses in stock are usually cut the same day, whichever brand. Essilor and ZEISS progressives take three to four days and Chemi lenses made to order take 10 to 15 days, so tell us your departure date when you walk in.</dd>
+<dt>Do these lens prices include a frame?</dt>
+<dd>No. They are September 2026 prices for a pair of lenses without a frame, and the final price is confirmed after your eye test. A finished single-vision pair, frame and lenses together, runs from 850,000₫ to 3,500,000₫.</dd>
+</dl>
+
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Manh Long Optical counter price list, updated 2 September 2026 (Essilor, ZEISS), and the Chemi, Elements and Tokai retail list confirmed by the owner on 8 September 2026.</li>
+<li><a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013244.pub2/full" target="_blank" rel="noopener nofollow">Cochrane Library (2023), Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults</a>.</li>
+<li><a href="https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it" target="_blank" rel="noopener nofollow">American Academy of Ophthalmology, Are Blue Light-Blocking Glasses Worth It?</a></li>
+</ul>
+
+<div class="note">This page compares price and prescription range from our own list; it does not rate any brand's optical quality. Prices can change by brand and over time, and we confirm the figure with you before cutting. Glasses are a vision aid; they do not reduce a prescription or cure short-sightedness. If your vision blurs suddenly, you see double, you have severe pain, or your eye is injured, go to an eye hospital rather than an optical shop.</div>
+
+<div class="cta"><h2>Bring your prescription, or get a new one here</h2>
+<p>With your numbers, the five brands narrow down to two or three real choices. The eye test is done by our refractionist, free whether or not you buy; Alvin then helps you choose lenses and a frame and gives you the full price before anything is cut. English is spoken on every shift.</p>
+<p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam, Hanoi, near Hanoi Railway Station<br>Open 8:00 – 21:30, seven days a week<br><a href="https://wa.me/84777986999" target="_blank" rel="noopener">WhatsApp to book</a> · <a href="tel:+84777986999">+84 777 986 999</a> · <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Zalo</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i" target="_blank" rel="noopener">Directions</a></p></div>
+
+<aside class="author-box" aria-label="Author">
+<p class="ab-label">Author</p>
+<p class="ab-name"><a href="/en/about-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
+<p>Store Manager at Manh Long Optical, 147A Le Duan, Cua Nam, Hanoi. 5 years in eyewear. <a href="/en/about-alvin.html">About Alvin</a></p>
+</aside>
+
+<nav class="related"><h2>Also here</h2><ul>
+<li><a href="/en/lens-index-guide.html">Lens index guide: 1.56 to 1.76, with Hanoi prices</a></li>
+<li><a href="/en/essilor-vs-zeiss.html">Essilor vs ZEISS lenses: which suits your prescription and budget</a></li>
+<li><a href="/en/lenses.html">Lenses in Hanoi: what they cost and how to choose</a></li>
+<li><a href="/en/prescription-glasses-hanoi.html">Getting prescription glasses in Hanoi: costs, timing, eye tests</a></li>
+</ul></nav>
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam, Hanoi</p>
+  <p>Open daily 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+  <p><a href="/so-sanh-trong-kinh-theo-hang.html" hreflang="vi">Xem trang này bằng tiếng Việt</a></p>
+</footer>
+<div class="stickycta">
+  <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WHATSAPP</a>
+  <a href="tel:+84777986999">CALL</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i" target="_blank" rel="noopener">DIRECTIONS</a>
+</div>
+</body>
+</html>

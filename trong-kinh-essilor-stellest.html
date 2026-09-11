@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Tròng Essilor Stellest kiểm soát cận thị cho trẻ | Mạnh Long</title>
+<meta name="description" content="Stellest 1.59 Airwear dành cho trẻ 6 đến 18 tuổi: công nghệ H.A.L.T hoạt động ra sao, con số 67% nghĩa là gì, và khi nào thì chưa cần tới nó.">
+<link rel="canonical" href="https://manhlongoptical.com/trong-kinh-essilor-stellest.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tròng Essilor Stellest kiểm soát cận thị cho trẻ | Mạnh Long">
+<meta name="twitter:description" content="Stellest 1.59 Airwear dành cho trẻ 6 đến 18 tuổi: công nghệ H.A.L.T hoạt động ra sao, con số 67% nghĩa là gì, và khi nào thì chưa cần tới nó.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/learn-transitions.webp">
+<meta property="og:title" content="Tròng Essilor Stellest kiểm soát cận thị cho trẻ | Mạnh Long">
+<meta property="og:description" content="Stellest 1.59 Airwear dành cho trẻ 6 đến 18 tuổi: công nghệ H.A.L.T hoạt động ra sao, con số 67% nghĩa là gì, và khi nào thì chưa cần tới nó.">
+<meta property="og:url" content="https://manhlongoptical.com/trong-kinh-essilor-stellest.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/learn-transitions.webp">
+<meta property="og:locale" content="vi_VN">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
+.faq dt{font-weight:600;margin:18px 0 6px}.faq dd{margin:0 0 14px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+.listing article{border-bottom:1px solid var(--hair);padding:22px 0}.listing h2{margin:0 0 8px;font-size:22px}.listing p{margin:0;color:var(--muted);font-size:14px}
+.listing .cat{font-size:11px;letter-spacing:.2em;color:var(--brass)}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+/* Khoi tac gia cuoi bai, them 10/09/2026. Mot mau dung chung moi trang. */
+.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
+.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
+.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
+.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
+.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
+.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/trong-kinh-essilor-stellest.html#article","headline":"Tròng Essilor Stellest: kiểm soát tiến triển cận thị ở trẻ","description":"Stellest 1.59 Airwear dành cho trẻ 6 đến 18 tuổi: công nghệ H.A.L.T hoạt động ra sao, con số 67% nghĩa là gì, và khi nào thì chưa cần tới nó.","author":{"@type":"Person","@id":"https://manhlongoptical.com/ve-alvin.html#alvin","name":"Alvin Dao","alternateName":"Alvin","jobTitle":"Store Manager","url":"https://manhlongoptical.com/ve-alvin.html","worksFor":{"@id":"https://manhlongoptical.com/#localbusiness"}},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"},"datePublished":"2026-09-11T09:00:00+07:00","dateModified":"2026-09-11T09:00:00+07:00","articleSection":"Tròng kính","inLanguage":"vi","mainEntityOfPage":{"@type":"WebPage","@id":"https://manhlongoptical.com/trong-kinh-essilor-stellest.html"},"citation":[{"@type":"CreativeWork","name":"Spectacle Lenses With Aspherical Lenslets for Myopia Control vs Single-Vision Spectacle Lenses: A Randomized Clinical Trial","url":"https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2790830","publisher":{"@type":"Organization","name":"JAMA Ophthalmology (2022)"}},{"@type":"CreativeWork","name":"Myopia Control in Children","url":"https://www.aao.org/eye-health/diseases/myopia-nearsightedness","publisher":{"@type":"Organization","name":"American Academy of Ophthalmology"}}]},{"@type":"FAQPage","@id":"https://manhlongoptical.com/trong-kinh-essilor-stellest.html#faq","mainEntity":[{"@type":"Question","name":"Stellest có chắc chắn ngăn con tăng độ không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đây là tròng được thiết kế để làm chậm tốc độ tăng độ, không phải để dừng hẳn, và mức độ khác nhau tuỳ từng trẻ. Cách biết nó có tác dụng với con bạn hay không là đo lại định kỳ và so số độ qua từng lần."}},{"@type":"Question","name":"Con số 67% nghĩa là gì?","acceptedAnswer":{"@type":"Answer","text":"Đó là con số Essilor công bố, dẫn một nghiên cứu đăng trên JAMA Ophthalmology năm 2022, so tròng Stellest với tròng đơn tròng thường. Đi kèm một điều kiện quan trọng: trẻ phải đeo từ 12 tiếng mỗi ngày. Đeo ít hơn thì con số đó không còn đúng."}},{"@type":"Question","name":"Con mấy tuổi thì dùng được?","acceptedAnswer":{"@type":"Answer","text":"Essilor thiết kế Stellest cho nhóm 6 đến 18 tuổi. Dưới 6 tuổi hoặc ca phức tạp, bên mình giới thiệu tới bệnh viện mắt chuyên khoa trước."}},{"@type":"Question","name":"Đeo 12 tiếng mỗi ngày có khả thi không?","acceptedAnswer":{"@type":"Answer","text":"Với trẻ đi học thì thường là có, vì tính cả giờ học, giờ làm bài và giờ chơi. Nhưng phải nói thật: nếu con chỉ đeo lúc học rồi tháo ra, hiệu quả sẽ khác với số trong nghiên cứu. Đây là điều nên cân nhắc trước khi quyết định, không phải sau."}},{"@type":"Question","name":"Vì sao Stellest dùng chất liệu Airwear 1.59?","acceptedAnswer":{"@type":"Answer","text":"Airwear là polycarbonate, chịu va đập tốt hơn nhựa CR-39 thường và nhẹ hơn ở cùng độ. Với trẻ hay chạy nhảy thì đó là lý do thực dụng hơn cả chuyện mỏng dày. Chiết suất 1.59 cũng mỏng hơn tròng 1.50 ở cùng số độ."}},{"@type":"Question","name":"Crizal Rock là gì, có bắt buộc không?","acceptedAnswer":{"@type":"Answer","text":"Là lớp phủ chống trầy và chống bám bẩn của Essilor. Không bắt buộc, nhưng với kính trẻ em thì đáng cân nhắc, vì phần lớn kính trẻ hỏng do xước chứ không phải do hết hạn."}},{"@type":"Question","name":"Bao lâu phải đo lại?","acceptedAnswer":{"@type":"Answer","text":"Với trẻ đang dùng tròng kiểm soát cận thị, nên đo lại mỗi 6 tháng. Đây không phải thủ tục cho có: nếu độ vẫn tăng nhanh sau hai lần đo, cần xem lại cả cách đeo lẫn lựa chọn tròng."}},{"@type":"Question","name":"Giá bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Giá phụ thuộc số độ và lớp phủ chọn kèm, nên bên mình báo trực tiếp tại quầy theo đơn kính của con, không báo một con số chung. Đo mắt miễn phí, kể cả khi bạn chưa quyết định mua."}}]},{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/trong-kinh-essilor-stellest.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Tròng Essilor Stellest: kiểm soát tiến triển cận thị ở trẻ","item":"https://manhlongoptical.com/trong-kinh-essilor-stellest.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://zalo.me/0777986999"]}]}</script>
+</head>
+<body>
+<!-- Dai goi y ngon ngu, them 07/09/2026. CHI GOI Y, KHONG tu chuyen trang.
+     Hien khi trinh duyet dat tieng Anh; dong duoc va nho lua chon trong localStorage.
+     KHONG dung ?lang= — kien truc la hai cay trang rieng: / va /en/.
+     Trang nay CHUA co ban dich tieng Anh -> tro ve /en/. -->
+<div id="langbar" hidden>
+  <a href="/en/" hreflang="en" lang="en">Read this in English &#8594;</a>
+  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById("langbar"); if(!bar) return;
+  var KEY="ml-langbar-off";
+  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
+  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
+  if(l.indexOf("en")!==0) return;
+  bar.hidden=false;
+  var x=document.getElementById("langbarx");
+  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
+})();
+</script>
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://tiktok.com/@mlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › <a href="/tim-hieu.html">Tìm hiểu</a> › Tròng Essilor Stellest: kiểm soát tiến triển cận thị ở trẻ</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">TRÒNG KÍNH</p><h1>Tròng Essilor Stellest: kiểm soát tiến triển cận thị ở trẻ</h1>
+<p class="byline">Viết bởi <strong><a href="/ve-alvin.html">Alvin</a></strong> · Manh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · Cập nhật 11/09/2026</p>
+
+<div class="takeaway"><strong>Tóm tắt:</strong> Stellest là tròng Essilor thiết kế riêng cho trẻ 6 đến 18 tuổi, nhằm làm chậm tốc độ tăng độ cận chứ không dừng hẳn. Essilor công bố mức giảm trung bình 67% so với tròng đơn tròng thường, kèm điều kiện trẻ đeo từ 12 tiếng mỗi ngày. Bản phổ biến dùng chất liệu Airwear 1.59, nhẹ và chịu va đập. Manh Long Optical, 147A Lê Duẩn, Cửa Nam, đo mắt miễn phí và báo giá theo đơn của con.</div>
+
+<h2>Vấn đề không phải độ cận hôm nay, mà là độ cận năm sau</h2>
+<p>Phụ huynh đưa con đi cắt kính thường hỏi một câu: kính này có làm con đỡ cận không. Câu trả lời trung thực là không. Kính chỉnh thị lực trong lúc đeo, nó không làm nhãn cầu ngắn lại.</p>
+<p>Nhưng có một câu hỏi khác đáng hỏi hơn: năm sau con tăng bao nhiêu độ. Cận thị ở trẻ tiến triển vì trục nhãn cầu dài dần ra trong giai đoạn phát triển. Trục càng dài, độ càng cao. Và độ cận cao ở tuổi trưởng thành gắn với nguy cơ cao hơn về một số bệnh võng mạc về sau, theo Viện Nhãn khoa Hoa Kỳ.</p>
+<p>Đó là chỗ nhóm tròng kiểm soát tiến triển cận thị nhắm vào. Không phải làm hết cận, mà làm chậm tốc độ tăng.</p>
+
+<h2>H.A.L.T hoạt động thế nào, nói bằng tiếng thường</h2>
+<p>Tròng đơn tròng thường hội tụ ảnh đúng lên võng mạc, và chỉ làm việc đó. Trục nhãn cầu vẫn tiếp tục giãn dài theo đà của nó.</p>
+<p>Stellest dùng công nghệ Essilor gọi là H.A.L.T, viết tắt của Highly Aspherical Lenslet Target. Bề mặt tròng có các thấu kính nhỏ xếp thành vòng đồng tâm quanh vùng nhìn trung tâm. Vùng trung tâm vẫn cho ảnh rõ như kính thường, nên trẻ nhìn bình thường. Các thấu kính nhỏ quanh đó tạo ra một vùng tín hiệu nằm <em>phía trước</em> võng mạc.</p>
+<p>Theo Essilor, chính tín hiệu đặt phía trước đó làm giảm đà giãn dài của trục nhãn cầu. Nói ngắn: trung tâm để nhìn, phần ngoại vi để gửi tín hiệu.</p>
+<p>Essilor cho biết đã nghiên cứu hơn 30 năm trước khi đưa thiết kế này ra thị trường.</p>
+
+<h2>Con số 67%, và điều kiện đi kèm mà ít ai đọc</h2>
+<p>Essilor công bố Stellest giảm tiến triển cận thị trung bình 67% so với kính đơn tròng, dẫn một nghiên cứu lâm sàng ngẫu nhiên đăng trên <em>JAMA Ophthalmology</em> năm 2022.</p>
+<p>Điều kiện ghi ngay bên cạnh con số đó, in nhỏ, và nó quan trọng không kém: <strong>khi trẻ đeo kính từ 12 tiếng trở lên mỗi ngày</strong>.</p>
+<p>Bên mình nói thẳng điều này với phụ huynh trước khi tư vấn, vì ba lý do:</p>
+<ul>
+<li>Đây là con số của nhà sản xuất dẫn nghiên cứu, không phải cam kết của cửa hàng.</li>
+<li>Nó là mức <em>trung bình</em> trên một nhóm trẻ. Con bạn có thể hơn, có thể kém.</li>
+<li>Nếu con chỉ đeo lúc ngồi học rồi tháo ra, điều kiện 12 tiếng không đạt, và con số không còn áp dụng được.</li>
+</ul>
+<p>Cách biết nó có tác dụng với con bạn hay không là đo lại mỗi 6 tháng và so số độ qua từng lần. Không có cách nào biết trước.</p>
+
+<h2>Vì sao bản cho trẻ dùng chất liệu Airwear 1.59</h2>
+<p>Airwear là tên Essilor đặt cho chất liệu polycarbonate, chiết suất 1.59. Ba đặc tính khiến nó hợp với kính trẻ em hơn là hợp với kính người lớn:</p>
+<ul>
+<li><strong>Chịu va đập.</strong> Polycarbonate bền hơn nhựa CR-39 thường trước va chạm. Với trẻ chạy nhảy, đây là lý do thực dụng hơn cả chuyện tròng mỏng hay dày.</li>
+<li><strong>Nhẹ.</strong> Kính nặng thì trẻ tháo ra, mà tháo ra thì điều kiện 12 tiếng không đạt.</li>
+<li><strong>Chặn tia UV.</strong> Khả năng chặn UV nằm trong chính chất liệu, không phải lớp phủ ngoài, nên không mất đi theo thời gian sử dụng.</li>
+</ul>
+<p>Chiết suất 1.59 cũng mỏng hơn tròng 1.50 ở cùng số độ, nhưng với trẻ thì độ bền thường là thứ đáng cân nhắc trước.</p>
+
+<h2>Crizal Rock: lớp phủ, và vì sao nó đáng nghĩ tới với kính trẻ</h2>
+<p>Crizal Rock là lớp phủ chống trầy và chống bám bẩn của Essilor. Nó giảm bám vân tay, bụi và nước, nên lau nhanh hơn và ít phải lau mạnh hơn.</p>
+<p>Với kính người lớn thì đây là tiện lợi. Với kính trẻ em thì khác: phần lớn kính trẻ bị thay không phải vì hết hạn mà vì mặt tròng xước tới mức nhìn mờ. Kính xước thì trẻ nheo mắt, và một cặp tròng kiểm soát cận thị bị bỏ trong ngăn bàn thì không kiểm soát được gì.</p>
+<p>Không bắt buộc phải chọn. Nhưng nên hỏi giá kèm để so, thay vì quyết sau khi kính đã xước.</p>
+
+<h2>Khi nào thì chưa cần tới Stellest</h2>
+<p>Đây là phần bên mình muốn nói rõ, vì nó ngược với hướng bán hàng thông thường.</p>
+<p>Với trẻ mới phát hiện cận nhẹ và chưa có dấu hiệu tăng nhanh, tròng đơn tròng thường vẫn là lựa chọn phổ biến và hợp lý. Điều quan trọng nhất với bất kỳ loại tròng nào vẫn là <strong>đúng độ</strong> và <strong>tái khám đều</strong>.</p>
+<p>Nhóm đáng cân nhắc Stellest hơn cả là trẻ đã có tiền sử tăng độ nhanh qua các lần đo trước, trong độ tuổi 6 đến 18, và gia đình sẵn sàng theo nhịp đo lại mỗi 6 tháng. Nếu không theo được nhịp đo, phần lớn giá trị của việc chọn tròng này mất đi, vì không ai biết nó đang có tác dụng hay không.</p>
+<p>Đọc thêm: <a href="/chon-kinh-cho-tre-em-can-thi.html">chọn kính cho trẻ cận thị</a> nói về dấu hiệu nhận biết và cách chọn gọng, <a href="/essilor-lenses.html">tròng Essilor</a> nói về các dòng khác cùng hãng.</p>
+
+<h2>Quy trình tại Manh Long Optical</h2>
+<p>Đo khúc xạ cho trẻ mất 20 đến 30 phút, miễn phí, kể cả khi bạn chưa quyết định mua. Bên mình đo, trao đổi kết quả với phụ huynh, và nếu thấy ca phức tạp thì giới thiệu tới bệnh viện mắt chuyên khoa trước khi bàn tới chuyện cắt kính.</p>
+<p>Giá Stellest phụ thuộc số độ và lớp phủ chọn kèm, nên bên mình báo trực tiếp theo đơn của con thay vì một con số chung. Đo lại và chỉnh gọng miễn phí trọn đời, phụ huynh ghé bất cứ lúc nào thấy kính con lỏng.</p>
+<p>Nên mang theo đơn kính cũ và sổ đo các lần trước, vì tốc độ tăng độ qua từng lần mới là thứ quyết định có nên dùng tròng kiểm soát hay không.</p>
+
+<h2>Câu hỏi thường gặp</h2>
+<details><summary>Stellest có chắc chắn ngăn con tăng độ không?</summary><p>Không. Đây là tròng được thiết kế để làm chậm tốc độ tăng độ, không phải để dừng hẳn, và mức độ khác nhau tuỳ từng trẻ. Cách biết nó có tác dụng với con bạn hay không là đo lại định kỳ và so số độ qua từng lần.</p></details>
+<details><summary>Con số 67% nghĩa là gì?</summary><p>Đó là con số Essilor công bố, dẫn một nghiên cứu đăng trên JAMA Ophthalmology năm 2022, so tròng Stellest với tròng đơn tròng thường. Đi kèm một điều kiện quan trọng: trẻ phải đeo từ 12 tiếng mỗi ngày. Đeo ít hơn thì con số đó không còn đúng.</p></details>
+<details><summary>Con mấy tuổi thì dùng được?</summary><p>Essilor thiết kế Stellest cho nhóm 6 đến 18 tuổi. Dưới 6 tuổi hoặc ca phức tạp, bên mình giới thiệu tới bệnh viện mắt chuyên khoa trước.</p></details>
+<details><summary>Đeo 12 tiếng mỗi ngày có khả thi không?</summary><p>Với trẻ đi học thì thường là có, vì tính cả giờ học, giờ làm bài và giờ chơi. Nhưng phải nói thật: nếu con chỉ đeo lúc học rồi tháo ra, hiệu quả sẽ khác với số trong nghiên cứu. Đây là điều nên cân nhắc trước khi quyết định, không phải sau.</p></details>
+<details><summary>Vì sao Stellest dùng chất liệu Airwear 1.59?</summary><p>Airwear là polycarbonate, chịu va đập tốt hơn nhựa CR-39 thường và nhẹ hơn ở cùng độ. Với trẻ hay chạy nhảy thì đó là lý do thực dụng hơn cả chuyện mỏng dày. Chiết suất 1.59 cũng mỏng hơn tròng 1.50 ở cùng số độ.</p></details>
+<details><summary>Crizal Rock là gì, có bắt buộc không?</summary><p>Là lớp phủ chống trầy và chống bám bẩn của Essilor. Không bắt buộc, nhưng với kính trẻ em thì đáng cân nhắc, vì phần lớn kính trẻ hỏng do xước chứ không phải do hết hạn.</p></details>
+<details><summary>Bao lâu phải đo lại?</summary><p>Với trẻ đang dùng tròng kiểm soát cận thị, nên đo lại mỗi 6 tháng. Đây không phải thủ tục cho có: nếu độ vẫn tăng nhanh sau hai lần đo, cần xem lại cả cách đeo lẫn lựa chọn tròng.</p></details>
+<details><summary>Giá bao nhiêu?</summary><p>Giá phụ thuộc số độ và lớp phủ chọn kèm, nên bên mình báo trực tiếp tại quầy theo đơn kính của con, không báo một con số chung. Đo mắt miễn phí, kể cả khi bạn chưa quyết định mua.</p></details>
+
+<h2>Nguồn tham khảo</h2>
+<ul>
+<li>Bao J, Huang Y, Li X, và cộng sự. <em>Spectacle Lenses With Aspherical Lenslets for Myopia Control vs Single-Vision Spectacle Lenses: A Randomized Clinical Trial.</em> JAMA Ophthalmology. 2022;140(5):472-478. <a href="https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2790830" rel="nofollow noopener" target="_blank">Xem nghiên cứu</a></li>
+<li>American Academy of Ophthalmology. <em>Myopia Control in Children.</em> <a href="https://www.aao.org/eye-health/diseases/myopia-nearsightedness" rel="nofollow noopener" target="_blank">Xem trang</a></li>
+<li>Tài liệu sản phẩm Essilor Stellest và Crizal Rock, bản tiếng Việt, do nhà phân phối cung cấp cho cửa hàng.</li>
+</ul>
+
+<h2>Đưa con tới đo thử</h2>
+<p>Manh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội. Mở cửa 8:00 – 21:30 tất cả các ngày. Đo mắt miễn phí, mua hay không cũng vậy.</p>
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

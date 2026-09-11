@@ -173,6 +173,12 @@ section.blk{padding:76px 0}
 section.blk.alt{background:#fff;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
 @media(max-width:700px){section.blk{padding:56px 0}.hero{padding:56px 0 48px}}
 h2.big{font-size:clamp(26px,3.6vw,40px);line-height:1.18;margin:0 0 14px;max-width:18ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--hair);padding:24px 22px;display:flex;flex-direction:column}
+section.blk.alt .card{background:var(--paper)}
+.card h3{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:21px;line-height:1.28;margin:0 0 10px}
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px;flex:1}
+.card a.go{font-size:12px;letter-spacing:.1em;font-weight:600;text-transform:uppercase}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .split img{width:100%;height:auto}
 @media(max-width:820px){.split{grid-template-columns:1fr;gap:28px}}
@@ -460,6 +466,18 @@ section.blk > .wrap > h2:first-child,section.blk > .wrap > .takeaway:first-child
   <blockquote>“Alvin has very good service and knowledge.”</blockquote>
   <p class="who">Omar Sadek · <a href="https://www.google.com/maps/place/Manh+Long+Optical/@21.0228533,105.8389649,17z/data=!4m8!3m7!1s0x3135abb86b1441c5:0xd0870ab6e28eaa64!8m2!3d21.022849!4d105.841554!9m1!1b1!16s%2Fg%2F11tmmx264m" target="_blank" rel="noopener nofollow">Read all reviews on Google</a></p>
 </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <p class="kicker">What others say about us</p>
+    <h2 class="big serif">Featured in</h2>
+    <p style="color:var(--muted);max-width:60ch;margin:0 0 20px">Beyond reviews on Google, Manh Long Optical has also been covered in independent guides to buying glasses in Hanoi.</p>
+    <div class="cards">
+      <div class="card"><h3>Discover quality eyewear and professional optical services at Manh Long Optical in Hanoi</h3><p>A dedicated feature by Mytour.vn on where English-speaking visitors can get glasses made in Hanoi.</p><a class="go" href="https://mytour.vn/en/blog/doi-song/discover-quality-eyewear-and-professional-optical-services-at-manh-long-optical-in-hanoi-mytour.html" target="_blank" rel="noopener">Read on Mytour.vn &rarr;</a></div>
+      <div class="card"><h3>Independent Vietnamese-language guides to eyewear shops in Hanoi</h3><p>Manh Long Optical is also listed among recommended opticians in city guides by Toplist.vn and Mytour.vn.</p><a class="go" href="https://toplist.vn/top-list/dia-chi-mua-kinh-ram-dat-tieu-chuan-an-toan-cho-mat-tai-ha-noi-46203.htm" target="_blank" rel="noopener">See an example (Vietnamese) &rarr;</a></div>
+    </div>
   </div>
 </section>
 

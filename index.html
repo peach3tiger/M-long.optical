@@ -120,7 +120,17 @@ nav .langtog .sep{color:#B7AB92;font-weight:400}
 .qres .qd{display:block;font-size:12px;color:var(--muted);line-height:1.5}
 .qres .qnone{padding:12px;font-size:13px;color:var(--muted)}
 .qvh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-@media(max-width:700px){.srch{flex:1 1 100%;width:100%;order:3}}
+.srchbtn{display:none}
+/* Dien thoai: chi hien nut kinh lup o hang logo. Cham vao moi bung o nhap ra. */
+@media(max-width:700px){
+  .hdr{position:relative}
+  .srch{flex:1 1 100%;width:100%;order:3;position:static}
+  .srch form{display:none}
+  .srch.open form{display:flex}
+  .srchbtn{display:flex;position:absolute;top:6px;right:18px;width:42px;height:42px;align-items:center;justify-content:center;padding:0;border:0;background:none;color:var(--ink);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .srchbtn[aria-expanded="true"]{color:var(--brass)}
+  .qres{left:24px;right:24px}
+}
 @media(max-width:700px){
   .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
   .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
@@ -276,6 +286,9 @@ footer a{color:var(--paper)}footer a:hover{color:var(--sand)}
       <span class="langtog"><a href="/en/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span>
     </nav>
     <div class="srch">
+      <button type="button" class="srchbtn" id="qbtn" aria-label="Tìm kiếm" aria-expanded="false" aria-controls="q">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      </button>
       <form role="search" onsubmit="return false;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
         <label class="qvh" for="q">Tìm sản phẩm hoặc bài viết</label>
@@ -607,17 +620,41 @@ footer a{color:var(--paper)}footer a:hover{color:var(--sand)}
     cur = tim(q); sel = -1; ve();
   }
 
+  /* Nut kinh lup, chi hien tren dien thoai */
+  var nut = document.getElementById("qbtn");
+  function moO(mo) {
+    var srch = inp.closest(".srch");
+    if (mo) {
+      srch.classList.add("open");
+      nut.setAttribute("aria-expanded", "true");
+      tai();
+      inp.focus();
+    } else {
+      srch.classList.remove("open");
+      nut.setAttribute("aria-expanded", "false");
+      dong();
+    }
+  }
+  if (nut) {
+    nut.addEventListener("click", function () {
+      moO(!inp.closest(".srch").classList.contains("open"));
+    });
+  }
+
   inp.addEventListener("focus", tai);
   inp.addEventListener("input", chay);
   inp.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { dong(); inp.blur(); return; }
+    if (e.key === "Escape") { moO(false); inp.blur(); return; }
     if (box.hidden || !cur.length) return;
     if (e.key === "ArrowDown") { e.preventDefault(); sel = (sel + 1) % cur.length; danhDau(); }
     else if (e.key === "ArrowUp") { e.preventDefault(); sel = (sel - 1 + cur.length) % cur.length; danhDau(); }
     else if (e.key === "Enter") { e.preventDefault(); location.href = cur[sel < 0 ? 0 : sel].u; }
   });
   document.addEventListener("click", function (e) {
-    if (!box.hidden && !e.target.closest(".srch")) dong();
+    if (e.target.closest(".srch")) return;
+    dong();
+    /* tren dien thoai, bam ra ngoai thi thu gon o nhap lai thanh nut */
+    if (!inp.value.trim()) moO(false);
   });
 })();
 </script>

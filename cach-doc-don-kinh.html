@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js), GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Cách đọc đơn kính: SPH, CYL, AXIS, ADD, PD là gì | Manh Long Optical</title>
+<meta name="description" content="Cách đọc đơn kính: MP/MT, Cầu (SPH), Loạn (CYL), Trục (AXIS), ADD và PD nghĩa là gì, dấu cộng dấu trừ khác nhau ra sao, kèm ví dụ đọc thử. 0777 986 999.">
+<link rel="canonical" href="https://manhlongoptical.com/cach-doc-don-kinh.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/cach-doc-don-kinh.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/cach-doc-don-kinh.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Cách đọc đơn kính: SPH, CYL, AXIS, ADD, PD là gì | Manh Long Optical">
+<meta property="og:description" content="Từng cột trên tờ đơn kính nghĩa là gì: mắt phải mắt trái, độ cầu, độ loạn, trục, ADD và khoảng đồng tử, kèm một đơn mẫu đọc thử.">
+<meta property="og:url" content="https://manhlongoptical.com/cach-doc-don-kinh.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cách đọc đơn kính: SPH, CYL, AXIS, ADD, PD là gì | Manh Long Optical">
+<meta name="twitter:description" content="Từng cột trên tờ đơn kính nghĩa là gì: mắt phải mắt trái, độ cầu, độ loạn, trục, ADD và khoảng đồng tử, kèm một đơn mẫu đọc thử.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI, ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:22px;line-height:1.3;margin:40px 0 6px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 12px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#F4F2ED;font-weight:600;font-size:12px;letter-spacing:.04em}
+.tnote{font-size:13px;color:var(--muted);margin:0 0 20px}
+.confirm{background:#FFF6E0;border:1px dashed var(--brass);padding:1px 4px;font-size:13px}
+.faq h3{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-weight:600;margin:22px 0 6px;font-size:16px;line-height:1.4}.faq p{margin:0 0 4px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+/* Khoi tac gia cuoi bai, them 10/09/2026. Mot mau dung chung moi trang. */
+.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
+.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
+.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
+.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
+.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
+.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/cach-doc-don-kinh.html#article","headline":"Cách đọc đơn kính: SPH, CYL, AXIS, ADD và PD","description":"Cách đọc đơn kính: MP/MT, Cầu (SPH), Loạn (CYL), Trục (AXIS), ADD và PD nghĩa là gì, dấu cộng dấu trừ khác nhau ra sao, kèm ví dụ đọc thử. 0777 986 999.","inLanguage":"vi","image":"https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg","datePublished":"2026-09-11","dateModified":"2026-09-11","mainEntityOfPage":"https://manhlongoptical.com/cach-doc-don-kinh.html","author":{"@type":"Person","@id":"https://manhlongoptical.com/ve-alvin.html#alvin","name":"Alvin Dao","alternateName":"Alvin","jobTitle":"Store Manager","url":"https://manhlongoptical.com/ve-alvin.html","worksFor":{"@id":"https://manhlongoptical.com/#localbusiness"}},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/cach-doc-don-kinh.html#faq","inLanguage":"vi","mainEntity":[{"@type":"Question","name":"SPH trên đơn kính là gì?","acceptedAnswer":{"@type":"Answer","text":"SPH, còn ghi là Cầu hoặc Sphere, là độ chính của mắt. Dấu trừ là cận, dấu cộng là viễn, đơn vị là diop và tăng theo bước 0,25. Ví dụ -2.00 nghĩa là cận 2 độ."}},{"@type":"Question","name":"Dấu cộng và dấu trừ trên đơn kính khác nhau thế nào?","acceptedAnswer":{"@type":"Answer","text":"Dấu trừ ở cột SPH là cận thị, dấu cộng là viễn thị. Ở cột ADD của kính đa tròng, số luôn là dấu cộng vì đó là phần độ tăng thêm cho nhìn gần."}},{"@type":"Question","name":"PD là gì và vì sao cần khi cắt kính?","acceptedAnswer":{"@type":"Answer","text":"PD là khoảng cách giữa hai đồng tử, tính bằng milimét. Khi cắt kính, tâm của tròng phải trùng với tâm mắt; PD sai làm bạn nhìn qua sai vị trí của tròng và dễ mỏi. Cửa hàng đo PD cho bạn khi cắt."}},{"@type":"Question","name":"Đơn kính cũ bao lâu thì nên đo lại?","acceptedAnswer":{"@type":"Answer","text":"Nếu đơn đã hơn 12 tháng, nên đo lại trước khi cắt kính mới vì độ có thể đã đổi. Cửa hàng không cắt kính chỉ dựa trên một đơn cũ trên 12 tháng mà chưa đo lại."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Cách đọc đơn kính","item":"https://manhlongoptical.com/cach-doc-don-kinh.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]}]}</script>
+</head>
+<body>
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/in/manhlong-optical-b89405283/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95C21.6 8.75 22 11.2 22 14.05V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21h-4V9Z"/></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://tiktok.com/@mlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › <a href="/tim-hieu.html">Tìm hiểu</a> › Cách đọc đơn kính</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">HƯỚNG DẪN</p>
+<h1>Cách đọc đơn kính: SPH, CYL, AXIS, ADD, PD là gì</h1>
+<p class="byline">Viết bởi <a href="/ve-alvin.html">Alvin</a> · Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội · Cập nhật 11/09/2026</p>
+<div class="takeaway"><strong>Tóm tắt:</strong> Tờ đơn kính là một bảng nhỏ, mỗi mắt một hàng. Cột quan trọng nhất là Cầu (SPH): dấu trừ là cận, dấu cộng là viễn. Loạn (CYL) luôn đi kèm Trục (AXIS, từ 0 đến 180). ADD chỉ có ở kính đa tròng hoặc kính lão. PD là khoảng cách hai đồng tử, cần khi cắt để đặt tâm tròng đúng. Mang đơn cũ và kính đang đeo khi tới cắt kính.</div>
+<h2>Đơn kính trông thế nào?</h2>
+<p>Phần lớn đơn kính có hai hàng, một hàng cho mỗi mắt, và vài cột số. Tên cột có thể viết tiếng Việt hoặc tiếng Anh tuỳ nơi đo, nhưng ý nghĩa như nhau. Bảng dưới ghép hai cách gọi:</p>
+<div class="tablewrap"><table><tr><th>Ký hiệu tiếng Anh</th><th>Tiếng Việt hay gặp</th><th>Nghĩa</th></tr><tr><td>OD (R)</td><td>MP, mắt phải</td><td>Các số ở hàng này là của mắt phải</td></tr><tr><td>OS (L)</td><td>MT, mắt trái</td><td>Các số ở hàng này là của mắt trái</td></tr><tr><td>SPH</td><td>Cầu</td><td>Độ chính: dấu trừ là cận, dấu cộng là viễn</td></tr><tr><td>CYL</td><td>Loạn</td><td>Độ loạn (nếu có)</td></tr><tr><td>AXIS</td><td>Trục</td><td>Hướng của độ loạn, từ 0 đến 180</td></tr><tr><td>ADD</td><td>Cộng thêm</td><td>Phần độ tăng cho nhìn gần, chỉ có ở kính đa tròng hoặc kính lão</td></tr><tr><td>PD</td><td>Khoảng đồng tử</td><td>Khoảng cách giữa hai đồng tử, tính bằng milimét</td></tr></table></div>
+<h2>MP và MT, hay OD và OS</h2>
+<p>Đây chỉ là cách ghi mắt nào. MP là mắt phải, MT là mắt trái. Kiểu tiếng Anh dùng OD cho mắt phải và OS cho mắt trái; đôi khi ghi gọn R và L. Đọc đơn thì luôn khớp đúng hàng với đúng mắt, vì hai mắt thường không cùng độ.</p>
+<h2>SPH (Cầu), con số quan trọng nhất</h2>
+<p>SPH là độ chính của mắt. Dấu quyết định loại tật:</p>
+<ul><li><strong>Dấu trừ (-):</strong> cận thị. Ví dụ -2.00 là cận 2 độ.</li><li><strong>Dấu cộng (+):</strong> viễn thị. Ví dụ +1.50 là viễn 1,5 độ.</li></ul>
+<p>Đơn vị là diop và tăng theo bước 0,25. Số càng lớn thì độ càng cao. Nếu ô Cầu ghi 0.00, Plano hoặc PL, nghĩa là mắt đó không có độ cầu.</p>
+<h2>CYL (Loạn) và AXIS (Trục), luôn đi thành cặp</h2>
+<p>CYL là độ loạn. Loạn xảy ra khi bề mặt giác mạc không tròn đều, làm hình bị nhoè hoặc kéo vệt theo một hướng. Nếu có độ loạn, đơn sẽ ghi kèm AXIS, con số từ 0 đến 180 cho biết hướng đặt độ loạn đó trên tròng.</p>
+<p>Hai cột này đọc cùng nhau: ví dụ CYL -0.75 AXIS 180 nghĩa là loạn 0,75 độ, đặt ở trục 180. Nếu ô Loạn để trống hoặc ghi 0.00, nghĩa là không có loạn, và khi đó cột Trục cũng bỏ trống.</p>
+<h2>ADD, chỉ xuất hiện ở kính đa tròng và kính lão</h2>
+<p>ADD là phần độ cộng thêm cho nhìn gần, luôn mang dấu cộng. Người cần đọc sách hay nhìn gần khó, thường từ tuổi trung niên, sẽ có số này. Kính một tròng nhìn xa bình thường không có ADD.</p>
+<p>Trên kính đa tròng, phần trên tròng dùng độ nhìn xa (theo SPH), phần dưới cộng thêm ADD để nhìn gần. Nếu đơn của bạn có ADD, hãy nói rõ khi cắt để chọn đúng loại tròng.</p>
+<h2>PD, khoảng đồng tử, và vì sao nó quan trọng khi cắt</h2>
+<p>PD là khoảng cách giữa tâm hai đồng tử, tính bằng milimét, thường quanh 58 đến 68. Con số này không nói về độ, nhưng lại quyết định kính có đeo dễ chịu hay không.</p>
+<p>Khi cắt kính, tâm quang học của tròng phải nằm đúng trước đồng tử. Nếu PD đặt sai, bạn nhìn qua phần lệch tâm của tròng, dễ mỏi mắt, nhức đầu, nhất là với độ cao hoặc tròng đa tròng. Nhiều đơn khám không ghi PD; khi đó cửa hàng đo lại cho bạn ngay trên gọng bạn chọn.</p>
+<h2>Đọc thử một đơn mẫu</h2>
+<p>Giả sử tờ đơn ghi như sau:</p>
+<div class="tablewrap"><table><tr><th>Mắt</th><th>Cầu (SPH)</th><th>Loạn (CYL)</th><th>Trục (AXIS)</th><th>ADD</th></tr><tr><td>MP (phải)</td><td>-2.00</td><td>-0.50</td><td>170</td><td>–</td></tr><tr><td>MT (trái)</td><td>-2.50</td><td>–</td><td>–</td><td>–</td></tr></table></div><p class="tnote">PD: 63 mm</p>
+<p>Đọc ra lời: mắt phải cận 2 độ, kèm loạn 0,5 độ ở trục 170. Mắt trái cận 2,5 độ, không loạn. Không có ADD nên đây là đơn kính một tròng nhìn xa. Khoảng đồng tử 63 mm. Hai mắt lệch nhau nửa độ, chuyện bình thường.</p>
+<h2>Mang gì khi đi cắt kính?</h2>
+<p>Mang theo đơn kính nếu có, và cặp kính bạn đang đeo. Kính cũ giúp khúc xạ viên biết bạn đã quen với độ nào, và so với kết quả đo mới.</p>
+<p>Nếu đơn đã hơn 12 tháng, nên đo lại trước khi cắt, vì độ có thể đã đổi. Cửa hàng không cắt kính chỉ dựa trên một đơn cũ trên 12 tháng mà chưa đo lại. Chưa có đơn cũng không sao, đo mắt tại cửa hàng miễn phí. Chưa rõ khi nào cần đeo hay bao lâu đo lại, đọc bài <a href="/khi-nao-can-deo-kinh-can.html">cận bao nhiêu độ thì đeo kính</a>.</p>
+<h2>Câu hỏi thường gặp</h2>
+<div class="faq"><h3>SPH trên đơn kính là gì?</h3>
+<p>SPH, còn ghi là Cầu hoặc Sphere, là độ chính của mắt. Dấu trừ là cận, dấu cộng là viễn, đơn vị là diop và tăng theo bước 0,25. Ví dụ -2.00 nghĩa là cận 2 độ.</p>
+<h3>Dấu cộng và dấu trừ trên đơn kính khác nhau thế nào?</h3>
+<p>Dấu trừ ở cột SPH là cận thị, dấu cộng là viễn thị. Ở cột ADD của kính đa tròng, số luôn là dấu cộng vì đó là phần độ tăng thêm cho nhìn gần.</p>
+<h3>PD là gì và vì sao cần khi cắt kính?</h3>
+<p>PD là khoảng cách giữa hai đồng tử, tính bằng milimét. Khi cắt kính, tâm của tròng phải trùng với tâm mắt; PD sai làm bạn nhìn qua sai vị trí của tròng và dễ mỏi. Cửa hàng đo PD cho bạn khi cắt.</p>
+<h3>Đơn kính cũ bao lâu thì nên đo lại?</h3>
+<p>Nếu đơn đã hơn 12 tháng, nên đo lại trước khi cắt kính mới vì độ có thể đã đổi. Cửa hàng không cắt kính chỉ dựa trên một đơn cũ trên 12 tháng mà chưa đo lại.</p>
+</div>
+<div class="note">Bài này giúp bạn hiểu tờ đơn, không thay cho buổi đo trực tiếp. Các con số cụ thể trên đơn của bạn do khúc xạ viên xác định. Kính là thiết bị hỗ trợ thị lực, không làm giảm độ hay chữa khỏi cận thị. Nếu nhìn mờ đột ngột, nhìn đôi, đau nhức dữ dội hoặc mắt bị chấn thương, hãy tới bệnh viện mắt.</div>
+<div class="cta"><h2>Chưa chắc thì cứ đo, không mất phí</h2><p>Khúc xạ viên của cửa hàng đo trong khoảng 20 đến 30 phút, miễn phí kể cả khi bạn chưa mua kính. Đặt lịch qua Zalo hoặc gọi trước, mang theo kính đang đeo và đơn cũ nếu có.</p><p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Cửa Nam, Hà Nội<br>8:00 – 21:30, 7 ngày/tuần · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo đặt lịch đo mắt</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a></p></div>
+<aside class="author-box" aria-label="Tác giả">
+<p class="ab-label">Tác giả</p>
+<p class="ab-name"><a href="/ve-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
+<p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
+</aside>
+<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/khi-nao-can-deo-kinh-can.html">Cận bao nhiêu độ thì đeo kính? Bao lâu đo mắt lại</a></li><li><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: chọn theo độ cận</a></li><li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời</a></li><li><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại 147A Lê Duẩn</a></li><li><a href="/cau-hoi-thuong-gap.html">Câu hỏi thường gặp về kính mắt</a></li></ul></nav>
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

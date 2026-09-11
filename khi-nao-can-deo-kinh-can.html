@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js), GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Cận bao nhiêu độ thì đeo kính? Bao lâu đo mắt lại | Manh Long Optical</title>
+<meta name="description" content="Cận bao nhiêu độ thì nên đeo kính, đeo thường xuyên hay khi cần, và bao lâu nên đo mắt lại. Hướng dẫn tham khảo, kết luận thuộc buổi đo. 0777 986 999.">
+<link rel="canonical" href="https://manhlongoptical.com/khi-nao-can-deo-kinh-can.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/khi-nao-can-deo-kinh-can.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/khi-nao-can-deo-kinh-can.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Cận bao nhiêu độ thì đeo kính? Bao lâu đo mắt lại | Manh Long Optical">
+<meta property="og:description" content="Không có một con số độ cố định bắt buộc đeo kính. Khi nào nên đeo, khi nào nên đo lại, và dấu hiệu cần đi đo sớm.">
+<meta property="og:url" content="https://manhlongoptical.com/khi-nao-can-deo-kinh-can.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cận bao nhiêu độ thì đeo kính? Bao lâu đo mắt lại | Manh Long Optical">
+<meta name="twitter:description" content="Không có một con số độ cố định bắt buộc đeo kính. Khi nào nên đeo, khi nào nên đo lại, và dấu hiệu cần đi đo sớm.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI, ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:22px;line-height:1.3;margin:40px 0 6px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 12px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#F4F2ED;font-weight:600;font-size:12px;letter-spacing:.04em}
+.tnote{font-size:13px;color:var(--muted);margin:0 0 20px}
+.confirm{background:#FFF6E0;border:1px dashed var(--brass);padding:1px 4px;font-size:13px}
+.faq h3{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-weight:600;margin:22px 0 6px;font-size:16px;line-height:1.4}.faq p{margin:0 0 4px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+/* Khoi tac gia cuoi bai, them 10/09/2026. Mot mau dung chung moi trang. */
+.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
+.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
+.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
+.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
+.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
+.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/khi-nao-can-deo-kinh-can.html#article","headline":"Cận bao nhiêu độ thì đeo kính, và bao lâu nên đo mắt lại","description":"Cận bao nhiêu độ thì nên đeo kính, đeo thường xuyên hay khi cần, và bao lâu nên đo mắt lại. Hướng dẫn tham khảo, kết luận thuộc buổi đo. 0777 986 999.","inLanguage":"vi","image":"https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg","datePublished":"2026-09-11","dateModified":"2026-09-11","mainEntityOfPage":"https://manhlongoptical.com/khi-nao-can-deo-kinh-can.html","author":{"@type":"Person","@id":"https://manhlongoptical.com/ve-alvin.html#alvin","name":"Alvin Dao","alternateName":"Alvin","jobTitle":"Store Manager","url":"https://manhlongoptical.com/ve-alvin.html","worksFor":{"@id":"https://manhlongoptical.com/#localbusiness"}},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/khi-nao-can-deo-kinh-can.html#faq","inLanguage":"vi","mainEntity":[{"@type":"Question","name":"Cận bao nhiêu độ thì phải đeo kính?","acceptedAnswer":{"@type":"Answer","text":"Không có một mốc độ cố định cho tất cả mọi người. Nhiều người cận từ khoảng 1 độ bắt đầu đeo khi cần nhìn xa như lái xe hay nhìn bảng; dưới mức đó có người vẫn nhìn ổn. Quyết định đeo hay chưa, đeo thường xuyên hay khi cần, thuộc buổi đo trực tiếp với khúc xạ viên."}},{"@type":"Question","name":"Bao lâu nên đi đo mắt lại một lần?","acceptedAnswer":{"@type":"Answer","text":"Người lớn có thị lực ổn định thường đo lại mỗi 12 tháng. Trẻ đang trong tuổi tăng độ nên đo thường xuyên hơn, khoảng 6 tháng hoặc theo lời dặn của nơi khám. Người mới đeo kính nên quay lại kiểm tra sau 2 đến 4 tuần."}},{"@type":"Question","name":"Đeo kính đúng độ có làm tăng độ không?","acceptedAnswer":{"@type":"Answer","text":"Đeo kính đúng độ là để nhìn rõ và đỡ phải căng mắt; nó không phải là nguyên nhân làm độ tăng hay giảm. Độ thay đổi theo tuổi và cơ địa. Nếu thấy độ đổi nhanh, hãy đi đo để cập nhật đơn."}},{"@type":"Question","name":"Đo mắt ở Manh Long Optical có mất phí không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đo mắt tại cửa hàng miễn phí, kể cả khi bạn chưa mua kính, và khám đo lại miễn phí trọn đời. Một lượt đo khoảng 20 đến 30 phút."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Khi nào cần đeo kính cận","item":"https://manhlongoptical.com/khi-nao-can-deo-kinh-can.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]}]}</script>
+</head>
+<body>
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/in/manhlong-optical-b89405283/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95C21.6 8.75 22 11.2 22 14.05V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21h-4V9Z"/></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://tiktok.com/@mlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › <a href="/tim-hieu.html">Tìm hiểu</a> › Khi nào cần đeo kính cận</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">HƯỚNG DẪN</p>
+<h1>Cận bao nhiêu độ thì đeo kính? Bao lâu nên đo mắt lại</h1>
+<p class="byline">Viết bởi <a href="/ve-alvin.html">Alvin</a> · Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội · Cập nhật 11/09/2026</p>
+<div class="takeaway"><strong>Tóm tắt:</strong> Không có một con số độ cố định bắt buộc mọi người đeo kính. Điều quyết định là bạn thấy khó khi nhìn ở đâu, làm việc gì, và buổi đo cho ra số nào. Nhiều người cận từ khoảng 1 độ bắt đầu đeo khi cần nhìn xa; dưới mức đó thì tuỳ người. Người lớn thị lực ổn định thường đo lại mỗi 12 tháng, trẻ đang tăng độ thì khoảng 6 tháng. Đo mắt tại cửa hàng miễn phí, kể cả khi chưa mua.</div>
+<h2>Cận bao nhiêu độ thì phải đeo kính?</h2>
+<p>Câu hỏi này không có một con số trả lời cho tất cả. Cùng một độ cận, người phải lái xe ban đêm sẽ thấy vướng sớm hơn người cả ngày ngồi trong phòng. Học sinh nhìn bảng, nhân viên nhìn màn hình xa, người hay đi đường lạ đều có ngưỡng chịu khác nhau.</p>
+<p>Điều nói được là: độ càng cao thì khoảng nhìn rõ càng ngắn lại, và tới lúc nào đó việc nheo mắt hay ghé sát không còn bù nổi. Còn đeo hay chưa, đeo cả ngày hay chỉ khi nhìn xa, là kết luận của buổi đo trực tiếp, không phải của một con số đọc trên mạng.</p>
+<h2>Các mốc độ thường gặp (tham khảo, không thay khám)</h2>
+<p>Đây là mô tả trải nghiệm quen thuộc, để bạn hình dung, không phải quy tắc y khoa:</p>
+<ul><li><strong>Dưới 1 độ:</strong> nhiều người vẫn đọc, đi lại bình thường, chỉ hơi nhoè khi nhìn xa trong điều kiện thiếu sáng. Có người chọn một cặp kính để dành khi lái xe hoặc vào rạp.</li><li><strong>Khoảng 1 đến 3 độ:</strong> nhìn xa bắt đầu khó rõ, biển báo và mặt người ở xa nhoè. Đây là nhóm hay bắt đầu đeo khi cần nhìn xa, và nhiều người thấy dễ chịu hơn khi đeo thường xuyên.</li><li><strong>Trên 3 độ:</strong> khoảng nhìn rõ ngắn, bỏ kính ra là khó sinh hoạt. Nhóm này thường đeo cả ngày.</li></ul>
+<p>Các mốc trên chỉ để tham khảo. Hai người cùng 2 độ có thể cần hai cách xử lý khác nhau vì độ loạn, chênh lệch giữa hai mắt và công việc khác nhau.</p>
+<h2>Đeo thường xuyên hay chỉ khi cần?</h2>
+<p>Với độ nhẹ, nhiều người chỉ đeo khi nhìn xa, còn đọc gần thì bỏ ra. Với độ cao hơn, đeo cả ngày thường dễ chịu hơn vì mắt đỡ phải liên tục điều tiết. Không có đáp án chung, và khúc xạ viên sẽ tư vấn theo đúng độ và nếp sinh hoạt của bạn.</p>
+<p>Một hiểu lầm hay gặp: sợ đeo kính làm mắt yếu đi hoặc tăng độ nhanh. Đeo kính đúng độ là để nhìn rõ và đỡ căng mắt; nó không phải nguyên nhân làm độ tăng hay giảm. Độ thay đổi theo tuổi và cơ địa. Nếu thấy độ đổi nhanh bất thường, hãy đi đo để cập nhật.</p>
+<h2>Bao lâu nên đo mắt lại?</h2>
+<p>Mốc chung nhiều người dùng:</p>
+<ul><li><strong>Người lớn, thị lực ổn định:</strong> khoảng 12 tháng một lần.</li><li><strong>Trẻ đang trong tuổi tăng độ:</strong> thường xuyên hơn, khoảng 6 tháng hoặc theo lời dặn của nơi khám.</li><li><strong>Người mới đeo kính lần đầu, hoặc mới đổi độ:</strong> quay lại kiểm tra sau 2 đến 4 tuần để chắc kính hợp.</li></ul>
+<p>Những mốc này là điểm khởi đầu, không phải lịch cứng. Nếu đơn kính của bạn đã hơn 12 tháng, nên đo lại trước khi cắt kính mới, vì độ có thể đã đổi.</p>
+<h2>Khi nào nên đo sớm hơn lịch?</h2>
+<p>Một vài dấu hiệu cho thấy nên đi đo, không cần đợi tới hẹn. Đây là lý do để đi kiểm tra, không phải kết luận bệnh:</p>
+<ul><li>Nhìn xa mờ dần, hay phải nheo mắt mới rõ.</li><li>Cuối ngày mỏi mắt, nhức đầu vùng trán hoặc thái dương sau khi nhìn màn hình lâu.</li><li>Ban đêm thấy quầng sáng hoặc tia toả quanh đèn xe, đèn đường.</li><li>Trẻ ngồi sát tivi, nghiêng đầu khi xem, hay chép bài sai vì nhìn bảng không rõ.</li></ul>
+<p>Riêng các dấu hiệu sau thì nên tới bệnh viện mắt ngay, không phải cửa hàng kính: nhìn mờ đột ngột, nhìn đôi mới xuất hiện, đau nhức mắt dữ dội, hoặc mắt vừa bị chấn thương.</p>
+<h2>Một lượt đo mắt ở cửa hàng gồm những gì?</h2>
+<p>Khúc xạ viên đo khúc xạ trên máy tự động, rồi thử lại bằng khung thử để bạn tự thấy mức nào nhìn dễ chịu nhất. Buổi đo kiểm tra cả hai mắt, độ loạn và trục, cùng khoảng đồng tử (PD) để sau này cắt kính đặt tâm tròng đúng. Một lượt khoảng 20 đến 30 phút.</p>
+<p>Đo xong bạn biết độ hiện tại và có thể chọn tròng theo độ đó. Nếu chưa rõ nên chọn chiết suất nào, đọc bài <a href="/chiet-suat-trong-kinh.html">chiết suất tròng kính chọn theo độ</a>. Muốn hiểu các con số trên tờ đơn, xem <a href="/cach-doc-don-kinh.html">cách đọc đơn kính</a>.</p>
+<h2>Câu hỏi thường gặp</h2>
+<div class="faq"><h3>Cận bao nhiêu độ thì phải đeo kính?</h3>
+<p>Không có một mốc độ cố định cho tất cả mọi người. Nhiều người cận từ khoảng 1 độ bắt đầu đeo khi cần nhìn xa như lái xe hay nhìn bảng; dưới mức đó có người vẫn nhìn ổn. Quyết định đeo hay chưa, đeo thường xuyên hay khi cần, thuộc buổi đo trực tiếp với khúc xạ viên.</p>
+<h3>Bao lâu nên đi đo mắt lại một lần?</h3>
+<p>Người lớn có thị lực ổn định thường đo lại mỗi 12 tháng. Trẻ đang trong tuổi tăng độ nên đo thường xuyên hơn, khoảng 6 tháng hoặc theo lời dặn của nơi khám. Người mới đeo kính nên quay lại kiểm tra sau 2 đến 4 tuần.</p>
+<h3>Đeo kính đúng độ có làm tăng độ không?</h3>
+<p>Đeo kính đúng độ là để nhìn rõ và đỡ phải căng mắt; nó không phải là nguyên nhân làm độ tăng hay giảm. Độ thay đổi theo tuổi và cơ địa. Nếu thấy độ đổi nhanh, hãy đi đo để cập nhật đơn.</p>
+<h3>Đo mắt ở Manh Long Optical có mất phí không?</h3>
+<p>Không. Đo mắt tại cửa hàng miễn phí, kể cả khi bạn chưa mua kính, và khám đo lại miễn phí trọn đời. Một lượt đo khoảng 20 đến 30 phút.</p>
+</div>
+<div class="note">Bài này là hướng dẫn tham khảo, không phải chẩn đoán và không thay cho buổi đo trực tiếp. Kính là thiết bị hỗ trợ thị lực, không làm giảm độ hay chữa khỏi cận thị. Nếu nhìn mờ đột ngột, nhìn đôi, đau nhức dữ dội hoặc mắt bị chấn thương, hãy tới bệnh viện mắt.</div>
+<div class="cta"><h2>Chưa chắc thì cứ đo, không mất phí</h2><p>Khúc xạ viên của cửa hàng đo trong khoảng 20 đến 30 phút, miễn phí kể cả khi bạn chưa mua kính. Đặt lịch qua Zalo hoặc gọi trước, mang theo kính đang đeo và đơn cũ nếu có.</p><p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Cửa Nam, Hà Nội<br>8:00 – 21:30, 7 ngày/tuần · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo đặt lịch đo mắt</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a></p></div>
+<aside class="author-box" aria-label="Tác giả">
+<p class="ab-label">Tác giả</p>
+<p class="ab-name"><a href="/ve-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
+<p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
+</aside>
+<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/cach-doc-don-kinh.html">Cách đọc đơn kính: SPH, CYL, AXIS, ADD, PD là gì</a></li><li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời</a></li><li><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: chọn theo độ cận</a></li><li><a href="/chon-kinh-cho-tre-em-can-thi.html">Chọn kính cho trẻ em cận thị</a></li><li><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại 147A Lê Duẩn</a></li></ul></nav>
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

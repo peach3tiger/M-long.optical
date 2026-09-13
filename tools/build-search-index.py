@@ -14,6 +14,7 @@ BO_QUA = {"404.html", "trang-chu-moi.html", "mang-long-optical-since-2000.html"}
 
 # Nhan hien thi ben canh ket qua
 NHAN = [
+    (r"^(thong-ke|so-lieu|tu-lieu)", "Tư liệu"),
     (r"^(trong-kinh|essilor|zeiss|varilux|crizal|transitions|photochromic|lens-coatings|blue-light|chiet-suat|so-sanh-trong|so-sanh-essilor|so-sanh-doi-mau|why-phones)", "Tròng kính"),
     (r"^(lookbook|cua-hang|gong-kinh|choosing-frames|chon-kinh-mat)", "Gọng kính"),
     (r"^(do-mat|cat-kinh|kinh-ram-can|kinh-mat-gan-day|uu-dai|khuyen-mai)", "Dịch vụ"),
@@ -43,6 +44,7 @@ THEM = {
     "kinh-ram-can.html": "kinh ram kinh mat co do polarized",
     "cach-doc-don-kinh.html": "sph cyl axis add pd doc don kinh",
     "uu-dai.html": "khuyen mai combo gia uu dai thang 9",
+    "thong-ke-can-thi-viet-nam-2026.html": "thong ke can thi ty le tat khuc xa hoc sinh viet nam who iapb so lieu nghien cuu 2050",
     "index.html": "trang chu kinh mat manh long 147a le duan cua nam",
     "cau-hoi-thuong-gap.html": "faq hoi dap bao hanh doi tra ship",
     "ve-alvin.html": "alvin dao quan ly cua hang",

@@ -1150,7 +1150,13 @@
       // (xem _pickDerivative ben duoi)
       let stored = this.id ? getSlot(this.id) : this._local;
       if (stored && stored.u && !/^data:image\//i.test(stored.u)) stored = null;
-      const srcAttr = this.getAttribute('src') || '';
+      // Sua 17/09/2026: bo qua src con nguyen placeholder cua template.
+      // Truoc day cac <image-slot src="{{ art.img }}"> trong cua-hang.html bi
+      // upgrade TRUOC khi dc-runtime gan du lieu, nen trinh duyet di tai dung
+      // chuoi "{{ art.img }}" va nhan 404. Do tren Chromium 17/09: 11 request
+      // 404 moi lan tai cua-hang.html. Coi nhu chua co anh, cho lan render sau.
+      const srcAttrRaw = this.getAttribute('src') || '';
+      const srcAttr = srcAttrRaw.indexOf('{{') === -1 ? srcAttrRaw : '';
       this._userUrl = (stored && stored.u) || null;
       const url = this._userUrl || srcAttr;
       // Don't clobber an in-flight reframe with a store-triggered re-render.

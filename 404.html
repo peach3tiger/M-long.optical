@@ -1,12 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex">
-<script>
-  sessionStorage.setItem("spa-redirect", location.pathname + location.search + location.hash);
-  location.replace("/");
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Không tìm thấy trang · Page not found | Manh Long Optical</title>
+<link rel="stylesheet" href="/vendor/fonts/fonts.css">
+<style>
+  :root{--navy:#22254F;--ink:#1B1D1F;--brass:#8A6A3B;--sand:#B7AB92;--paper:#F4F2ED;--muted:#55534E;--hair:#DFDACE}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .serif{font-family:'Noto Serif Display',Georgia,serif;font-weight:500}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  header{background:var(--navy);color:var(--paper);padding:18px 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .mark{font-size:20px;letter-spacing:.01em;color:var(--paper);text-decoration:none}
+  .mark small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);margin-left:8px}
+  .hours{font-size:12px;color:var(--sand)}
+  main{padding:56px 0 64px}
+  .kicker{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);margin:0 0 14px}
+  h1{font-size:clamp(28px,4.6vw,44px);line-height:1.18;margin:0 0 6px;max-width:20ch}
+  .en{font-size:clamp(17px,2.2vw,21px);color:var(--muted);font-style:italic;margin:0 0 22px}
+  p.lead{font-size:16px;max-width:60ch;margin:0 0 10px;color:var(--muted)}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;margin:36px 0 0;
+        border-top:1px solid var(--hair);padding-top:30px}
+  h2{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin:0 0 12px;font-family:Archivo,sans-serif;font-weight:600}
+  ul{list-style:none;margin:0;padding:0}
+  li{margin:0 0 9px}
+  a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--sand)}
+  a:hover{color:var(--brass);border-bottom-color:var(--brass)}
+  .home{display:inline-block;margin:26px 0 0;background:var(--brass);color:var(--paper);
+        padding:13px 26px;border:0;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+  .home:hover{color:var(--paper);background:var(--navy)}
+  footer{border-top:1px solid var(--hair);padding:22px 0 40px;font-size:13px;color:var(--muted)}
+  footer a{border-bottom:none;color:var(--muted)}
+</style>
 </head>
-<body></body>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="mark serif" href="/">Manh Long<small>Optical</small></a>
+    <span class="hours">147A Lê Duẩn, Cửa Nam, Hà Nội · 8:00 – 21:30</span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="kicker">Lỗi 404</p>
+    <h1 class="serif">Không tìm thấy trang này</h1>
+    <p class="en serif" lang="en">This page does not exist.</p>
+
+    <p class="lead">Đường dẫn bạn vừa mở không còn hoặc chưa bao giờ tồn tại. Các mục bên dưới dẫn tới những trang hay được tìm nhất.</p>
+    <p class="lead" lang="en">The address you opened has moved or never existed. The links below cover what people look for most.</p>
+
+    <div class="cols">
+      <div>
+        <h2>Tiếng Việt</h2>
+        <ul>
+          <li><a href="/cua-hang.html">Bộ sưu tập gọng kính</a></li>
+          <li><a href="/trong-kinh.html">Tròng kính: chọn loại nào, giá bao nhiêu</a></li>
+          <li><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay</a></li>
+          <li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời</a></li>
+          <li><a href="/uu-dai.html">Ưu đãi đang chạy</a></li>
+          <li><a href="/tim-hieu.html">Tìm hiểu về kính &amp; tròng kính</a></li>
+          <li><a href="/cau-hoi-thuong-gap.html">Câu hỏi thường gặp</a></li>
+        </ul>
+      </div>
+      <div lang="en">
+        <h2>English</h2>
+        <ul>
+          <li><a href="/en/">Optician in Hanoi</a></li>
+          <li><a href="/en/frames.html">Frames</a></li>
+          <li><a href="/en/lenses.html">Lenses</a></li>
+          <li><a href="/en/eye-test-hanoi.html">Free eye test</a></li>
+          <li><a href="/en/same-day-glasses-hanoi.html">Same day glasses</a></li>
+          <li><a href="/en/offers.html">Offers</a></li>
+          <li><a href="/en/faq.html">Questions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="home" href="/">Về trang chủ · Home</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Manh Long Optical · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · mở 8:00 – 21:30 tất cả các ngày ·
+    <a href="tel:+84777986999">0777 986 999</a>
+  </div>
+</footer>
+
+</body>
 </html>

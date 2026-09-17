@@ -1,0 +1,28 @@
+HƯỚNG DẪN UPLOAD LÊN GITHUB
+============================
+
+File zip này chứa TOÀN BỘ 102 file HTML của website manhlongoptical.com,
+đã được chèn sẵn đoạn mã Google Tag Manager (GTM-5GK37XNW) vào:
+  - <head> (càng cao càng tốt)
+  - ngay sau <body> (bản noscript)
+
+(1 file KHÔNG bị đụng vào: googlea08b0e6d179dfe6a.html — file xác minh
+Google Search Console, giữ nguyên để không ảnh hưởng việc xác minh domain.)
+
+CÁCH 1 — Dùng GitHub web (đơn giản nhất):
+1. Vào https://github.com/peach3tiger/M-long.optical
+2. Kéo-thả các file đã sửa vào đúng vị trí thư mục cũ (GitHub cho phép kéo
+   nhiều file/folder cùng lúc vào trang "Add file" > "Upload files").
+   Lưu ý: giữ đúng cấu trúc thư mục con "en/" như trong file zip.
+3. Viết commit message, ví dụ: "Add Google Tag Manager"
+4. Bấm "Commit changes" — GitHub Pages sẽ tự build lại sau ít phút.
+
+CÁCH 2 — Dùng GitHub Desktop (nếu anh đã clone repo về máy):
+1. Copy đè các file trong zip này vào thư mục repo đã clone trên máy.
+2. Mở GitHub Desktop, sẽ thấy 102 file thay đổi.
+3. Commit rồi Push lên.
+
+SAU KHI PUSH:
+- Vào Tag Manager > bấm nút "Test" trong hộp thoại cài đặt, nhập
+  https://manhlongoptical.com để kiểm tra tag đã chạy chưa.
+- Hoặc dùng Tag Assistant / chế độ Preview trong GTM để xác nhận.

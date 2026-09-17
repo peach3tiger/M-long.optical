@@ -1,0 +1,710 @@
+diff --git a/cach-doc-don-kinh.html b/cach-doc-don-kinh.html
+index f10e692..de61b61 100644
+--- a/cach-doc-don-kinh.html
++++ b/cach-doc-don-kinh.html
+@@ -193,7 +193,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p class="ab-name"><a href="/ve-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
+ <p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
+ </aside>
+-<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/khi-nao-can-deo-kinh-can.html">Cận bao nhiêu độ thì đeo kính? Bao lâu đo mắt lại</a></li><li><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: chọn theo độ cận</a></li><li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời</a></li><li><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại 147A Lê Duẩn</a></li><li><a href="/cau-hoi-thuong-gap.html">Câu hỏi thường gặp về kính mắt</a></li></ul></nav>
++<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/chat-lieu-trong-kinh.html">Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào</a></li><li><a href="/khi-nao-can-deo-kinh-can.html">Cận bao nhiêu độ thì đeo kính? Bao lâu đo mắt lại</a></li><li><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: chọn theo độ cận</a></li><li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời</a></li><li><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại 147A Lê Duẩn</a></li><li><a href="/cau-hoi-thuong-gap.html">Câu hỏi thường gặp về kính mắt</a></li></ul></nav>
+ </main>
+ <footer>
+   <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+diff --git a/chat-lieu-trong-kinh.html b/chat-lieu-trong-kinh.html
+new file mode 100644
+index 0000000..d97c943
+--- /dev/null
++++ b/chat-lieu-trong-kinh.html
+@@ -0,0 +1,262 @@
++<!DOCTYPE html>
++<html lang="vi">
++<head>
++<!-- Google Tag Manager -->
++<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
++new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
++j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
++'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
++})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
++<!-- End Google Tag Manager -->
++
++<meta charset="utf-8">
++<meta name="viewport" content="width=device-width, initial-scale=1">
++<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++  gtag('config', 'G-K2SSQSPKEZ');
++  gtag('config', 'AW-18143785526');
++
++  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
++  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
++  (function () {
++    function pageLang() {
++      try {
++        var q = new URLSearchParams(location.search).get('lang');
++        if (q === 'vi' || q === 'en') return q;
++        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
++      } catch (e) { return 'unknown'; }
++    }
++    document.addEventListener('click', function (e) {
++      var el = e.target;
++      if (!el || typeof el.closest !== 'function') return;
++      var a = el.closest('a[href]');
++      if (!a) return;
++      var href = a.getAttribute('href') || '';
++      var name = null;
++      if (href.indexOf('tel:') === 0) name = 'call_click';
++      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
++      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
++      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
++      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
++    }, true);
++  })();
++</script>
++<title>Chất liệu tròng kính: nhựa, chống bể, thuỷ tinh | Manh Long</title>
++<meta name="description" content="Chất liệu — không phải chiết suất — quyết định tròng bền, nhẹ, trong ra sao. So sánh nhựa thường, chống bể, thuỷ tinh tại Manh Long Optical.">
++<link rel="canonical" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
++<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
++<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/learn/lens-materials-explained.html">
++<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
++<meta property="og:type" content="article">
++<meta property="og:site_name" content="Manh Long Optical">
++<meta name="twitter:card" content="summary_large_image">
++<meta name="twitter:title" content="Chất liệu tròng kính: nhựa, chống bể, thuỷ tinh | Manh Long">
++<meta name="twitter:description" content="Chất liệu — không phải chiết suất — quyết định tròng bền, nhẹ, trong ra sao. So sánh nhựa thường, chống bể, thuỷ tinh tại Manh Long Optical.">
++<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
++<meta property="og:title" content="Chất liệu tròng kính: nhựa, chống bể, thuỷ tinh | Manh Long">
++<meta property="og:description" content="Chất liệu — không phải chiết suất — quyết định tròng bền, nhẹ, trong ra sao. So sánh nhựa thường, chống bể, thuỷ tinh tại Manh Long Optical.">
++<meta property="og:url" content="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
++<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
++<meta property="og:locale" content="vi_VN">
++<link rel="stylesheet" href="./vendor/fonts/fonts.css">
++<style>
++:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
++*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
++a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
++header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
++.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
++.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
++.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
++.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
++
++nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
++.langtog{display:inline-flex;align-items:center;gap:5px}
++.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
++nav .langtog a{color:var(--muted)}
++nav .langtog b{font-weight:700;color:var(--ink)}
++nav .langtog .sep{color:#B7AB92;font-weight:400}
++#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
++#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
++#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
++#langbar[hidden]{display:none}
++@media(max-width:700px){
++  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
++  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
++  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
++  .logo{flex:none;font-size:20px}
++  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
++}
++main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
++.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
++h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
++.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
++.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
++figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
++h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
++h3{font-size:17px;margin:28px 0 10px}
++p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
++.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
++th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
++.tnote{font-size:13px;color:var(--muted);margin:0 0 20px}
++.faq h3{font-size:16px;margin:20px 0 6px}.faq p{margin:0 0 14px}
++.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
++.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
++.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
++.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
++footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
++footer a{color:#B7AB92}
++.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
++.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
++.stickycta a:first-child{background:#8A6A3B}
++@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
++.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
++.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
++.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
++.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
++.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
++.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
++</style>
++<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/chat-lieu-trong-kinh.html#article","headline":"Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào","description":"Chiết suất chỉ nói tròng mỏng hay dày. Chất liệu — nhựa thường, chống bể (polycarbonate), thuỷ tinh — quyết định tròng bền, nhẹ, trong đến đâu.","image":"https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg","author":{"@type":"Person","@id":"https://manhlongoptical.com/ve-alvin.html#alvin","name":"Alvin Dao","alternateName":"Alvin","jobTitle":"Store Manager","url":"https://manhlongoptical.com/ve-alvin.html","worksFor":{"@id":"https://manhlongoptical.com/#localbusiness"}},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"},"datePublished":"2026-09-17T08:00:00+07:00","dateModified":"2026-09-17T08:00:00+07:00","articleSection":"Kiến thức tròng kính","inLanguage":"vi","mainEntityOfPage":{"@type":"WebPage","@id":"https://manhlongoptical.com/chat-lieu-trong-kinh.html"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/chat-lieu-trong-kinh.html#faq","mainEntity":[{"@type":"Question","name":"Chiết suất cao hơn có phải chất liệu tốt hơn không?","acceptedAnswer":{"@type":"Answer","text":"Không hẳn. Chiết suất chỉ cho biết tròng mỏng hay dày ở cùng một độ; chất liệu — nhựa tiêu chuẩn, chống bể (polycarbonate) hay công thức riêng của từng hãng — mới quyết định độ bền, độ nhẹ và độ trong (chỉ số Abbe) của tròng."}},{"@type":"Question","name":"Polycarbonate có nhìn kém hơn nhựa thường không?","acceptedAnswer":{"@type":"Answer","text":"Có một chút. Chỉ số Abbe của polycarbonate thấp hơn nhựa tiêu chuẩn (CR-39), nên ở rìa tròng dễ thấy viền màu nhẹ hơn. Đổi lại, polycarbonate chịu va đập tốt hơn nhiều lần, nên vẫn là lựa chọn ưu tiên cho trẻ em và người chơi thể thao."}},{"@type":"Question","name":"Manh Long Optical có bán tròng Trivex không?","acceptedAnswer":{"@type":"Answer","text":"Bảng giá hiện tại chưa niêm yết Trivex riêng. Nếu bạn cần loại này, hỏi trực tiếp tại quầy để được kiểm tra hàng có sẵn."}},{"@type":"Question","name":"Tròng thuỷ tinh có tốt hơn tròng nhựa không?","acceptedAnswer":{"@type":"Answer","text":"Nhìn trong hơn một chút nhưng nặng gần gấp đôi và dễ vỡ thành mảnh sắc khi va đập mạnh. Vì lý do an toàn, gần như không còn tiệm kính nào bán tròng thuỷ tinh, kể cả Manh Long Optical."}},{"@type":"Question","name":"Đơn kính của tôi có ghi prism, tôi cần làm gì?","acceptedAnswer":{"@type":"Answer","text":"Mang đơn kính đến cửa hàng. Kỹ thuật viên sẽ tư vấn tròng và gọng phù hợp để lắp đúng hướng đáy lăng kính và đúng lượng diop bác sĩ đã kê."}},{"@type":"Question","name":"Chất liệu tròng có làm giảm độ cận không?","acceptedAnswer":{"@type":"Answer","text":"Không. Chất liệu và chiết suất chỉ ảnh hưởng độ dày, độ bền và độ trong của tròng; độ cận, độ loạn được chỉnh bởi đúng đơn kính, không phải bởi chất liệu."}}]},{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/chat-lieu-trong-kinh.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tròng kính","item":"https://manhlongoptical.com/trong-kinh.html"},{"@type":"ListItem","position":3,"name":"Chất liệu tròng kính","item":"https://manhlongoptical.com/chat-lieu-trong-kinh.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://www.linkedin.com/company/143883407/","https://www.tiktok.com/@manhlong.optical","https://medium.com/@mlong.optical","https://zalo.me/0777986999"]}]}</script>
++<!-- Meta Pixel 1718493272777504 -->
++<script>
++!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
++fbq('init','1718493272777504');fbq('track','PageView');
++document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
++</script>
++<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
++<!-- End Meta Pixel -->
++</head>
++<body>
++<!-- Google Tag Manager (noscript) -->
++<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
++height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
++<!-- End Google Tag Manager (noscript) -->
++
++<!-- Dai goi y ngon ngu. CHI GOI Y, KHONG tu chuyen trang.
++     Trang nay DA co ban dich tieng Anh: /en/learn/lens-materials-explained.html -->
++<div id="langbar" hidden>
++  <a href="/en/learn/lens-materials-explained.html" hreflang="en" lang="en">Read this in English &#8594;</a>
++  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
++</div>
++<script>
++(function(){
++  var bar=document.getElementById("langbar"); if(!bar) return;
++  var KEY="ml-langbar-off";
++  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
++  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
++  if(l.indexOf("en")!==0) return;
++  bar.hidden=false;
++  var x=document.getElementById("langbarx");
++  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
++})();
++</script>
++<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
++<header>
++  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
++  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/learn/lens-materials-explained.html" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
++</header>
++<main>
++<p class="crumb"><a href="/">Trang chủ</a> › <a href="/trong-kinh.html">Tròng kính</a> › Chất liệu tròng kính</p>
++<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">TRÒNG KÍNH</p>
++<h1>Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào</h1>
++<p class="byline">Viết bởi <strong><a href="/ve-alvin.html">Alvin</a></strong> · Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội · Cập nhật 17/09/2026</p>
++
++<div class="takeaway"><strong>Tóm tắt:</strong> Chiết suất (1.56, 1.60, 1.67…) chỉ nói tròng mỏng hay dày ở cùng một độ — đó không phải tên chất liệu. Gần như toàn bộ tròng kính tại Manh Long Optical đều làm từ nhựa, không phải thuỷ tinh. Nhựa chống bể (polycarbonate) là lựa chọn riêng cho trẻ em và người chơi thể thao, hiện có ở dòng Essilor 1.59, giá 2.980.000đ một cặp. Bài này giải thích chất liệu, chỉ số Abbe (độ tán sắc) và tròng lăng kính — ba khái niệm ít được hỏi tới nhưng ảnh hưởng thật đến việc bạn nhìn qua tròng rõ hay mờ, nhẹ hay nặng.</div>
++
++<figure><img src="/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg" alt="Cửa hàng cắt kính Manh Long Optical, 147A Lê Duẩn, Hà Nội" loading="lazy" width="1200" height="675"><figcaption>Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội.</figcaption></figure>
++
++<p>Khi tư vấn, câu hỏi đầu tiên thường là "chiết suất bao nhiêu". Nhưng chiết suất chỉ là một con số quang học — nó không nói tròng đó làm từ gì, có dễ vỡ không, hay nhìn có bị viền màu ở rìa hay không. Ba thứ đó do <strong>chất liệu</strong> quyết định. Bài này đặt các chất liệu tròng kính cạnh nhau, cộng thêm hai khái niệm ít người hỏi: chỉ số Abbe và tròng lăng kính.</p>
++
++<h2 id="index-vs-material">Chiết suất và chất liệu là hai thứ khác nhau</h2>
++<p>Chiết suất là con số cho biết một vật liệu bẻ ánh sáng mạnh đến đâu; số càng cao, tròng càng mỏng ở cùng một độ. Nhưng "1.56" hay "1.67" không phải tên một loại nhựa cụ thể — mỗi mức chiết suất trên bảng giá thường là một công thức nhựa polymer riêng, đủ chuẩn để đạt đúng độ khúc xạ đó.</p>
++<p>Nói cách khác: hai cặp tròng cùng chiết suất 1.67 nhưng khác hãng vẫn có thể là hai công thức nhựa khác nhau, độ bền và độ trong khác nhau. Bài <a href="/chiet-suat-trong-kinh.html">chiết suất tròng kính</a> có bảng giá đầy đủ 7 mức nếu bạn cần so theo độ cận; bài này nói về phần "làm từ gì".</p>
++
++<h2 id="cr39">Nhựa tiêu chuẩn: điểm khởi đầu của tròng kính nhựa</h2>
++<p>Nhựa tiêu chuẩn (thường gọi theo tên hoá học CR-39) ra đời từ thập niên 1940, thay thế tròng thuỷ tinh trong ngành kính mắt dân dụng. Chiết suất của nó ở khoảng 1.50 — thấp so với các mức cao trên bảng giá hiện nay — nhưng chỉ số Abbe (độ trong, xem mục 6) thuộc nhóm cao nhất trong các loại nhựa.</p>
++<p>Phần lớn tròng "1.56" trở lên trên bảng giá của Manh Long Optical là các công thức nhựa polymer cải tiến từ nền tảng này, được điều chỉnh để đạt chiết suất cao hơn — không phải CR-39 nguyên bản. Càng lên chiết suất cao, công thức nhựa càng đặc biệt, và thường càng đắt.</p>
++
++<h2 id="polycarbonate">Nhựa chống bể (polycarbonate): ai thực sự cần</h2>
++<p>Polycarbonate là loại nhựa chịu va đập cao hơn nhựa thường nhiều lần — cùng loại vật liệu dùng làm kính bảo hộ lao động và kính chắn gió máy bay nhỏ. Nó cũng nhẹ hơn, nên phù hợp với người đeo kính cả ngày.</p>
++<p>Manh Long Optical hiện có polycarbonate ở chiết suất 1.59, dòng Essilor, giá 2.980.000đ một cặp (giá tháng 9/2026, chưa gồm gọng). Đây là lựa chọn ưu tiên cho trẻ em hiếu động, người chơi thể thao, hoặc ai làm công việc dễ va chạm mạnh vào mặt kính.</p>
++<p>Đánh đổi: chỉ số Abbe của polycarbonate thấp hơn nhựa tiêu chuẩn, nên ở rìa tròng — nhất là gọng to hoặc độ cao — đôi khi thấy viền màu nhẹ hơn tròng CR-39. Với phần lớn người dùng, mức chênh này khó nhận ra bằng mắt thường; đổi lại là một tròng khó vỡ hơn hẳn.</p>
++
++<h2 id="trivex">Trivex: có nhưng chưa phổ biến tại Việt Nam</h2>
++<p>Trivex là vật liệu ra đời đầu những năm 2000, chịu va đập gần bằng polycarbonate nhưng có chỉ số Abbe cao hơn — nghĩa là ít viền màu hơn ở rìa tròng — và nhẹ hơn một chút.</p>
++<p>Bảng giá hiện tại của Manh Long Optical chưa niêm yết Trivex như một dòng riêng. Nếu bạn cần loại này, cách chắc chắn nhất là hỏi trực tiếp tại quầy để kỹ thuật viên kiểm tra hàng các hãng đang có, thay vì tự đoán.</p>
++
++<h2 id="glass">Thuỷ tinh: vì sao gần như không còn ai dùng</h2>
++<p>Tròng thuỷ tinh có chiết suất tự nhiên cao và chỉ số Abbe cao, cho hình ảnh rất trong. Nhưng nó nặng gần gấp đôi tròng nhựa cùng kích thước, và khi vỡ do va đập mạnh thường vỡ thành mảnh sắc — rủi ro thật cho mắt.</p>
++<p>Vì lý do an toàn đó, gần như mọi tiệm kính hiện nay, kể cả Manh Long Optical, không còn bán tròng thuỷ tinh cho kính gọng đeo hằng ngày.</p>
++
++<h2 id="abbe">Chỉ số Abbe: con số ít người hỏi nhưng ảnh hưởng đến độ nét</h2>
++<p>Chỉ số Abbe đo mức độ một vật liệu bẻ các màu ánh sáng khác nhau lệch nhau bao nhiêu. Chỉ số càng thấp, ánh sáng trắng càng dễ bị tách màu khi đi qua rìa tròng, tạo viền màu mờ (thường ngả tím hoặc xanh) quanh vật thể — rõ nhất ở gọng to, độ cận cao, hoặc nhìn vật có độ tương phản mạnh như chữ đen trên nền trắng.</p>
++<p>Có một đánh đổi thường gặp: tròng chiết suất càng cao (càng mỏng) thường có chỉ số Abbe càng thấp. Đây không phải quy luật tuyệt đối — mỗi hãng có công thức riêng, và lớp phủ chống phản quang cũng giúp giảm bớt viền màu nhìn thấy — nhưng là lý do "chọn chiết suất cao nhất có thể" không phải lúc nào cũng là lựa chọn nhìn rõ nhất, nhất là với người độ thấp không thực sự cần tròng siêu mỏng.</p>
++
++<h2 id="prism">Tròng lăng kính (prism): dùng khi nào</h2>
++<p>Tròng lăng kính là tròng được mài thêm một lượng lăng kính để bẻ hướng ánh sáng trước khi vào mắt. Bác sĩ nhãn khoa kê loại này khi hai mắt không nhìn thẳng trục với nhau — ví dụ lé nhẹ hoặc song thị — để cả hai mắt cùng nhận đúng một điểm ảnh, giảm nhìn đôi hoặc mỏi mắt khi hai mắt phải tự điều chỉnh.</p>
++<p>Lượng lăng kính ghi trên đơn kính bằng đơn vị diop lăng kính, kèm hướng đáy lăng kính (base up/down/in/out). Đây là chỉ định y tế, không phải lựa chọn thẩm mỹ hay nâng cấp thông thường. Nếu đơn kính của bạn có giá trị prism, mang đơn đến Manh Long Optical — kỹ thuật viên sẽ tư vấn tròng và gọng phù hợp để lắp đúng.</p>
++
++<h2 id="sph-cyl">Cầu (SPH) và trụ (CYL): tròng cũng phải sửa đúng dạng lệch</h2>
++<p>Ngoài chất liệu, tròng còn được mài theo hai dạng chỉnh khác nhau: mặt cầu bẻ ánh sáng đều mọi hướng, dùng cho cận thị và viễn thị (ghi ở cột SPH trên đơn kính); mặt trụ chỉ bẻ ánh sáng theo một trục, dùng riêng cho loạn thị (ghi ở cột CYL và AXIS). Hai chỉ số này không liên quan đến chất liệu hay chiết suất — chúng nói tròng phải cong đúng dạng nào để ảnh hội tụ đúng trên võng mạc. Cách đọc từng cột nằm trong bài <a href="/cach-doc-don-kinh.html">cách đọc đơn kính</a>.</p>
++
++<h2 id="chon-sao">Vậy nên chọn chất liệu nào</h2>
++<p>Bảng dưới gom lại theo nhu cầu, để bạn có hướng trước khi ra quầy — cửa hàng vẫn sẽ tư vấn lại theo đúng đơn đo của bạn.</p>
++<div class="tablewrap"><table>
++<tr><th>Nhu cầu</th><th>Nên xem chất liệu nào</th><th>Vì sao</th></tr>
++<tr><td>Trẻ em, người chơi thể thao, hay va chạm</td><td>Nhựa chống bể (polycarbonate)</td><td>Chịu va đập tốt hơn nhiều lần, nhẹ</td></tr>
++<tr><td>Đeo hằng ngày, ít va chạm mạnh, ưu tiên nhìn trong</td><td>Nhựa tiêu chuẩn / nhựa chiết suất vừa (1.56–1.67)</td><td>Chỉ số Abbe cao hơn, giá dễ chịu hơn</td></tr>
++<tr><td>Độ cận cao, muốn tròng mỏng và nhẹ trên gọng</td><td>Nhựa chiết suất cao (1.70–1.76)</td><td>Mỏng hơn nhiều so với chiết suất thấp cùng độ — xem <a href="/chiet-suat-trong-kinh.html">bảng giá theo chiết suất</a></td></tr>
++<tr><td>Đơn kính có chỉ định prism từ bác sĩ</td><td>Theo tư vấn kỹ thuật viên tại quầy</td><td>Cần đo và mài riêng theo đúng hướng, đúng lượng diop</td></tr>
++</table></div>
++
++<h2 id="faq">Câu hỏi thường gặp</h2>
++<div class="faq">
++<h3>Chiết suất cao hơn có phải chất liệu tốt hơn không?</h3>
++<p>Không hẳn. Chiết suất chỉ cho biết tròng mỏng hay dày ở cùng một độ; chất liệu — nhựa tiêu chuẩn, chống bể (polycarbonate) hay công thức riêng của từng hãng — mới quyết định độ bền, độ nhẹ và độ trong (chỉ số Abbe) của tròng.</p>
++<h3>Polycarbonate có nhìn kém hơn nhựa thường không?</h3>
++<p>Có một chút. Chỉ số Abbe của polycarbonate thấp hơn nhựa tiêu chuẩn (CR-39), nên ở rìa tròng dễ thấy viền màu nhẹ hơn. Đổi lại, polycarbonate chịu va đập tốt hơn nhiều lần, nên vẫn là lựa chọn ưu tiên cho trẻ em và người chơi thể thao.</p>
++<h3>Manh Long Optical có bán tròng Trivex không?</h3>
++<p>Bảng giá hiện tại chưa niêm yết Trivex riêng. Nếu bạn cần loại này, hỏi trực tiếp tại quầy để được kiểm tra hàng có sẵn.</p>
++<h3>Tròng thuỷ tinh có tốt hơn tròng nhựa không?</h3>
++<p>Nhìn trong hơn một chút nhưng nặng gần gấp đôi và dễ vỡ thành mảnh sắc khi va đập mạnh. Vì lý do an toàn, gần như không còn tiệm kính nào bán tròng thuỷ tinh, kể cả Manh Long Optical.</p>
++<h3>Đơn kính của tôi có ghi prism, tôi cần làm gì?</h3>
++<p>Mang đơn kính đến cửa hàng. Kỹ thuật viên sẽ tư vấn tròng và gọng phù hợp để lắp đúng hướng đáy lăng kính và đúng lượng diop bác sĩ đã kê.</p>
++<h3>Chất liệu tròng có làm giảm độ cận không?</h3>
++<p>Không. Chất liệu và chiết suất chỉ ảnh hưởng độ dày, độ bền và độ trong của tròng; độ cận, độ loạn được chỉnh bởi đúng đơn kính, không phải bởi chất liệu.</p>
++</div>
++
++<div class="note">Chất liệu và chiết suất không thay đổi độ cận, độ loạn hay khả năng nhìn rõ — điều đó phụ thuộc vào đơn kính đo đúng. Nếu nhìn mờ đột ngột, nhìn đôi, hoặc đau nhức mắt, hãy đến cơ sở y tế chuyên khoa mắt.</div>
++
++<div class="cta"><h2>Không chắc chọn chất liệu nào? Đo trước, quyết định sau</h2><p>Khúc xạ viên tại Manh Long Optical đo mắt miễn phí 20–30 phút, kể cả khi bạn chưa mua kính, rồi mới tư vấn đúng chất liệu và chiết suất theo độ và nhu cầu thật của bạn.</p>
++<p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Cửa Nam, Hà Nội<br>8:00 – 21:30, 7 ngày/tuần · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo đặt lịch đo mắt</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a></p></div>
++
++<aside class="author-box" aria-label="Tác giả">
++<p class="ab-label">Tác giả</p>
++<p class="ab-name"><a href="/ve-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
++<p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
++</aside>
++
++<nav class="related"><h2>Đọc tiếp</h2><ul>
++<li><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: 1.56 đến 1.76, chọn mức nào cho độ cận của bạn</a></li>
++<li><a href="/trong-kinh.html">Tròng kính: bắt đầu từ cách bạn muốn nhìn</a></li>
++<li><a href="/so-sanh-trong-kinh-theo-hang.html">So sánh tròng kính 5 hãng: Essilor, ZEISS, Tokai, Chemi, Elements</a></li>
++<li><a href="/lens-coatings-explained.html">Chống phản quang, lọc ánh sáng xanh, chống UV: Lớp phủ nào làm gì</a></li>
++<li><a href="/cach-doc-don-kinh.html">Cách đọc đơn kính: SPH, CYL, AXIS, ADD, PD là gì</a></li>
++<li><a href="/so-sanh-doi-mau-polarized.html">So sánh tròng kính đổi màu và tròng polarized</a></li>
++</ul></nav>
++</main>
++<footer>
++  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
++  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
++</footer>
++<div class="stickycta">
++  <a href="tel:+84777986999">GỌI NGAY</a>
++  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
++  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
++</div>
++</body>
++</html>
+diff --git a/chiet-suat-trong-kinh.html b/chiet-suat-trong-kinh.html
+index a95dfd2..8e1e0ab 100644
+--- a/chiet-suat-trong-kinh.html
++++ b/chiet-suat-trong-kinh.html
+@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
+ </aside>
+ 
+-<nav class="related"><h2>Đọc tiếp</h2><ul>
++<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/chat-lieu-trong-kinh.html">Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào</a></li>
+ <li><a href="/so-sanh-trong-kinh-theo-hang.html">So sánh tròng kính các hãng: Essilor, ZEISS, Tokai, Chemi, Elements</a></li>
+ <li><a href="/trong-kinh-chemi.html">Tròng kính Chemi: tròng có sẵn và tròng đánh</a></li>
+ <li><a href="/trong-kinh-tokai.html">Tròng kính Tokai: chiết suất 1.70, 1.76 và tròng Lutina</a></li>
+diff --git a/en/learn/how-to-read-your-prescription.html b/en/learn/how-to-read-your-prescription.html
+index a428946..7453c74 100644
+--- a/en/learn/how-to-read-your-prescription.html
++++ b/en/learn/how-to-read-your-prescription.html
+@@ -196,7 +196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p>Manages Manh Long Optical at 147A Le Duan, Cua Nam, Hanoi. Five years in the optical trade. <a href="/en/about-alvin.html">About Alvin</a></p>
+ </aside>
+ 
+-<nav class="related"><h2>Also here</h2><ul><li><a href="/en/eye-test-hanoi.html">Free Eye Test in Hanoi</a></li><li><a href="/en/learn/essilor-stellest-myopia-control.html">Essilor Stellest Myopia Control Lenses for Children</a></li><li><a href="/khi-nao-can-deo-kinh-can.html">How much myopia before you need glasses (Vietnamese)</a></li><li><a href="/cat-kinh-can-lay-ngay.html">Same-day prescription glasses (Vietnamese)</a></li></ul></nav>
++<nav class="related"><h2>Also here</h2><ul><li><a href="/en/learn/lens-materials-explained.html">Lens Materials: Standard Plastic, Polycarbonate and Glass Compared</a></li><li><a href="/en/eye-test-hanoi.html">Free Eye Test in Hanoi</a></li><li><a href="/en/learn/essilor-stellest-myopia-control.html">Essilor Stellest Myopia Control Lenses for Children</a></li><li><a href="/khi-nao-can-deo-kinh-can.html">How much myopia before you need glasses (Vietnamese)</a></li><li><a href="/cat-kinh-can-lay-ngay.html">Same-day prescription glasses (Vietnamese)</a></li></ul></nav>
+ </main>
+ <footer>
+   <p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam, Hanoi</p>
+diff --git a/en/learn/index.html b/en/learn/index.html
+index c82a43c..47d4352 100644
+--- a/en/learn/index.html
++++ b/en/learn/index.html
+@@ -141,7 +141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <h1>Learn</h1>
+ <p class="byline">Plain-English guides on lenses, coatings and eye health, written by the Manh Long Optical team, 147A Le Duan, Cua Nam, Hanoi.</p>
+ 
+-<div class="listing"><h3 class="grouphead" id="lenses">Lenses</h3><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-stellest-myopia-control.html">Essilor Stellest: Myopia Control Lenses for Children</a></h2><p>Stellest 1.59 Airwear for ages 6 to 18: 7,200,000d a pair, how H.A.L.T. works, what the 67% figure means, and when you don't need it yet.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-eyezen-computer-lenses.html">Essilor Eyezen: Lenses for Heavy Screen Use</a></h2><p>Essilor Eyezen single-vision lenses for people on screens all day: light near-vision support, blue-violet light filtering. Prices from 1,780,000d a pair.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-authentic-check.html">How to Spot a Genuine Essilor Lens</a></h2><p>Essilor is one of the most counterfeited lens brands, precisely because it's so well known. Five checks: packaging, hidden logo, warranty card, coating feel, authorised dealer.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/varilux-comfort-max.html">Varilux Comfort Max: All-Day Comfort Progressives</a></h2><p>Essilor's comfort-leaning progressive lens. The difference shows up in your neck, not on a vision chart.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/photochromic-vs-polarized-sunglasses.html">Photochromic vs Polarized Lenses: Which Should You Choose?</a></h2><p>Polarized is sunglasses-only at this shop, photochromic can carry a prescription. Real prices from 350,000d, compared in detail at Manh Long Optical.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/blue-light-vs-uv-protection.html">Blue-Light Filtering and UV Protection: What's the Difference</a></h2><p>These two are usually sold as one line item, but they block two different wavebands from two different sources. How to tell them apart, and which one you actually need.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/lens-coatings-explained.html">Anti-Reflective, Anti-Scratch, Hydrophobic: What Each Lens Coating Does</a></h2><p>A clear lens today is almost never just glass or plastic. What each coating actually does, and which ones are worth paying for.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/varilux-physio-extensee.html">Varilux Physio Extensee Review: Worth the Upgrade?</a></h2><p>Essilor's higher-tier progressive design, built around a wider near-vision zone. Where it actually helps, and where it doesn't.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-lenses.html">Essilor Lenses: Where Your Money Goes</a></h2><p>Varilux, Crizal, Eyezen, Transitions — Essilor splits its lineup by the problem each line solves, not by price tier. What does each one actually do?</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-transitions-price.html">Essilor Transitions Lenses: How Much Do They Cost?</a></h2><p>A pair that's clear indoors and dark outdoors. What Gen S actually changed, and what to ask before buying.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/transitions-gen-s-advantages.html">What's Better About Essilor Transitions Gen S</a></h2><p>Speed, color range, protection, optics, durability — what the 2024 generation actually improved, and what that means on your own face.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/photochromic-progressive-lenses.html">Photochromic Progressive Lenses: Two Jobs in One Lens</a></h2><p>One lens for every distance that also darkens in the sun and clears back indoors. How Essilor Transitions and Zeiss PhotoFusion X compare, and what to check before buying.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/zeiss-lenses.html">Zeiss Progressive Lenses: Sharp Vision at Every Distance</a></h2><p>One lens for far, intermediate and near vision, with no visible dividing line and no switching glasses. What makes Zeiss progressives different, and which line to pick.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/zeiss-smartlife-individual.html">Zeiss SmartLife Individual: A Lens Made to Measure for You</a></h2><p>SmartLife Individual is Zeiss's most personalized lens line — built around your own face, frame and viewing habits, not an average number.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/zeiss-uvprotect.html">Zeiss UVProtect: Blocking UV Up to 400 nm on a Clear Lens</a></h2><p>The 20 nanometer gap most clear lenses leave open, and how Zeiss closes it.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/chemi-lenses.html">Chemi Lenses: Stock or Custom-Ground, A-ONE or A-PLUS</a></h2><p>Chemi lenses: stock lenses cut same-day, custom-ground lenses take 10-15 days and cost 2.6 to 6.7 times more. September 2026 prices, 147A Le Duan, 0777 986 999.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/tokai-lenses.html">Tokai Lenses: Index 1.70, 1.76 and the Lutina Lens's 400-420 nm Cut</a></h2><p>Tokai lenses in Hanoi: 1.60, Lutina 1.67, 1.70 and 1.76, from 1,200,000 to 9,300,000 VND per pair. Lutina cuts the 400-420 nm band per Tokai's own claim. 0777 986 999.</p></article><h3 class="grouphead" id="coatings">Lens Coatings</h3><article><p class="cat">COATINGS</p><h2><a href="/en/learn/crizal-easy-pro.html">Crizal Easy Pro: What It Adds Over a Basic Coating</a></h2><p>Crizal Easy Pro: a real step up from a basic coating, not the top-tier price.</p></article><article><p class="cat">COATINGS</p><h2><a href="/en/learn/crizal-natural-look.html">Crizal Natural Look: 360-Degree Anti-Glare Coating</a></h2><p>Crizal Natural Look cuts reflections from every angle, not just head-on. What that means for photos, night driving and everyday wear.</p></article><h3 class="grouphead" id="guide">Buying Guides</h3><article><p class="cat">GUIDE</p><h2><a href="/en/learn/how-to-read-your-prescription.html">How to Read a Glasses Prescription: SPH, CYL, AXIS, ADD, PD</a></h2><p>How to read a glasses prescription: what OD/OS, Sphere (SPH), Cylinder (CYL), Axis, ADD and PD mean, what plus and minus signs mean, with a worked example.</p></article><article><p class="cat">GUIDE</p><h2><a href="/en/learn/contacts-vs-glasses.html">Contact Lenses or Glasses: Which Should You Choose?</a></h2><p>Both correct the same prescription, but comfort, lifestyle and eye health tip the scale differently for each person.</p></article><article><p class="cat">GUIDE</p><h2><a href="/en/learn/how-to-choose-glasses-that-fit.html">How to Choose Glasses That Actually Fit</a></h2><p>How to pick a frame for your face shape, the right lens index for your prescription, and the order to do an eye test in. Full guide from Manh Long Optical.</p></article><h3 class="grouphead" id="eye-health">Eye Health</h3><article><p class="cat">EYE HEALTH</p><h2><a href="/en/learn/astigmatism-night-vision.html">Astigmatism and Night Glare: Why Lights Look Worse After Dark</a></h2><p>Halos and starbursts around headlights and streetlights are a familiar sign of uncorrected astigmatism. Why it happens, and how lenses fix it.</p></article><article><p class="cat">EYE HEALTH</p><h2><a href="/en/learn/when-do-you-need-glasses.html">How Nearsighted Do You Need to Be Before You Need Glasses?</a></h2><p>There's no single diopter cutoff. What actually decides it is whether blur is affecting your daily life, not a number on a prescription.</p></article><h3 class="grouphead" id="children">Children's Eyewear</h3><article><p class="cat">CHILDREN</p><h2><a href="/en/learn/choosing-glasses-for-nearsighted-children.html">Choosing Glasses for Nearsighted Children</a></h2><p>Signs of nearsightedness in children, how often to test their eyes, and choosing a frame that survives a hyperactive kid. Free eye tests for children.</p></article><h3 class="grouphead" id="style">Style &amp; Fit</h3><article><p class="cat">STYLE</p><h2><a href="/en/learn/choosing-frames-face-shape.html">Choosing Frames That Suit Your Face Shape</a></h2><p>The old rule still holds: a frame should offset your face, not repeat it. How to read your own face shape before you go try frames on.</p></article><h3 class="grouphead" id="care">Care &amp; Maintenance</h3><article><p class="cat">CARE</p><h2><a href="/en/learn/caring-for-your-glasses.html">How to Clean and Care for Your Glasses the Right Way</a></h2><p>Most scratches and loose hinges come from a few very small daily habits. Here's what to change.</p></article><h3 class="grouphead" id="data">Data &amp; Research</h3><article><p class="cat">DATA</p><h2><a href="/en/learn/myopia-statistics-vietnam-2026.html">Myopia and refractive error in Vietnam: what the studies say (2026)</a></h2><p>Sourced figures from WHO, IAPB, Ophthalmology, PLoS One and Vietnamese journals, nine studies side by side, and why their numbers disagree. Every figure links to its publisher.</p></article><h3 class="grouphead" id="trivia">Fun Facts</h3><article><p class="cat">TRIVIA</p><h2><a href="/en/learn/why-phones-use-zeiss-lenses.html">Why Do Phone Makers Use Zeiss Lenses?</a></h2><p>Zeiss shows up on camera bumps from Nokia to Vivo. What the badge actually means, and what it has in common with the lenses in your glasses.</p></article><h3 class="grouphead" id="about">About Manh Long Optical</h3><article><p class="cat">ABOUT</p><h2><a href="/en/learn/manh-long-optical-since-2000.html">Manh Long Optical: 25 Years of Frames, Wholesale and Retail, Lens Partner to Essilor, Zeiss, Nikon</a></h2><p>25 years supplying frames wholesale and retail, a partner of Essilor, Zeiss and Nikon lenses — contact lenses, progressives to single-vision, specialty lenses, and modern fitting equipment.</p></article><article><p class="cat">ABOUT</p><h2><a href="/en/learn/why-choose-manh-long-optical.html">Why Do Many Customers Choose Manh Long Optical?</a></h2><p>5 criteria for a trustworthy optical shop: eye testing, product range, price, aftercare, real reviews. How Manh Long Optical measures up, including what it hasn't solved yet.</p></article></div>
++<div class="listing"><h3 class="grouphead" id="lenses">Lenses</h3><article><p class="cat">LENSES</p><h2><a href="/en/learn/lens-materials-explained.html">Lens Materials: Standard Plastic, Polycarbonate and Glass Compared</a></h2><p>Index only tells you thin or thick. Material — standard plastic, impact-resistant polycarbonate, glass — decides how durable, light and clear a lens actually is.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-stellest-myopia-control.html">Essilor Stellest: Myopia Control Lenses for Children</a></h2><p>Stellest 1.59 Airwear for ages 6 to 18: 7,200,000d a pair, how H.A.L.T. works, what the 67% figure means, and when you don't need it yet.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-eyezen-computer-lenses.html">Essilor Eyezen: Lenses for Heavy Screen Use</a></h2><p>Essilor Eyezen single-vision lenses for people on screens all day: light near-vision support, blue-violet light filtering. Prices from 1,780,000d a pair.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-authentic-check.html">How to Spot a Genuine Essilor Lens</a></h2><p>Essilor is one of the most counterfeited lens brands, precisely because it's so well known. Five checks: packaging, hidden logo, warranty card, coating feel, authorised dealer.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/varilux-comfort-max.html">Varilux Comfort Max: All-Day Comfort Progressives</a></h2><p>Essilor's comfort-leaning progressive lens. The difference shows up in your neck, not on a vision chart.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/photochromic-vs-polarized-sunglasses.html">Photochromic vs Polarized Lenses: Which Should You Choose?</a></h2><p>Polarized is sunglasses-only at this shop, photochromic can carry a prescription. Real prices from 350,000d, compared in detail at Manh Long Optical.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/blue-light-vs-uv-protection.html">Blue-Light Filtering and UV Protection: What's the Difference</a></h2><p>These two are usually sold as one line item, but they block two different wavebands from two different sources. How to tell them apart, and which one you actually need.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/lens-coatings-explained.html">Anti-Reflective, Anti-Scratch, Hydrophobic: What Each Lens Coating Does</a></h2><p>A clear lens today is almost never just glass or plastic. What each coating actually does, and which ones are worth paying for.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/varilux-physio-extensee.html">Varilux Physio Extensee Review: Worth the Upgrade?</a></h2><p>Essilor's higher-tier progressive design, built around a wider near-vision zone. Where it actually helps, and where it doesn't.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-lenses.html">Essilor Lenses: Where Your Money Goes</a></h2><p>Varilux, Crizal, Eyezen, Transitions — Essilor splits its lineup by the problem each line solves, not by price tier. What does each one actually do?</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/essilor-transitions-price.html">Essilor Transitions Lenses: How Much Do They Cost?</a></h2><p>A pair that's clear indoors and dark outdoors. What Gen S actually changed, and what to ask before buying.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/transitions-gen-s-advantages.html">What's Better About Essilor Transitions Gen S</a></h2><p>Speed, color range, protection, optics, durability — what the 2024 generation actually improved, and what that means on your own face.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/photochromic-progressive-lenses.html">Photochromic Progressive Lenses: Two Jobs in One Lens</a></h2><p>One lens for every distance that also darkens in the sun and clears back indoors. How Essilor Transitions and Zeiss PhotoFusion X compare, and what to check before buying.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/zeiss-lenses.html">Zeiss Progressive Lenses: Sharp Vision at Every Distance</a></h2><p>One lens for far, intermediate and near vision, with no visible dividing line and no switching glasses. What makes Zeiss progressives different, and which line to pick.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/zeiss-smartlife-individual.html">Zeiss SmartLife Individual: A Lens Made to Measure for You</a></h2><p>SmartLife Individual is Zeiss's most personalized lens line — built around your own face, frame and viewing habits, not an average number.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/zeiss-uvprotect.html">Zeiss UVProtect: Blocking UV Up to 400 nm on a Clear Lens</a></h2><p>The 20 nanometer gap most clear lenses leave open, and how Zeiss closes it.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/chemi-lenses.html">Chemi Lenses: Stock or Custom-Ground, A-ONE or A-PLUS</a></h2><p>Chemi lenses: stock lenses cut same-day, custom-ground lenses take 10-15 days and cost 2.6 to 6.7 times more. September 2026 prices, 147A Le Duan, 0777 986 999.</p></article><article><p class="cat">LENSES</p><h2><a href="/en/learn/tokai-lenses.html">Tokai Lenses: Index 1.70, 1.76 and the Lutina Lens's 400-420 nm Cut</a></h2><p>Tokai lenses in Hanoi: 1.60, Lutina 1.67, 1.70 and 1.76, from 1,200,000 to 9,300,000 VND per pair. Lutina cuts the 400-420 nm band per Tokai's own claim. 0777 986 999.</p></article><h3 class="grouphead" id="coatings">Lens Coatings</h3><article><p class="cat">COATINGS</p><h2><a href="/en/learn/crizal-easy-pro.html">Crizal Easy Pro: What It Adds Over a Basic Coating</a></h2><p>Crizal Easy Pro: a real step up from a basic coating, not the top-tier price.</p></article><article><p class="cat">COATINGS</p><h2><a href="/en/learn/crizal-natural-look.html">Crizal Natural Look: 360-Degree Anti-Glare Coating</a></h2><p>Crizal Natural Look cuts reflections from every angle, not just head-on. What that means for photos, night driving and everyday wear.</p></article><h3 class="grouphead" id="guide">Buying Guides</h3><article><p class="cat">GUIDE</p><h2><a href="/en/learn/how-to-read-your-prescription.html">How to Read a Glasses Prescription: SPH, CYL, AXIS, ADD, PD</a></h2><p>How to read a glasses prescription: what OD/OS, Sphere (SPH), Cylinder (CYL), Axis, ADD and PD mean, what plus and minus signs mean, with a worked example.</p></article><article><p class="cat">GUIDE</p><h2><a href="/en/learn/contacts-vs-glasses.html">Contact Lenses or Glasses: Which Should You Choose?</a></h2><p>Both correct the same prescription, but comfort, lifestyle and eye health tip the scale differently for each person.</p></article><article><p class="cat">GUIDE</p><h2><a href="/en/learn/how-to-choose-glasses-that-fit.html">How to Choose Glasses That Actually Fit</a></h2><p>How to pick a frame for your face shape, the right lens index for your prescription, and the order to do an eye test in. Full guide from Manh Long Optical.</p></article><h3 class="grouphead" id="eye-health">Eye Health</h3><article><p class="cat">EYE HEALTH</p><h2><a href="/en/learn/astigmatism-night-vision.html">Astigmatism and Night Glare: Why Lights Look Worse After Dark</a></h2><p>Halos and starbursts around headlights and streetlights are a familiar sign of uncorrected astigmatism. Why it happens, and how lenses fix it.</p></article><article><p class="cat">EYE HEALTH</p><h2><a href="/en/learn/when-do-you-need-glasses.html">How Nearsighted Do You Need to Be Before You Need Glasses?</a></h2><p>There's no single diopter cutoff. What actually decides it is whether blur is affecting your daily life, not a number on a prescription.</p></article><h3 class="grouphead" id="children">Children's Eyewear</h3><article><p class="cat">CHILDREN</p><h2><a href="/en/learn/choosing-glasses-for-nearsighted-children.html">Choosing Glasses for Nearsighted Children</a></h2><p>Signs of nearsightedness in children, how often to test their eyes, and choosing a frame that survives a hyperactive kid. Free eye tests for children.</p></article><h3 class="grouphead" id="style">Style &amp; Fit</h3><article><p class="cat">STYLE</p><h2><a href="/en/learn/choosing-frames-face-shape.html">Choosing Frames That Suit Your Face Shape</a></h2><p>The old rule still holds: a frame should offset your face, not repeat it. How to read your own face shape before you go try frames on.</p></article><h3 class="grouphead" id="care">Care &amp; Maintenance</h3><article><p class="cat">CARE</p><h2><a href="/en/learn/caring-for-your-glasses.html">How to Clean and Care for Your Glasses the Right Way</a></h2><p>Most scratches and loose hinges come from a few very small daily habits. Here's what to change.</p></article><h3 class="grouphead" id="data">Data &amp; Research</h3><article><p class="cat">DATA</p><h2><a href="/en/learn/myopia-statistics-vietnam-2026.html">Myopia and refractive error in Vietnam: what the studies say (2026)</a></h2><p>Sourced figures from WHO, IAPB, Ophthalmology, PLoS One and Vietnamese journals, nine studies side by side, and why their numbers disagree. Every figure links to its publisher.</p></article><h3 class="grouphead" id="trivia">Fun Facts</h3><article><p class="cat">TRIVIA</p><h2><a href="/en/learn/why-phones-use-zeiss-lenses.html">Why Do Phone Makers Use Zeiss Lenses?</a></h2><p>Zeiss shows up on camera bumps from Nokia to Vivo. What the badge actually means, and what it has in common with the lenses in your glasses.</p></article><h3 class="grouphead" id="about">About Manh Long Optical</h3><article><p class="cat">ABOUT</p><h2><a href="/en/learn/manh-long-optical-since-2000.html">Manh Long Optical: 25 Years of Frames, Wholesale and Retail, Lens Partner to Essilor, Zeiss, Nikon</a></h2><p>25 years supplying frames wholesale and retail, a partner of Essilor, Zeiss and Nikon lenses — contact lenses, progressives to single-vision, specialty lenses, and modern fitting equipment.</p></article><article><p class="cat">ABOUT</p><h2><a href="/en/learn/why-choose-manh-long-optical.html">Why Do Many Customers Choose Manh Long Optical?</a></h2><p>5 criteria for a trustworthy optical shop: eye testing, product range, price, aftercare, real reviews. How Manh Long Optical measures up, including what it hasn't solved yet.</p></article></div>
+ 
+ <div class="cta"><h2>Have a question these don't answer?</h2>
+ <p>Come in for a free 20 minute eye test, or ask us directly, no obligation to buy.</p>
+diff --git a/en/learn/lens-coatings-explained.html b/en/learn/lens-coatings-explained.html
+index cda469d..4927bdf 100644
+--- a/en/learn/lens-coatings-explained.html
++++ b/en/learn/lens-coatings-explained.html
+@@ -177,7 +177,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p>Manages Manh Long Optical at 147A Le Duan, Cua Nam, Hanoi. Five years in the optical trade. <a href="/en/about-alvin.html">About Alvin</a></p>
+ </aside>
+ 
+-<nav class="related"><h2>Also here</h2><ul><li><a href="/en/learn/blue-light-vs-uv-protection.html">Blue-light filtering vs UV protection</a></li><li><a href="/en/learn/essilor-authentic-check.html">How to spot a genuine Essilor lens</a></li><li><a href="/en/learn/varilux-comfort-max.html">Varilux Comfort Max progressive lenses</a></li><li><a href="/crizal-natural-look.html">Crizal Natural Look coating (VI)</a></li></ul></nav>
++<nav class="related"><h2>Also here</h2><ul><li><a href="/en/learn/lens-materials-explained.html">Lens Materials: Standard Plastic, Polycarbonate and Glass Compared</a></li><li><a href="/en/learn/blue-light-vs-uv-protection.html">Blue-light filtering vs UV protection</a></li><li><a href="/en/learn/essilor-authentic-check.html">How to spot a genuine Essilor lens</a></li><li><a href="/en/learn/varilux-comfort-max.html">Varilux Comfort Max progressive lenses</a></li><li><a href="/crizal-natural-look.html">Crizal Natural Look coating (VI)</a></li></ul></nav>
+ </main>
+ <footer>
+   <p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam, Hanoi</p>
+diff --git a/en/learn/lens-materials-explained.html b/en/learn/lens-materials-explained.html
+new file mode 100644
+index 0000000..22c900a
+--- /dev/null
++++ b/en/learn/lens-materials-explained.html
+@@ -0,0 +1,241 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++<!-- Google Tag Manager -->
++<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
++new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
++j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
++'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
++})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
++<!-- End Google Tag Manager -->
++
++<meta charset="utf-8">
++<meta name="viewport" content="width=device-width, initial-scale=1">
++<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
++<script>
++  window.dataLayer = window.dataLayer || [];
++  function gtag(){dataLayer.push(arguments);}
++  gtag('js', new Date());
++  gtag('config', 'G-K2SSQSPKEZ');
++  gtag('config', 'AW-18143785526');
++  (function () {
++    function pageLang() {
++      try {
++        var q = new URLSearchParams(location.search).get('lang');
++        if (q === 'vi' || q === 'en') return q;
++        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
++      } catch (e) { return 'unknown'; }
++    }
++    document.addEventListener('click', function (e) {
++      var el = e.target;
++      if (!el || typeof el.closest !== 'function') return;
++      var a = el.closest('a[href]');
++      if (!a) return;
++      var href = a.getAttribute('href') || '';
++      var name = null;
++      if (href.indexOf('tel:') === 0) name = 'call_click';
++      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
++      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
++      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
++      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
++    }, true);
++  })();
++</script>
++<title>Lens Materials: Plastic, Polycarbonate, Glass | Manh Long</title>
++<meta name="description" content="Material, not index, decides how durable, light and clear a lens is. Standard plastic, polycarbonate and glass compared, with real Hanoi prices.">
++<link rel="canonical" href="https://manhlongoptical.com/en/learn/lens-materials-explained.html">
++<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/learn/lens-materials-explained.html">
++<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
++<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
++<meta property="og:type" content="article">
++<meta property="og:site_name" content="Manh Long Optical">
++<meta property="og:locale" content="en_US">
++<meta property="og:title" content="Lens Materials: Plastic, Polycarbonate, Glass | Manh Long">
++<meta property="og:description" content="Material, not index, decides how durable, light and clear a lens is. Standard plastic, polycarbonate and glass compared, with real Hanoi prices.">
++<meta property="og:url" content="https://manhlongoptical.com/en/learn/lens-materials-explained.html">
++<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
++<meta name="twitter:card" content="summary_large_image">
++<meta name="twitter:title" content="Lens Materials: Plastic, Polycarbonate, Glass | Manh Long">
++<meta name="twitter:description" content="Material, not index, decides how durable, light and clear a lens is. Standard plastic, polycarbonate and glass compared, with real Hanoi prices.">
++<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
++<link rel="preconnect" href="https://fonts.googleapis.com">
++<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Noto+Serif+Display:wght@400;500&display=swap" rel="stylesheet">
++<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://manhlongoptical.com/en/learn/lens-materials-explained.html#article", "headline": "Lens Materials: Standard Plastic, Polycarbonate and Glass Compared", "description": "Index only tells you thin or thick. Material — standard plastic, impact-resistant polycarbonate, glass — decides how durable, light and clear a lens actually is.", "image": "https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg", "inLanguage": "en", "author": {"@type": "Person", "@id": "https://manhlongoptical.com/en/about-alvin.html#alvin", "name": "Alvin Dao", "alternateName": "Alvin", "jobTitle": "Store Manager", "url": "https://manhlongoptical.com/en/about-alvin.html", "worksFor": {"@id": "https://manhlongoptical.com/#localbusiness"}}, "publisher": {"@id": "https://manhlongoptical.com/#localbusiness"}, "datePublished": "2026-09-17", "dateModified": "2026-09-17", "articleSection": "Lens knowledge", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://manhlongoptical.com/en/learn/lens-materials-explained.html"}}, {"@type": "FAQPage", "@id": "https://manhlongoptical.com/en/learn/lens-materials-explained.html#faq", "mainEntity": [{"@type": "Question", "name": "Is a higher index a better material?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Index only tells you how thin or thick a lens is at a given prescription; material — standard plastic, impact-resistant polycarbonate, or a brand's own formula — determines durability, weight and clarity (Abbe value)."}}, {"@type": "Question", "name": "Does polycarbonate look worse than standard plastic?", "acceptedAnswer": {"@type": "Answer", "text": "Slightly. Polycarbonate has a lower Abbe value than standard plastic (CR-39), so you may notice a faint color fringe at the lens edge. In exchange, it resists impact far better, which is why it's the standard pick for children and athletes."}}, {"@type": "Question", "name": "Does Manh Long Optical sell Trivex lenses?", "acceptedAnswer": {"@type": "Answer", "text": "Not as a separate listed option on the current price list. If you need Trivex specifically, ask at the counter and we'll check what's available."}}, {"@type": "Question", "name": "Is glass better than plastic?", "acceptedAnswer": {"@type": "Answer", "text": "It looks slightly clearer, but it's nearly twice as heavy and can shatter into sharp pieces on hard impact. For safety, almost no optical shop sells glass lenses anymore, including Manh Long Optical."}}, {"@type": "Question", "name": "My prescription has a prism value, what do I do?", "acceptedAnswer": {"@type": "Answer", "text": "Bring your prescription to the shop. Our technician will recommend the right lens and frame to fit the correct prism base direction and amount your doctor prescribed."}}, {"@type": "Question", "name": "Does lens material affect my prescription strength?", "acceptedAnswer": {"@type": "Answer", "text": "No. Material and index only affect thickness, durability and clarity; your actual correction comes from an accurate eye test, not from the lens material."}}]}, {"@type": "BreadcrumbList", "@id": "https://manhlongoptical.com/en/learn/lens-materials-explained.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://manhlongoptical.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://manhlongoptical.com/en/learn/"}, {"@type": "ListItem", "position": 3, "name": "Lens Materials Compared", "item": "https://manhlongoptical.com/en/learn/lens-materials-explained.html"}]}]}</script>
++<style>
++:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
++*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
++a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
++header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
++.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
++.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
++.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
++.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
++nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
++.langtog{display:inline-flex;align-items:center;gap:5px}
++.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
++nav .langtog a{color:var(--muted)}
++nav .langtog b{font-weight:700;color:var(--ink)}
++nav .langtog .sep{color:#B7AB92;font-weight:400}
++@media(max-width:700px){
++  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
++  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
++  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
++  .logo{flex:none;font-size:20px}
++  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
++}
++main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
++.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
++h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
++.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
++.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
++figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
++h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
++h3{font-size:17px;margin:28px 0 10px}
++p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
++.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
++th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
++.tnote{font-size:13px;color:var(--muted);margin:0 0 20px}
++.faq h3{font-size:16px;margin:20px 0 6px}.faq p{margin:0 0 14px}
++.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
++.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
++.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
++.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
++footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
++footer a{color:#B7AB92}
++.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
++.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
++.stickycta a:first-child{background:#8A6A3B}
++.listing article{border-bottom:1px solid var(--hair);padding:22px 0}.listing h2{margin:0 0 8px;font-size:22px}.listing p{margin:0;color:var(--muted);font-size:14px}
++.listing .cat{font-size:11px;letter-spacing:.2em;color:var(--brass)}
++@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
++.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
++.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
++.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
++.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
++.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
++.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
++</style>
++<!-- Meta Pixel 1718493272777504 -->
++<script>
++!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
++fbq('init','1718493272777504');fbq('track','PageView');
++document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
++</script>
++<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
++<!-- End Meta Pixel -->
++</head>
++<body>
++<!-- Google Tag Manager (noscript) -->
++<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
++height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
++<!-- End Google Tag Manager (noscript) -->
++
++<div class="topbar">Free eye test, whether you buy or not · Open 8:00 – 21:30 every day<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
++<header>
++  <a class="logo" href="/en/">Manh Long<small>OPTICAL</small></a>
++  <nav class="top"><a href="/en/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html?lang=en#collection">FRAMES</a><a href="/en/lenses.html">LENSES</a><a href="/en/learn/">LEARN</a><a href="/en/offers.html">OFFERS</a><a href="/en/faq.html">QUESTIONS</a><a href="/en/frames.html#store">STORE</a><span class="langtog"><b aria-current="true" lang="en">EN</b><span class="sep" aria-hidden="true">|</span><a href="https://manhlongoptical.com/chat-lieu-trong-kinh.html" hreflang="vi" lang="vi" aria-label="Xem trang này bằng tiếng Việt">VI</a></span></nav>
++</header>
++<main>
++<p class="crumb"><a href="/en/">Home</a> › <a href="/en/learn/">Learn</a> › Lens Materials Compared</p>
++<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">LENSES</p>
++<h1>Lens Materials: Standard Plastic, Polycarbonate and Glass Compared</h1>
++<p class="byline">Written by <strong><a href="/en/about-alvin.html">Alvin</a></strong> · Manh Long Optical, 147A Le Duan, Cua Nam, Hanoi · Updated 17 September 2026</p>
++
++<div class="takeaway"><strong>In short:</strong> Index numbers (1.56, 1.60, 1.67…) only tell you how thin or thick a lens is at a given prescription — that's not a material name. Nearly every lens at Manh Long Optical is plastic, not glass. Impact-resistant polycarbonate is the pick for children and athletes, currently available at index 1.59 from Essilor for 2,980,000d a pair. This page explains material, Abbe value (dispersion) and prism lenses — three things rarely asked about that still decide how sharp, light or heavy your lenses actually feel.</div>
++
++<figure><img src="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg" alt="Manh Long Optical shop, 147A Le Duan, Hanoi" loading="lazy" width="1200" height="675"><figcaption>Manh Long Optical, 147A Le Duan, Cua Nam, Hanoi.</figcaption></figure>
++
++<p>The first question at the counter is usually "what index." But index is only an optical number — it doesn't say what the lens is made of, how easily it breaks, or whether you'll see a color fringe at the edge. Those three come down to <strong>material</strong>. This page puts the materials side by side, plus two ideas customers rarely ask about: Abbe value and prism lenses.</p>
++
++<h2 id="index-vs-material">Index and material are two different things</h2>
++<p>Index is a number that says how strongly a material bends light; the higher it is, the thinner the lens at the same prescription. But "1.56" or "1.67" isn't the name of one specific plastic — each index level on a price list is usually its own polymer formula, engineered to hit that exact refraction.</p>
++<p>In other words: two 1.67 lenses from two different brands can still be different plastic formulas, with different durability and clarity. Our <a href="/en/lens-index-guide.html">lens index guide</a> has the full seven-level price table if you're comparing by prescription; this page is about what the lens is actually made from.</p>
++
++<h2 id="cr39">Standard plastic: where lens plastic started</h2>
++<p>Standard plastic — usually called CR-39 after its chemical name — was introduced in the 1940s to replace glass in everyday eyewear. Its index sits around 1.50, low compared to the higher levels on today's price list, but its Abbe value (clarity, see section 6) is among the highest of any lens plastic.</p>
++<p>Most lenses at "1.56" and above on Manh Long Optical's price list are improved polymer formulas built on that same foundation, adjusted to hit a higher index — not raw CR-39. The higher the index, the more specialised the formula, and usually the higher the price.</p>
++
++<h2 id="polycarbonate">Impact-resistant plastic (polycarbonate): who actually needs it</h2>
++<p>Polycarbonate is a plastic that resists impact far better than standard lens plastic — the same material used in safety goggles and small-aircraft windshields. It's also lighter, which matters if you wear glasses all day.</p>
++<p>Manh Long Optical currently carries polycarbonate at index 1.59 from Essilor, 2,980,000d a pair (September 2026 pricing, frame not included). It's the recommended choice for active children, athletes, or anyone in work where the lens face takes hard knocks.</p>
++<p>The trade-off: polycarbonate's Abbe value is lower than standard plastic, so at the lens edge — especially on large frames or high prescriptions — you may notice a faint color fringe. Most wearers barely notice it; in exchange you get a lens that's much harder to break.</p>
++
++<h2 id="trivex">Trivex: exists, but not common in Vietnam yet</h2>
++<p>Trivex is a material introduced in the early 2000s. It's nearly as impact-resistant as polycarbonate but has a higher Abbe value — meaning less color fringe at the edge — and is a touch lighter.</p>
++<p>Manh Long Optical's current price list doesn't carry Trivex as a separate listed option. If you specifically need it, the reliable way to check is to ask at the counter so a technician can confirm what's currently available, rather than assuming.</p>
++
++<h2 id="glass">Glass: why almost nobody sells it anymore</h2>
++<p>Glass lenses have a naturally high index and a high Abbe value, giving a very clear image. But they weigh nearly twice as much as a plastic lens of the same size, and on hard impact they tend to shatter into sharp pieces — a real risk to the eye.</p>
++<p>For that safety reason, almost every optical shop today, including Manh Long Optical, no longer sells glass lenses for everyday eyeglasses.</p>
++
++<h2 id="abbe">Abbe value: the number nobody asks about, but it affects sharpness</h2>
++<p>Abbe value measures how much a material bends different colors of light apart from each other. The lower the number, the more white light splits into visible color fringes at the lens edge — usually a faint purple or blue tinge — most noticeable on large frames, high prescriptions, or high-contrast subjects like black text on white.</p>
++<p>There's a common trade-off: the higher the index (the thinner the lens), the lower the Abbe value tends to be. This isn't an absolute rule — every brand has its own formula, and anti-reflective coating helps reduce visible fringing too — but it's why "get the highest index you can" isn't always the sharpest choice, especially for lower prescriptions that don't really need an ultra-thin lens.</p>
++
++<h2 id="prism">Prism lenses: when they're used</h2>
++<p>A prism lens is ground with an added amount of prism to bend light before it reaches the eye. An eye doctor prescribes this when the two eyes don't aim at exactly the same point — for example mild strabismus or double vision — so both eyes receive the same image point and don't have to keep correcting for each other.</p>
++<p>The amount is written on a prescription in prism diopters, along with a base direction (base up/down/in/out). This is a medical prescription detail, not a cosmetic upgrade. If your prescription includes a prism value, bring it to Manh Long Optical — our technician will recommend the right lens and frame to fit it correctly.</p>
++
++<h2 id="sph-cyl">Sphere (SPH) and cylinder (CYL): lenses also correct different shapes of blur</h2>
++<p>Beyond material, a lens is also ground to correct two different shapes of blur: the spherical curve bends light evenly in every direction, used for nearsightedness and farsightedness (the SPH column on your prescription); the cylindrical curve bends light along one axis only, used specifically for astigmatism (the CYL and AXIS columns). Neither is related to material or index — they describe what shape the lens has to be for light to focus correctly on the retina. Our <a href="/en/learn/how-to-read-your-prescription.html">guide to reading a prescription</a> covers both columns in detail.</p>
++
++<h2 id="which">So which material should you pick</h2>
++<p>A quick guide by need — the shop will still confirm against your actual eye test.</p>
++<div class="tablewrap"><table>
++<tr><th>Need</th><th>Material to consider</th><th>Why</th></tr>
++<tr><td>Children, athletes, anyone hard on their glasses</td><td>Impact-resistant plastic (polycarbonate)</td><td>Resists impact far better, lighter weight</td></tr>
++<tr><td>Daily wear, low impact risk, prioritizing clarity</td><td>Standard plastic / mid index (1.56–1.67)</td><td>Higher Abbe value, better price</td></tr>
++<tr><td>High prescription, want the lens thin and light</td><td>High-index plastic (1.70–1.76)</td><td>Much thinner than low index at the same power — see <a href="/en/lens-index-guide.html">index pricing</a></td></tr>
++<tr><td>Prescription includes a prism value</td><td>As advised by our technician</td><td>Requires custom fitting to the exact base direction and amount</td></tr>
++</table></div>
++
++<h2 id="faq">Common questions</h2>
++<div class="faq">
++<h3>Is a higher index a better material?</h3>
++<p>Not necessarily. Index only tells you how thin or thick a lens is at a given prescription; material — standard plastic, impact-resistant polycarbonate, or a brand's own formula — determines durability, weight and clarity (Abbe value).</p>
++<h3>Does polycarbonate look worse than standard plastic?</h3>
++<p>Slightly. Polycarbonate has a lower Abbe value than standard plastic (CR-39), so you may notice a faint color fringe at the lens edge. In exchange, it resists impact far better, which is why it's the standard pick for children and athletes.</p>
++<h3>Does Manh Long Optical sell Trivex lenses?</h3>
++<p>Not as a separate listed option on the current price list. If you need Trivex specifically, ask at the counter and we'll check what's available.</p>
++<h3>Is glass better than plastic?</h3>
++<p>It looks slightly clearer, but it's nearly twice as heavy and can shatter into sharp pieces on hard impact. For safety, almost no optical shop sells glass lenses anymore, including Manh Long Optical.</p>
++<h3>My prescription has a prism value, what do I do?</h3>
++<p>Bring your prescription to the shop. Our technician will recommend the right lens and frame to fit the correct prism base direction and amount your doctor prescribed.</p>
++<h3>Does lens material affect my prescription strength?</h3>
++<p>No. Material and index only affect thickness, durability and clarity; your actual correction comes from an accurate eye test, not from the lens material.</p>
++</div>
++
++<div class="note">Material and index don't change your prescription strength or how clearly you see — that comes from an accurate eye test. If you experience sudden blurred vision, double vision, or eye pain, please see an eye care professional.</div>
++
++<div class="cta"><h2>Not sure which material to pick? Test first, decide after</h2>
++<p>Our optometrist gives a free 20–30 minute eye test, even if you're not buying that day, then recommends the right material and index for your actual prescription and lifestyle.</p>
++<p><strong>Manh Long Optical — 147A Le Duan, Cua Nam, Hanoi</strong><br>Open daily 8:00 – 21:30<br><a href="tel:+84777986999">0777 986 999</a> · <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i" target="_blank" rel="noopener">Directions</a></p></div>
++
++<aside class="author-box" aria-label="Author">
++<p class="ab-label">Author</p>
++<p class="ab-name"><a href="/en/about-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
++<p>Manages Manh Long Optical at 147A Le Duan, Cua Nam, Hanoi. Five years in the optical trade. <a href="/en/about-alvin.html">About Alvin</a></p>
++</aside>
++
++<nav class="related"><h2>Also here</h2><ul>
++<li><a href="/en/lens-index-guide.html">Lens index guide: 1.56 to 1.76, with Hanoi prices</a></li>
++<li><a href="/en/lenses.html">Lenses in Hanoi: what they cost and how to choose</a></li>
++<li><a href="/en/lens-brands-compared.html">Lens brands compared: Essilor, ZEISS, Tokai, Chemi and Elements in Hanoi</a></li>
++<li><a href="/en/learn/lens-coatings-explained.html">Anti-Reflective, Blue-Light, UV: What Each Coating Does</a></li>
++<li><a href="/en/learn/how-to-read-your-prescription.html">How to read a glasses prescription: SPH, CYL, AXIS, ADD, PD</a></li>
++<li><a href="/en/learn/photochromic-vs-polarized-sunglasses.html">Photochromic vs polarized lenses: which should you choose?</a></li>
++</ul></nav>
++</main>
++<footer>
++  <p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam, Hanoi</p>
++  <p>Open daily 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
++  <p><a href="https://manhlongoptical.com/chat-lieu-trong-kinh.html">Xem trang tiếng Việt</a></p>
++</footer>
++<div class="stickycta">
++  <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WHATSAPP</a>
++  <a href="tel:+84777986999">CALL</a>
++  <a href="https://www.google.com/maps/search/?api=1&amp;query=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i" target="_blank" rel="noopener">DIRECTIONS</a>
++</div>
++</body>
++</html>
+diff --git a/en/learn/photochromic-vs-polarized-sunglasses.html b/en/learn/photochromic-vs-polarized-sunglasses.html
+index 1a785bd..b0f5df6 100644
+--- a/en/learn/photochromic-vs-polarized-sunglasses.html
++++ b/en/learn/photochromic-vs-polarized-sunglasses.html
+@@ -193,7 +193,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p>Manages Manh Long Optical at 147A Le Duan, Cua Nam, Hanoi. Five years in the optical trade. <a href="/en/about-alvin.html">About Alvin</a></p>
+ </aside>
+ 
+-<nav class="related"><h2>Also here</h2><ul><li><a href="/en/sunglasses-hanoi.html">Sunglasses in Hanoi</a></li><li><a href="/en/learn/blue-light-vs-uv-protection.html">Blue-Light Filtering and UV Protection: What's the Difference</a></li><li><a href="/kinh-ram-can.html">Prescription sunglasses (Vietnamese)</a></li><li><a href="/chon-kinh-mat-phu-hop.html">Choosing the right glasses (Vietnamese)</a></li></ul></nav>
++<nav class="related"><h2>Also here</h2><ul><li><a href="/en/learn/lens-materials-explained.html">Lens Materials: Standard Plastic, Polycarbonate and Glass Compared</a></li><li><a href="/en/sunglasses-hanoi.html">Sunglasses in Hanoi</a></li><li><a href="/en/learn/blue-light-vs-uv-protection.html">Blue-Light Filtering and UV Protection: What's the Difference</a></li><li><a href="/kinh-ram-can.html">Prescription sunglasses (Vietnamese)</a></li><li><a href="/chon-kinh-mat-phu-hop.html">Choosing the right glasses (Vietnamese)</a></li></ul></nav>
+ </main>
+ <footer>
+   <p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam, Hanoi</p>
+diff --git a/en/lens-brands-compared.html b/en/lens-brands-compared.html
+index ee5fd7c..bf0edb6 100644
+--- a/en/lens-brands-compared.html
++++ b/en/lens-brands-compared.html
+@@ -266,7 +266,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p>Store Manager at Manh Long Optical, 147A Le Duan, Cua Nam, Hanoi. 5 years in eyewear. <a href="/en/about-alvin.html">About Alvin</a></p>
+ </aside>
+ 
+-<nav class="related"><h2>Also here</h2><ul>
++<nav class="related"><h2>Also here</h2><ul><li><a href="/en/learn/lens-materials-explained.html">Lens Materials: Standard Plastic, Polycarbonate and Glass Compared</a></li>
+ <li><a href="/en/lens-index-guide.html">Lens index guide: 1.56 to 1.76, with Hanoi prices</a></li>
+ <li><a href="/en/essilor-vs-zeiss.html">Essilor vs ZEISS lenses: which suits your prescription and budget</a></li>
+ <li><a href="/en/lenses.html">Lenses in Hanoi: what they cost and how to choose</a></li>
+diff --git a/en/lens-index-guide.html b/en/lens-index-guide.html
+index ac44a4c..40dc912 100644
+--- a/en/lens-index-guide.html
++++ b/en/lens-index-guide.html
+@@ -259,7 +259,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p>Store Manager at Manh Long Optical, 147A Le Duan, Cua Nam, Hanoi. 5 years in eyewear. <a href="/en/about-alvin.html">About Alvin</a></p>
+ </aside>
+ 
+-<nav class="related"><h2>Also here</h2><ul>
++<nav class="related"><h2>Also here</h2><ul><li><a href="/en/learn/lens-materials-explained.html">Lens Materials: Standard Plastic, Polycarbonate and Glass Compared</a></li>
+ <li><a href="/en/lens-brands-compared.html">Lens brands compared: Essilor, ZEISS, Tokai, Chemi and Elements in Hanoi</a></li>
+ <li><a href="/en/essilor-vs-zeiss.html">Essilor vs ZEISS lenses: which suits your prescription and budget</a></li>
+ <li><a href="/en/lenses.html">Lenses in Hanoi: what they cost and how to choose</a></li>
+diff --git a/en/lenses.html b/en/lenses.html
+index 75e6cc8..5607ea4 100644
+--- a/en/lenses.html
++++ b/en/lenses.html
+@@ -309,7 +309,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p class="ab-name"><a href="/en/about-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
+ <p>Store Manager at Manh Long Optical, 147A Le Duan, Cua Nam, Hanoi. 5 years in eyewear. <a href="/en/about-alvin.html">About Alvin</a></p>
+ </aside>
+-<nav class="related"><h2>Read next</h2><ul>
++<nav class="related"><h2>Read next</h2><ul><li><a href="/en/learn/lens-materials-explained.html">Lens Materials: Standard Plastic, Polycarbonate and Glass Compared</a></li>
+ <li><a href="/en/prescription-glasses-hanoi.html">Prescription glasses in Hanoi: costs, timing and eye tests</a></li>
+ <li><a href="/en/glasses-in-hanoi-vs-at-home.html">Buying glasses in Hanoi vs at home: an honest comparison</a></li>
+ <li><a href="/en/faq.html">Glasses in Hanoi: 22 questions answered</a></li>
+diff --git a/lens-coatings-explained.html b/lens-coatings-explained.html
+index 9007038..11e6606 100644
+--- a/lens-coatings-explained.html
++++ b/lens-coatings-explained.html
+@@ -197,7 +197,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p class="ab-name"><a href="/ve-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
+ <p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
+ </aside>
+-<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/crizal-natural-look.html">Crizal Natural Look là gì? Lớp phủ chống chói 360 độ</a></li><li><a href="/crizal-easy-pro.html">Crizal Easy Pro: Bước nâng cấp thực tế từ lớp phủ cơ bản</a></li><li><a href="/blue-light-vs-uv.html">Tròng chống ánh sáng xanh và tròng chống tia UV khác nhau ở đâu</a></li><li><a href="/essilor-authentic-check.html">Cách nhận biết tròng kính Essilor chính hãng</a></li></ul></nav>
++<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/chat-lieu-trong-kinh.html">Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào</a></li><li><a href="/crizal-natural-look.html">Crizal Natural Look là gì? Lớp phủ chống chói 360 độ</a></li><li><a href="/crizal-easy-pro.html">Crizal Easy Pro: Bước nâng cấp thực tế từ lớp phủ cơ bản</a></li><li><a href="/blue-light-vs-uv.html">Tròng chống ánh sáng xanh và tròng chống tia UV khác nhau ở đâu</a></li><li><a href="/essilor-authentic-check.html">Cách nhận biết tròng kính Essilor chính hãng</a></li></ul></nav>
+ 
+ </main>
+ <footer>
+diff --git a/sitemap.xml b/sitemap.xml
+index fa2a5a9..3fce503 100644
+--- a/sitemap.xml
++++ b/sitemap.xml
+@@ -55,7 +55,7 @@
+ <url><loc>https://manhlongoptical.com/en/about-alvin.html</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+ <url><loc>https://manhlongoptical.com/so-sanh-essilor-vs-zeiss.html</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+ <url><loc>https://manhlongoptical.com/en/essilor-vs-zeiss.html</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+-<url><loc>https://manhlongoptical.com/chiet-suat-trong-kinh.html</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chiet-suat-trong-kinh.html"/><xhtml:link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/lens-index-guide.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chiet-suat-trong-kinh.html"/></url>
++<url><loc>https://manhlongoptical.com/chiet-suat-trong-kinh.html</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chiet-suat-trong-kinh.html"/><xhtml:link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/lens-index-guide.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chiet-suat-trong-kinh.html"/></url><url><loc>https://manhlongoptical.com/chat-lieu-trong-kinh.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html"/><xhtml:link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/learn/lens-materials-explained.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html"/></url><url><loc>https://manhlongoptical.com/en/learn/lens-materials-explained.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/learn/lens-materials-explained.html"/><xhtml:link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html"/></url>
+ <url><loc>https://manhlongoptical.com/en/lens-index-guide.html</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chiet-suat-trong-kinh.html"/><xhtml:link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/lens-index-guide.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chiet-suat-trong-kinh.html"/></url>
+ <url><loc>https://manhlongoptical.com/trong-kinh-chemi.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/trong-kinh-chemi.html"/><xhtml:link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/learn/chemi-lenses.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/trong-kinh-chemi.html"/></url>
+ <url><loc>https://manhlongoptical.com/trong-kinh-tokai.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/trong-kinh-tokai.html"/><xhtml:link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/learn/tokai-lenses.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/trong-kinh-tokai.html"/></url>
+diff --git a/so-sanh-doi-mau-polarized.html b/so-sanh-doi-mau-polarized.html
+index 133c032..ef9fe23 100644
+--- a/so-sanh-doi-mau-polarized.html
++++ b/so-sanh-doi-mau-polarized.html
+@@ -242,7 +242,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
+ </aside>
+ 
+-<nav class="related"><h2>Đọc tiếp</h2><ul>
++<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/chat-lieu-trong-kinh.html">Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào</a></li>
+ <li><a href="/kinh-ram-can.html">Kính râm cận và kính mát có độ tại 147A Lê Duẩn</a></li>
+ <li><a href="/chon-kinh-mat-phu-hop.html">Hướng dẫn chọn kính mắt phù hợp với khuôn mặt và độ cận</a></li>
+ <li><a href="/kinh-chong-anh-sang-xanh-co-can-thiet.html">Kính chống ánh sáng xanh có thực sự cần thiết không?</a></li>
+diff --git a/so-sanh-trong-kinh-theo-hang.html b/so-sanh-trong-kinh-theo-hang.html
+index 5c115f6..c2afe19 100644
+--- a/so-sanh-trong-kinh-theo-hang.html
++++ b/so-sanh-trong-kinh-theo-hang.html
+@@ -279,7 +279,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
+ </aside>
+ 
+-<nav class="related"><h2>Đọc tiếp</h2><ul>
++<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/chat-lieu-trong-kinh.html">Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào</a></li>
+ <li><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: 1.56 đến 1.76, chọn mức nào cho độ cận</a></li>
+ <li><a href="/so-sanh-essilor-vs-zeiss.html">So sánh tròng Essilor và ZEISS</a></li>
+ <li><a href="/trong-kinh-chemi.html">Tròng kính Chemi: tròng có sẵn và tròng đánh</a></li>
+diff --git a/tim-hieu.html b/tim-hieu.html
+index 9ecc54b..f236fe8 100644
+--- a/tim-hieu.html
++++ b/tim-hieu.html
+@@ -187,7 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ </ol>
+ </div>
+ 
+-<div class="listing"><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/trong-kinh.html">Tròng kính: chọn loại nào, giá bao nhiêu</a></h2><p>Bắt đầu từ cách bạn muốn nhìn, không phải từ thuật ngữ. Bảng giá thật tròng đổi màu và đa tròng, cách chọn chiết suất, bao lâu thì có kính.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/so-sanh-essilor-vs-zeiss.html">So sánh tròng Essilor và ZEISS: chọn hãng nào</a></h2><p>Bốn mức chiết suất của hai hãng đặt cạnh nhau, kèm giá thật tháng 9/2026 và dải độ mỗi bản nhận được.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: 1.56 đến 1.76, chọn mức nào</a></h2><p>Độ cận nào dùng chiết suất nào, mép tròng mỏng đi bao nhiêu phần trăm, và bước lên mức cao hơn tốn thêm bao nhiêu.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/so-sanh-trong-kinh-theo-hang.html">So sánh tròng kính 5 hãng: Essilor, ZEISS, Tokai, Chemi, Elements</a></h2><p>Năm hãng tròng đặt cạnh nhau theo giá thật tháng 9/2026, chiết suất và xuất xứ, để thấy mức nào hợp túi tiền và độ của bạn.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/trong-kinh-chemi.html">Tròng kính Chemi: tròng có sẵn hay tròng đánh</a></h2><p>Tròng có sẵn cắt trong ngày, tròng đánh chờ 10–15 ngày và đắt hơn nhiều lần. Khác nhau ở đâu và khi nào nên chọn loại nào.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/trong-kinh-tokai.html">Tròng kính Tokai: dòng Nhật từ 1.60 đến 1.76</a></h2><p>Bốn mức chiết suất của Tokai, có Lutina 1.67, kèm khoảng giá một cặp và mức nào hợp với độ cận của bạn.</p></article><article><p class="cat">HƯỚNG DẪN</p><h2><a href="/khi-nao-can-deo-kinh-can.html">Cận bao nhiêu độ thì đeo kính? Bao lâu đo mắt lại</a></h2><p>Không có một mốc độ cố định. Khi nào nên đeo, đeo thường xuyên hay khi cần, bao lâu đo lại, và dấu hiệu nên đi đo sớm.</p></article><article><p class="cat">HƯỚNG DẪN</p><h2><a href="/cach-doc-don-kinh.html">Cách đọc đơn kính: SPH, CYL, AXIS, ADD, PD</a></h2><p>Từng cột trên tờ đơn nghĩa là gì, dấu cộng dấu trừ khác nhau ra sao, PD dùng làm gì, kèm một đơn mẫu đọc thử.</p></article><article><p class="cat">TÁC GIẢ</p><h2><a href="/ve-alvin.html">Alvin Dao, quản lý cửa hàng</a></h2><p>Người viết các bài trong mục này. Năm năm làm nghề kính mắt, tư vấn chọn gọng và tròng tại 147A Lê Duẩn.</p></article><article><p class="cat">VỀ CỬA HÀNG</p><h2><a href="/vi-sao-chon-manh-long-optical.html">Vì sao nhiều khách chọn Manh Long Optical để cắt kính?</a></h2><p>5 tiêu chí nên xem khi chọn cửa hàng kính, và Manh Long Optical đáp ứng ra sao — có cả điều chưa làm được.</p></article><article><p class="cat">HỎI ĐÁP</p><h2><a href="/cau-hoi-thuong-gap.html">Câu hỏi thường gặp về kính mắt</a></h2><p>Giá cắt kính, chọn tròng Essilor hay Zeiss, đo mắt trẻ em, kính lỏng phải làm sao — 15 câu khách hay hỏi trước khi ghé.</p></article><article><p class="cat">CỬA HÀNG</p><h2><a href="/kinh-mat-gan-day.html">Kính mắt gần đây: cửa hàng tại 147A Lê Duẩn, Cửa Nam</a></h2><p>Địa chỉ, giờ mở cửa, một lượt ghé làm được gì và mất bao lâu, kèm giá bắt đầu từ của từng loại kính.</p></article><article><p class="cat">DỊCH VỤ</p><h2><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại 147A Lê Duẩn, Cửa Nam</a></h2><p>Đơn tròng cắt và lấy trong ngày. Chưa có đơn kính cũng ghé được — đo mắt miễn phí trước, cắt luôn sau đó.</p></article><article><p class="cat">DỊCH VỤ</p><h2><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời tại Manh Long Optical</a></h2><p>Đo mắt chuyên sâu miễn phí kể cả khi chưa mua kính. Khám và đo lại miễn phí trọn đời, 20–30 phút một lượt.</p></article><article><p class="cat">VÁNG PHỦ</p><h2><a href="/crizal-natural-look.html">Crizal Natural Look là gì? Lớp phủ chống chói 360 độ</a></h2><p>Chống phản quang cả hai mặt tròng. Đáng tiền với ai hay chụp ảnh và lái xe đêm.</p></article><article><p class="cat">VÁNG PHỦ</p><h2><a href="/crizal-easy-pro.html">Crizal Easy Pro: Bước nâng cấp thực tế từ lớp phủ cơ bản</a></h2><p>Crizal Easy Pro: nâng cấp thực sự từ lớp phủ cơ bản, không phải mức giá cao cấp nhất.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/varilux-physio-extensee-review.html">Đánh giá Varilux Physio Extensee: có đáng nâng cấp không?</a></h2><p>Tròng đa tròng vùng nhìn rộng của Essilor, đánh giá trên đúng cái nó làm được cho người 45 tuổi phải liên tục đổi giữa màn hình, điện thoại và mặt đường.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/varilux-comfort-max.html">Varilux Comfort Max: Kính Đa Tròng Thoải Mái Tối Đa</a></h2><p>Bản đa tròng thiên thoải mái của Essilor. Cái đỡ nằm ở cổ, không nằm trên bảng đo thị lực.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/zeiss-uvprotect.html">Zeiss UVProtect: chặn tia UV tới 400 nm trên tròng trắng</a></h2><p>Khoảng trống 20 nm mà hầu hết tròng trong bỏ ngỏ, và cách Zeiss bít nó lại.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/transitions-gen-s-advantages.html">Những ưu điểm của tròng kính Essilor Transitions Gen S</a></h2><p>Tốc độ, bảng màu, khả năng bảo vệ, quang học, độ bền — thế hệ 2024 đã cải thiện thật những gì, và điều đó có nghĩa gì khi lên mặt bạn.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/essilor-transitions-gen-s.html">Tròng kính đổi màu Essilor Transitions giá bao nhiêu?</a></h2><p>Một cặp kính trong nhà thì trong, ra nắng thì sẫm. Thế hệ Gen S đã đổi những gì, và cần hỏi gì trước khi mua.</p></article>
++<div class="listing"><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/chat-lieu-trong-kinh.html">Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào</a></h2><p>Chiết suất chỉ nói tròng mỏng hay dày. Chất liệu — nhựa thường, chống bể (polycarbonate), thuỷ tinh — quyết định tròng bền, nhẹ, trong đến đâu.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/trong-kinh.html">Tròng kính: chọn loại nào, giá bao nhiêu</a></h2><p>Bắt đầu từ cách bạn muốn nhìn, không phải từ thuật ngữ. Bảng giá thật tròng đổi màu và đa tròng, cách chọn chiết suất, bao lâu thì có kính.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/so-sanh-essilor-vs-zeiss.html">So sánh tròng Essilor và ZEISS: chọn hãng nào</a></h2><p>Bốn mức chiết suất của hai hãng đặt cạnh nhau, kèm giá thật tháng 9/2026 và dải độ mỗi bản nhận được.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: 1.56 đến 1.76, chọn mức nào</a></h2><p>Độ cận nào dùng chiết suất nào, mép tròng mỏng đi bao nhiêu phần trăm, và bước lên mức cao hơn tốn thêm bao nhiêu.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/so-sanh-trong-kinh-theo-hang.html">So sánh tròng kính 5 hãng: Essilor, ZEISS, Tokai, Chemi, Elements</a></h2><p>Năm hãng tròng đặt cạnh nhau theo giá thật tháng 9/2026, chiết suất và xuất xứ, để thấy mức nào hợp túi tiền và độ của bạn.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/trong-kinh-chemi.html">Tròng kính Chemi: tròng có sẵn hay tròng đánh</a></h2><p>Tròng có sẵn cắt trong ngày, tròng đánh chờ 10–15 ngày và đắt hơn nhiều lần. Khác nhau ở đâu và khi nào nên chọn loại nào.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/trong-kinh-tokai.html">Tròng kính Tokai: dòng Nhật từ 1.60 đến 1.76</a></h2><p>Bốn mức chiết suất của Tokai, có Lutina 1.67, kèm khoảng giá một cặp và mức nào hợp với độ cận của bạn.</p></article><article><p class="cat">HƯỚNG DẪN</p><h2><a href="/khi-nao-can-deo-kinh-can.html">Cận bao nhiêu độ thì đeo kính? Bao lâu đo mắt lại</a></h2><p>Không có một mốc độ cố định. Khi nào nên đeo, đeo thường xuyên hay khi cần, bao lâu đo lại, và dấu hiệu nên đi đo sớm.</p></article><article><p class="cat">HƯỚNG DẪN</p><h2><a href="/cach-doc-don-kinh.html">Cách đọc đơn kính: SPH, CYL, AXIS, ADD, PD</a></h2><p>Từng cột trên tờ đơn nghĩa là gì, dấu cộng dấu trừ khác nhau ra sao, PD dùng làm gì, kèm một đơn mẫu đọc thử.</p></article><article><p class="cat">TÁC GIẢ</p><h2><a href="/ve-alvin.html">Alvin Dao, quản lý cửa hàng</a></h2><p>Người viết các bài trong mục này. Năm năm làm nghề kính mắt, tư vấn chọn gọng và tròng tại 147A Lê Duẩn.</p></article><article><p class="cat">VỀ CỬA HÀNG</p><h2><a href="/vi-sao-chon-manh-long-optical.html">Vì sao nhiều khách chọn Manh Long Optical để cắt kính?</a></h2><p>5 tiêu chí nên xem khi chọn cửa hàng kính, và Manh Long Optical đáp ứng ra sao — có cả điều chưa làm được.</p></article><article><p class="cat">HỎI ĐÁP</p><h2><a href="/cau-hoi-thuong-gap.html">Câu hỏi thường gặp về kính mắt</a></h2><p>Giá cắt kính, chọn tròng Essilor hay Zeiss, đo mắt trẻ em, kính lỏng phải làm sao — 15 câu khách hay hỏi trước khi ghé.</p></article><article><p class="cat">CỬA HÀNG</p><h2><a href="/kinh-mat-gan-day.html">Kính mắt gần đây: cửa hàng tại 147A Lê Duẩn, Cửa Nam</a></h2><p>Địa chỉ, giờ mở cửa, một lượt ghé làm được gì và mất bao lâu, kèm giá bắt đầu từ của từng loại kính.</p></article><article><p class="cat">DỊCH VỤ</p><h2><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại 147A Lê Duẩn, Cửa Nam</a></h2><p>Đơn tròng cắt và lấy trong ngày. Chưa có đơn kính cũng ghé được — đo mắt miễn phí trước, cắt luôn sau đó.</p></article><article><p class="cat">DỊCH VỤ</p><h2><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời tại Manh Long Optical</a></h2><p>Đo mắt chuyên sâu miễn phí kể cả khi chưa mua kính. Khám và đo lại miễn phí trọn đời, 20–30 phút một lượt.</p></article><article><p class="cat">VÁNG PHỦ</p><h2><a href="/crizal-natural-look.html">Crizal Natural Look là gì? Lớp phủ chống chói 360 độ</a></h2><p>Chống phản quang cả hai mặt tròng. Đáng tiền với ai hay chụp ảnh và lái xe đêm.</p></article><article><p class="cat">VÁNG PHỦ</p><h2><a href="/crizal-easy-pro.html">Crizal Easy Pro: Bước nâng cấp thực tế từ lớp phủ cơ bản</a></h2><p>Crizal Easy Pro: nâng cấp thực sự từ lớp phủ cơ bản, không phải mức giá cao cấp nhất.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/varilux-physio-extensee-review.html">Đánh giá Varilux Physio Extensee: có đáng nâng cấp không?</a></h2><p>Tròng đa tròng vùng nhìn rộng của Essilor, đánh giá trên đúng cái nó làm được cho người 45 tuổi phải liên tục đổi giữa màn hình, điện thoại và mặt đường.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/varilux-comfort-max.html">Varilux Comfort Max: Kính Đa Tròng Thoải Mái Tối Đa</a></h2><p>Bản đa tròng thiên thoải mái của Essilor. Cái đỡ nằm ở cổ, không nằm trên bảng đo thị lực.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/zeiss-uvprotect.html">Zeiss UVProtect: chặn tia UV tới 400 nm trên tròng trắng</a></h2><p>Khoảng trống 20 nm mà hầu hết tròng trong bỏ ngỏ, và cách Zeiss bít nó lại.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/transitions-gen-s-advantages.html">Những ưu điểm của tròng kính Essilor Transitions Gen S</a></h2><p>Tốc độ, bảng màu, khả năng bảo vệ, quang học, độ bền — thế hệ 2024 đã cải thiện thật những gì, và điều đó có nghĩa gì khi lên mặt bạn.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/essilor-transitions-gen-s.html">Tròng kính đổi màu Essilor Transitions giá bao nhiêu?</a></h2><p>Một cặp kính trong nhà thì trong, ra nắng thì sẫm. Thế hệ Gen S đã đổi những gì, và cần hỏi gì trước khi mua.</p></article>
+ <article><p class="cat">TRÒNG KÍNH</p><h2><a href="/trong-kinh-essilor-stellest.html">Tròng Essilor Stellest: kiểm soát tiến triển cận thị ở trẻ</a></h2><p>Công nghệ H.A.L.T làm gì, con số 67% kèm điều kiện nào, và khi nào thì trẻ chưa cần tới loại tròng này.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/essilor-lenses.html">Tròng Essilor: Tiền bạn bỏ ra nằm ở đâu</a></h2><p>Varilux, Crizal, Eyezen, Transitions — Essilor chia dòng theo vấn đề cần giải quyết, không phải theo hạng sang rẻ. Mỗi dòng lo việc gì?</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/zeiss-lenses.html">Đa tròng ZEISS: Tầm nhìn sắc nét ở mọi khoảng cách</a></h2><p>Một tròng lo cả xa, trung và gần — không đường phân cách, không phải đổi kính. Đa tròng ZEISS khác ở đâu và nên chọn dòng nào?</p></article><article><p class="cat">SỨC KHỎE MẮT</p><h2><a href="/astigmatism-night-vision.html">Loạn thị và ánh sáng đèn: Vì sao ban đêm nhìn kém hơn</a></h2><p>Quầng sáng và tia sáng toả quanh đèn xe, đèn đường là dấu hiệu quen thuộc của loạn thị chưa chỉnh đúng. Vì sao vậy, và tròng kính xử lý thế nào?</p></article><article><p class="cat">HƯỚNG DẪN</p><h2><a href="/contacts-vs-glasses.html">Kính áp tròng hay kính gọng: Chọn loại nào?</a></h2><p>Cùng chỉnh một độ, nhưng độ thoải mái, nếp sống và sức khoẻ mắt lại nghiêng cán cân khác nhau với mỗi người.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/blue-light-vs-uv.html">Tròng chống ánh sáng xanh và tròng chống tia UV khác nhau ở đâu</a></h2><p>Hai loại này thường được bán như một, nhưng chúng chặn hai dải sóng khác nhau từ hai nguồn khác nhau. Cách phân biệt ngay tại chỗ, và loại nào phù hợp với bạn.</p></article><article><p class="cat">HƯỚNG DẪN</p><h2><a href="/choosing-frames-face-shape.html">Cách chọn gọng hợp khuôn mặt</a></h2><p>Quy tắc cũ mà vẫn đúng: gọng nên bù cho khuôn mặt, đừng lặp lại nó. Cách tự đọc khuôn mặt mình trước khi đi thử kính.</p></article><article><p class="cat">HƯỚNG DẪN</p><h2><a href="/lens-coatings-explained.html">Chống phản quang, lọc ánh sáng xanh, chống UV: Lớp phủ nào làm gì</a></h2><p>Khi tư vấn, các lớp phủ hay được gộp vào một gói. Nhưng mỗi lớp lo một việc khác nhau.</p></article><article><p class="cat">BẢO QUẢN</p><h2><a href="/caring-for-your-glasses.html">Vệ sinh và bảo quản kính đúng cách</a></h2><p>Phần lớn vết xước và khớp lỏng đến từ vài thói quen rất nhỏ hằng ngày. Đây là những thứ nên đổi.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/essilor-authentic-check.html">Cách nhận biết tròng kính Essilor chính hãng</a></h2><p>Vì quá phổ biến, Essilor là thương hiệu hay bị làm giả nhất. Năm cách kiểm tra — bao bì, logo ẩn, thẻ bảo hành, cảm giác lớp phủ, đại lý ủy quyền — giúp phân biệt tròng thật và hàng nhái.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/why-phones-use-zeiss-lenses.html">Vì sao các hãng điện thoại sử dụng tròng kính Zeiss?</a></h2><p>Vivo, Sony, Nokia đều gắn tên Zeiss lên cụm camera. Cùng năng lực quang học đó — phủ T*, độ chính xác thấu kính phi cầu, màu sắc tự nhiên — cũng có mặt trên tròng kính nhãn khoa Zeiss.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/zeiss-smartlife-individual.html">Zeiss SmartLife Individual: Tròng Kính May Đo Cho Riêng Bạn</a></h2><p>SmartLife Individual là dòng tròng cá nhân hóa cao nhất của Zeiss — may đo theo khuôn mặt, gọng kính và thói quen nhìn của riêng bạn, không theo số liệu trung bình.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/essilor-eyezen.html">Essilor Eyezen: tròng cho người ngồi máy tính nhiều</a></h2><p>Eyezen là lời giải của Essilor cho tình trạng mỏi mắt vì màn hình — tròng đơn tròng tích hợp hỗ trợ nhìn gần và lọc ánh sáng xanh, dành cho nhóm 18-45 tuổi sống cùng điện thoại.</p></article><article><p class="cat">TRÒNG KÍNH</p><h2><a href="/photochromic-progressive-lenses.html">Kính Đa Tròng Đổi Màu Khi Ra Nắng Giá Tốt Tại Manh Long Optical</a></h2><p>Một tròng, hai việc: nhìn đa khoảng cách và tự đổi màu theo nắng. Essilor Transitions và Zeiss PhotoFusion X so sánh ra sao, và cần biết gì trước khi mua?</p></article><article><p class="cat">KÍNH RÂM</p><h2><a href="/kinh-ram-can.html">Kính râm cận: kính mát có độ, giá và cách chọn</a></h2><p>Hai cách để có kính mát đúng độ của bạn, chọn màu tròng theo việc bạn hay làm ngoài trời, và giới hạn thật của tròng polarized khi lắp độ.</p></article>
+ <article><p class="cat">VỀ CHÚNG TÔI</p><h2><a href="/manh-long-optical-since-2000.html">Manh Long Optical: 25 Năm Kính Mắt Sỉ &amp; Lẻ, Đối Tác Tròng Kính Essilor, ZEISS, Nikon</a></h2><p>25 năm cung cấp gọng kính sỉ và lẻ, đối tác Essilor, ZEISS và Nikon — kính áp tròng, đa tròng đến đơn tròng, tròng chuyên dụng, và đo gia công hiện đại tại cửa hàng.</p></article></div>
+ </main>
+diff --git a/trong-kinh.html b/trong-kinh.html
+index c2f0913..9325c27 100644
+--- a/trong-kinh.html
++++ b/trong-kinh.html
+@@ -327,7 +327,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <p class="ab-name"><a href="/ve-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
+ <p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
+ </aside>
+-<nav class="related"><h2>Đọc tiếp</h2><ul>
++<nav class="related"><h2>Đọc tiếp</h2><ul><li><a href="/chat-lieu-trong-kinh.html">Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào</a></li>
+ <li><a href="/so-sanh-doi-mau-polarized.html">So sánh tròng đổi màu và tròng polarized</a></li>
+ <li><a href="/kinh-chong-anh-sang-xanh-co-can-thiet.html">Kính chống ánh sáng xanh có thực sự cần thiết không?</a></li>
+ <li><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại Hà Nội</a></li>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Chất liệu tròng kính: nhựa, chống bể, thuỷ tinh | Manh Long</title>
+<meta name="description" content="Chất liệu — không phải chiết suất — quyết định tròng bền, nhẹ, trong ra sao. So sánh nhựa thường, chống bể, thuỷ tinh tại Manh Long Optical.">
+<link rel="canonical" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/learn/lens-materials-explained.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chất liệu tròng kính: nhựa, chống bể, thuỷ tinh | Manh Long">
+<meta name="twitter:description" content="Chất liệu — không phải chiết suất — quyết định tròng bền, nhẹ, trong ra sao. So sánh nhựa thường, chống bể, thuỷ tinh tại Manh Long Optical.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<meta property="og:title" content="Chất liệu tròng kính: nhựa, chống bể, thuỷ tinh | Manh Long">
+<meta property="og:description" content="Chất liệu — không phải chiết suất — quyết định tròng bền, nhẹ, trong ra sao. So sánh nhựa thường, chống bể, thuỷ tinh tại Manh Long Optical.">
+<meta property="og:url" content="https://manhlongoptical.com/chat-lieu-trong-kinh.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg">
+<meta property="og:locale" content="vi_VN">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
+.tnote{font-size:13px;color:var(--muted);margin:0 0 20px}
+.faq h3{font-size:16px;margin:20px 0 6px}.faq p{margin:0 0 14px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
+.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
+.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
+.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
+.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
+.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/chat-lieu-trong-kinh.html#article","headline":"Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào","description":"Chiết suất chỉ nói tròng mỏng hay dày. Chất liệu — nhựa thường, chống bể (polycarbonate), thuỷ tinh — quyết định tròng bền, nhẹ, trong đến đâu.","image":"https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg","author":{"@type":"Person","@id":"https://manhlongoptical.com/ve-alvin.html#alvin","name":"Alvin Dao","alternateName":"Alvin","jobTitle":"Store Manager","url":"https://manhlongoptical.com/ve-alvin.html","worksFor":{"@id":"https://manhlongoptical.com/#localbusiness"}},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"},"datePublished":"2026-09-17T08:00:00+07:00","dateModified":"2026-09-17T08:00:00+07:00","articleSection":"Kiến thức tròng kính","inLanguage":"vi","mainEntityOfPage":{"@type":"WebPage","@id":"https://manhlongoptical.com/chat-lieu-trong-kinh.html"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/chat-lieu-trong-kinh.html#faq","mainEntity":[{"@type":"Question","name":"Chiết suất cao hơn có phải chất liệu tốt hơn không?","acceptedAnswer":{"@type":"Answer","text":"Không hẳn. Chiết suất chỉ cho biết tròng mỏng hay dày ở cùng một độ; chất liệu — nhựa tiêu chuẩn, chống bể (polycarbonate) hay công thức riêng của từng hãng — mới quyết định độ bền, độ nhẹ và độ trong (chỉ số Abbe) của tròng."}},{"@type":"Question","name":"Polycarbonate có nhìn kém hơn nhựa thường không?","acceptedAnswer":{"@type":"Answer","text":"Có một chút. Chỉ số Abbe của polycarbonate thấp hơn nhựa tiêu chuẩn (CR-39), nên ở rìa tròng dễ thấy viền màu nhẹ hơn. Đổi lại, polycarbonate chịu va đập tốt hơn nhiều lần, nên vẫn là lựa chọn ưu tiên cho trẻ em và người chơi thể thao."}},{"@type":"Question","name":"Manh Long Optical có bán tròng Trivex không?","acceptedAnswer":{"@type":"Answer","text":"Bảng giá hiện tại chưa niêm yết Trivex riêng. Nếu bạn cần loại này, hỏi trực tiếp tại quầy để được kiểm tra hàng có sẵn."}},{"@type":"Question","name":"Tròng thuỷ tinh có tốt hơn tròng nhựa không?","acceptedAnswer":{"@type":"Answer","text":"Nhìn trong hơn một chút nhưng nặng gần gấp đôi và dễ vỡ thành mảnh sắc khi va đập mạnh. Vì lý do an toàn, gần như không còn tiệm kính nào bán tròng thuỷ tinh, kể cả Manh Long Optical."}},{"@type":"Question","name":"Đơn kính của tôi có ghi prism, tôi cần làm gì?","acceptedAnswer":{"@type":"Answer","text":"Mang đơn kính đến cửa hàng. Kỹ thuật viên sẽ tư vấn tròng và gọng phù hợp để lắp đúng hướng đáy lăng kính và đúng lượng diop bác sĩ đã kê."}},{"@type":"Question","name":"Chất liệu tròng có làm giảm độ cận không?","acceptedAnswer":{"@type":"Answer","text":"Không. Chất liệu và chiết suất chỉ ảnh hưởng độ dày, độ bền và độ trong của tròng; độ cận, độ loạn được chỉnh bởi đúng đơn kính, không phải bởi chất liệu."}}]},{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/chat-lieu-trong-kinh.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tròng kính","item":"https://manhlongoptical.com/trong-kinh.html"},{"@type":"ListItem","position":3,"name":"Chất liệu tròng kính","item":"https://manhlongoptical.com/chat-lieu-trong-kinh.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://www.linkedin.com/company/143883407/","https://www.tiktok.com/@manhlong.optical","https://medium.com/@mlong.optical","https://zalo.me/0777986999"]}]}</script>
+<!-- Meta Pixel 1718493272777504 -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1718493272777504');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Dai goi y ngon ngu. CHI GOI Y, KHONG tu chuyen trang.
+     Trang nay DA co ban dich tieng Anh: /en/learn/lens-materials-explained.html -->
+<div id="langbar" hidden>
+  <a href="/en/learn/lens-materials-explained.html" hreflang="en" lang="en">Read this in English &#8594;</a>
+  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById("langbar"); if(!bar) return;
+  var KEY="ml-langbar-off";
+  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
+  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
+  if(l.indexOf("en")!==0) return;
+  bar.hidden=false;
+  var x=document.getElementById("langbarx");
+  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
+})();
+</script>
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/learn/lens-materials-explained.html" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › <a href="/trong-kinh.html">Tròng kính</a> › Chất liệu tròng kính</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">TRÒNG KÍNH</p>
+<h1>Chất liệu tròng kính: nhựa tiêu chuẩn, chống bể và thuỷ tinh khác nhau thế nào</h1>
+<p class="byline">Viết bởi <strong><a href="/ve-alvin.html">Alvin</a></strong> · Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội · Cập nhật 17/09/2026</p>
+
+<div class="takeaway"><strong>Tóm tắt:</strong> Chiết suất (1.56, 1.60, 1.67…) chỉ nói tròng mỏng hay dày ở cùng một độ — đó không phải tên chất liệu. Gần như toàn bộ tròng kính tại Manh Long Optical đều làm từ nhựa, không phải thuỷ tinh. Nhựa chống bể (polycarbonate) là lựa chọn riêng cho trẻ em và người chơi thể thao, hiện có ở dòng Essilor 1.59, giá 2.980.000đ một cặp. Bài này giải thích chất liệu, chỉ số Abbe (độ tán sắc) và tròng lăng kính — ba khái niệm ít được hỏi tới nhưng ảnh hưởng thật đến việc bạn nhìn qua tròng rõ hay mờ, nhẹ hay nặng.</div>
+
+<figure><img src="/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg" alt="Cửa hàng cắt kính Manh Long Optical, 147A Lê Duẩn, Hà Nội" loading="lazy" width="1200" height="675"><figcaption>Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội.</figcaption></figure>
+
+<p>Khi tư vấn, câu hỏi đầu tiên thường là "chiết suất bao nhiêu". Nhưng chiết suất chỉ là một con số quang học — nó không nói tròng đó làm từ gì, có dễ vỡ không, hay nhìn có bị viền màu ở rìa hay không. Ba thứ đó do <strong>chất liệu</strong> quyết định. Bài này đặt các chất liệu tròng kính cạnh nhau, cộng thêm hai khái niệm ít người hỏi: chỉ số Abbe và tròng lăng kính.</p>
+
+<h2 id="index-vs-material">Chiết suất và chất liệu là hai thứ khác nhau</h2>
+<p>Chiết suất là con số cho biết một vật liệu bẻ ánh sáng mạnh đến đâu; số càng cao, tròng càng mỏng ở cùng một độ. Nhưng "1.56" hay "1.67" không phải tên một loại nhựa cụ thể — mỗi mức chiết suất trên bảng giá thường là một công thức nhựa polymer riêng, đủ chuẩn để đạt đúng độ khúc xạ đó.</p>
+<p>Nói cách khác: hai cặp tròng cùng chiết suất 1.67 nhưng khác hãng vẫn có thể là hai công thức nhựa khác nhau, độ bền và độ trong khác nhau. Bài <a href="/chiet-suat-trong-kinh.html">chiết suất tròng kính</a> có bảng giá đầy đủ 7 mức nếu bạn cần so theo độ cận; bài này nói về phần "làm từ gì".</p>
+
+<h2 id="cr39">Nhựa tiêu chuẩn: điểm khởi đầu của tròng kính nhựa</h2>
+<p>Nhựa tiêu chuẩn (thường gọi theo tên hoá học CR-39) ra đời từ thập niên 1940, thay thế tròng thuỷ tinh trong ngành kính mắt dân dụng. Chiết suất của nó ở khoảng 1.50 — thấp so với các mức cao trên bảng giá hiện nay — nhưng chỉ số Abbe (độ trong, xem mục 6) thuộc nhóm cao nhất trong các loại nhựa.</p>
+<p>Phần lớn tròng "1.56" trở lên trên bảng giá của Manh Long Optical là các công thức nhựa polymer cải tiến từ nền tảng này, được điều chỉnh để đạt chiết suất cao hơn — không phải CR-39 nguyên bản. Càng lên chiết suất cao, công thức nhựa càng đặc biệt, và thường càng đắt.</p>
+
+<h2 id="polycarbonate">Nhựa chống bể (polycarbonate): ai thực sự cần</h2>
+<p>Polycarbonate là loại nhựa chịu va đập cao hơn nhựa thường nhiều lần — cùng loại vật liệu dùng làm kính bảo hộ lao động và kính chắn gió máy bay nhỏ. Nó cũng nhẹ hơn, nên phù hợp với người đeo kính cả ngày.</p>
+<p>Manh Long Optical hiện có polycarbonate ở chiết suất 1.59, dòng Essilor, giá 2.980.000đ một cặp (giá tháng 9/2026, chưa gồm gọng). Đây là lựa chọn ưu tiên cho trẻ em hiếu động, người chơi thể thao, hoặc ai làm công việc dễ va chạm mạnh vào mặt kính.</p>
+<p>Đánh đổi: chỉ số Abbe của polycarbonate thấp hơn nhựa tiêu chuẩn, nên ở rìa tròng — nhất là gọng to hoặc độ cao — đôi khi thấy viền màu nhẹ hơn tròng CR-39. Với phần lớn người dùng, mức chênh này khó nhận ra bằng mắt thường; đổi lại là một tròng khó vỡ hơn hẳn.</p>
+
+<h2 id="trivex">Trivex: có nhưng chưa phổ biến tại Việt Nam</h2>
+<p>Trivex là vật liệu ra đời đầu những năm 2000, chịu va đập gần bằng polycarbonate nhưng có chỉ số Abbe cao hơn — nghĩa là ít viền màu hơn ở rìa tròng — và nhẹ hơn một chút.</p>
+<p>Bảng giá hiện tại của Manh Long Optical chưa niêm yết Trivex như một dòng riêng. Nếu bạn cần loại này, cách chắc chắn nhất là hỏi trực tiếp tại quầy để kỹ thuật viên kiểm tra hàng các hãng đang có, thay vì tự đoán.</p>
+
+<h2 id="glass">Thuỷ tinh: vì sao gần như không còn ai dùng</h2>
+<p>Tròng thuỷ tinh có chiết suất tự nhiên cao và chỉ số Abbe cao, cho hình ảnh rất trong. Nhưng nó nặng gần gấp đôi tròng nhựa cùng kích thước, và khi vỡ do va đập mạnh thường vỡ thành mảnh sắc — rủi ro thật cho mắt.</p>
+<p>Vì lý do an toàn đó, gần như mọi tiệm kính hiện nay, kể cả Manh Long Optical, không còn bán tròng thuỷ tinh cho kính gọng đeo hằng ngày.</p>
+
+<h2 id="abbe">Chỉ số Abbe: con số ít người hỏi nhưng ảnh hưởng đến độ nét</h2>
+<p>Chỉ số Abbe đo mức độ một vật liệu bẻ các màu ánh sáng khác nhau lệch nhau bao nhiêu. Chỉ số càng thấp, ánh sáng trắng càng dễ bị tách màu khi đi qua rìa tròng, tạo viền màu mờ (thường ngả tím hoặc xanh) quanh vật thể — rõ nhất ở gọng to, độ cận cao, hoặc nhìn vật có độ tương phản mạnh như chữ đen trên nền trắng.</p>
+<p>Có một đánh đổi thường gặp: tròng chiết suất càng cao (càng mỏng) thường có chỉ số Abbe càng thấp. Đây không phải quy luật tuyệt đối — mỗi hãng có công thức riêng, và lớp phủ chống phản quang cũng giúp giảm bớt viền màu nhìn thấy — nhưng là lý do "chọn chiết suất cao nhất có thể" không phải lúc nào cũng là lựa chọn nhìn rõ nhất, nhất là với người độ thấp không thực sự cần tròng siêu mỏng.</p>
+
+<h2 id="prism">Tròng lăng kính (prism): dùng khi nào</h2>
+<p>Tròng lăng kính là tròng được mài thêm một lượng lăng kính để bẻ hướng ánh sáng trước khi vào mắt. Bác sĩ nhãn khoa kê loại này khi hai mắt không nhìn thẳng trục với nhau — ví dụ lé nhẹ hoặc song thị — để cả hai mắt cùng nhận đúng một điểm ảnh, giảm nhìn đôi hoặc mỏi mắt khi hai mắt phải tự điều chỉnh.</p>
+<p>Lượng lăng kính ghi trên đơn kính bằng đơn vị diop lăng kính, kèm hướng đáy lăng kính (base up/down/in/out). Đây là chỉ định y tế, không phải lựa chọn thẩm mỹ hay nâng cấp thông thường. Nếu đơn kính của bạn có giá trị prism, mang đơn đến Manh Long Optical — kỹ thuật viên sẽ tư vấn tròng và gọng phù hợp để lắp đúng.</p>
+
+<h2 id="sph-cyl">Cầu (SPH) và trụ (CYL): tròng cũng phải sửa đúng dạng lệch</h2>
+<p>Ngoài chất liệu, tròng còn được mài theo hai dạng chỉnh khác nhau: mặt cầu bẻ ánh sáng đều mọi hướng, dùng cho cận thị và viễn thị (ghi ở cột SPH trên đơn kính); mặt trụ chỉ bẻ ánh sáng theo một trục, dùng riêng cho loạn thị (ghi ở cột CYL và AXIS). Hai chỉ số này không liên quan đến chất liệu hay chiết suất — chúng nói tròng phải cong đúng dạng nào để ảnh hội tụ đúng trên võng mạc. Cách đọc từng cột nằm trong bài <a href="/cach-doc-don-kinh.html">cách đọc đơn kính</a>.</p>
+
+<h2 id="chon-sao">Vậy nên chọn chất liệu nào</h2>
+<p>Bảng dưới gom lại theo nhu cầu, để bạn có hướng trước khi ra quầy — cửa hàng vẫn sẽ tư vấn lại theo đúng đơn đo của bạn.</p>
+<div class="tablewrap"><table>
+<tr><th>Nhu cầu</th><th>Nên xem chất liệu nào</th><th>Vì sao</th></tr>
+<tr><td>Trẻ em, người chơi thể thao, hay va chạm</td><td>Nhựa chống bể (polycarbonate)</td><td>Chịu va đập tốt hơn nhiều lần, nhẹ</td></tr>
+<tr><td>Đeo hằng ngày, ít va chạm mạnh, ưu tiên nhìn trong</td><td>Nhựa tiêu chuẩn / nhựa chiết suất vừa (1.56–1.67)</td><td>Chỉ số Abbe cao hơn, giá dễ chịu hơn</td></tr>
+<tr><td>Độ cận cao, muốn tròng mỏng và nhẹ trên gọng</td><td>Nhựa chiết suất cao (1.70–1.76)</td><td>Mỏng hơn nhiều so với chiết suất thấp cùng độ — xem <a href="/chiet-suat-trong-kinh.html">bảng giá theo chiết suất</a></td></tr>
+<tr><td>Đơn kính có chỉ định prism từ bác sĩ</td><td>Theo tư vấn kỹ thuật viên tại quầy</td><td>Cần đo và mài riêng theo đúng hướng, đúng lượng diop</td></tr>
+</table></div>
+
+<h2 id="faq">Câu hỏi thường gặp</h2>
+<div class="faq">
+<h3>Chiết suất cao hơn có phải chất liệu tốt hơn không?</h3>
+<p>Không hẳn. Chiết suất chỉ cho biết tròng mỏng hay dày ở cùng một độ; chất liệu — nhựa tiêu chuẩn, chống bể (polycarbonate) hay công thức riêng của từng hãng — mới quyết định độ bền, độ nhẹ và độ trong (chỉ số Abbe) của tròng.</p>
+<h3>Polycarbonate có nhìn kém hơn nhựa thường không?</h3>
+<p>Có một chút. Chỉ số Abbe của polycarbonate thấp hơn nhựa tiêu chuẩn (CR-39), nên ở rìa tròng dễ thấy viền màu nhẹ hơn. Đổi lại, polycarbonate chịu va đập tốt hơn nhiều lần, nên vẫn là lựa chọn ưu tiên cho trẻ em và người chơi thể thao.</p>
+<h3>Manh Long Optical có bán tròng Trivex không?</h3>
+<p>Bảng giá hiện tại chưa niêm yết Trivex riêng. Nếu bạn cần loại này, hỏi trực tiếp tại quầy để được kiểm tra hàng có sẵn.</p>
+<h3>Tròng thuỷ tinh có tốt hơn tròng nhựa không?</h3>
+<p>Nhìn trong hơn một chút nhưng nặng gần gấp đôi và dễ vỡ thành mảnh sắc khi va đập mạnh. Vì lý do an toàn, gần như không còn tiệm kính nào bán tròng thuỷ tinh, kể cả Manh Long Optical.</p>
+<h3>Đơn kính của tôi có ghi prism, tôi cần làm gì?</h3>
+<p>Mang đơn kính đến cửa hàng. Kỹ thuật viên sẽ tư vấn tròng và gọng phù hợp để lắp đúng hướng đáy lăng kính và đúng lượng diop bác sĩ đã kê.</p>
+<h3>Chất liệu tròng có làm giảm độ cận không?</h3>
+<p>Không. Chất liệu và chiết suất chỉ ảnh hưởng độ dày, độ bền và độ trong của tròng; độ cận, độ loạn được chỉnh bởi đúng đơn kính, không phải bởi chất liệu.</p>
+</div>
+
+<div class="note">Chất liệu và chiết suất không thay đổi độ cận, độ loạn hay khả năng nhìn rõ — điều đó phụ thuộc vào đơn kính đo đúng. Nếu nhìn mờ đột ngột, nhìn đôi, hoặc đau nhức mắt, hãy đến cơ sở y tế chuyên khoa mắt.</div>
+
+<div class="cta"><h2>Không chắc chọn chất liệu nào? Đo trước, quyết định sau</h2><p>Khúc xạ viên tại Manh Long Optical đo mắt miễn phí 20–30 phút, kể cả khi bạn chưa mua kính, rồi mới tư vấn đúng chất liệu và chiết suất theo độ và nhu cầu thật của bạn.</p>
+<p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Cửa Nam, Hà Nội<br>8:00 – 21:30, 7 ngày/tuần · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo đặt lịch đo mắt</a> · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a></p></div>
+
+<aside class="author-box" aria-label="Tác giả">
+<p class="ab-label">Tác giả</p>
+<p class="ab-name"><a href="/ve-alvin.html">Alvin Dao</a> <span class="ab-role">· Store Manager</span></p>
+<p>Quản lý cửa hàng Manh Long Optical tại 147A Lê Duẩn, Cửa Nam, Hà Nội. 5 năm làm nghề kính mắt. <a href="/ve-alvin.html">Xem trang giới thiệu</a></p>
+</aside>
+
+<nav class="related"><h2>Đọc tiếp</h2><ul>
+<li><a href="/chiet-suat-trong-kinh.html">Chiết suất tròng kính: 1.56 đến 1.76, chọn mức nào cho độ cận của bạn</a></li>
+<li><a href="/trong-kinh.html">Tròng kính: bắt đầu từ cách bạn muốn nhìn</a></li>
+<li><a href="/so-sanh-trong-kinh-theo-hang.html">So sánh tròng kính 5 hãng: Essilor, ZEISS, Tokai, Chemi, Elements</a></li>
+<li><a href="/lens-coatings-explained.html">Chống phản quang, lọc ánh sáng xanh, chống UV: Lớp phủ nào làm gì</a></li>
+<li><a href="/cach-doc-don-kinh.html">Cách đọc đơn kính: SPH, CYL, AXIS, ADD, PD là gì</a></li>
+<li><a href="/so-sanh-doi-mau-polarized.html">So sánh tròng kính đổi màu và tròng polarized</a></li>
+</ul></nav>
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

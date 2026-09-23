@@ -1,0 +1,52 @@
+name: claim-cleanup-23-09
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/claim-cleanup-23-09.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply the nine minimal wording replacements and commit once
+        run: |
+          cat > /tmp/fix.py <<'PY'
+          import sys
+          edits={
+          'cau-hoi-thuong-gap.html':[("Loại này giúp giảm mỏi mắt khi nhìn màn hình liên tục nhiều giờ, không phải kính chữa bệnh về mắt.","Loại này lọc bớt một phần ánh sáng xanh phát ra từ màn hình, không phải kính chữa bệnh về mắt.",2)],
+          'cua-hang.html':[
+           ("Ngồi màn hình trên sáu tiếng mỗi ngày thì lớp lọc giúp giảm mỏi mắt.","Ngồi màn hình trên sáu tiếng mỗi ngày thì có thể cân nhắc lớp lọc bớt một phần ánh sáng xanh từ màn hình.",2),
+           ("Over six hours at a screen, the filter helps with eye strain.","Over six hours at a screen, a lens that filters part of the blue band from screens is worth considering.",1),
+           ('{ en: "Digital eye strain", vi: "Giảm mỏi mắt màn hình" }','{ en: "Designed for screen use", vi: "Thiết kế cho người dùng màn hình" }',1),
+           ('{ en: "Digital-strain line", vi: "Dòng giảm mỏi mắt màn hình" }','{ en: "Screen-use line", vi: "Dòng cho người dùng màn hình" }',1),
+           ('{ en: "Screen-related eye strain", vi: "Giảm mỏi mắt màn hình" }','{ en: "Filters part of the blue band from screens", vi: "Lọc bớt một phần ánh sáng xanh từ màn hình" }',1)],
+          'essilor-lenses.html':[("<td>Eyezen</td><td>Giảm mỏi mắt màn hình</td>","<td>Eyezen</td><td>Thiết kế cho người dùng màn hình</td>",1)],
+          'lens-coatings-explained.html':[("<td>Lọc ánh sáng xanh</td><td>Giảm mỏi mắt màn hình</td>","<td>Lọc ánh sáng xanh</td><td>Lọc bớt một phần ánh sáng xanh từ màn hình</td>",1)],
+          'zeiss-lenses.html':[("<td>Dòng giảm mỏi mắt màn hình</td>","<td>Dòng cho người dùng màn hình</td>",1)],
+          'essilor-eyezen.html':[("nhưng vẫn muốn giảm mỏi mắt và lọc ánh sáng xanh.","nhưng vẫn muốn tròng thiết kế cho màn hình và lọc ánh sáng xanh.",2)],
+          'en/learn/essilor-eyezen-computer-lenses.html':[("who still want reduced eye strain and blue-light filtering.","who still want a screen-focused lens design and blue-light filtering.",2)],
+          'chon-kinh-mat-phu-hop.html':[("giúp giảm mỏi mắt khi nhìn màn hình liên tục — không phải giải pháp chữa bệnh về mắt.","lọc bớt một phần ánh sáng xanh phát ra từ màn hình — không phải giải pháp chữa bệnh về mắt.",1)],
+          'en/learn/how-to-choose-glasses-that-fit.html':[("and helps reduce eye strain from continuous screen viewing — not a treatment for an eye condition.","and filters part of the blue band from screens — not a treatment for an eye condition.",1)],
+          }
+          for f,reps in edits.items():
+              s=open(f,encoding='utf-8').read()
+              for a,b,n in reps:
+                  c=s.count(a)
+                  if c!=n: print('MISMATCH',f,a[:40],c,n); sys.exit(1)
+                  s=s.replace(a,b)
+              open(f,'w',encoding='utf-8').write(s); print('edited',f)
+          PY
+          python3 /tmp/fix.py
+          git config user.name "Claude (Cowork)"
+          git config user.email "noreply@anthropic.com"
+          git add -- cau-hoi-thuong-gap.html chon-kinh-mat-phu-hop.html cua-hang.html en/learn/essilor-eyezen-computer-lenses.html en/learn/how-to-choose-glasses-that-fit.html essilor-eyezen.html essilor-lenses.html lens-coatings-explained.html zeiss-lenses.html
+          git diff --cached --stat
+          git commit -m "fix: remove unsupported eye-strain claims before Learn migration" -m "Guardrail §10 (owner 05/09): the blue-light filter must not be described as reducing eye strain. Minimal wording replacements only; no price, product-name, H1, URL, link, schema-structure, canonical or hreflang change." -m "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_01NpKWFnAoGHpRpSryGSGP4D"
+          git rm -q .github/workflows/claim-cleanup-23-09.yml
+          git commit -m "chore: remove one-off claim-cleanup workflow"
+          git push origin HEAD:main

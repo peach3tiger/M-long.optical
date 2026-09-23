@@ -1,0 +1,184 @@
+<!--
+  MANH LONG OPTICAL — LEARN ARTICLE SKELETON (v1, 2026-09)
+  ======================================================================
+  How to use:
+  1. Copy an existing Learn page's <head> + chrome (topbar/header/footer/
+     stickycta) — do NOT restyle chrome. Delete its legacy body CSS
+     (main{…} … .author-box{…}) and add:
+        <link rel="stylesheet" href="/assets/learn.css">
+  2. Replace the page's <main> with the block below.
+  3. Pick ONE intent template (A–J) from docs/learn-editorial-system.md and
+     keep only the blocks marked for that intent. Blocks marked [ALL] are
+     the shared frame; [OPT] blocks are chosen by intent.
+  4. Run:  python3 tools/learn_lint.py path/to/page.html
+     Fix every ERROR before publishing. WARNs need a human decision.
+  5. Update JSON-LD (Article + BreadcrumbList + FAQPage) so the FAQ text,
+     dates, image and breadcrumb match the visible page exactly.
+
+  Data rules (from mlong-seo):
+  - Business facts (prices, hours, turnaround, stock) only from the shop's
+    confirmed data. Unknown → write [VERIFY BUSINESS FACT] in the DRAFT;
+    the linter blocks publishing while any marker remains.
+  - Never write "we tested / our lab found" unless it happened.
+  - Author = a real person (Alvin Dao) — never an invented team/credential.
+  ======================================================================
+-->
+<main class="la" id="main">
+
+<!-- [ALL] A. Navigation -->
+<p class="la-back"><a href="/en/learn/">← Back to all articles</a></p>
+<nav class="la-crumb" aria-label="Breadcrumb"><ol>
+  <li><a href="/en/">Home</a></li>
+  <li><a href="/en/learn/">Learn</a></li>
+  <li><a href="{{PILLAR_URL}}">{{PILLAR_NAME}}</a></li>
+  <li aria-current="page">{{SHORT_TITLE}}</li>
+</ol></nav>
+
+<!-- [ALL] B. Header -->
+<p class="la-eyebrow">{{CLUSTER}} · {{INTENT_LABEL}}</p>
+<h1>{{H1}}</h1>
+<p class="la-deck">{{DECK — 1–2 sentences: the question this answers + what the reader will be able to decide}}</p>
+<p class="la-meta">
+  <span class="la-author">By <a href="/en/about-alvin.html">Alvin Dao</a>, Store Manager</span>
+  <!-- [OPT] only if a real reviewer exists: <span>Reviewed by {{NAME}}, {{REAL ROLE}}</span> -->
+  <span>Published <time datetime="{{YYYY-MM-DD}}">{{D Mon YYYY}}</time></span>
+  <span>Updated <time datetime="{{YYYY-MM-DD}}">{{D Mon YYYY}}</time></span>
+  <span>{{N}} min read</span>
+</p>
+
+<!-- [ALL] C. Hero — must show the actual subject. 16:9 crop. Alt = what is in the picture, not the title. -->
+<figure class="la-hero">
+  <img src="{{IMG}}" srcset="{{IMG_600W}} 600w, {{IMG}} {{W}}w" sizes="(max-width:700px) 100vw, 704px"
+       width="{{W}}" height="{{H}}" alt="{{Describe the image; include the topic naturally}}" fetchpriority="high">
+  <figcaption>{{Optional caption}}</figcaption>
+</figure>
+
+<!-- [ALL] D. Direct answer — 40–90 words, answer first, no warm-up sentence. -->
+<div class="la-answer">
+  <span class="la-answer-label">Short answer</span>
+  <p>{{DIRECT ANSWER}}</p>
+</div>
+
+<!-- [ALL except J-short] E. TL;DR — 3–6 bullets, each a real conclusion. -->
+<section class="la-tldr" aria-labelledby="tldr">
+  <h2 id="tldr">TL;DR</h2>
+  <ul><li>{{…}}</li></ul>
+</section>
+
+<!-- [OPT] F. Key numbers — 3–4 VERIFIED numbers only. Add a note saying where/when they come from. -->
+<dl class="la-facts">
+  <div><dt>{{VALUE}}</dt><dd>{{LABEL}}</dd></div>
+</dl>
+<p class="la-facts-note">{{Source/date of the numbers}}</p>
+
+<!-- [OPT] TOC — use when the article has 5+ H2 sections or >1,200 words. Links must match H2 ids. -->
+<details class="la-toc" open><summary>In this article</summary><ol>
+  <li><a href="#{{id}}">{{H2 text}}</a></li>
+</ol></details>
+
+<!-- [ALL] G. Main explanation (why it matters / how it works / what causes confusion) -->
+<h2 id="why">{{Why … matters}}</h2>
+<p>{{2–4 short paragraphs}}</p>
+
+<!-- [OPT] Key-takeaway box inside a section -->
+<div class="la-key"><p>{{One important conclusion}}</p></div>
+
+<!-- [OPT: A, B, C, F] H. Criteria — topic-specific, never a generic reused list -->
+<h2 id="criteria">{{What to look for when choosing …}}</h2>
+<ol class="la-criteria"><li><strong>{{Criterion}}.</strong> {{Why it matters in real use}}</li></ol>
+
+<!-- [OPT: A, B, C] I. Comparison table — concise cells; only columns supported by data -->
+<h2 id="table">{{Side-by-side comparison}}</h2>
+<p class="la-scroll-hint">Swipe the table sideways to see all columns →</p>
+<div class="la-table" tabindex="0" role="region" aria-label="{{table name}}">
+<table><caption>{{Caption}}</caption>
+<thead><tr><th scope="col">Option</th><th scope="col">Best for</th><th scope="col">Main strengths</th><th scope="col">Limitations</th></tr></thead>
+<tbody><tr><th scope="row">{{…}}</th><td>{{…}}</td><td>{{…}}</td><td>{{…}}</td></tr></tbody>
+</table></div>
+<p class="la-table-note">{{Price basis / date / source}}</p>
+
+<!-- [OPT: A, B, F] J. Option deep-dive — repeat per option; numbered only when truly comparing -->
+<h2 id="{{option-id}}"><span class="la-num">1.</span>{{Option name}}</h2>
+<p>{{Short explanation}}</p>
+<div class="la-proscons">
+  <div class="la-pros"><h3>Main strengths</h3><ul><li>{{…}}</li></ul></div>
+  <div class="la-cons"><h3>Limitations</h3><ul><li>{{…}}</li></ul></div>
+</div>
+<div class="la-bestfor"><p><b>Best for</b>{{specific situation}}</p><p><b>Consider instead if</b>{{alternative situation → link}}</p></div>
+
+<!-- [OPT: F, I] Who is this for / who may not need it -->
+<div class="la-audience">
+  <div><h3>Who it suits</h3><ul><li>{{…}}</li></ul></div>
+  <div><h3>Who may not need it</h3><ul><li>{{…}}</li></ul></div>
+</div>
+
+<!-- [OPT: D, H] Steps -->
+<ol class="la-steps"><li><h3>{{Step title}}</h3><p>{{What to do}}</p></li></ol>
+
+<!-- [OPT: A, B] Methodology — state source TYPES; no fake testing -->
+<h2 id="method">How we compared these options</h2>
+<ul><li><span class="la-srctype">Business info</span>{{…}}</li><li><span class="la-srctype">Manufacturer</span>{{…}}</li></ul>
+
+<!-- [OPT: A, B, C, E, F, I] K. Decision guide -->
+<h2 id="choose">{{Which … is right for you?}}</h2>
+<ul class="la-decide">
+  <li><span class="if">If you {{situation}}</span><span class="arrow" aria-hidden="true">→</span><span class="then">{{Consider …}}</span></li>
+</ul>
+
+<!-- [ALL] L. CTA — ONE, matched to intent (see playbook §CTA matrix). Only verified services. -->
+<aside class="la-cta" aria-labelledby="cta-h">
+  <h2 id="cta-h">{{Intent-matched heading}}</h2>
+  <p>{{1–2 helpful sentences}}</p>
+  <p class="la-cta-fact"><b>{{verified number}}</b><span>{{label}}</span></p>
+  <div class="la-cta-actions">
+    <a class="la-btn" href="{{service page}}">{{Descriptive action}}</a>
+    <a class="la-btn ghost" href="https://wa.me/84777986999" target="_blank" rel="noopener">Message on WhatsApp</a>
+  </div>
+  <small>Manh Long Optical · 147A Le Duan, Cua Nam, Hanoi · <a href="tel:+84777986999">0777 986 999</a></small>
+</aside>
+
+<!-- [ALL substantial] M. FAQ — 4–8 real questions; each answer adds something new. Mirror in FAQPage JSON-LD. -->
+<h2 id="faq">FAQ</h2>
+<div class="la-faq">
+  <div><h3>{{Question?}}</h3><p>{{Direct answer}}</p></div>
+</div>
+
+<!-- [ALL] N. Final takeaway — one sentence, practical -->
+<section class="la-remember" aria-labelledby="remember">
+  <h2 id="remember">One thing to remember</h2>
+  <p>{{…}}</p>
+</section>
+
+<!-- [OPT: health-adjacent topics] -->
+<div class="la-note"><p><strong>A note on health:</strong> {{…}}</p></div>
+
+<!-- [OPT: when technical/product claims are made] Sources with source type -->
+<h2 id="sources">Sources</h2>
+<ul class="la-sources"><li><span class="la-srctype">Manufacturer</span><a href="{{url}}" target="_blank" rel="noopener nofollow">{{Publisher — Title}}</a>. {{What it supports}}</li></ul>
+
+<!-- [ALL] Author box -->
+<aside class="la-authorbox" aria-label="Author">
+  <p class="la-ab-label">Author</p>
+  <p class="la-ab-name"><a href="/en/about-alvin.html">Alvin Dao</a></p>
+  <p>Store Manager at Manh Long Optical, 147A Le Duan, Cua Nam, Hanoi. Five years in the optical trade. <a href="/en/about-alvin.html">About Alvin</a></p>
+</aside>
+
+<!-- [ALL] O. Related — exactly 3 cards: pillar, closest sibling, next logical step -->
+<section class="la-related" aria-labelledby="related">
+  <h2 id="related">Related articles</h2>
+  <ul class="la-cards">
+    <li><a href="{{url}}"><span class="la-card-cat">{{Cluster}}</span><span class="la-card-title">{{Title}}</span><span class="la-card-desc">{{One line}}</span></a></li>
+  </ul>
+</section>
+
+<!-- [OPT] P. You might also like — 2–4 links: commercial page + wider cluster -->
+<nav class="la-more" aria-labelledby="more">
+  <h2 id="more">You might also like</h2>
+  <ul><li><a href="{{url}}">{{Descriptive anchor}}</a></li></ul>
+</nav>
+</main>
+<!-- Vietnamese pages: same markup; labels = "← Tất cả bài viết", "Trả lời nhanh",
+     "TL;DR", "Trong bài này", "Điểm mạnh", "Hạn chế", "Phù hợp nhất với",
+     "Cân nhắc lựa chọn khác nếu", "Câu hỏi thường gặp", "Điều cần nhớ",
+     "Nguồn tham khảo", "Tác giả", "Bài liên quan", "Có thể bạn quan tâm",
+     back/learn links → /tim-hieu.html, author → about page in VI when it exists. -->

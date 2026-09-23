@@ -1,0 +1,212 @@
+/* =====================================================================
+   Manh Long Optical — Learn Article Component Library  (v1, 2026-09)
+   ---------------------------------------------------------------------
+   Article BODY only. Global chrome (topbar, header, nav, footer,
+   sticky CTA) stays in each page's inline <style> and is NOT touched.
+   Every class is prefixed .la- so nothing collides with legacy pages.
+   Docs + intent templates: /docs/learn-editorial-system.md
+   Skeleton:                /templates/learn-article.html
+   ===================================================================== */
+
+:root{
+  --la-paper:#F4F2ED; --la-card:#FFFFFF; --la-ink:#1B1D1F; --la-navy:#22254F;
+  --la-muted:#6E6759; --la-hair:#DFDACE; --la-brass:#7A5A2B; --la-sand:#E9E3D6;
+  --la-serif:'Noto Serif Display',Georgia,serif;
+  --la-sans:Archivo,'Helvetica Neue',Arial,sans-serif;
+  --la-wide:704px;               /* one reading column: ~75 chars/line  */
+  --la-gap-section:56px;         /* vertical rhythm between H2 sections */
+  --la-gap-block:28px;           /* between blocks inside a section     */
+}
+
+/* ---------- layout ---------- */
+.la{max-width:var(--la-wide);margin:0 auto;padding:28px 20px 96px;font-family:var(--la-sans);color:var(--la-ink);font-size:17px;line-height:1.72}
+.la p{margin:0 0 16px}
+.la ul,.la ol{margin:0 0 18px;padding-left:22px}
+.la li{margin-bottom:8px}
+.la li::marker{color:var(--la-brass)}
+.la a{color:var(--la-brass);text-decoration:underline;text-decoration-color:rgba(122,90,43,.35);text-underline-offset:3px}
+.la a:hover{text-decoration-color:currentColor}
+.la strong{font-weight:600}
+
+/* ---------- A. article navigation ---------- */
+.la-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;letter-spacing:.02em;margin:0 0 10px}
+.la .la-back a{color:var(--la-muted);text-decoration:none}
+.la .la-back a:hover{color:var(--la-ink)}
+.la-crumb{font-size:12px;color:var(--la-muted);margin:0 0 22px}
+.la .la-crumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
+.la-crumb li{margin:0}
+.la-crumb li+li::before{content:"›";margin-right:4px;color:#B7AB92}
+.la .la-crumb a{color:var(--la-muted);text-decoration:none}
+
+/* ---------- B. header ---------- */
+.la-eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--la-brass);margin:0 0 10px;font-weight:600}
+.la h1{font-family:var(--la-serif);font-weight:500;font-size:clamp(28px,5.2vw,42px);line-height:1.18;letter-spacing:-.005em;margin:0 0 14px;text-wrap:balance}
+.la-deck{font-size:clamp(17px,2.3vw,19px);line-height:1.55;color:#3C3A36;margin:0 0 20px;text-wrap:pretty}
+.la-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;font-size:13px;color:var(--la-muted);margin:0 0 26px;padding:14px 0 0;border-top:1px solid var(--la-hair)}
+.la-meta .la-author{color:var(--la-ink)}
+.la-meta .la-author a{color:var(--la-ink);text-decoration:none;font-weight:600}
+.la-meta span+span::before{content:"·";margin-right:14px;color:#B7AB92}
+
+/* ---------- C. hero ---------- */
+.la-hero{margin:0 0 30px}
+.la-hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--la-sand)}
+.la-hero figcaption{font-size:12px;color:var(--la-muted);margin-top:8px}
+
+/* ---------- D. direct answer ---------- */
+.la-answer{font-size:18px;line-height:1.65;margin:0 0 var(--la-gap-block)}
+.la-answer p:last-child{margin-bottom:0}
+.la-answer .la-answer-label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--la-brass);font-weight:600;margin-bottom:6px}
+
+/* ---------- E. TL;DR ---------- */
+.la-tldr{background:var(--la-card);border:1px solid var(--la-hair);border-left:3px solid var(--la-navy);padding:18px 22px 8px;margin:0 0 var(--la-gap-block)}
+.la .la-tldr h2{font-family:var(--la-sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--la-navy);margin:0 0 10px}
+.la .la-tldr ul{padding-left:18px;font-size:16px}
+
+/* ---------- F. quick facts / key numbers ---------- */
+.la-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--la-hair);border:1px solid var(--la-hair);margin:0 0 var(--la-gap-block)}
+.la-facts > div{background:var(--la-paper);padding:16px 16px 14px}
+.la-facts dt{font-family:var(--la-serif);font-size:24px;line-height:1.15;color:var(--la-navy);margin:0 0 4px}
+.la .la-facts dd{margin:0;font-size:13px;line-height:1.45;color:var(--la-muted)}
+.la-facts-note{font-size:12px;color:var(--la-muted);margin:-18px 0 var(--la-gap-block)}
+
+/* ---------- TOC ---------- */
+.la-toc{border-top:1px solid var(--la-hair);border-bottom:1px solid var(--la-hair);padding:14px 0;margin:0 0 var(--la-gap-block);font-size:15px}
+.la-toc summary{cursor:pointer;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--la-navy);list-style:none}
+.la-toc summary::-webkit-details-marker{display:none}
+.la-toc summary::after{content:"+";float:right;font-weight:400}
+.la-toc[open] summary::after{content:"–"}
+.la .la-toc ol{margin:12px 0 0;padding-left:22px;columns:2 240px;column-gap:32px}
+.la-toc li{margin-bottom:6px;break-inside:avoid}
+.la .la-toc a{text-decoration:none;color:var(--la-ink)}
+.la .la-toc a:hover{color:var(--la-brass)}
+
+/* ---------- G/H. sections ---------- */
+.la h2{font-family:var(--la-serif);font-weight:500;font-size:clamp(24px,3.4vw,29px);line-height:1.25;margin:var(--la-gap-section) 0 14px;scroll-margin-top:16px;text-wrap:balance}
+.la h3{font-family:var(--la-sans);font-size:17px;font-weight:600;line-height:1.4;margin:28px 0 8px;scroll-margin-top:16px}
+.la-num{color:var(--la-brass);margin-right:.25em}
+
+/* key-takeaway / note boxes */
+.la-key{background:var(--la-sand);padding:16px 20px;margin:0 0 var(--la-gap-block);font-size:16px}
+.la-key p:last-child{margin:0}
+.la-note{background:var(--la-card);border:1px solid var(--la-hair);padding:14px 16px;font-size:14px;color:var(--la-muted);margin:var(--la-gap-block) 0}
+.la-note p:last-child{margin:0}
+
+/* criteria list */
+.la .la-criteria{list-style:none;padding:0;counter-reset:crit}
+.la-criteria li{counter-increment:crit;position:relative;padding:0 0 12px 38px;border-bottom:1px solid var(--la-hair);margin-bottom:12px}
+.la-criteria li:last-child{border-bottom:0}
+.la-criteria li::before{content:counter(crit);position:absolute;left:0;top:1px;width:24px;height:24px;border:1px solid var(--la-navy);border-radius:50%;font-size:12px;line-height:22px;text-align:center;color:var(--la-navy);font-weight:600}
+
+/* ---------- I. comparison table ---------- */
+.la-table{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 10px;border:1px solid var(--la-hair);background:var(--la-card)}
+.la-table:focus{outline:2px solid var(--la-navy);outline-offset:2px}
+.la-table table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px;line-height:1.5}
+.la-table caption{caption-side:top;text-align:left;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--la-muted);padding:12px 14px 0;font-weight:600}
+.la-table th,.la-table td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--la-hair)}
+.la-table thead th{background:var(--la-navy);color:var(--la-paper);font-weight:600;font-size:13px;letter-spacing:.02em}
+.la-table tbody th{font-weight:600;background:#FBFAF7;white-space:nowrap}
+.la-table tbody tr:last-child > *{border-bottom:0}
+.la-table-note{font-size:13px;color:var(--la-muted);margin:0 0 var(--la-gap-block)}
+.la-scroll-hint{display:none;font-size:12px;color:var(--la-muted);margin:0 0 6px}
+@media (max-width:600px){.la-scroll-hint{display:block}}
+
+/* ---------- J. option deep-dive ---------- */
+.la-proscons{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:4px 0 18px}
+.la-proscons > div{background:var(--la-card);border:1px solid var(--la-hair);padding:14px 16px 4px}
+.la .la-proscons h3{margin:0 0 8px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.la-pros h3{color:var(--la-navy)}
+.la-cons h3{color:var(--la-brass)}
+.la .la-proscons ul{padding-left:18px;font-size:15px}
+.la-bestfor{border-left:3px solid var(--la-brass);padding:4px 0 4px 16px;margin:0 0 10px;font-size:16px}
+.la .la-bestfor p{margin:0 0 6px}
+.la-bestfor b{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--la-brass);display:block;margin-bottom:2px}
+
+/* who-for / who-not */
+.la-audience{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 var(--la-gap-block)}
+.la-audience > div{border-top:2px solid var(--la-navy);padding-top:10px}
+.la-audience > div + div{border-top-color:var(--la-brass)}
+.la .la-audience h3{margin:0 0 6px}
+
+/* steps (how-to) */
+.la .la-steps{list-style:none;padding:0;counter-reset:step}
+.la-steps > li{counter-increment:step;position:relative;padding-left:48px;margin-bottom:22px}
+.la-steps > li::before{content:counter(step);position:absolute;left:0;top:0;width:32px;height:32px;background:var(--la-navy);color:var(--la-paper);font-family:var(--la-serif);font-size:17px;line-height:32px;text-align:center}
+
+/* ---------- K. decision guide ---------- */
+.la .la-decide{list-style:none;padding:0;margin:0 0 var(--la-gap-block);border-top:1px solid var(--la-hair)}
+.la-decide li{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:start;padding:14px 0;border-bottom:1px solid var(--la-hair);margin:0}
+.la-decide .if{color:var(--la-ink)}
+.la-decide .arrow{color:var(--la-brass);font-weight:600}
+.la-decide .then{font-weight:600;color:var(--la-navy)}
+
+/* ---------- L. CTA ---------- */
+.la-cta{background:var(--la-navy);color:var(--la-paper);padding:28px 26px;margin:var(--la-gap-section) 0 0}
+.la .la-cta h2{margin:0 0 10px;color:var(--la-paper);font-size:clamp(22px,3vw,26px)}
+.la .la-cta p{margin:0 0 14px;color:#DCD8CE}
+.la-cta .la-cta-fact{display:flex;align-items:baseline;gap:10px;margin:0 0 18px;color:var(--la-paper)}
+.la-cta .la-cta-fact b{font-family:var(--la-serif);font-weight:500;font-size:24px;white-space:nowrap}
+.la-cta-actions{display:flex;flex-wrap:wrap;gap:10px}
+.la .la-btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 22px;background:#8A6A3B;color:#fff;text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.la .la-btn:hover{background:#9B7843}
+.la .la-btn.ghost{background:transparent;border:1px solid rgba(244,242,237,.5);color:var(--la-paper)}
+.la .la-btn.ghost:hover{border-color:var(--la-paper)}
+.la-cta small{display:block;margin-top:14px;font-size:12px;color:#B7AB92}
+.la-cta small a{color:#DCD8CE}
+
+/* ---------- M. FAQ ---------- */
+.la-faq{border-top:1px solid var(--la-hair)}
+.la-faq > div{padding:16px 0 4px;border-bottom:1px solid var(--la-hair)}
+.la .la-faq h3{margin:0 0 6px;font-size:17px}
+.la-faq p{font-size:16px}
+
+/* ---------- N. final takeaway ---------- */
+.la-remember{margin:var(--la-gap-section) 0 0;padding:24px 0 0;border-top:2px solid var(--la-navy)}
+.la .la-remember h2{margin:0 0 10px;font-size:clamp(22px,3vw,26px)}
+.la .la-remember p{font-size:18px;line-height:1.6;margin:0}
+
+/* sources + author */
+.la .la-sources{font-size:14px;color:var(--la-muted)}
+.la-sources li{margin-bottom:10px}
+.la-srctype{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--la-hair);padding:1px 6px;margin-right:6px;color:var(--la-muted);vertical-align:1px}
+.la-authorbox{display:block;background:var(--la-card);border:1px solid var(--la-hair);padding:18px 20px;margin:var(--la-gap-block) 0 0;font-size:14px;line-height:1.6;color:var(--la-muted)}
+.la .la-authorbox p{margin:0 0 4px}
+.la-authorbox .la-ab-label{grid-column:1/-1;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--la-brass)}
+.la-authorbox .la-ab-name{font-family:var(--la-serif);font-size:19px;color:var(--la-ink);grid-column:1/-1}
+.la .la-authorbox .la-ab-name a{color:var(--la-ink);text-decoration:none}
+
+/* ---------- O/P. related + more ---------- */
+.la-related{margin:var(--la-gap-section) 0 0}
+.la .la-related h2{font-size:clamp(22px,3vw,26px);margin:0 0 16px}
+.la .la-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;padding:0;margin:0}
+.la-cards li{margin:0}
+.la .la-cards a{display:flex;flex-direction:column;height:100%;background:var(--la-card);border:1px solid var(--la-hair);padding:16px 16px 18px;text-decoration:none;color:var(--la-ink);transition:border-color .15s}
+.la .la-cards a:hover{border-color:var(--la-navy)}
+.la-cards .la-card-cat{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--la-brass);margin-bottom:8px;font-weight:600}
+.la-cards .la-card-title{font-family:var(--la-serif);font-size:18px;line-height:1.3;margin-bottom:8px}
+.la-cards .la-card-desc{font-size:14px;line-height:1.5;color:var(--la-muted);margin-top:auto}
+.la-more{margin:32px 0 0}
+.la .la-more h2{font-family:var(--la-sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--la-navy);margin:0 0 10px}
+.la .la-more ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--la-hair)}
+.la-more li{margin:0;border-bottom:1px solid var(--la-hair)}
+.la .la-more a{display:block;padding:12px 0;color:var(--la-ink);text-decoration:none;font-size:15px}
+.la .la-more a:hover{color:var(--la-brass)}
+.la-more a::after{content:" →";color:var(--la-brass)}
+
+/* ---------- mobile ---------- */
+@media (max-width:700px){
+  .la{padding:20px 16px 88px;font-size:16.5px}
+  .la-hero{margin-left:-16px;margin-right:-16px}
+  .la-hero figcaption{padding:0 16px}
+  .la-answer{font-size:17px}
+  .la-meta{gap:2px 12px}
+  .la-meta span+span::before{content:none}
+  .la-proscons,.la-audience{grid-template-columns:1fr}
+  .la .la-cards{grid-template-columns:1fr}
+  .la-decide li{grid-template-columns:1fr;gap:2px}
+  .la-decide .arrow{display:none}
+  .la-decide .then::before{content:"→ ";color:var(--la-brass)}
+  .la-cta{padding:24px 18px;margin-left:-16px;margin-right:-16px}
+  .la .la-btn{flex:1 1 100%}
+  .la .la-toc ol{columns:1}
+}
+@media print{.la-cta,.la-related,.la-more,.la-toc{display:none}}

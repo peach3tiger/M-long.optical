@@ -26,6 +26,7 @@ THEM = {
     "trong-kinh-essilor-stellest.html": "stellest kiem soat can thi tre em halt airwear crizal rock 7200000 7500000",
     "essilor-transitions-gen-s.html": "transitions gen s doi mau photochromic xtractive",
     "transitions-gen-s-advantages.html": "transitions gen s uu diem doi mau",
+    "kinh-da-trong-la-gi.html": "kinh da trong la gi 2 trong hai trong bifocal progressive luy tien lao thi kinh doc varilux zeiss",
     "varilux-comfort-max.html": "varilux comfort max da trong progressive lao thi",
     "varilux-physio-extensee-review.html": "varilux physio extensee da trong danh gia",
     "zeiss-smartlife-individual.html": "zeiss smartlife individual may do da trong",

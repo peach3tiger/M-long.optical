@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Kính đa tròng là gì? Đa tròng, 2 tròng và cách chọn | Mạnh Long</title>
+<meta name="description" content="Kính đa tròng là gì, khác kính 2 tròng và tròng lũy tiến ra sao, Varilux và ZEISS hợp với ai, giá từ bao nhiêu và cần đo lắp gì trước khi đặt.">
+<link rel="canonical" href="https://manhlongoptical.com/kinh-da-trong-la-gi.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/kinh-da-trong-la-gi.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/learn/multifocal-lenses-explained.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/kinh-da-trong-la-gi.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kính đa tròng là gì? Đa tròng, 2 tròng và cách chọn | Mạnh Long">
+<meta name="twitter:description" content="Kính đa tròng là gì, khác kính 2 tròng và tròng lũy tiến ra sao, Varilux và ZEISS hợp với ai, giá từ bao nhiêu và cần đo lắp gì trước khi đặt.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/learn-multifocal-hero.jpg">
+<meta property="og:title" content="Kính đa tròng là gì? Đa tròng, 2 tròng và cách chọn | Mạnh Long">
+<meta property="og:description" content="Kính đa tròng là gì, khác kính 2 tròng và tròng lũy tiến ra sao, Varilux và ZEISS hợp với ai, giá từ bao nhiêu và cần đo lắp gì trước khi đặt.">
+<meta property="og:url" content="https://manhlongoptical.com/kinh-da-trong-la-gi.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/learn-multifocal-hero.jpg">
+<meta property="og:locale" content="vi_VN">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+</style>
+<link rel="stylesheet" href="/assets/learn.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/kinh-da-trong-la-gi.html#article","headline":"Kính đa tròng là gì? Đa tròng, kính 2 tròng và cách chọn đúng loại","description":"Kính đa tròng là gì, khác kính 2 tròng và tròng lũy tiến ra sao, Varilux và ZEISS hợp với ai, giá từ bao nhiêu và cần đo lắp gì trước khi đặt.","image":"https://manhlongoptical.com/uploads-opt/learn-multifocal-hero.jpg","author":{"@type":"Person","@id":"https://manhlongoptical.com/ve-alvin.html#alvin","name":"Alvin Dao","alternateName":"Alvin","jobTitle":"Store Manager","url":"https://manhlongoptical.com/ve-alvin.html","worksFor":{"@id":"https://manhlongoptical.com/#localbusiness"}},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"},"datePublished":"2026-09-23","dateModified":"2026-09-23","articleSection":"Kiến thức tròng kính","inLanguage":"vi","mainEntityOfPage":{"@type":"WebPage","@id":"https://manhlongoptical.com/kinh-da-trong-la-gi.html"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/kinh-da-trong-la-gi.html#faq","mainEntity":[{"@type":"Question","name":"Kính đa tròng và kính lũy tiến có phải là một?","acceptedAnswer":{"@type":"Answer","text":"Không hẳn. Đa tròng là cả nhóm tròng có nhiều vùng nhìn; lũy tiến là một kiểu trong nhóm đó, độ thay đổi dần và không có đường phân cách. Ở Việt Nam, khi nói \"kính đa tròng\" người ta thường đang nói về tròng lũy tiến."}},{"@type":"Question","name":"Kính 2 tròng khác kính đa tròng thế nào?","acceptedAnswer":{"@type":"Answer","text":"Kính 2 tròng chỉ có hai vùng, xa và gần, với đường ranh nhìn thấy được và không có vùng tầm trung riêng. Tròng lũy tiến có thêm vùng tầm trung và không có đường ranh. Cửa hàng làm cả hai loại."}},{"@type":"Question","name":"Varilux có phải là kính đa tròng không?","acceptedAnswer":{"@type":"Answer","text":"Có. Varilux là dòng đa tròng của Essilor, phần lớn dùng thiết kế lũy tiến. Varilux là tên dòng sản phẩm, còn lũy tiến là kiểu thiết kế."}},{"@type":"Question","name":"Bao lâu thì quen kính đa tròng?","acceptedAnswer":{"@type":"Answer","text":"Phần lớn người đeo quen trong vài ngày đến 2 tuần. Nếu lâu hơn mà vẫn khó chịu, nên quay lại kiểm tra thông số lắp."}},{"@type":"Question","name":"Có lắp đa tròng vào gọng cũ của tôi được không?","acceptedAnswer":{"@type":"Answer","text":"Thường được, nếu gọng đủ cao để chứa vùng đọc gần. Công lắp tròng vào gọng bạn mang đến là miễn phí; tròng tính theo giá tròng. Cửa hàng kiểm gọng trước khi nhận."}},{"@type":"Question","name":"Kính đa tròng có bảo hành không?","acceptedAnswer":{"@type":"Answer","text":"Có. Bảo hành 1 đổi 1 trong 1 tháng nếu lỗi sản phẩm."}},{"@type":"Question","name":"Mới lão thị nhẹ, có cần đa tròng ngay không?","acceptedAnswer":{"@type":"Answer","text":"Không bắt buộc. Nếu nhìn xa vẫn rõ và chỉ khó đọc gần, kính đọc từ 580.000đ có thể đủ. Đa tròng hợp khi bạn cần cả xa lẫn gần trong ngày và không muốn đổi kính liên tục."}}]},{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/kinh-da-trong-la-gi.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Kính đa tròng","item":"https://manhlongoptical.com/kinh-da-trong-la-gi.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://www.linkedin.com/company/143883407/","https://www.tiktok.com/@manhlong.optical","https://medium.com/@mlong.optical","https://zalo.me/0777986999"]}]}</script>
+<!-- Meta Pixel 1718493272777504 (them 13/09/2026) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1718493272777504');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+<script async src="https://px.get-ryze.ai/px.js" data-key="rz_pk_4898090d56df06cda42bdeffa6602a82"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Dai goi y ngon ngu, them 07/09/2026. CHI GOI Y, KHONG tu chuyen trang.
+     Hien khi trinh duyet dat tieng Anh; dong duoc va nho lua chon trong localStorage.
+     KHONG dung ?lang= — kien truc la hai cay trang rieng: / va /en/.
+     Trang nay DA co ban dich tieng Anh, cap nhat 11/09/2026. -->
+<div id="langbar" hidden>
+  <a href="/en/learn/multifocal-lenses-explained.html" hreflang="en" lang="en">Read this in English &#8594;</a>
+  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById("langbar"); if(!bar) return;
+  var KEY="ml-langbar-off";
+  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
+  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
+  if(l.indexOf("en")!==0) return;
+  bar.hidden=false;
+  var x=document.getElementById("langbarx");
+  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
+})();
+</script>
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/learn/multifocal-lenses-explained.html" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
+</header>
+<main class="la" id="main">
+
+<p class="la-back"><a href="/tim-hieu.html">← Tất cả bài viết</a></p>
+<nav class="la-crumb" aria-label="Breadcrumb"><ol>
+  <li><a href="/">Trang chủ</a></li>
+  <li><a href="/tim-hieu.html">Tìm hiểu</a></li>
+  <li aria-current="page">Kính đa tròng</li>
+</ol></nav>
+
+<p class="la-eyebrow">Tròng kính · Hướng dẫn chọn</p>
+<h1>Kính đa tròng là gì? Đa tròng, kính 2 tròng và cách chọn đúng loại</h1>
+<p class="la-deck">Đa tròng, lũy tiến, 2 tròng, Varilux, ZEISS — mấy cái tên này hay bị dùng lẫn nhau. Bài này tách chúng ra, nói rõ mỗi loại hợp với ai, giá bắt đầu từ đâu, và cần chuẩn bị gì trước khi đặt.</p>
+<p class="la-meta">
+  <span class="la-author">Bài viết của <a href="/ve-alvin.html">Alvin Dao</a>, Quản lý cửa hàng</span>
+  <span>Đăng <time datetime="2026-09-23">23/09/2026</time></span>
+  <span>Cập nhật <time datetime="2026-09-23">23/09/2026</time></span>
+  <span>8 phút đọc</span>
+</p>
+
+<figure class="la-hero">
+  <img src="/uploads-opt/learn-multifocal-hero.jpg" width="780" height="387" alt="Người đeo kính đa tròng Essilor Varilux ngoài phố" fetchpriority="high">
+</figure>
+
+<div class="la-answer">
+  <span class="la-answer-label">Trả lời nhanh</span>
+  <p>Kính đa tròng là tròng có nhiều hơn một vùng độ trên cùng một mắt kính, để nhìn xa, nhìn tầm trung và đọc gần mà không phải đổi kính. Ở Việt Nam, "đa tròng" thường dùng để chỉ tròng lũy tiến: độ thay đổi dần, không có đường phân cách. Kính 2 tròng (bifocal) thì chỉ có hai vùng xa và gần, có đường ranh thấy được. Cửa hàng làm cả hai loại.</p>
+</div>
+
+<section class="la-tldr" aria-labelledby="tldr">
+  <h2 id="tldr">TL;DR</h2>
+  <ul>
+    <li>Đa tròng là cả một nhóm tròng. Lũy tiến là một kiểu trong nhóm đó; kính 2 tròng là kiểu khác.</li>
+    <li>Varilux là dòng đa tròng của Essilor, không phải tên một loại tròng.</li>
+    <li>Tròng đa tròng Essilor dòng phổ thông từ 2.080.000đ một cặp; Varilux Liberty 3.0 từ 4.480.000đ.</li>
+    <li>Phần lớn người đeo lần đầu quen trong vài ngày đến 2 tuần. Đo lắp quyết định nhiều hơn hạng tròng.</li>
+    <li>Chỉ cần đọc gần? Kính đọc từ 580.000đ có thể đủ, không nhất thiết phải đa tròng.</li>
+  </ul>
+</section>
+
+<dl class="la-facts">
+  <div><dt>2.080.000đ</dt><dd>Tròng đa tròng Essilor Essentials Everyday Plus 1.50, một cặp</dd></div>
+  <div><dt>580.000đ</dt><dd>Kính đọc, giá khởi điểm</dd></div>
+  <div><dt>3–4 ngày</dt><dd>Đa tròng Essilor, ZEISS, cắt tại lab của hãng</dd></div>
+  <div><dt>Miễn phí</dt><dd>Công lắp tròng vào gọng bạn đang có</dd></div>
+</dl>
+<p class="la-facts-note">Giá tròng theo cặp, chưa gồm gọng, theo bảng giá cửa hàng áp dụng tháng 9/2026. Giá cuối do kỹ thuật viên chốt sau khi đo mắt.</p>
+
+<details class="la-toc" open><summary>Trong bài này</summary><ol>
+  <li><a href="#la-gi">Đa tròng nghĩa là gì</a></li>
+  <li><a href="#cac-kieu">Các kiểu tròng nhiều vùng nhìn</a></li>
+  <li><a href="#bang-so-sanh">So sánh nhanh</a></li>
+  <li><a href="#danh-doi">Đánh đổi của tròng lũy tiến</a></li>
+  <li><a href="#varilux">Varilux: dòng đa tròng của Essilor</a></li>
+  <li><a href="#zeiss">Đa tròng ZEISS</a></li>
+  <li><a href="#gia">Giá tham khảo</a></li>
+  <li><a href="#do-lap">Đo lắp và làm quen</a></li>
+  <li><a href="#chon">Nên chọn loại nào</a></li>
+  <li><a href="#faq">Câu hỏi thường gặp</a></li>
+</ol></details>
+
+<h2 id="la-gi">Đa tròng nghĩa là gì</h2>
+<p>Mắt cần lấy nét ở nhiều khoảng cách trong ngày: nhìn xa khi đi đường, lái xe; tầm trung khi nhìn màn hình máy tính, bảng đồng hồ xe; nhìn gần khi đọc sách, xem điện thoại. Tròng đa tròng gộp những nhu cầu đó vào một cặp kính.</p>
+<p>Lý do phổ biến nhất khiến người ta cần đa tròng là lão thị — thay đổi theo tuổi làm mắt khó lấy nét ở gần. Dấu hiệu quen thuộc: phải cầm điện thoại xa ra mới đọc được, cần nhiều ánh sáng hơn để đọc, hoặc cứ phải tháo kính cận ra rồi đeo kính đọc vào. Trên đơn kính, phần độ cộng thêm cho nhìn gần là chỉ số ADD — xem <a href="/cach-doc-don-kinh.html">cách đọc đơn kính</a> nếu bạn đang cầm đơn trong tay.</p>
+
+<h2 id="cac-kieu">Các kiểu tròng nhiều vùng nhìn</h2>
+<figure style="margin:0 0 24px">
+  <img src="/uploads-opt/learn-multifocal-diagram.jpg" width="1200" height="674" loading="lazy" style="display:block;width:100%;height:auto" alt="Sơ đồ so sánh vùng nhìn xa, tầm trung và gần trên tròng 2 tròng, đa tròng và lũy tiến">
+  <figcaption>Sơ đồ đơn giản hoá. Hình dạng và độ rộng từng vùng thay đổi theo thiết kế tròng và độ của mỗi người.</figcaption>
+</figure>
+<h3>Đơn tròng</h3>
+<p>Một độ chính cho một khoảng cách chính: xa, tầm trung hoặc gần. Kính cận thông thường và kính đọc đều là đơn tròng. Đây không phải đa tròng.</p>
+<h3>Kính 2 tròng (bifocal)</h3>
+<p>Hai vùng nhìn, thường là xa ở trên và gần ở dưới, ngăn bằng một mảnh tròng nhỏ nhìn thấy được. Ưu điểm là hai vùng rõ ràng, dễ tìm. Nhược điểm là có đường ranh trên mặt tròng và không có vùng riêng cho tầm trung như màn hình máy tính. Cửa hàng có làm kính 2 tròng.</p>
+<h3>Tròng lũy tiến (progressive)</h3>
+<p>Độ thay đổi dần từ trên xuống: xa → tầm trung → gần, không có đường phân cách. Đây là loại mà phần lớn người Việt gọi là "kính đa tròng". Varilux của Essilor và các dòng đa tròng ZEISS đều thuộc kiểu này.</p>
+<h3>Tròng văn phòng</h3>
+<p>Một biến thể lũy tiến dành cho khoảng cách trong phòng: màn hình, bàn làm việc, người đối diện. Vùng tầm trung và gần rộng hơn, đổi lại không dùng để lái xe. Essilor Home &amp; Work, ZEISS Office Plus, Office Superb và ZEISS Digital Light 2 đều đặt được qua cửa hàng.</p>
+
+<h2 id="bang-so-sanh">So sánh nhanh</h2>
+<div class="la-key"><p>Mọi tròng lũy tiến đều là đa tròng, nhưng không phải tròng đa tròng nào cũng là lũy tiến.</p></div>
+<p class="la-scroll-hint">Vuốt ngang để xem đủ các cột →</p>
+<div class="la-table" tabindex="0" role="region" aria-label="So sánh các kiểu tròng">
+<table><caption>Đơn tròng, 2 tròng, lũy tiến và tròng văn phòng</caption>
+<thead><tr><th scope="col">Kiểu tròng</th><th scope="col">Vùng nhìn</th><th scope="col">Đường ranh</th><th scope="col">Hợp với</th></tr></thead>
+<tbody>
+<tr><th scope="row">Đơn tròng / kính đọc</th><td>Một khoảng cách</td><td>Không</td><td>Chỉ cần nhìn rõ ở một cự ly</td></tr>
+<tr><th scope="row">Kính 2 tròng</th><td>Xa và gần</td><td>Có, nhìn thấy được</td><td>Muốn hai vùng tách bạch, ít dùng màn hình</td></tr>
+<tr><th scope="row">Lũy tiến</th><td>Xa, tầm trung, gần</td><td>Không</td><td>Muốn một cặp cho cả ngày</td></tr>
+<tr><th scope="row">Văn phòng</th><td>Tầm trung và gần, rộng hơn</td><td>Không</td><td>Ngồi máy tính nhiều giờ, không dùng khi lái xe</td></tr>
+</tbody></table></div>
+
+<h2 id="danh-doi">Đánh đổi của tròng lũy tiến</h2>
+<p>Một cặp cho mọi khoảng cách thì tiện, nhưng có cái giá. Người mới đeo có thể thấy:</p>
+<ul>
+  <li>Mờ ở hai bên rìa tròng</li>
+  <li>Vùng nhìn rõ cho một số khoảng cách hẹp hơn mong đợi</li>
+  <li>Hơi méo hình, cảm giác bậc thang "dịch" khi mới đeo</li>
+  <li>Phải xoay đầu, không chỉ đảo mắt, để tìm vùng rõ nhất</li>
+  <li>Cần một khoảng thời gian làm quen</li>
+</ul>
+<p>Mức độ khác nhau ở mỗi người. Thiết kế tròng, độ, kích thước gọng và thông số đo lắp đều ảnh hưởng. Thiết kế cao cấp hơn có thể giảm bớt một phần các đánh đổi này, nhưng đo lắp chính xác vẫn là điều kiện đầu tiên.</p>
+
+<h2 id="varilux">Varilux: dòng đa tròng của Essilor</h2>
+<p>Varilux là họ tròng đa tròng của Essilor. Chiếc tròng Varilux đầu tiên do kỹ sư người Pháp Bernard Maitenaz phát triển năm 1959. Cần tách ba khái niệm: <strong>đa tròng</strong> là tròng làm gì, <strong>lũy tiến</strong> là một kiểu thiết kế, còn <strong>Varilux</strong> là tên dòng sản phẩm.</p>
+<p>Cửa hàng có thể đặt ba dòng Varilux. Câu hỏi hữu ích không phải "Varilux nào đắt nhất", mà "Varilux nào khớp với cách mình dùng mắt":</p>
+<ul>
+  <li><strong>Varilux Liberty 3.0</strong> — cho nhu cầu hằng ngày, hướng tới làm quen dễ. Hợp với người mới đeo đa tròng lần đầu.</li>
+  <li><strong>Varilux Comfort Max</strong> — nhấn vào cảm giác thoải mái cả ngày ở nhiều tư thế. Xem bài <a href="/varilux-comfort-max.html">Varilux Comfort Max</a>.</li>
+  <li><strong>Varilux Physio 3.0</strong> — nhấn vào thị giác hai mắt và độ ổn định khi di chuyển, đổi cự ly liên tục. Xem bài <a href="/varilux-physio-extensee-review.html">đánh giá Varilux Physio 3.0</a>.</li>
+</ul>
+<p>Dưới Varilux còn dòng Essilor Essentials — đa tròng phổ thông của Essilor, mức giá dễ tiếp cận hơn. Một thiết kế đơn giản hơn không có nghĩa là thiết kế kém: nếu nhu cầu của bạn không phức tạp, bạn không cần trả tiền cho mọi tính năng.</p>
+
+<h2 id="zeiss">Đa tròng ZEISS</h2>
+<p>Manh Long Optical là đại lý ủy quyền của ZEISS và có thể đặt hàng các dòng đa tròng ZEISS: SmartLife Pure, SmartLife Plus, Light 2 D, Light 2 3D, Light 2 3DV, SmartLife Individual và DriveSafe bản lũy tiến. Đây là hàng đặt theo đơn, không phải hàng có sẵn tại cửa hàng; giá báo khi đặt, sau khi đo mắt. Tìm hiểu thêm ở <a href="/zeiss-lenses.html">bài về đa tròng ZEISS</a> và <a href="/zeiss-smartlife-individual.html">ZEISS SmartLife Individual</a>.</p>
+
+<h2 id="gia">Giá tham khảo</h2>
+<p>Giá tròng theo cặp, chưa gồm gọng. Mức cụ thể phụ thuộc chiết suất, lớp phủ và độ của bạn; cửa hàng chốt đủ giá trước khi cắt tròng.</p>
+<p class="la-scroll-hint">Vuốt ngang để xem đủ các cột →</p>
+<div class="la-table" tabindex="0" role="region" aria-label="Giá tròng đa tròng tham khảo">
+<table><caption>Giá khởi điểm, tròng trắng</caption>
+<thead><tr><th scope="col">Dòng tròng</th><th scope="col">Loại</th><th scope="col">Giá từ (một cặp)</th></tr></thead>
+<tbody>
+<tr><th scope="row">Essilor Essentials Everyday Plus</th><td>Lũy tiến phổ thông</td><td>2.080.000đ (1.50)</td></tr>
+<tr><th scope="row">Essilor Home &amp; Work</th><td>Văn phòng</td><td>2.380.000đ (1.50)</td></tr>
+<tr><th scope="row">Varilux Liberty 3.0</th><td>Lũy tiến</td><td>4.480.000đ (1.50)</td></tr>
+<tr><th scope="row">Varilux Comfort Max</th><td>Lũy tiến</td><td>6.780.000đ (1.50)</td></tr>
+<tr><th scope="row">Varilux Physio 3.0</th><td>Lũy tiến</td><td>11.780.000đ (1.56)</td></tr>
+<tr><th scope="row">Đa tròng ZEISS</th><td>Lũy tiến, văn phòng</td><td>Báo giá khi đặt</td></tr>
+<tr><th scope="row">Kính 2 tròng</th><td>Bifocal</td><td>Báo giá tại cửa hàng</td></tr>
+<tr><th scope="row">Kính đọc</th><td>Đơn tròng nhìn gần</td><td>580.000đ</td></tr>
+</tbody></table></div>
+<p class="la-table-note">Bảng giá tròng Essilor tại cửa hàng, cập nhật 23/09/2026. Bảng giá đầy đủ theo chiết suất ở trang <a href="/trong-kinh.html">tròng kính</a>.</p>
+
+<h2 id="do-lap">Đo lắp và làm quen</h2>
+<p>Một tròng cao cấp đo sai vẫn khó chịu. Với đa tròng, cửa hàng xem xét: độ, độ cộng ADD, khoảng cách đồng tử, chiều cao tâm mắt đo trên đúng cái gọng bạn chọn, vị trí và kích thước gọng, công việc hằng ngày, và bạn đã từng đeo đa tròng chưa. Gọng quá dẹt sẽ cắt mất vùng đọc gần, nên chiều cao gọng được kiểm trước khi đặt.</p>
+<ul>
+  <li><strong>Làm quen:</strong> phần lớn người đeo quen trong vài ngày đến 2 tuần.</li>
+  <li><strong>Thời gian làm:</strong> đa tròng Essilor và ZEISS mất 3–4 ngày vì tròng được đánh bề mặt tại lab của hãng. Nếu sắp bay, nói ngày đi ngay từ đầu.</li>
+  <li><strong>Gọng đang có:</strong> lắp tròng mới vào gọng bạn mang đến được miễn phí công lắp; tròng tính theo giá tròng. Cửa hàng kiểm gọng trước khi nhận.</li>
+  <li><strong>Bảo hành:</strong> Bảo hành 1 đổi 1 trong 1 tháng nếu lỗi sản phẩm.</li>
+</ul>
+
+<h2 id="chon">Nên chọn loại nào</h2>
+<ul class="la-decide">
+  <li><span class="if">Nếu bạn chỉ khó đọc gần, nhìn xa vẫn rõ</span><span class="arrow" aria-hidden="true">→</span><span class="then">Kính đọc từ 580.000đ có thể đủ</span></li>
+  <li><span class="if">Nếu bạn muốn hai vùng xa – gần tách bạch, ít dùng máy tính</span><span class="arrow" aria-hidden="true">→</span><span class="then">Kính 2 tròng</span></li>
+  <li><span class="if">Nếu bạn muốn một cặp cho cả ngày và mới đeo đa tròng lần đầu</span><span class="arrow" aria-hidden="true">→</span><span class="then">Essilor Essentials hoặc Varilux Liberty 3.0</span></li>
+  <li><span class="if">Nếu bạn đeo kính gần như cả ngày, hay mỏi cổ khi ngồi bàn</span><span class="arrow" aria-hidden="true">→</span><span class="then">Varilux Comfort Max</span></li>
+  <li><span class="if">Nếu bạn di chuyển nhiều, đổi cự ly liên tục</span><span class="arrow" aria-hidden="true">→</span><span class="then">Varilux Physio 3.0</span></li>
+  <li><span class="if">Nếu bạn ngồi máy tính nhiều giờ mỗi ngày</span><span class="arrow" aria-hidden="true">→</span><span class="then">Tròng văn phòng, dùng song song với kính đi đường</span></li>
+</ul>
+<p>Bắt đầu luôn là mắt bạn, rồi đến độ, rồi đến cách bạn thật sự dùng kính. Chỉ sau đó mới chọn thiết kế tròng. Nếu bạn đang đeo đa tròng, mang theo cặp cũ — nó cho biết cái gì đang ổn và cái gì chưa.</p>
+
+<aside class="la-cta" aria-labelledby="cta-h">
+  <h2 id="cta-h">Đo mắt trước, chọn tròng sau</h2>
+  <p>Đo mắt miễn phí tại cửa hàng, mua hay không cũng vậy. Kể cho nhân viên nghe một ngày của bạn — lái xe, máy tính, đọc sách, điện thoại — rồi mới bàn đến dòng tròng.</p>
+  <p class="la-cta-fact"><b>Miễn phí</b><span>Đo mắt tại 147A Lê Duẩn</span></p>
+  <div class="la-cta-actions">
+    <a class="la-btn" href="/do-mat-mien-phi-tron-doi.html">Xem dịch vụ đo mắt</a>
+    <a class="la-btn ghost" href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo</a>
+  </div>
+  <small>Manh Long Optical · 147A Lê Duẩn, Cửa Nam, Hà Nội · <a href="tel:+84777986999">0777 986 999</a></small>
+</aside>
+
+<h2 id="faq">Câu hỏi thường gặp</h2>
+<div class="la-faq">
+  <div><h3>Kính đa tròng và kính lũy tiến có phải là một?</h3><p>Không hẳn. Đa tròng là cả nhóm tròng có nhiều vùng nhìn; lũy tiến là một kiểu trong nhóm đó, độ thay đổi dần và không có đường phân cách. Ở Việt Nam, khi nói "kính đa tròng" người ta thường đang nói về tròng lũy tiến.</p></div>
+  <div><h3>Kính 2 tròng khác kính đa tròng thế nào?</h3><p>Kính 2 tròng chỉ có hai vùng, xa và gần, với đường ranh nhìn thấy được và không có vùng tầm trung riêng. Tròng lũy tiến có thêm vùng tầm trung và không có đường ranh. Cửa hàng làm cả hai loại.</p></div>
+  <div><h3>Varilux có phải là kính đa tròng không?</h3><p>Có. Varilux là dòng đa tròng của Essilor, phần lớn dùng thiết kế lũy tiến. Varilux là tên dòng sản phẩm, còn lũy tiến là kiểu thiết kế.</p></div>
+  <div><h3>Bao lâu thì quen kính đa tròng?</h3><p>Phần lớn người đeo quen trong vài ngày đến 2 tuần. Nếu lâu hơn mà vẫn khó chịu, nên quay lại kiểm tra thông số lắp.</p></div>
+  <div><h3>Có lắp đa tròng vào gọng cũ của tôi được không?</h3><p>Thường được, nếu gọng đủ cao để chứa vùng đọc gần. Công lắp tròng vào gọng bạn mang đến là miễn phí; tròng tính theo giá tròng. Cửa hàng kiểm gọng trước khi nhận.</p></div>
+  <div><h3>Kính đa tròng có bảo hành không?</h3><p>Có. Bảo hành 1 đổi 1 trong 1 tháng nếu lỗi sản phẩm.</p></div>
+  <div><h3>Mới lão thị nhẹ, có cần đa tròng ngay không?</h3><p>Không bắt buộc. Nếu nhìn xa vẫn rõ và chỉ khó đọc gần, kính đọc từ 580.000đ có thể đủ. Đa tròng hợp khi bạn cần cả xa lẫn gần trong ngày và không muốn đổi kính liên tục.</p></div>
+</div>
+
+<section class="la-remember" aria-labelledby="remember">
+  <h2 id="remember">Điều cần nhớ</h2>
+  <p>Tròng đa tròng đúng không phải tròng đắt nhất, mà là tròng khớp với độ, gọng và cách bạn dùng mắt mỗi ngày — và được đo lắp chính xác.</p>
+</section>
+
+<div class="la-note"><p><strong>Lưu ý sức khoẻ:</strong> Bài viết mang tính thông tin, không thay cho khám mắt. Nếu thị lực giảm đột ngột, nhìn đôi hoặc đau mắt, hãy đi khám bác sĩ nhãn khoa.</p></div>
+
+<aside class="la-authorbox" aria-label="Tác giả">
+  <p class="la-ab-label">Tác giả</p>
+  <p class="la-ab-name"><a href="/ve-alvin.html">Alvin Dao</a></p>
+  <p>Quản lý cửa hàng Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội. Năm năm làm nghề kính mắt. <a href="/ve-alvin.html">Về Alvin</a></p>
+</aside>
+
+<section class="la-related" aria-labelledby="related">
+  <h2 id="related">Bài liên quan</h2>
+  <ul class="la-cards">
+    <li><a href="/varilux-comfort-max.html"><span class="la-card-cat">Varilux</span><span class="la-card-title">Varilux Comfort Max</span><span class="la-card-desc">Đa tròng thiên về thoải mái cả ngày.</span></a></li>
+    <li><a href="/varilux-physio-extensee-review.html"><span class="la-card-cat">Varilux</span><span class="la-card-title">Đánh giá Varilux Physio 3.0</span><span class="la-card-desc">Có đáng nâng cấp không.</span></a></li>
+    <li><a href="/zeiss-lenses.html"><span class="la-card-cat">ZEISS</span><span class="la-card-title">Đa tròng ZEISS</span><span class="la-card-desc">Các dòng ZEISS cửa hàng đặt được.</span></a></li>
+    <li><a href="/photochromic-progressive-lenses.html"><span class="la-card-cat">Đa tròng</span><span class="la-card-title">Đa tròng đổi màu</span><span class="la-card-desc">Một cặp dùng được cả trong nhà và ngoài nắng.</span></a></li>
+    <li><a href="/cach-doc-don-kinh.html"><span class="la-card-cat">Đơn kính</span><span class="la-card-title">Cách đọc đơn kính</span><span class="la-card-desc">SPH, CYL, AXIS, ADD, PD là gì.</span></a></li>
+  </ul>
+</section>
+
+<nav class="la-more" aria-labelledby="more">
+  <h2 id="more">Có thể bạn quan tâm</h2>
+  <ul>
+    <li><a href="/trong-kinh.html">Bảng giá tròng kính theo chiết suất</a></li>
+    <li><a href="/zeiss-smartlife-individual.html">ZEISS SmartLife Individual: tròng may đo</a></li>
+    <li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí tại cửa hàng</a></li>
+  </ul>
+</nav>
+</main>
+
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

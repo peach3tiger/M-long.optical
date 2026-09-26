@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Chính sách bảo hành | Manh Long Optical</title>
+<meta name="description" content="Bảo hành 1 đổi 1 trong 1 tháng nếu lỗi sản phẩm. Khám mắt, đo lại độ, chỉnh gọng, vệ sinh, thay ve mũi miễn phí trọn đời, kể cả kính mua nơi khác.">
+<link rel="canonical" href="https://manhlongoptical.com/chinh-sach-bao-hanh.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chinh-sach-bao-hanh.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/warranty-policy.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chinh-sach-bao-hanh.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Chính sách bảo hành | Manh Long Optical">
+<meta property="og:description" content="Bảo hành 1 đổi 1 trong 1 tháng nếu lỗi sản phẩm. Khám mắt, đo lại độ, chỉnh gọng, vệ sinh, thay ve mũi miễn phí trọn đời, kể cả kính mua nơi khác.">
+<meta property="og:url" content="https://manhlongoptical.com/chinh-sach-bao-hanh.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
+.faq dt{font-weight:600;margin:18px 0 6px}.faq dd{margin:0 0 14px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+.listing article{border-bottom:1px solid var(--hair);padding:22px 0}.listing h2{margin:0 0 8px;font-size:22px}.listing p{margin:0;color:var(--muted);font-size:14px}
+.listing .cat{font-size:11px;letter-spacing:.2em;color:var(--brass)}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+/* Khoi tac gia cuoi bai, them 10/09/2026. Mot mau dung chung moi trang. */
+.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
+.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
+.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
+.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
+.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
+.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
+
+.lede{font-size:17px}
+.takeaway ul{margin:8px 0 0}
+.policy-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.policy-nav li{margin:0}
+.policy-nav a{display:inline-block;font-size:12px;line-height:1.4;padding:7px 11px;border:1px solid var(--hair);background:#fff;color:var(--ink)}
+.policy-nav a[aria-current]{background:var(--navy);border-color:var(--navy);color:#F4F2ED}
+.toc{background:#fff;border:1px solid var(--hair);padding:16px 18px;margin:0 0 8px;font-size:14px}
+.toc p{margin:0 0 6px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.toc ol{margin:0;padding-left:20px}.toc li{margin-bottom:4px}
+.contact-box{background:#fff;border:1px solid var(--hair);border-left:3px solid var(--brass);padding:18px 20px;margin:44px 0 0;font-size:15px}
+.contact-box h2{margin:0 0 10px;font-size:20px}
+.contact-box ul{margin:0;padding-left:20px}
+.updated{font-size:13px;color:var(--muted);margin:28px 0 0}
+footer .fpolicy{margin:26px auto 0;padding-top:20px;border-top:1px solid rgba(183,171,146,.35);max-width:760px}footer .fpolicy-h{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.2em;color:#F4F2ED}footer .fpolicy ul{list-style:none;margin:0;padding:0}footer .fpolicy li{margin:0 0 6px;font-size:14px;line-height:1.6}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://manhlongoptical.com/chinh-sach-bao-hanh.html#webpage", "url": "https://manhlongoptical.com/chinh-sach-bao-hanh.html", "name": "Chính sách bảo hành", "description": "Bảo hành 1 đổi 1 trong 1 tháng nếu lỗi sản phẩm. Khám mắt, đo lại độ, chỉnh gọng, vệ sinh, thay ve mũi miễn phí trọn đời, kể cả kính mua nơi khác.", "inLanguage": "vi", "dateModified": "2026-09-26", "isPartOf": {"@id": "https://manhlongoptical.com/#website"}, "about": {"@id": "https://manhlongoptical.com/#localbusiness"}, "publisher": {"@id": "https://manhlongoptical.com/#localbusiness"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://manhlongoptical.com/"}, {"@type": "ListItem", "position": 2, "name": "Chính sách bảo hành", "item": "https://manhlongoptical.com/chinh-sach-bao-hanh.html"}]}]}
+</script>
+<!-- Meta Pixel 1718493272777504 (them 13/09/2026) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1718493272777504');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+<script async src="https://px.get-ryze.ai/px.js" data-key="rz_pk_4898090d56df06cda42bdeffa6602a82"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="langbar" hidden>
+  <a href="/en/warranty-policy.html" hreflang="en" lang="en">Read this in English &#8594;</a>
+  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById("langbar"); if(!bar) return;
+  var KEY="ml-langbar-off";
+  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
+  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
+  if(l.indexOf("en")!==0) return;
+  bar.hidden=false;
+  var x=document.getElementById("langbarx");
+  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
+})();
+</script>
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/warranty-policy.html" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › Chính sách bảo hành</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">CHÍNH SÁCH</p>
+<h1>Chính sách bảo hành</h1>
+<p class="byline">Manh Long Optical · 147A Lê Duẩn, Cửa Nam, Hà Nội · Cập nhật lần cuối 26/09/2026</p>
+<nav aria-label="Các chính sách của Manh Long Optical"><ul class="policy-nav"><li><a href="/dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li><li><a href="/chinh-sach-thanh-toan.html">Chính sách thanh toán</a></li><li><a href="/chinh-sach-giao-hang.html">Chính sách giao hàng</a></li><li><a href="/chinh-sach-bao-hanh.html" aria-current="page">Chính sách bảo hành</a></li><li><a href="/chinh-sach-doi-tra.html">Chính sách đổi trả</a></li><li><a href="/chinh-sach-bao-mat.html">Chính sách bảo mật &amp; quyền riêng tư</a></li></ul></nav>
+<p class="lede">Một cặp kính đeo mỗi ngày sẽ lỏng, lệch, bám bẩn theo thời gian. Phần lớn những việc đó không phải lỗi, chỉ cần chỉnh lại. Trang này tách rõ hai chuyện: bảo hành khi sản phẩm có lỗi, và hậu mãi miễn phí để kính luôn đeo vừa.</p>
+
+<div class="takeaway"><strong>Ngắn gọn:</strong>
+<ul>
+<li>Sản phẩm có lỗi: <strong>1 đổi 1 trong 1 tháng</strong>.</li>
+<li>Khám mắt, đo lại độ, chỉnh gọng, vệ sinh, thay ve mũi: <strong>miễn phí trọn đời</strong>, kể cả kính mua ở nơi khác.</li>
+<li>Trong <strong>2 tuần đầu</strong> sau khi nhận kính: khám mắt và kiểm tra lại độ miễn phí.</li>
+</ul></div>
+
+<nav class="toc" aria-label="Nội dung"><p>Nội dung</p><ol><li><a href="#1-doi-1">Bảo hành 1 đổi 1 trong 1 tháng</a></li><li><a href="#khong-bao-hanh">Những gì không thuộc bảo hành</a></li><li><a href="#hau-mai">Hậu mãi miễn phí trọn đời</a></li><li><a href="#2-tuan-dau">Kiểm tra miễn phí trong 2 tuần đầu</a></li><li><a href="#the-bao-hanh">Thẻ bảo hành của hãng</a></li><li><a href="#quy-trinh">Quy trình bảo hành</a></li><li><a href="#giu-kinh">Giữ kính bền lâu</a></li></ol></nav>
+<h2 id="1-doi-1">1. Bảo hành 1 đổi 1 trong 1 tháng</h2>
+<p>Kính mua tại Manh Long Optical nếu có lỗi sản phẩm được đổi 1 đổi 1 trong 1 tháng kể từ ngày bạn nhận kính. Sản phẩm lỗi được thay bằng sản phẩm cùng loại.</p>
+<p>Nếu cần làm tròng mới, thời gian làm theo đúng loại tròng: đơn tròng có sẵn thường trong ngày, đa tròng thường khoảng 24 giờ, đa tròng cao cấp Essilor 4 đến 5 ngày, ZEISS 7 đến 9 ngày.</p>
+
+<h3 id="loi-la-gi">Thế nào là lỗi sản phẩm</h3>
+<p>Lỗi sản phẩm là lỗi có sẵn từ khâu sản xuất hoặc từ khâu gia công của cửa hàng, xuất hiện khi kính được dùng bình thường. Một số ví dụ:</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Bộ phận</th><th>Ví dụ lỗi sản phẩm</th></tr></thead>
+<tbody>
+<tr><td>Gọng kính</td><td>Bản lề, mối hàn hoặc ốc hỏng khi đeo bình thường; lớp mạ bong sớm không do va chạm</td></tr>
+<tr><td>Tròng và lớp phủ</td><td>Lớp phủ bong, nứt hoặc rạn mà không do va đập, nhiệt hay hoá chất; tròng có khuyết tật từ nhà máy</td></tr>
+<tr><td>Gia công tại cửa hàng</td><td>Tròng lắp lệch tâm, sai trục loạn hoặc sai thông số so với đơn đã chốt; tròng lỏng khỏi gọng ngay sau khi nhận</td></tr>
+</tbody></table></div>
+
+<h2 id="khong-bao-hanh">2. Những gì không thuộc bảo hành</h2>
+<p>Các trường hợp dưới đây không phải lỗi sản phẩm, nên không đổi theo bảo hành. Nhiều trường hợp vẫn sửa hoặc chỉnh được, nhân viên sẽ báo cho bạn trước khi làm.</p>
+<ul>
+<li><strong>Va chạm và tai nạn:</strong> rơi vỡ, va đập, ngồi hoặc nằm đè, gọng bị bẻ cong.</li>
+<li><strong>Trầy xước trong quá trình dùng:</strong> lau bằng áo, khăn giấy, để tròng úp xuống mặt bàn.</li>
+<li><strong>Nhiệt và hoá chất:</strong> để kính trên taplo ô tô, trong cốp xe máy dưới nắng, gần bếp; rửa bằng nước nóng, cồn hoặc chất tẩy rửa làm hỏng lớp phủ.</li>
+<li><strong>Hao mòn tự nhiên:</strong> ve mũi ố vàng, đầu càng mòn sau thời gian dài. Phần này đã có hậu mãi miễn phí ở mục 3.</li>
+<li><strong>Sửa chữa ở nơi khác:</strong> kính đã được nắn, hàn hoặc thay linh kiện ở cơ sở khác.</li>
+<li><strong>Độ mắt thay đổi:</strong> mắt thay đổi theo thời gian không phải lỗi của kính. Bạn được khám lại miễn phí để biết có cần thay tròng hay không.</li>
+<li><strong>Mất hoặc thất lạc kính.</strong></li>
+</ul>
+
+<h2 id="hau-mai">3. Hậu mãi miễn phí trọn đời</h2>
+<p>Bạn chỉ cần mang kính tới cửa hàng. Những việc sau miễn phí, không giới hạn số lần, <strong>kể cả với kính bạn mua ở nơi khác</strong>:</p>
+<ul>
+<li>Khám mắt.</li>
+<li>Đo lại, kiểm tra lại độ.</li>
+<li>Chỉnh gọng cho vừa mặt, siết lại ốc, nắn lại càng.</li>
+<li>Vệ sinh kính.</li>
+<li>Thay ve mũi.</li>
+<li>Các việc hậu mãi thông thường khác.</li>
+</ul>
+<p>Kính đeo lâu sẽ lệch dần. Một cặp vừa khít hôm nay có thể trễ xuống mũi sau vài tháng. Ghé cửa hàng là chỉnh xong trong lúc bạn chờ.</p>
+
+<h2 id="2-tuan-dau">4. Kiểm tra miễn phí trong 2 tuần đầu</h2>
+<p>Trong 2 tuần đầu sau khi nhận kính, bạn quay lại để <strong>khám mắt và kiểm tra lại độ</strong> miễn phí. Chính sách này dành cho giai đoạn mắt đang làm quen với kính mới, nhất là với đa tròng, thường mất từ vài ngày đến 2 tuần.</p>
+<p>Nếu khi kiểm tra lại phát hiện tròng làm sai so với đơn đã chốt, cửa hàng xử lý theo <a href="/chinh-sach-doi-tra.html#sai-don">Chính sách đổi trả</a>.</p>
+
+<h2 id="the-bao-hanh">5. Thẻ bảo hành của hãng</h2>
+<p>Thẻ bảo hành là vật đi kèm tròng từ nhà sản xuất, và <strong>không phải dòng tròng nào cũng có</strong>:</p>
+<ul>
+<li>Đa tròng Essilor đặt qua lab Essilor: có thẻ bảo hành.</li>
+<li>Tròng Essilor Eyezen đặt qua lab Essilor: có thẻ bảo hành.</li>
+<li>Tròng Essilor lọc ánh sáng xanh loại thường: không có thẻ, chỉ có bao bì tròng.</li>
+<li>Tròng Transitions Gen S: có thẻ bảo hành và khăn lau.</li>
+</ul>
+<p>Có hay không có thẻ, chính sách bảo hành 1 đổi 1 trong 1 tháng của cửa hàng vẫn áp dụng như nhau. Nếu dòng tròng của bạn có thẻ, hãy giữ thẻ cùng hộp kính và mang theo khi cần bảo hành.</p>
+
+<h2 id="quy-trinh">6. Quy trình bảo hành</h2>
+<ol>
+<li><strong>Mang kính tới 147A Lê Duẩn</strong>, mở cửa 8:00 đến 21:30 mỗi ngày. Nếu bạn không ở Hà Nội, hãy liên hệ trước để cửa hàng hướng dẫn gửi kính.</li>
+<li><strong>Nhân viên kiểm tra</strong> gọng, tròng và lớp phủ, đo lại thông số tròng bằng máy và đối chiếu với đơn đã chốt.</li>
+<li><strong>Báo kết quả ngay tại chỗ:</strong> là lỗi sản phẩm thì đổi 1 đổi 1; không phải lỗi thì nhân viên nói rõ lý do và cách xử lý, kèm chi phí nếu có, trước khi làm.</li>
+</ol>
+<p>Nên mang theo: kính, thẻ bảo hành của hãng (nếu có), chứng từ mua hàng hoặc số điện thoại bạn dùng khi mua.</p>
+
+<h2 id="giu-kinh">7. Giữ kính bền lâu</h2>
+<ul>
+<li>Rửa tròng dưới vòi nước mát, lau bằng khăn microfiber hoặc dung dịch rửa tròng. Không dùng cồn, nước rửa bát đậm đặc hay khăn giấy.</li>
+<li>Tháo kính bằng hai tay để gọng không bị lệch.</li>
+<li>Không để kính nơi nóng: taplo ô tô, cốp xe máy giữa trời nắng.</li>
+<li>Khi không đeo, cất kính vào hộp, đừng úp tròng xuống mặt bàn.</li>
+</ul>
+<p>Hướng dẫn chi tiết hơn ở bài <a href="/caring-for-your-glasses.html">Vệ sinh và bảo quản kính đúng cách</a>.</p>
+<section class="contact-box" aria-labelledby="lien-he"><h2 id="lien-he">Cần hỏi thêm?</h2><p><strong>Manh Long Optical</strong>, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội. Mở cửa 8:00 đến 21:30, tất cả các ngày.</p><ul><li>Điện thoại: <a href="tel:+84777986999">0777 986 999</a></li><li>Zalo: <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">0777 986 999</a> · WhatsApp: <a href="https://wa.me/84777986999" target="_blank" rel="noopener">0777 986 999</a></li><li>Email: <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a></li><li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường tới cửa hàng</a></li></ul></section>
+<p class="updated">Cập nhật lần cuối: 26/09/2026. Chính sách này áp dụng tại cửa hàng Manh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội.</p>
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="https://wa.me/84777986999">WhatsApp</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+  <nav class="fpolicy" aria-label="Chính sách"><p class="fpolicy-h">CHÍNH SÁCH</p><ul><li><a href="/dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li><li><a href="/chinh-sach-thanh-toan.html">Chính sách thanh toán</a></li><li><a href="/chinh-sach-giao-hang.html">Chính sách giao hàng</a></li><li><a href="/chinh-sach-bao-hanh.html">Chính sách bảo hành</a></li><li><a href="/chinh-sach-doi-tra.html">Chính sách đổi trả</a></li><li><a href="/chinh-sach-bao-mat.html">Chính sách bảo mật và quyền riêng tư</a></li></ul></nav>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

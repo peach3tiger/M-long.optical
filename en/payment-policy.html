@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Payment Policy | Manh Long Optical, Hanoi</title>
+<meta name="description" content="Pay in store by cash or card, with a full quote before you pay. How orders are agreed, made-to-order lenses, cancellations and refunds at Manh Long Optical, Hanoi.">
+<link rel="canonical" href="https://manhlongoptical.com/en/payment-policy.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chinh-sach-thanh-toan.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/payment-policy.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chinh-sach-thanh-toan.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Payment Policy | Manh Long Optical, Hanoi">
+<meta property="og:description" content="Pay in store by cash or card, with a full quote before you pay. How orders are agreed, made-to-order lenses, cancellations and refunds at Manh Long Optical, Hanoi.">
+<meta property="og:url" content="https://manhlongoptical.com/en/payment-policy.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
+.faq dt{font-weight:600;margin:18px 0 6px}.faq dd{margin:0 0 14px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+.listing article{border-bottom:1px solid var(--hair);padding:22px 0}.listing h2{margin:0 0 8px;font-size:22px}.listing p{margin:0;color:var(--muted);font-size:14px}
+.listing .cat{font-size:11px;letter-spacing:.2em;color:var(--brass)}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+/* Khoi tac gia cuoi bai, them 10/09/2026. Mot mau dung chung moi trang. */
+.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
+.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
+.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
+.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
+.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
+.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
+
+.lede{font-size:17px}
+.takeaway ul{margin:8px 0 0}
+.policy-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.policy-nav li{margin:0}
+.policy-nav a{display:inline-block;font-size:12px;line-height:1.4;padding:7px 11px;border:1px solid var(--hair);background:#fff;color:var(--ink)}
+.policy-nav a[aria-current]{background:var(--navy);border-color:var(--navy);color:#F4F2ED}
+.toc{background:#fff;border:1px solid var(--hair);padding:16px 18px;margin:0 0 8px;font-size:14px}
+.toc p{margin:0 0 6px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.toc ol{margin:0;padding-left:20px}.toc li{margin-bottom:4px}
+.contact-box{background:#fff;border:1px solid var(--hair);border-left:3px solid var(--brass);padding:18px 20px;margin:44px 0 0;font-size:15px}
+.contact-box h2{margin:0 0 10px;font-size:20px}
+.contact-box ul{margin:0;padding-left:20px}
+.updated{font-size:13px;color:var(--muted);margin:28px 0 0}
+footer .fpolicy{margin:26px auto 0;padding-top:20px;border-top:1px solid rgba(183,171,146,.35);max-width:760px}footer .fpolicy-h{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.2em;color:#F4F2ED}footer .fpolicy ul{list-style:none;margin:0;padding:0}footer .fpolicy li{margin:0 0 6px;font-size:14px;line-height:1.6}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://manhlongoptical.com/en/payment-policy.html#webpage", "url": "https://manhlongoptical.com/en/payment-policy.html", "name": "Payment Policy", "description": "Pay in store by cash or card, with a full quote before you pay. How orders are agreed, made-to-order lenses, cancellations and refunds at Manh Long Optical, Hanoi.", "inLanguage": "en", "dateModified": "2026-09-26", "isPartOf": {"@id": "https://manhlongoptical.com/#website"}, "about": {"@id": "https://manhlongoptical.com/#localbusiness"}, "publisher": {"@id": "https://manhlongoptical.com/#localbusiness"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://manhlongoptical.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Payment Policy", "item": "https://manhlongoptical.com/en/payment-policy.html"}]}]}
+</script>
+<!-- Meta Pixel 1718493272777504 (them 13/09/2026) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1718493272777504');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+<script async src="https://px.get-ryze.ai/px.js" data-key="rz_pk_4898090d56df06cda42bdeffa6602a82"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="topbar">Free eye test, whether you buy or not · Open 8:00 – 21:30 every day<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
+<header>
+<a class="logo" href="/en/">Manh Long<small>OPTICAL</small></a>
+<nav class="top"><a href="/en/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html?lang=en#collection">FRAMES</a><a href="/en/lenses.html">LENSES</a><a href="/en/offers.html">OFFERS</a><a href="/en/learn/">LEARN</a><a href="/en/frames.html#store">STORE</a><span class="langtog"><b aria-current="true" lang="en">EN</b><span class="sep" aria-hidden="true">|</span><a href="/chinh-sach-thanh-toan.html" hreflang="vi" lang="vi" aria-label="Xem trang này bằng tiếng Việt">VI</a></span></nav>
+</header>
+<main>
+<p class="crumb"><a href="/en/">Home</a> › Payment Policy</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">POLICIES</p>
+<h1>Payment Policy</h1>
+<p class="byline">Manh Long Optical · 147A Le Duan, Cua Nam, Hanoi · Last updated 26 September 2026</p>
+<nav aria-label="Manh Long Optical policies"><ul class="policy-nav"><li><a href="/en/terms-of-service.html">Terms of Service</a></li><li><a href="/en/payment-policy.html" aria-current="page">Payment Policy</a></li><li><a href="/en/delivery-policy.html">Delivery Policy</a></li><li><a href="/en/warranty-policy.html">Warranty Policy</a></li><li><a href="/en/returns-policy.html">Returns Policy</a></li><li><a href="/en/privacy-policy.html">Privacy Policy</a></li></ul></nav>
+<p class="lede">You pay in person at our store at 147A Le Duan. The Manh Long Optical website is for browsing frames, checking guide prices and getting in touch; it does not take payments. This page explains how and when you pay, and what happens next.</p>
+
+<div class="takeaway"><strong>In short:</strong>
+<ul>
+<li>Pay in store by <strong>cash</strong> or <strong>card</strong>.</li>
+<li>You get a <strong>full quote</strong> for frame, lenses and making time <strong>before you pay</strong>.</li>
+<li>The website takes no payments and stores no card details.</li>
+</ul></div>
+
+<nav class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#methods">How you can pay</a></li><li><a href="#quote">A full quote before you pay</a></li><li><a href="#when">When you pay</a></li><li><a href="#confirmation">Agreeing the order</a></li><li><a href="#after">After you pay</a></li><li><a href="#cancel">Changing or cancelling an order</a></li><li><a href="#refunds">Refunds</a></li><li><a href="#safety">Paying safely</a></li></ol></nav>
+<h2 id="methods">1. How you can pay</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Method</th><th>How it works</th></tr></thead>
+<tbody>
+<tr><td>Cash</td><td>Vietnamese dong, paid at the counter</td></tr>
+<tr><td>Card</td><td>Card payment at the counter</td></tr>
+</tbody></table></div>
+<p>If you need another way to pay, ask us before the order is agreed.</p>
+<p><strong>About the basket on our website:</strong> the <a href="/cua-hang.html?lang=en#collection">frames page</a> lets you add models to a basket so you can keep track of the ones you like. The basket does not send an order and does not take payment. To hold a frame or place an order, message us on WhatsApp or Zalo, or call <a href="tel:+84777986999">0777 986 999</a>.</p>
+
+<h2 id="quote">2. A full quote before you pay</h2>
+<p>The price of prescription glasses depends on your prescription, the lens type, the lens index and the frame, so it can only be fixed after the eye test. Before you pay, we tell you:</p>
+<ul>
+<li>the frame price and the lens price,</li>
+<li>whether the lenses come from stock or have to be made to order,</li>
+<li>the expected collection date,</li>
+<li>any offer that applies.</li>
+</ul>
+<p>Prices on the website are guide prices, usually shown as "from". Every offer has its own conditions and end date, listed on the <a href="/en/offers.html">Offers</a> page.</p>
+
+<h2 id="when">3. When you pay</h2>
+<h3 id="stock">Ready-made items and glasses made in store</h3>
+<p>Frames, ready-made sunglasses and glasses cut from stocked lenses are paid for at the counter. We confirm with you when payment is due as the order is agreed.</p>
+<h3 id="lab">Lenses made to order</h3>
+<p>Progressives, high powers and strong astigmatism, photochromic lenses in difficult prescriptions, and lens lines ordered through the manufacturer's lab are made for your measurements only. They are ordered only once you have agreed the order. When the order is agreed, we tell you how much is due at that point.</p>
+
+<h2 id="confirmation">4. Agreeing the order</h2>
+<p>An order is agreed once you and our staff have settled:</p>
+<ol>
+<li>the frame,</li>
+<li>the lens line, index and features (blue-light filtering, photochromic, coatings),</li>
+<li>the eye measurements the glasses will be made to,</li>
+<li>the total price,</li>
+<li>the collection date and how you will receive the glasses (in store or delivered).</li>
+</ol>
+<p>For made-to-order lenses, the measurements go to production as soon as the order is agreed, so please check everything before you say yes.</p>
+
+<h2 id="after">5. After you pay</h2>
+<ul>
+<li>Keep the purchase document we give you. It, or the phone number you used when buying, lets us find the order for any warranty or return.</li>
+<li>When the glasses are ready, collect them in store or have them delivered under the <a href="/en/delivery-policy.html">Delivery Policy</a>.</li>
+<li>If the ready date changes, we contact you.</li>
+</ul>
+
+<h2 id="cancel">6. Changing or cancelling an order</h2>
+<p>If you want to change or cancel, tell us as early as you can. Before the lenses are cut or ordered, a change just means updating the order and the quote. Once the lenses have been cut or ordered, the request is handled under the <a href="/en/returns-policy.html">Returns Policy</a>.</p>
+
+<h2 id="refunds">7. Refunds</h2>
+<p>The cases that qualify for a refund are set out in the <a href="/en/returns-policy.html">Returns Policy</a>. When we confirm a refund, we will tell you how the money will be paid back to you.</p>
+
+<h2 id="safety">8. Paying safely</h2>
+<ul>
+<li>The website has no payment gateway and stores no card details.</li>
+<li>Manh Long Optical staff will never ask for your OTP code, PIN or card password by phone or message.</li>
+<li>Our official number is <strong>0777 986 999</strong> (phone, WhatsApp, Zalo) and our email is <strong>mlong.optical@gmail.com</strong>. If anyone asks you to transfer money in our name from another number or account, call us on that number to check.</li>
+</ul>
+<section class="contact-box" aria-labelledby="contact"><h2 id="contact">Questions?</h2><p><strong>Manh Long Optical</strong>, 147A Le Duan, Cua Nam, Hanoi. Open 8:00 to 21:30, every day. English is spoken on every shift.</p><ul><li>WhatsApp: <a href="https://wa.me/84777986999" target="_blank" rel="noopener">0777 986 999</a> · Zalo: <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">0777 986 999</a></li><li>Phone: <a href="tel:+84777986999">+84 777 986 999</a></li><li>Email: <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i" target="_blank" rel="noopener">Directions to the store</a></li></ul></section>
+<p class="updated">Last updated: 26 September 2026. This policy applies at Manh Long Optical, 147A Le Duan, Cua Nam, Hanoi.</p>
+</main>
+<footer>
+<p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam, Hanoi</p>
+<p>Open daily 8:00 – 21:30 · <a href="https://wa.me/84777986999">WhatsApp</a> · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+<nav class="fpolicy" aria-label="Policies"><p class="fpolicy-h">POLICIES</p><ul><li><a href="/en/terms-of-service.html">Terms of Service</a></li><li><a href="/en/payment-policy.html">Payment Policy</a></li><li><a href="/en/delivery-policy.html">Delivery Policy</a></li><li><a href="/en/warranty-policy.html">Warranty Policy</a></li><li><a href="/en/returns-policy.html">Returns Policy</a></li><li><a href="/en/privacy-policy.html">Privacy Policy</a></li></ul></nav>
+<p><a href="/">Xem trang tiếng Việt</a></p>
+</footer>
+<div class="stickycta">
+<a href="https://wa.me/84777986999" target="_blank" rel="noopener">WHATSAPP</a>
+<a href="tel:+84777986999">CALL</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i" target="_blank" rel="noopener">DIRECTIONS</a>
+</div>
+</body>
+</html>

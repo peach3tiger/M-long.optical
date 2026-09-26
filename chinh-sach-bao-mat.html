@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Chính sách bảo mật và quyền riêng tư | Manh Long Optical</title>
+<meta name="description" content="Manh Long Optical thu thập thông tin gì khi bạn đo mắt, mua kính và dùng website, dùng vào việc gì, chia sẻ với ai, và quyền của bạn với thông tin cá nhân.">
+<link rel="canonical" href="https://manhlongoptical.com/chinh-sach-bao-mat.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/chinh-sach-bao-mat.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/privacy-policy.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/chinh-sach-bao-mat.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Chính sách bảo mật và quyền riêng tư | Manh Long Optical">
+<meta property="og:description" content="Manh Long Optical thu thập thông tin gì khi bạn đo mắt, mua kính và dùng website, dùng vào việc gì, chia sẻ với ai, và quyền của bạn với thông tin cá nhân.">
+<meta property="og:url" content="https://manhlongoptical.com/chinh-sach-bao-mat.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
+.faq dt{font-weight:600;margin:18px 0 6px}.faq dd{margin:0 0 14px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+.listing article{border-bottom:1px solid var(--hair);padding:22px 0}.listing h2{margin:0 0 8px;font-size:22px}.listing p{margin:0;color:var(--muted);font-size:14px}
+.listing .cat{font-size:11px;letter-spacing:.2em;color:var(--brass)}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+/* Khoi tac gia cuoi bai, them 10/09/2026. Mot mau dung chung moi trang. */
+.author-box{background:#fff;border:1px solid #DFDACE;border-left:3px solid #22254F;padding:18px 20px;margin:40px 0 0;font-size:14px;line-height:1.6;color:#6E6759}
+.author-box p{margin:0 0 6px}.author-box p:last-child{margin:0}
+.author-box .ab-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A5A2B}
+.author-box .ab-name{font-family:'Noto Serif Display',Georgia,serif;font-size:19px;color:#1B1D1F}
+.author-box .ab-name a{color:#1B1D1F;text-decoration:none}
+.author-box .ab-role{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#6E6759}
+
+.lede{font-size:17px}
+.takeaway ul{margin:8px 0 0}
+.policy-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.policy-nav li{margin:0}
+.policy-nav a{display:inline-block;font-size:12px;line-height:1.4;padding:7px 11px;border:1px solid var(--hair);background:#fff;color:var(--ink)}
+.policy-nav a[aria-current]{background:var(--navy);border-color:var(--navy);color:#F4F2ED}
+.toc{background:#fff;border:1px solid var(--hair);padding:16px 18px;margin:0 0 8px;font-size:14px}
+.toc p{margin:0 0 6px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.toc ol{margin:0;padding-left:20px}.toc li{margin-bottom:4px}
+.contact-box{background:#fff;border:1px solid var(--hair);border-left:3px solid var(--brass);padding:18px 20px;margin:44px 0 0;font-size:15px}
+.contact-box h2{margin:0 0 10px;font-size:20px}
+.contact-box ul{margin:0;padding-left:20px}
+.updated{font-size:13px;color:var(--muted);margin:28px 0 0}
+footer .fpolicy{margin:26px auto 0;padding-top:20px;border-top:1px solid rgba(183,171,146,.35);max-width:760px}footer .fpolicy-h{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.2em;color:#F4F2ED}footer .fpolicy ul{list-style:none;margin:0;padding:0}footer .fpolicy li{margin:0 0 6px;font-size:14px;line-height:1.6}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://manhlongoptical.com/chinh-sach-bao-mat.html#webpage", "url": "https://manhlongoptical.com/chinh-sach-bao-mat.html", "name": "Chính sách bảo mật & quyền riêng tư", "description": "Manh Long Optical thu thập thông tin gì khi bạn đo mắt, mua kính và dùng website, dùng vào việc gì, chia sẻ với ai, và quyền của bạn với thông tin cá nhân.", "inLanguage": "vi", "dateModified": "2026-09-26", "isPartOf": {"@id": "https://manhlongoptical.com/#website"}, "about": {"@id": "https://manhlongoptical.com/#localbusiness"}, "publisher": {"@id": "https://manhlongoptical.com/#localbusiness"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://manhlongoptical.com/"}, {"@type": "ListItem", "position": 2, "name": "Chính sách bảo mật & quyền riêng tư", "item": "https://manhlongoptical.com/chinh-sach-bao-mat.html"}]}]}
+</script>
+<!-- Meta Pixel 1718493272777504 (them 13/09/2026) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1718493272777504');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+<script async src="https://px.get-ryze.ai/px.js" data-key="rz_pk_4898090d56df06cda42bdeffa6602a82"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="langbar" hidden>
+  <a href="/en/privacy-policy.html" hreflang="en" lang="en">Read this in English &#8594;</a>
+  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById("langbar"); if(!bar) return;
+  var KEY="ml-langbar-off";
+  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
+  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
+  if(l.indexOf("en")!==0) return;
+  bar.hidden=false;
+  var x=document.getElementById("langbarx");
+  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
+})();
+</script>
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/privacy-policy.html" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
+</header>
+<main>
+<p class="crumb"><a href="/">Trang chủ</a> › Chính sách bảo mật &amp; quyền riêng tư</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">CHÍNH SÁCH</p>
+<h1>Chính sách bảo mật &amp; quyền riêng tư</h1>
+<p class="byline">Manh Long Optical · 147A Lê Duẩn, Cửa Nam, Hà Nội · Cập nhật lần cuối 26/09/2026</p>
+<nav aria-label="Các chính sách của Manh Long Optical"><ul class="policy-nav"><li><a href="/dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li><li><a href="/chinh-sach-thanh-toan.html">Chính sách thanh toán</a></li><li><a href="/chinh-sach-giao-hang.html">Chính sách giao hàng</a></li><li><a href="/chinh-sach-bao-hanh.html">Chính sách bảo hành</a></li><li><a href="/chinh-sach-doi-tra.html">Chính sách đổi trả</a></li><li><a href="/chinh-sach-bao-mat.html" aria-current="page">Chính sách bảo mật &amp; quyền riêng tư</a></li></ul></nav>
+<p class="lede">Để đo mắt và làm kính, cửa hàng cần biết một số thông tin về bạn, trong đó có số đo mắt. Trang này nói rõ Manh Long Optical thu thập gì, dùng vào việc gì, chia sẻ với ai, website dùng những công cụ đo lường nào, và bạn có quyền gì với thông tin của mình.</p>
+
+<div class="takeaway"><strong>Ngắn gọn:</strong>
+<ul>
+<li>Website <strong>không có tài khoản, không có biểu mẫu, không thu tiền</strong>. Phần lớn thông tin của bạn được ghi nhận khi bạn tới cửa hàng hoặc nhắn tin, gọi điện.</li>
+<li>Website dùng Google Tag Manager, Google Analytics 4, thẻ Google Ads, Meta Pixel và công cụ đo lường của Ryze để hiểu cách khách dùng website và đo hiệu quả quảng cáo.</li>
+<li>Cửa hàng <strong>không bán</strong> thông tin cá nhân của bạn.</li>
+</ul></div>
+
+<nav class="toc" aria-label="Nội dung"><p>Nội dung</p><ol><li><a href="#thu-thap">Thông tin cửa hàng thu thập</a></li><li><a href="#muc-dich">Cửa hàng dùng thông tin để làm gì</a></li><li><a href="#cong-nghe">Công cụ đo lường và dịch vụ bên thứ ba trên website</a></li><li><a href="#tu-choi">Cách hạn chế cookie và quảng cáo</a></li><li><a href="#chia-se">Cửa hàng chia sẻ thông tin với ai</a></li><li><a href="#luu-tru">Lưu trữ và bảo vệ thông tin</a></li><li><a href="#quyen">Quyền của bạn với thông tin cá nhân</a></li><li><a href="#cap-nhat">Cập nhật chính sách</a></li></ol></nav>
+<h2 id="thu-thap">1. Thông tin cửa hàng thu thập</h2>
+<h3 id="khi-mua">Khi bạn liên hệ, đo mắt hoặc mua kính</h3>
+<ul>
+<li><strong>Thông tin liên hệ:</strong> tên, số điện thoại, và email nếu bạn liên hệ qua email.</li>
+<li><strong>Thông tin giao hàng:</strong> địa chỉ hoặc tên khách sạn, khi bạn chọn giao hàng.</li>
+<li><strong>Thông tin đo mắt và đơn kính:</strong> kết quả đo khúc xạ, độ cộng đọc gần, khoảng cách đồng tử, chiều cao tâm mắt đo trên gọng bạn chọn, đơn kính cũ bạn mang theo.</li>
+<li><strong>Thông tin về nhu cầu:</strong> công việc, thời gian dùng màn hình, thói quen lái xe, để tư vấn loại tròng phù hợp.</li>
+<li><strong>Thông tin đơn hàng:</strong> sản phẩm bạn mua, giá, ngày nhận kính, lịch sử bảo hành và hậu mãi.</li>
+</ul>
+<h3 id="anh-tu-van">Khi bạn gửi ảnh để được tư vấn gọng</h3>
+<p>Nếu bạn gửi ảnh khuôn mặt để được gợi ý dáng gọng, ảnh chỉ dùng để chọn gọng hợp khuôn mặt. Cửa hàng có thể dùng công cụ AI để hỗ trợ việc này, và sẽ <strong>xin phép bạn trước</strong> khi đưa ảnh vào công cụ đó. Việc tư vấn qua ảnh không đoán độ mắt và không nhận xét về mắt của bạn.</p>
+<h3 id="khi-xem-web">Khi bạn dùng website</h3>
+<ul>
+<li>Trang bạn xem, thời gian xem, loại thiết bị, trình duyệt, vị trí gần đúng theo địa chỉ IP, nguồn dẫn bạn tới website.</li>
+<li>Các lần bấm nút gọi điện, Zalo, WhatsApp và chỉ đường, kèm ngôn ngữ của trang (tiếng Việt hay tiếng Anh).</li>
+<li>Lựa chọn trong công cụ "Chọn gọng cùng Sơn" (dáng mặt, chất liệu). Công cụ này không hỏi tên hay số điện thoại.</li>
+</ul>
+<p>Website <strong>không</strong> có tài khoản đăng nhập, <strong>không</strong> có biểu mẫu nhập thông tin và <strong>không</strong> nhận thanh toán. Giỏ hàng trên trang Cửa hàng chỉ nằm trong trình duyệt của bạn và không gửi thông tin đi đâu.</p>
+
+<h2 id="muc-dich">2. Cửa hàng dùng thông tin để làm gì</h2>
+<ul>
+<li>Đo mắt, tư vấn và làm kính đúng thông số.</li>
+<li>Liên hệ với bạn về đơn kính: báo kính đã xong, hẹn giao hàng, báo thay đổi thời gian.</li>
+<li>Bảo hành, đổi trả, hậu mãi và các lần đo mắt sau.</li>
+<li>Trả lời câu hỏi bạn gửi qua điện thoại, Zalo, WhatsApp, email hoặc mạng xã hội.</li>
+<li>Hiểu cách khách dùng website để sửa nội dung cho dễ đọc hơn.</li>
+<li>Đo hiệu quả quảng cáo trên Google và Meta (Facebook, Instagram), và có thể hiển thị quảng cáo của cửa hàng tới người từng xem website.</li>
+</ul>
+
+<h2 id="cong-nghe">3. Công cụ đo lường và dịch vụ bên thứ ba trên website</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Công cụ</th><th>Dùng để làm gì</th></tr></thead>
+<tbody>
+<tr><td>Google Tag Manager</td><td>Quản lý các thẻ đo lường trên website</td></tr>
+<tr><td>Google Analytics 4</td><td>Đo lượt xem trang, nguồn truy cập, các lần bấm gọi, Zalo, WhatsApp, chỉ đường</td></tr>
+<tr><td>Thẻ Google Ads</td><td>Đo hiệu quả quảng cáo Google của cửa hàng</td></tr>
+<tr><td>Meta Pixel</td><td>Đo lượt xem trang và các lần bấm liên hệ, chỉ đường đến từ quảng cáo Facebook, Instagram</td></tr>
+<tr><td>Ryze</td><td>Đo lượng truy cập và nguồn truy cập để đánh giá hiệu quả nội dung website</td></tr>
+<tr><td>Google Maps</td><td>Bản đồ chỉ đường nhúng trên một số trang</td></tr>
+<tr><td>OpenStreetMap</td><td>Bản đồ trên trang Cửa hàng</td></tr>
+<tr><td>Google Fonts</td><td>Tải phông chữ hiển thị trên một số trang</td></tr>
+</tbody></table></div>
+<p>Các công cụ này có thể đặt cookie hoặc dùng công nghệ tương tự trong trình duyệt của bạn, và do các công ty cung cấp chúng xử lý theo chính sách riêng của họ. Khi bạn bấm sang Zalo, WhatsApp, Facebook hay Instagram, cuộc trò chuyện diễn ra trên nền tảng đó và theo chính sách của nền tảng đó.</p>
+<h3 id="bo-nho-trinh-duyet">Bộ nhớ trình duyệt</h3>
+<p>Website lưu hai lựa chọn nhỏ trong trình duyệt của bạn: ngôn ngữ bạn chọn, và việc bạn đã tắt dải gợi ý chuyển ngôn ngữ. Hai mục này không chứa thông tin cá nhân.</p>
+
+<h2 id="tu-choi">4. Cách hạn chế cookie và quảng cáo</h2>
+<ul>
+<li>Chặn hoặc xoá cookie trong phần cài đặt trình duyệt. Website vẫn đọc được bình thường.</li>
+<li>Dùng tiện ích chặn Google Analytics: <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank">tools.google.com/dlpage/gaoptout</a>.</li>
+<li>Điều chỉnh quảng cáo Google tại <a href="https://myadcenter.google.com/" rel="noopener" target="_blank">myadcenter.google.com</a>.</li>
+<li>Điều chỉnh quảng cáo Facebook, Instagram tại <a href="https://www.facebook.com/adpreferences" rel="noopener" target="_blank">facebook.com/adpreferences</a>.</li>
+</ul>
+
+<h2 id="chia-se">5. Cửa hàng chia sẻ thông tin với ai</h2>
+<p>Manh Long Optical <strong>không bán</strong> thông tin cá nhân của bạn. Thông tin chỉ được chia sẻ khi cần để phục vụ chính bạn:</p>
+<ul>
+<li><strong>Lab của hãng tròng:</strong> thông số cần để sản xuất tròng đặt riêng (độ, khoảng cách đồng tử, chiều cao tâm, thông số gọng).</li>
+<li><strong>Đơn vị giao hàng:</strong> tên, số điện thoại và địa chỉ nhận, khi bạn chọn giao hàng.</li>
+<li><strong>Công cụ AI hỗ trợ tư vấn gọng:</strong> ảnh khuôn mặt bạn gửi, chỉ khi bạn đã đồng ý.</li>
+<li><strong>Cơ quan nhà nước có thẩm quyền:</strong> khi pháp luật yêu cầu.</li>
+</ul>
+
+<h2 id="luu-tru">6. Lưu trữ và bảo vệ thông tin</h2>
+<ul>
+<li>Cửa hàng giữ thông tin đơn kính và kết quả đo để phục vụ bảo hành, hậu mãi và so sánh ở những lần đo sau.</li>
+<li>Chỉ nhân viên cần dùng thông tin để phục vụ bạn mới được xem thông tin đó.</li>
+<li>Website được truy cập qua kết nối mã hoá HTTPS và không lưu thông tin thẻ thanh toán.</li>
+</ul>
+
+<h2 id="quyen">7. Quyền của bạn với thông tin cá nhân</h2>
+<p>Theo quy định pháp luật Việt Nam về bảo vệ dữ liệu cá nhân, bạn có thể yêu cầu cửa hàng:</p>
+<ul>
+<li>cho biết cửa hàng đang giữ thông tin gì về bạn, kể cả kết quả đo mắt;</li>
+<li>sửa thông tin chưa đúng;</li>
+<li>xoá thông tin, hoặc ngừng dùng thông tin cho một mục đích nào đó;</li>
+<li>ngừng liên hệ với bạn để giới thiệu ưu đãi.</li>
+</ul>
+<p>Gửi yêu cầu qua email <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a>, Zalo, WhatsApp hoặc tại quầy. Cửa hàng có thể hỏi thêm để xác nhận đúng là bạn trước khi thực hiện.</p>
+<p>Với trẻ em đo mắt tại cửa hàng, thông tin do phụ huynh hoặc người giám hộ cung cấp, và các yêu cầu trên cũng do phụ huynh hoặc người giám hộ gửi.</p>
+
+<h2 id="cap-nhat">8. Cập nhật chính sách</h2>
+<p>Khi website thêm hoặc bỏ công cụ đo lường, hoặc cách cửa hàng xử lý thông tin thay đổi, trang này sẽ được cập nhật và ghi ngày ở cuối trang.</p>
+<section class="contact-box" aria-labelledby="lien-he"><h2 id="lien-he">Cần hỏi thêm?</h2><p><strong>Manh Long Optical</strong>, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội. Mở cửa 8:00 đến 21:30, tất cả các ngày.</p><ul><li>Điện thoại: <a href="tel:+84777986999">0777 986 999</a></li><li>Zalo: <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">0777 986 999</a> · WhatsApp: <a href="https://wa.me/84777986999" target="_blank" rel="noopener">0777 986 999</a></li><li>Email: <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a></li><li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường tới cửa hàng</a></li></ul></section>
+<p class="updated">Cập nhật lần cuối: 26/09/2026. Chính sách này áp dụng tại cửa hàng Manh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội.</p>
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="https://wa.me/84777986999">WhatsApp</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+  <nav class="fpolicy" aria-label="Chính sách"><p class="fpolicy-h">CHÍNH SÁCH</p><ul><li><a href="/dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li><li><a href="/chinh-sach-thanh-toan.html">Chính sách thanh toán</a></li><li><a href="/chinh-sach-giao-hang.html">Chính sách giao hàng</a></li><li><a href="/chinh-sach-bao-hanh.html">Chính sách bảo hành</a></li><li><a href="/chinh-sach-doi-tra.html">Chính sách đổi trả</a></li><li><a href="/chinh-sach-bao-mat.html">Chính sách bảo mật và quyền riêng tư</a></li></ul></nav>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

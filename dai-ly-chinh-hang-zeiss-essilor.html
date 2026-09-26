@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+
+  // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
+  // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Đại lý chính hãng ZEISS và Essilor tại Hà Nội | Mạnh Long</title>
+<meta name="description" content="Manh Long Optical là đại lý chính thức của ZEISS và Essilor. Xem ảnh hai giấy chứng nhận, thời hạn hiệu lực và ý nghĩa khi bạn đặt tròng tại Hà Nội.">
+<link rel="canonical" href="https://manhlongoptical.com/dai-ly-chinh-hang-zeiss-essilor.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/dai-ly-chinh-hang-zeiss-essilor.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/learn/authorized-zeiss-essilor-dealer-hanoi.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/dai-ly-chinh-hang-zeiss-essilor.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Đại lý chính hãng ZEISS và Essilor tại Hà Nội | Mạnh Long">
+<meta property="og:description" content="Manh Long Optical là đại lý chính thức của ZEISS và Essilor. Xem ảnh hai giấy chứng nhận, thời hạn hiệu lực và ý nghĩa khi bạn đặt tròng tại Hà Nội.">
+<meta property="og:url" content="https://manhlongoptical.com/dai-ly-chinh-hang-zeiss-essilor.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/learn-dealer-cert-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Đại lý chính hãng ZEISS và Essilor tại Hà Nội | Mạnh Long">
+<meta name="twitter:description" content="Manh Long Optical là đại lý chính thức của ZEISS và Essilor. Xem ảnh hai giấy chứng nhận, thời hạn hiệu lực và ý nghĩa khi bạn đặt tròng tại Hà Nội.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/learn-dealer-cert-hero.jpg">
+<link rel="stylesheet" href="./vendor/fonts/fonts.css">
+<style>
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+footer .fpolicy{margin:26px auto 0;padding-top:20px;border-top:1px solid rgba(183,171,146,.35);max-width:760px}footer .fpolicy-h{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.2em;color:#F4F2ED}footer .fpolicy ul{list-style:none;margin:0;padding:0}footer .fpolicy li{margin:0 0 6px;font-size:14px;line-height:1.6}
+</style>
+<link rel="stylesheet" href="/assets/learn.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://manhlongoptical.com/dai-ly-chinh-hang-zeiss-essilor.html#article","headline":"Manh Long Optical: đại lý chính thức của ZEISS và Essilor","description":"Manh Long Optical là đại lý chính thức của ZEISS và Essilor. Xem ảnh hai giấy chứng nhận, thời hạn hiệu lực và ý nghĩa khi bạn đặt tròng tại Hà Nội.","image":"https://manhlongoptical.com/uploads-opt/learn-dealer-cert-hero.jpg","author":{"@type":"Person","@id":"https://manhlongoptical.com/ve-alvin.html#alvin","name":"Alvin Dao","alternateName":"Alvin","jobTitle":"Store Manager","url":"https://manhlongoptical.com/ve-alvin.html","worksFor":{"@id":"https://manhlongoptical.com/#localbusiness"}},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"},"datePublished":"2026-09-26","dateModified":"2026-09-26","articleSection":"Về cửa hàng","inLanguage":"vi","mainEntityOfPage":{"@type":"WebPage","@id":"https://manhlongoptical.com/dai-ly-chinh-hang-zeiss-essilor.html"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/dai-ly-chinh-hang-zeiss-essilor.html#faq","mainEntity":[{"@type":"Question","name":"Manh Long Optical có phải đại lý chính hãng của ZEISS không?","acceptedAnswer":{"@type":"Answer","text":"Có. Cửa hàng có chứng nhận ZEISS Authorized Dealer, cấp dưới tên tiếng Việt Mắt Kính Mạnh Long, hiệu lực đến 31/12/2026. Ảnh chứng nhận đăng trên trang này."}},{"@type":"Question","name":"Manh Long Optical có phải đại lý chính thức của Essilor không?","acceptedAnswer":{"@type":"Answer","text":"Có. Essilor Việt Nam cấp chứng nhận đại lý chính thức cho Mạnh Long Optical, có giá trị đến tháng 12/2027."}},{"@type":"Question","name":"Đại lý chính thức có phải nhà phân phối của hãng không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đại lý chính thức là điểm bán được hãng xác nhận. Manh Long Optical không phải nhà phân phối hay đại diện độc quyền của ZEISS hay Essilor tại Việt Nam."}},{"@type":"Question","name":"Đa tròng ZEISS và Essilor mất bao lâu?","acceptedAnswer":{"@type":"Answer","text":"Đa tròng Essilor cao cấp mất 4–5 ngày, đa tròng ZEISS cao cấp 7–9 ngày, vì tròng được làm tại lab của hãng. Nếu sắp đi xa, báo ngày đi ngay khi đo mắt."}},{"@type":"Question","name":"Tròng Essilor có kèm thẻ bảo hành không?","acceptedAnswer":{"@type":"Answer","text":"Có với tròng đa tròng và tròng Eyezen đặt qua lab Essilor. Tròng Essilor lọc ánh sáng xanh loại thường chỉ có bao bì, không có thẻ. Bảo hành của cửa hàng: 1 đổi 1 trong 1 tháng nếu lỗi sản phẩm."}},{"@type":"Question","name":"Đo mắt ở cửa hàng có mất phí không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đo mắt miễn phí, mua hay không cũng vậy."}}]},{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/dai-ly-chinh-hang-zeiss-essilor.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Tìm hiểu","item":"https://manhlongoptical.com/tim-hieu.html"},{"@type":"ListItem","position":3,"name":"Đại lý ZEISS và Essilor","item":"https://manhlongoptical.com/dai-ly-chinh-hang-zeiss-essilor.html"}]},{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manhlong.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://www.linkedin.com/company/143883407/","https://www.tiktok.com/@manhlong.optical","https://medium.com/@mlong.optical","https://zalo.me/0777986999"]}]}</script>
+<!-- Meta Pixel 1718493272777504 (them 13/09/2026) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1718493272777504');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+<script async src="https://px.get-ryze.ai/px.js" data-key="rz_pk_4898090d56df06cda42bdeffa6602a82"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Dai goi y ngon ngu, them 07/09/2026. CHI GOI Y, KHONG tu chuyen trang.
+     Hien khi trinh duyet dat tieng Anh; dong duoc va nho lua chon trong localStorage.
+     KHONG dung ?lang= — kien truc la hai cay trang rieng: / va /en/.
+     Trang nay DA co ban dich tieng Anh, cap nhat 26/09/2026. -->
+<div id="langbar" hidden>
+  <a href="/en/learn/authorized-zeiss-essilor-dealer-hanoi.html" hreflang="en" lang="en">Read this in English &#8594;</a>
+  <button type="button" id="langbarx" aria-label="Dismiss this suggestion">&#215;</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById("langbar"); if(!bar) return;
+  var KEY="ml-langbar-off";
+  try{ if(localStorage.getItem(KEY)==="1") return; }catch(e){}
+  var l=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase();
+  if(l.indexOf("en")!==0) return;
+  bar.hidden=false;
+  var x=document.getElementById("langbarx");
+  if(x) x.addEventListener("click",function(){ bar.hidden=true; try{localStorage.setItem(KEY,"1");}catch(e){} });
+})();
+</script>
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.youtube.com/@MLong.optical" aria-label="YouTube" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/learn/authorized-zeiss-essilor-dealer-hanoi.html" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
+</header>
+<main class="la" id="main">
+
+<p class="la-back"><a href="/tim-hieu.html">← Tất cả bài viết</a></p>
+<nav class="la-crumb" aria-label="Breadcrumb"><ol>
+  <li><a href="/">Trang chủ</a></li>
+  <li><a href="/tim-hieu.html">Tìm hiểu</a></li>
+  <li aria-current="page">Đại lý ZEISS và Essilor</li>
+</ol></nav>
+
+<p class="la-eyebrow">Về cửa hàng · Chứng nhận</p>
+<h1>Manh Long Optical: đại lý chính thức của ZEISS và Essilor</h1>
+<p class="la-deck">Hai hãng tròng kính đã cấp giấy chứng nhận đại lý cho cửa hàng. Bài này đăng nguyên ảnh hai giấy, ghi rõ ai cấp, hiệu lực đến khi nào, và điều đó có ý nghĩa gì khi bạn đặt tròng.</p>
+<p class="la-meta">
+  <span class="la-author">Bài viết của <a href="/ve-alvin.html">Alvin Dao</a>, Quản lý cửa hàng</span>
+  <span>Đăng <time datetime="2026-09-26">26/09/2026</time></span>
+  <span>Cập nhật <time datetime="2026-09-26">26/09/2026</time></span>
+  <span>5 phút đọc</span>
+</p>
+
+<figure class="la-hero">
+  <img src="/uploads-opt/learn-dealer-cert-hero.jpg" width="1200" height="675" alt="Giấy chứng nhận ZEISS Authorized Dealer và giấy chứng nhận đại lý chính thức Essilor cấp cho cửa hàng Mạnh Long" fetchpriority="high">
+</figure>
+
+<div class="la-answer">
+  <span class="la-answer-label">Trả lời nhanh</span>
+  <p>Có. Manh Long Optical là đại lý chính thức của cả ZEISS và Essilor. ZEISS cấp chứng nhận ZEISS Authorized Dealer cho cửa hàng dưới tên tiếng Việt Mắt Kính Mạnh Long, hiệu lực đến 31/12/2026. Essilor Việt Nam cấp chứng nhận đại lý chính thức của Essilor, có giá trị đến tháng 12/2027. Ảnh hai giấy chứng nhận đăng đầy đủ bên dưới để bạn tự đối chiếu.</p>
+</div>
+
+<section class="la-tldr" aria-labelledby="tldr">
+  <h2 id="tldr">TL;DR</h2>
+  <ul>
+    <li>ZEISS: chứng nhận ZEISS Authorized Dealer, hiệu lực đến 31/12/2026.</li>
+    <li>Essilor: chứng nhận đại lý chính thức do Essilor Việt Nam ký, có giá trị đến tháng 12/2027.</li>
+    <li>Đa tròng cao cấp của hai hãng được làm tại lab của hãng: Essilor 4–5 ngày, ZEISS 7–9 ngày.</li>
+    <li>Đại lý chính thức không phải nhà phân phối hay đại diện độc quyền, và không có nghĩa mọi dòng tròng đều có sẵn.</li>
+    <li>Với tròng Essilor, cửa hàng xé niêm phong bao bì trước mặt bạn.</li>
+  </ul>
+</section>
+
+<dl class="la-facts">
+  <div><dt>31/12/2026</dt><dd>Hạn chứng nhận ZEISS Authorized Dealer</dd></div>
+  <div><dt>12/2027</dt><dd>Hạn chứng nhận đại lý chính thức Essilor</dd></div>
+  <div><dt>4–5 ngày</dt><dd>Đa tròng Essilor làm tại lab của hãng; ZEISS 7–9 ngày</dd></div>
+  <div><dt>Miễn phí</dt><dd>Đo mắt tại cửa hàng, mua hay không cũng vậy</dd></div>
+</dl>
+<p class="la-facts-note">Hạn chứng nhận đọc trực tiếp trên hai giấy chứng nhận. Thời gian làm tròng theo xác nhận của chủ cửa hàng, tháng 9/2026.</p>
+
+<details class="la-toc" open><summary>Trong bài này</summary><ol>
+  <li><a href="#zeiss">Chứng nhận ZEISS Authorized Dealer</a></li>
+  <li><a href="#essilor">Chứng nhận đại lý chính thức Essilor</a></li>
+  <li><a href="#y-nghia">Đại lý chính thức nghĩa là gì</a></li>
+  <li><a href="#kiem-tra">Tự kiểm tra khi mua tròng hãng</a></li>
+  <li><a href="#thoi-han">Chứng nhận có thời hạn</a></li>
+  <li><a href="#faq">Câu hỏi thường gặp</a></li>
+</ol></details>
+
+<h2 id="zeiss">Chứng nhận ZEISS Authorized Dealer</h2>
+<figure style="margin:0 auto 24px;max-width:420px">
+  <img src="/uploads-opt/learn-dealer-cert-zeiss.jpg" width="596" height="851" loading="lazy" style="display:block;width:100%;height:auto;border:1px solid #DFDACE" alt="Giấy chứng nhận ZEISS Authorized Dealer cấp cho Mắt Kính Mạnh Long, có hiệu lực đến ngày 31 tháng 12 năm 2026">
+  <figcaption>Chứng nhận ZEISS Authorized Dealer, hiệu lực đến 31/12/2026.</figcaption>
+</figure>
+<p>Giấy chứng nhận do ZEISS cấp ghi tên <strong>Mắt Kính Mạnh Long</strong>, tên tiếng Việt của Manh Long Optical, với danh hiệu <strong>ZEISS Authorized Dealer</strong>, có hiệu lực đến ngày 31/12/2026. Chứng nhận có chữ ký của Giám đốc bộ phận Vision Care Đông Nam Á và Giám đốc bộ phận Vision Care Việt Nam của ZEISS.</p>
+<p>Cửa hàng đặt được các dòng tròng ZEISS: SmartLife Pure, SmartLife Plus, Light 2 (D, 3D, 3DV), SmartLife Individual, Digital Light 2, Office Plus, Office Superb, ClearMind và DriveSafe bản lũy tiến. Phần lớn là hàng đặt theo đơn, không phải lúc nào cũng có sẵn tại cửa hàng. Đa tròng ZEISS được làm tại lab của hãng và mất 7–9 ngày. Từng dòng hợp với ai có trong bài <a href="/zeiss-lenses.html">các dòng đa tròng và văn phòng ZEISS</a>.</p>
+
+<h2 id="essilor">Chứng nhận đại lý chính thức Essilor</h2>
+<figure style="margin:0 auto 24px;max-width:420px">
+  <img src="/uploads-opt/learn-dealer-cert-essilor.jpg" width="900" height="1272" loading="lazy" style="display:block;width:100%;height:auto;border:1px solid #DFDACE" alt="Giấy chứng nhận đại lý chính thức của Essilor cấp cho Mạnh Long Optical, ký thay mặt Essilor Việt Nam, có giá trị đến tháng 12 năm 2027">
+  <figcaption>Chứng nhận đại lý chính thức Essilor, giá trị đến tháng 12/2027.</figcaption>
+</figure>
+<p>Giấy chứng nhận ghi <strong>Mạnh Long Optical là đại lý chính thức của Essilor</strong> (bản tiếng Anh: authorized dealer), ký thay mặt Essilor Việt Nam bởi Trưởng bộ phận Kinh doanh, có giá trị đến tháng 12/2027. Trên giấy in tên các dòng Crizal, Varilux, Transitions, Essentials, Stellest và Elements. Địa chỉ in trên giấy là "147 Lê Duẩn"; địa chỉ đầy đủ của cửa hàng là 147A Lê Duẩn, Cửa Nam, Hà Nội.</p>
+<p>Các dòng Essilor cửa hàng đặt được gồm Varilux Liberty 3.0, Varilux Comfort Max, Varilux Physio 3.0, Essilor Essentials, Eyezen, Transitions Gen S và Stellest, cùng lớp phủ Crizal. Đa tròng Essilor được làm tại lab của hãng và mất 4–5 ngày. Tròng đa tròng và tròng Eyezen đặt qua lab Essilor có thẻ bảo hành; tròng Essilor lọc ánh sáng xanh loại thường chỉ có bao bì, không có thẻ. Mỗi dòng lo việc gì có trong bài <a href="/essilor-lenses.html">tròng Essilor: tiền bạn bỏ ra nằm ở đâu</a>.</p>
+
+<h2 id="y-nghia">Đại lý chính thức nghĩa là gì</h2>
+<p>Đại lý chính thức là cửa hàng được hãng xác nhận bằng văn bản là điểm bán tròng của hãng, trong thời hạn ghi trên giấy. Với người mua kính, điều đó có ba ý nghĩa thực tế:</p>
+<ul>
+  <li><strong>Nguồn tròng rõ ràng.</strong> Tròng cao cấp được đặt theo đơn và làm tại lab của hãng, theo số đo của chính bạn.</li>
+  <li><strong>Thời gian làm nói trước được.</strong> Đa tròng Essilor cao cấp 4–5 ngày, ZEISS 7–9 ngày. Đa tròng phổ thông khoảng 24 giờ; tròng đơn thường có sẵn tại cửa hàng.</li>
+  <li><strong>Bảo hành ghi rõ.</strong> Bảo hành 1 đổi 1 trong 1 tháng nếu lỗi sản phẩm.</li>
+</ul>
+<div class="la-key"><p>Đại lý chính thức không phải là nhà phân phối hay đại diện độc quyền của hãng tại Việt Nam, và không có nghĩa mọi dòng tròng đều có sẵn tại cửa hàng. Tròng cao cấp phần lớn đặt theo đơn sau khi đo mắt.</p></div>
+<p>Nếu bạn đang phân vân giữa hai hãng, bài <a href="/so-sanh-essilor-vs-zeiss.html">so sánh tròng Essilor và ZEISS</a> đặt hai hãng cạnh nhau theo bảng giá của cửa hàng.</p>
+
+<h2 id="kiem-tra">Tự kiểm tra khi mua tròng hãng</h2>
+<p>Dù mua ở đâu, bạn có thể tự kiểm vài điểm trước khi trả tiền:</p>
+<ol class="la-steps">
+  <li><strong>Hỏi giấy chứng nhận đại lý và ngày hết hạn.</strong> Giấy thật ghi tên cửa hàng, tên hãng và thời hạn. Hai giấy của Manh Long Optical đăng ở trên.</li>
+  <li><strong>Xem bao bì tròng còn niêm phong trước khi cắt.</strong> Sau khi tròng đã mài vào gọng, bao bì là bằng chứng duy nhất còn lại. Với tròng Essilor, cửa hàng xé niêm phong trước mặt bạn.</li>
+  <li><strong>Với lớp phủ Crizal, thử logo ẩn.</strong> Cách làm có trong bài <a href="/essilor-authentic-check.html">cách nhận biết tròng Essilor chính hãng</a>.</li>
+  <li><strong>Hỏi rõ thời gian làm và thẻ bảo hành theo đúng dòng tròng.</strong> Không phải dòng nào cũng có thẻ, và đa tròng cao cấp không làm xong trong ngày.</li>
+</ol>
+
+<h2 id="thoi-han">Chứng nhận có thời hạn</h2>
+<p>Cả hai giấy đều có ngày hết hạn: ZEISS đến 31/12/2026, Essilor đến tháng 12/2027. Khi hãng cấp chứng nhận mới, trang này sẽ cập nhật ảnh và ngày hiệu lực. Nếu bạn đọc bài sau các mốc đó mà ảnh chưa đổi, cứ hỏi cửa hàng qua Zalo trước khi đặt tròng.</p>
+
+<aside class="la-cta" aria-labelledby="cta-h">
+  <h2 id="cta-h">Hỏi dòng Essilor hoặc ZEISS hợp với độ của bạn</h2>
+  <p>Đo mắt trước, rồi mới bàn đến hãng và dòng tròng. Nhân viên báo giá theo độ, gọng và cách bạn dùng kính mỗi ngày.</p>
+  <p class="la-cta-fact"><b>Miễn phí</b><span>Đo mắt tại 147A Lê Duẩn</span></p>
+  <div class="la-cta-actions">
+    <a class="la-btn" href="/trong-kinh.html">Xem bảng giá tròng kính</a>
+    <a class="la-btn ghost" href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo</a>
+  </div>
+  <small>Manh Long Optical · 147A Lê Duẩn, Cửa Nam, Hà Nội · <a href="tel:+84777986999">0777 986 999</a></small>
+</aside>
+
+<h2 id="faq">Câu hỏi thường gặp</h2>
+<div class="la-faq">
+  <div><h3>Manh Long Optical có phải đại lý chính hãng của ZEISS không?</h3><p>Có. Cửa hàng có chứng nhận ZEISS Authorized Dealer, cấp dưới tên tiếng Việt Mắt Kính Mạnh Long, hiệu lực đến 31/12/2026. Ảnh chứng nhận đăng trên trang này.</p></div>
+  <div><h3>Manh Long Optical có phải đại lý chính thức của Essilor không?</h3><p>Có. Essilor Việt Nam cấp chứng nhận đại lý chính thức cho Mạnh Long Optical, có giá trị đến tháng 12/2027.</p></div>
+  <div><h3>Đại lý chính thức có phải nhà phân phối của hãng không?</h3><p>Không. Đại lý chính thức là điểm bán được hãng xác nhận. Manh Long Optical không phải nhà phân phối hay đại diện độc quyền của ZEISS hay Essilor tại Việt Nam.</p></div>
+  <div><h3>Đa tròng ZEISS và Essilor mất bao lâu?</h3><p>Đa tròng Essilor cao cấp mất 4–5 ngày, đa tròng ZEISS cao cấp 7–9 ngày, vì tròng được làm tại lab của hãng. Nếu sắp đi xa, báo ngày đi ngay khi đo mắt.</p></div>
+  <div><h3>Tròng Essilor có kèm thẻ bảo hành không?</h3><p>Có với tròng đa tròng và tròng Eyezen đặt qua lab Essilor. Tròng Essilor lọc ánh sáng xanh loại thường chỉ có bao bì, không có thẻ. Bảo hành của cửa hàng: 1 đổi 1 trong 1 tháng nếu lỗi sản phẩm.</p></div>
+  <div><h3>Đo mắt ở cửa hàng có mất phí không?</h3><p>Không. Đo mắt miễn phí, mua hay không cũng vậy.</p></div>
+</div>
+
+<section class="la-remember" aria-labelledby="remember">
+  <h2 id="remember">Điều cần nhớ</h2>
+  <p>Đại lý chính thức là thứ kiểm được: giấy ghi tên cửa hàng, tên hãng và ngày hết hạn. Hai giấy của Manh Long Optical đăng ngay trên trang này.</p>
+</section>
+
+<h2 id="nguon">Nguồn</h2>
+<ul class="la-sources">
+  <li><span class="la-srctype">Tài liệu cửa hàng</span>Chứng nhận ZEISS Authorized Dealer (hiệu lực đến 31/12/2026) và chứng nhận đại lý chính thức Essilor do Essilor Việt Nam ký (giá trị đến tháng 12/2027), chủ cửa hàng cung cấp ngày 26/09/2026.</li>
+  <li><span class="la-srctype">Thông tin kinh doanh</span>Thời gian làm tròng, chính sách bảo hành và thẻ bảo hành theo xác nhận của chủ cửa hàng, tháng 9/2026.</li>
+</ul>
+
+<aside class="la-authorbox" aria-label="Tác giả">
+  <p class="la-ab-label">Tác giả</p>
+  <p class="la-ab-name"><a href="/ve-alvin.html">Alvin Dao</a></p>
+  <p>Quản lý cửa hàng Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội. Năm năm làm nghề kính mắt. <a href="/ve-alvin.html">Về Alvin</a></p>
+</aside>
+
+<section class="la-related" aria-labelledby="related">
+  <h2 id="related">Bài liên quan</h2>
+  <ul class="la-cards">
+    <li><a href="/vi-sao-chon-manh-long-optical.html"><span class="la-card-cat">Về cửa hàng</span><span class="la-card-title">Vì sao nhiều khách chọn Manh Long Optical</span><span class="la-card-desc">Năm tiêu chí của một cửa hàng kính đáng tin.</span></a></li>
+    <li><a href="/essilor-authentic-check.html"><span class="la-card-cat">Tròng kính &amp; thương hiệu</span><span class="la-card-title">Cách nhận biết tròng Essilor chính hãng</span><span class="la-card-desc">Bao bì, logo ẩn, thẻ bảo hành, nơi bán.</span></a></li>
+    <li><a href="/so-sanh-essilor-vs-zeiss.html"><span class="la-card-cat">Tròng kính &amp; thương hiệu</span><span class="la-card-title">So sánh tròng Essilor và ZEISS</span><span class="la-card-desc">Hai hãng đặt cạnh nhau theo bảng giá cửa hàng.</span></a></li>
+  </ul>
+</section>
+
+<nav class="la-more" aria-labelledby="more">
+  <h2 id="more">Có thể bạn quan tâm</h2>
+  <ul>
+    <li><a href="/trong-kinh.html">Bảng giá tròng kính theo chiết suất</a></li>
+    <li><a href="/kinh-da-trong-la-gi.html">Kính đa tròng là gì và cách chọn</a></li>
+    <li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí tại cửa hàng</a></li>
+  </ul>
+</nav>
+</main>
+
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+  <nav class="fpolicy" aria-label="Chính sách"><p class="fpolicy-h">CHÍNH SÁCH</p><ul><li><a href="/dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li><li><a href="/chinh-sach-thanh-toan.html">Chính sách thanh toán</a></li><li><a href="/chinh-sach-giao-hang.html">Chính sách giao hàng</a></li><li><a href="/chinh-sach-bao-hanh.html">Chính sách bảo hành</a></li><li><a href="/chinh-sach-doi-tra.html">Chính sách đổi trả</a></li><li><a href="/chinh-sach-bao-mat.html">Chính sách bảo mật và quyền riêng tư</a></li></ul></nav>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+</body>
+</html>

@@ -324,3 +324,12 @@ The pilot is live-ready. Suggested order, one cluster per batch, pillar first:
 6. Eye exam & prescription, children, care, about.
 
 Migrating the layout is not new content, so batches of 8–10 pages are fine. **Rewrites that add new sections** (TL;DR, criteria, FAQ changes) should follow the `anti-spam-scaling` pace and keep the 60/40 human layer. Each migrated page: copy the skeleton, move existing verified content into the blocks, run the linter, then screenshot at 1280 and 390 px.
+
+## 13. New articles on the Learn index (added 27 Sep 2026)
+
+Owner rule: a newly published article goes to the **top** of the Learn index and shows its **publish date**.
+
+- EN `/en/learn/`: first block of `.listing` is `<h3 class="grouphead" id="new">New</h3>`, one `<article>` per new post, category line `NEW · <CLUSTER> · <time datetime="YYYY-MM-DD">Published D Mon YYYY</time>`. Add the article at position 1 of the ItemList JSON-LD.
+- VI `/tim-hieu.html`: first `<article>` in `.listing`, category line `BÀI MỚI · <CỤM> · <time datetime="YYYY-MM-DD">Đăng DD/MM/YYYY</time>`.
+- Newest first. The date shown must equal `datePublished` in the article's JSON-LD and the visible "Published / Đăng" date in the article meta.
+- Also on publish: sitemap `<url>` with hreflang pair, `tools/build-search-index.py` and `tools/build-search-index-en.py`, then request indexing in Search Console.

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Floating WhatsApp + Zalo buttons for every public page: ONE snippet, TWO languages.
+"""WhatsApp + Zalo contact for every public page: ONE snippet, TWO languages.
+
+One component, two layouts (assets/floating-contact.css):
+  >860px  two round floating buttons on the right (labels hidden)
+  <=860px full-width fixed bottom bar, two equal columns, icon + label;
+          it replaces the older per-page .stickycta bar, which the CSS hides.
 
 Writes the block below just before </body> of each page, between the markers.
 Language follows <html lang="..."> (vi / en); only the aria-labels differ.
@@ -40,8 +45,8 @@ def block(lang):
         f'{START}\n'
         '<link rel="stylesheet" href="/assets/floating-contact.css">\n'
         f'<div class="floating-contact" role="group" aria-label="{group_label}">\n'
-        f'  <a class="floating-contact__button floating-contact__button--whatsapp" href="{WA}" target="_blank" rel="noopener noreferrer" aria-label="{wa_label}">{WA_ICON}</a>\n'
-        f'  <a class="floating-contact__button floating-contact__button--zalo" href="{ZALO}" target="_blank" rel="noopener noreferrer" aria-label="{zalo_label}">{ZALO_ICON}</a>\n'
+        f'  <a class="floating-contact__button floating-contact__button--whatsapp" href="{WA}" target="_blank" rel="noopener noreferrer" aria-label="{wa_label}">{WA_ICON}<span class="floating-contact__label">WhatsApp</span></a>\n'
+        f'  <a class="floating-contact__button floating-contact__button--zalo" href="{ZALO}" target="_blank" rel="noopener noreferrer" aria-label="{zalo_label}">{ZALO_ICON}<span class="floating-contact__label">Zalo</span></a>\n'
         '</div>\n'
         f'{END}\n'
     )

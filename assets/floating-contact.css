@@ -1,0 +1,27 @@
+/* Floating WhatsApp + Zalo buttons, fixed on the right of every page.
+   Markup is written into each page by tools/floating-contact.py (edit there, not in pages).
+   z-index 150: above header (40), search results (60) and the mobile .stickycta bar (100);
+   below the lookbook lightbox (.lbbox, 200) so an open photo is never covered. */
+.floating-contact{position:fixed;right:18px;bottom:120px;z-index:150;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+.floating-contact__button{display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;color:#fff;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:transform .2s ease,box-shadow .2s ease;-webkit-tap-highlight-color:transparent}
+.floating-contact__button svg{display:block;width:34px;height:34px;pointer-events:none}
+.floating-contact__button--whatsapp{background:#25D366}
+.floating-contact__button--zalo{background:#0068FF}
+.floating-contact__button--zalo svg{width:44px;height:44px}
+.floating-contact__button:focus{outline:none}
+.floating-contact__button:focus-visible{outline:3px solid #22254F;outline-offset:3px;box-shadow:0 0 0 6px #F4F2ED,0 4px 14px rgba(0,0,0,.18)}
+@media (hover:hover) and (pointer:fine){
+  .floating-contact__button:hover{transform:scale(1.06);box-shadow:0 6px 18px rgba(0,0,0,.24)}
+}
+/* Mobile: sits above the fixed bottom call/Zalo/directions bar (.stickycta, visible <=860px). */
+@media (max-width:860px){
+  .floating-contact{right:12px;bottom:calc(90px + env(safe-area-inset-bottom,0px));gap:8px}
+  .floating-contact__button{width:52px;height:52px}
+  .floating-contact__button svg{width:28px;height:28px}
+  .floating-contact__button--zalo svg{width:38px;height:38px}
+}
+@media (prefers-reduced-motion:reduce){
+  .floating-contact__button{transition:none}
+  .floating-contact__button:hover{transform:none}
+}
+@media print{.floating-contact{display:none}}

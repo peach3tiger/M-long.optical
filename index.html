@@ -2,10 +2,10 @@
 <html lang="vi">
 <head>
 <!-- Hieu nang 01/10/2026: cac script ben thu ba khong anh huong luc tai trang (GTM rong, Meta Pixel,
-     ChatGPT Ads pixel, Ryze) chi tai SAU su kien window load va sau khung hinh dau tien (rAF; du phong 3 giay neu tab chay nen). Ham stub/hang doi (dataLayer, fbq, oaiq)
+     ChatGPT Ads pixel, Ryze) chi tai SAU su kien window load VA sau first-contentful-paint (du phong 4 giay neu trinh duyet khong bao paint / tab chay nen). Ham stub/hang doi (dataLayer, fbq, oaiq)
      van tao ngay lap tuc nen moi su kien goi som deu duoc xep hang va gui khi script tai xong.
      gtag.js (GA4 + Google Ads) GIU NGUYEN tai ngay tu dau de khong mat gclid / luot xem. -->
-<script>window.mlAfterLoad=function(f){var done=false;function run(){if(!done){done=true;f()}}function go(){requestAnimationFrame(function(){setTimeout(run,0)});setTimeout(run,3000)}if(document.readyState==='complete'){go()}else{window.addEventListener('load',go)}};</script>
+<script>window.mlAfterLoad=function(f){var done=false;function run(){if(!done){done=true;f()}}function go(){setTimeout(run,4000);try{if(performance.getEntriesByName('first-contentful-paint').length){setTimeout(run,0);return}var po=new PerformanceObserver(function(l){if(l.getEntriesByName('first-contentful-paint').length){po.disconnect();setTimeout(run,0)}});po.observe({type:'paint',buffered:true})}catch(e){setTimeout(run,0)}}if(document.readyState==='complete'){go()}else{window.addEventListener('load',go)}};</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

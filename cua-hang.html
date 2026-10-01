@@ -3583,7 +3583,9 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     setTimeout(prime, 400);
   }
 
-  componentDidUpdate() {
+  // componentDidUpdate() lives further down (one method only); it schedules
+  // primeImages() through the _primeRaf guard below.
+  schedulePrime() {
     if (this._primeRaf) return;
     this._primeRaf = requestAnimationFrame(() => { this._primeRaf = 0; this.primeImages(); });
   }
@@ -3683,7 +3685,11 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   submitAuth() {}
   logout() {}
 
+  // 01/10/2026: the class used to declare componentDidUpdate twice; the later
+  // one silently replaced the earlier, so image priming never ran after a
+  // re-render (page / filter / season / search / product change). Merged here.
   componentDidUpdate() {
+    this.schedulePrime();
     this.observeMap();
     this.updateSEO();
     const open = this.state.view === "article" ? this.state.articleId : null;

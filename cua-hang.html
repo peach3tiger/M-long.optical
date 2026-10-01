@@ -336,6 +336,10 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     animation: ml-shimmer 1.4s linear infinite;
   }
   image-slot[src]::part(image) { animation: ml-img-in 320ms ease both; }
+  /* image-slot.js gives its <img> touch-action:none (meant for reframe editing),
+     so a swipe that starts on a product photo could not scroll the page on
+     touch screens. Reframe panning uses the separate .spill layer. */
+  image-slot::part(image) { touch-action: auto; }
   @media (prefers-reduced-motion: reduce) {
     image-slot[src]:not([data-ml-ready])::part(frame),
     image-slot[src]::part(image) { animation: none; }
@@ -3722,6 +3726,9 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     if (m) { this.setState({ view: "article", articleId: decodeURIComponent(m[1]) }); return; }
     if (h === "#/search") return;
     if (h === "" || h === "#" || h === "#/") this.setState({ view: "home" });
+    // Plain section anchors (#collection, #top, #uu-dai…) live on the home view;
+    // without this, Back from a product to #collection kept showing the product.
+    else if (/^#[a-z0-9][a-z0-9-]*$/i.test(h)) this.setState({ view: "home" });
   }
 
   pushHash(h) { if (location.hash !== h) history.pushState(null, "", h); }

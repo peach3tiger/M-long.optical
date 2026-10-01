@@ -3850,7 +3850,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     if (m) { this.setState({ view: "info", infoTab: m[1] }); return; }
     m = h.match(/^#\/learn\/(.+)$/);
     if (m) { this.setState({ view: "article", articleId: decodeURIComponent(m[1]) }); return; }
-    if (h === "#/search") return;
+    if (h === "#/search") { this.setState({ view: (this.state.searchResults || []).length ? "search" : "home" }); return; }
     if (h === "" || h === "#" || h === "#/") this.setState({ view: "home" });
     // Plain section anchors (#collection, #top, #uu-dai…) live on the home view;
     // without this, Back from a product to #collection kept showing the product.

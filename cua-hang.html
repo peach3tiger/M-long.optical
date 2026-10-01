@@ -445,6 +445,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="searchbox"] span { font-size: 16px !important; padding: 0 4px; }
     [data-m="nav"] > a, [data-m="footer-links"] > a, [data-m="info-tabs"] > button, [data-m="season-tabs"] > button, [data-m="filter-list"] > button { min-height: 44px !important; display: inline-flex !important; align-items: center !important; }
     [data-m="pager"] > button { width: 44px !important; height: 44px !important; font-size: 14px !important; }
+    [data-m="pager"] { flex-wrap: wrap !important; }
     [data-m="qty"] > button { min-width: 44px !important; min-height: 44px !important; font-size: 17px !important; }
     [data-m="brand-copy"] p { font-size: 15px !important; line-height: 1.85 !important; }
     [data-m="brand-copy"] h2 { font-size: 17px !important; }
@@ -892,6 +893,7 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
           <p style="margin: 0 0 26px; font-size: 13px; color: #6E6759">{{ detail.shape }}</p>
           <div style="padding-bottom: 4px; border-bottom: 1px solid #DFDACE"></div>
 
+          <sc-if value="{{ detail.hasColors }}" hint-placeholder-val="{{ false }}">
           <div style="padding: 30px 0 0">
             <p style="margin: 0 0 14px; font-size: 10px; letter-spacing: 0.22em; color: #6E6759">{{ t.colour }}</p>
             <div style="display: flex; gap: 10px">
@@ -901,6 +903,7 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
             </div>
             <p style="margin: 12px 0 0; font-size: 11px; color: #6E6759">{{ detail.colorLabel }}</p>
           </div>
+          </sc-if>
 
           <div style="padding: 30px 0 0">
             <p style="margin: 0 0 14px; font-size: 10px; letter-spacing: 0.22em; color: #6E6759">{{ t.lens }}</p>
@@ -1374,7 +1377,9 @@ function imgSrc(filename) {
 }
 function mk(i, id, name, shape, tier, was, now, size, material, img) {
   const c1 = tier === "essential" ? ["Tortoise", "#6b4423"] : tier === "premium" ? ["Silver", "#c3c6ca"] : ["Black", "#1B1D1F"];
-  return { id, name: name || "", shape, tier, was, now, colors: "+1 Color", ways: [["Black", "#1B1D1F"], c1], size, weight: "22 g", fit: "Standard", material, img: img || null };
+  // waysSynthetic: these two colourways come from the tier, not from the frame.
+  // The product page hides its colour picker for such products (01/10/2026).
+  return { id, name: name || "", shape, tier, was, now, colors: "+1 Color", ways: [["Black", "#1B1D1F"], c1], waysSynthetic: true, size, weight: "22 g", fit: "Standard", material, img: img || null };
 }
 /* Kinh mat — nhan dien tu dong tu chinh du lieu san pham (08/09/2026).
    Khong gan tay tung ma: them san pham moi ma mo ta co trong nhuom mau /
@@ -4193,6 +4198,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
         now: this.price(p.now + extra),
         off: "",
         qty: this.state.qty,
+        hasColors: !p.waysSynthetic && Array.isArray(p.ways) && p.ways.length > 0,
         colorLabel: PD.color(way[0], lang),
         colorways: p.ways.map((w, i) => ({
           label: PD.color(w[0], lang), swatch: w[1],

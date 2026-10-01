@@ -431,9 +431,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="article-h1"] { font-size: 27px !important; }
     [data-m="more-grid"] { grid-template-columns: 1fr !important; gap: 32px !important; }
     [data-m="footer"] { padding: 48px 20px 64px !important; }
-    [data-m="sticky-cta"] { display: block !important; padding-bottom: env(safe-area-inset-bottom) !important; }
     [data-m="map-dir"] { left: 16px !important; right: auto !important; }
-    body { padding-bottom: calc(50px + env(safe-area-inset-bottom)); }
     [data-m="footer-row"] { flex-direction: column !important; gap: 26px !important; }
     [data-m="footer-links"] { flex-wrap: wrap !important; gap: 16px 20px !important; }
     [data-m="root"] { overflow-x: hidden !important; }
@@ -1246,13 +1244,6 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
       </div>
     </div>
   </footer>
-  <div data-m="sticky-cta" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: #F4F2ED; border-top: 1px solid #DFDACE">
-    <div style="display: flex">
-      <a href="tel:+84777986999" style="flex: 1; padding: 14px; text-align: center; color: #F4F2ED; background: #7A5A2B; font-size: 12px; letter-spacing: 0.06em; font-weight: 600">Gọi ngay</a>
-      <a href="https://zalo.me/0777986999" target="_blank" rel="noopener" style="flex: 1; padding: 14px; text-align: center; color: #F4F2ED; background: #22254F; font-size: 12px; letter-spacing: 0.12em; font-weight: 600">ZALO</a>
-      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener" style="flex: 1; padding: 14px; text-align: center; color: #F4F2ED; background: #22254F; font-size: 12px; letter-spacing: 0.06em; font-weight: 600">Chỉ đường</a>
-    </div>
-  </div>
 </div>
 
 </x-dc>
@@ -4231,7 +4222,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
 </script>
 <script>
 /* Mobile viewport metrics for the home hero (iOS Safari/Chrome).
-   Publishes --hdr / --cta / --vvh on <html> and flips the header between the
+   Publishes --hdr / --vvh on <html> and flips the header between the
    over-hero overlay and the solid bar. Desktop (>860px) is untouched: nothing
    outside the 860px media query reads these variables.
 
@@ -4267,11 +4258,6 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   function measure() {
     var hdr = document.querySelector("header");
     var hero = document.querySelector('[data-m="hero-photo"]');
-    var cta = document.querySelector('[data-m="sticky-cta"]');
-
-    // offsetParent is null on fixed elements, so read display instead.
-    var ctaVisible = !!cta && getComputedStyle(cta).display !== "none";
-    setVar("--cta", ctaVisible ? Math.round(cta.getBoundingClientRect().height) + "px" : "0px");
     if (!hasSvh) setVar("--vvh", window.innerHeight + "px");
 
     // The mobile hero no longer floats the header over the photo: the header

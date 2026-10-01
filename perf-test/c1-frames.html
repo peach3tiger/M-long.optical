@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<script>/* perf-test s4 instrumentation */(function(){var P=performance,M=function(n){try{P.mark(n.slice(0,240))}catch(e){}};var k=0,t0=0;function f(){k++;if(k<=3||k%10===0)M('raf'+k);if(k<300&&!window.__fcp)requestAnimationFrame(f)}requestAnimationFrame(f);
+try{new PerformanceObserver(function(l){l.getEntries().forEach(function(e){M('paint|'+e.name+'|'+Math.round(e.startTime)+'|raf'+k);if(e.name==='first-contentful-paint')window.__fcp=1})}).observe({type:'paint',buffered:true})}catch(e){}
+try{new PerformanceObserver(function(l){l.getEntries().forEach(function(e){M('ls|'+Math.round(e.startTime)+'|'+e.value.toFixed(4)+'|'+(e.sources||[]).map(function(x){var n=x.node;return (n&&n.nodeType===1?n.tagName+'.'+String(n.className||'').split(' ')[0]:'#t')+'['+Math.round(x.previousRect.top)+'>'+Math.round(x.currentRect.top)+',h'+Math.round(x.previousRect.height)+'>'+Math.round(x.currentRect.height)+']'}).join(' '))})}).observe({type:'layout-shift',buffered:true})}catch(e){}
+document.addEventListener('DOMContentLoaded',function(){M('dcl|raf'+k)});addEventListener('load',function(){M('load|raf'+k)});if(document.fonts)document.fonts.ready.then(function(){M('fonts-ready|raf'+k)});M('head-start')})();</script>
+<!-- Hieu nang 01/10/2026: cac script ben thu ba khong anh huong luc tai trang (GTM rong, Meta Pixel,
+     ChatGPT Ads pixel, Ryze) chi tai SAU su kien window load VA sau first-contentful-paint (du phong 4 giay neu trinh duyet khong bao paint / tab chay nen). Ham stub/hang doi (dataLayer, fbq, oaiq)
+     van tao ngay lap tuc nen moi su kien goi som deu duoc xep hang va gui khi script tai xong.
+     gtag.js (GA4 + Google Ads) GIU NGUYEN tai ngay tu dau de khong mat gclid / luot xem. -->
+<script>window.mlAfterLoad=function(f){var done=false;function run(){if(!done){done=true;f()}}function go(){setTimeout(run,4000);try{if(performance.getEntriesByName('first-contentful-paint').length){setTimeout(run,0);return}var po=new PerformanceObserver(function(l){if(l.getEntriesByName('first-contentful-paint').length){po.disconnect();setTimeout(run,0)}});po.observe({type:'paint',buffered:true})}catch(e){setTimeout(run,0)}}if(document.readyState==='complete'){go()}else{window.addEventListener('load',go)}};</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;w.mlAfterLoad(function(){f.parentNode.insertBefore(j,f);});
+})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
+<!-- End Google Tag Manager -->
+<!-- ChatGPT Ads Measurement Pixel (My first pixel) -->
+<script>
+(function (w, d, s, u) {
+  if (w.oaiq) return;
+  var q = function () { q.q.push(arguments); };
+  q.q = [];
+  w.oaiq = q;
+  var js = d.createElement(s);
+  js.async = true;
+  js.src = u;
+  w.mlAfterLoad(function () { var f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(js, f); });
+})(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+oaiq("init", { pixelId: "RGbprxmJF4TT39HPvhcm7G" });
+oaiq("measure", "page_viewed", { type: "contents", contents: [{ id: location.pathname, content_type: "page" }] });
+</script>
+<!-- End ChatGPT Ads Measurement Pixel -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Eyeglass Frames in Hanoi: Acetate, Titanium, Metal | Manh Long</title>
+<meta name="description" content="A sample of the roughly 1,000 frames in stock at 147A Le Duan, Hanoi, with model numbers, sizes in millimetres and the colours on the shelf. Try them on in store.">
+<link rel="canonical" href="https://manhlongoptical.com/en/frames.html">
+<link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/frames.html">
+<link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/cua-hang.html">
+<link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/cua-hang.html">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eyeglass frames in Hanoi: what is on the shelf at 147A Le Duan">
+<meta property="og:description" content="Acetate, titanium and metal frames in stock now, with model numbers, sizes in millimetres and the colours you can try on.">
+<meta property="og:url" content="https://manhlongoptical.com/en/frames.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eyeglass frames in Hanoi: what is on the shelf at 147A Le Duan">
+<meta name="twitter:description" content="Acetate, titanium and metal frames in stock now, with model numbers and sizes in millimetres.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<style>
+/* @font-face chep tu vendor/fonts/fonts.css (inline de bo 1 request chan render; stylesheet font ngoai lam tre khung hinh dau ~1.2-2.4 s trong PSI, 01/10/2026) */
+/* Font tu host, thay https://fonts.googleapis.com
+   Nguon: @fontsource tren npm — cung bo file Google Fonts phat.
+   unicode-range lay theo dai chuan cua Google, giu nguyen co che chi tai subset can dung. */
+
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;src:url('/vendor/fonts/files/archivo-latin-wght-normal.woff2') format('woff2-variations');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;src:url('/vendor/fonts/files/archivo-latin-ext-wght-normal.woff2') format('woff2-variations');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;src:url('/vendor/fonts/files/archivo-vietnamese-wght-normal.woff2') format('woff2-variations');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:600;src:url('/vendor/fonts/files/noto-serif-display-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-latin-400-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-latin-500-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-500-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:600;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-400-italic.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-500-italic.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-400-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-500-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:600;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-600-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-400-italic.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-500-italic.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:980px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:48px 0 6px}
+.grouplede{font-size:14px;color:var(--muted);margin:0 0 20px}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+/* Luoi gong: anh vuong 600x600, ten mau, so do, mau sac. */
+.frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin:0 0 8px}
+.fcard{background:#fff;border:1px solid var(--hair);display:flex;flex-direction:column}
+.fcard img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:var(--hair)}
+.fbody{padding:12px 14px 14px}
+.fname{font-family:'Noto Serif Display',Georgia,serif;font-size:17px;line-height:1.25;margin:0 0 4px}
+.fsize{font-size:13px;font-variant-numeric:tabular-nums;letter-spacing:.02em;margin:0 0 6px;color:var(--ink)}
+.fcol{font-size:13px;color:var(--muted);margin:0}
+.fmat{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:24px 0 0}
+.faq dt{font-weight:600;margin:20px 0 6px}.faq dd{margin:0 0 14px}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:44px 0 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+footer .fpolicy{margin:26px auto 0;padding-top:20px;border-top:1px solid rgba(183,171,146,.35);max-width:760px}footer .fpolicy-h{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.2em;color:#F4F2ED}footer .fpolicy ul{list-style:none;margin:0;padding:0}footer .fpolicy li{margin:0 0 6px;font-size:14px;line-height:1.6}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"image":"https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","currenciesAccepted":"VND","paymentAccepted":"Cash, Credit Card, Debit Card","availableLanguage":[{"@type":"Language","name":"English","alternateName":"en"},{"@type":"Language","name":"Vietnamese","alternateName":"vi"}],"address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}]},{"@type":"CollectionPage","@id":"https://manhlongoptical.com/en/frames.html","name":"Eyeglass frames at Manh Long Optical, Hanoi","url":"https://manhlongoptical.com/en/frames.html","inLanguage":"en","description":"A sample of the roughly one thousand eyeglass frames stocked at 147A Le Duan, Hanoi, grouped by material, with model numbers, sizes in millimetres and the colours held in store.","datePublished":"2026-09-07","dateModified":"2026-09-07","about":{"@id":"https://manhlongoptical.com/#localbusiness"},"publisher":{"@id":"https://manhlongoptical.com/#localbusiness"}},{"@type":"FAQPage","@id":"https://manhlongoptical.com/en/frames.html#faq","inLanguage":"en","isPartOf":{"@id":"https://manhlongoptical.com/en/frames.html"},"mainEntity":[{"@type":"Question","name":"Do you have frames that fit a larger face?","acceptedAnswer":{"@type":"Answer","text":"Yes. Among the roughly one thousand frames in store there are several sizes, including wider fronts and higher bridges. This is the question visitors from Europe and North America ask most often in an Asian optical shop. Say your usual size at the counter and the wider trays come out first."}},{"@type":"Question","name":"Acetate or titanium?","acceptedAnswer":{"@type":"Answer","text":"Acetate is plastic cut from sheet: it holds strong colour and pattern, sits heavier, and can be reshaped with heat if the fit is off. Titanium is metal: much lighter, springy, and it does not corrode, but the colour range is limited to metal finishes. Neither is better. Choose acetate if you want the frame to be seen, titanium if you would rather forget it is there."}},{"@type":"Question","name":"Can I put new lenses into a frame I already own?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, and you are welcome to bring it in. Staff check the frame first and say plainly if it has gone brittle or worn thin and may not survive a re-fit, before anything is cut."}},{"@type":"Question","name":"Is this everything you have?","acceptedAnswer":{"@type":"Answer","text":"No. Eighteen frames are shown here out of roughly a thousand in the shop. This page is a sample, chosen to cover the three materials and the usual shapes, not a catalogue."}},{"@type":"Question","name":"What happens to the fit after I go home?","acceptedAnswer":{"@type":"Answer","text":"Adjustments, cleaning and new nose pads are free at Manh Long Optical for as long as you own the pair. Once you are home, any optician can adjust the fit; these are standard frames with standard fittings."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhlongoptical.com/en/"},{"@type":"ListItem","position":2,"name":"Frames","item":"https://manhlongoptical.com/en/frames.html"}]}]}</script>
+<!-- Meta Pixel 1718493272777504 (them 13/09/2026) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;f.mlAfterLoad(function(){s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)})}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1718493272777504');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+<script>mlAfterLoad(function(){var r=document.createElement('script');r.async=true;r.src='https://px.get-ryze.ai/px.js';r.setAttribute('data-key','rz_pk_4898090d56df06cda42bdeffa6602a82');document.head.appendChild(r);});</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="topbar">Free eye test, whether you buy or not · Open 8:00 – 21:30 every day<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.youtube.com/@MLong.optical" aria-label="YouTube" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/en/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/en/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html?lang=en#collection">FRAMES</a><a href="/en/lenses.html">LENSES</a><a href="/en/offers.html">OFFERS</a><a href="/en/learn/">LEARN</a><a href="/en/frames.html#store">STORE</a><span class="langtog"><b aria-current="true" lang="en">EN</b><span class="sep" aria-hidden="true">|</span><a href="/cua-hang.html" hreflang="vi" lang="vi" aria-label="Xem trang này bằng tiếng Việt">VI</a></span></nav>
+</header>
+<main>
+<p class="crumb"><a href="/en/">English</a> › Frames</p>
+
+<h1>Eyeglass frames at 147A Le Duan</h1>
+<p class="byline">Manh Long Optical · 147A Le Duan, Cua Nam ward, Hanoi · Updated 7 September 2026</p>
+
+<div class="takeaway"><strong>Short version:</strong> about a thousand frames sit on open shelves at 147A Le Duan, and you are welcome to try any of them. Manh Long Optical <a href="/en/learn/manh-long-optical-since-2000.html">supplied frames to the trade for twenty-five years before opening a shop to the public</a>, which is where the buying comes from. Below is a sample of what is in stock now, grouped by what the frame is made of, with the model number, the size in millimetres and the colours actually on the shelf.</div>
+
+<h2 id="sizes">How to read the numbers</h2>
+<p>Every frame here carries three numbers, in millimetres, always in the same order: <a href="/en/learn/how-to-choose-glasses-that-fit.html"><strong>lens width, bridge width, temple length</strong></a>. A frame marked 53-18-148 has 53 mm lenses, an 18 mm bridge and 148 mm arms.</p>
+<p>The glasses you are wearing right now have those three numbers printed on the inside of one arm or across the bridge. Read them before you travel and you will know in seconds whether a frame on this page is your size. If your current pair fits well, look for numbers within a millimetre or two of it. If it has always pinched, go up on the bridge; if it slides, go down.</p>
+<p>Nothing here has to be decided from a screen. The sizes are published so you can rule things in or out before you cross the city.</p>
+<h2 id="acetate">Acetate</h2>
+<p class="grouplede">Plastic cut from sheet. It carries colour and pattern the way metal cannot, sits a little heavier, and can be warmed and reshaped at the counter if the fit is not right.</p>
+<div class="frames">
+  <figure class="fcard">
+    <img src="../uploads-opt/voxy-908-600w.webp" srcset="../uploads-opt/voxy-908-300w.webp 300w, ../uploads-opt/voxy-908-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="VOXY 908 cat-eye acetate frames in black and in a clear-to-grey gradient">
+    <figcaption class="fbody">
+      <p class="fmat">Cat-eye</p>
+      <h3 class="fname">VOXY 908</h3>
+      <p class="fsize">53-18-148 mm</p>
+      <p class="fcol">Black · clear-to-grey gradient</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/voxy-916-600w.webp" srcset="../uploads-opt/voxy-916-300w.webp 300w, ../uploads-opt/voxy-916-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="VOXY 916 square acetate frames in black and translucent grey">
+    <figcaption class="fbody">
+      <p class="fmat">Square</p>
+      <h3 class="fname">VOXY 916</h3>
+      <p class="fsize">52-19-148 mm</p>
+      <p class="fcol">Black · translucent grey</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/voxy-998-600w.webp" srcset="../uploads-opt/voxy-998-300w.webp 300w, ../uploads-opt/voxy-998-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="VOXY 998 round acetate frames in tortoise, black and dark brown">
+    <figcaption class="fbody">
+      <p class="fmat">Round</p>
+      <h3 class="fname">VOXY 998</h3>
+      <p class="fsize">53-20-148 mm</p>
+      <p class="fcol">Tortoise · black · dark brown</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/betrue-3600-600w.webp" srcset="../uploads-opt/betrue-3600-300w.webp 300w, ../uploads-opt/betrue-3600-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="BETRUE 3600 cat-eye acetate frames in black, taupe and grey with tortoise arms">
+    <figcaption class="fbody">
+      <p class="fmat">Cat-eye</p>
+      <h3 class="fname">BETRUE 3600</h3>
+      <p class="fsize">54-17-148 mm</p>
+      <p class="fcol">Black · taupe · grey with tortoise arms</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/betrue-3001-600w.webp" srcset="../uploads-opt/betrue-3001-300w.webp 300w, ../uploads-opt/betrue-3001-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="BETRUE 3007 square acetate frames in black, grey and smoke">
+    <figcaption class="fbody">
+      <p class="fmat">Square</p>
+      <h3 class="fname">BETRUE 3007</h3>
+      <p class="fsize">53-18-150 mm</p>
+      <p class="fcol">Black · grey · smoke</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/rmer-214-600w.webp" srcset="../uploads-opt/rmer-214-300w.webp 300w, ../uploads-opt/rmer-214-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="RMER 214 cat-eye acetate frames in black and in dark green with amber arms">
+    <figcaption class="fbody">
+      <p class="fmat">Cat-eye</p>
+      <h3 class="fname">RMER 214</h3>
+      <p class="fsize">54-18-148 mm</p>
+      <p class="fcol">Black · dark green with amber arms</p>
+    </figcaption>
+  </figure>
+</div>
+<h2 id="titanium">Titanium</h2>
+<p class="grouplede">Metal, and the light one. Titanium springs back instead of bending, does not corrode against skin, and disappears on the face. The trade-off is colour: metal finishes only.</p>
+<div class="frames">
+  <figure class="fcard">
+    <img src="../uploads-opt/jovendi-18001-600w.webp" srcset="../uploads-opt/jovendi-18001-300w.webp 300w, ../uploads-opt/jovendi-18001-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="JOVENDI 18001 round pure titanium frames in rose gold and silver">
+    <figcaption class="fbody">
+      <p class="fmat">Round · pure titanium</p>
+      <h3 class="fname">JOVENDI 18001</h3>
+      <p class="fsize">51-18-145 mm</p>
+      <p class="fcol">Rose gold · silver</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/jovendi-851-600w.webp" srcset="../uploads-opt/jovendi-851-300w.webp 300w, ../uploads-opt/jovendi-851-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="JOVENDI V851 cat-eye pure titanium frames in pink, gold and silver">
+    <figcaption class="fbody">
+      <p class="fmat">Cat-eye · pure titanium</p>
+      <h3 class="fname">JOVENDI V851</h3>
+      <p class="fsize">54-19-147 mm</p>
+      <p class="fcol">Pink · gold · silver</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/jovendi-90033-600w.webp" srcset="../uploads-opt/jovendi-90033-300w.webp 300w, ../uploads-opt/jovendi-90033-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="JOVENDI 90033 geometric titanium frames in gold and silver">
+    <figcaption class="fbody">
+      <p class="fmat">Geometric · titanium IP</p>
+      <h3 class="fname">JOVENDI 90033</h3>
+      <p class="fsize">53-17-145 mm</p>
+      <p class="fcol">Gold · silver</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/humars-90163-600w.webp" srcset="../uploads-opt/humars-90163-300w.webp 300w, ../uploads-opt/humars-90163-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="HUMARS 90163 rimless titanium frames in silver and gold">
+    <figcaption class="fbody">
+      <p class="fmat">Rimless · titanium IP</p>
+      <h3 class="fname">HUMARS 90163</h3>
+      <p class="fsize">55-17-145 mm</p>
+      <p class="fcol">Silver · gold</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/humars-8502-600w.webp" srcset="../uploads-opt/humars-8502-300w.webp 300w, ../uploads-opt/humars-8502-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="HUMARS 8502 round titanium frames in silver and rose gold">
+    <figcaption class="fbody">
+      <p class="fmat">Round · titanium IP</p>
+      <h3 class="fname">HUMARS 8502</h3>
+      <p class="fsize">51-19-145 mm</p>
+      <p class="fcol">Silver · rose gold</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/humars-90296-600w.webp" srcset="../uploads-opt/humars-90296-300w.webp 300w, ../uploads-opt/humars-90296-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="HUMARS 90296 round titanium frames in silver and gold">
+    <figcaption class="fbody">
+      <p class="fmat">Round · titanium IP</p>
+      <h3 class="fname">HUMARS 90296</h3>
+      <p class="fsize">52-19-145 mm</p>
+      <p class="fcol">Silver · gold</p>
+    </figcaption>
+  </figure>
+</div>
+<h2 id="metal">Metal with titanium temples</h2>
+<p class="grouplede">A metal front with titanium arms. It buys most of the lightness of a full titanium frame while leaving room for shaping, detail and acetate trim across the brow.</p>
+<div class="frames">
+  <figure class="fcard">
+    <img src="../uploads-opt/beethoven-1070-600w.webp" srcset="../uploads-opt/beethoven-1070-300w.webp 300w, ../uploads-opt/beethoven-1070-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="BEETHOVEN 1070 round frames with titanium temples in black, clear pink, tortoise and olive">
+    <figcaption class="fbody">
+      <p class="fmat">Round</p>
+      <h3 class="fname">BEETHOVEN 1070</h3>
+      <p class="fsize">51-18-145 mm</p>
+      <p class="fcol">Black · clear pink · tortoise · olive</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/beethoven-1111-600w.webp" srcset="../uploads-opt/beethoven-1111-300w.webp 300w, ../uploads-opt/beethoven-1111-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="BEETHOVEN 1073 cat-eye frames with titanium temples in clear pink, black and taupe">
+    <figcaption class="fbody">
+      <p class="fmat">Cat-eye</p>
+      <h3 class="fname">BEETHOVEN 1073</h3>
+      <p class="fsize">53-17-145 mm</p>
+      <p class="fcol">Clear pink · black · taupe</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/beethoven-1073-600w.webp" srcset="../uploads-opt/beethoven-1073-300w.webp 300w, ../uploads-opt/beethoven-1073-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="BEETHOVEN 1059 half-rim cat-eye frames with titanium temples in silver and pink, gold and pink, gold and ivory">
+    <figcaption class="fbody">
+      <p class="fmat">Cat-eye · half-rim</p>
+      <h3 class="fname">BEETHOVEN 1059</h3>
+      <p class="fsize">52-18-145 mm</p>
+      <p class="fcol">Silver and pink · gold and pink · gold and ivory</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/beethoven-1110-600w.webp" srcset="../uploads-opt/beethoven-1110-300w.webp 300w, ../uploads-opt/beethoven-1110-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="BEETHOVEN 1111 cat-eye frames with a beaded chain along the titanium temple, in black tortoise, clear champagne and navy with pearl beads">
+    <figcaption class="fbody">
+      <p class="fmat">Cat-eye · beaded temple</p>
+      <h3 class="fname">BEETHOVEN 1111</h3>
+      <p class="fsize">52-17-148 mm</p>
+      <p class="fcol">Black tortoise · clear champagne · navy with pearl beads</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/beethoven-1099-600w.webp" srcset="../uploads-opt/beethoven-1099-300w.webp 300w, ../uploads-opt/beethoven-1099-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="BEETHOVEN 1099 round titanium alloy frames in pink, green and rose gold">
+    <figcaption class="fbody">
+      <p class="fmat">Round · titanium alloy</p>
+      <h3 class="fname">BEETHOVEN 1099</h3>
+      <p class="fsize">52-17-145 mm</p>
+      <p class="fcol">Pink · green · rose gold</p>
+    </figcaption>
+  </figure>
+  <figure class="fcard">
+    <img src="../uploads-opt/beethoven-1059-600w.webp" srcset="../uploads-opt/beethoven-1059-300w.webp 300w, ../uploads-opt/beethoven-1059-600w.webp 600w" sizes="(max-width:700px) 45vw, 220px" width="600" height="600" loading="lazy" decoding="async" alt="BEETHOVEN 1075 rectangular titanium alloy frames in black and silver">
+    <figcaption class="fbody">
+      <p class="fmat">Rectangle · titanium alloy</p>
+      <h3 class="fname">BEETHOVEN 1075</h3>
+      <p class="fsize">54-17-148 mm</p>
+      <p class="fcol">Black · silver</p>
+    </figcaption>
+  </figure>
+</div>
+
+<div class="note"><strong>About these photographs.</strong> Each photograph shows the same model in the colours held in store, so what you see is the range you can try on, not a styled single unit. Colours run out and come back; if one shown here matters to you, message ahead and staff will check the drawer before you travel.</div>
+
+<h2 id="price">What a pair costs</h2>
+<p>Frame prices are quoted at the counter, because the figure depends on the model and on which lens goes into it. Two numbers are fixed and worth knowing before you arrive:</p>
+<ul>
+  <li>A complete pair of single-vision glasses, <strong>frame and lenses together, runs from 850,000₫ to 3,500,000₫</strong>. The 850,000₫ pair uses a standard lens, not a branded one. That is one number covering everything, not a lens price with the frame added later.</li>
+  <li>With Essilor lenses <strong>the frame is included at no extra charge</strong>, up to 850,000₫, 1,250,000₫ or 1,850,000₫ of frame value depending on which lens you choose. The current terms are on the <a href="/en/offers.html">offers page</a>.</li>
+</ul>
+<p>Lens prices on their own — photochromic, progressive, high index — are published in full on the <a href="/en/lenses.html">lenses page</a>, along with how long each type takes to make.</p>
+
+<h2 id="questions">Questions people ask about frames</h2>
+<dl class="faq">
+  <dt>Do you have frames that fit a larger face?</dt>
+  <dd>Yes. Among the roughly one thousand frames in store there are several sizes, including wider fronts and higher bridges. This is the question visitors from Europe and North America ask most often in an Asian optical shop. Say your usual size at the counter and the wider trays come out first.</dd>
+
+  <dt>Acetate or titanium?</dt>
+  <dd>Acetate is plastic cut from sheet: it holds strong colour and pattern, sits heavier, and can be reshaped with heat if the fit is off. Titanium is metal: much lighter, springy, and it does not corrode, but the colour range is limited to metal finishes. Neither is better. Choose acetate if you want the frame to be seen, titanium if you would rather forget it is there.</dd>
+
+  <dt>Can I put new lenses into a frame I already own?</dt>
+  <dd>Usually yes, and you are welcome to bring it in. Staff check the frame first and say plainly if it has gone brittle or worn thin and may not survive a re-fit, before anything is cut.</dd>
+
+  <dt>Is this everything you have?</dt>
+  <dd>No. Eighteen frames are shown here out of roughly a thousand in the shop. This page is a sample, chosen to cover the three materials and the usual shapes, not a catalogue.</dd>
+
+  <dt>What happens to the fit after I go home?</dt>
+  <dd>Adjustments, cleaning and new nose pads are free at Manh Long Optical for as long as you own the pair. Once you are home, any optician can adjust the fit; these are standard frames with standard fittings.</dd>
+</dl>
+
+<div class="cta" id="store">
+  <h2>Try them on at 147A Le Duan</h2>
+  <p>The frames are on open shelves and there is no appointment to make. Come in, try as many as you like, and have your eyes tested for free whether you buy or not.</p>
+  <p><strong>Manh Long Optical · 147A Le Duan, Cua Nam ward, Hanoi</strong><br>
+  Open <strong>8:00 – 21:30, every day</strong><br>
+  <strong>English spoken on every shift</strong>, including evenings<br>
+  <strong>Card and cash both accepted</strong></p>
+  <p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Directions</a> · <a href="https://wa.me/84777986999">WhatsApp +84 777 986 999</a> · <a href="tel:+84777986999">Call +84 777 986 999</a></p>
+  <p>Flying out soon? Say your departure date first and staff will only suggest lenses that can be finished in time.</p>
+</div>
+
+<div class="related">
+  <h2>Read next</h2>
+  <ul>
+    <li><a href="/en/lenses.html">Lenses and what they cost</a> — the full price list, and how long each type takes to make.</li>
+    <li><a href="/en/prescription-glasses-hanoi.html">Getting prescription glasses in Hanoi</a> — the eye test, the timings, what to bring.</li>
+    <li><a href="/en/faq.html">Questions before you come in</a></li>
+    <li><a href="/en/offers.html">What is on offer right now</a></li>
+  </ul>
+</div>
+
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Le Duan, Cua Nam ward, Hanoi</p>
+  <p>Open daily 8:00 – 21:30 · <a href="https://wa.me/84777986999">WhatsApp</a> · <a href="tel:+84777986999">+84 777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a></p>
+  <p><a href="/cua-hang.html" hreflang="vi">Trang tiếng Việt</a></p>
+  <nav class="fpolicy" aria-label="Policies"><p class="fpolicy-h">POLICIES</p><ul><li><a href="/en/terms-of-service.html">Terms of Service</a></li><li><a href="/en/payment-policy.html">Payment Policy</a></li><li><a href="/en/delivery-policy.html">Delivery Policy</a></li><li><a href="/en/warranty-policy.html">Warranty Policy</a></li><li><a href="/en/returns-policy.html">Returns Policy</a></li><li><a href="/en/privacy-policy.html">Privacy Policy</a></li></ul></nav>
+</footer>
+<div class="stickycta">
+  <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WHATSAPP</a>
+  <a href="tel:+84777986999">CALL</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">DIRECTIONS</a>
+</div>
+<!-- floating-contact:start (generated by tools/floating-contact.py; edit there, not here) -->
+<link rel="stylesheet" href="/assets/floating-contact.css">
+<div class="floating-contact" role="group" aria-label="Quick contact">
+  <a class="floating-contact__button floating-contact__button--whatsapp" href="https://wa.me/84777986999" target="_blank" rel="noopener noreferrer" aria-label="Chat with Manh Long Optical on WhatsApp"><svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35Z"/><path d="M20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41ZM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.45-4.44 9.88-9.89 9.88Z"/></svg><span class="floating-contact__label">WhatsApp</span></a>
+  <a class="floating-contact__button floating-contact__button--zalo" href="https://zalo.me/0777986999" target="_blank" rel="noopener noreferrer" aria-label="Chat with Manh Long Optical on Zalo"><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true" focusable="false"><text x="24" y="29.5" text-anchor="middle" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-size="15.5" font-weight="700" letter-spacing="-.2">Zalo</text></svg><span class="floating-contact__label">Zalo</span></a>
+</div>
+<!-- floating-contact:end -->
+</body>
+</html>

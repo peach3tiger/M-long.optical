@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<script>/* perf-test s4 instrumentation */(function(){var P=performance,M=function(n){try{P.mark(n.slice(0,240))}catch(e){}};var k=0,t0=0;function f(){k++;if(k<=3||k%10===0)M('raf'+k);if(k<300&&!window.__fcp)requestAnimationFrame(f)}requestAnimationFrame(f);
+try{new PerformanceObserver(function(l){l.getEntries().forEach(function(e){M('paint|'+e.name+'|'+Math.round(e.startTime)+'|raf'+k);if(e.name==='first-contentful-paint')window.__fcp=1})}).observe({type:'paint',buffered:true})}catch(e){}
+try{new PerformanceObserver(function(l){l.getEntries().forEach(function(e){M('ls|'+Math.round(e.startTime)+'|'+e.value.toFixed(4)+'|'+(e.sources||[]).map(function(x){var n=x.node;return (n&&n.nodeType===1?n.tagName+'.'+String(n.className||'').split(' ')[0]:'#t')+'['+Math.round(x.previousRect.top)+'>'+Math.round(x.currentRect.top)+',h'+Math.round(x.previousRect.height)+'>'+Math.round(x.currentRect.height)+']'}).join(' '))})}).observe({type:'layout-shift',buffered:true})}catch(e){}
+document.addEventListener('DOMContentLoaded',function(){M('dcl|raf'+k)});addEventListener('load',function(){M('load|raf'+k)});if(document.fonts)document.fonts.ready.then(function(){M('fonts-ready|raf'+k)});M('head-start')})();</script>
+<!-- Hieu nang 01/10/2026: cac script ben thu ba khong anh huong luc tai trang (GTM rong, Meta Pixel,
+     ChatGPT Ads pixel, Ryze) chi tai SAU su kien window load VA sau first-contentful-paint (du phong 4 giay neu trinh duyet khong bao paint / tab chay nen). Ham stub/hang doi (dataLayer, fbq, oaiq)
+     van tao ngay lap tuc nen moi su kien goi som deu duoc xep hang va gui khi script tai xong.
+     gtag.js (GA4 + Google Ads) GIU NGUYEN tai ngay tu dau de khong mat gclid / luot xem. -->
+<script>window.mlAfterLoad=function(f){var done=false;function run(){if(!done){done=true;f()}}function go(){setTimeout(run,4000);try{if(performance.getEntriesByName('first-contentful-paint').length){setTimeout(run,0);return}var po=new PerformanceObserver(function(l){if(l.getEntriesByName('first-contentful-paint').length){po.disconnect();setTimeout(run,0)}});po.observe({type:'paint',buffered:true})}catch(e){setTimeout(run,0)}}if(document.readyState==='complete'){go()}else{window.addEventListener('load',go)}};</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;w.mlAfterLoad(function(){f.parentNode.insertBefore(j,f);});
+})(window,document,'script','dataLayer','GTM-5GK37XNW');</script>
+<!-- End Google Tag Manager -->
+<!-- ChatGPT Ads Measurement Pixel (My first pixel) -->
+<script>
+(function (w, d, s, u) {
+  if (w.oaiq) return;
+  var q = function () { q.q.push(arguments); };
+  q.q = [];
+  w.oaiq = q;
+  var js = d.createElement(s);
+  js.async = true;
+  js.src = u;
+  w.mlAfterLoad(function () { var f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(js, f); });
+})(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+oaiq("init", { pixelId: "RGbprxmJF4TT39HPvhcm7G" });
+oaiq("measure", "page_viewed", { type: "contents", contents: [{ id: location.pathname, content_type: "page" }] });
+</script>
+<!-- End ChatGPT Ads Measurement Pixel -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SSQSPKEZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K2SSQSPKEZ');
+  gtag('config', 'AW-18143785526');
+  // Do click Goi / Zalo / WhatsApp / Chi duong. Moi CTA ban dung 1 event.
+  (function () {
+    function pageLang() {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'vi' || q === 'en') return q;
+        return (navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+      } catch (e) { return 'unknown'; }
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      if (!el || typeof el.closest !== 'function') return;
+      var a = el.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var name = null;
+      if (href.indexOf('tel:') === 0) name = 'call_click';
+      else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
+      else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
+    }, true);
+  })();
+</script>
+<title>Kính mắt gần đây tại Hà Nội | 147A Lê Duẩn | Mạnh Long</title>
+<meta name="description" content="Cửa hàng kính mắt tại 147A Lê Duẩn, Cửa Nam, cạnh ga Hà Nội. Mở 8:00-21:30 tất cả các ngày, ghé không cần hẹn. Đo mắt miễn phí, đơn tròng cắt lấy ngay.">
+<link rel="canonical" href="https://manhlongoptical.com/kinh-mat-gan-day.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manh Long Optical">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Kính mắt gần đây tại Hà Nội | 147A Lê Duẩn | Mạnh Long">
+<meta property="og:description" content="Cửa hàng kính mắt tại 147A Lê Duẩn, Cửa Nam, cạnh ga Hà Nội. Mở 8:00-21:30 tất cả các ngày, ghé không cần hẹn. Đo mắt miễn phí, đơn tròng cắt lấy ngay.">
+<meta property="og:url" content="https://manhlongoptical.com/kinh-mat-gan-day.html">
+<meta property="og:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo Manh Long Optical trên nền mặt tiền cửa hàng 147A Lê Duẩn, Cửa Nam, Hà Nội">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kính mắt gần đây tại Hà Nội | 147A Lê Duẩn | Mạnh Long">
+<meta name="twitter:description" content="Cửa hàng kính mắt tại 147A Lê Duẩn, Cửa Nam, cạnh ga Hà Nội. Mở 8:00-21:30 tất cả các ngày, ghé không cần hẹn.">
+<meta name="twitter:image" content="https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg">
+<style>
+/* @font-face chep tu vendor/fonts/fonts.css (inline de bo 1 request chan render; stylesheet font ngoai lam tre khung hinh dau ~1.2-2.4 s trong PSI, 01/10/2026) */
+/* Font tu host, thay https://fonts.googleapis.com
+   Nguon: @fontsource tren npm — cung bo file Google Fonts phat.
+   unicode-range lay theo dai chuan cua Google, giu nguyen co che chi tai subset can dung. */
+
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;src:url('/vendor/fonts/files/archivo-latin-wght-normal.woff2') format('woff2-variations');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;src:url('/vendor/fonts/files/archivo-latin-ext-wght-normal.woff2') format('woff2-variations');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;src:url('/vendor/fonts/files/archivo-vietnamese-wght-normal.woff2') format('woff2-variations');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:600;src:url('/vendor/fonts/files/noto-serif-display-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-latin-400-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-latin-500-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-500-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:600;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-400-italic.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-latin-ext-500-italic.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-400-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-500-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Noto Serif Display';font-style:normal;font-display:swap;font-weight:600;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-600-normal.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:400;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-400-italic.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Noto Serif Display';font-style:italic;font-display:swap;font-weight:500;src:url('/vendor/fonts/files/noto-serif-display-vietnamese-500-italic.woff2') format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+
+:root{--paper:#F4F2ED;--ink:#1B1D1F;--navy:#22254F;--muted:#6E6759;--hair:#DFDACE;--brass:#7A5A2B}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;line-height:1.75;font-size:16px}
+a{color:var(--brass);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--paper);border-bottom:1px solid var(--hair);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:21px;color:var(--ink);letter-spacing:.01em;white-space:nowrap}.logo small{font-family:Archivo,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--muted);margin-left:6px}
+.topbar{background:var(--navy);color:var(--paper);font-size:12px;letter-spacing:.04em;padding:9px 20px;text-align:center;position:relative}
+/* Icon mang xa hoi o goc phai dai navy. Chuyen tu chan trang len 07/09/2026. */
+.tsocial{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:15px}
+.tsocial a{display:flex;color:var(--sand)}.tsocial a:hover{color:var(--paper)}
+
+nav.top{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}nav.top a{font-size:11px;letter-spacing:.1em;color:var(--ink);text-transform:uppercase}
+/* Nut doi ngon ngu EN | VI — ben dang dung in dam, ben kia la lien ket. */
+.langtog{display:inline-flex;align-items:center;gap:5px}
+.langtog b,.langtog .sep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1}
+nav .langtog a{color:var(--muted)}
+nav .langtog b{font-weight:700;color:var(--ink)}
+nav .langtog .sep{color:#B7AB92;font-weight:400}
+/* Dai goi y ngon ngu. Chi goi y, khong tu chuyen trang. */
+#langbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:var(--hair);color:var(--ink);border-bottom:2px solid var(--brass);padding:10px 20px;font-size:13px;line-height:1.5}
+#langbar a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+#langbar button{border:0;background:transparent;color:var(--muted);font-family:inherit;font-size:18px;line-height:1;cursor:pointer;padding:2px 8px;min-height:24px}
+#langbar[hidden]{display:none}
+@media(max-width:700px){
+  .topbar{font-size:11px;line-height:1.5;padding:8px 16px}
+  .tsocial{position:static;transform:none;justify-content:center;gap:22px;margin-top:8px}
+  header{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 20px}
+  .logo{flex:none;font-size:20px}
+  nav.top{width:100%;justify-content:flex-start;gap:9px 18px}
+}
+main{max-width:760px;margin:0 auto;padding:32px 20px 96px}
+.crumb{font-size:12px;color:var(--muted);margin:0 0 20px}.crumb a{color:var(--muted)}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,5vw,38px);line-height:1.25;margin:0 0 14px;text-wrap:pretty}
+.byline{font-size:12px;color:var(--muted);margin:0 0 24px}.byline strong{color:var(--ink)}
+.takeaway{background:#fff;border-left:3px solid var(--navy);padding:16px 18px;margin:0 0 28px;font-size:15px}
+figure{margin:0 0 28px}figure img{width:100%;height:auto;display:block}figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+h2{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:24px;line-height:1.3;margin:44px 0 14px}
+h3{font-size:17px;margin:28px 0 10px}
+p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:8px}
+.tablewrap{overflow-x:auto;margin:0 0 20px}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--hair);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--navy);color:#F4F2ED;font-weight:600}
+.faq dt{font-weight:600;margin:18px 0 6px}.faq dd{margin:0 0 14px}
+.note{background:#fff;border:1px solid var(--hair);padding:14px 16px;font-size:13px;color:var(--muted);margin:36px 0 0}
+.cta{background:var(--navy);color:#F4F2ED;padding:26px 22px;margin:40px 0}
+.cta h2{margin:0 0 12px;color:#F4F2ED}.cta p{margin:0 0 10px}.cta a{color:#F4F2ED;text-decoration:underline}
+.related{margin-top:40px;border-top:1px solid var(--hair);padding-top:20px}.related h2{margin-top:0;font-size:20px}
+footer{background:var(--navy);color:#F4F2ED;padding:36px 20px calc(84px + env(safe-area-inset-bottom));font-size:13px;text-align:center}
+footer a{color:#B7AB92}
+.stickycta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;border-top:1px solid var(--hair);padding-bottom:env(safe-area-inset-bottom);background:var(--navy)}
+.stickycta a{flex:1;padding:14px;text-align:center;color:#F4F2ED;font-size:12px;letter-spacing:.1em;font-weight:600;text-decoration:none}
+.stickycta a:first-child{background:#8A6A3B}
+@media(min-width:861px){.stickycta{display:none}footer{padding-bottom:36px}}
+footer .fpolicy{margin:26px auto 0;padding-top:20px;border-top:1px solid rgba(183,171,146,.35);max-width:760px}footer .fpolicy-h{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.2em;color:#F4F2ED}footer .fpolicy ul{list-style:none;margin:0;padding:0}footer .fpolicy li{margin:0 0 6px;font-size:14px;line-height:1.6}
+</style><script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","@id":"https://manhlongoptical.com/kinh-mat-gan-day.html#webpage","url":"https://manhlongoptical.com/kinh-mat-gan-day.html","name":"Kính mắt gần đây tại Hà Nội | 147A Lê Duẩn | Mạnh Long","description":"Cửa hàng kính mắt tại 147A Lê Duẩn, Cửa Nam, cạnh ga Hà Nội. Mở 8:00-21:30 tất cả các ngày, ghé không cần hẹn. Đo mắt miễn phí, đơn tròng cắt lấy ngay.","inLanguage":"vi","datePublished":"2026-09-10","dateModified":"2026-09-10","about":{"@id":"https://manhlongoptical.com/#localbusiness"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://manhlongoptical.com/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg"}},
+{"@type":"FAQPage","@id":"https://manhlongoptical.com/kinh-mat-gan-day.html#faq","mainEntity":[
+{"@type":"Question","name":"Cửa hàng kính mắt Manh Long Optical ở đâu?","acceptedAnswer":{"@type":"Answer","text":"147A Lê Duẩn, Phường Cửa Nam, Hà Nội. Cửa hàng nằm trên trục Lê Duẩn, cách ga Hà Nội một đoạn đi bộ."}},
+{"@type":"Question","name":"Cửa hàng mở cửa mấy giờ?","acceptedAnswer":{"@type":"Answer","text":"8:00 đến 21:30, tất cả các ngày trong tuần, kể cả cuối tuần và ngày lễ. Buổi đo mắt lúc 20 giờ cũng đầy đủ như buổi 10 giờ sáng."}},
+{"@type":"Question","name":"Có cần đặt hẹn trước không?","acceptedAnswer":{"@type":"Answer","text":"Không bắt buộc, bạn ghé thẳng được. Nhắn Zalo 0777 986 999 trước giúp bạn đỡ phải chờ vào cuối tuần và khung giờ tối."}},
+{"@type":"Question","name":"Ghé một lần có lấy được kính luôn không?","acceptedAnswer":{"@type":"Answer","text":"Với kính đơn tròng thì được: đo mắt 20 đến 30 phút, chọn gọng, cắt và lắp tại chỗ, thường lấy trong ngày. Đa tròng loại thường khoảng 24 giờ. Đa tròng ZEISS mất 7 đến 9 ngày, Essilor 4 đến 5 ngày vì tròng đánh bề mặt tại lab của hãng."}},
+{"@type":"Question","name":"Đo mắt có mất phí không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đo khúc xạ miễn phí, mua kính hay không cũng vậy, và đo lại cũng miễn phí trọn đời. Bạn giữ lại số đo của mình."}},
+{"@type":"Question","name":"Không tiện ra cửa hàng lấy kính thì sao?","acceptedAnswer":{"@type":"Answer","text":"Cửa hàng giao kính miễn phí trong nội thành Hà Nội. Buổi đo mắt vẫn cần bạn tới trực tiếp vì phải thử khung và đo khoảng đồng tử."}}
+]},
+{"@type":"BreadcrumbList","@id":"https://manhlongoptical.com/kinh-mat-gan-day.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://manhlongoptical.com/"},{"@type":"ListItem","position":2,"name":"Cửa hàng","item":"https://manhlongoptical.com/cua-hang.html"},{"@type":"ListItem","position":3,"name":"Kính mắt gần đây","item":"https://manhlongoptical.com/kinh-mat-gan-day.html"}]},
+{"@type":"Optician","@id":"https://manhlongoptical.com/#localbusiness","name":"Manh Long Optical","alternateName":["Manh Long Optical","Kính mắt Mạnh Long"],"hasMap":"https://www.google.com/maps/place/Manh+Long+Optical/@21.0228533,105.8389649,17z","image":"https://manhlongoptical.com/uploads-opt/og-manh-long-optical.jpg","url":"https://manhlongoptical.com/","telephone":"+84777986999","email":"mlong.optical@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"147A Lê Duẩn","addressLocality":"Cửa Nam","addressRegion":"Hà Nội","addressCountry":"VN"},"geo":{"@type":"GeoCoordinates","latitude":21.022849,"longitude":105.841554},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:30"}],"sameAs":["https://www.facebook.com/ManhLong.Optical/","https://www.instagram.com/manhlong.optical/","https://www.linkedin.com/company/143883407/","https://www.tiktok.com/@manhlong.optical","https://medium.com/@mlong.optical","https://zalo.me/0777986999"]}
+]}</script>
+<!-- Meta Pixel 1718493272777504 (them 13/09/2026) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;f.mlAfterLoad(function(){s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)})}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1718493272777504');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+<script>mlAfterLoad(function(){var r=document.createElement('script');r.async=true;r.src='https://px.get-ryze.ai/px.js';r.setAttribute('data-key','rz_pk_4898090d56df06cda42bdeffa6602a82');document.head.appendChild(r);});</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GK37XNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="topbar">Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày<span class="tsocial"><a href="https://www.facebook.com/ManhLong.Optical/" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.21 22 17.06 22 12.06Z"/></svg></a><a href="https://www.youtube.com/@MLong.optical" aria-label="YouTube" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a><a href="https://www.linkedin.com/company/143883407/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.instagram.com/manhlong.optical/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://zalo.me/0777986999" aria-label="Zalo 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 7.4-.9 0-1.8-.1-2.6-.3l-4 2.2.9-3.4C4.2 14.9 3 12.8 3 10.4 3 6.3 7 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></a><a href="https://wa.me/84777986999" aria-label="WhatsApp 0777 986 999" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 20.8l1.24-4.5a8.4 8.4 0 1 1 3.2 3.13L3.2 20.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.1 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.1.2-.2.4 0 .7.5.9 1.3 1.7 2.2 2.2.3.2.5.1.7-.1l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.5.2.5.4.5.6v.5c0 .3 0 .5-.5.7-.6.3-1.5.4-2.4.1-1.6-.5-3-1.4-4.2-2.6-1.2-1.2-2.1-2.6-2.6-4.2-.3-.9-.2-1.8.1-2.4Z" fill="currentColor"></path></svg></a><a href="https://www.tiktok.com/@manhlong.optical" aria-label="TikTok" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.8 2h-3.1v13.6c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.2a5.9 5.9 0 0 0-.9-.07 5.9 5.9 0 0 0-5.9 5.9A5.9 5.9 0 0 0 11 21.5a5.9 5.9 0 0 0 5.9-5.9V8.9a7.2 7.2 0 0 0 4.2 1.35V7.1a4.2 4.2 0 0 1-4.3-4.2V2Z"/></svg></a><a href="https://medium.com/@mlong.optical" aria-label="Medium" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg></a></span></div>
+<header>
+  <a class="logo" href="/">Manh Long<small>OPTICAL</small></a>
+  <nav class="top"><a href="/lookbook.html">LOOKBOOK</a><a href="/cua-hang.html#collection">BỘ SƯU TẬP</a><a href="/trong-kinh.html">TRÒNG KÍNH</a><a href="/uu-dai.html">ƯU ĐÃI</a><a href="/tim-hieu.html">TÌM HIỂU</a><a href="/cua-hang.html#store">CỬA HÀNG</a><span class="langtog"><a href="/en/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a><span class="sep" aria-hidden="true">|</span><b aria-current="true">VI</b></span></nav>
+</header><main>
+<p class="crumb"><a href="/">Trang chủ</a> › <a href="/cua-hang.html#store">Cửa hàng</a> › Kính mắt gần đây</p>
+<p class="crumb" style="letter-spacing:.2em;color:var(--brass);margin-bottom:8px">CỬA HÀNG</p>
+<h1>Kính mắt gần đây: cửa hàng tại 147A Lê Duẩn, Cửa Nam</h1>
+<p class="byline">Manh Long Optical, 147A Lê Duẩn, Phường Cửa Nam, Hà Nội · Cập nhật 10/09/2026</p>
+<div class="takeaway"><strong>Trả lời nhanh:</strong> Cửa hàng ở 147A Lê Duẩn, Phường Cửa Nam, trên trục Lê Duẩn cách ga Hà Nội một đoạn đi bộ. Mở 8:00 đến 21:30 tất cả các ngày, ghé thẳng được, không cần đặt hẹn. Đo mắt miễn phí 20 đến 30 phút. Kính đơn tròng thường cắt và lấy trong ngày.</div>
+<figure><img src="/uploads-opt/cua-hang-cat-kinh-147-le-duan.jpg" alt="Khu trưng bày gọng kính tại cửa hàng Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội" loading="lazy" width="1100" height="1144"><figcaption>Khu trưng bày gọng tại 147A Lê Duẩn, một phần trong khoảng 1.000 mẫu đang có sẵn.</figcaption></figure>
+
+<h2>Địa chỉ, giờ mở cửa và cách tìm</h2>
+<div class="tablewrap">
+<table>
+<tr><th>Địa chỉ</th><td>147A Lê Duẩn, Phường Cửa Nam, Hà Nội</td></tr>
+<tr><th>Vị trí</th><td>Trên trục Lê Duẩn, cách ga Hà Nội một đoạn đi bộ</td></tr>
+<tr><th>Giờ mở cửa</th><td>8:00 – 21:30, tất cả các ngày, kể cả cuối tuần và ngày lễ</td></tr>
+<tr><th>Điện thoại và Zalo</th><td>0777 986 999</td></tr>
+<tr><th>Đặt hẹn</th><td>Không bắt buộc. Nhắn trước để đỡ chờ giờ cao điểm</td></tr>
+</table>
+</div>
+<p>Nếu bạn đang tìm chỗ cắt kính gần chỗ mình mà chưa biết ghé đâu, phần dưới nói rõ một lượt ghé làm được gì và mất bao lâu, để bạn tính giờ cho vừa.</p>
+
+<h2>Một lượt ghé làm được những gì</h2>
+<div class="tablewrap">
+<table>
+<tr><th>Việc</th><th>Thời gian</th><th>Chi phí</th></tr>
+<tr><td>Đo khúc xạ đầy đủ trong phòng đo</td><td>20 – 30 phút</td><td>Miễn phí, mua hay không cũng vậy</td></tr>
+<tr><td>Thử gọng, chọn dáng hợp khuôn mặt</td><td>Tuỳ bạn</td><td>Miễn phí</td></tr>
+<tr><td>Cắt và lắp kính đơn tròng</td><td>Trong ngày</td><td>Theo loại tròng và gọng bạn chọn</td></tr>
+<tr><td>Siết ốc, chỉnh càng, thay ve mũi, vệ sinh</td><td>Vài phút</td><td>Miễn phí trọn đời, kể cả kính mua nơi khác lắp lại tròng tại đây</td></tr>
+</table>
+</div>
+<p>Đa tròng thì lâu hơn. Loại thường khoảng 24 giờ. Đa tròng ZEISS mất 7 đến 9 ngày, Essilor 4 đến 5 ngày vì tròng phải đánh bề mặt theo đúng độ và khoảng đồng tử của bạn tại lab của hãng. Chi tiết từng mốc nằm trong bài <a href="/cat-kinh-can-lay-ngay.html">cắt kính cận lấy ngay</a>.</p>
+
+<h2>Giá bắt đầu từ</h2>
+<p>Cửa hàng chốt đủ giá với bạn trước khi cắt. Mức cuối cùng tuỳ độ, chiết suất và lớp phủ.</p>
+<div class="tablewrap">
+<table>
+<tr><th>Loại</th><th>Giá</th><th>Gồm những gì</th></tr>
+<tr><td>Kính đơn tròng chống ánh sáng xanh</td><td>từ 850.000đ</td><td>Cả cặp, gồm gọng và tròng loại phổ thông</td></tr>
+<tr><td>Tròng đổi màu</td><td>từ 1.550.000đ</td><td>Gồm cả gọng lẫn tròng</td></tr>
+<tr><td>Kính râm có độ</td><td>1.850.000đ</td><td>Gồm cả gọng lẫn tròng</td></tr>
+<tr><td>Đa tròng Essilor Essentials</td><td>từ 3.950.000đ</td><td>Gồm cả gọng lẫn tròng</td></tr>
+</table>
+</div>
+<p>Bảng giá tròng đầy đủ theo từng hãng và chiết suất nằm ở trang <a href="/trong-kinh.html">tròng kính</a>. Muốn xem gọng trước khi đi thì mở <a href="/cua-hang.html#collection">bộ sưu tập</a>.</p>
+
+<h2>Khi nào nên ghé, khi nào nên nhắn trước</h2>
+<p>Ghé thẳng hợp với ngày thường và khung giờ sáng hoặc đầu giờ chiều. Cuối tuần và sau 19 giờ đông hơn, nhắn Zalo trước thì bên mình giữ chỗ phòng đo và kiểm tròng có sẵn cho độ của bạn, đỡ trường hợp tới nơi mới biết loại tròng bạn cần phải đặt.</p>
+<p>Có ba trường hợp nên nhắn trước cho chắc: bạn sắp đi xa và cần kính kịp ngày, bạn đeo độ cao hoặc loạn nhiều, hoặc bạn đang nhắm một mẫu gọng cụ thể thấy trên trang bộ sưu tập.</p>
+
+<h2>Đo mắt và hậu mãi</h2>
+<p>Đo khúc xạ đầy đủ trong phòng đo rồi mới tư vấn, không đọc lại kính cũ. Đơn cũ trên 12 tháng thì đo lại chứ không chép lại, vì độ thay đổi. Bạn giữ số đo của mình sau buổi đo. Chi tiết quy trình nằm trong bài <a href="/do-mat-mien-phi-tron-doi.html">đo mắt miễn phí trọn đời</a>.</p>
+<p>Sau khi nhận kính, gọng được bảo hành lỗi sản xuất 6 tháng. Chỉnh gọng, vệ sinh, thay ve mũi và đo lại miễn phí trọn đời. Kính lỏng hay mờ thì cứ ghé, không cần mua mới. Nội thành Hà Nội có giao kính miễn phí nếu bạn không tiện quay lại lấy.</p>
+
+<h2 id="faq">Câu hỏi thường gặp</h2>
+<dl class="faq">
+<dt>Cửa hàng kính mắt Manh Long Optical ở đâu?</dt>
+<dd>147A Lê Duẩn, Phường Cửa Nam, Hà Nội. Trên trục Lê Duẩn, cách ga Hà Nội một đoạn đi bộ.</dd>
+<dt>Cửa hàng mở cửa mấy giờ?</dt>
+<dd>8:00 đến 21:30 tất cả các ngày, kể cả cuối tuần và ngày lễ. Buổi đo lúc 20 giờ cũng đầy đủ như buổi 10 giờ sáng.</dd>
+<dt>Có cần đặt hẹn trước không?</dt>
+<dd>Không bắt buộc, ghé thẳng được. Nhắn Zalo 0777 986 999 trước giúp bạn đỡ chờ vào cuối tuần và giờ tối.</dd>
+<dt>Ghé một lần có lấy được kính luôn không?</dt>
+<dd>Kính đơn tròng thì được, cắt và lắp tại chỗ, thường lấy trong ngày. Đa tròng thường khoảng 24 giờ, đa tròng ZEISS 7 đến 9 ngày, Essilor 4 đến 5 ngày.</dd>
+<dt>Đo mắt có mất phí không?</dt>
+<dd>Không. Đo miễn phí kể cả khi bạn chưa mua gì, và đo lại cũng miễn phí trọn đời.</dd>
+<dt>Không tiện quay lại lấy kính thì sao?</dt>
+<dd>Nội thành Hà Nội có giao kính miễn phí. Riêng buổi đo mắt vẫn cần bạn tới trực tiếp vì phải thử khung và đo khoảng đồng tử.</dd>
+</dl>
+
+<div class="note">Kính là thiết bị hỗ trợ thị lực, không làm giảm độ hay chữa khỏi cận thị. Nếu thấy dấu hiệu bất thường ở mắt như đau, nhìn đôi, giảm thị lực đột ngột, nên khám tại cơ sở y tế chuyên khoa mắt.</div>
+
+<div class="cta"><h2>Ghé cửa hàng hoặc nhắn trước</h2><p>Không cần đặt hẹn, nhưng nhắn Zalo giúp bạn không phải chờ vào giờ cao điểm.</p>
+<p><strong>📍 Manh Long Optical — 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</strong><br>🕐 Mở cửa hằng ngày 8:00 – 21:30<br>📞 <a href="tel:+84777986999">0777 986 999</a> · 💬 <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Nhắn Zalo</a> · 🗺️ <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Chỉ đường</a></p></div>
+
+<nav class="related"><h2>Đọc tiếp</h2><ul>
+<li><a href="/cat-kinh-can-lay-ngay.html">Cắt kính cận lấy ngay tại 147A Lê Duẩn</a></li>
+<li><a href="/do-mat-mien-phi-tron-doi.html">Đo mắt miễn phí trọn đời</a></li>
+<li><a href="/trong-kinh.html">Tròng kính: chọn loại nào, giá bao nhiêu</a></li>
+<li><a href="/kinh-ram-can.html">Kính râm cận và kính mát có độ</a></li>
+<li><a href="/cua-hang.html#collection">Bộ sưu tập gọng kính</a></li>
+</ul></nav>
+</main>
+<footer>
+  <p><strong>Manh Long Optical</strong> · 147A Lê Duẩn, Phường Cửa Nam, Hà Nội</p>
+  <p>Mở cửa hằng ngày 8:00 – 21:30 · <a href="tel:+84777986999">0777 986 999</a> · <a href="https://zalo.me/0777986999">Zalo</a> · <a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a> · <a href="https://www.facebook.com/ManhLong.Optical/">Facebook</a> · <a href="https://www.instagram.com/manhlong.optical/">Instagram</a></p>
+  <nav class="fpolicy" aria-label="Chính sách"><p class="fpolicy-h">CHÍNH SÁCH</p><ul><li><a href="/dieu-khoan-dich-vu.html">Điều khoản dịch vụ</a></li><li><a href="/chinh-sach-thanh-toan.html">Chính sách thanh toán</a></li><li><a href="/chinh-sach-giao-hang.html">Chính sách giao hàng</a></li><li><a href="/chinh-sach-bao-hanh.html">Chính sách bảo hành</a></li><li><a href="/chinh-sach-doi-tra.html">Chính sách đổi trả</a></li><li><a href="/chinh-sach-bao-mat.html">Chính sách bảo mật và quyền riêng tư</a></li></ul></nav>
+</footer>
+<div class="stickycta">
+  <a href="tel:+84777986999">GỌI NGAY</a>
+  <a href="https://zalo.me/0777986999" target="_blank" rel="noopener">ZALO</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">CHỈ ĐƯỜNG</a>
+</div>
+<!-- floating-contact:start (generated by tools/floating-contact.py; edit there, not here) -->
+<link rel="stylesheet" href="/assets/floating-contact.css">
+<div class="floating-contact" role="group" aria-label="Liên hệ nhanh">
+  <a class="floating-contact__button floating-contact__button--whatsapp" href="https://wa.me/84777986999" target="_blank" rel="noopener noreferrer" aria-label="Nhắn tin cho Manh Long Optical qua WhatsApp"><svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35Z"/><path d="M20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41ZM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.45-4.44 9.88-9.89 9.88Z"/></svg><span class="floating-contact__label">WhatsApp</span></a>
+  <a class="floating-contact__button floating-contact__button--zalo" href="https://zalo.me/0777986999" target="_blank" rel="noopener noreferrer" aria-label="Nhắn tin cho Manh Long Optical qua Zalo"><svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true" focusable="false"><text x="24" y="29.5" text-anchor="middle" fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-size="15.5" font-weight="700" letter-spacing="-.2">Zalo</text></svg><span class="floating-contact__label">Zalo</span></a>
+</div>
+<!-- floating-contact:end -->
+</body>
+</html>

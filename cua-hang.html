@@ -359,11 +359,8 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
   [data-m="product-grid"] image-slot, [data-m="cart-thumb"] image-slot,
   [data-m="detail-grid"] image-slot, [data-m="learn-grid"] image-slot,
   [data-m="more-grid"] image-slot, [data-m="igtile"] image-slot,
-  [data-m="brand-banner"] image-slot, [data-m="store-map"] image-slot,
-  [data-m="hero-split"] image-slot, [data-m="hero-photo"] image-slot { aspect-ratio: auto !important; height: 100% !important; }
-  [data-m="hero-photo"] { position: relative; overflow: hidden; }
-  [data-m="hero-photo"] > image-slot, [data-m="hero-photo"] > img { position: absolute; inset: 0; width: 100%; height: 100%; }
-  [data-m="hero-photo"] > img { object-fit: cover; }
+  [data-m="store-map"] image-slot,
+  [data-m="hero-split"] image-slot { aspect-ratio: auto !important; height: 100% !important; }
   [data-m="product-grid"] > article { content-visibility: auto; contain-intrinsic-size: 0 360px; }
   [data-m="product-grid"] > article, [data-m="cart-thumb"],
   [data-m="learn-grid"] > div, [data-m="learn-grid"] > a,
@@ -375,7 +372,7 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
   @media (max-width: 860px) {
     [data-m="topbar"] { padding: 16px 20px 0 !important; gap: 14px !important; align-items: center !important; }
     [data-m="logo"] { font-size: 21px !important; }
-    [data-m="utilnav"], [data-m="searchbox"], [data-m="hero-photo-meta"] { display: none !important; }
+    [data-m="utilnav"], [data-m="searchbox"] { display: none !important; }
     [data-m="nav"] { padding: 12px 20px 14px !important; gap: 9px 18px !important; overflow-x: visible !important; flex-wrap: wrap !important; }
     [data-m="nav"]::-webkit-scrollbar, [data-m="filter-list"]::-webkit-scrollbar, [data-m="info-tabs"]::-webkit-scrollbar { display: none; }
     [data-m="nav"] > a { white-space: nowrap; }
@@ -384,20 +381,10 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="hero-split"] > div:last-child { height: 50vh !important; min-height: 280px !important; }
     [data-m="hero-split-h1"] { font-size: 34px !important; }
     [data-m="hero-type-h1"] { font-size: 42px !important; }
-    /* Mobile hero, Rieti-style: the campaign photo keeps its natural
-       aspect ratio inside a paper frame under the normal solid header —
-       no viewport-height crop, no fixed-header math, so the first paint
-       is stable and scrolling never re-lays-out the hero. */
-    [data-m="hero-photo"] { height: auto !important; min-height: 0 !important; background: #F4F2ED !important; padding: 12px !important; }
-    [data-m="hero-photo-pad"], [data-m="hero-photo-scrim"] { display: none !important; }
-    [data-m="hero-caption"] { display: block !important; }
-    [data-m="hero-photo"] > image-slot, [data-m="hero-photo"] > img { position: static !important; inset: auto !important; width: 100% !important; height: auto !important; aspect-ratio: 1545 / 1018 !important; }
-    [data-m="hero-photo-row"] { flex-direction: column !important; align-items: flex-start !important; gap: 22px !important; }
-    [data-m="hero-photo-h1"] { font-size: 27px !important; }
+    [data-m="hero-intro"] { padding: 32px 20px 30px !important; }
     [data-m="brand-sec"] { padding: 64px 0 !important; }
     [data-m="faq-sec"] { padding: 0 20px 72px !important; }
     [data-m="faq-h2"] { font-size: 24px !important; }
-    [data-m="brand-banner"] { height: auto !important; min-height: 0 !important; aspect-ratio: 2033 / 773 !important; }
     [data-m="brand-copy"] { padding: 0 20px !important; }
     [data-m="collection-sec"] { padding: 0 20px 72px !important; }
     [data-m="collection-h2"] { font-size: 26px !important; }
@@ -490,7 +477,7 @@ details[open] summary span{transform:rotate(45deg);display:inline-block}
   [data-m="promo-sec"], [data-m="brand-sec"], [data-m="special-sec"], [data-m="journal-sec"] { padding-top: 76px !important; padding-bottom: 76px !important; }
   [data-m="learn-sec"] { padding-top: 76px !important; }
   [data-m="collection-sec"], [data-m="faq-sec"], [data-m="store-sec"] { padding-bottom: 76px !important; }
-  [data-m="hero-photo"], [data-m="hero-split"] { height: 56vh !important; min-height: 480px !important; max-height: 600px !important; }
+  [data-m="hero-split"] { height: 56vh !important; min-height: 480px !important; max-height: 600px !important; }
 }
 @media (max-width: 700px) {
   [data-m="promo-sec"], [data-m="brand-sec"], [data-m="special-sec"], [data-m="journal-sec"] { padding-top: 56px !important; padding-bottom: 56px !important; }
@@ -498,7 +485,7 @@ details[open] summary span{transform:rotate(45deg);display:inline-block}
   [data-m="collection-sec"], [data-m="faq-sec"], [data-m="store-sec"] { padding-bottom: 56px !important; }
 }
 [data-m="promo-h2"], [data-m="collection-h2"], [data-m="special-sec"] h2, [data-m="faq-sec"] h2, [data-m="store-sec"] h2, [data-m="learn-sec"] > div > h2, [data-m="journal-sec"] h2 { font-size: clamp(26px, 3.6vw, 40px) !important; line-height: 1.18 !important; }
-[data-m="hero-photo-h1"], [data-m="hero-split-h1"], [data-m="hero-type-h1"] { font-size: clamp(32px, 5.4vw, 58px) !important; line-height: 1.12 !important; }
+[data-m="hero-split-h1"], [data-m="hero-type-h1"] { font-size: clamp(32px, 5.4vw, 58px) !important; line-height: 1.12 !important; }
 
 a[style*="#7A5A2B"], button[style*="#7A5A2B"],
 a[style*="rgb(122, 90, 43)"], button[style*="rgb(122, 90, 43)"] {
@@ -577,29 +564,13 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
     </sc-if>
 
     <sc-if value="{{ heroPhoto }}" hint-placeholder-val="{{ false }}">
-    <section id="top" data-m="hero-photo" style="position: relative; width: 100%; height: 82vh; min-height: 620px; background: #22254F; color: #F4F2ED; overflow: hidden">
-      <image-slot id="hero-campaign" shape="rect" fit="cover" src="{{ heroImg }}" placeholder="Drop the season campaign photo — model in cat-eye sunglasses, 2400×1400" style="position: absolute; inset: 0; z-index: 0"></image-slot>
-      <div data-m="hero-photo-scrim" style="position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, rgba(27,29,31,0.85) 0%, rgba(27,29,31,0.7) 40%, rgba(27,29,31,0.15) 72%, rgba(27,29,31,0) 88%)"></div>
-      <div style="position: absolute; inset: 0; z-index: 2; pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 40px 24px" data-m="hero-photo-pad">
-        <div data-m="hero-photo-row" style="max-width: 1600px; margin: 0 auto; width: 100%; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px">
-          <div style="color: #F4F2ED; max-width: 760px; text-shadow: 0 1px 3px rgba(27,29,31,0.6)">
-            <h1 data-m="hero-photo-h1" style="font-family: 'Noto Serif Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 52px; line-height: 1.16; letter-spacing: 0.01em; margin: 0 0 16px; text-wrap: pretty">{{ t.heroTitleInline }}</h1>
-            <p style="margin: 0 0 22px; font-size: 13px; letter-spacing: 0.14em; opacity: 0.88; max-width: 620px; line-height: 1.8">{{ t.heroDescInline }}</p>
-            
-          </div>
-          <div data-m="hero-photo-meta" style="color: #F4F2ED; display: flex; align-items: center; gap: 20px; padding-bottom: 6px; text-shadow: 0 1px 3px rgba(27,29,31,0.6)">
-            <div style="width: 84px; height: 1px; background: rgba(244,242,237,0.7)"></div>
-            <p style="margin: 0; font-size: 12px; letter-spacing: 0.26em">{{ seasonLabel }} · {{ t.newSeason }}</p>
-          </div>
-        </div>
+    <section id="top" data-m="hero-intro" style="background: #F4F2ED; color: #1B1D1F; padding: 48px 40px 44px">
+      <div style="max-width: 1600px; margin: 0 auto">
+        <p style="margin: 0 0 14px; font-size: 10px; letter-spacing: 0.26em; color: #7A5A2B">{{ t.introKicker }}</p>
+        <h1 data-m="hero-intro-h1" style="font-family: 'Noto Serif Display', Georgia, serif; font-weight: 500; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.18; margin: 0 0 14px; text-wrap: pretty">{{ t.introTitle }}</h1>
+        <p style="margin: 0; font-size: 13px; line-height: 1.8; letter-spacing: 0.02em; color: #55534E">{{ t.introSub }}</p>
       </div>
     </section>
-    <div data-m="hero-caption" style="display: none; background: #22254F; color: #F4F2ED; padding: 32px 20px 36px">
-      <h2 style="margin: 0 0 14px; font-family: 'Noto Serif Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 27px; line-height: 1.2; letter-spacing: 0.01em; text-wrap: pretty">{{ t.heroTitleInline }}</h2>
-      <p style="margin: 0 0 16px; font-size: 13px; letter-spacing: 0.1em; line-height: 1.75; opacity: 0.88">{{ t.heroDescInline }}</p>
-      
-      <a href="#collection" style="display: inline-block; border: 1px solid rgba(244,242,237,0.75); color: #F4F2ED; padding: 14px 34px; font-size: 11px; letter-spacing: 0.2em" style-hover="background: #F4F2ED; color: #1B1D1F">{{ t.viewSeason }}</a>
-    </div>
     </sc-if>
 
     <section id="uu-dai" data-m="promo-sec" style="background: #22254F; color: #F4F2ED; padding: 72px 0 76px" aria-label="Quà tặng tri ân khách hàng">
@@ -637,11 +608,8 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
     </section>
 
     <section id="brand" data-m="brand-sec" style="padding: 112px 0">
-      <div data-m="brand-banner" style="width: 100%; aspect-ratio: 2033 / 773; background: #22254F; position: relative; overflow: hidden; display: block">
-        <image-slot id="brand-portrait" shape="rect" fit="contain" src="{{ brandImg }}" placeholder="Drop the brand portrait — full-bleed, 2400×1400" style="position: absolute; inset: 0; width: 100%; height: 100%"></image-slot>
-      </div>
       <div data-m="brand-copy" style="max-width: 980px; margin: 0 auto; padding: 0 40px">
-        <div style="text-align: center; padding-top: 56px">
+        <div style="text-align: center">
           <h2 style="font-size: 15px; font-weight: 600; letter-spacing: 0.02em; margin: 0 0 22px">{{ t.brandTitle }}</h2>
           <p style="font-size: 13px; line-height: 1.9; margin: 0 auto 16px; max-width: 620px; color: #1B1D1F; text-wrap: pretty">{{ t.brandBody1 }}</p>
           <p style="font-size: 12px; line-height: 1.9; margin: 0 auto 28px; max-width: 560px; color: #6E6759">{{ t.brandBody2 }}</p>
@@ -1577,6 +1545,7 @@ const TXT = {
     navBrand: "BRAND", navNewCollection: "NEW COLLECTION", navSunglasses: "SUNGLASSES", navFrame: "FRAME", navLenses: "LENSES", navBlog: "CHECKIN W US", navStore: "STORE", navGuide: "GUIDES", navLearn: "LEARN", navCollection: "COLLECTION", navOffers: "OFFERS", topbar: "Free eye test, whether you buy or not · Open 8:00 – 21:30 every day", trendingTopics: "TRENDING TOPICS",
     newSeason: "NEW SEASON",
     heroTitle1: "not to be seen,", heroTitle1b: "but to see clearly.", heroTitleInline: "Free eye tests, same-day prescription glasses in Hanoi.",
+    introKicker: "EYEWEAR COLLECTION", introTitle: "Eyewear at Manh Long Optical", introSub: "Nearly 1,000 frames in store · Free eye tests · Same-day single-vision glasses",
     heroDesc: "Clarity looks good on you. Frames cut for the light you live in.",
     heroDescInline: "Free eye tests and same-day prescription glasses at 147A Lê Duẩn, Cửa Nam — nearly 1,000 frames in stock, styled to your face.",
     reality: "Reality, Mạnh Long.", viewSeason: "VIEW THE SEASON",
@@ -1636,6 +1605,7 @@ const TXT = {
     navBrand: "Thương hiệu", navNewCollection: "Bộ sưu tập mới", navSunglasses: "Kính mát", navFrame: "Gọng kính", navLenses: "Tròng kính", navBlog: "CHECKIN W US", navStore: "Cửa hàng", navGuide: "Hướng dẫn", navLearn: "Tìm hiểu", navCollection: "Bộ sưu tập", navOffers: "Ưu đãi", topbar: "Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày", trendingTopics: "Chủ đề nổi bật",
     newSeason: "Mùa mới",
     heroTitle1: "không để được nhìn thấy,", heroTitle1b: "mà để nhìn rõ.", heroTitleInline: "Đo mắt miễn phí, cắt kính cận lấy ngay tại Hà Nội.",
+    introKicker: "BỘ SƯU TẬP GỌNG KÍNH", introTitle: "Gọng kính tại Mạnh Long Optical", introSub: "Gần 1.000 mẫu gọng tại cửa hàng · Đo mắt miễn phí · Cắt kính đơn tròng trong ngày",
     heroDesc: "Sự rõ ràng rất hợp với bạn. Gọng kính được cắt cho ánh sáng bạn sống cùng.",
     heroDescInline: "Đo mắt chuyên sâu miễn phí, cắt kính cận lấy ngay tại 147A Lê Duẩn, Cửa Nam — gần 1.000 mẫu gọng, tư vấn theo khuôn mặt và kết quả đo.",
     reality: "Reality, Mạnh Long.", viewSeason: "Xem bộ sưu tập",
@@ -3877,9 +3847,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
 
     return {
       t,
-      heroImg: imgSrc("banner-brand.jpg"),
       heroSplitImg: imgSrc(F[31]),
-      brandImg: imgSrc("banner-do-mat-ky.jpg"),
       ig1: imgSrc(F[18]),
       ig3: imgSrc(F[34]),
       hotPeriodTabs: [

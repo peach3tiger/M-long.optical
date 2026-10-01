@@ -485,6 +485,13 @@ details[open] summary span{transform:rotate(45deg);display:inline-block}
   [data-m="collection-sec"], [data-m="faq-sec"], [data-m="store-sec"] { padding-bottom: 76px !important; }
   [data-m="hero-split"] { height: 56vh !important; min-height: 480px !important; max-height: 600px !important; }
 }
+/* Desktop: keep the last footer links clear of the fixed controls on the right —
+   WhatsApp/Zalo (right 18px, 62px wide, bottom 120px) and "Chọn gọng cùng Sơn"
+   (bottom 20px, 56px tall). Without this they covered "Về Manh Long Optical" /
+   "English" at 1024-1440px. Mobile (<=860px) already clears them via body padding. */
+@media (min-width: 861px) {
+  nav[aria-label="Site links"] { padding-left: 110px !important; padding-right: 110px !important; padding-bottom: calc(92px + env(safe-area-inset-bottom)) !important; }
+}
 @media (max-width: 700px) {
   [data-m="promo-sec"], [data-m="brand-sec"], [data-m="special-sec"], [data-m="journal-sec"] { padding-top: 56px !important; padding-bottom: 56px !important; }
   [data-m="learn-sec"] { padding-top: 56px !important; }

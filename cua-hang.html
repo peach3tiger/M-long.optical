@@ -1386,6 +1386,10 @@ function mk(i, id, name, shape, tier, was, now, size, material, img) {
    gradient / sam mau la no tu vao muc Kinh mat. Sua luat o dung mot cho nay. */
 const SUN_RE = /tinted lens|gradient lens|tròng nhuộm màu|tròng sẫm màu|ba màu tròng|kính râm|kính mát|hồng, khói, trà, champagne/i;
 function isSun(p) { return SUN_RE.test([p.material, p.shape, p.name].join(" ")); }
+/* 01/10/2026: ban ghi giu cho (khong ten VA khong anh, vd. arc-veil) khong duoc hien
+   thanh the trong. Mot tab ma moi san pham deu la ban giu cho thi an tab do; du lieu
+   goc van giu nguyen de bo sung sau. */
+function isPlaceholderProduct(p) { return !String(p.name || "").trim() && !p.img; }
 const SUN_KEY = "SUN";
 const CATALOG = {
   SS26: {
@@ -4163,7 +4167,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       seasonLabel: season.label,
       seasonTitle: season.title,
       countLabel: items.length + " " + t.framesLabel,
-      seasons: Object.keys(catalog).map(k => ({
+      seasons: Object.keys(catalog).filter(k => catalog[k].items.some(p => !isPlaceholderProduct(p))).map(k => ({
         label: catalog[k].label,
         color: k === key ? "#1B1D1F" : "#6E6759",
         underline: k === key ? "#1B1D1F" : "transparent",

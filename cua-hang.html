@@ -336,6 +336,9 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     animation: ml-shimmer 1.4s linear infinite;
   }
   image-slot[src]::part(image) { animation: ml-img-in 320ms ease both; }
+  /* Product cards: the name gets the full card width and wraps naturally. */
+  [data-m="product-name"] { font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: 0.03em; overflow-wrap: break-word; }
+  [data-m="product-shape"] { font-size: 11px; line-height: 1.5; color: #6E6759; letter-spacing: 0.04em; }
   /* image-slot.js gives its <img> touch-action:none (meant for reframe editing),
      so a swipe that starts on a product photo could not scroll the page on
      touch screens. Reframe panning uses the separate .spill layer. */
@@ -456,8 +459,8 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-brass) !i
     [data-m="article-lead"] { font-size: 19px !important; line-height: 1.5 !important; }
     [data-m="article-h2"] { font-size: 23px !important; margin-top: 40px !important; }
     [data-m="article-h1"] { font-size: 30px !important; }
-    [data-m="product-grid"] h3 { font-size: 14px !important; }
-    [data-m="product-grid"] span { font-size: 13px !important; }
+    [data-m="product-name"] { font-size: 14px !important; }
+    [data-m="product-shape"] { font-size: 12px !important; }
     [data-m="footer"] p { font-size: 12px !important; }
     [data-m="nav"], [data-m="filter-list"], [data-m="info-tabs"] { -webkit-overflow-scrolling: touch !important; }
     [data-m="product-grid"] article > div:first-child, [data-m="cart-thumb"] { overflow: hidden !important; }
@@ -608,11 +611,10 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
                 <div style="width: 100%; aspect-ratio: 4 / 3; background: #EAE7DE; overflow: hidden; position: relative">
                   <image-slot id="{{ p.slotId }}" shape="rect" fit="contain" src="{{ p.src }}" placeholder="{{ p.placeholder }}"></image-slot>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 16px">
-                  <h3 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">{{ p.name }}</h3>
-                  <span style="font-size: 10px; color: #6E6759; letter-spacing: 0.08em">{{ p.colors }}</span>
+                <div data-m="product-meta" style="padding-top: 16px">
+                  <h3 data-m="product-name" style="margin: 0">{{ p.name }}</h3>
                 </div>
-                <p style="margin: 6px 0 0; font-size: 11px; color: #6E6759; letter-spacing: 0.04em">{{ p.shape }}</p>
+                <p data-m="product-shape" style="margin: 6px 0 0">{{ p.shape }}</p>
               </article>
             </sc-for>
           </div>
@@ -913,7 +915,7 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
           </div>
 
           <div style="display: flex; gap: 14px; padding: 34px 0 0; align-items: stretch">
-            <div style="flex: 1; min-height: 52px; display: flex; align-items: center; justify-content: center; background: #F4F2ED; border: 1px solid #B7AB92; color: #1B1D1F; font-family: Archivo, 'Helvetica Neue', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-align: center; padding: 10px 14px">THỬ VÀ MUA TẠI CỬA HÀNG · 147A LÊ DUẨN · 8:00–21:30</div>
+            <div style="flex: 1; min-height: 52px; display: flex; align-items: center; justify-content: center; background: #F4F2ED; border: 1px solid #B7AB92; color: #1B1D1F; font-family: Archivo, 'Helvetica Neue', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-align: center; padding: 10px 14px">{{ t.ctaStore }}</div>
           </div>
           <p style="margin: 14px 0 0; font-size: 11px; line-height: 1.9; color: #6E6759">{{ shipNote }}</p>
 
@@ -942,12 +944,12 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
           <sc-for list="{{ related }}" as="p" hint-placeholder-count="4">
             <article onClick="{{ p.open }}" style="cursor: pointer">
               <div style="width: 100%; aspect-ratio: 4 / 3; background: #EAE7DE; overflow: hidden">
-                <image-slot id="{{ p.slotId }}" shape="rect" fit="contain" placeholder="{{ p.placeholder }}"></image-slot>
+                <image-slot id="{{ p.slotId }}" shape="rect" fit="contain" src="{{ p.src }}" placeholder="{{ p.placeholder }}"></image-slot>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 16px">
-                <h3 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">{{ p.name }}</h3>
-                <span style="font-size: 10px; color: #6E6759">{{ p.colors }}</span>
+              <div data-m="product-meta" style="padding-top: 16px">
+                <h3 data-m="product-name" style="margin: 0">{{ p.name }}</h3>
               </div>
+              <p data-m="product-shape" style="margin: 6px 0 0">{{ p.shape }}</p>
             </article>
           </sc-for>
         </div>
@@ -1019,10 +1021,10 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
           <div style="width: 100%; aspect-ratio: 4 / 3; background: #EAE7DE; overflow: hidden">
             <image-slot id="{{ p.slotId }}" shape="rect" fit="contain" src="{{ p.src }}" placeholder="{{ p.placeholder }}"></image-slot>
           </div>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 16px">
-            <h3 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.06em">{{ p.name }}</h3>
-            <span style="font-size: 10px; color: #6E6759">{{ p.colors }}</span>
+          <div data-m="product-meta" style="padding-top: 16px">
+            <h3 data-m="product-name" style="margin: 0">{{ p.name }}</h3>
           </div>
+          <p data-m="product-shape" style="margin: 6px 0 0">{{ p.shape }}</p>
         </article>
       </sc-for>
     </div>
@@ -1536,11 +1538,115 @@ const CATALOG = {
    Cac so was/now trong du lieu san pham la don vi cua template, KHONG phai gia that
    cua cua hang. Trang khong hien gia; gia that chi bao tai quay. */
 const LENSES = [
-  { id: "sun", label: "Sun tint — grey / brown", add: 0 },
-  { id: "clear", label: "Clear demo lens", add: 0 },
-  { id: "rx", label: "Prescription — single vision", add: 50000 },
-  { id: "blue", label: "Blue-light filter", add: 30000 }
+  { id: "sun", label: "Sun tint — grey / brown", vi: "Tròng râm — xám / nâu", add: 0 },
+  { id: "clear", label: "Clear demo lens", vi: "Tròng trưng bày (không độ)", add: 0 },
+  { id: "rx", label: "Prescription — single vision", vi: "Tròng có độ — đơn tròng", add: 50000 },
+  { id: "blue", label: "Blue-light filter", vi: "Tròng lọc ánh sáng xanh", add: 30000 }
 ];
+
+/* 01/10/2026: chu hien thi cua san pham theo ngon ngu dang xem.
+   CATALOG van la nguon du lieu goc (ten / dang / chat lieu viet lan VI-EN) va KHONG
+   bi sua; cac ham PD.* chi doi chu luc hien thi, cho the san pham, tim kiem, san pham
+   lien quan, trang chi tiet, title/meta va JSON-LD. Ten hang + ma (TOMOFIN, AIYC 614,
+   HTA-013...) khong bao gio bi dich. Moi cum: [cach viet EN, ...alias], [cach viet VI, ...alias];
+   cum dai duoc khop truoc, mot luot thay duy nhat nen khong dich chong. */
+const PD_TERMS = [
+  // dang gong
+  [["Cat-eye"], ["Mắt mèo"]], [["Round"], ["Tròn"]], [["Square"], ["Vuông"]],
+  [["Rectangle"], ["Chữ nhật"]], [["Oval"], ["Oval"]], [["Rimless"], ["Không viền"]],
+  // chat lieu / chi tiet (nguyen cum truoc, tu don sau)
+  [["oil-proof gradient lens"], ["tròng màu chuyển chống bám dầu"]],
+  [["dark smoke tinted lens"], ["tròng nhuộm màu khói đậm"]],
+  [["smoke tinted lens"], ["tròng nhuộm màu khói"]],
+  [["tea-brown tinted lens"], ["tròng nhuộm màu trà"]],
+  [["dark tinted lens"], ["tròng sẫm màu"]],
+  [["tinted lens"], ["tròng nhuộm màu"]],
+  [["gradient lens"], ["tròng màu chuyển"]],
+  [["clear lens"], ["tròng trong"]],
+  [["three lens colours"], ["ba màu tròng"]],
+  [["pink, smoke, tea-brown, champagne lenses"], ["hồng, khói, trà, champagne"]],
+  [["blue-light coating"], ["lớp lọc ánh sáng xanh"]],
+  [["crystal temple charm"], ["charm pha lê ở càng"]],
+  [["tortoise temples"], ["càng đồi mồi"]],
+  [["titanium temple"], ["càng titan"]],
+  [["ornate temple"], ["càng chạm hoa văn"]],
+  [["beaded chain"], ["dây chuỗi hạt"]],
+  [["half-rim"], ["nửa viền"]],
+  [["rimless titanium IP"], ["titan không viền mạ IP"]],
+  [["rimless titanium"], ["titan không viền"]],
+  [["titanium IP"], ["titan mạ IP"]],
+  [["pure titanium"], ["titan nguyên chất"]],
+  [["titanium alloy"], ["hợp kim titan"]],
+  [["stainless steel"], ["thép không gỉ"]],
+  [["stainless core"], ["lõi thép không gỉ"]],
+  [["pearlised acetate"], ["acetate ánh ngọc trai"]],
+  [["acetate handmade"], ["acetate thủ công"]],
+  [["tortoise acetate", "acetate tortoise"], ["acetate đồi mồi"]],
+  [["marble acetate"], ["acetate vân đá"]],
+  [["gold star rivet"], ["đinh tán sao vàng", "rivet sao vàng"]],
+  [["silver star rivet"], ["đinh tán sao bạc", "rivet sao bạc"]],
+  [["silver rivet"], ["đinh tán bạc", "rivet bạc"]],
+  [["translucent"], ["trong mờ"]],
+  [["titanium"], ["titan"]], [["metal"], ["kim loại"]], [["steel"], ["thép"]],
+  [["rimless"], ["không viền"]], [["tortoise"], ["đồi mồi"]], [["pearl"], ["ngọc trai"]],
+  [["smoke"], ["khói"]], [["sand"], ["cát"]], [["acetate"], ["acetate"]],
+  // mo ta mau trong ten (chi ap vao phan sau dau " · ")
+  [["black, gold star rivet"], ["đen sao vàng"]],
+  [["black marble"], ["đen vân đá"]],
+  [["amber tortoise"], ["đồi mồi hổ phách"]],
+  [["brown tortoise"], ["đồi mồi nâu"]],
+  [["olive brown"], ["nâu ô liu"]],
+  [["smoke grey"], ["xám khói"]],
+  [["pastel pink"], ["hồng pastel"]],
+  [["ivory cream"], ["kem ngà"]],
+  [["lilac"], ["tím lilac"]],
+  [["warm white"], ["trắng ấm"]],
+  [["3 lens tints"], ["3 sắc"]],
+  [["4 lens tints"], ["4 sắc"]],
+  [["sunglasses"], ["kính râm"]],
+  [["black"], ["đen"]],
+  // mau tren trang chi tiet + dang deo
+  [["Silver"], ["Bạc"]], [["Mocha"], ["Nâu mocha"]],
+  [["Standard"], ["Tiêu chuẩn"]], [["Slim"], ["Mảnh"]], [["Narrow bridge"], ["Cầu mũi hẹp"]]
+];
+const PD = (() => {
+  const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const build = lang => {
+    const map = new Map();
+    PD_TERMS.forEach(([en, vi]) => {
+      const out = lang === "vi" ? vi[0] : en[0];
+      en.concat(vi).forEach(a => { const k = a.normalize("NFC").toLowerCase(); if (!map.has(k)) map.set(k, out); });
+    });
+    const keys = [...map.keys()].sort((a, b) => b.length - a.length);
+    const re = new RegExp("(^|[^\\p{L}\\p{N}-])(" + keys.map(esc).join("|") + ")(?=$|[^\\p{L}\\p{N}-])", "giu");
+    return { map, re };
+  };
+  const T = { vi: build("vi"), en: build("en") };
+  const cap = (src, out) => /^\p{Lu}/u.test(src) ? out.charAt(0).toUpperCase() + out.slice(1) : out;
+  // A replaced phrase follows the case of the word it replaces (rimless -> không viền, Rimless -> Không viền).
+  const match = (src, out) => /^\p{Lu}/u.test(src) ? out.charAt(0).toUpperCase() + out.slice(1) : out.charAt(0).toLowerCase() + out.slice(1);
+  const tr = (s, lang) => {
+    if (!s) return s || "";
+    const t = T[lang === "en" ? "en" : "vi"];
+    const r = String(s).normalize("NFC").replace(t.re, (m, pre, w) => pre + match(w, t.map.get(w.toLowerCase()) || w));
+    return cap(String(s), r);
+  };
+  return {
+    text: tr,
+    shape: (p, lang) => tr(p.shape, lang),
+    material: (p, lang) => tr(p.material, lang),
+    fit: (p, lang) => tr(p.fit, lang),
+    color: (label, lang) => tr(label, lang),
+    // Ten = hang + ma (giu nguyen) · mo ta mau (dich). "AIYC kính râm" khong co dau " · ".
+    name: (p, lang) => {
+      const n = (p.name || "").normalize("NFC");
+      const i = n.lastIndexOf(" · ");
+      if (i < 0) return n.replace(/ (kính râm|sunglasses)$/i, (m, w) => " " + tr(w, lang));
+      const d = tr(n.slice(i + 3), lang);
+      return n.slice(0, i + 3) + (lang === "en" ? d.charAt(0).toUpperCase() + d.slice(1) : d);
+    }
+  };
+})();
 
 const TXT = {
   en: {
@@ -1587,6 +1693,8 @@ const TXT = {
     itemCountLabel: "Items",
     material: "MATERIAL", size: "SIZE", weight: "WEIGHT", fit: "FIT", origin: "ORIGIN",
     alsoLike: "YOU MAY ALSO LIKE",
+    ctaStore: "TRY ON AND BUY IN STORE · 147A LÊ DUẨN · 8:00–21:30",
+    phFront: "Product photo — front view", phSide: "Product photo — side / temple", phAngle: "Product photo — 3/4 angle", phWorn: "Product photo — worn on model",
     bag: "Shopping bag", bagEmpty: "Your bag is empty.", browse: "BROWSE THE COLLECTION", remove: "REMOVE",
     orderSummary: "ORDER SUMMARY", subtotal: "Subtotal", shipping: "Shipping", total: "Total", checkout: "CHECKOUT",
     checkoutNote: "Prescription details are collected after checkout, or fitted free at the Cửa Nam studio.",
@@ -1647,6 +1755,8 @@ const TXT = {
     itemCountLabel: "Số sản phẩm",
     material: "Chất liệu", size: "Kích thước", weight: "Trọng lượng", fit: "Dáng kính", origin: "Xuất xứ",
     alsoLike: "Có thể bạn cũng thích",
+    ctaStore: "THỬ VÀ MUA TẠI CỬA HÀNG · 147A LÊ DUẨN · 8:00–21:30",
+    phFront: "Ảnh sản phẩm — mặt trước", phSide: "Ảnh sản phẩm — càng kính", phAngle: "Ảnh sản phẩm — góc 3/4", phWorn: "Ảnh sản phẩm — khi đeo",
     bag: "Giỏ hàng", bagEmpty: "Giỏ hàng của bạn đang trống.", browse: "Xem bộ sưu tập", remove: "Xóa",
     orderSummary: "Tóm tắt đơn hàng", subtotal: "Tạm tính", shipping: "Vận chuyển", total: "Tổng cộng", checkout: "Thanh toán",
     checkoutNote: "Thông tin đơn kính được thu thập sau khi thanh toán, hoặc lắp miễn phí tại cửa hàng Cửa Nam.",
@@ -3608,10 +3718,13 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       const p = all.find(x => x.id === s.pid);
       if (p) {
         path = base + "#/product/" + p.id;
-        title = p.name + " — " + p.shape + " | Manh Long Optical";
-        desc = "Gọng kính " + p.name + ", " + p.shape + ", chất liệu " + (p.material || "") + ". Đo mắt miễn phí, gia công tại 147A Lê Duẩn, Phường Cửa Nam, Hà Nội.";
-        ld.push({ "@context": "https://schema.org", "@type": "Product", name: p.name, image: origin + "uploads-opt/" + (p.img || ""), description: p.shape + (p.material ? ", " + p.material : ""), sku: p.id.toUpperCase(), brand: { "@type": "Brand", name: "Manh Long Optical" }, category: p.shape, offers: { "@type": "Offer", url: origin + path, priceCurrency: "VND", availability: "https://schema.org/InStock", itemCondition: "https://schema.org/NewCondition", seller: { "@type": "Store", name: "Manh Long Optical" } } });
-        ld.push(bc([["Trang chủ", origin], ["Sản phẩm", null], [p.name, origin + path]]));
+        const pn = PD.name(p, lang), ps = PD.shape(p, lang), pm = PD.material(p, lang);
+        title = pn + " — " + ps + " | Manh Long Optical";
+        desc = lang === "en"
+          ? "Frame " + pn + ", " + ps + (pm ? ", " + pm : "") + ". Free eye test, lenses fitted at 147A Lê Duẩn, Cửa Nam ward, Hanoi."
+          : "Gọng kính " + pn + ", " + ps + ", chất liệu " + (pm || "") + ". Đo mắt miễn phí, gia công tại 147A Lê Duẩn, Phường Cửa Nam, Hà Nội.";
+        ld.push({ "@context": "https://schema.org", "@type": "Product", name: pn, image: origin + "uploads-opt/" + (p.img || ""), description: ps + (pm ? ", " + pm : ""), sku: p.id.toUpperCase(), brand: { "@type": "Brand", name: "Manh Long Optical" }, category: ps, offers: { "@type": "Offer", url: origin + path, priceCurrency: "VND", availability: "https://schema.org/InStock", itemCondition: "https://schema.org/NewCondition", seller: { "@type": "Store", name: "Manh Long Optical" } } });
+        ld.push(bc([[lang === "en" ? "Home" : "Trang chủ", origin], [lang === "en" ? "Products" : "Sản phẩm", null], [pn, origin + path]]));
       }
     } else if (s.view === "article" && s.articleId) {
       const a = LEARN_ARTICLES.find(x => x.id === s.articleId);
@@ -3765,7 +3878,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     if (!query) return;
     const catalog = this.state.catalog;
     const all = [].concat(...Object.keys(catalog).map(k => catalog[k].items));
-    const results = all.filter(p => p.name.toLowerCase().includes(query));
+    const results = all.filter(p => [p.name, PD.name(p, "vi"), PD.name(p, "en")].join(" ").toLowerCase().includes(query));
     this.setState({ view: "search", searchResults: results });
     this.pushHash("#/search");
     window.scrollTo(0, 0);
@@ -3810,11 +3923,12 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   }
 
   tile(p) {
+    const lang = this.state.lang;
     return {
-      name: p.name, shape: p.shape, colors: p.colors,
+      name: PD.name(p, lang), shape: PD.shape(p, lang),
       slotId: "frame-" + p.id,
       src: imgSrc(p.img),
-      placeholder: "Product photo — front view on grey",
+      placeholder: TXT[lang].phFront,
       was: this.price(p.was), now: this.price(p.now),
       open: () => this.open(p.id)
     };
@@ -4064,29 +4178,29 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       products: pageItems.map(x => Object.assign({}, this.tile(x), { remove: (e) => { e.stopPropagation(); this.removeProduct(key, x.id); } })),
       related: season.items.filter(x => x.id !== p.id).slice(0, 4).map(x => this.tile(x)),
       detail: {
-        name: p.name, shape: p.shape, size: p.size, weight: p.weight, fit: p.fit, material: p.material, origin: p.origin || "",
-        tierLabel: p.tier.toUpperCase(),
+        name: PD.name(p, lang), shape: PD.shape(p, lang), size: p.size, weight: p.weight, fit: PD.fit(p, lang), material: PD.material(p, lang), origin: p.origin || "",
+        tierLabel: ((t.tiers && t.tiers[p.tier]) || p.tier).toUpperCase(),
         slotMain: "frame-" + p.id,
         src: imgSrc(p.img),
         slot2: "detail-" + p.id + "-side",
         slot3: "detail-" + p.id + "-angle",
         slot4: "detail-" + p.id + "-worn",
-        ph1: "Product photo — front view",
-        ph2: "Product photo — side / temple",
-        ph3: "Product photo — 3/4 angle",
-        ph4: "Product photo — worn on model",
+        ph1: t.phFront,
+        ph2: t.phSide,
+        ph3: t.phAngle,
+        ph4: t.phWorn,
         was: this.price(p.was),
         now: this.price(p.now + extra),
         off: "",
         qty: this.state.qty,
-        colorLabel: way[0],
+        colorLabel: PD.color(way[0], lang),
         colorways: p.ways.map((w, i) => ({
-          label: w[0], swatch: w[1],
+          label: PD.color(w[0], lang), swatch: w[1],
           ring: i === this.state.colorIdx ? "#1B1D1F" : "#DFDACE",
           select: () => this.setState({ colorIdx: i })
         })),
         lenses: LENSES.map(l => ({
-          label: l.label, extra: "",
+          label: lang === "vi" ? (l.vi || l.label) : l.label, extra: "",
           ring: l.id === lensSel ? "#1B1D1F" : "#DFDACE",
           select: () => this.setState({ lens: l.id })
         })),

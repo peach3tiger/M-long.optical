@@ -2,10 +2,10 @@
 <html lang="vi">
 <head>
 <!-- Hieu nang 01/10/2026: cac script ben thu ba khong anh huong luc tai trang (GTM rong, Meta Pixel,
-     ChatGPT Ads pixel, Ryze) chi tai SAU su kien window load. Ham stub/hang doi (dataLayer, fbq, oaiq)
+     ChatGPT Ads pixel, Ryze) chi tai SAU su kien window load va sau khung hinh dau tien (rAF; du phong 3 giay neu tab chay nen). Ham stub/hang doi (dataLayer, fbq, oaiq)
      van tao ngay lap tuc nen moi su kien goi som deu duoc xep hang va gui khi script tai xong.
      gtag.js (GA4 + Google Ads) GIU NGUYEN tai ngay tu dau de khong mat gclid / luot xem. -->
-<script>window.mlAfterLoad=function(f){if(document.readyState==='complete'){setTimeout(f,0)}else{window.addEventListener('load',function(){setTimeout(f,0)})}};</script>
+<script>window.mlAfterLoad=function(f){var done=false;function run(){if(!done){done=true;f()}}function go(){requestAnimationFrame(function(){setTimeout(run,0)});setTimeout(run,3000)}if(document.readyState==='complete'){go()}else{window.addEventListener('load',go)}};</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -87,6 +87,9 @@ oaiq("measure", "page_viewed", { type: "contents", contents: [{ id: location.pat
 <meta name="theme-color" content="#22254F">
 <link rel="canonical" href="https://manhlongoptical.com/">
 <link rel="preload" as="image" href="/uploads-opt/son-gioi-thieu-poster.webp" fetchpriority="high">
+<!-- Font cua H1 (phan tu LCP tren mobile): preload de H1 ve bang font that ngay, tranh nhay font gay CLS (PSI 01/10/2026: CLS 0.075 tu H1). -->
+<link rel="preload" as="font" type="font/woff2" href="/vendor/fonts/files/noto-serif-display-latin-500-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/vendor/fonts/files/noto-serif-display-vietnamese-500-normal.woff2" crossorigin>
 <link rel="alternate" hreflang="vi-VN" href="https://manhlongoptical.com/">
 <link rel="alternate" hreflang="en" href="https://manhlongoptical.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://manhlongoptical.com/">

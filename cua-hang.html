@@ -3668,23 +3668,44 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     setTimeout(check, 400);
   }
 
-  // Neo dang #uu-dai tro toi mot <section> co that trong trang chu. Ung dung ve
-  // lai DOM sau khi tai xong nen trinh duyet mat vi tri cuon. Cuon lai sau khi ve.
+  // Deep-link anchors on this client-rendered page need one short stabilization
+  // pass after mount. Never keep forcing the scroll position after the visitor
+  // starts interacting: doing that makes #collection feel "locked" and snaps
+  // the page back while the visitor is trying to scroll into the next section.
   scrollToAnchor() {
     const h = location.hash;
     if (!/^#[a-z0-9][a-z0-9-]*$/i.test(h)) return;
     const id = h.slice(1);
-    // Anh/font tai xong lam trang xo lai vi tri, va ung dung con ve lai DOM vai
-    // lan sau khi mount. Cuon lai nhieu moc thoi gian, cuon tuc thi (khong
-    // "smooth") vi cuon muot bi huy giua chung khi layout thay doi.
+    let cancelled = false;
+    const timers = [];
+    const events = ["wheel", "touchstart", "pointerdown", "keydown"];
+
+    const cleanup = () => {
+      timers.forEach(clearTimeout);
+      events.forEach(ev => window.removeEventListener(ev, cancel));
+    };
+    const cancel = () => {
+      cancelled = true;
+      cleanup();
+    };
     const go = () => {
+      if (cancelled) return;
       const el = document.getElementById(id);
-      if (!el) return false;
+      if (!el) return;
       const y = el.getBoundingClientRect().top + window.pageYOffset;
       if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
-      return true;
     };
-    [300, 900, 1800, 3000, 4500, 6000].forEach(ms => setTimeout(go, ms));
+
+    events.forEach(ev => window.addEventListener(ev, cancel, { once: true, passive: true }));
+
+    // Keep the correction window short: enough for the initial client render
+    // and font metrics to settle, but never long enough to fight manual scroll.
+    [0, 120, 350, 700].forEach(ms => {
+      timers.push(setTimeout(() => {
+        go();
+        if (ms === 700) cleanup();
+      }, ms));
+    });
   }
 
   syncFromHash() {

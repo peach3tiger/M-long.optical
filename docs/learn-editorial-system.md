@@ -49,7 +49,7 @@ Reference: `manhlongoptical.byryze.com/best-transitions-photochromic-lenses-comp
 
 1. **Duplicate domain.** The byryze page self-canonicalises on `manhlongoptical.byryze.com`. Its siblings (`prescription-glasses-in-hanoi-complete-guide-for-travelers`, `best-polarized-sunglasses-in-hanoi`) target the same intents as `/en/prescription-glasses-hanoi.html` and `/en/sunglasses-hanoi.html` on the main domain. Two domains are competing for the same queries. **Recommended fix:** publish Ryze articles into this repo (Ryze has a GitHub integration) or point their canonical to the main-domain equivalent. Ryze's own docs say that once an article is published, edits happen in your CMS, so this has to be fixed on the Ryze/hosting side.
 2. **Product availability not verified.** The reference covers Transitions Signature GEN 8, XTRActive, Vantage and Style Mirrors. The main site documents **Transitions Gen S** (Essilor). `[VERIFY BUSINESS FACT]`: which Transitions lines does the shop actually order?
-3. **Opening hours conflict.** The whole site and the reference say **8:00–21:30**. The `mlong-seo` NAP block (confirmed 30/08/2026) and the GBP plan say **8:30–21:30**. `[VERIFY BUSINESS FACT]`, then fix it everywhere at once.
+3. **Opening hours — resolved 02/10/2026.** Owner confirmed **8:00–21:30 daily**. The old 8:30 (mlong-seo NAP 30/08, GBP plan) and 9:00–21:00 (article template v2.0) values are wrong and have been corrected; use 8:00–21:30 everywhere.
 
 ---
 
@@ -260,7 +260,7 @@ Entity chains to express naturally:
 | Photochromic prices | 350,000đ (Blick 1.56) → 7,980,000đ (Essilor 1.67) | photochromic-vs-polarized |
 | Polarized | non-prescription sunglasses only | same |
 | Author | Alvin Dao, Store Manager, 5 years in the trade | en/about-alvin.html |
-| **Opening hours** | **CONFLICT: 8:00 (site) vs 8:30 (NAP 30/08)** | `[VERIFY BUSINESS FACT]` |
+| **Opening hours** | **8:00–21:30 daily** (owner confirmed 02/10/2026) | site schema `opens: 08:00, closes: 21:30` |
 | **Transitions lines stocked** | Gen S documented; GEN 8 / XTRActive / Vantage / Style Mirrors unverified | `[VERIFY BUSINESS FACT]` |
 
 Never invent certifications, credentials, partnerships, testing, reviews, warranties or turnaround times.

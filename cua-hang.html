@@ -3843,7 +3843,13 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
   syncFromHash() {
     const h = location.hash;
     let m = h.match(/^#\/product\/(.+)$/);
-    if (m) { this.setState({ view: "product", pid: decodeURIComponent(m[1]) }); return; }
+    if (m) {
+      const pid = decodeURIComponent(m[1]);
+      // Ma san pham khong co trong danh muc: ve trang chu, khong hien bua mau dau tien.
+      if (!this.findProduct(pid)) { this.setState({ view: "home", pid: null }); history.replaceState(null, "", location.pathname); return; }
+      this.setState({ view: "product", pid: pid });
+      return;
+    }
     if (h === "#/kinh-mat" || h === "#/sunglasses") { this.setState({ view: "home", season: SUN_KEY, filter: "all", page: 1 }); return; }
     /* Gỡ 06/09/2026: shop không bán online; chặn cả khi vào thẳng bằng URL. */
     if (h === "#/cart" || h === "#/account") { this.setState({ view: "home" }); history.replaceState(null, "", location.pathname); return; }
@@ -3931,6 +3937,16 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
 
   seasonKey() { return this.state.season || this.props.season || "SS26"; }
 
+  // Tim san pham theo id trong TOAN BO danh muc (moi bo suu tap), khong chi bo dang chon.
+  findProduct(id) {
+    const cat = this.state.catalog;
+    for (const k of Object.keys(cat)) {
+      const p = (cat[k].items || []).find(x => x.id === id);
+      if (p) return { p: p, season: cat[k] };
+    }
+    return null;
+  }
+
   open(id) {
     this.setState({ view: "product", pid: id, qty: 1, colorIdx: 0, lens: "sun" });
     this.pushHash("#/product/" + id);
@@ -3990,7 +4006,12 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
     const curPage = Math.min(Math.max(1, this.state.page), totalPages);
     const pageItems = items.slice((curPage - 1) * PAGE_SIZE, curPage * PAGE_SIZE);
 
-    const p = season.items.find(x => x.id === this.state.pid) || season.items[0];
+    // Bo dang chon truoc (giu "lien quan" nhu cu), khong co thi tim trong toan bo danh muc.
+    // season.items[0] chi la cho giu cho cac view khac; view "product" chi vao khi id hop le.
+    const inSeason = season.items.find(x => x.id === this.state.pid);
+    const owner = inSeason ? null : (this.state.pid ? this.findProduct(this.state.pid) : null);
+    const p = inSeason || (owner && owner.p) || season.items[0];
+    const relSeason = owner ? owner.season : season;
     const way = p.ways[Math.min(this.state.colorIdx, p.ways.length - 1)];
     const lensSel = this.state.lens;
     const extra = (LENSES.find(l => l.id === lensSel) || LENSES[0]).add;
@@ -4191,7 +4212,7 @@ const LEARN_ARTICLES = [  { id: "crizal-natural-look", imgId: "learn-crizal-cove
       })),
       addProduct: () => this.addProduct(key),
       products: pageItems.map(x => Object.assign({}, this.tile(x), { remove: (e) => { e.stopPropagation(); this.removeProduct(key, x.id); } })),
-      related: season.items.filter(x => x.id !== p.id).slice(0, 4).map(x => this.tile(x)),
+      related: relSeason.items.filter(x => x.id !== p.id).slice(0, 4).map(x => this.tile(x)),
       detail: {
         name: PD.name(p, lang), shape: PD.shape(p, lang), size: p.size, weight: p.weight, fit: PD.fit(p, lang), material: PD.material(p, lang), origin: p.origin || "",
         tierLabel: ((t.tiers && t.tiers[p.tier]) || p.tier).toUpperCase(),

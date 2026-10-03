@@ -45,7 +45,7 @@ oaiq("measure", "page_viewed", { type: "contents", contents: [{ id: location.pat
    Dat TRUOC gtag de GA4 ghi luot xem vao dung trang dich. */
 (function(){try{
   var q = new URLSearchParams(location.search).get('lang');
-  if (q === 'vi') { location.replace('/' + location.hash); }
+  if (q === 'vi') { var p = new URLSearchParams(location.search); p.delete('lang'); var s = p.toString(); location.replace('/' + (s ? '?' + s : '') + location.hash); }
 }catch(e){}})();
 </script>
 <!-- Google tag (gtag.js) — GA4 + Google Ads, Manh Long Optical -->

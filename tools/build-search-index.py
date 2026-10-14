@@ -10,13 +10,13 @@ import json, re, unicodedata, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT  = ROOT / "search-index.json"
 
-BO_QUA = {"404.html", "trang-chu-moi.html", "mang-long-optical-since-2000.html"}
+BO_QUA = {"404.html", "trang-chu-moi.html", "mang-long-optical-since-2000.html", "lookbook.html"}  # lookbook.html: trang chuyen huong
 
 # Nhan hien thi ben canh ket qua
 NHAN = [
     (r"^(thong-ke|so-lieu|tu-lieu)", "Tư liệu"),
     (r"^(trong-kinh|essilor|zeiss|varilux|crizal|transitions|photochromic|lens-coatings|blue-light|chiet-suat|so-sanh-trong|so-sanh-essilor|so-sanh-doi-mau|why-phones)", "Tròng kính"),
-    (r"^lookbook", "Đánh giá"),  # trang Danh gia khach hang, giu URL lookbook.html
+    (r"^feedback", "Đánh giá"),  # trang Danh gia khach hang (/feedback.html)
     (r"^(cua-hang|gong-kinh|choosing-frames|chon-kinh-mat)", "Gọng kính"),
     (r"^(do-mat|cat-kinh|kinh-ram-can|kinh-mat-gan-day|uu-dai|khuyen-mai)", "Dịch vụ"),
 ]
@@ -40,7 +40,7 @@ THEM = {
     "lens-coatings-explained.html": "vang phu coating chong xuoc chong choi prevencia sapphire drive",
     "chiet-suat-trong-kinh.html": "chiet suat 1.56 1.60 1.67 1.74 index trong mong",
     "cua-hang.html": "gong kinh bo suu tap titanium acetate kim loai thu gong",
-    "lookbook.html": "danh gia khach hang nhan xet review google anh khach feedback lookbook",
+    "feedback.html": "danh gia khach hang nhan xet review google anh khach feedback lookbook",
     "do-mat-mien-phi-tron-doi.html": "do mat do khuc xa mien phi kham mat pd",
     "cat-kinh-can-lay-ngay.html": "cat kinh lay ngay trong ngay nhanh",
     "kinh-ram-can.html": "kinh ram kinh mat co do polarized",

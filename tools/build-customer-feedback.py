@@ -5,13 +5,13 @@
 Chay:  python3 tools/build-customer-feedback.py          (ghi trang)
        python3 tools/build-customer-feedback.py --check  (chi kiem du lieu, khong ghi)
 
-Ghi de cac doan giua marker trong /lookbook.html va /en/lookbook.html:
+Ghi de cac doan giua marker trong /feedback.html va /en/feedback.html:
     feedback-rating   dong diem Google co ngay
     feedback-stories  "Cau chuyen khach hang": the CO ANH (chi khi khach da dong y)
     feedback-reviews  "Danh gia tren Google": the CHU, khong anh
     feedback-invite   loi moi gui anh (chi hien rieng khi chua co cau chuyen nao)
 Khong sua tay giua marker — sua JSON roi chay lai.
-URL giu nguyen lookbook.html de khong mat thu hang.
+URL: /feedback.html va /en/feedback.html (14/10/2026). /lookbook.html cu chuyen huong sang day.
 
 HAI LOAI NOI DUNG, TACH RIENG:
 1. "stories" — anh khach + loi chia se. Chi hien khi:
@@ -33,7 +33,7 @@ import html, json, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "customer-feedback.json"
-PAGES = {"vi": ROOT / "lookbook.html", "en": ROOT / "en" / "lookbook.html"}
+PAGES = {"vi": ROOT / "feedback.html", "en": ROOT / "en" / "feedback.html"}
 
 T = {
     "vi": {

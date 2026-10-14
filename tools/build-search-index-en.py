@@ -14,11 +14,11 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 EN = ROOT / "en"
 OUT = EN / "search-index.json"
 
-SKIP = {"404.html"}
+SKIP = {"404.html", "lookbook.html"}  # lookbook.html: redirect page
 
 LABELS = [
     (r"^(essilor|zeiss|varilux|crizal|transitions|photochromic|lens-|lenses)", "Lenses"),
-    (r"^lookbook", "Reviews"),  # Customer Feedback page, URL kept as lookbook.html
+    (r"^feedback", "Reviews"),  # Customer Feedback page (/en/feedback.html)
     (r"^(frames|choosing-frames)", "Frames"),
     (r"^offers", "Offers"),
     (r"^(eye-test|same-day|prescription-glasses|glasses-in-hanoi)", "Service"),

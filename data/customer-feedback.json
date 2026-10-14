@@ -1,5 +1,5 @@
 {
-  "_readme": "Nguon du lieu cho trang Danh gia khach hang (/lookbook.html va /en/lookbook.html). Sua file nay roi chay: python3 tools/build-customer-feedback.py. Luat day du o dau file tools/build-customer-feedback.py.",
+  "_readme": "Nguon du lieu cho trang Danh gia khach hang (/feedback.html va /en/feedback.html). Sua file nay roi chay: python3 tools/build-customer-feedback.py. Luat day du o dau file tools/build-customer-feedback.py.",
   "rating": {
     "score_vi": "4,9",
     "score_en": "4.9",

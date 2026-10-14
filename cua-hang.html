@@ -536,7 +536,7 @@ a[style*="rgba(244,242,237,0.75)"], a[style*="rgba(244, 242, 237, 0.75)"] {
       </div>
     </div>
     <nav data-m="nav" style="max-width: 1600px; margin: 0 auto; padding: 16px 40px 14px; display: flex; gap: 24px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase">
-      <a href="{{ lookbookHref }}">LOOKBOOK</a>
+      <a href="{{ lookbookHref }}">{{ t.navFeedback }}</a>
       <a href="#collection" onClick="{{ goOptical }}">{{ t.navCollection }}</a>
       <a href="#collection" onClick="{{ goSunglasses }}">{{ t.navSunglasses }}</a>
       <a href="/trong-kinh.html">{{ t.navLenses }}</a>
@@ -1662,7 +1662,7 @@ const TXT = {
   en: {
     myPage: "MY PAGE", login: "LOGIN", join: "JOIN", cartLabel: "CART", search: "SEARCH",
     logout: "LOGOUT", welcomeBack: "Welcome back", nameLabel: "Full name", emailLabel: "Email address", passwordLabel: "Password (min. 6 characters)",
-    navBrand: "BRAND", navNewCollection: "NEW COLLECTION", navSunglasses: "SUNGLASSES", navFrame: "FRAME", navLenses: "LENSES", navBlog: "CHECKIN W US", navStore: "STORE", navGuide: "GUIDES", navLearn: "LEARN", navCollection: "COLLECTION", navOffers: "OFFERS", topbar: "Free eye test, whether you buy or not · Open 8:00 – 21:30 every day", trendingTopics: "TRENDING TOPICS",
+    navBrand: "BRAND", navNewCollection: "NEW COLLECTION", navSunglasses: "SUNGLASSES", navFrame: "FRAME", navLenses: "LENSES", navBlog: "CHECKIN W US", navStore: "STORE", navFeedback: "CUSTOMER FEEDBACK", navGuide: "GUIDES", navLearn: "LEARN", navCollection: "COLLECTION", navOffers: "OFFERS", topbar: "Free eye test, whether you buy or not · Open 8:00 – 21:30 every day", trendingTopics: "TRENDING TOPICS",
     newSeason: "NEW SEASON",
     heroTitle1: "not to be seen,", heroTitle1b: "but to see clearly.", heroTitleInline: "Free eye tests, same-day prescription glasses in Hanoi.",
     introKicker: "EYEWEAR COLLECTION", introTitle: "Eyewear at Manh Long Optical", introSub: "Nearly 1,000 frames in store · Free eye tests · Same-day single-vision glasses",
@@ -1724,7 +1724,7 @@ const TXT = {
   vi: {
     myPage: "Trang cá nhân", login: "Đăng nhập", join: "Đăng ký", cartLabel: "Giỏ hàng", search: "Tìm kiếm",
     logout: "Đăng xuất", welcomeBack: "Chào mừng trở lại", nameLabel: "Họ và tên", emailLabel: "Địa chỉ email", passwordLabel: "Mật khẩu (tối thiểu 6 ký tự)",
-    navBrand: "Thương hiệu", navNewCollection: "Bộ sưu tập mới", navSunglasses: "Kính mát", navFrame: "Gọng kính", navLenses: "Tròng kính", navBlog: "CHECKIN W US", navStore: "Cửa hàng", navGuide: "Hướng dẫn", navLearn: "Tìm hiểu", navCollection: "Bộ sưu tập", navOffers: "Ưu đãi", topbar: "Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày", trendingTopics: "Chủ đề nổi bật",
+    navBrand: "Thương hiệu", navNewCollection: "Bộ sưu tập mới", navSunglasses: "Kính mát", navFrame: "Gọng kính", navLenses: "Tròng kính", navBlog: "CHECKIN W US", navStore: "Cửa hàng", navFeedback: "Đánh giá khách hàng", navGuide: "Hướng dẫn", navLearn: "Tìm hiểu", navCollection: "Bộ sưu tập", navOffers: "Ưu đãi", topbar: "Đo mắt miễn phí, mua hay không cũng vậy · Mở cửa 8:00 – 21:30 tất cả các ngày", trendingTopics: "Chủ đề nổi bật",
     newSeason: "Mùa mới",
     heroTitle1: "không để được nhìn thấy,", heroTitle1b: "mà để nhìn rõ.", heroTitleInline: "Đo mắt miễn phí, cắt kính cận lấy ngay tại Hà Nội.",
     introKicker: "BỘ SƯU TẬP GỌNG KÍNH", introTitle: "Gọng kính tại Mạnh Long Optical", introSub: "Gần 1.000 mẫu gọng tại cửa hàng · Đo mắt miễn phí · Cắt kính đơn tròng trong ngày",

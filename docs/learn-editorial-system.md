@@ -256,7 +256,7 @@ Entity chains to express naturally:
 | Phone / Zalo / WhatsApp | 0777 986 999 | NAP |
 | Email | mlong.optical@gmail.com | site footer |
 | Eye test | free, whether you buy or not; about 20–30 minutes | eye-test pages |
-| Frames | ~1,000 styles, 550,000–3,500,000đ | en/frames, lookbook |
+| Frames | ~1,000 styles, 550,000–3,500,000đ | en/frames, cua-hang |
 | Photochromic prices | 350,000đ (Blick 1.56) → 7,980,000đ (Essilor 1.67) | photochromic-vs-polarized |
 | Polarized | non-prescription sunglasses only | same |
 | Author | Alvin Dao, Store Manager, 5 years in the trade | en/about-alvin.html |

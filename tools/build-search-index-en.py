@@ -18,7 +18,8 @@ SKIP = {"404.html"}
 
 LABELS = [
     (r"^(essilor|zeiss|varilux|crizal|transitions|photochromic|lens-|lenses)", "Lenses"),
-    (r"^(lookbook|frames|choosing-frames)", "Frames"),
+    (r"^lookbook", "Reviews"),  # Customer Feedback page, URL kept as lookbook.html
+    (r"^(frames|choosing-frames)", "Frames"),
     (r"^offers", "Offers"),
     (r"^(eye-test|same-day|prescription-glasses|glasses-in-hanoi)", "Service"),
     (r"^faq", "FAQ"),

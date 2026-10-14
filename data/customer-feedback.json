@@ -1,0 +1,106 @@
+{
+  "_readme": "Nguon du lieu cho trang Danh gia khach hang (/lookbook.html va /en/lookbook.html). Sua file nay roi chay: python3 tools/build-customer-feedback.py. Xem huong dan day du trong tools/build-customer-feedback.py.",
+  "rating": {
+    "score_vi": "4,9",
+    "score_en": "4.9",
+    "count": 112,
+    "as_of_vi": "11/10/2026",
+    "as_of_en": "11 October 2026",
+    "source": "Trang chu manhlongoptical.com (VI va EN), chu shop cap nhat 11/10/2026"
+  },
+  "google_maps_url": "https://www.google.com/maps/place/Manh+Long+Optical/@21.0228533,105.8389649,17z/data=!4m8!3m7!1s0x3135abb86b1441c5:0xd0870ab6e28eaa64!8m2!3d21.022849!4d105.841554!9m1!1b1!16s%2Fg%2F11tmmx264m",
+  "customers": [
+    {
+      "id": "leo-vu",
+      "publish": true,
+      "name": "Leo Vu",
+      "name_shown_as_on_google": true,
+      "country": null,
+      "photo": {
+        "base": "khach-leo-vu-480w",
+        "w": 480,
+        "h": 640,
+        "alt_vi": "Khách Leo Vu đeo kính râm, cầm túi giấy, đứng cùng nhân viên trước biển hiệu Manh Long Optical, 147A Lê Duẩn, Cửa Nam, Hà Nội",
+        "alt_en": "Customer Leo Vu in sunglasses, holding a paper bag, standing with a staff member under the Manh Long Optical sign at 147A Le Duan, Cua Nam, Hanoi",
+        "permission": "homepage-published",
+        "permission_note": "Anh da dang tren trang chu VI/EN kem dong 'Anh khach chi dang khi khach dong y'. Claude KHONG tu xac minh duoc su dong y. Chu shop doi thanh 'confirmed' sau khi kiem.",
+        "review_link": "homepage-published",
+        "review_link_note": "Trang chu da ghep anh nay voi danh gia Google cua Leo Vu. Claude KHONG tu xac minh nguoi trong anh la nguoi viet danh gia. Tui giay trong anh co logo LB — chu shop xem co can thay anh khac khong."
+      },
+      "quote_orig": "I bought a nice pair of blue sunglasses there. They gave me excellent advice and really helped me in my search for sunglasses.",
+      "quote_orig_lang": "en",
+      "quote_vi": "Tôi mua một chiếc kính râm màu xanh ở đây. Họ tư vấn rất tốt và giúp tôi tìm được đúng thứ mình cần.",
+      "source": "google"
+    },
+    {
+      "id": "clique-photography",
+      "publish": true,
+      "name": "Clique Photography Mauritius",
+      "name_shown_as_on_google": true,
+      "country": null,
+      "photo": {
+        "base": "khach-clique-photography-480w",
+        "w": 480,
+        "h": 640,
+        "alt_vi": "Khách đeo kính đứng cùng nhân viên Manh Long Optical trước tủ gọng kính tại cửa hàng 147A Lê Duẩn, Cửa Nam, Hà Nội",
+        "alt_en": "A customer wearing glasses stands with a Manh Long Optical staff member in front of the frame wall at 147A Le Duan, Cua Nam, Hanoi",
+        "permission": "homepage-published",
+        "permission_note": "Anh da dang tren trang chu VI/EN kem dong 'Anh khach chi dang khi khach dong y'. Claude KHONG tu xac minh duoc su dong y.",
+        "review_link": "homepage-published",
+        "review_link_note": "Trang chu da ghep anh nay voi danh gia Google cua Clique Photography Mauritius. Claude KHONG tu xac minh danh tinh. 'Mauritius' la mot phan ten hien thi tren Google, KHONG dung lam quoc tich."
+      },
+      "quote_orig": "Was very professional and prompt. I also was able to communicate well with them no problem. I would use them again and have no problem recommending them.",
+      "quote_orig_lang": "en",
+      "quote_vi": "Rất chuyên nghiệp và nhanh. Trao đổi với bên này cũng dễ, không gặp trở ngại gì. Tôi sẽ quay lại, và giới thiệu cho người khác cũng không ngại.",
+      "source": "google"
+    },
+    {
+      "id": "ryu-a",
+      "publish": true,
+      "name": "Ryu A",
+      "name_shown_as_on_google": true,
+      "country": null,
+      "photo": null,
+      "quote_orig": "Good, fuss-free experience to make a pair of progressive lenses. Alvin is friendly and speaks English well. Will recommend.",
+      "quote_orig_lang": "en",
+      "quote_vi": "Trải nghiệm làm một cặp đa tròng khá suôn sẻ, không rắc rối. Alvin thân thiện, nói tiếng Anh tốt. Sẽ giới thiệu cho người khác.",
+      "source": "google"
+    },
+    {
+      "id": "cherrie-bettesso",
+      "publish": true,
+      "name": "Cherrie Bettesso",
+      "name_shown_as_on_google": true,
+      "country": null,
+      "photo": null,
+      "quote_orig": "Alvin was amazing and very helpful. We really appreciated his help and the help of the staff. The testing was great.",
+      "quote_orig_lang": "en",
+      "quote_vi": "Alvin rất nhiệt tình và hỗ trợ hết mình. Chúng tôi rất cảm kích sự giúp đỡ của bạn ấy và của cả các nhân viên khác. Phần đo mắt cũng làm rất tốt.",
+      "source": "google"
+    },
+    {
+      "id": "andrew-anh",
+      "publish": true,
+      "name": "Andrew Anh",
+      "name_shown_as_on_google": true,
+      "country": null,
+      "photo": null,
+      "quote_orig": "The best eyewear store in town.",
+      "quote_orig_lang": "en",
+      "quote_vi": "Cửa hàng kính mắt tốt nhất trong thành phố.",
+      "source": "google"
+    },
+    {
+      "id": "omar-sadek",
+      "publish": true,
+      "name": "Omar Sadek",
+      "name_shown_as_on_google": true,
+      "country": null,
+      "photo": null,
+      "quote_orig": "Alvin has very good service and knowledge.",
+      "quote_orig_lang": "en",
+      "quote_vi": "Alvin phục vụ rất tốt và nắm chuyên môn vững.",
+      "source": "google"
+    }
+  ]
+}

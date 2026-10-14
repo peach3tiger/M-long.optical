@@ -4,7 +4,7 @@
    <=860px: full-width fixed bottom bar (2 equal columns, icon + label). 860px is the site's
             existing mobile breakpoint (the old .stickycta bar used the same one).
    z-index 150: above header (40), search results (60) and the old .stickycta (100);
-   below the lookbook lightbox (.lbbox, 200) so an open photo is never covered. */
+   below the customer-feedback lightbox (.fbbox, 200) so an open photo is never covered. */
 
 /* ---------- Desktop / tablet: floating round buttons ---------- */
 .floating-contact{position:fixed;right:18px;bottom:120px;z-index:150;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}

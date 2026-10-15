@@ -91,8 +91,9 @@
       "verification": "verified",
       "verification_note": "Da dang tren trang chu VI/EN; chu shop cung cap nguyen van",
       "reuse": "approved",
-      "topic_status": "pending",
-      "topic_note": "Chua kiem chung loai trong tren Google; khong hien o khu theo loai trong. Van giu trong danh sach chung."
+      "topic_status": "verified",
+      "review_date": "2026-09-11",
+      "evidence": "Verified original in the owner-connected Google Business Profile reviews on 2026-10-15."
     },
     {
       "id": "cherrie-bettesso",
@@ -150,6 +151,124 @@
       "verification_note": "Ten va nguyen van khop thong bao danh gia cua Google. Chu shop duyet dang 15/10/2026.",
       "review_date": null,
       "text_source": "original"
+    },
+    {
+      "id": "sandrine-turi",
+      "name": "Sandrine Turi",
+      "quote_orig": "Super opticien; en une semaine j'ai eu mes verres progressifs VARILUX; de très bon conseil et ils vérifient votre vue comme en France. Je recommande 100%",
+      "quote_orig_lang": "fr",
+      "quote_vi": "Tiệm kính tuyệt vời. Trong vòng một tuần tôi đã nhận được tròng đa tròng VARILUX. Cửa hàng tư vấn rất tốt và kiểm tra thị lực kỹ lưỡng như ở Pháp. Tôi hoàn toàn giới thiệu cửa hàng.",
+      "platform": "google",
+      "topics": [
+        "progressive",
+        "varilux"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "publish",
+      "general": false,
+      "review_date": "2026-09-25",
+      "text_source": "original",
+      "evidence": "Verified original in the owner-connected Google Business Profile reviews on 2026-10-15.",
+      "quote_en": "Excellent optician. I received my VARILUX progressive lenses within a week. The advice was very good, and they checked my eyesight just as they do in France. I recommend them 100%."
+    },
+    {
+      "id": "jose-l",
+      "name": "Jose L",
+      "quote_orig": "Tuve que cambiar de gafas y me atendieron de forma excelente. Compré unas gafas Varilux Comfort max a Un precio muy bueno. Recomiendo esta óptica por su atención, calidad y precio.",
+      "quote_orig_lang": "es",
+      "quote_vi": "Tôi cần thay kính và được phục vụ rất tốt. Tôi mua kính Varilux Comfort Max với mức giá rất hợp lý. Tôi giới thiệu cửa hàng này vì dịch vụ, chất lượng và giá cả.",
+      "platform": "google",
+      "topics": [
+        "varilux"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "publish",
+      "general": false,
+      "review_date": "2026-09-27",
+      "text_source": "original",
+      "evidence": "Verified original in the owner-connected Google Business Profile reviews on 2026-10-15.",
+      "quote_en": "I needed to replace my glasses and received excellent service. I bought Varilux Comfort Max glasses at a very good price. I recommend this optician for its service, quality and price."
+    },
+    {
+      "id": "sudesh-sewbaransingh",
+      "name": "Sudesh Sewbaransingh",
+      "quote_orig": "The staff of Manh Long Optical helped very well and very quick. They make 3 glasses for us. 1 for my wife and 2 for me. A special multifocal lenses ..they are very great to wear. This store is very professional.",
+      "quote_orig_lang": "en",
+      "quote_vi": "Nhân viên Mạnh Long Optical đã giúp chúng tôi rất tốt và rất nhanh. Cửa hàng làm ba cặp kính cho chúng tôi: một cho vợ tôi và hai cho tôi. Tròng đa tròng đặc biệt đeo rất dễ chịu. Cửa hàng rất chuyên nghiệp.",
+      "platform": "google",
+      "topics": [
+        "progressive"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "publish",
+      "general": false,
+      "review_date": "2026-10-11",
+      "text_source": "original",
+      "evidence": "Verified original in the owner-connected Google Business Profile reviews on 2026-10-15."
+    },
+    {
+      "id": "john-rice",
+      "name": "John Rice",
+      "quote_orig": "I bought a great pair of multifocal glasses with transition that were ready so quickly!  The workers were so pleasant and detail oriented. I wouldn’t hesitate to buy more glasses from this place!",
+      "quote_orig_lang": "en",
+      "quote_vi": "Tôi đã mua một cặp kính đa tròng đổi màu rất tốt và được làm xong rất nhanh! Nhân viên rất dễ mến và tỉ mỉ. Tôi chắc chắn sẽ quay lại mua thêm kính tại đây!",
+      "platform": "google",
+      "topics": [
+        "progressive"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "publish",
+      "general": false,
+      "review_date": "2026-10-14",
+      "text_source": "original",
+      "evidence": "Verified original in the owner-connected Google Business Profile reviews on 2026-10-15."
+    },
+    {
+      "id": "didi-damrar",
+      "name": "דידי דמרר",
+      "quote_orig": "עשיתי משקפי מולטיפוקל. מצוינות. מבחר גדול. אלווין מקסים. האופטומיטריסט עשה עבודה מעולה",
+      "quote_orig_lang": "he",
+      "quote_vi": "Tôi đã làm kính đa tròng tại đây. Kính rất tốt. Cửa hàng có nhiều lựa chọn. Alvin rất dễ mến. Chuyên viên đo mắt làm việc rất tốt.",
+      "platform": "google",
+      "topics": [
+        "progressive"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "publish",
+      "general": false,
+      "review_date": "2026-10-15",
+      "text_source": "original",
+      "evidence": "Verified original in the owner-connected Google Business Profile reviews on 2026-10-15.",
+      "quote_en": "I had multifocal glasses made. They are excellent. There is a great selection. Alvin is lovely. The optometrist did an excellent job."
+    },
+    {
+      "id": "lola-scheiner",
+      "name": "Lola Scheiner",
+      "quote_orig": "It is my first time trying multi focal glasses. Alvin welcomed me and with extreme patience expanded all the options I have.\nI was taken upstairs to a very clean and professional eye check and were given out prescription.\nI tried almost 25 different frames until o was happy and now I have my very first multi-focals at an exceptional price!\nThank you Alvin !",
+      "quote_orig_lang": "en",
+      "quote_vi": "Đây là lần đầu tôi dùng kính đa tròng. Alvin đón tiếp tôi và cực kỳ kiên nhẫn giải thích mọi lựa chọn. Tôi được đưa lên tầng trên để kiểm tra mắt trong không gian rất sạch sẽ, chuyên nghiệp và được cấp đơn kính. Tôi thử gần 25 gọng cho đến khi hài lòng, và giờ đã có cặp kính đa tròng đầu tiên với mức giá rất tốt! Cảm ơn Alvin!",
+      "platform": "google",
+      "topics": [
+        "progressive"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "publish",
+      "general": false,
+      "review_date": "2026-10-15",
+      "text_source": "original",
+      "evidence": "Verified original in the owner-connected Google Business Profile reviews on 2026-10-15."
     }
   ],
   "topic_keywords": {
@@ -166,7 +285,8 @@
       "gleitsicht",
       "прогрессив",
       "мультифокал",
-      "progresiv"
+      "progresiv",
+      "מולטיפוקל"
     ],
     "varilux": [
       "varilux"

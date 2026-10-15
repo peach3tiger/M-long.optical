@@ -183,6 +183,21 @@ main.fbpage{max-width:1160px}
 .fbpolicy li{font-size:15px}
 main.fbpage .cta,main.fbpage .related{max-width:760px}
 .fbinvite-solo{max-width:760px;margin:52px 0 0;min-height:0}
+/* Khu danh gia theo chu de (da trong / Varilux) + bo loc. 14/10/2026 */
+.fbtopics{margin-top:8px}
+.fbtopics-p{font-size:14px;color:var(--muted);max-width:640px;margin:-8px 0 18px}
+.fbfilters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px}
+.fbfilters[hidden]{display:none}
+.fbchip{font:inherit;font-size:13px;line-height:20px;min-height:44px;padding:11px 16px;border:1px solid var(--hair);background:#fff;color:var(--ink);cursor:pointer}
+.fbchip:hover{border-color:var(--navy)}
+.fbchip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--paper)}
+.fbchip:focus-visible,.fbmorebtn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.fbcount-n{opacity:.75}
+.fbstatus{font-size:12px;color:var(--muted);margin:0 0 14px;min-height:18px}
+.fbtags{margin:0 0 10px;display:flex;gap:6px;flex-wrap:wrap}
+.fbtag{font-size:11px;letter-spacing:.04em;color:var(--brass);border:1px solid var(--hair);padding:2px 8px;background:var(--paper)}
+.fbempty{font-size:14px;color:var(--muted);border:1px dashed var(--hair);padding:18px 20px;margin:0}
+.fbmorebtn{font:inherit;font-size:13px;min-height:44px;margin-top:16px;padding:11px 18px;border:1px solid var(--navy);background:transparent;color:var(--navy);cursor:pointer}
 /* Khung xem lon. z-index 200: nam tren nut lien he noi (floating-contact.css). */
 .fbbox{position:fixed;inset:0;z-index:200;background:rgba(27,29,31,.97);display:flex;align-items:center;justify-content:center;padding:28px 64px}
 .fbbox[hidden]{display:none}
@@ -268,6 +283,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="fbrating"><strong>4,9 trên 5</strong> từ 112 đánh giá trên Google, tính tới 11/10/2026. <a href="https://www.google.com/maps/place/Manh+Long+Optical/@21.0228533,105.8389649,17z/data=!4m8!3m7!1s0x3135abb86b1441c5:0xd0870ab6e28eaa64!8m2!3d21.022849!4d105.841554!9m1!1b1!16s%2Fg%2F11tmmx264m" target="_blank" rel="noopener nofollow">Đọc tất cả đánh giá &#8594;</a></p>
 <!-- feedback-rating:end -->
 </div>
+
+<!-- feedback-topics:start (sinh boi tools/build-customer-feedback.py — danh gia co nhac da trong/Varilux, co bo loc) -->
+<section class="fbtopics" id="danh-gia-da-trong" aria-labelledby="fb-topics-h">
+<h2 id="fb-topics-h" class="fbh2">Đánh giá khách hàng về kính đa tròng</h2>
+<p class="fbtopics-p">Chỉ gồm những đánh giá mà chính khách nhắc tới kính đa tròng trong lời viết. Bên mình không tự gán loại tròng cho lời khen chung chung.</p>
+<div class="fbtexts fbtopiclist">
+<figure class="fbtext" data-topics="progressive">
+  <p class="fbtags"><span class="fbtag">Đa tròng</span></p>
+  <blockquote class="fbquote" lang="vi"><p>“Trải nghiệm làm một cặp đa tròng khá suôn sẻ, không rắc rối. Alvin thân thiện, nói tiếng Anh tốt. Sẽ giới thiệu cho người khác.”</p></blockquote>
+  <figcaption><span class="fbwho">Ryu A</span><p class="fbsrc">Đánh giá trên Google · <a href="https://www.google.com/maps/place/Manh+Long+Optical/@21.0228533,105.8389649,17z/data=!4m8!3m7!1s0x3135abb86b1441c5:0xd0870ab6e28eaa64!8m2!3d21.022849!4d105.841554!9m1!1b1!16s%2Fg%2F11tmmx264m" target="_blank" rel="noopener nofollow">Xem trên Google Maps</a></p></figcaption>
+  <p class="fborig">Dịch từ tiếng Anh. Nguyên văn: <span lang="en">“Good, fuss-free experience to make a pair of progressive lenses. Alvin is friendly and speaks English well. Will recommend.”</span></p>
+</figure>
+</div>
+<p class="fbempty" hidden>Chưa có đánh giá công khai nào nhắc trực tiếp tới mục này.</p>
+<button type="button" class="fbmorebtn" hidden>Xem thêm đánh giá</button>
+</section>
+<!-- feedback-topics:end -->
 
 <!-- feedback-stories:start (sinh boi tools/build-customer-feedback.py — chi the co anh, khach da dong y) -->
 <!-- feedback-stories:end -->
@@ -407,6 +439,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     }
   });
+})();
+</script>
+
+<script>
+/* Bo loc danh gia theo chu de (da trong / Varilux). Khong co JS thi hien day du danh sach. 14/10/2026 */
+(function(){
+  var sec = document.querySelector(".fbtopics"); if (!sec) return;
+  var bar = sec.querySelector(".fbfilters"), chips = [].slice.call(sec.querySelectorAll(".fbchip"));
+  var items = [].slice.call(sec.querySelectorAll(".fbtopiclist > .fbtext"));
+  var st = sec.querySelector(".fbstatus"), empty = sec.querySelector(".fbempty"), more = sec.querySelector(".fbmorebtn");
+  var PAGE = 6, cur = "all", shown = PAGE;
+  function apply(){
+    var match = items.filter(function(el){ return cur === "all" || (" " + el.getAttribute("data-topics") + " ").indexOf(" " + cur + " ") > -1; });
+    items.forEach(function(el){ el.hidden = true; });
+    match.forEach(function(el, i){ el.hidden = i >= shown; });
+    empty.hidden = match.length > 0;
+    more.hidden = match.length <= shown;
+    if (st) st.textContent = (st.getAttribute("data-tpl") || "").replace("{n}", match.length);
+    chips.forEach(function(c){ c.setAttribute("aria-pressed", c.getAttribute("data-filter") === cur ? "true" : "false"); });
+    /* 15/10/2026: thanh loc chi co khi co tu 2 chu de co danh gia; khong co thi bo qua */
+  }
+  chips.forEach(function(c){ c.addEventListener("click", function(){ cur = c.getAttribute("data-filter"); shown = PAGE; apply(); }); });
+  more.addEventListener("click", function(){ shown += PAGE; apply(); });
+  if (bar) bar.hidden = false; apply();
 })();
 </script>
 

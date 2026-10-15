@@ -10,6 +10,7 @@ Ghi de cac doan giua marker trong /lookbook.html va /en/lookbook.html:
     feedback-stories  "Cau chuyen khach hang": the CO ANH (chi khi khach da dong y)
     feedback-reviews  "Danh gia tren Google": the CHU, khong anh
     feedback-invite   loi moi gui anh (chi hien rieng khi chua co cau chuyen nao)
+    feedback-topics   "Danh gia ve kinh da trong & Varilux": the CHU co bo loc theo chu de
 Khong sua tay giua marker — sua JSON roi chay lai.
 URL giu nguyen lookbook.html de khong mat thu hang.
 
@@ -22,7 +23,10 @@ HAI LOAI NOI DUNG, TACH RIENG:
    Khong co danh gia da xac minh thi phai co story_orig: loi khach chia se truc tiep voi
    cua hang va dong y cho dang.
 2. "google_reviews" — chi chu. Ten ghi dung nhu tren Google, kem link ve Google Maps.
-   Khong bao gio gan anh vao day.
+   Khong bao gio gan anh vao day. Chi hien khi verification = "verified" VA reuse = "approved".
+   "topics" (progressive / varilux): CHI gan khi chinh nguyen van danh gia (quote_orig) chua
+   tu khoa trong "topic_keywords". Script tu kiem; khong duoc tu suy loai trong tu loi khen chung.
+   Danh gia trung nhau (cung id, hoac noi dung trung/chua trong nhau) => script DUNG.
 
 LUAT KHONG NOI LONG:
 - Khong anh AI, anh stock, anh nguoi mau, khong lay anh dai dien tu Google Reviews.
@@ -53,6 +57,16 @@ T = {
         "invite_p": "Gửi bên mình một tấm ảnh bạn đeo kính qua Zalo hoặc WhatsApp 0777 986 999. Ảnh chỉ lên trang khi bạn đồng ý, tên ghi theo cách bạn muốn, và bên mình gỡ ngay khi bạn yêu cầu.",
         "invite_a1": ("https://zalo.me/0777986999", "Gửi ảnh qua Zalo"),
         "invite_a2": ("https://wa.me/84777986999", "WhatsApp"),
+        "topics_h": "Đánh giá khách hàng về kính đa tròng & Varilux",
+        "topics_p": "Chỉ gồm những đánh giá mà chính khách nhắc tới đa tròng hoặc Varilux trong lời viết. Bên mình không tự gán loại tròng cho lời khen chung chung.",
+        "topics_h_progressive": "Đánh giá khách hàng về kính đa tròng",
+        "topics_p_progressive": "Chỉ gồm những đánh giá mà chính khách nhắc tới kính đa tròng trong lời viết. Bên mình không tự gán loại tròng cho lời khen chung chung.",
+        "filter_label": "Lọc đánh giá theo loại tròng",
+        "f_all": "Tất cả", "f_progressive": "Đa tròng / Progressive", "f_varilux": "Essilor Varilux",
+        "tag_progressive": "Đa tròng", "tag_varilux": "Varilux",
+        "status": "Đang hiện {n} đánh giá.",
+        "empty": "Chưa có đánh giá công khai nào nhắc trực tiếp tới mục này.",
+        "more": "Xem thêm đánh giá",
     },
     "en": {
         "stories_h": "Customer stories",
@@ -71,8 +85,19 @@ T = {
         "invite_p": "Send us a photo of you wearing them on WhatsApp or Zalo, 0777 986 999. It goes on this page only with your permission, with your name shown the way you choose, and we take it down whenever you ask.",
         "invite_a1": ("https://wa.me/84777986999", "Send on WhatsApp"),
         "invite_a2": ("https://zalo.me/0777986999", "Zalo"),
+        "topics_h": "Customer Reviews: Progressive Lenses & Varilux",
+        "topics_p": "Only reviews in which the customer mentions progressive lenses or Varilux in their own words. We never assign a lens type to general praise.",
+        "topics_h_progressive": "Customer Reviews: Progressive Lenses",
+        "topics_p_progressive": "Only reviews in which the customer mentions progressive lenses in their own words. We never assign a lens type to general praise.",
+        "filter_label": "Filter reviews by lens type",
+        "f_all": "All reviews", "f_progressive": "Multifocal / Progressive", "f_varilux": "Essilor Varilux",
+        "tag_progressive": "Progressive", "tag_varilux": "Varilux",
+        "status": "Reviews shown: {n}",
+        "empty": "No public review mentions this directly yet.",
+        "more": "Show more reviews",
     },
 }
+TOPICS = ("progressive", "varilux")
 
 e = lambda s: html.escape(s, quote=True)
 
@@ -136,12 +161,15 @@ def invite_card(lang, solo=False):
 
 
 # ---------- the CHU: danh gia Google ----------
-def review_card(r, lang, maps):
+def review_card(r, lang, maps, tagged=False):
     t = T[lang]
     q, ql, note = text_in(r["quote_orig"], r["quote_orig_lang"], r.get("quote_vi"), lang)
+    topics = [x for x in r.get("topics", []) if x in TOPICS]
+    attr = f' data-topics="{e(" ".join(topics))}"' if tagged else ""
+    tags = ("  <p class=\"fbtags\">" + "".join(f'<span class="fbtag">{t["tag_" + x]}</span>' for x in topics) + "</p>\n") if tagged and topics else ""
     return (
-        '<figure class="fbtext">\n'
-        f'  <blockquote class="fbquote" lang="{ql}"><p>“{e(q)}”</p></blockquote>\n'
+        f'<figure class="fbtext"{attr}>\n' + tags
+        + f'  <blockquote class="fbquote" lang="{ql}"><p>“{e(q)}”</p></blockquote>\n'
         f'  <figcaption><span class="fbwho">{e(r["name"])}</span>'
         f'<p class="fbsrc">{t["google"]} · {maps_link(lang, maps)}</p></figcaption>\n'
         + (f'  {note}\n' if note else "")
@@ -149,10 +177,59 @@ def review_card(r, lang, maps):
     )
 
 
+def topics_section(revs, lang, maps):
+    t = T[lang]
+    items = [r for r in revs if any(x in TOPICS for x in r.get("topics", []))]
+    if not items:
+        return ""
+    cnt = {"all": len(items), **{x: sum(1 for r in items if x in r.get("topics", [])) for x in TOPICS}}
+    # 15/10/2026: chu de nao chua co danh gia thi KHONG hien nut loc / tieu de cho chu de do.
+    # Chi hien thanh loc khi co tu 2 chu de tro len co danh gia (1 chu de thi loc la thua).
+    live = [x for x in TOPICS if cnt[x]]
+    key = "" if len(live) > 1 else "_" + live[0]
+    filters = ""
+    if len(live) > 1:
+        chips = "".join(
+            f'<button type="button" class="fbchip" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">'
+            f'{t["f_" + k]} <span class="fbcount-n">({cnt[k]})</span></button>' for k in ["all"] + live)
+        filters = (f'<div class="fbfilters" role="group" aria-label="{e(t["filter_label"])}" hidden>{chips}</div>\n'
+                   f'<p class="fbstatus" role="status" aria-live="polite" data-tpl="{e(t["status"])}"></p>\n')
+    return (
+        '<section class="fbtopics" id="danh-gia-da-trong" aria-labelledby="fb-topics-h">\n'
+        f'<h2 id="fb-topics-h" class="fbh2">{t["topics_h" + key]}</h2>\n'
+        f'<p class="fbtopics-p">{t["topics_p" + key]}</p>\n'
+        + filters +
+        '<div class="fbtexts fbtopiclist">\n'
+        + "\n".join(review_card(r, lang, maps, tagged=True) for r in items)
+        + "\n</div>\n"
+        f'<p class="fbempty" hidden>{t["empty"]}</p>\n'
+        f'<button type="button" class="fbmorebtn" hidden>{t["more"]}</button>\n'
+        '</section>')
+
+
 def check(data):
     errs, held = [], []
     reviews = {r["id"]: r for r in data.get("google_reviews", [])}
+    kws = data.get("topic_keywords", {})
+    seen_ids, seen_txt = set(), []
+    norm = lambda x: re.sub(r"[^\w]+", " ", (x or "").lower(), flags=re.U).strip()
     for r in data.get("google_reviews", []):
+        rid = r.get("id", "?")
+        if rid in seen_ids:
+            errs.append(f"review {rid}: id bi trung")
+        seen_ids.add(rid)
+        nt = norm(r.get("quote_orig"))
+        for oid, ot in seen_txt:
+            if nt and ot and (nt == ot or (min(len(nt), len(ot)) > 40 and (nt in ot or ot in nt))):
+                errs.append(f"review {rid}: noi dung trung voi {oid} (danh gia sao chep/trung lap)")
+        seen_txt.append((rid, nt))
+        if r.get("verification") not in ("verified", "pending") or r.get("reuse") not in ("approved", "pending"):
+            errs.append(f"review {rid}: verification/reuse phai la verified|pending va approved|pending")
+        for tp in r.get("topics", []):
+            if tp not in TOPICS:
+                errs.append(f"review {rid}: topic {tp!r} khong hop le")
+            elif not any(k.lower() in (r.get("quote_orig") or "").lower() for k in kws.get(tp, [])):
+                errs.append(f"review {rid}: gan topic {tp!r} nhung nguyen van khong nhac tu khoa nao — khong duoc tu suy")
         for k in ("id", "name", "quote_orig", "quote_orig_lang"):
             if not r.get(k):
                 errs.append(f"review {r.get('id', '?')}: thieu '{k}'")
@@ -212,6 +289,7 @@ def main():
         return
     maps = data["google_maps_url"]
     stories = [s for s in data.get("stories", []) if s.get("publish")]
+    revs = [x for x in data.get("google_reviews", []) if x.get("verification") == "verified" and x.get("reuse") == "approved"]
     r = data["rating"]
     for lang, path in PAGES.items():
         t = T[lang]
@@ -230,15 +308,17 @@ def main():
             invite = ""
         rv = (f'<section aria-labelledby="fb-reviews-h">\n<h2 id="fb-reviews-h" class="fbh2">{t["reviews_h"]}</h2>\n'
               '<div class="fbtexts">\n'
-              + "\n".join(review_card(x, lang, maps) for x in data.get("google_reviews", []))
+              + "\n".join(review_card(x, lang, maps) for x in revs)
               + "\n</div>\n</section>")
         src = path.read_text(encoding="utf-8")
         src = replace_block(src, "feedback-rating", rating, path)
         src = replace_block(src, "feedback-stories", st, path)
         src = replace_block(src, "feedback-reviews", rv, path)
         src = replace_block(src, "feedback-invite", invite, path)
+        src = replace_block(src, "feedback-topics", topics_section(revs, lang, maps), path)
         path.write_text(src, encoding="utf-8")
-        print(f"{path.relative_to(ROOT)}: {len(stories)} cau chuyen co anh, {len(data.get('google_reviews', []))} danh gia Google")
+        nt = sum(1 for x in revs if x.get("topics"))
+        print(f"{path.relative_to(ROOT)}: {len(stories)} cau chuyen co anh, {len(revs)} danh gia Google, {nt} danh gia theo chu de")
 
 
 if __name__ == "__main__":

@@ -30,9 +30,13 @@ HAI LOAI NOI DUNG, TACH RIENG:
    Danh gia trung nhau (cung id, cung review_path, hoac noi dung trung/chua trong nhau) => script DUNG.
    verification: verified | owner-verified | pending — danh gia co that tren Google hay khong.
    topic_status: verified | owner-verified | pending — loai trong da kiem chung hay chua (bat buoc khi co topics).
-     Khu theo loai trong CHI hien danh gia co topic_status kiem chung, co "evidence" + "date",
-     va publication != "hold". "pending" hoac "hold" => khong dang (van giu trong du lieu de kiem sau).
+     Khu theo loai trong CHI hien danh gia co topic_status kiem chung, co "evidence" + "notification_date"
+     (hoac "review_date"), va publication != "hold". "pending" hoac "hold" => khong dang.
+   notification_date = ngay Google gui email thong bao, KHONG phai ngay dang danh gia. review_date chi dien
+     khi thay ngay that tren Google (de null neu chua thay).
    publication: "publish" (mac dinh) | "hold" + hold_reason (vd. chi co ban dich may bi cat, chua co nguyen van).
+   text_source: "original" (mac dinh) | "google-translation-truncated". Ban dich may cua Google KHONG BAO GIO
+     duoc dat vao quote_orig; luu o google_translation_excerpt va chi de "hold".
    "general": false => chi hien o khu theo loai trong, khong them vao danh sach "Danh gia tren Google".
 
 LUAT KHONG NOI LONG:
@@ -207,7 +211,9 @@ def topic_titles(live, lang):
 
 def topic_live(r):
     return (r.get("topic_status") in PUBLISHABLE and r.get("publication", "publish") != "hold"
-            and r.get("evidence") and r.get("date") and any(x in TOPICS for x in r.get("topics", [])))
+            and r.get("text_source", "original") == "original" and r.get("quote_orig")
+            and r.get("evidence") and (r.get("notification_date") or r.get("review_date"))
+            and any(x in TOPICS for x in r.get("topics", [])))
 
 
 def topics_section(revs, lang, maps):
@@ -254,7 +260,8 @@ def check(data):
         if rid in seen_ids:
             errs.append(f"review {rid}: id bi trung")
         seen_ids.add(rid)
-        nt = norm(r.get("quote_orig"))
+        body = r.get("quote_orig") or r.get("google_translation_excerpt") or ""
+        nt = norm(body)
         for oid, ot in seen_txt:
             if nt and ot and (nt == ot or (min(len(nt), len(ot)) > 40 and (nt in ot or ot in nt))):
                 errs.append(f"review {rid}: noi dung trung voi {oid} (danh gia sao chep/trung lap)")
@@ -270,10 +277,11 @@ def check(data):
             errs.append(f"review {rid}: khu nay chi nhan danh gia Google (platform={r.get('platform')!r})")
         if r.get("topics") and r.get("topic_status") not in PUBLISHABLE + ("pending",):
             errs.append(f"review {rid}: co topics thi phai co topic_status verified|owner-verified|pending")
-        if r.get("topic_status") in PUBLISHABLE and not (r.get("evidence") and r.get("date")):
-            errs.append(f"review {rid}: topic_status={r.get('topic_status')} nhung thieu 'evidence' hoac 'date'")
-        if r.get("date") and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["date"]):
-            errs.append(f"review {rid}: date phai dang YYYY-MM-DD")
+        if r.get("topic_status") in PUBLISHABLE and not (r.get("evidence") and (r.get("notification_date") or r.get("review_date"))):
+            errs.append(f"review {rid}: topic_status={r.get('topic_status')} nhung thieu 'evidence' hoac ngay (notification_date/review_date)")
+        for dk in ("notification_date", "review_date"):
+            if r.get(dk) and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r[dk]):
+                errs.append(f"review {rid}: {dk} phai dang YYYY-MM-DD")
         if r.get("publication", "publish") not in ("publish", "hold"):
             errs.append(f"review {rid}: publication phai la publish|hold")
         if r.get("publication") == "hold" and not r.get("hold_reason"):
@@ -281,13 +289,25 @@ def check(data):
         for tp in r.get("topics", []):
             if tp not in TOPICS:
                 errs.append(f"review {rid}: topic {tp!r} khong hop le")
-            elif not any(k.lower() in (r.get("quote_orig") or "").lower() for k in kws.get(tp, [])):
+            elif not any(k.lower() in body.lower() for k in kws.get(tp, [])):
                 errs.append(f"review {rid}: gan topic {tp!r} nhung nguyen van khong nhac tu khoa nao — khong duoc tu suy")
-        for k in ("id", "name", "quote_orig", "quote_orig_lang"):
+        hold = r.get("publication") == "hold"
+        src = r.get("text_source", "original")
+        if src not in ("original", "google-translation-truncated"):
+            errs.append(f"review {rid}: text_source {src!r} khong hop le")
+        if src != "original" and not hold:
+            errs.append(f"review {rid}: chi co ban dich may cua Google — khong duoc dang (publication phai la 'hold')")
+        if src != "original" and r.get("quote_orig"):
+            errs.append(f"review {rid}: ban dich may khong duoc dat vao quote_orig")
+        if "(translated by google)" in (r.get("quote_orig") or "").lower():
+            errs.append(f"review {rid}: quote_orig la ban dich cua Google, khong phai nguyen van")
+        for k in ("id", "name") + (() if hold else ("quote_orig", "quote_orig_lang")):
             if not r.get(k):
                 errs.append(f"review {r.get('id', '?')}: thieu '{k}'")
-        if r.get("quote_orig_lang") != "vi" and not r.get("quote_vi"):
+        if not hold and r.get("quote_orig_lang") != "vi" and not r.get("quote_vi"):
             errs.append(f"review {r['id']}: thieu ban dich 'quote_vi'")
+        if "date" in r:
+            errs.append(f"review {rid}: dung 'notification_date' (ngay email) hoac 'review_date' (ngay that), khong dung 'date'")
         if "photo" in r:
             errs.append(f"review {r['id']}: danh gia Google khong duoc co anh — chuyen sang 'stories'")
     for s in data.get("stories", []):

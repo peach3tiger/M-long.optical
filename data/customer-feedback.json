@@ -145,56 +145,62 @@
       "reuse": "approved",
       "publication": "publish",
       "general": false,
-      "date": "2026-10-12",
-      "date_basis": "Ngay Google gui email thong bao (12/10/2026 09:18 GMT+7); danh gia dang vao hoac truoc ngay nay.",
+      "notification_date": "2026-10-12",
+      "notification_date_note": "Ngay Google gui email thong bao (12/10/2026 09:18 GMT+7); danh gia dang vao hoac truoc ngay nay.",
       "evidence": "Email thong bao cua Google Business Profile (businessprofile-noreply@google.com) gui toi tai khoan chu ho so tuananh.a1202@gmail.com: 'Manh Long Optical, you got 8 new reviews', Gmail thread 1a12de712ba7f4d3. Doc truc tiep qua Gmail 15/10/2026. Email hien nguyen van day du, khong bi cat. Tu khoa: 'multi focal lenses'.",
       "review_path": "Ci9DQUlRQUNvZENodHljRjlvT2pSdlF6bHFORGRWUldaUlIzVnlVMVp5VW1OeVdYYxAB",
-      "verification_note": "Ten va nguyen van lay tu email thong bao cua Google. Dang theo yeu cau cua chu shop (MASTER TASK 15/10/2026: dang danh gia Google da kiem chung)."
+      "verification_note": "Ten va nguyen van lay tu email thong bao cua Google. Dang theo yeu cau cua chu shop (MASTER TASK 15/10/2026: dang danh gia Google da kiem chung).",
+      "review_date": null,
+      "text_source": "original"
     },
     {
       "id": "sandrine-turi",
       "name": "Sandrine Turi",
-      "quote_orig": "Excellent optician; I received my VARILUX progressive lenses in one week;...",
-      "quote_orig_lang": "en",
-      "quote_kind": "Ban dich may cua Google (email ghi '(Translated by Google)'), bi cat. Chua co nguyen van goc.",
-      "quote_vi": "Tiệm kính rất tốt; tôi nhận được tròng đa tròng VARILUX trong một tuần;...",
       "platform": "google",
       "topics": [
         "progressive",
         "varilux"
       ],
-      "topic_status": "verified",
+      "topic_status": "pending",
       "verification": "verified",
       "reuse": "approved",
       "publication": "hold",
-      "hold_reason": "Email chi co ban dich may cua Google va bi cat; chua co nguyen van goc cua khach. Can chu shop mo danh gia tren Google Business Profile, chep nguyen van day du (va ngon ngu goc) vao quote_orig, roi doi publication thanh 'publish'.",
+      "hold_reason": "Email chi co ban dich may cua Google va bi cat; chua co nguyen van goc cua khach. Khi co nguyen van: dien quote_orig + quote_orig_lang + quote_vi, doi text_source='original', topic_status='verified', publication='publish', xoa google_translation_excerpt khoi trang (giu trong evidence).",
       "general": false,
-      "date": "2026-09-26",
-      "date_basis": "Ngay Google gui email thong bao (26/09/2026 13:16 GMT+7); danh gia dang vao hoac truoc ngay nay.",
+      "notification_date": "2026-09-26",
+      "notification_date_note": "Ngay Google gui email thong bao (26/09/2026 13:16 GMT+7); danh gia dang vao hoac truoc ngay nay.",
       "evidence": "Email thong bao cua Google Business Profile (businessprofile-noreply@google.com) gui toi tai khoan chu ho so tuananh.a1202@gmail.com: 'Manh Long Optical, you got 6 new reviews', Gmail thread 1a0dc5b51251df3e. Doc truc tiep qua Gmail 15/10/2026. Tu khoa: 'VARILUX progressive lenses' (trong ban dich cua Google).",
-      "review_path": "Ci9DQUlRQUNvZENodHljRjlvT2tkeFpHTXhUV040YkZSZmJ5MHlVVlZCWm5WMFVsRRAB"
+      "review_path": "Ci9DQUlRQUNvZENodHljRjlvT2tkeFpHTXhUV040YkZSZmJ5MHlVVlZCWm5WMFVsRRAB",
+      "review_date": null,
+      "text_source": "google-translation-truncated",
+      "google_translation_excerpt": "(Translated by Google) Excellent optician; I received my VARILUX progressive lenses in one week;...",
+      "original_text": null,
+      "to_verify": "Nguyen van goc (ngon ngu goc) co nhac Varilux va trong da trong/progressive khong.",
+      "topic_note": "Loai trong moi thay trong ban dich may cua Google (bi cat). Chi doi topic_status thanh 'verified' khi nguyen van goc xac nhan."
     },
     {
       "id": "xuan-tranthi",
       "name": "xuan tranthi",
-      "quote_orig": "I was advised by a German staff member to get Eyezen 1.60 lenses. I will use....",
-      "quote_orig_lang": "en",
-      "quote_kind": "Ban dich may cua Google (email ghi '(Translated by Google)'), bi cat. Chua co nguyen van goc (nhieu kha nang la tieng Viet).",
-      "quote_vi": "Tôi được một nhân viên người Đức tư vấn dùng tròng Eyezen 1.60. Tôi sẽ dùng....",
       "platform": "google",
       "topics": [
         "eyezen"
       ],
-      "topic_status": "verified",
+      "topic_status": "pending",
       "verification": "verified",
       "reuse": "approved",
       "publication": "hold",
-      "hold_reason": "Email chi co ban dich may cua Google va bi cat; chua co nguyen van goc. 'German staff member' co the la Google dich nham ten nhan vien 'Duc'/'Đức' — khong dang ban dich nay. Can chu shop chep nguyen van tieng goc tu Google Business Profile.",
+      "hold_reason": "Email chi co ban dich may cua Google va bi cat; chua co nguyen van goc. Ban dich ghi 'German staff member' — co the Google dich nham ten nhan vien 'Đức'; KHONG dung lai cum nay. Can chu shop chep nguyen van tieng goc tu Google Business Profile vao quote_orig.",
       "general": false,
-      "date": "2026-09-26",
-      "date_basis": "Ngay Google gui email thong bao (26/09/2026 13:16 GMT+7); danh gia dang vao hoac truoc ngay nay.",
+      "notification_date": "2026-09-26",
+      "notification_date_note": "Ngay Google gui email thong bao (26/09/2026 13:16 GMT+7); danh gia dang vao hoac truoc ngay nay.",
       "evidence": "Email thong bao cua Google Business Profile (businessprofile-noreply@google.com) gui toi tai khoan chu ho so tuananh.a1202@gmail.com: 'Manh Long Optical, you got 6 new reviews', Gmail thread 1a0dc5b51251df3e. Doc truc tiep qua Gmail 15/10/2026. Tu khoa: 'Eyezen 1.60 lenses' (trong ban dich cua Google).",
-      "review_path": "Ci9DQUlRQUNvZENodHljRjlvT25JNVpIWXdRamwyV1c5RFF5MVRWWE16TFVoNGVWRRAB"
+      "review_path": "Ci9DQUlRQUNvZENodHljRjlvT25JNVpIWXdRamwyV1c5RFF5MVRWWE16TFVoNGVWRRAB",
+      "review_date": null,
+      "text_source": "google-translation-truncated",
+      "google_translation_excerpt": "(Translated by Google) I was advised by a German staff member to get Eyezen 1.60 lenses. I will use....",
+      "original_text": null,
+      "to_verify": "Danh tinh nguoi viet; mau Eyezen chinh xac; nguyen van tieng Viet; khach da MUA hay chi duoc tu van.",
+      "topic_note": "Loai trong moi thay trong ban dich may cua Google (bi cat). Chi doi topic_status thanh 'verified' khi nguyen van goc xac nhan."
     }
   ],
   "topic_keywords": {
@@ -236,6 +242,8 @@
       "Tracey Perillo (email 10/10/2026, thread 1a1246aa8a3b685f): 'lenses made for my eye glasses' — khong neu loai trong => loai.",
       "Toàn Long (email 09/09/2026, thread 1a083fe13c4a0789): 'Competitive lens prices' (ban dich Google) — khong neu loai trong => loai."
     ],
-    "general_list_notes": "5/6 danh gia trong danh sach chung co trong email Google (Leo Vu, Clique Photography Mauritius, Andrew Anh, Omar Sadek; Cherrie Bettesso va Ryu A khong thay). Email cho thay nguyen van Omar Sadek la 'Alvin has Very good service and knowledge' va Andrew Anh la 'The best eyewear store in town 😎' — trang hien chu hoa/dau cham khac mot chut. Chua sua (giu nguyen danh sach chung theo yeu cau)."
+    "general_list_notes": "5/6 danh gia trong danh sach chung co trong email Google (Leo Vu, Clique Photography Mauritius, Andrew Anh, Omar Sadek; Cherrie Bettesso va Ryu A khong thay). Email cho thay nguyen van Omar Sadek la 'Alvin has Very good service and knowledge' va Andrew Anh la 'The best eyewear store in town 😎' — trang hien chu hoa/dau cham khac mot chut. Chua sua (giu nguyen danh sach chung theo yeu cau).",
+    "unique_review_records_visible": "79 ban ghi danh gia khac nhau (khu trung theo ma review_path cua Google; 'Thanh Le' co 2 danh gia rieng). 105 la so LUOT THONG BAO trong tieu de email, khong phai so danh gia duy nhat; 26 luot khong hien trong email nen khong khu trung duoc.",
+    "owner_review_links_checked_2026_10_15": "2 link business.google.com (Sandrine Turi, xuan tranthi) chi chu ho so mo duoc; phien nay khong noi voi may tinh/Chrome cua chu shop nen khong mo duoc. Ban HTML day du cua email 1a0dc5b51251df3e cung khong co them chu nao."
   }
 }

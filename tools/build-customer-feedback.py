@@ -114,13 +114,19 @@ TOPICS = ("progressive", "varilux", "eyezen")
 PUBLISHABLE = ("verified", "owner-verified")
 
 e = lambda s: html.escape(s, quote=True)
+RTL = ("he", "ar", "fa", "ur")
+d_attr = lambda lg: ' dir="rtl"' if lg in RTL else ""
 
 
-def text_in(orig, orig_lang, vi, lang):
-    """Return (text, lang_of_text, original_note_html)."""
+def text_in(orig, orig_lang, vi, lang, en=None):
+    """Return (display_text, language, note). Keep source-language originals accessible."""
     if lang == "vi" and orig_lang and orig_lang != "vi" and vi:
-        note = f'<p class="fborig">{T["vi"]["translated"]} <span lang="{orig_lang}">“{e(orig)}”</span></p>'
+        label = T["vi"]["translated"] if orig_lang == "en" else "Bản dịch tiếng Việt. Nguyên văn:"
+        note = f'<p class="fborig">{label} <span lang="{e(orig_lang)}"{d_attr(orig_lang)}>“{e(orig)}”</span></p>'
         return vi, "vi", note
+    if lang == "en" and orig_lang and orig_lang != "en" and en:
+        note = f'<p class="fborig">Translated into English. Original: <span lang="{e(orig_lang)}"{d_attr(orig_lang)}>“{e(orig)}”</span></p>'
+        return en, "en", note
     return orig, orig_lang or lang, ""
 
 
@@ -135,7 +141,7 @@ def story_card(s, i, lang, maps, reviews):
     name = s["display_name"] if s.get("name_consent") and s.get("display_name") else t["anon"]
     if s.get("google_review_id"):
         r = reviews[s["google_review_id"]]
-        q, ql, note = text_in(r["quote_orig"], r["quote_orig_lang"], r.get("quote_vi"), lang)
+        q, ql, note = text_in(r["quote_orig"], r["quote_orig_lang"], r.get("quote_vi"), lang, r.get("quote_en"))
         src = f'<p class="fbsrc">{t["google"]} · {maps_link(lang, maps)}</p>'
     else:
         q, ql, note = text_in(s["story_orig"], s["story_orig_lang"], s.get("story_vi"), lang)
@@ -177,13 +183,13 @@ def invite_card(lang, solo=False):
 # ---------- the CHU: danh gia Google ----------
 def review_card(r, lang, maps, tagged=False):
     t = T[lang]
-    q, ql, note = text_in(r["quote_orig"], r["quote_orig_lang"], r.get("quote_vi"), lang)
+    q, ql, note = text_in(r["quote_orig"], r["quote_orig_lang"], r.get("quote_vi"), lang, r.get("quote_en"))
     topics = [x for x in r.get("topics", []) if x in TOPICS]
     attr = f' data-topics="{e(" ".join(topics))}"' if tagged else ""
     tags = ("  <p class=\"fbtags\">" + "".join(f'<span class="fbtag">{t["tag_" + x]}</span>' for x in topics) + "</p>\n") if tagged and topics else ""
     return (
         f'<figure class="fbtext"{attr}>\n' + tags
-        + f'  <blockquote class="fbquote" lang="{ql}"><p>“{e(q)}”</p></blockquote>\n'
+        + f'  <blockquote class="fbquote" lang="{ql}"{d_attr(ql)}><p>“{e(q)}”</p></blockquote>\n'
         f'  <figcaption><span class="fbwho">{e(r["name"])}</span>'
         f'<p class="fbsrc">{t["google"]} · {maps_link(lang, maps)}</p></figcaption>\n'
         + (f'  {note}\n' if note else "")
@@ -306,6 +312,8 @@ def check(data):
                 errs.append(f"review {r.get('id', '?')}: thieu '{k}'")
         if not hold and r.get("quote_orig_lang") != "vi" and not r.get("quote_vi"):
             errs.append(f"review {r['id']}: thieu ban dich 'quote_vi'")
+        if not hold and r.get("quote_orig_lang") not in (None, "en") and not r.get("quote_en"):
+            errs.append(f"review {r['id']}: nguyen van khong phai tieng Anh => can ban dich 'quote_en' cho trang EN")
         if "date" in r:
             errs.append(f"review {rid}: dung 'notification_date' (ngay email) hoac 'review_date' (ngay that), khong dung 'date'")
         if "photo" in r:

@@ -1,5 +1,5 @@
 {
-  "_readme": "Nguon du lieu cho trang Danh gia khach hang (/lookbook.html va /en/lookbook.html). Sua file nay roi chay: python3 tools/build-customer-feedback.py. Luat day du o dau file tools/build-customer-feedback.py. Truong 'topics' chi duoc gan khi chinh loi danh gia nhac tu khoa trong 'topic_keywords' (script tu kiem). Chi hien danh gia co verification='verified' va reuse='approved'.",
+  "_readme": "Nguon du lieu cho trang Danh gia khach hang (/lookbook.html va /en/lookbook.html). Sua file nay roi chay: python3 tools/build-customer-feedback.py. Luat day du o dau file tools/build-customer-feedback.py. Truong 'topics' chi duoc gan khi chinh loi danh gia nhac tu khoa trong 'topic_keywords' (script tu kiem). Chi hien danh gia co verification='verified' hoac 'owner-verified' va reuse='approved'. Eyezen la nhom rieng (khong phai da trong). Chi nhac 'Essilor' khong du de gan Varilux/Eyezen.",
   "rating": {
     "score_vi": "4,9",
     "score_en": "4.9",
@@ -90,7 +90,9 @@
       ],
       "verification": "verified",
       "verification_note": "Da dang tren trang chu VI/EN; chu shop cung cap nguyen van",
-      "reuse": "approved"
+      "reuse": "approved",
+      "topic_status": "pending",
+      "topic_note": "15/10/2026: CHUA kiem chung loai trong. Nguyen van chi co tren trang chu (chu shop cung cap, commit 0d825b0, 11/09/2026). Khong co trong 27 email thong bao danh gia cua Google (moi email chi liet ke toi da 5 nguoi). Email 'New photos were added' 11/09/2026 (Gmail thread 1a0906da034a281c) cho thay tai khoan 'Ryu A' co dang anh len ho so, nhung KHONG chung minh noi dung danh gia. Khong hien o khu theo loai trong cho toi khi co anh chup/link danh gia. Van giu trong danh sach chung."
     },
     {
       "id": "cherrie-bettesso",
@@ -127,12 +129,79 @@
       "verification": "verified",
       "verification_note": "Da dang tren trang chu VI/EN; chu shop cung cap nguyen van",
       "reuse": "approved"
+    },
+    {
+      "id": "ryan-chivers",
+      "name": "Ryan Chivers",
+      "quote_orig": "Great help with my new multi focal lenses. Very efficient and professional. 100% recommend",
+      "quote_orig_lang": "en",
+      "quote_vi": "Được hỗ trợ rất tốt với cặp tròng đa tròng mới của tôi. Rất nhanh gọn và chuyên nghiệp. Giới thiệu 100%.",
+      "platform": "google",
+      "topics": [
+        "progressive"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "publish",
+      "general": false,
+      "date": "2026-10-12",
+      "date_basis": "Ngay Google gui email thong bao (12/10/2026 09:18 GMT+7); danh gia dang vao hoac truoc ngay nay.",
+      "evidence": "Email thong bao cua Google Business Profile (businessprofile-noreply@google.com) gui toi tai khoan chu ho so tuananh.a1202@gmail.com: 'Manh Long Optical, you got 8 new reviews', Gmail thread 1a12de712ba7f4d3. Doc truc tiep qua Gmail 15/10/2026. Email hien nguyen van day du, khong bi cat. Tu khoa: 'multi focal lenses'.",
+      "review_path": "Ci9DQUlRQUNvZENodHljRjlvT2pSdlF6bHFORGRWUldaUlIzVnlVMVp5VW1OeVdYYxAB",
+      "verification_note": "Ten va nguyen van lay tu email thong bao cua Google. Dang theo yeu cau cua chu shop (MASTER TASK 15/10/2026: dang danh gia Google da kiem chung)."
+    },
+    {
+      "id": "sandrine-turi",
+      "name": "Sandrine Turi",
+      "quote_orig": "Excellent optician; I received my VARILUX progressive lenses in one week;...",
+      "quote_orig_lang": "en",
+      "quote_kind": "Ban dich may cua Google (email ghi '(Translated by Google)'), bi cat. Chua co nguyen van goc.",
+      "quote_vi": "Tiệm kính rất tốt; tôi nhận được tròng đa tròng VARILUX trong một tuần;...",
+      "platform": "google",
+      "topics": [
+        "progressive",
+        "varilux"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "hold",
+      "hold_reason": "Email chi co ban dich may cua Google va bi cat; chua co nguyen van goc cua khach. Can chu shop mo danh gia tren Google Business Profile, chep nguyen van day du (va ngon ngu goc) vao quote_orig, roi doi publication thanh 'publish'.",
+      "general": false,
+      "date": "2026-09-26",
+      "date_basis": "Ngay Google gui email thong bao (26/09/2026 13:16 GMT+7); danh gia dang vao hoac truoc ngay nay.",
+      "evidence": "Email thong bao cua Google Business Profile (businessprofile-noreply@google.com) gui toi tai khoan chu ho so tuananh.a1202@gmail.com: 'Manh Long Optical, you got 6 new reviews', Gmail thread 1a0dc5b51251df3e. Doc truc tiep qua Gmail 15/10/2026. Tu khoa: 'VARILUX progressive lenses' (trong ban dich cua Google).",
+      "review_path": "Ci9DQUlRQUNvZENodHljRjlvT2tkeFpHTXhUV040YkZSZmJ5MHlVVlZCWm5WMFVsRRAB"
+    },
+    {
+      "id": "xuan-tranthi",
+      "name": "xuan tranthi",
+      "quote_orig": "I was advised by a German staff member to get Eyezen 1.60 lenses. I will use....",
+      "quote_orig_lang": "en",
+      "quote_kind": "Ban dich may cua Google (email ghi '(Translated by Google)'), bi cat. Chua co nguyen van goc (nhieu kha nang la tieng Viet).",
+      "quote_vi": "Tôi được một nhân viên người Đức tư vấn dùng tròng Eyezen 1.60. Tôi sẽ dùng....",
+      "platform": "google",
+      "topics": [
+        "eyezen"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "hold",
+      "hold_reason": "Email chi co ban dich may cua Google va bi cat; chua co nguyen van goc. 'German staff member' co the la Google dich nham ten nhan vien 'Duc'/'Đức' — khong dang ban dich nay. Can chu shop chep nguyen van tieng goc tu Google Business Profile.",
+      "general": false,
+      "date": "2026-09-26",
+      "date_basis": "Ngay Google gui email thong bao (26/09/2026 13:16 GMT+7); danh gia dang vao hoac truoc ngay nay.",
+      "evidence": "Email thong bao cua Google Business Profile (businessprofile-noreply@google.com) gui toi tai khoan chu ho so tuananh.a1202@gmail.com: 'Manh Long Optical, you got 6 new reviews', Gmail thread 1a0dc5b51251df3e. Doc truc tiep qua Gmail 15/10/2026. Tu khoa: 'Eyezen 1.60 lenses' (trong ban dich cua Google).",
+      "review_path": "Ci9DQUlRQUNvZENodHljRjlvT25JNVpIWXdRamwyV1c5RFF5MVRWWE16TFVoNGVWRRAB"
     }
   ],
   "topic_keywords": {
     "progressive": [
       "multifocal",
       "multi-focal",
+      "multi focal",
       "progressive",
       "varifocal",
       "đa tròng",
@@ -141,10 +210,32 @@
       "progressif",
       "gleitsicht",
       "прогрессив",
-      "мультифокал"
+      "мультифокал",
+      "progresiv"
     ],
     "varilux": [
       "varilux"
+    ],
+    "eyezen": [
+      "eyezen"
     ]
+  },
+  "_audit": {
+    "date": "2026-10-15",
+    "cutoff": "15/10/2026 (GMT+7)",
+    "sources": [
+      "27 email thong bao danh gia cua Google Business Profile trong Gmail cua chu ho so (09/05/2026 - 13/10/2026), doc qua Gmail connector",
+      "Google Maps truc tiep: KHONG doc duoc tu moi truong nay (trang can JavaScript/dang nhap); khong co connector Google Business Profile"
+    ],
+    "coverage": "Mot phan. 27 email bao 105 luot danh gia moi; email chi liet ke 79 nguoi (toi da 5/email); 26 danh gia chi xem duoc qua 'See all reviews' tren Google. Danh gia truoc 09/05/2026, danh gia khong co email, va danh gia 13-15/10/2026 chua kiem. Tong so danh gia hien tai chua kiem duoc.",
+    "of_79_visible": "24 hien day du, 51 bi Google cat ('...'), 4 chi cham sao; 40 la ban dich may cua Google.",
+    "excluded_candidates": [
+      "Jin (email 25/09/2026, thread 1a0d60ce87ce27a6): '... free eye exam, and essilor...' — chi nhac Essilor, bi cat => CHUA XAC DINH SAN PHAM, khong gan Varilux/Eyezen.",
+      "Khoa Nguyễn Duy (email 20/09/2026, thread 1a0bdb02fccf2e3f): 'Essilor Crizal Rock lenses' (ban dich Google) — Crizal la lop phu, khong phai Varilux/Eyezen => loai.",
+      "Shazzy May (email 28/09/2026, thread 1a0e652cf6c0d421): 'reading glasses' — kinh doc sach, khong phai da trong => loai.",
+      "Tracey Perillo (email 10/10/2026, thread 1a1246aa8a3b685f): 'lenses made for my eye glasses' — khong neu loai trong => loai.",
+      "Toàn Long (email 09/09/2026, thread 1a083fe13c4a0789): 'Competitive lens prices' (ban dich Google) — khong neu loai trong => loai."
+    ],
+    "general_list_notes": "5/6 danh gia trong danh sach chung co trong email Google (Leo Vu, Clique Photography Mauritius, Andrew Anh, Omar Sadek; Cherrie Bettesso va Ryu A khong thay). Email cho thay nguyen van Omar Sadek la 'Alvin has Very good service and knowledge' va Andrew Anh la 'The best eyewear store in town 😎' — trang hien chu hoa/dau cham khac mot chut. Chua sua (giu nguyen danh sach chung theo yeu cau)."
   }
 }

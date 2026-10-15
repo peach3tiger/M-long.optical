@@ -224,8 +224,10 @@ def main():
                   + "\n" + invite_card(lang) + "\n</div>\n</section>")
             invite = ""
         else:
+            # 14/10/2026: chu shop yeu cau tam an loi moi gui anh khi chua co cau chuyen nao.
+            # Muon hien lai: doi thanh  invite = invite_card(lang, solo=True)
             st = ""
-            invite = invite_card(lang, solo=True)
+            invite = ""
         rv = (f'<section aria-labelledby="fb-reviews-h">\n<h2 id="fb-reviews-h" class="fbh2">{t["reviews_h"]}</h2>\n'
               '<div class="fbtexts">\n'
               + "\n".join(review_card(x, lang, maps) for x in data.get("google_reviews", []))

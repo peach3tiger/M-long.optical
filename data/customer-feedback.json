@@ -1,5 +1,5 @@
 {
-  "_readme": "Nguon du lieu cho trang Danh gia khach hang (/lookbook.html va /en/lookbook.html). Sua file nay roi chay: python3 tools/build-customer-feedback.py. Luat day du o dau file tools/build-customer-feedback.py.",
+  "_readme": "Nguon du lieu cho trang Danh gia khach hang (/lookbook.html va /en/lookbook.html). Sua file nay roi chay: python3 tools/build-customer-feedback.py. Luat day du o dau file tools/build-customer-feedback.py. Truong 'topics' chi duoc gan khi chinh loi danh gia nhac tu khoa trong 'topic_keywords' (script tu kiem). Chi hien danh gia co verification='verified' hoac 'owner-verified' va reuse='approved'. Eyezen la nhom rieng (khong phai da trong). Chi nhac 'Essilor' khong du de gan Varilux/Eyezen. Ban cong khai: chi giu du lieu generator can. Ho so kiem chung noi bo (email, ma thread, ghi chu kiem toan, danh gia dang giu) KHONG dua vao repo nay.",
   "rating": {
     "score_vi": "4,9",
     "score_en": "4.9",
@@ -9,7 +9,6 @@
     "source": "Trang chu manhlongoptical.com (VI va EN), chu shop cap nhat 11/10/2026"
   },
   "google_maps_url": "https://www.google.com/maps/place/Manh+Long+Optical/@21.0228533,105.8389649,17z/data=!4m8!3m7!1s0x3135abb86b1441c5:0xd0870ab6e28eaa64!8m2!3d21.022849!4d105.841554!9m1!1b1!16s%2Fg%2F11tmmx264m",
-
   "stories": [
     {
       "id": "khach-leo-vu-photo",
@@ -54,49 +53,126 @@
       "notes": "Trang chu dang ghep anh nay voi danh gia Google cua 'Clique Photography Mauritius' — chua xac minh danh tinh. 'Mauritius' la mot phan ten hien thi, khong dung lam quoc tich."
     }
   ],
-
   "google_reviews": [
     {
       "id": "leo-vu",
       "name": "Leo Vu",
       "quote_orig": "I bought a nice pair of blue sunglasses there. They gave me excellent advice and really helped me in my search for sunglasses.",
       "quote_orig_lang": "en",
-      "quote_vi": "Tôi mua một chiếc kính râm màu xanh ở đây. Họ tư vấn rất tốt và giúp tôi tìm được đúng thứ mình cần."
+      "quote_vi": "Tôi mua một chiếc kính râm màu xanh ở đây. Họ tư vấn rất tốt và giúp tôi tìm được đúng thứ mình cần.",
+      "platform": "google",
+      "topics": [],
+      "verification": "verified",
+      "verification_note": "Da dang tren trang chu VI/EN; chu shop cung cap nguyen van",
+      "reuse": "approved"
     },
     {
       "id": "clique-photography",
       "name": "Clique Photography Mauritius",
       "quote_orig": "Was very professional and prompt. I also was able to communicate well with them no problem. I would use them again and have no problem recommending them.",
       "quote_orig_lang": "en",
-      "quote_vi": "Rất chuyên nghiệp và nhanh. Trao đổi với bên này cũng dễ, không gặp trở ngại gì. Tôi sẽ quay lại, và giới thiệu cho người khác cũng không ngại."
+      "quote_vi": "Rất chuyên nghiệp và nhanh. Trao đổi với bên này cũng dễ, không gặp trở ngại gì. Tôi sẽ quay lại, và giới thiệu cho người khác cũng không ngại.",
+      "platform": "google",
+      "topics": [],
+      "verification": "verified",
+      "verification_note": "Da dang tren trang chu VI/EN; chu shop cung cap nguyen van",
+      "reuse": "approved"
     },
     {
       "id": "ryu-a",
       "name": "Ryu A",
       "quote_orig": "Good, fuss-free experience to make a pair of progressive lenses. Alvin is friendly and speaks English well. Will recommend.",
       "quote_orig_lang": "en",
-      "quote_vi": "Trải nghiệm làm một cặp đa tròng khá suôn sẻ, không rắc rối. Alvin thân thiện, nói tiếng Anh tốt. Sẽ giới thiệu cho người khác."
+      "quote_vi": "Trải nghiệm làm một cặp đa tròng khá suôn sẻ, không rắc rối. Alvin thân thiện, nói tiếng Anh tốt. Sẽ giới thiệu cho người khác.",
+      "platform": "google",
+      "topics": [
+        "progressive"
+      ],
+      "verification": "verified",
+      "verification_note": "Da dang tren trang chu VI/EN; chu shop cung cap nguyen van",
+      "reuse": "approved",
+      "topic_status": "pending",
+      "topic_note": "Chua kiem chung loai trong tren Google; khong hien o khu theo loai trong. Van giu trong danh sach chung."
     },
     {
       "id": "cherrie-bettesso",
       "name": "Cherrie Bettesso",
       "quote_orig": "Alvin was amazing and very helpful. We really appreciated his help and the help of the staff. The testing was great.",
       "quote_orig_lang": "en",
-      "quote_vi": "Alvin rất nhiệt tình và hỗ trợ hết mình. Chúng tôi rất cảm kích sự giúp đỡ của bạn ấy và của cả các nhân viên khác. Phần đo mắt cũng làm rất tốt."
+      "quote_vi": "Alvin rất nhiệt tình và hỗ trợ hết mình. Chúng tôi rất cảm kích sự giúp đỡ của bạn ấy và của cả các nhân viên khác. Phần đo mắt cũng làm rất tốt.",
+      "platform": "google",
+      "topics": [],
+      "verification": "verified",
+      "verification_note": "Da dang tren trang chu VI/EN; chu shop cung cap nguyen van",
+      "reuse": "approved"
     },
     {
       "id": "andrew-anh",
       "name": "Andrew Anh",
       "quote_orig": "The best eyewear store in town.",
       "quote_orig_lang": "en",
-      "quote_vi": "Cửa hàng kính mắt tốt nhất trong thành phố."
+      "quote_vi": "Cửa hàng kính mắt tốt nhất trong thành phố.",
+      "platform": "google",
+      "topics": [],
+      "verification": "verified",
+      "verification_note": "Da dang tren trang chu EN; chu shop cung cap nguyen van",
+      "reuse": "approved"
     },
     {
       "id": "omar-sadek",
       "name": "Omar Sadek",
       "quote_orig": "Alvin has very good service and knowledge.",
       "quote_orig_lang": "en",
-      "quote_vi": "Alvin phục vụ rất tốt và nắm chuyên môn vững."
+      "quote_vi": "Alvin phục vụ rất tốt và nắm chuyên môn vững.",
+      "platform": "google",
+      "topics": [],
+      "verification": "verified",
+      "verification_note": "Da dang tren trang chu VI/EN; chu shop cung cap nguyen van",
+      "reuse": "approved"
+    },
+    {
+      "id": "ryan-chivers",
+      "name": "Ryan Chivers",
+      "quote_orig": "Great help with my new multi focal lenses. Very efficient and professional. 100% recommend",
+      "quote_orig_lang": "en",
+      "quote_vi": "Được hỗ trợ rất tốt với cặp tròng đa tròng mới của tôi. Rất nhanh gọn và chuyên nghiệp. Giới thiệu 100%.",
+      "platform": "google",
+      "topics": [
+        "progressive"
+      ],
+      "topic_status": "verified",
+      "verification": "verified",
+      "reuse": "approved",
+      "publication": "publish",
+      "general": false,
+      "notification_date": "2026-10-12",
+      "evidence": "Thong bao danh gia cua Google Business Profile gui chu ho so (12/10/2026). Nguyen van day du, khong bi cat. Tu khoa: 'multi focal lenses'.",
+      "verification_note": "Ten va nguyen van khop thong bao danh gia cua Google. Chu shop duyet dang 15/10/2026.",
+      "review_date": null,
+      "text_source": "original"
     }
-  ]
+  ],
+  "topic_keywords": {
+    "progressive": [
+      "multifocal",
+      "multi-focal",
+      "multi focal",
+      "progressive",
+      "varifocal",
+      "đa tròng",
+      "lũy tiến",
+      "luỹ tiến",
+      "progressif",
+      "gleitsicht",
+      "прогрессив",
+      "мультифокал",
+      "progresiv"
+    ],
+    "varilux": [
+      "varilux"
+    ],
+    "eyezen": [
+      "eyezen"
+    ]
+  }
 }

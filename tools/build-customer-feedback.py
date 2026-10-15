@@ -116,11 +116,15 @@ PUBLISHABLE = ("verified", "owner-verified")
 e = lambda s: html.escape(s, quote=True)
 
 
-def text_in(orig, orig_lang, vi, lang):
-    """Return (text, lang_of_text, original_note_html)."""
+def text_in(orig, orig_lang, vi, lang, en=None):
+    """Return (display_text, language, note). Keep source-language originals accessible."""
     if lang == "vi" and orig_lang and orig_lang != "vi" and vi:
-        note = f'<p class="fborig">{T["vi"]["translated"]} <span lang="{orig_lang}">“{e(orig)}”</span></p>'
+        label = T["vi"]["translated"] if orig_lang == "en" else "Bản dịch tiếng Việt. Nguyên văn:"
+        note = f'<p class="fborig">{label} <span lang="{e(orig_lang)}">“{e(orig)}”</span></p>'
         return vi, "vi", note
+    if lang == "en" and orig_lang and orig_lang != "en" and en:
+        note = f'<p class="fborig">Translated into English. Original: <span lang="{e(orig_lang)}">“{e(orig)}”</span></p>'
+        return en, "en", note
     return orig, orig_lang or lang, ""
 
 
@@ -135,7 +139,7 @@ def story_card(s, i, lang, maps, reviews):
     name = s["display_name"] if s.get("name_consent") and s.get("display_name") else t["anon"]
     if s.get("google_review_id"):
         r = reviews[s["google_review_id"]]
-        q, ql, note = text_in(r["quote_orig"], r["quote_orig_lang"], r.get("quote_vi"), lang)
+        q, ql, note = text_in(r["quote_orig"], r["quote_orig_lang"], r.get("quote_vi"), lang, r.get("quote_en"))
         src = f'<p class="fbsrc">{t["google"]} · {maps_link(lang, maps)}</p>'
     else:
         q, ql, note = text_in(s["story_orig"], s["story_orig_lang"], s.get("story_vi"), lang)

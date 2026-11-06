@@ -1,12 +1,12 @@
 {
   "_readme": "Nguon du lieu cho trang Danh gia khach hang (/lookbook.html va /en/lookbook.html). Sua file nay roi chay: python3 tools/build-customer-feedback.py. Luat day du o dau file tools/build-customer-feedback.py. Truong 'topics' chi duoc gan khi chinh loi danh gia nhac tu khoa trong 'topic_keywords' (script tu kiem). Chi hien danh gia co verification='verified' hoac 'owner-verified' va reuse='approved'. Eyezen la nhom rieng (khong phai da trong). Chi nhac 'Essilor' khong du de gan Varilux/Eyezen. Ban cong khai: chi giu du lieu generator can. Ho so kiem chung noi bo (email, ma thread, ghi chu kiem toan, danh gia dang giu) KHONG dua vao repo nay.",
   "rating": {
-    "score_vi": "4,9",
-    "score_en": "4.9",
-    "count": 112,
-    "as_of_vi": "11/10/2026",
-    "as_of_en": "11 October 2026",
-    "source": "Trang chu manhlongoptical.com (VI va EN), chu shop cap nhat 11/10/2026"
+    "score_vi": "5,0",
+    "score_en": "5.0",
+    "count": 183,
+    "as_of_vi": "06/11/2026",
+    "as_of_en": "6 November 2026",
+    "source": "Doc truc tiep tren Google Maps (ho so Manh Long Optical) 06/11/2026: Google hien 5.0 sao, 183 danh gia. Thay so cu 4,9/112 ngay 11/10/2026."
   },
   "google_maps_url": "https://www.google.com/maps/place/Manh+Long+Optical/@21.0228533,105.8389649,17z/data=!4m8!3m7!1s0x3135abb86b1441c5:0xd0870ab6e28eaa64!8m2!3d21.022849!4d105.841554!9m1!1b1!16s%2Fg%2F11tmmx264m",
   "stories": [
@@ -91,6 +91,7 @@
       "verification": "verified",
       "verification_note": "Da dang tren trang chu VI/EN; chu shop cung cap nguyen van",
       "reuse": "approved",
+      "general": false,
       "topic_status": "verified",
       "review_date": "2026-09-11",
       "evidence": "Verified original in the owner-connected Google Business Profile reviews on 2026-10-15."

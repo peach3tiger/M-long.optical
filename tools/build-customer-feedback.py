@@ -39,6 +39,18 @@ HAI LOAI NOI DUNG, TACH RIENG:
      duoc dat vao quote_orig; luu o google_translation_excerpt va chi de "hold".
    "general": false => chi hien o khu theo loai trong, khong them vao danh sach "Danh gia tren Google".
 
+06/11/2026 — DANH SACH THONG NHAT + THE LIEN KET:
+   Khu "feedback-topics" gio la MOT danh sach co bo loc cho moi danh gia Google duoc hien
+   (khu "feedback-reviews" de trong de khong lap the). Nhan chu de lay TU DONG tu nguyen van
+   theo "topic_keywords", thu tu uu tien: comfort-max, varilux, progressive, glasses, service, eyezen.
+   "display": "link" = the LIEN KET cho danh gia chua co quyen trich nguyen van:
+     chi co ten, nhan chu de, link Google Maps (source_url + source_type review|profile|place).
+     07/11/2026: "place" = ho so nguoi viet KHONG hien danh gia cong khai -> link toi trang danh gia
+     cua shop (dung google_maps_url), nhan va cau huong dan noi ro dieu do.
+     TUYET DOI khong duoc co quote_orig / quote_vi / quote_en / google_translation_excerpt (script DUNG).
+     Nguyen van giu o file staging NGOAI repo; chay kem  --pending <file>  de script doi chieu
+     nhan chu de voi nguyen van va kiem trung. Khong co --pending thi script canh bao, khong kiem duoc.
+
 LUAT KHONG NOI LONG:
 - Khong anh AI, anh stock, anh nguoi mau, khong lay anh dai dien tu Google Reviews.
 - Khong bia ten, quoc tich, loi nhan xet. Khong them schema Review / AggregateRating.
@@ -79,6 +91,20 @@ T = {
         "status": "Đang hiện {n} đánh giá.",
         "empty": "Chưa có đánh giá công khai nào nhắc trực tiếp tới mục này.",
         "more": "Xem thêm đánh giá",
+        # 06/11/2026: danh sach thong nhat
+        "list_h": "Đánh giá của khách: Varilux, kính đa tròng và kính có độ",
+        "list_p": "Mọi đánh giá đều có trên Google Maps, đúng tên người viết. Nhãn lấy từ chính lời khách; bên mình không tự gán loại tròng cho lời khen chung chung.",
+        "f_comfort-max": "Varilux Comfort Max", "f_glasses": "Kính có độ & kính râm", "f_service": "Dịch vụ & đo mắt",
+        "tag_comfort-max": "Varilux Comfort Max", "tag_glasses": "Kính có độ & kính râm", "tag_service": "Dịch vụ & đo mắt",
+        "link_note": "Chưa trích lại ở đây. Mở trang Google Maps của người viết và tìm mục “Manh Long Optical” để đọc toàn bộ.",
+        "link_profile": "Trang Google Maps của người viết",
+        "link_review": "Đọc trên Google Maps",
+        "link_note_place": "Chưa trích lại ở đây. Hồ sơ của người viết không hiện đánh giá công khai, nên link mở trang đánh giá Google Maps của Manh Long Optical: tìm tên người viết trong danh sách.",
+        "link_place": "Trang đánh giá Google của Manh Long Optical",
+        "more_note": "Các đánh giá khác của khách, gồm cả những đánh giá bên mình chưa trích lại, nằm trên Google Maps.",
+        "more_btn": "Đọc tất cả đánh giá trên Google Maps",
+        "maps_btn": "Xem trên Google Maps",
+        "orig_summary": "Bản dịch tiếng Việt · xem nguyên văn",
     },
     "en": {
         "stories_h": "Customer stories",
@@ -108,9 +134,27 @@ T = {
         "status": "Reviews shown: {n}",
         "empty": "No public review mentions this directly yet.",
         "more": "Show more reviews",
+        "list_h": "Customer reviews: Varilux, progressive and prescription glasses",
+        "list_p": "Every review is on Google Maps under the reviewer's own name. Labels come from what the customer wrote; we never add a lens type to general praise.",
+        "f_comfort-max": "Varilux Comfort Max", "f_glasses": "Prescription & sunglasses", "f_service": "Service & eye test",
+        "tag_comfort-max": "Varilux Comfort Max", "tag_glasses": "Prescription & sunglasses", "tag_service": "Service & eye test",
+        "link_note": "Not quoted here yet. Open the reviewer's Google Maps profile and look for “Manh Long Optical” to read it in full.",
+        "link_profile": "Reviewer's Google Maps profile",
+        "link_review": "Read it on Google Maps",
+        "link_note_place": "Not quoted here yet. The reviewer's profile does not show reviews publicly, so this opens Manh Long Optical's reviews on Google Maps: look for the reviewer's name in the list.",
+        "link_place": "Manh Long Optical's Google reviews",
+        "more_note": "More customer reviews, including ones we have not quoted here, are on Google Maps.",
+        "more_btn": "Read all reviews on Google Maps",
+        "maps_btn": "See it on Google Maps",
+        "orig_summary": "Translated into English · show original",
     },
 }
-TOPICS = ("progressive", "varilux", "eyezen")
+# Thu tu = thu tu uu tien hien thi va thu tu nut loc (06/11/2026).
+TOPICS = ("comfort-max", "varilux", "progressive", "glasses", "service", "eyezen")
+# Nhom van duoc phan loai/dem nhung KHONG co nut loc rieng va chi la nhan phu tren the (07/11/2026:
+# 'service' khop 28/30 danh gia nen nut loc khong thu hep duoc; tren mobile lam thanh loc xuong nhieu hang).
+FILTER_SECONDARY = ("service",)
+TEXT_FIELDS = ("quote_orig", "quote_vi", "quote_en", "google_translation_excerpt")
 PUBLISHABLE = ("verified", "owner-verified")
 
 e = lambda s: html.escape(s, quote=True)
@@ -181,17 +225,66 @@ def invite_card(lang, solo=False):
 
 
 # ---------- the CHU: danh gia Google ----------
-def review_card(r, lang, maps, tagged=False):
+def derive_topics(text, kws):
+    """Nhan chu de lay tu chinh nguyen van (khong suy dien), theo thu tu TOPICS."""
+    low = (text or "").lower()
+    return [x for x in TOPICS if any(k.lower() in low for k in kws.get(x, []))]
+
+
+def tags_html(topics, t):
+    """Nhan tren the. 'service' (gan 28/30 danh gia) chi la nhan PHU: hien khi the khong co nhan san pham nao.
+    data-topics van giu du 'service' — logic phan loai khong doi."""
+    shown = [x for x in topics if x not in FILTER_SECONDARY] or list(topics)
+    return "".join(f'<span class="fbtag">{t["tag_" + x]}</span>' for x in shown)
+
+
+def src_html(t, href, label):
+    """Dong nguon: chu 'Google review' + nut Google Maps du lon de bam tren dien thoai."""
+    return (f'<p class="fbsrc"><span>{t["google"]}</span>'
+            f'<a class="fbmaps" href="{e(href)}" target="_blank" rel="noopener nofollow">{label} &#8599;</a></p>')
+
+
+def link_card(r, lang, topics):
+    """The lien ket: KHONG co nguyen van. Ten + nhan + link Google Maps."""
+    t = T[lang]
+    st = r.get("source_type")
+    label = t["link_review"] if st == "review" else t["link_place"] if st == "place" else t["link_profile"]
+    note = t["link_note_place"] if st == "place" else t["link_note"]
+    tags = tags_html(topics, t)
+    return (
+        f'<figure class="fbtext fblink" data-topics="{e(" ".join(topics))}">\n'
+        + (f'  <p class="fbtags">{tags}</p>\n' if tags else "")
+        + f'  <p class="fblinknote">{note}</p>\n'
+        f'  <figcaption><span class="fbwho">{e(r["name"])}</span>{src_html(t, r["source_url"], label)}</figcaption>\n'
+        '</figure>'
+    )
+
+
+def review_card(r, lang, maps, tagged=False, topics=None):
     t = T[lang]
     q, ql, note = text_in(r["quote_orig"], r["quote_orig_lang"], r.get("quote_vi"), lang, r.get("quote_en"))
-    topics = [x for x in r.get("topics", []) if x in TOPICS]
+    if topics is None:
+        topics = [x for x in r.get("topics", []) if x in TOPICS]
     attr = f' data-topics="{e(" ".join(topics))}"' if tagged else ""
-    tags = ("  <p class=\"fbtags\">" + "".join(f'<span class="fbtag">{t["tag_" + x]}</span>' for x in topics) + "</p>\n") if tagged and topics else ""
+    tags = ("  <p class=\"fbtags\">" + tags_html(topics, t) + "</p>\n") if tagged and topics else ""
+    src = src_html(t, maps, t["maps_btn"]) if tagged else f'<p class="fbsrc">{t["google"]} · {maps_link(lang, maps)}</p>'
+    if tagged and note:
+        # 07/11/2026: nguyen van thu vao <details> (van nam tren trang, mo duoc bang ban phim, khong can JS)
+        # vi doan nguyen van lam the cao gap doi, tao khoang trong lon tren luoi 2 cot.
+        ol = r["quote_orig_lang"]
+        note = (f'<details class="fborig"><summary>{t["orig_summary"]}</summary>'
+                f'<p lang="{e(ol)}"{d_attr(ol)}>“{e(r["quote_orig"])}”</p></details>')
+        return (
+            f'<figure class="fbtext"{attr}>\n' + tags
+            + f'  <blockquote class="fbquote" lang="{ql}"{d_attr(ql)}><p>“{e(q)}”</p></blockquote>\n'
+            f'  {note}\n'
+            f'  <figcaption><span class="fbwho">{e(r["name"])}</span>{src}</figcaption>\n'
+            '</figure>'
+        )
     return (
         f'<figure class="fbtext"{attr}>\n' + tags
         + f'  <blockquote class="fbquote" lang="{ql}"{d_attr(ql)}><p>“{e(q)}”</p></blockquote>\n'
-        f'  <figcaption><span class="fbwho">{e(r["name"])}</span>'
-        f'<p class="fbsrc">{t["google"]} · {maps_link(lang, maps)}</p></figcaption>\n'
+        f'  <figcaption><span class="fbwho">{e(r["name"])}</span>{src}</figcaption>\n'
         + (f'  {note}\n' if note else "")
         + '</figure>'
     )
@@ -222,7 +315,77 @@ def topic_live(r):
             and any(x in TOPICS for x in r.get("topics", [])))
 
 
+def is_link(r):
+    return r.get("display") == "link"
+
+
+def listed(r):
+    """Danh gia duoc vao danh sach thong nhat."""
+    if r.get("verification") not in PUBLISHABLE or r.get("publication", "publish") == "hold":
+        return False
+    if is_link(r):
+        return bool(r.get("source_url"))
+    return r.get("reuse") == "approved" and r.get("text_source", "original") == "original" and bool(r.get("quote_orig"))
+
+
+def card_topics(r, kws):
+    return list(r.get("topics", [])) if is_link(r) else derive_topics(r["quote_orig"], kws)
+
+
+def unified_items(data):
+    """Danh sach thong nhat, sap theo nhom uu tien -> the nguyen van truoc the lien ket -> thu tu JSON."""
+    kws = data.get("topic_keywords", {})
+    rows = []
+    for i, r in enumerate(data.get("google_reviews", [])):
+        if listed(r):
+            tp = card_topics(r, kws)
+            grp = min([TOPICS.index(x) for x in tp] or [len(TOPICS)])
+            rows.append((grp, 1 if is_link(r) else 0, i, r, tp))
+    rows.sort(key=lambda x: x[:3])
+    return [(r, tp) for _, _, _, r, tp in rows]
+
+
+def more_link(data, lang):
+    """07/11/2026: tuy chon 'google_more_link' (phuong an trung lap): mot link chung toi trang danh gia
+    Google cua shop, KHONG neu ten hay noi dung nguoi viet. Khong phai the, khong tinh vao so danh gia."""
+    if not data.get("google_more_link"):
+        return ""
+    t = T[lang]
+    # Khoang cach dat inline de khong phai them CSS chung vao trang khi tuy chon dang tat.
+    return (f'<p class="fbtopics-p fbmorenote" style="margin:28px 0 12px">{e(t["more_note"])}</p>\n'
+            f'<p style="margin:0"><a class="fbmaps" href="{e(data["google_maps_url"])}" target="_blank" rel="noopener nofollow">{t["more_btn"]} &#8599;</a></p>\n')
+
+
+def list_section(data, lang, maps):
+    t = T[lang]
+    items = unified_items(data)
+    if not items:
+        return ""
+    cnt = {"all": len(items), **{x: sum(1 for _, tp in items if x in tp) for x in TOPICS}}
+    live = [x for x in TOPICS if cnt[x] and x not in FILTER_SECONDARY]
+    filters = ""
+    if len(live) > 1:
+        chips = "".join(
+            f'<button type="button" class="fbchip" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">'
+            f'{t["f_" + k]} <span class="fbcount-n">({cnt[k]})</span></button>' for k in ["all"] + live)
+        # 07/11/2026: khong 'hidden' — thanh loc hien ngay tu HTML de khong day the xuong khi JS chay (layout shift).
+        filters = (f'<div class="fbfilters" role="group" aria-label="{e(t["filter_label"])}">{chips}</div>\n'
+                   f'<p class="fbstatus" role="status" aria-live="polite" data-tpl="{e(t["status"])}"></p>\n')
+    cards = [link_card(r, lang, tp) if is_link(r) else review_card(r, lang, maps, tagged=True, topics=tp) for r, tp in items]
+    return (
+        '<section class="fbtopics" id="danh-gia-da-trong" aria-labelledby="fb-topics-h">\n'
+        f'<h2 id="fb-topics-h" class="fbh2">{e(t["list_h"])}</h2>\n'
+        f'<p class="fbtopics-p">{e(t["list_p"])}</p>\n'
+        + filters +
+        '<div class="fbtexts fbtopiclist">\n' + "\n".join(cards) + "\n</div>\n"
+        f'<p class="fbempty" hidden>{t["empty"]}</p>\n'
+        f'<button type="button" class="fbmorebtn" hidden>{t["more"]}</button>\n'
+        + more_link(data, lang)
+        + '</section>')
+
+
 def topics_section(revs, lang, maps):
+    """(Cu, truoc 06/11/2026) Khu chi gom danh gia co nhac loai trong. Khong con duoc main() goi."""
     t = T[lang]
     items = [r for r in revs if topic_live(r)]
     if not items:
@@ -252,11 +415,12 @@ def topics_section(revs, lang, maps):
         '</section>')
 
 
-def check(data):
+def check(data, pending=None):
     errs, held = [], []
     reviews = {r["id"]: r for r in data.get("google_reviews", [])}
     kws = data.get("topic_keywords", {})
     seen_ids, seen_txt, seen_path = set(), [], {}
+    pend = {p["id"]: p for p in (pending or {}).get("google_reviews", [])}
     for tp in TOPICS:
         if not kws.get(tp):
             errs.append(f"topic_keywords thieu muc {tp!r}")
@@ -266,6 +430,40 @@ def check(data):
         if rid in seen_ids:
             errs.append(f"review {rid}: id bi trung")
         seen_ids.add(rid)
+        if is_link(r):
+            # The lien ket: KHONG duoc mang nguyen van vao repo cong khai.
+            for k in TEXT_FIELDS:
+                if r.get(k):
+                    errs.append(f"review {rid}: the lien ket khong duoc co '{k}' (nguyen van chua co quyen dang)")
+            if not r.get("source_url", "").startswith("https://www.google.com/maps/"):
+                errs.append(f"review {rid}: the lien ket can source_url Google Maps")
+            if r.get("source_type") not in ("review", "profile", "place"):
+                errs.append(f"review {rid}: source_type phai la review|profile|place")
+            if r.get("source_type") == "place" and r.get("source_url") != data.get("google_maps_url"):
+                errs.append(f"review {rid}: source_type=place phai dung google_maps_url cua shop")
+            if r.get("source_type") == "profile" and "/maps/contrib/" not in r.get("source_url", ""):
+                errs.append(f"review {rid}: source_type=profile phai la link /maps/contrib/")
+            if r.get("verification") not in PUBLISHABLE:
+                errs.append(f"review {rid}: the lien ket chi hien khi verification=verified|owner-verified")
+            for tp in r.get("topics", []):
+                if tp not in TOPICS:
+                    errs.append(f"review {rid}: topic {tp!r} khong hop le")
+            p = pend.get(rid)
+            if pending is not None:
+                if not p or not p.get("quote_orig"):
+                    errs.append(f"review {rid}: khong thay nguyen van trong file --pending")
+                    continue
+                if p.get("name") != r.get("name"):
+                    errs.append(f"review {rid}: ten khac file --pending ({p.get('name')!r})")
+                want = derive_topics(p["quote_orig"], kws)
+                if list(r.get("topics", [])) != want:
+                    errs.append(f"review {rid}: topics {r.get('topics')} khac nhan lay tu nguyen van {want}")
+                nt = norm(p["quote_orig"])
+                for oid, ot in seen_txt:
+                    if nt and ot and (nt == ot or (min(len(nt), len(ot)) > 40 and (nt in ot or ot in nt))):
+                        errs.append(f"review {rid}: noi dung trung voi {oid}")
+                seen_txt.append((rid, nt))
+            continue
         body = r.get("quote_orig") or r.get("google_translation_excerpt") or ""
         nt = norm(body)
         for oid, ot in seen_txt:
@@ -358,9 +556,18 @@ def replace_block(src, name, body, path):
 
 def main():
     data = json.loads(DATA.read_text(encoding="utf-8"))
-    errs, held, reviews = check(data)
+    pending = None
+    if "--pending" in sys.argv:
+        pp = pathlib.Path(sys.argv[sys.argv.index("--pending") + 1]).resolve()
+        if ROOT in pp.parents:
+            sys.exit(f"File --pending phai nam NGOAI repo (dang o {pp})")
+        pending = json.loads(pp.read_text(encoding="utf-8"))
+    errs, held, reviews = check(data, pending)
     for h in held:
         print("CHUA DANG (cho xac nhan):", h)
+    nlink = sum(1 for r in data.get("google_reviews", []) if is_link(r))
+    if nlink and pending is None:
+        print(f"CANH BAO: {nlink} the lien ket chua duoc doi chieu voi nguyen van (chay kem --pending <file staging>).")
     if errs:
         for x in errs:
             print("LOI:", x)
@@ -388,24 +595,24 @@ def main():
             # Muon hien lai: doi thanh  invite = invite_card(lang, solo=True)
             st = ""
             invite = ""
-        rv = (f'<section aria-labelledby="fb-reviews-h">\n<h2 id="fb-reviews-h" class="fbh2">{t["reviews_h"]}</h2>\n'
-              '<div class="fbtexts">\n'
-              + "\n".join(review_card(x, lang, maps) for x in general)
-              + "\n</div>\n</section>")
+        # 06/11/2026: moi danh gia da nam trong danh sach thong nhat (feedback-topics) => khu nay de trong
+        # de khong lap the. Bien 'general' giu lai chi de in thong ke.
+        rv = ""
         src = path.read_text(encoding="utf-8")
         src = replace_block(src, "feedback-rating", rating, path)
         src = replace_block(src, "feedback-stories", st, path)
         src = replace_block(src, "feedback-reviews", rv, path)
         src = replace_block(src, "feedback-invite", invite, path)
-        src = replace_block(src, "feedback-topics", topics_section(revs, lang, maps), path)
+        src = replace_block(src, "feedback-topics", list_section(data, lang, maps), path)
         path.write_text(src, encoding="utf-8")
-        tl = [r for r in revs if topic_live(r)]
-        nt = {x: sum(1 for r in tl if x in r.get("topics", [])) for x in TOPICS}
-        print(f"{path.relative_to(ROOT)}: {len(stories)} cau chuyen co anh, {len(general)} danh gia Google (chung), "
-              f"{len(tl)} danh gia theo loai trong {nt}")
+        items = unified_items(data)
+        nt = {x: sum(1 for _, tp in items if x in tp) for x in TOPICS}
+        nl = sum(1 for r, _ in items if is_link(r))
+        print(f"{path.relative_to(ROOT)}: {len(stories)} cau chuyen co anh, {len(items)} danh gia duy nhat "
+              f"({len(items) - nl} nguyen van, {nl} the lien ket), theo nhom {nt}")
     for x in data.get("google_reviews", []):
-        if x.get("topics") and not (x in revs and topic_live(x)):
-            print(f"CHUA DANG o khu loai trong: {x['id']} topics={x['topics']} topic_status={x.get('topic_status')} "
+        if not listed(x):
+            print(f"KHONG HIEN: {x['id']} verification={x.get('verification')} reuse={x.get('reuse')} "
                   f"publication={x.get('publication', 'publish')} {x.get('hold_reason', '')}")
 
 

@@ -75,6 +75,7 @@ oaiq("measure", "page_viewed", { type: "contents", contents: [{ id: location.pat
       if (href.indexOf('tel:') === 0) name = 'call_click';
       else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
       else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
+      else if (a.closest('[data-track-scope="nearby-attractions"]')) name = '';
       else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1) name = 'directions_click';
       if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
     }, true);
@@ -345,7 +346,7 @@ header .hdr .srch input{height:100%;padding-top:0;padding-bottom:0;line-height:n
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;f.mlAfterLoad(function(){s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)})}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1718493272777504');fbq('track','PageView');
-document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a||a.closest('[data-track-scope="nearby-attractions"]'))return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel -->

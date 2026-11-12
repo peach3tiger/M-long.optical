@@ -4,25 +4,31 @@
    rule could change is set explicitly here, so both languages compute the same geometry.
    No language-specific rules. Loaded after each page's inline <style>. */
 
-.storeblk{background:var(--navy);color:var(--paper);padding:64px 0;line-height:1.7;font-size:16px}
+.storeblk{background:var(--navy);color:var(--paper);padding:64px 0 48px;line-height:1.7;font-size:16px}
 .storeblk .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 .storeblk .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .storeblk .kicker{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);margin:0 0 12px}
-.storeblk h2.big{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1.18;margin:0 0 26px;max-width:18ch;color:var(--paper)}
+.storeblk h2.big{font-family:'Noto Serif Display',Georgia,serif;font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1.18;margin:0 0 16px;max-width:18ch;color:var(--paper)}
 .storeblk a{color:var(--sand)}
 
 .storemap{position:relative;width:100%;aspect-ratio:4/3;border:1px solid rgba(244,242,237,.22);overflow:hidden;background:#2B2E58}
 .storemap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.storeblk .storemap .dir{position:absolute;bottom:16px;right:16px;background:var(--paper);border:1px solid var(--ink);padding:10px 20px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;line-height:1.7}
+/* 10/11/2026 (Nearby final): nut "Chi duong" dat bottom:72px thay vi 16px de khong che nut dieu khien
+   (camera/zoom) cua Google Maps o goc duoi phai (do tren Chrome that: nut Google ~38px, cach day 21-64px).
+   Van o goc duoi phai, giu nguyen kich thuoc/mau/chu. */
+.storeblk .storemap .dir{position:absolute;bottom:72px;right:16px;background:var(--paper);border:1px solid var(--ink);padding:10px 20px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;line-height:1.7}
 
-.storegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;font-size:14.5px;margin:14.5px 0}
+/* store details: 2 columns (address | hours, contact | directions), policies full width below in 2 columns;
+   one column on phones. Spacing comes from the grid gap only (no dd margins). */
+.storegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px;font-size:14.5px;margin:14.5px 0}
 .storegrid dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin:0 0 6px}
-.storegrid dd{margin:0 0 18px}
-.storegrid .spolicy-dt{margin-top:26px}
-.storegrid .spolicy{list-style:none;margin:0;padding:0}
-.storegrid .spolicy li{margin:0 0 7px;line-height:1.5}
+.storegrid dd{margin:0}
+.storegrid .spolicy-group{grid-column:1 / -1}
+.storegrid .spolicy{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.storegrid .spolicy li{margin:0 0 7px;line-height:1.5;break-inside:avoid}
+@media (hover:hover) and (pointer:fine){.storegrid .spolicy li{margin-bottom:4px}}
 
-footer.sitefoot{background:var(--navy);color:var(--paper);padding:64px 0 72px;font-size:13px;line-height:1.7;text-align:left}
+footer.sitefoot{background:var(--navy);color:var(--paper);padding:52px 0 72px;font-size:13px;line-height:1.7;text-align:left}
 footer.sitefoot .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 footer.sitefoot a{color:var(--paper)}
 footer.sitefoot a:hover{color:var(--sand)}
@@ -34,6 +40,102 @@ footer.sitefoot .fbase p{margin:0}
 footer.sitefoot .fbase .fcopy{margin-top:18px}
 
 @media(max-width:820px){
-  .storeblk .split{grid-template-columns:1fr;gap:28px}
-  .storemap{aspect-ratio:1/1}
+  .storeblk .split{grid-template-columns:1fr;gap:24px}
+  .storemap{aspect-ratio:4/3}
+}
+@media(max-width:560px){
+  .storegrid{grid-template-columns:1fr;gap:20px}
+  .storegrid .spolicy{columns:1}
+}
+
+/* Nearby attractions ("Mạnh Long Optical gần với:" / "Manh Long Optical near:").
+   Markup from tools/store-footer.py (render_nearby): the third child of .storeblk .split, after the
+   map and the store info, so on phones the store's address, hours and contacts come first.
+   Static: no scripts, no extra requests. The Brass pin is one inline SVG <symbol> reused per item. */
+.storeblk .split{grid-template-areas:"map info" "near near"}
+.storeblk .storemap{grid-area:map}
+.storeblk .storeinfo{grid-area:info}
+.storeblk .nearby{grid-area:near}
+
+/* Colours: Brand Guidelines palette only (Navy, Paper, Ink, Brass, Hairline, Surface, Muted, Callout).
+   The map pin is Brass too (approved 11/11/2026). Brass is used for accents, never for small text
+   (4.0-4.5:1 on Paper/Surface is below WCAG AA); links are Navy with a Brass underline. */
+.nearby{--nb-navy:#22254F;--nb-paper:#F4F2ED;--nb-ink:#1B1D1F;--nb-brass:#8A6A3B;--nb-hair:#DFDACE;--nb-surface:#EAE7DE;--nb-muted:#6E6759;--nb-callout:#F0EBE0;
+  position:relative;overflow:hidden;isolation:isolate;min-width:0;
+  background:var(--nb-paper);color:var(--nb-ink);border:1px solid var(--nb-hair);border-radius:24px;
+  padding:24px 28px 18px;box-shadow:0 10px 30px rgba(8,10,35,.28);line-height:1.5;font-size:15px;container-type:inline-size}
+.nearby::before{content:"";position:absolute;z-index:-1;top:-78px;right:-78px;width:150px;height:150px;border-radius:50%;background:var(--nb-surface);pointer-events:none}
+.nearby .nb-defs{position:absolute;width:0;height:0;overflow:hidden}
+.nearby .nb-pin{flex:none;width:20px;height:23px;display:block}
+.nearby .nb-pin--title{width:22px;height:26px}
+.nearby .nb-head{margin:0 0 16px}
+.nearby .nb-title{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-family:'Noto Serif Display','NSD Fallback',Georgia,'Times New Roman',serif;
+  font-weight:600;font-size:clamp(22px,2.3vw,28px);line-height:1.25;letter-spacing:0;color:var(--nb-navy);text-transform:none}
+.nearby .nb-intro{margin:0;padding:2px 0 2px 14px;border-left:3px solid var(--nb-brass);font-size:14px;line-height:1.65;color:var(--nb-ink);max-width:68ch}
+.nearby .nb-intro strong{font-weight:600;color:var(--nb-navy)}
+.nearby a{color:inherit}
+.nearby .nb-place{display:inline-flex;align-items:center;gap:8px;min-height:24px;font-weight:600;color:var(--nb-navy);text-decoration:none;line-height:1.3}
+.nearby .nb-place:hover .nb-name{text-decoration:underline;text-underline-offset:3px}
+.nearby .nb-meta{margin:0;font-variant-numeric:tabular-nums;color:var(--nb-ink)}
+.nearby .nb-dist{font-weight:600;color:var(--nb-navy)}
+.nearby .nb-dist,.nearby .nb-mins{white-space:nowrap} /* keep number and unit together at 320px */
+.nearby .nb-sep{color:var(--nb-muted)}
+.nearby .nb-walk{display:inline-flex;align-items:center;min-height:24px;font-size:13px;color:var(--nb-navy);text-decoration:underline;text-decoration-color:var(--nb-brass);text-decoration-thickness:1px;text-underline-offset:3px}
+.nearby .nb-walk:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
+.nearby a:focus:not(:focus-visible){outline:none} /* browsers without :focus-visible drop this rule and keep their default focus ring */
+.nearby a:focus-visible{outline:2px solid var(--nb-navy);outline-offset:3px;border-radius:6px}
+.nearby .nb-note{margin:14px 0 0;font-size:12px;line-height:1.55;color:var(--nb-muted)}
+
+/* 8 places as a grid. Columns follow the card's own width (container queries):
+   4 x 2 when the card is >= 1000px wide, 2 x 4 from 560px, 1 per row below. */
+.nearby .nb-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 12px}
+.nearby .nb-item{display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin:0;padding:12px 16px 10px;border-radius:16px;background:var(--nb-surface);
+  border:1px solid transparent;transition:background-color .18s ease,border-color .18s ease}
+.nearby .nb-item:hover,.nearby .nb-item:focus-within{background:var(--nb-callout);border-color:var(--nb-brass)}
+.nearby .nb-item .nb-meta{padding-left:28px;font-size:14px}
+.nearby .nb-item .nb-walk{margin-left:28px}
+
+@container (min-width:900px){
+  .nearby .nb-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px;align-items:center}
+  .nearby .nb-title{margin:0}
+}
+@container (max-width:999px){
+  .nearby .nb-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@container (max-width:559px){
+  .nearby .nb-list{grid-template-columns:1fr;gap:6px}
+}
+/* Fallback for browsers without size container queries (iOS Safari < 16, Chrome < 105, Firefox < 110):
+   container width = card content box = viewport - 48px gutters - 56px card padding - 2px border (up to the max width),
+   so the container breakpoints 559/999/900px map to viewport 665/1105/1006px. Browsers that support container queries skip this block. */
+@supports not (container-type:inline-size){
+  @media (min-width:1006px){
+    .nearby .nb-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px;align-items:center}
+    .nearby .nb-title{margin:0}
+  }
+  @media (max-width:1105px){.nearby .nb-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:665px){.nearby .nb-list{grid-template-columns:1fr;gap:6px}}
+}
+/* Touch screens and narrow windows: two rows per place - name; distance + time with the directions link.
+   On touch every link gets a 44px-tall hit area. */
+@media (pointer:coarse),(max-width:600px){
+  .nearby .nb-item{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;row-gap:0;padding:0 12px}
+  .nearby .nb-item .nb-place{grid-column:1 / -1}
+  .nearby .nb-item .nb-meta{padding-left:28px;font-size:14px}
+  .nearby .nb-item .nb-walk{margin-left:0;justify-self:end}
+}
+@media (pointer:coarse){
+  .nearby .nb-place,.nearby .nb-walk{min-height:44px}
+}
+@media (max-width:820px){
+  .storeblk .split{grid-template-areas:"map" "info" "near"}
+}
+@media (max-width:600px){
+  .nearby{padding:20px 16px 14px;border-radius:20px}
+  .nearby::before{top:-66px;right:-66px;width:120px;height:120px}
+  .nearby .nb-item .nb-meta{padding-left:30px}
+  .nearby .nb-pin{width:22px;height:26px}
+}
+@media (prefers-reduced-motion:reduce){
+  .nearby .nb-item{transition:none}
 }

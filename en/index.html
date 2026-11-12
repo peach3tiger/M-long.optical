@@ -60,6 +60,56 @@ oaiq("measure", "page_viewed", { type: "contents", contents: [{ id: location.pat
   // Do click Goi / Zalo / Chi duong. Site la SPA nen dung delegated listener.
   // page_lang: de tach khach EN vs VI trong bao cao (tep khach nuoc ngoai ~65%).
   (function () {
+    /* Them 10/11/2026 (khung "dia diem gan cua hang" duoi ban do): link Google Maps tro toi
+       DIA DIEM DU LICH khong phai luot chi duong toi cua hang, nen khong duoc tinh directions_click.
+       Tra ve true khi: (1) link nam trong khung data-track-scope="nearby-attractions", hoac
+       (2) link /maps/dir co tham so destination ma diem den KHONG phai Manh Long / 147A Le Duan.
+       Moi link chi duong toi cua hang hien co (destination=147A Le Duan) van duoc tinh nhu cu.
+       Dung chung cho listener GA4/Google Ads ben duoi va listener Meta Pixel (window.mloNotStoreMaps). */
+    window.mloNotStoreMaps = function (a, href) {
+      try {
+        if (a && a.closest && a.closest('[data-track-scope="nearby-attractions"]')) return true;
+        var u = new URL(href, document.baseURI);
+        if (u.pathname.indexOf('/maps/dir') === 0) {
+          var dest = u.searchParams.get('destination');
+          if (dest) {
+            if (dest.normalize) dest = dest.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            dest = dest.toLowerCase();
+            if (dest.indexOf('manh long') < 0 && !(dest.indexOf('147a') > -1 && dest.indexOf('le duan') > -1)) return true;
+          }
+        }
+      } catch (err) {}
+      return false;
+    };
+    /* Them 10/11/2026 (V6, sua loi Google Reviews bi tinh nham directions_click): CHI tinh
+       directions_click khi link THUC SU la chi duong toi cua hang. Truoc day moi link chua
+       "google.com/maps" deu bi tinh, nen link "Doc toan bo danh gia" (/maps/place) cung thanh directions_click.
+       Tra ve true khi va chi khi:
+         - link la Google Maps chi duong: /maps/dir (google.* hoac maps.google.*), maps.google.*?daddr=,
+           hoac /maps/search co query la Manh Long / 147A Le Duan; VA
+         - link KHONG nam trong khung dia diem gan cua hang va diem den la cua hang (window.mloNotStoreMaps).
+       Khong tinh: /maps/place (danh gia, ho so cua hang), /maps/contrib (ho so nguoi danh gia),
+       /maps?cid= va /maps?q= (xem dia diem), link rut gon goo.gl (khong doc duoc diem den).
+       Chi thay doi listener GA4/Google Ads; listener Meta Pixel va assets/oai-conversions.js da khong tinh
+       /maps/place tu truoc nen giu nguyen. */
+    window.mloStoreDirections = function (a, href) {
+      try {
+        var u = new URL(href, document.baseURI);
+        var h = u.hostname.toLowerCase().replace(/^www\./, '');
+        var p = u.pathname.toLowerCase();
+        var isGoogle = /^google\.[a-z.]+$/.test(h), isMapsHost = /^maps\.google\.[a-z.]+$/.test(h);
+        if (!isGoogle && !isMapsHost) return false;
+        var dir = p.indexOf('/maps/dir') === 0 || (isMapsHost && u.searchParams.has('daddr'));
+        if (!dir && isGoogle && p.indexOf('/maps/search') === 0) {
+          var q = u.searchParams.get('query') || '';
+          if (q.normalize) q = q.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          q = q.toLowerCase();
+          dir = q.indexOf('manh long') > -1 || (q.indexOf('147a') > -1 && q.indexOf('le duan') > -1);
+        }
+        if (!dir) return false;
+        return !window.mloNotStoreMaps(a, href);
+      } catch (err) { return false; }
+    };
     function pageLang() {
       try {
         var q = new URLSearchParams(location.search).get('lang');
@@ -77,7 +127,7 @@ oaiq("measure", "page_viewed", { type: "contents", contents: [{ id: location.pat
       if (href.indexOf('tel:') === 0) name = 'call_click';
       else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
       else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
-      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      else if (window.mloStoreDirections(a, href)) name = 'directions_click';
       if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
     }, true);
   })();
@@ -365,7 +415,7 @@ header .hdr .srch input{height:100%;padding-top:0;padding-bottom:0;line-height:n
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;f.mlAfterLoad(function(){s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)})}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1718493272777504');fbq('track','PageView');
-document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;var h=a.getAttribute('href')||'';var c=h.indexOf('tel:')===0?'call':h.indexOf('zalo.me')>-1?'zalo':h.indexOf('wa.me')>-1?'whatsapp':h.indexOf('google.com/maps/dir')>-1?'directions':'';if(!c)return;if(c==='directions'&&window.mloNotStoreMaps&&window.mloNotStoreMaps(a,h))return;if(c==='directions'){fbq('trackCustom','DirectionsClick',{channel:c});}else{fbq('track','Contact',{channel:c});}},true);
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1718493272777504&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel -->
@@ -724,14 +774,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="storeinfo">
       <p class="kicker">Visit the store</p>
-      <h2 class="big serif">Manh Long Optical, 147A Lê Duẩn</h2>
+      <h2 class="big serif">Manh Long Optical, 147A Le Duan</h2>
       <dl class="storegrid">
-        <div><dt>Address</dt><dd>147A Lê Duẩn, Cửa Nam, Hanoi<br>A short walk from Hanoi Railway Station<br><a href="/en/prescription-glasses-hanoi.html">Hours, directions and prices</a></dd></div>
+        <div><dt>Address</dt><dd>147A Le Duan, Cua Nam, Ha Noi<br>A short walk from Hanoi Railway Station<br><a href="/en/prescription-glasses-hanoi.html">Hours, directions and prices</a></dd></div>
         <div><dt>Opening hours</dt><dd>8:00 – 21:30<br>Every day, including holidays</dd></div>
         <div><dt>Contact</dt><dd><a href="tel:+84777986999">0777 986 999</a><br><a href="https://zalo.me/0777986999" target="_blank" rel="noopener">Zalo</a> · <a href="https://wa.me/84777986999" target="_blank" rel="noopener">WhatsApp</a><br><a href="mailto:mlong.optical@gmail.com">mlong.optical@gmail.com</a></dd></div>
-        <div><dt>Directions</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Open Google Maps</a></dd><dt class="spolicy-dt">Policies</dt><dd><ul class="spolicy" aria-label="Policies"><li><a href="/en/terms-of-service.html">Terms of Service</a></li><li><a href="/en/payment-policy.html">Payment Policy</a></li><li><a href="/en/delivery-policy.html">Delivery Policy</a></li><li><a href="/en/warranty-policy.html">Warranty Policy</a></li><li><a href="/en/returns-policy.html">Return &amp; Exchange Policy</a></li><li><a href="/en/privacy-policy.html">Privacy Policy</a></li></ul></dd></div>
+        <div><dt>Directions</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=147A+L%C3%AA+Du%E1%BA%A9n,+C%E1%BB%ADa+Nam,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener">Open Google Maps</a></dd></div>
+        <div class="spolicy-group"><dt>Policies</dt><dd><ul class="spolicy" aria-label="Policies"><li><a href="/en/terms-of-service.html">Terms of Service</a></li><li><a href="/en/payment-policy.html">Payment Policy</a></li><li><a href="/en/delivery-policy.html">Delivery Policy</a></li><li><a href="/en/warranty-policy.html">Warranty Policy</a></li><li><a href="/en/returns-policy.html">Return &amp; Exchange Policy</a></li><li><a href="/en/privacy-policy.html">Privacy Policy</a></li></ul></dd></div>
       </dl>
     </div>
+    <section class="nearby" data-track-scope="nearby-attractions" aria-labelledby="nearby-title">
+      <svg class="nb-defs" aria-hidden="true" focusable="false"><symbol id="nb-pin" viewBox="0 0 24 28"><path d="M12 1.2C7.1 1.2 3.3 5 3.3 9.8c0 6.2 7.1 13.6 7.9 14.4.4.4 1.2.4 1.6 0 .8-.8 7.9-8.2 7.9-14.4C20.7 5 16.9 1.2 12 1.2Z" fill="#8A6A3B"/><circle cx="12" cy="9.6" r="3.4" fill="#F4F2ED"/></symbol></svg>
+      <div class="nb-head">
+        <h2 id="nearby-title" class="nb-title"><svg class="nb-pin nb-pin--title" aria-hidden="true" focusable="false"><use href="#nb-pin"/></svg>Manh Long Optical near:</h2>
+        <p class="nb-intro">Our store at <strong>147A Le Duan</strong> is near many of Hanoi's popular attractions. See walking distances, times and directions on Google Maps.</p>
+      </div>
+      <ul class="nb-list" aria-label="Walking distance and time from Manh Long Optical, 147A Le Duan">
+        <li class="nb-item"><a class="nb-place" href="https://www.google.com/maps?cid=16291808341885038352" target="_blank" rel="noopener noreferrer" aria-label="Hanoi Railway Station on Google Maps (opens in a new tab)"><svg class="nb-pin" aria-hidden="true" focusable="false"><use href="#nb-pin"/></svg><span class="nb-name">Hanoi Railway Station</span></a><p class="nb-meta"><span class="nb-dist">290 m</span><span class="nb-sep" aria-hidden="true"> · </span><span class="nb-mins">4 min walk</span></p><a class="nb-walk" href="https://www.google.com/maps/dir/?api=1&amp;origin=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i&amp;destination=Hanoi%20Railway%20Station%2C%20120%20L%C3%AA%20Du%E1%BA%A9n%2C%20H%C3%A0%20N%E1%BB%99i&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking directions to Hanoi Railway Station on Google Maps (opens in a new tab)">Walking directions</a></li>
+        <li class="nb-item"><a class="nb-place" href="https://www.google.com/maps?cid=10881225616060952404" target="_blank" rel="noopener noreferrer" aria-label="Hoa Lo Prison Relic on Google Maps (opens in a new tab)"><svg class="nb-pin" aria-hidden="true" focusable="false"><use href="#nb-pin"/></svg><span class="nb-name">Hoa Lo Prison Relic</span></a><p class="nb-meta"><span class="nb-dist">1.0 km</span><span class="nb-sep" aria-hidden="true"> · </span><span class="nb-mins">14 min walk</span></p><a class="nb-walk" href="https://www.google.com/maps/dir/?api=1&amp;origin=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i&amp;destination=Hoa%20Lo%20Prison%20Relic%2C%201%20H%E1%BB%8Fa%20L%C3%B2%2C%20H%C3%A0%20N%E1%BB%99i&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking directions to Hoa Lo Prison Relic on Google Maps (opens in a new tab)">Walking directions</a></li>
+        <li class="nb-item"><a class="nb-place" href="https://www.google.com/maps?cid=14084095476704060601" target="_blank" rel="noopener noreferrer" aria-label="Hanoi Train Street (Tran Phu area) on Google Maps (opens in a new tab)"><svg class="nb-pin" aria-hidden="true" focusable="false"><use href="#nb-pin"/></svg><span class="nb-name">Hanoi Train Street (Tran Phu area)</span></a><p class="nb-meta"><span class="nb-dist">1.0 km</span><span class="nb-sep" aria-hidden="true"> · </span><span class="nb-mins">15 min walk</span></p><a class="nb-walk" href="https://www.google.com/maps/dir/?api=1&amp;origin=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i&amp;destination=Rue%20du%20train%2C%20Tr%E1%BA%A7n%20Ph%C3%BA%2C%20H%C3%A0%20N%E1%BB%99i&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking directions to Hanoi Train Street (Tran Phu area) on Google Maps (opens in a new tab)">Walking directions</a></li>
+        <li class="nb-item"><a class="nb-place" href="https://www.google.com/maps?cid=6345017207668727582" target="_blank" rel="noopener noreferrer" aria-label="Temple of Literature on Google Maps (opens in a new tab)"><svg class="nb-pin" aria-hidden="true" focusable="false"><use href="#nb-pin"/></svg><span class="nb-name">Temple of Literature</span></a><p class="nb-meta"><span class="nb-dist">1.3 km</span><span class="nb-sep" aria-hidden="true"> · </span><span class="nb-mins">18 min walk</span></p><a class="nb-walk" href="https://www.google.com/maps/dir/?api=1&amp;origin=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i&amp;destination=Temple%20of%20Literature%2C%2058%20Qu%E1%BB%91c%20T%E1%BB%AD%20Gi%C3%A1m%2C%20H%C3%A0%20N%E1%BB%99i&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking directions to Temple of Literature on Google Maps (opens in a new tab)">Walking directions</a></li>
+        <li class="nb-item"><a class="nb-place" href="https://www.google.com/maps?cid=10427370394078927246" target="_blank" rel="noopener noreferrer" aria-label="St. Joseph&#x27;s Cathedral on Google Maps (opens in a new tab)"><svg class="nb-pin" aria-hidden="true" focusable="false"><use href="#nb-pin"/></svg><span class="nb-name">St. Joseph's Cathedral</span></a><p class="nb-meta"><span class="nb-dist">1.6 km</span><span class="nb-sep" aria-hidden="true"> · </span><span class="nb-mins">22 min walk</span></p><a class="nb-walk" href="https://www.google.com/maps/dir/?api=1&amp;origin=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i&amp;destination=St.%20Joseph%20Cathedral%2C%201%20Nh%C3%A0%20Th%E1%BB%9D%2C%20H%C3%A0%20N%E1%BB%99i&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking directions to St. Joseph&#x27;s Cathedral on Google Maps (opens in a new tab)">Walking directions</a></li>
+        <li class="nb-item"><a class="nb-place" href="https://www.google.com/maps?cid=124622409024774670" target="_blank" rel="noopener noreferrer" aria-label="Hoan Kiem Lake on Google Maps (opens in a new tab)"><svg class="nb-pin" aria-hidden="true" focusable="false"><use href="#nb-pin"/></svg><span class="nb-name">Hoan Kiem Lake</span></a><p class="nb-meta"><span class="nb-dist">1.9 km</span><span class="nb-sep" aria-hidden="true"> · </span><span class="nb-mins">27 min walk</span></p><a class="nb-walk" href="https://www.google.com/maps/dir/?api=1&amp;origin=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i&amp;destination=Ho%C3%A0n%20Ki%E1%BA%BFm%20Lake%2C%20H%C3%A0%20N%E1%BB%99i&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking directions to Hoan Kiem Lake on Google Maps (opens in a new tab)">Walking directions</a></li>
+        <li class="nb-item"><a class="nb-place" href="https://www.google.com/maps?cid=7065731937148685644" target="_blank" rel="noopener noreferrer" aria-label="Ho Chi Minh Mausoleum on Google Maps (opens in a new tab)"><svg class="nb-pin" aria-hidden="true" focusable="false"><use href="#nb-pin"/></svg><span class="nb-name">Ho Chi Minh Mausoleum</span></a><p class="nb-meta"><span class="nb-dist">2.0 km</span><span class="nb-sep" aria-hidden="true"> · </span><span class="nb-mins">28 min walk</span></p><a class="nb-walk" href="https://www.google.com/maps/dir/?api=1&amp;origin=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i&amp;destination=Ho%20Chi%20Minh%27s%20Mausoleum%2C%201%20H%C3%B9ng%20V%C6%B0%C6%A1ng%2C%20H%C3%A0%20N%E1%BB%99i&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking directions to Ho Chi Minh Mausoleum on Google Maps (opens in a new tab)">Walking directions</a></li>
+        <li class="nb-item"><a class="nb-place" href="https://www.google.com/maps?cid=7240365436428127531" target="_blank" rel="noopener noreferrer" aria-label="Hanoi Opera House on Google Maps (opens in a new tab)"><svg class="nb-pin" aria-hidden="true" focusable="false"><use href="#nb-pin"/></svg><span class="nb-name">Hanoi Opera House</span></a><p class="nb-meta"><span class="nb-dist">2.3 km</span><span class="nb-sep" aria-hidden="true"> · </span><span class="nb-mins">31 min walk</span></p><a class="nb-walk" href="https://www.google.com/maps/dir/?api=1&amp;origin=Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i&amp;destination=Hanoi%20Opera%20House%2C%201%20Tr%C3%A0ng%20Ti%E1%BB%81n%2C%20H%C3%A0%20N%E1%BB%99i&amp;travelmode=walking" target="_blank" rel="noopener noreferrer" aria-label="Walking directions to Hanoi Opera House on Google Maps (opens in a new tab)">Walking directions</a></li>
+      </ul>
+      <p class="nb-note">Walking distances and times are approximate and may vary by route.</p>
+    </section>
   </div>
 </section>
 <footer class="sitefoot">
@@ -749,7 +818,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </ul>
     <div class="fbase">
       <p>Manh Long Optical · Hanoi</p>
-      <p>147A Lê Duẩn, Cửa Nam, Hanoi · Open 8:00 – 21:30 daily · 0777 986 999</p>
+      <p>147A Le Duan, Cua Nam, Ha Noi · Open 8:00 – 21:30 daily · 0777 986 999</p>
       <p class="fcopy">Copyright © 2026 Manh Long Optical. All rights reserved.</p>
     </div>
   </div>

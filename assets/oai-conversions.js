@@ -51,6 +51,7 @@
     if (!el || typeof el.closest !== 'function') return;
     var a = el.closest('a[href]');
     if (!a) return;
+    if (a.closest('[data-track-scope="nearby-attractions"]')) return; // nearby landmarks card: not store directions
     var kind = classify(a.getAttribute('href'));
     try {
       if (kind === 'lead') {

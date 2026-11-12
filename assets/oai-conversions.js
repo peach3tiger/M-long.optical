@@ -13,7 +13,11 @@
  *   Phone link (tel:)                                          -> lead_created
  *   Google Maps directions (/maps/dir, /maps/search)           -> custom "directions_click"
  * Google Maps place/review links (/maps/place, maps.app.goo.gl) are NOT directions
- * and send nothing. No form or booking flow exists on the site, so no form lead
+ * and send nothing.
+ * Maps links to OTHER places are not store directions either and send nothing (added 10/11/2026):
+ * any link inside [data-track-scope="nearby-attractions"] (the nearby-attractions card under the
+ * footer map), and any /maps/dir link whose destination is not Manh Long / 147A Le Duan.
+ * No form or booking flow exists on the site, so no form lead
  * and no appointment_scheduled event is sent from here.
  *
  * No personal data is sent: no name, phone, email, link URL or form content.
@@ -31,7 +35,16 @@
 
   function host(u) { return u.hostname.toLowerCase().replace(/^www\./, ''); }
 
-  function classify(href) {
+  function notStore(a, u) {
+    if (a.closest('[data-track-scope="nearby-attractions"]')) return true;
+    var dest = u.searchParams.get('destination');
+    if (!dest) return false;
+    if (dest.normalize) dest = dest.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    dest = dest.toLowerCase();
+    return dest.indexOf('manh long') < 0 && !(dest.indexOf('147a') > -1 && dest.indexOf('le duan') > -1);
+  }
+
+  function classify(href, a) {
     if (!href) return null;
     if (/^tel:/i.test(href)) return 'lead';
     var u;
@@ -40,8 +53,8 @@
     if (h === 'wa.me' || h === 'api.whatsapp.com' || (h === 'whatsapp.com' && p.indexOf('/send') === 0)) return 'lead';
     if (h === 'zalo.me') return 'lead';
     var isGoogle = /^google\.[a-z.]+$/.test(h);
-    if (isGoogle && (p.indexOf('/maps/dir') === 0 || p.indexOf('/maps/search') === 0)) return 'directions';
-    if (/^maps\.google\.[a-z.]+$/.test(h) && (u.searchParams.has('daddr') || p.indexOf('/maps/dir') === 0)) return 'directions';
+    if (isGoogle && (p.indexOf('/maps/dir') === 0 || p.indexOf('/maps/search') === 0)) return notStore(a, u) ? null : 'directions';
+    if (/^maps\.google\.[a-z.]+$/.test(h) && (u.searchParams.has('daddr') || p.indexOf('/maps/dir') === 0)) return notStore(a, u) ? null : 'directions';
     return null;
   }
 
@@ -51,7 +64,7 @@
     if (!el || typeof el.closest !== 'function') return;
     var a = el.closest('a[href]');
     if (!a) return;
-    var kind = classify(a.getAttribute('href'));
+    var kind = classify(a.getAttribute('href'), a);
     try {
       if (kind === 'lead') {
         w.oaiq('measure', 'lead_created', { type: 'customer_action' });

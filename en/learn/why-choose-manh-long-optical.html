@@ -39,6 +39,54 @@ oaiq("measure", "page_viewed", { type: "contents", contents: [{ id: location.pat
   gtag('config', 'G-K2SSQSPKEZ');
   gtag('config', 'AW-18143785526');
   (function () {
+    /* Them 10/11/2026 (V7, sua tiep loi Google Reviews / ho so nguoi danh gia bi tinh nham directions_click
+       tren trang nay). Hai ham duoi day CHEP NGUYEN tu index.html (V2 + V6) de moi trang dung cung mot quy tac:
+       chi tinh directions_click khi link THUC SU la chi duong toi cua hang. Listener Meta Pixel va
+       assets/oai-conversions.js da khong tinh /maps/place va /maps/contrib tu truoc nen giu nguyen. */
+    window.mloNotStoreMaps = function (a, href) {
+      try {
+        if (a && a.closest && a.closest('[data-track-scope="nearby-attractions"]')) return true;
+        var u = new URL(href, document.baseURI);
+        if (u.pathname.indexOf('/maps/dir') === 0) {
+          var dest = u.searchParams.get('destination');
+          if (dest) {
+            if (dest.normalize) dest = dest.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            dest = dest.toLowerCase();
+            if (dest.indexOf('manh long') < 0 && !(dest.indexOf('147a') > -1 && dest.indexOf('le duan') > -1)) return true;
+          }
+        }
+      } catch (err) {}
+      return false;
+    };
+    /* Them 10/11/2026 (V6, sua loi Google Reviews bi tinh nham directions_click): CHI tinh
+       directions_click khi link THUC SU la chi duong toi cua hang. Truoc day moi link chua
+       "google.com/maps" deu bi tinh, nen link "Doc toan bo danh gia" (/maps/place) cung thanh directions_click.
+       Tra ve true khi va chi khi:
+         - link la Google Maps chi duong: /maps/dir (google.* hoac maps.google.*), maps.google.*?daddr=,
+           hoac /maps/search co query la Manh Long / 147A Le Duan; VA
+         - link KHONG nam trong khung dia diem gan cua hang va diem den la cua hang (window.mloNotStoreMaps).
+       Khong tinh: /maps/place (danh gia, ho so cua hang), /maps/contrib (ho so nguoi danh gia),
+       /maps?cid= va /maps?q= (xem dia diem), link rut gon goo.gl (khong doc duoc diem den).
+       Chi thay doi listener GA4/Google Ads; listener Meta Pixel va assets/oai-conversions.js da khong tinh
+       /maps/place tu truoc nen giu nguyen. */
+    window.mloStoreDirections = function (a, href) {
+      try {
+        var u = new URL(href, document.baseURI);
+        var h = u.hostname.toLowerCase().replace(/^www\./, '');
+        var p = u.pathname.toLowerCase();
+        var isGoogle = /^google\.[a-z.]+$/.test(h), isMapsHost = /^maps\.google\.[a-z.]+$/.test(h);
+        if (!isGoogle && !isMapsHost) return false;
+        var dir = p.indexOf('/maps/dir') === 0 || (isMapsHost && u.searchParams.has('daddr'));
+        if (!dir && isGoogle && p.indexOf('/maps/search') === 0) {
+          var q = u.searchParams.get('query') || '';
+          if (q.normalize) q = q.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          q = q.toLowerCase();
+          dir = q.indexOf('manh long') > -1 || (q.indexOf('147a') > -1 && q.indexOf('le duan') > -1);
+        }
+        if (!dir) return false;
+        return !window.mloNotStoreMaps(a, href);
+      } catch (err) { return false; }
+    };
     function pageLang() {
       try {
         var q = new URLSearchParams(location.search).get('lang');
@@ -56,7 +104,7 @@ oaiq("measure", "page_viewed", { type: "contents", contents: [{ id: location.pat
       if (href.indexOf('tel:') === 0) name = 'call_click';
       else if (href.indexOf('wa.me') > -1) name = 'whatsapp_click';
       else if (href.indexOf('zalo.me') > -1) name = 'zalo_click';
-      else if (href.indexOf('google.com/maps') > -1 || href.indexOf('maps.google') > -1 || href.indexOf('goo.gl/maps') > -1) name = 'directions_click';
+      else if (window.mloStoreDirections(a, href)) name = 'directions_click';
       if (name) gtag('event', name, { link_url: href, page_lang: pageLang() });
     }, true);
   })();

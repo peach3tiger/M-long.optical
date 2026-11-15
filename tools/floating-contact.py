@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""WhatsApp + Zalo contact for every public page: ONE snippet, TWO languages.
+"""WhatsApp + Zalo (+ Directions on mobile) contact for every public page: ONE snippet, TWO languages.
 
 One component, two layouts (assets/floating-contact.css):
   >860px  two round floating buttons on the right (labels hidden)
-  <=860px full-width fixed bottom bar, two equal columns, icon + label;
-          it replaces the older per-page .stickycta bar, which the CSS hides.
+  <=860px full-width fixed bottom bar, three equal columns (WhatsApp | Zalo | Directions),
+          icon + label; it replaces the older per-page .stickycta bar, which the CSS hides.
+          The Directions button is mobile-only: hidden by CSS above 860px, so desktop is unchanged.
 
 Writes the block below just before </body> of each page, between the markers.
 Language follows <html lang="..."> (vi / en); only the aria-labels differ.
 Styles: assets/floating-contact.css (linked from inside the block, so <head> is never touched).
 Clicks are already tracked by the site-wide listener in each page's <head>
-(wa.me -> whatsapp_click, zalo.me -> zalo_click, plus Meta Pixel Contact); no JS here.
+(wa.me -> whatsapp_click, zalo.me -> zalo_click, google.com/maps -> directions_click,
+plus Meta Pixel Contact); no JS here.
 
 Run from the repo root:  python3 tools/floating-contact.py
 Idempotent: re-running replaces the existing block. Run again after adding new pages.
@@ -24,10 +26,15 @@ END = '<!-- floating-contact:end -->'
 # Verified: same numbers as every existing contact link and the LocalBusiness schema.
 WA = 'https://wa.me/84777986999'
 ZALO = 'https://zalo.me/0777986999'
+# Google Maps directions, destination = shop name + GBP address (same string the Nearby block uses).
+DIRECTIONS = ('https://www.google.com/maps/dir/?api=1&amp;destination='
+              'Manh%20Long%20Optical%2C%20147A%20L%C3%AA%20Du%E1%BA%A9n%2C%20C%E1%BB%ADa%20Nam%2C%20H%C3%A0%20N%E1%BB%99i')
 
 LABELS = {
-    'vi': ('Nhắn tin cho Manh Long Optical qua WhatsApp', 'Nhắn tin cho Manh Long Optical qua Zalo', 'Liên hệ nhanh'),
-    'en': ('Chat with Manh Long Optical on WhatsApp', 'Chat with Manh Long Optical on Zalo', 'Quick contact'),
+    'vi': ('Nhắn tin cho Manh Long Optical qua WhatsApp', 'Nhắn tin cho Manh Long Optical qua Zalo', 'Liên hệ nhanh',
+           'Chỉ đường đến Manh Long Optical trên Google Maps', 'Chỉ đường'),
+    'en': ('Chat with Manh Long Optical on WhatsApp', 'Chat with Manh Long Optical on Zalo', 'Quick contact',
+           'Get directions to Manh Long Optical on Google Maps', 'Directions'),
 }
 
 WA_ICON = ('<svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor" aria-hidden="true" focusable="false">'
@@ -38,15 +45,20 @@ ZALO_ICON = ('<svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"
              '<text x="24" y="29.5" text-anchor="middle" fill="currentColor" font-family="Arial,Helvetica,sans-serif" '
              'font-size="15.5" font-weight="700" letter-spacing="-.2">Zalo</text></svg>')
 
+DIR_ICON = ('<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">'
+            '<path d="M21.71 11.29 12.71 2.29a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42Z'
+            'M14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5Z"/></svg>')
+
 
 def block(lang):
-    wa_label, zalo_label, group_label = LABELS[lang]
+    wa_label, zalo_label, group_label, dir_label, dir_text = LABELS[lang]
     return (
         f'{START}\n'
         '<link rel="stylesheet" href="/assets/floating-contact.css">\n'
         f'<div class="floating-contact" role="group" aria-label="{group_label}">\n'
         f'  <a class="floating-contact__button floating-contact__button--whatsapp" href="{WA}" target="_blank" rel="noopener noreferrer" aria-label="{wa_label}">{WA_ICON}<span class="floating-contact__label">WhatsApp</span></a>\n'
         f'  <a class="floating-contact__button floating-contact__button--zalo" href="{ZALO}" target="_blank" rel="noopener noreferrer" aria-label="{zalo_label}">{ZALO_ICON}<span class="floating-contact__label">Zalo</span></a>\n'
+        f'  <a class="floating-contact__button floating-contact__button--directions" href="{DIRECTIONS}" target="_blank" rel="noopener noreferrer" aria-label="{dir_label}">{DIR_ICON}<span class="floating-contact__label">{dir_text}</span></a>\n'
         '</div>\n'
         f'{END}\n'
     )

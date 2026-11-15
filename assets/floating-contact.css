@@ -1,7 +1,8 @@
-/* WhatsApp + Zalo contact — one component, two layouts.
+/* WhatsApp + Zalo (+ Directions on mobile) contact — one component, two layouts.
    Markup is written into each page by tools/floating-contact.py (edit there, not in pages).
-   >860px : two round floating buttons on the right.
-   <=860px: full-width fixed bottom bar (2 equal columns, icon + label). 860px is the site's
+   >860px : two round floating buttons on the right (Directions hidden: desktop unchanged).
+   <=860px: full-width fixed bottom bar (3 equal columns WhatsApp | Zalo | Directions,
+            icon + label). 860px is the site's
             existing mobile breakpoint (the old .stickycta bar used the same one).
    z-index 150: above header (40), search results (60) and the old .stickycta (100);
    below the customer-feedback lightbox (.fbbox, 200) so an open photo is never covered. */
@@ -14,6 +15,7 @@
 .floating-contact__button--zalo{background:#0068FF}
 .floating-contact__button--zalo svg{width:44px;height:44px}
 .floating-contact__label{display:none}
+.floating-contact__button--directions{display:none}
 .floating-contact__button:focus{outline:none}
 .floating-contact__button:focus-visible{outline:3px solid #22254F;outline-offset:3px;box-shadow:0 0 0 6px #F4F2ED,0 4px 14px rgba(0,0,0,.18)}
 @media (hover:hover) and (pointer:fine) and (min-width:861px){
@@ -23,18 +25,25 @@
 /* ---------- Mobile: fixed bottom contact bar ---------- */
 @media (max-width:860px){
   .floating-contact{left:0;right:0;bottom:0;flex-direction:row;gap:0;background:#22254F;border-top:1px solid rgba(244,242,237,.22);padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -4px 14px rgba(0,0,0,.12)}
-  .floating-contact__button{flex:1 1 0;width:auto;height:64px;border-radius:0;box-shadow:none;background:transparent;gap:10px;color:#F4F2ED;transition:background-color .15s ease}
+  .floating-contact__button{flex:1 1 0;min-width:0;width:auto;height:64px;padding:0 6px;border-radius:0;box-shadow:none;background:transparent;gap:8px;color:#F4F2ED;transition:background-color .15s ease}
+  .floating-contact__button--directions{display:flex;background:transparent}
   .floating-contact__button + .floating-contact__button{border-left:1px solid rgba(244,242,237,.22)}
   .floating-contact__button--whatsapp,.floating-contact__button--zalo{background:transparent}
   .floating-contact__button:active{background:rgba(244,242,237,.08)}
   .floating-contact__button--whatsapp svg{width:26px;height:26px;color:#25D366}
   .floating-contact__button--zalo svg{width:30px;height:30px;border-radius:50%;background:#0068FF;color:#fff}
-  .floating-contact__label{display:inline;font-family:Archivo,Arial,sans-serif;font-size:15px;font-weight:600;letter-spacing:.02em;line-height:1}
+  .floating-contact__button--directions svg{width:24px;height:24px;color:#B7AB92}
+  .floating-contact__label{display:inline;font-family:Archivo,Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.02em;line-height:1;white-space:nowrap}
   .floating-contact__button:focus-visible{outline:3px solid #F4F2ED;outline-offset:-5px;box-shadow:none}
   /* Keep the page's last lines (footer) reachable above the bar. */
   body{padding-bottom:calc(65px + env(safe-area-inset-bottom,0px))}
   /* One mobile contact bar only: the older per-page call/Zalo/directions bar is replaced. */
   body .stickycta{display:none}
+}
+/* Very narrow phones (<360px): stack icon above label so three columns never overflow. */
+@media (max-width:359px){
+  .floating-contact__button{flex-direction:column;gap:4px}
+  .floating-contact__label{font-size:12px}
 }
 @media (prefers-reduced-motion:reduce){
   .floating-contact__button{transition:none}
